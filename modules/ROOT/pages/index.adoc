@@ -1,70 +1,84 @@
-= What is the Lisk SDK?
+= Getting started
 Mona Bärenfänger <mona@lightcurve.io>
 //Settings
 :description: The Lisk SDK introduction describes its components, architecture, and usage.
 :page-aliases: best-practices.adoc, resources.adoc, getting-started.adoc, master@lisk-protocol::index.adoc
 :toc: preamble
+:idprefix:
+:idseparator: -
 :imagesdir: ../assets/images
 :experimental:
 :icons: font
 :page-no-previous: true
 //External URLs
-:url_github_core: https://github.com/liskhq/lisk-core
-:url_github_sdk: https://github.com/liskhq/lisk-sdk
-:url_github_sdk_examples: https://github.com/LiskHQ/lisk-sdk-examples
+:url_lisk_roadmap: https://lisk.com/roadmap
 //Project URLs
-:url_commander: references/lisk-commander/index.adoc
-:url_config: guides/app-development/configuration.adoc
-:url_elements: references/lisk-elements/index.adoc
-:url_elements_packages: references/lisk-elements/index.adoc
-:url_framework: architecture/index.adoc
-:url_explanations_communication: architecture/communication-architecture.adoc
-:url_explanations_consensus: consensus.adoc
-:url_explanations_onchain: architecture/on-chain-architecture.adoc
-:url_explanations_offchain: architecture/off-chain-architecture.adoc
+:url_blockchain_apps: introduction/blockchain-applications.adoc
+:url_introduction_modules: introduction/modules.adoc
+:url_introduction_plugins: introduction/plugins.adoc
 :url_guides_setup: guides/app-development/setup.adoc
-:url_guides_config: guides/app-development/configuration.adoc
 :url_guides_module: guides/app-development/module.adoc
 :url_guides_asset: guides/app-development/asset.adoc
 :url_guides_plugin: guides/app-development/plugin.adoc
-:url_guides_frontend: guides/app-development/frontend.adoc
-:url_protocol: protocol:index.adoc
-:url_quickstart: quickstart.adoc
-:url_tutorials: tutorials/index.adoc
+:url_protocol_dpos: protocol:consensus-algorithm.adoc#lisk-dpos
+:url_protocol_bft: protocol:consensus-algorithm.adoc#lisk-bft
+:url_references_commander: references/lisk-commander/index.adoc
+:url_references_dashboard_plugin: references/lisk-framework/dashboard-plugin.adoc
+:url_references_test_suite: references/lisk-framework/test-suite.adoc
 
 image::banner_sdk.png[Logo]
 
-The {url_github_sdk}[Lisk SDK^] is designed to provide an easy and reliable software development kit for building blockchain applications which are compatible with the xref:{url_protocol}[Lisk Protocol].
+.What is the Lisk SDK?
+****
+The Lisk SDK is an open-source software development kit which enables developers to build scalable xref:{url_blockchain_apps}[] in JavaScript.
+****
 
-The codebase is written entirely in JavaScript and TypeScript, which is highly beneficial for the majority of developers, as no significant change of tools are required to get started.
+== Features
 
-The Lisk SDK makes every effort to ensure developers are easily able to focus purely and simply on writing the code that is required for their own blockchain application and nothing else.
+The most important features of the Lisk SDK:
 
----
+* **One blockchain per app**: xref:{url_blockchain_apps}[] each run on their own customized blockchain.
+* Programming language: **JavaScript/Typescript**
+* Consensus algorithm: *xref:{url_protocol_dpos}[Lisk DPoS] & xref:{url_protocol_bft}[Lisk BFT]*
+* Completely modular: Configure, exchange or extent any of the blockchain related logic in the application with *xref:{url_introduction_modules}[] and xref:{url_introduction_plugins}[]*.
+* *Convenient development tools*:
+** xref:{url_references_commander}[Lisk Commander]:
+*** Bootstrap a complete default blockchain application with only 1 command.
+*** Generate skeletons for modules, assets and plugins.
+*** Use the Lisk SDK libraries in the terminal via the Lisk console REPL.
+*** Many other convenient CLI tools like creating accounts, encrypting passphrases / messages and more.
+** xref:{url_references_dashboard_plugin}[]: Communicate conveniently with your blockchain application during development via a dashboard.
+** xref:{url_references_test_suite}[SDK test suite]: simplifies to test all components of a blockchain application by providing dedicated fixtures, mocks and utility functions.
+* Connect to the Lisk Ecosystem (coming {url_lisk_roadmap}[soon^]): Make your app interoperable with other blockchain applications, by registering it as sidechain on the Lisk Mainchain.
 
-== The Lisk SDK ecosystem
+== Quickstart
 
-The Lisk SDK operates on the Node.js runtime and consists primarily of an application framework (xref:{url_framework}[Lisk Framework]).
-This consists of a collection of libraries providing blockchain application functionalities (xref:{url_elements}[Lisk Elements]), and a powerful Command Line Interface (xref:{url_commander}[Lisk Commander]), which allows developers to manage a Lisk node instance and interact with a Lisk compatible network.
+The quickest way to bootstrap a blockchain application with the Lisk SDK is explained here.
 
-image::diagram_sdk.png[Diagram]
+=== Supported Operating Systems
 
-A detailed explanation regarding the underlying architecture of the Lisk Framework is described in the xref:{url_framework}[]
+The Lisk SDK will run on both the Ubuntu and MacOS operating systems shown below:
 
-== SDK components
+[tabs]
 
-[width="100%",cols="23%,77%",options="header",]
-|===
-| Directory | Description
-| xref:{url_framework}[Framework] | Lisk Framework is an application framework responsible for establishing and maintaining the interactions between the modules of a Lisk blockchain application.
+=====
+Ubuntu::
++
+--
+* 18.04 (LTS)
+* 20.04 (LTS)
+--
+MacOS::
++
+--
+* 10.13 (High Sierra)
+* 10.14 (Mojave)
+* 10.15 (Catalina)
+* 11.04 (Big Sur)
+--
+=====
 
-| xref:{url_elements}[Elements] | Lisk Elements is a collection of libraries, each of them implementing some form of blockchain application functionality such as cryptography, transactions, p2p, etc.
-Each library is designed to be compatible with the xref:{url_protocol}[Lisk Protocol].
-
-| xref:{url_commander}[Commander] | Lisk Commander is a command line tool which allows the management of a Lisk node instance and interaction with a Lisk compatible network.
-|===
-
-== Usage
+NOTE: Please note that the SDK does not run on the MS Windows operating systems.
 
 === Dependencies
 
@@ -74,75 +88,117 @@ The following dependencies need to be installed to run the Lisk SDK:
 |===
 |Dependencies |Version
 |Node.js | v12 (latest)
+|Lisk Commander | v5.1.2 (latest)
 |===
 
-=== Installation
+==== Node.js
 
-Installation of the Lisk SDK is straightforward and only requires getting a single NPM package `lisk-sdk`, to your Node.js project as shown below:
-
-[source,bash]
-----
-npm install lisk-sdk
-----
-
-Lisk SDK is an all-in-one package that provides the tools to create, run and maintain blockchain applications in JavaScript.
-
-In the case whereby only a specific functionality is required, it is possible to install only the relevant package as shown below:
+If you are using NVM, ensure you install the correct version as shown below:
 
 [source,bash]
 ----
-npm install lisk-commander <1>
-npm install @liskhq/lisk-client <2>
+nvm install v12.22.3
 ----
 
-<1> Install Lisk Commander.
-<2> Install Lisk Elements client package.
+==== Lisk Commander
 
-TIP: View the xref:{url_elements_packages}[full list of Lisk Elements’ packages]
+It is recommended to install Lisk Commander globally with NPM to facilitate the convenient usage of the Lisk Commander CLI.
 
-== Getting started
+[source,bash]
+----
+npm install --global lisk-commander
+----
 
-To get started with the Lisk SDK and the development of a blockchain application, please refer to the following sections in the documentation:
+=== Project setup
 
-=== Quickstart
+[source,bash]
+----
+mkdir new_app
+cd new_app
+----
 
-The quickest way to bootstrap a blockchain application with the Lisk SDK is described on the xref:{url_quickstart}[] page.
+./new_app/
+[source,bash]
+----
+lisk init
+----
 
-=== Tutorials
+The user is asked for the application name, description, author, and license after running `lisk init`.
 
-The xref:{url_tutorials}[Tutorials] explain in detail how to build a specific blockchain application.
-All examples provided in the tutorials describe how to implement simple, but valid industry use cases.
+Next, all the required files are created by Lisk Commander.
+----
+Using template "lisk-ts"
+Initializing git repository
+Updating .liskrc.json file
+Creating project structure
+? Application name new_app
+? Application description My blockchain application
+? Author mona
+? License ISC
+----
 
-The tutorials overview page provides an informative overview about all existing tutorials, including the estimated time and the skill level required to complete each specific tutorial.
+=== Start the application
 
-TIP: All code for the example apps that is used in the tutorials is also available in the {url_github_sdk_examples}[lisk-sdk-examples repository^] on GitHub.
+Execute the following command to start the blockchain application.
 
-=== The Lisk protocol
+./new_app/
+[source,bash]
+----
+./bin/run start
+----
 
-The xref:{url_protocol}[Lisk protocol] is the set of rules followed by a blockchain created with the Lisk SDK using the default configuration.
-It contains various development-agnostic specifications about the Lisk SDK.
+To verify that the application has started, check the log messages in the terminal.
+If the start was successful, the application will enable forging for all genesis delegates and will start to add new blocks to the blockchain every 10 seconds.
 
-It is a good location to look up certain topics in order to gain a deeper understanding, or to further explore the SDK in a scientific direction.
+//TODO: Create updated gif with the new command
+//image:node-start.gif[]
 
-=== Architecture
+NOTE: The application CLI offers various commands to conveniently manage your blockchain application.
 
-The architecture pages contain various explanations about the architecture of the Lisk Framework.
+To see an overview of all the available CLI commands, execute the following in the root folder of the application:
 
-It contains the following chapters:
+./new_app/
+[source,bash]
+----
+./bin/run --help
+----
 
-* xref:{url_framework}[]
-** xref:{url_explanations_onchain}[]
-** xref:{url_explanations_offchain}[]
-** xref:{url_explanations_communication}[]
+=== Using the application CLI globally
 
-=== How-To Guides
+To use the application commands globally, create an alias in the `.bashrc` file.
 
-The development guides are dedicated how-to guides which cover specific topics required to build a blockchain application with the Lisk SDK.
+.~/.bashrc/
+[source,bash]
+----
+alias new_app="$HOME/new_app/bin/run" # <1>
+----
 
-The most relevant guides for beginners are:
+<1> Adjust to the path where your `new_app` is located.
+
+After updating the `.bashrc` file, make it directly available in the terminal by exwcuting:
+
+[source,bash]
+----
+. ~/.bashrc
+----
+
+Now it is possible to convenieently run thee application CLI commands from anywhre, by referring to the alias.
+
+[source,bash]
+----
+new_app --help
+----
+
+.Next steps
+****
+After completing these steps, the default blockchain application of the Lisk SDK will now be running.
+
+It is now possible to customize your application by registering new modules and plugins, and also adjusting the genesis block and config to suit your specific use case.
+
+More information can be found in the following guides:
 
 * xref:{url_guides_setup}[]
-* xref:{url_guides_config}[]
 * xref:{url_guides_module}[]
 * xref:{url_guides_asset}[]
-* xref:{url_guides_frontend}[]
+* xref:{url_guides_plugin}[]
+****
