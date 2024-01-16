@@ -31,18 +31,17 @@ The low transaction fees can be provided, because Lisk is a [Layer 2 optimistic 
 Every Lisk Mainnet transaction has two costs: An **L2 execution fee** and an **L1 security fee**.
 At a high level, the L2 fee is the cost to execute your transaction in L2 and the L1 fee is the estimated cost to publish your transaction on L1 (in a rollup batch).
 
-- **L1 security fee**: pays for the cost of publishing the transaction on L1 (the cost of Ethereum equivalent security).
+- **L1 security fee**: is charged as `transaction_gas_price_l1 * gas_used * l1_fee_scalar`.
 It is deducted automatically from the user's ETH balance on Lisk Mainnet.
 It is based on three factors that are multiplied together:
-  - The gas price for L1 transactions (when the transaction was processed).
-
-  - The gas used on L1 to publish the transaction. This is based on the transaction length, as well as the byte value (whether it is zero or a different value) for each byte.
-<!-- TODO: Add link to GasPriceOracle contract -->
-  - The L1 fee scalar, which is at writing 1.
-  You can see the current value in the `GasPriceOracle` contract.
-  Take the value provided by the contract and divide by a million.
-- **L2 execution fee**: is charged as `transaction_gas_price * gas_used`.
-The `transaction_gas_price` is composed of two components: a `base fee` and a `priority fee`, because Lisk is [EIP 1559](https://eips.ethereum.org/EIPS/eip-1559) compliant (although with [different parameter values](https://docs.optimism.io/chain/differences#eip-1559-parameters)).
+    - The gas price for L1 transactions (when the transaction was processed).
+    - The gas used on L1 to publish the transaction. This is based on the transaction length, as well as the byte value (whether it is zero or a different value) for each byte.
+    <!-- TODO: Add link to GasPriceOracle contract -->
+    - The L1 fee scalar, which is at writing 1.
+    You can see the current value in the `GasPriceOracle` contract.
+    Take the value provided by the contract and divide by a million.
+- **L2 execution fee**: is charged as `transaction_gas_price_l2 * gas_used`.
+The `transaction_gas_price_l2` is composed of two components: a `base fee` and a `priority fee`, because Lisk is [EIP 1559](https://eips.ethereum.org/EIPS/eip-1559) compliant (although with [different parameter values](https://docs.optimism.io/chain/differences#eip-1559-parameters) compared to Ethereum).
 Similarly to the L1 gas price, the L2 gas price can increase and decrease depending on how many transactions are being submitted to the L2.
 
   :::tip
@@ -63,8 +62,8 @@ For an L2 transaction, the normal process is:
 1. The wallet figures the cost of the transaction
 2. The user submits the transaction
 3. The sequencer processes the transaction
-  - Process the transaction
-  - Deduct the gas cost, based on the L1 and L2 gas prices at that time
+    - Process the transaction
+    - Deduct the gas cost, based on the L1 and L2 gas prices at that time
 4. The transaction is written to L1
 
 After step 3 the transaction is Lisks's responsibility.
