@@ -72,7 +72,7 @@ const config = {
         logo: {
           alt: 'Lisk Logo',
           src: 'img/lisk-icon-light.svg',
-          srcDark: 'img/isk-icon-dark.svg',
+          srcDark: 'img/lisk-icon-dark.svg',
         },
         items: [
           {
