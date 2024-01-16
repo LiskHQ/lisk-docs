@@ -47,7 +47,6 @@ const config = {
           editUrl:
             'https://github.com/LiskHQ/lisk-documentation/tree/main/',
           routeBasePath: '/',
-          docFooter: 'theme-doc-footer',
         },
         /*blog: {
           showReadingTime: true,
