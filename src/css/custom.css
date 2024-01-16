@@ -7,34 +7,90 @@
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #3074fc;
-  --ifm-color-primary-dark: #256dfb;
-  --ifm-color-primary-darker: #1361fd;
-  --ifm-color-primary-darkest: #0055fe;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary-dark: #1260fc;
+  --ifm-color-primary-darker: #0456fb;
+  --ifm-color-primary-darkest: #0347cf;
+  --ifm-color-primary-light: #4e88fc;
+  --ifm-color-primary-lighter: #5c92fd;
+  --ifm-color-primary-lightest: #89b0fd;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
+  .navbar .navbar__logo {
+    content: url(/img/lisk-icon-light.svg);
+    padding-bottom: 2%;
+  }
+
+  .padding-bottom--lg {
+    margin-bottom: 3% !important;
+  }
+
+  .pagination-nav {
+    margin-top: 6%;
+  }
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #F7E36D;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #3074fc;
+  --ifm-color-primary-dark: #1260fc;
+  --ifm-color-primary-darker: #0456fb;
+  --ifm-color-primary-darkest: #0347cf;
+  --ifm-color-primary-light: #4e88fc;
+  --ifm-color-primary-lighter: #5c92fd;
+  --ifm-color-primary-lightest: #89b0fd;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: #0C152E;
 }
 
 html[data-theme='dark'] {
   --ifm-background-color: #0C152E;
-  --ifm-background-surface-color: black;
+  --ifm-background-surface-color: #0C152E;
+  --ifm-footer-padding-horizontal: 5%;
+
+  .navbar .navbar__logo {
+    content: url(/img/lisk-icon-dark.svg);
+    padding-bottom: 2%;
+  }
+
+  .theme-admonition {
+    background: transparent;
+  }
+
+  .theme-admonition-tip {
+    background-color: rgb(0, 148, 0, .15)
+  }
+
+  .theme-admonition-danger {
+    background-color: rgb(225, 50, 56, .15)
+  }
+
+  .theme-admonition-info {
+    background-color: rgb(75, 179, 212, .15)
+  }
+
+  .theme-admonition-note {
+    background-color: rgb(253, 253, 254, .15)
+  }
+
+  .theme-admonition-caution {
+    background-color: rgb(231, 167, 0, .15)
+  }
+
+  .padding-bottom--lg {
+    margin-bottom: 3% !important;
+  }
+
+  .pagination-nav {
+    margin-top: 6%;
+  }
+
+  .footer {
+    background-color: #0C152E;
+    box-shadow: 1px 1px 1px 1px white;
+  }
 }
 
-html[data-theme='dark'] footer {
-  background-color: black;
+.label-setting {
+  padding-top: .70%;
 }
