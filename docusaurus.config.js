@@ -71,7 +71,7 @@ const config = {
       navbar: {
         title: 'Lisk',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Lisk Logo',
           src: 'img/favicon.png',
         },
         items: [
