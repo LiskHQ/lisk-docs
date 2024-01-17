@@ -80,7 +80,6 @@ const config = {
             sidebarId: 'documentationSidebar',
             position: 'left',
             label: 'Documentation',
-            className: 'label-setting navbar__link--active navbar__item',
           },
           /*{to: '/blog', label: 'Blog', position: 'left'},
           {
