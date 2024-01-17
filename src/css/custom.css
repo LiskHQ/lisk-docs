@@ -18,10 +18,14 @@
 }
 
 .navbar__item {
-  margin-top: .20%;
+  margin-top: .199%;
   font-weight: 650;
 }
 
+.navbar__logo img {
+  height: 87%;
+  width: 87%;
+}
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
@@ -64,11 +68,6 @@ html[data-theme='dark'] {
   .footer {
     box-shadow: 1px 1px 1px 1px white;
   }
-}
-
-.navbar__logo img {
-  height: 87%;
-  width: 87%;
 }
 
 .padding-bottom--lg {
