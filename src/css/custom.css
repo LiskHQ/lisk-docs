@@ -17,7 +17,7 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
   .navbar .navbar__logo {
-    content: url(/img/lisk-icon-light.svg);
+    /* content: url(/img/lisk-icon-light.svg); */
     padding-bottom: 2%;
   }
 
@@ -51,7 +51,6 @@
   --ifm-color-primary-lightest: #89b0fd;
   --ifm-code-font-size: 95%;
 
-
   .footer {
     background-color: #0C152E;
     box-shadow: 1px 1px 1px 1px white;
@@ -60,7 +59,7 @@
   }
 
   .navbar .navbar__logo {
-    content: url(/img/lisk-icon-dark.svg);
+    /* content: url(/img/lisk-icon-dark.svg); */
     padding-bottom: 2%;
   }
 
