@@ -1,6 +1,6 @@
 ---
 title: Fees
-sidebar_position: 3
+sidebar_position: 1
 slug: /fees
 description: Documentation about network fees on Lisk. This page covers details of the two-component cost system involving L2 execution fees and L1 security fees, and offers insights on fee variations and cost-saving strategies.
 keywords:
