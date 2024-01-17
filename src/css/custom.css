@@ -15,31 +15,7 @@
   --ifm-color-primary-lightest: #89b0fd;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-
-  .navbar .navbar__logo {
-    padding-bottom: 2%;
-  }
-
-  .padding-bottom--lg {
-    margin-bottom: 3% !important;
-  }
-
-  .pagination-nav {
-    margin-top: 6%;
-  }
-
-  .label-setting {
-    padding-top: .70%;
-  }
-
-  .footer {
-    background-color: #f5f6f7;
-  }
 }
-
-/* html[data-theme='root'] {
-
-} */
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
@@ -56,53 +32,46 @@
 html[data-theme='dark'] {
   --ifm-background-color: #0C152E;
   --ifm-background-surface-color: #0C152E;
-  --ifm-footer-padding-horizontal: 5%;
-  --docusaurus-highlighted-code-line-bg: #050a18;
-
-  .footer {
-    background-color: #0C152E;
-    box-shadow: 1px 1px 1px 1px white;
-    /* padding: var(--ifm-footer-padding-vertical) var(--ifm-footer-padding-horizontal); */
-    /* color: var(--ifm-footer-color); */
-  }
-
-  .navbar .navbar__logo {
-    padding-bottom: 2%;
-  }
-
-  .theme-admonition {
-    background: transparent;
-  }
+  --docusaurus-highlighted-code-line-bg: #050915;
+  --ifm-footer-background-color: #0C152E;
 
   .theme-admonition-tip {
-    background-color: rgb(0, 148, 0, .15)
+    background-color: rgb(0, 148, 0, .20)
   }
 
   .theme-admonition-danger {
-    background-color: rgb(225, 50, 56, .15)
+    background-color: rgb(225, 50, 56, .20)
   }
 
   .theme-admonition-info {
-    background-color: rgb(75, 179, 212, .15)
+    background-color: rgb(75, 179, 212, .20)
   }
 
   .theme-admonition-note {
-    background-color: rgb(253, 253, 254, .15)
+    background-color: rgb(253, 253, 254, .20)
   }
 
   .theme-admonition-caution {
-    background-color: rgb(231, 167, 0, .15)
+    background-color: rgb(231, 167, 0, .20)
   }
+}
 
-  .padding-bottom--lg {
-    margin-bottom: 3% !important;
-  }
+.footer {
+  box-shadow: 1px 1px 1px 1px white;
+}
 
-  .pagination-nav {
-    margin-top: 6%;
-  }
+.navbar__item {
+  padding-top: .70%;
+}
 
-  .label-setting {
-    padding-top: .70%;
-  }
+.navbar .navbar__logo {
+  padding-bottom: 2%;
+}
+
+.padding-bottom--lg {
+  margin-bottom: 3% !important;
+}
+
+.pagination-nav {
+  margin-top: 6%;
 }
