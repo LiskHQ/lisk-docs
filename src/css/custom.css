@@ -6,25 +6,74 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #3074fc;
+  --ifm-color-primary-dark: #1260fc;
+  --ifm-color-primary-darker: #0456fb;
+  --ifm-color-primary-darkest: #0347cf;
+  --ifm-color-primary-light: #4e88fc;
+  --ifm-color-primary-lighter: #5c92fd;
+  --ifm-color-primary-lightest: #89b0fd;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
+.navbar__item {
+  margin-top: .199%;
+  font-weight: 650;
+}
+
+.navbar__logo img {
+  height: 87%;
+  width: 87%;
+}
+
+.padding-bottom--lg {
+  margin-bottom: 3% !important;
+}
+
+.pagination-nav {
+  margin-top: 6%;
+}
+
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #3074fc;
+  --ifm-color-primary-dark: #1260fc;
+  --ifm-color-primary-darker: #0456fb;
+  --ifm-color-primary-darkest: #0347cf;
+  --ifm-color-primary-light: #4e88fc;
+  --ifm-color-primary-lighter: #5c92fd;
+  --ifm-color-primary-lightest: #89b0fd;
+  --ifm-code-font-size: 95%;
+}
+
+html[data-theme='dark'] {
+  --ifm-background-color: #0C152E;
+  --ifm-background-surface-color: #0C152E;
+  --docusaurus-highlighted-code-line-bg: #050915;
+  --ifm-footer-background-color: #0C152E;
+
+  .theme-admonition-tip {
+    background-color: rgb(0, 148, 0, .175)
+  }
+
+  .theme-admonition-danger {
+    background-color: rgb(225, 50, 56, .175)
+  }
+
+  .theme-admonition-info {
+    background-color: rgb(75, 179, 212, .175)
+  }
+
+  .theme-admonition-note {
+    background-color: rgb(253, 253, 254, .175)
+  }
+
+  .theme-admonition-caution {
+    background-color: rgb(231, 167, 0, .175)
+  }
+
+  .footer {
+    box-shadow: 1px 1px 1px 1px white;
+  }
 }
