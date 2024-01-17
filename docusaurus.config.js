@@ -10,7 +10,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 const config = {
   title: 'Lisk Documentation',
   //tagline: 'Dinosaurs are cool',
-  favicon: 'img/lisk-icon-light.svg',
+  favicon: 'img/favicon.png',
 
   // Set the production url of your site here
   url: 'https://docs.lisk.com',
@@ -67,7 +67,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/lisk-icon-light.svg',
       navbar: {
         logo: {
           alt: 'Lisk Logo',
@@ -138,6 +138,11 @@ const config = {
       prism: {
         theme: prismThemes.oneLight,
         darkTheme: prismThemes.palenight,
+      },
+      colorMode: {
+        defaultMode: 'light',
+        disableSwitch: false,
+        respectPrefersColorScheme: false,
       },
     }),
 };
