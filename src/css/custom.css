@@ -32,6 +32,10 @@
   .label-setting {
     padding-top: .70%;
   }
+
+  .footer {
+    background-color: var(--ifm-footer-background-color);
+  }
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -98,7 +102,3 @@ html[data-theme='dark'] {
     padding-top: .70%;
   }
 }
-
-/* .label-setting {
-  padding-top: .70%;
-} */
