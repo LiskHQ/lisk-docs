@@ -10,7 +10,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 const config = {
   title: 'Lisk Documentation',
   //tagline: 'Dinosaurs are cool',
-  favicon: 'img/lisk-icon-light.svg',
+  favicon: 'img/favicon.png',
 
   // Set the production url of your site here
   url: 'https://docs.lisk.com',

@@ -34,7 +34,9 @@
   }
 
   .footer {
-    background-color: var(--ifm-footer-background-color);
+    background-color: #f5f6f7;
+    padding: var(--ifm-footer-padding-vertical) var(--ifm-footer-padding-horizontal);
+    color: var(--ifm-footer-color);
   }
 }
 
@@ -96,6 +98,8 @@ html[data-theme='dark'] {
   .footer {
     background-color: #0C152E;
     box-shadow: 1px 1px 1px 1px white;
+    padding: var(--ifm-footer-padding-vertical) var(--ifm-footer-padding-horizontal);
+    color: var(--ifm-footer-color);
   }
 
   .label-setting {
