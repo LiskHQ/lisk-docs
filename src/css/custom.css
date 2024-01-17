@@ -27,6 +27,14 @@
   width: 87%;
 }
 
+.padding-bottom--lg {
+  margin-bottom: 3% !important;
+}
+
+.pagination-nav {
+  margin-top: 6%;
+}
+
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
   --ifm-color-primary: #3074fc;
@@ -68,12 +76,4 @@ html[data-theme='dark'] {
   .footer {
     box-shadow: 1px 1px 1px 1px white;
   }
-}
-
-.padding-bottom--lg {
-  margin-bottom: 3% !important;
-}
-
-.pagination-nav {
-  margin-top: 6%;
 }
