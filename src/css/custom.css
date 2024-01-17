@@ -31,13 +31,15 @@
   .label-setting {
     padding-top: .70%;
   }
-}
 
-html[data-theme='root'] {
   .footer {
     background-color: #f5f6f7;
   }
 }
+
+/* html[data-theme='root'] {
+
+} */
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
@@ -61,7 +63,7 @@ html[data-theme='dark'] {
     background-color: #0C152E;
     box-shadow: 1px 1px 1px 1px white;
     /* padding: var(--ifm-footer-padding-vertical) var(--ifm-footer-padding-horizontal); */
-    color: var(--ifm-footer-color);
+    /* color: var(--ifm-footer-color); */
   }
 
   .navbar .navbar__logo {
