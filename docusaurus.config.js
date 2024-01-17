@@ -139,6 +139,11 @@ const config = {
         theme: prismThemes.oneLight,
         darkTheme: prismThemes.palenight,
       },
+      colorMode: {
+        defaultMode: 'light',
+        disableSwitch: false,
+        respectPrefersColorScheme: false,
+      },
     }),
 };
 

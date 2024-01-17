@@ -50,13 +50,14 @@
   --ifm-color-primary-lighter: #5c92fd;
   --ifm-color-primary-lightest: #89b0fd;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: #0C152E;
-}
 
-html[data-theme='dark'] {
-  --ifm-background-color: #0C152E;
-  --ifm-background-surface-color: #0C152E;
-  --ifm-footer-padding-horizontal: 5%;
+
+  .footer {
+    background-color: #0C152E;
+    box-shadow: 1px 1px 1px 1px white;
+    padding: var(--ifm-footer-padding-vertical) var(--ifm-footer-padding-horizontal);
+    color: var(--ifm-footer-color);
+  }
 
   .navbar .navbar__logo {
     content: url(/img/lisk-icon-dark.svg);
@@ -95,14 +96,14 @@ html[data-theme='dark'] {
     margin-top: 6%;
   }
 
-  .footer {
-    background-color: #0C152E;
-    box-shadow: 1px 1px 1px 1px white;
-    padding: var(--ifm-footer-padding-vertical) var(--ifm-footer-padding-horizontal);
-    color: var(--ifm-footer-color);
-  }
-
   .label-setting {
     padding-top: .70%;
   }
+}
+
+html[data-theme='dark'] {
+  --ifm-background-color: #0C152E;
+  --ifm-background-surface-color: #0C152E;
+  --ifm-footer-padding-horizontal: 5%;
+  --docusaurus-highlighted-code-line-bg: #0C152E;
 }
