@@ -155,7 +155,7 @@ Otherwise, the deployment attempt will fail.
 Finally, run:
 
 ```bash
-npx hardhat run scripts/deploy.ts --network base-sepolia
+npx hardhat run scripts/deploy.ts --network lisk-sepolia
 ```
 
 The contract will be deployed on the Lisk Sepolia Testnet.
