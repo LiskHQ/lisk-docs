@@ -22,6 +22,25 @@ keywords: [
 # How to deploy a smart contract (Hardhat)
 ## Prerequisites
 
+### Node v18+
+
+This guide requires you have Node version 18+ installed.
+
+- Download [Node v18+](https://nodejs.org/en/download/)
+
+If you are using `nvm` to manage your node versions, you can just run `nvm install 18`.
+
+### Wallet funds
+
+**Deploying contracts** to the blockchain requires a **gas fee**.
+Therefore, you will need to fund your wallet with ETH to cover those gas fees.
+
+For this guide, you will be deploying a contract to the Lisk Sepolia Testnet. 
+
+You can deposit the required tokens by using the [Lisk Bridge](https://sepolia-bridge.lisk.com/bridge/lisk-sepolia-testnet).
+
+In case your wallet doesn't hold enough `SepoliaETH`, use one of the available faucets for the Ethereum Sepolia Testnet, like [https://sepoliafaucet.com](https://sepoliafaucet.com/) to receive free Testnet ETH.
+
 ## Creating a project
 ```bash
 % npx hardhat
@@ -124,9 +143,9 @@ npx hardhat compile
 
 ## Deploying the smart contract
 
-Once your contract has been successfully compiled, you can deploy the contract to the Base Sepolia test network.
+Once your contract has been successfully compiled, you can deploy the contract to the Lisk Sepolia test network.
 
-To deploy the contract to the Base Sepolia test network, you'll need to modify the `scripts/deploy.ts` in your project:
+To deploy the contract to the Lisk Sepolia test network, you'll need to modify the `scripts/deploy.ts` in your project:
 
 ```ts title="scripts/deploy.ts"
 import { ethers } from 'hardhat';
