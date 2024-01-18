@@ -61,7 +61,7 @@ Substite `<YOUR_PRIVATE_KEY>` with the private key for your wallet.
 
 To configure Hardhat to use Lisk, add Lisk as a network to your project's `hardhat.config.ts` file:
 
-```ts
+```ts title="hardhat.config.ts"
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
 
@@ -97,7 +97,7 @@ In your project, delete the `contracts/Lock.sol` contract that was generated wit
 
 Add the code below to a new file called `contracts/NFT.sol`.
 
-```sol
+```sol title="contracts/NFT.sol"
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.23;
 
@@ -128,7 +128,7 @@ Once your contract has been successfully compiled, you can deploy the contract t
 
 To deploy the contract to the Base Sepolia test network, you'll need to modify the `scripts/deploy.ts` in your project:
 
-```ts
+```ts title="scripts/deploy.ts"
 import { ethers } from 'hardhat';
 
 async function main() {
