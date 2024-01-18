@@ -20,6 +20,7 @@ keywords: [
 ---
 
 # How to deploy a smart contract (Hardhat)
+## Prerequisites
 
 ## Creating a project
 ```bash
@@ -30,7 +31,7 @@ keywords: [
 ✔ What do you want to do? · Create a TypeScript project
 ✔ Hardhat project root: · /Users/mona/git/hardhat-test
 ✔ Do you want to add a .gitignore? (Y/n) · y
-✖ Help us improve Hardhat with anonymous crash reports & basic usage data? (Y/n) · y
+✔ Help us improve Hardhat with anonymous crash reports & basic usage data? (Y/n) · y
 ✔ Do you want to install this sample project's dependencies with npm (@nomicfoundation/hardhat-toolbox)? (Y/n) · y
 ```
 
@@ -81,6 +82,86 @@ const config: HardhatUserConfig = {
 export default config;
 ```
 
+## Creating the contract
+For ease and security, we’ll use the `ERC721` interface provided by the [OpenZeppelin Contracts library](https://docs.openzeppelin.com/contracts/5.x/) to create an NFT smart contract.
+With OpenZeppelin, we don’t need to write the whole ERC-721 interface. Instead, we can import the library contract and use its functions.
+
+To add the OpenZeppelin Contracts library to your project, run:
+
+```bash
+npm install --save @openzeppelin/contracts
+```
+
+In your project, delete the `contracts/Lock.sol` contract that was generated with the project.
+(You can also delete the `test/Lock.ts` test file, but you should add your own tests ASAP!).
+
+Add the code below to a new file called `contracts/NFT.sol`.
+
+```sol
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.23;
+
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+
+contract NFT is ERC721 {
+    uint256 public currentTokenId;
+
+    constructor() ERC721("NFT Name", "NFT") {}
+
+    function mint(address recipient) public payable returns (uint256) {
+        uint256 newItemId = ++currentTokenId;
+        _safeMint(recipient, newItemId);
+        return newItemId;
+    }
+}
+```
+
 ## Compiling the smart contract
 
+```bash
+npx hardhat compile
+```
+
 ## Deploying the smart contract
+
+Once your contract has been successfully compiled, you can deploy the contract to the Base Sepolia test network.
+
+To deploy the contract to the Base Sepolia test network, you'll need to modify the `scripts/deploy.ts` in your project:
+
+```ts
+import { ethers } from 'hardhat';
+
+async function main() {
+  const nft = await ethers.deployContract('NFT');
+
+  await nft.waitForDeployment();
+
+  console.log('NFT Contract Deployed at ' + nft.target);
+}
+
+// We recommend this pattern to be able to use async/await everywhere
+// and properly handle errors.
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
+```
+
+You'll also need testnet ETH in your wallet.
+
+See the [Prerequisites](#prerequisites) if you haven't done that yet.
+Otherwise, the deployment attempt will fail.
+
+Finally, run:
+
+```bash
+npx hardhat run scripts/deploy.ts --network base-sepolia
+```
+
+The contract will be deployed on the Lisk Sepolia Testnet.
+You can view the deployment status and contract by using a block explorer and searching for the address returned by your deploy script.
+
+If you're deploying a new or modified contract, you'll need to verify it first.
+
+### Verifying the Smart Contract
+
