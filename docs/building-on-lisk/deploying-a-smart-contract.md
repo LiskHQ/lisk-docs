@@ -42,9 +42,32 @@ You can deposit the required tokens by using the [Lisk Bridge](https://sepolia-b
 In case your wallet doesn't hold enough `SepoliaETH`, use one of the available faucets for the Ethereum Sepolia Testnet, like [https://sepoliafaucet.com](https://sepoliafaucet.com/) to receive free Testnet ETH.
 
 ## Creating a project
+Before you can begin deploying smart contracts to Lisk, you need to set up your development environment by creating a Node.js project.
+
+To create a new Node.js project, run:
+
 ```bash
-% npx hardhat
+npm init --y
 ```
+
+Next, you will need to install Hardhat and create a new Hardhat project.
+
+To install Hardhat, run:
+
+```bash
+npm install --save-dev hardhat
+```
+
+To create a new Hardhat project, run:
+
+```bash
+npx hardhat
+```
+
+Select `Create a TypeScript project` then press _Enter_ to confirm the project root.
+
+Select `y` for both adding a `.gitignore` and loading the sample project. 
+Optionally, you can decide to share crash reports and usage data with HardHat.
 
 ```
 ✔ What do you want to do? · Create a TypeScript project
@@ -54,11 +77,14 @@ In case your wallet doesn't hold enough `SepoliaETH`, use one of the available f
 ✔ Do you want to install this sample project's dependencies with npm (@nomicfoundation/hardhat-toolbox)? (Y/n) · y
 ```
 
+It will take a moment for the project setup process to complete.
+
 ## Configuring Hardhat with Lisk
 
 In order to deploy smart contracts to the Lisk network, you will need to configure your Hardhat project and add the Lisk network.
 
-This example uses [dotenv](https://www.npmjs.com/package/dotenv) to load the `WALLET_KEY` environment variable from a `.env` file to `process.env.WALLET_KEY`. You should use a similar method to avoid hardcoding your private keys within your source code.
+This example uses [dotenv](https://www.npmjs.com/package/dotenv) to load the `WALLET_KEY` environment variable from a `.env` file to `process.env.WALLET_KEY`.
+You should use a similar method to avoid hardcoding your private keys within your source code.
 
 ```bash
 npm install --save-dev dotenv
@@ -74,7 +100,10 @@ Substite `<YOUR_PRIVATE_KEY>` with the private key for your wallet.
 
 :::caution
 
-`WALLET_KEY` is the private key of the wallet to use when deploying a contract. Follow the instructions of your wallet on how to get your private key. E.g. for **MetaMask**, please follow these [instructions](https://support.metamask.io/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key). **It is critical that you do NOT commit this to a public repo**
+`WALLET_KEY` is the private key of the wallet to use when deploying a contract.
+Follow the instructions of your wallet on how to get your private key.
+E.g. for **MetaMask**, please follow [these instructions](https://support.metamask.io/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key).
+**It is critical that you do NOT commit this to a public repo**
 
 :::
 
@@ -136,10 +165,13 @@ contract NFT is ERC721 {
 ```
 
 ## Compiling the smart contract
+To compile the contract using Hardhat, simply run:
 
 ```bash
 npx hardhat compile
 ```
+
+After successful compilation, you should see a new folder `artifacts/`, which contains the [compilation artifacts](https://hardhat.org/hardhat-runner/docs/advanced/artifacts).
 
 ## Deploying the smart contract
 
@@ -166,8 +198,7 @@ main().catch((error) => {
 });
 ```
 
-You'll also need testnet ETH in your wallet.
-
+You'll also need Testnet ETH in your wallet.
 See the [Prerequisites](#prerequisites) if you haven't done that yet.
 Otherwise, the deployment attempt will fail.
 
@@ -184,3 +215,68 @@ If you're deploying a new or modified contract, you'll need to verify it first.
 
 ### Verifying the Smart Contract
 
+If you want to interact with your contract on the block explorer, you, or someone, needs to verify it first.
+The above contract has already been verified, so you should be able to view your version on a block explorer already.
+For the remainder of this guide, we'll walk through how to verify your contract on Lisk Sepolia testnet.
+
+In `hardhat.config.ts`, configure Lisk Sepolia as a custom network.
+Add the following to your `HardhatUserConfig`:
+
+```ts title="hardhat.config.ts"
+// Hardhat expects etherscan here, even if you're using Blockscout.
+etherscan: {
+   apiKey: {
+    "lisk-sepolia": ""
+   },
+   customChains: [
+    {
+        network: "lisk-sepolia",
+        chainId: 4202,
+        urls: {
+            apiURL: "https://lisk-sepolia.blockscout.com/api",
+            browserURL: "https://lisk-sepolia.blockscout.com/"
+        }
+     }
+   ]
+ },
+```
+
+Now, you can verify your contract.
+Grab the deployed address and run:
+
+```bash
+npx hardhat verify --network lisk-sepolia <deployed address>
+```
+
+You should see an output similar to:
+
+```text
+Successfully submitted source code for contract
+contracts/NFT.sol:NFT at 0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract NFT on the block explorer.
+https://lisk-sepolia.blockscout.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D#code
+```
+
+:::info
+
+You can't re-verify a contract identical to one that has already been verified.
+If you attempt to do so, such as verifying the above contract, you'll get an error similar to:
+
+```text
+Error in plugin @nomiclabs/hardhat-etherscan: The API responded with an unexpected message.
+Contract verification may have succeeded and should be checked manually.
+Message: Already Verified
+```
+
+:::
+
+View your contract on BlockScout, by following the [link](https://lisk-sepolia.blockscout.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D#code) displayed in the output message, to confirm that the contract is verified.
+
+## Interacting with the Smart Contract
+
+After [the contract is verified](#verifying-the-smart-contract), you can use the `Read Contract` and `Write Contract` tabs to interact with the deployed contract via BlockScout.
+You'll need to connect your wallet first, by clicking the `Connect Wallet` button.
+
+---
