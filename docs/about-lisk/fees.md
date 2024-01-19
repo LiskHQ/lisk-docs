@@ -31,7 +31,7 @@ The low transaction fees can be provided because Lisk is a [Layer 2 optimistic r
 Every Lisk Mainnet transaction has two costs: An **L2 execution fee** and an **L1 security fee**.
 At a high level, the L2 fee is the cost to execute your transaction in L2 and the L1 fee is the estimated cost to publish your transaction on L1 (in a rollup batch).
 
-- **L1 security fee**: is charged as `transaction_gas_price_l1 * gas_used * l1_fee_scalar`.
+- **L1 Security Fee/L1 Data Fee**: is charged as `transaction_gas_price_l1 * gas_used * l1_fee_scalar`.
 It is deducted automatically from the user's ETH balance on Lisk Mainnet.
 It is based on three factors that are multiplied together:
     - The gas price for processing the transaction on L1.
@@ -40,15 +40,17 @@ It is based on three factors that are multiplied together:
     - The L1 fee scalar at the time of writing this is **1**.
     You can see the current value in the `GasPriceOracle` contract.
     Take the value provided by the contract and divide it by a million.
-- **L2 execution fee**: is charged as `transaction_gas_price_l2 * gas_used`.
+- **L2 Execution Fee**: is charged as `transaction_gas_price_l2 * gas_used`.
 The `transaction_gas_price_l2` is composed of two components: a `base fee` and a `priority fee` because Lisk is [EIP 1559](https://eips.ethereum.org/EIPS/eip-1559) compliant (although with [different parameter values](https://docs.optimism.io/chain/differences#eip-1559-parameters) compared to Ethereum).
 Similarly to the L1 gas price, the L2 gas price can increase and decrease depending on how many transactions are being submitted to the L2.
 
-  :::tip
+:::tip
 
-  For more information about transaction fees, please check the [Optimism Developer Docs > Transaction Fees](https://docs.optimism.io/stack/transactions/fees)
+It is currently **not** possible to limit the maximum L1 Data Fee that a transaction is willing to pay.
 
-  :::
+For more information about transaction fees, please check the [Optimism Developer Docs > Transaction Fees](https://docs.optimism.io/stack/transactions/fees)
+
+:::
 
 ## How do fluctuation in gas price on Ethereum (L1) affect transaction costs on Lisk (L2)?
 
