@@ -213,7 +213,7 @@ You can view the deployment status and contract by using a block explorer and se
 
 If you're deploying a new or modified contract, you'll need to verify it first.
 
-### Verifying the Smart Contract
+## Verifying the Smart Contract
 
 If you want to interact with your contract on the block explorer, you, or someone, needs to verify it first.
 The above contract has already been verified, so you should be able to view your version on a block explorer already.
