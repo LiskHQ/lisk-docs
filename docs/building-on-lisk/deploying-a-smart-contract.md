@@ -276,7 +276,7 @@ View your contract on BlockScout, by following the [link](https://lisk-sepolia.b
 
 ## Interacting with the Smart Contract
 
-After [the contract is verified](#verifying-the-smart-contract), you can use the `Read Contract` and `Write Contract` tabs to interact with the deployed contract via BlockScout.
+After [the contract is verified](#verifying-the-smart-contract), you can use the `Read Contract` and `Write Contract` tabs to interact with the [deployed contract](https://lisk-sepolia.blockscout.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D#code) via BlockScout.
 You'll need to connect your wallet first, by clicking the `Connect Wallet` button.
 
 ---
