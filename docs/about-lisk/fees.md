@@ -2,7 +2,7 @@
 title: Fees
 sidebar_position: 3
 slug: /fees
-description: Documentation about network fees on Lisk. This page covers details of the two-component cost system involving L2 execution fees and L1 security fees, and offers insights on fee variations and cost-saving strategies.
+description: Documentation about network fees on Lisk. This page covers details of the two-component cost system involving L2 execution fees and L1 data fees, and offers insights on fee variations and cost-saving strategies.
 keywords:
   [
     Lisk fees,
@@ -11,6 +11,7 @@ keywords:
     Lisk network fees,
     L2 execution fee,
     L1 security fee,
+    L1 data fee,
     transaction costs,
     gas fees,
     fee calculation,
@@ -28,27 +29,32 @@ The low transaction fees can be provided because Lisk is a [Layer 2 optimistic r
 
 ## How are fees on Lisk calculated?
 
-Every Lisk Mainnet transaction has two costs: An **L2 execution fee** and an **L1 security fee**.
+Every Lisk Mainnet transaction has two costs: An **L2 execution fee** and an **L1 data fee**.
 At a high level, the L2 fee is the cost to execute your transaction in L2 and the L1 fee is the estimated cost to publish your transaction on L1 (in a rollup batch).
 
-- **L1 Security Fee/L1 Data Fee**: is charged as `transaction_gas_price_l1 * gas_used * l1_fee_scalar`.
-It is deducted automatically from the user's ETH balance on Lisk Mainnet.
-It is based on three factors that are multiplied together:
-    - The gas price for processing the transaction on L1.
-    - The gas used on L1 to publish the transaction. This is based on the transaction length, as well as the byte value (whether it is zero or a different value) for each byte.
-    <!-- TODO: Add link to GasPriceOracle contract -->
-    - The L1 fee scalar at the time of writing this is **1**.
-    You can see the current value in the `GasPriceOracle` contract.
-    Take the value provided by the contract and divide it by a million.
-- **L2 Execution Fee**: is charged as `transaction_gas_price_l2 * gas_used`.
-The `transaction_gas_price_l2` is composed of two components: a `base fee` and a `priority fee` because Lisk is [EIP 1559](https://eips.ethereum.org/EIPS/eip-1559) compliant (although with [different parameter values](https://docs.optimism.io/chain/differences#eip-1559-parameters) compared to Ethereum).
-Similarly to the L1 gas price, the L2 gas price can increase and decrease depending on how many transactions are being submitted to the L2.
+- **L2 Execution Fee**: 
+A transaction's execution gas fee is exactly the same fee that you would pay for the same transaction on Ethereum.
+This fee is equal to the amount of gas used by the transaction multiplied by the gas price attached to the transaction.
+Like Ethereum, Lisk Mainnet uses the [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) mechanism to set the [base fee](https://ethereum.org/en/developers/docs/gas/#base-fee) for transactions (although with [different parameter values](https://docs.optimism.io/chain/differences#eip-1559-parameters) compared to Ethereum).
+The total price per unit gas that a transaction pays is the sum of the [base fee](https://ethereum.org/en/developers/docs/gas/#base-fee) and the optional additional [priority fee](https://ethereum.org/en/developers/docs/gas/#priority-fee).
 
-:::tip
+  Because Lisk Mainnet is EVM equivalent, the **gas used** by a transaction on Lisk Mainnet is **exactly the same** as the gas used by the same transaction on Ethereum.
+  If a transaction costs 100,000 gas on Ethereum, it will cost 100,000 gas on Lisk Mainnet.
+  **The only difference is that the gas price on Lisk Mainnet is much lower** than the gas price on Ethereum so you'll end up paying much less in ETH.
+
+  For this component of the fee, you can estimate the total cost of a transaction using the same tools you would use to estimate the cost of a transaction on Ethereum.
+  You can read more about how Ethereum's gas fees work over on [Ethereum.org](https://ethereum.org/en/developers/docs/gas/).
+- **L1 Data Fee**: The L1 Data Fee is automatically charged for any transaction that is included in a Lisk Mainnet block.
+This fee is deducted directly from the address that sent the transaction.
+The exact amount paid depends on the estimated size of the transaction in bytes after compression, the current Ethereum gas price and/or blob gas price, and several small parameters.
+
+  The L1 Data Fee is most heavily influenced by the Ethereum base fee that is continuously and trustlessly relayed from Ethereum to Lisk Mainnet.
+
+:::note
 
 It is currently **not** possible to limit the maximum L1 Data Fee that a transaction is willing to pay.
 
-For more information about transaction fees, please check the [Optimism Developer Docs > Transaction Fees](https://docs.optimism.io/stack/transactions/fees)
+For further information about transaction fees, please check the [Optimism Developer Docs > Transaction Fees](https://docs.optimism.io/stack/transactions/fees)
 
 :::
 
