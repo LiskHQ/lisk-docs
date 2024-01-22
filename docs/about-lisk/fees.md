@@ -30,7 +30,7 @@ The low transaction fees can be provided because Lisk is a [Layer 2 optimistic r
 ## How are fees on Lisk calculated?
 
 Every Lisk Mainnet transaction has two costs: An **L2 execution fee** and an **L1 data fee**.
-At a high level, the L2 fee is the cost to execute your transaction in L2 and the L1 fee is the estimated cost to publish your transaction on L1 (in a rollup batch).
+At a high level, the L2 fee is the cost to execute your transaction on L2 and the L1 fee is the estimated cost to publish your transaction on L1 (in a rollup batch).
 
 - **L2 Execution Fee**: 
 This fee is equal to the amount of gas used by the transaction multiplied by the gas price attached to the transaction.
