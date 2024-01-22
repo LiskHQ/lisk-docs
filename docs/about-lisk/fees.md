@@ -1,6 +1,10 @@
 ---
 title: Fees
+<<<<<<< HEAD
 sidebar_position: 1
+=======
+sidebar_position: 3
+>>>>>>> main
 slug: /fees
 description: Documentation about network fees on Lisk. This page covers details of the two-component cost system involving L2 execution fees and L1 data fees, and offers insights on fee variations and cost-saving strategies.
 keywords:
@@ -21,6 +25,10 @@ keywords:
     Lisk platform,
   ]
 ---
+
+<!-- 
+TODO: Add link to the Lisk gas price tracker similar to https://optimistic.grafana.net/public-dashboards/c84a5a9924fe4e14b270a42a8651ceb8?orgId=1&refresh=5m - once available
+ -->
 
 # Fees
 
