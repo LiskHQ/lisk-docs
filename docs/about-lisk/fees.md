@@ -44,9 +44,14 @@ Like Ethereum, Lisk Mainnet uses the [EIP-1559](https://eips.ethereum.org/EIPS/e
 
   For this component of the fee, you can estimate the total cost of a transaction using the same tools you would use to estimate the cost of a transaction on Ethereum.
   You can read more about how Ethereum's gas fees work over on [Ethereum.org](https://ethereum.org/en/developers/docs/gas/).
-- **L1 Data Fee**: The L1 Data Fee is automatically charged for any transaction that is included in a Lisk Mainnet block.
-This fee is deducted directly from the address that sent the transaction.
-The exact amount paid depends on the estimated size of the transaction in bytes after compression, the current Ethereum gas price and/or blob gas price, and several small parameters.
+- **L1 Data Fee**: 
+The L1 Data Fee is the only part of the Lisk Mainnet transaction fee that differs from the Ethereum transaction fee.
+This fee arises from the fact that the transaction data for all Lisk Mainnet transactions is published to Ethereum.
+This guarantees that the transaction data is available for nodes to download and execute.
+
+  The L1 Data Fee is automatically charged for any transaction that is included in a Lisk Mainnet block.
+  This fee is deducted directly from the address that sent the transaction.
+  The exact amount paid depends on the estimated size of the transaction in bytes after compression, the current Ethereum gas price and/or blob gas price, and several small parameters.
 
   The L1 Data Fee is most heavily influenced by the Ethereum base fee that is continuously and trustlessly relayed from Ethereum to Lisk Mainnet.
 
