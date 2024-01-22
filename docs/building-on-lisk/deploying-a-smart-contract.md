@@ -272,11 +272,11 @@ Message: Already Verified
 
 :::
 
-View your contract on BlockScout, by following the [link](https://lisk-sepolia.blockscout.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D#code) displayed in the output message, to confirm that the contract is verified.
+View your contract on BlockScout, by following the [link](https://sepolia-blockscout.lisk.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D?tab=contract) displayed in the output message, to confirm that the contract is verified.
 
 ## Interacting with the Smart Contract
 
-After [the contract is verified](#verifying-the-smart-contract), you can use the `Read Contract` and `Write Contract` tabs to interact with the [deployed contract](https://lisk-sepolia.blockscout.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D#code) via BlockScout.
+After [the contract is verified](#verifying-the-smart-contract), you can use the `Read Contract` and `Write Contract` tabs to interact with the deployed contract via [BlockScout](https://sepolia-blockscout.lisk.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D?tab=contract).
 You'll need to connect your wallet first, by clicking the `Connect Wallet` button.
 
 ---
