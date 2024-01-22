@@ -33,7 +33,7 @@ Every Lisk Mainnet transaction has two costs: An **L2 execution fee** and an **L
 At a high level, the L2 fee is the cost to execute your transaction on L2 and the L1 fee is the estimated cost to publish your transaction on L1 (in a rollup batch).
 
 - **L2 Execution Fee**: 
-This fee is equal to the amount of gas used by the transaction multiplied by the gas price attached to the transaction.
+This [L2 Execution Fee](https://docs.optimism.io/stack/transactions/fees#execution-gas-fee) is equal to the amount of gas used by the transaction multiplied by the gas price attached to the transaction.
 Like Ethereum, Lisk Mainnet uses the [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) mechanism to set the Base Fee for transactions (although with [different parameter values](https://docs.optimism.io/chain/differences#eip-1559-parameters) compared to Ethereum).
 
   The total price per unit gas that a transaction pays is the sum of the [Base Fee](https://ethereum.org/en/developers/docs/gas/#base-fee) and the optional additional [Priority Fee](https://ethereum.org/en/developers/docs/gas/#priority-fee).
@@ -45,7 +45,7 @@ Like Ethereum, Lisk Mainnet uses the [EIP-1559](https://eips.ethereum.org/EIPS/e
   For this component of the fee, you can estimate the total cost of a transaction using the same tools you would use to estimate the cost of a transaction on Ethereum.
   You can read more about how Ethereum's gas fees work over on [Ethereum.org](https://ethereum.org/en/developers/docs/gas/).
 - **L1 Data Fee**: 
-The L1 Data Fee is the only part of the Lisk Mainnet transaction fee that differs from the Ethereum transaction fee.
+The [L1 Data Fee](https://docs.optimism.io/stack/transactions/fees#l1-data-fee) is the only part of the Lisk Mainnet transaction fee that differs from the Ethereum transaction fee.
 This fee arises from the fact that the transaction data for all Lisk Mainnet transactions is published to Ethereum.
 This guarantees that the transaction data is available for nodes to download and execute.
 
