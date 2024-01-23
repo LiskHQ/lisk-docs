@@ -71,7 +71,7 @@ Optionally, you can decide to share crash reports and usage data with HardHat.
 
 ```
 ✔ What do you want to do? · Create a TypeScript project
-✔ Hardhat project root: · /Users/mona/git/hardhat-test
+✔ Hardhat project root: · /Users/lisk/git/hardhat-test
 ✔ Do you want to add a .gitignore? (Y/n) · y
 ✔ Help us improve Hardhat with anonymous crash reports & basic usage data? (Y/n) · y
 ✔ Do you want to install this sample project's dependencies with npm (@nomicfoundation/hardhat-toolbox)? (Y/n) · y
@@ -156,7 +156,7 @@ contract NFT is ERC721 {
 
     constructor() ERC721("NFT Name", "NFT") {}
 
-    function mint(address recipient) public payable returns (uint256) {
+    function mint(address recipient) public returns (uint256) {
         uint256 newItemId = ++currentTokenId;
         _safeMint(recipient, newItemId);
         return newItemId;
@@ -233,8 +233,8 @@ etherscan: {
         network: "lisk-sepolia",
         chainId: 4202,
         urls: {
-            apiURL: "https://lisk-sepolia.blockscout.com/api",
-            browserURL: "https://lisk-sepolia.blockscout.com/"
+            apiURL: "https://sepolia-blockscout.lisk.com/api",
+            browserURL: "https://sepolia-blockscout.lisk.com"
         }
      }
    ]
@@ -256,7 +256,7 @@ contracts/NFT.sol:NFT at 0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D
 for verification on the block explorer. Waiting for verification result...
 
 Successfully verified contract NFT on the block explorer.
-https://lisk-sepolia.blockscout.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D#code
+https://sepolia-blockscout.lisk.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D#code
 ```
 
 :::info
