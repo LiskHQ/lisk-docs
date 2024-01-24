@@ -24,7 +24,7 @@ keywords: [
 
 ### Node v18+
 
-This guide requires you have Node version 18+ installed.
+This guide requires you to have Node version 18+ installed.
 
 - Download [Node v18+](https://nodejs.org/en/download/)
 
@@ -39,7 +39,8 @@ For this guide, you will be deploying a contract to the Lisk Sepolia Testnet.
 
 You can deposit the required tokens by using the [Lisk Bridge](https://sepolia-bridge.lisk.com/bridge/lisk-sepolia-testnet).
 
-In case your wallet doesn't hold enough `SepoliaETH`, use one of the available faucets for the Ethereum Sepolia Testnet, like [https://sepoliafaucet.com](https://sepoliafaucet.com/) to receive free Testnet ETH.
+In case your wallet doesn't hold enough `SepoliaETH`, use one of the available faucets for the **Ethereum Sepolia** Testnet like [https://sepoliafaucet.com](https://sepoliafaucet.com/) to receive free Testnet ETH.
+Then, use the aforementioned Lisk Bridge to send tokens from the **Ethereum Sepolia Testnet** to the **Lisk Sepolia Testnet**.
 
 ## Creating a project
 Before you can begin deploying smart contracts to Lisk, you need to set up your development environment by creating a Node.js project.
@@ -96,7 +97,7 @@ Once you have `dotenv` installed, create a `.env` file with the following conten
 WALLET_KEY=<YOUR_PRIVATE_KEY>
 ```
 
-Substite `<YOUR_PRIVATE_KEY>` with the private key for your wallet.
+Substitute `<YOUR_PRIVATE_KEY>` with the private key for your wallet.
 
 :::caution
 
@@ -215,30 +216,36 @@ If you're deploying a new or modified contract, you'll need to verify it first.
 
 ## Verifying the Smart Contract
 
-If you want to interact with your contract on the block explorer, you, or someone, needs to verify it first.
+If you want to interact with your contract on the block explorer, you, or someone else needs to verify it first.
 The above contract has already been verified, so you should be able to view your version on a block explorer already.
-For the remainder of this guide, we'll walk through how to verify your contract on Lisk Sepolia testnet.
+For the remainder of this guide, we'll walk through how to verify your contract on the Lisk Sepolia Testnet.
 
 In `hardhat.config.ts`, configure Lisk Sepolia as a custom network.
 Add the following to your `HardhatUserConfig`:
 
 ```ts title="hardhat.config.ts"
 // Hardhat expects etherscan here, even if you're using Blockscout.
-etherscan: {
-   apiKey: {
-    "lisk-sepolia": ""
+const config: HardhatUserConfig = {
+  // Add the following information after the "networks" configuration
+  etherscan: {
+     apiKey: {
+      "lisk-sepolia": ""
+     },
+     customChains: [
+      {
+          network: "lisk-sepolia",
+          chainId: 4202,
+          urls: {
+              apiURL: "https://sepolia-blockscout.lisk.com/api",
+              browserURL: "https://sepolia-blockscout.lisk.com"
+          }
+       }
+     ]
    },
-   customChains: [
-    {
-        network: "lisk-sepolia",
-        chainId: 4202,
-        urls: {
-            apiURL: "https://sepolia-blockscout.lisk.com/api",
-            browserURL: "https://sepolia-blockscout.lisk.com"
-        }
-     }
-   ]
- },
+   sourcify: {
+    enabled: false
+  },
+};
 ```
 
 Now, you can verify your contract.
@@ -262,21 +269,21 @@ https://sepolia-blockscout.lisk.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe
 :::info
 
 You can't re-verify a contract identical to one that has already been verified.
-If you attempt to do so, such as verifying the above contract, you'll get an error similar to:
+If you attempt to do so, such as verifying the above contract, you'll get a message similar to:
 
-```text
-Error in plugin @nomiclabs/hardhat-etherscan: The API responded with an unexpected message.
-Contract verification may have succeeded and should be checked manually.
-Message: Already Verified
+```text                                                                      
+The contract 0x5B814018c5a002895d0292365cC5a90f1f2d4dCb has already been verified on Etherscan.
+https://sepolia-blockscout.lisk.com/address/0x5B814018c5a002895d0292365cC5a90f1f2d4dCb#code
 ```
 
 :::
 
-View your contract on BlockScout, by following the [link](https://sepolia-blockscout.lisk.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D?tab=contract) displayed in the output message, to confirm that the contract is verified.
+View your contract on BlockScout, by following the [link to the deployed contract](https://sepolia-blockscout.lisk.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D?tab=contract) displayed in the previous steps output message.
+The block explorer will confirm that the contract is verified and allow you to [interact](#interacting-with-the-smart-contract) with it.
 
 ## Interacting with the Smart Contract
 
 After [the contract is verified](#verifying-the-smart-contract), you can use the `Read Contract` and `Write Contract` tabs to interact with the deployed contract via [BlockScout](https://sepolia-blockscout.lisk.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D?tab=contract).
-You'll need to connect your wallet first, by clicking the `Connect Wallet` button.
+You'll also need to connect your wallet first, by clicking the `Connect Wallet` button.
 
 ---
