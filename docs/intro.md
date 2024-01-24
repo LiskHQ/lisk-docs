@@ -25,11 +25,10 @@ keywords:
 # Introduction to Lisk
 
 Lisk provides a cost-efficient, fast, and scalable Layer 2 (L2) network that is secured by Ethereum.
-Lisk is based on [Optimism's L2 rollup](https://docs.optimism.io/), and it is already contributing to [Optimism's Super chain's philosophy](https://docs.optimism.io/stack/explainer).
+Built on the [OP Stack](https://docs.optimism.io/), Lisk contributes to scaling Ethereum to a level where blockchain infrastructure is ready for mass adoption.
 
 With Optimism's Super chain initiative, Lisk is participating in building the future it always believed in, which is an interoperable, seamless base layer that provides a great user experience, shared liquidity, and cheap transactions to ensure that web3 revolutionizes peoples' lives just as web2 did.
 
-### Why Lisk L2? and Who is it for?
 
 With [Gelato](https://www.gelato.network/) as a professional Rollup-as-a-Service provider and the battle-tested [OP stack](https://docs.optimism.io/stack/getting-started), we operate a highly reliable [EVM-equivalent](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306) blockchain compatible with the most widely used tooling in the blockchain space thereby creating a great platform for developers.
 By being part of the Superchain: Lisk offers a network of chains that share bridging, decentralized governance, regular upgrades, a communication layer, and more—all built on the OP Stack, and secured by Ethereum.
@@ -48,7 +47,7 @@ For more information, see [Optimism's roll-up protocol](https://docs.optimism.io
 
 Any L2 based on Optimism is designed so that users can send arbitrary messages between smart contracts on L2 (OP Mainnet, OP Sepolia, etc.) and the underlying L1 (Ethereum mainnet, Sepolia, etc.). This makes it possible to transfer ETH or tokens, including ERC20 tokens, between the two networks.
 
-Lisk is an Optimism stack chain and it is designed to be EVM equivalent, however, there are a few differences between [Ethereum and Optimism stack chains](https://docs.optimism.io/stack/differences), which developers should be aware of.
+Lisk is an Optimism stack chain and it is designed to be [EVM equivalent](https://web.archive.org/web/20231127160757/https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), however, there are a few differences between [Ethereum and Optimism stack chains](https://docs.optimism.io/stack/differences), which developers should be aware of.
 
 ## Contributors
 As a long-standing Web3 infrastructure project, Lisk has been democratizing blockchain accessibility for developers and end users globally since 2016.
