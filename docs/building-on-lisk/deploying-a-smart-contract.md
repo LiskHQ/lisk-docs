@@ -224,12 +224,13 @@ In `hardhat.config.ts`, configure Lisk Sepolia as a custom network.
 Add the following to your `HardhatUserConfig`:
 
 ```ts title="hardhat.config.ts"
-// Hardhat expects etherscan here, even if you're using Blockscout.
+// Add the following information after the "networks" configuration of the HardhatUserConfig
 const config: HardhatUserConfig = {
-  // Add the following information after the "networks" configuration
+  // Hardhat expects etherscan here, even if you're using Blockscout.
   etherscan: {
+    // Use "123" as placeholder, because Blockscout doesn't need a real API key, and hardhat will complain if this property isn't set.
      apiKey: {
-      "lisk-sepolia": ""
+      "lisk-sepolia": "123"
      },
      customChains: [
       {
