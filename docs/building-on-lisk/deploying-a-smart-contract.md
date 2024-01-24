@@ -285,5 +285,3 @@ The block explorer will confirm that the contract is verified and allow you to [
 
 After [the contract is verified](#verifying-the-smart-contract), you can use the `Read Contract` and `Write Contract` tabs to interact with the deployed contract via [BlockScout](https://sepolia-blockscout.lisk.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D?tab=contract).
 You'll also need to connect your wallet first, by clicking the `Connect Wallet` button.
-
----
