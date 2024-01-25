@@ -27,7 +27,7 @@ This command generates static content into the `build` directory and can be serv
 
 === Deployment
 
-The following command will automatically [build](#build) the docs, and push them to the `gh-pages` branch.
+The following command will automatically <<build>> the docs, and push them to the `gh-pages` branch.
 Changes to this branch are automatically deployed under https://liskhq.github.io/lisk-documentation/
 
 Using SSH:
