@@ -39,7 +39,7 @@ Such measures will ensure that decisions like using distributed sequencers, prop
 
 Furthermore, Optimism's mainnet continuously keeps it in sync with the Ethereum L1 to ensure the security and validity of its network.
 This means that apart from the measures taken to secure the Superchain and Optimism's mainnet, the L1 security of Ethereum is also available to users interacting with Lisk L2.
-For more information, see [Optimism's roll-up protocol](https://docs.optimism.io/stack/protocol/overview) and the [How it ensures Fault Proof?](https://docs.optimism.io/stack/protocol/overview#fault-proofs)
+For more information, see [Optimism's roll-up protocol](https://docs.optimism.io/stack/protocol/overview) and the [How it ensures Fault Proof?](https://docs.optimism.io/stack/protocol/overview#fault-proofs) section.
 
 ## Connection to Ethereum
 
