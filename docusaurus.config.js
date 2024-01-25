@@ -69,7 +69,7 @@ const config = {
     ({
       docs: {
         sidebar: {
-          autoCollapseCategories: true,
+          hideable: true,
         },
       },
       // Replace with your project's social card
