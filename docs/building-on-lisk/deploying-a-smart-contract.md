@@ -209,6 +209,7 @@ Finally, run:
 npx hardhat run scripts/deploy.ts --network lisk-sepolia
 ```
 
+<!-- TODO: Add link to the block explorer section -->
 The contract will be deployed on the Lisk Sepolia Testnet.
 You can view the deployment status and contract by using a block explorer and searching for the address returned by your deploy script.
 
