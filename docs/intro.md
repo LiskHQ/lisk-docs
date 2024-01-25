@@ -44,7 +44,7 @@ For more information, see [Optimism's roll-up protocol](https://docs.optimism.io
 ## Connection to Ethereum
 
 Any L2 based on Optimism is designed so that users can send arbitrary messages between smart contracts on L2 (Lisk Mainnet, Lisk Sepolia, etc.) and the underlying L1 (Ethereum mainnet, Sepolia, etc.). This makes it possible to transfer ETH or tokens such as ERC20, ERC721 tokens, etc. between the two networks.
-For more information on the tokens available on Optimism see, [Optimism Tokens](https://cryptorank.io/blockchains/optimism).
+For more information on the tokens available on Lisk see, [Optimism Tokens](https://cryptorank.io/blockchains/optimism).
 
 Lisk is an Optimism stack chain and it is designed to be [EVM equivalent](https://web.archive.org/web/20231127160757/https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), however, there are a few differences between [Ethereum and Optimism stack chains](https://docs.optimism.io/stack/differences), which developers should be aware of.
 
