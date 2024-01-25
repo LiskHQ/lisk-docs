@@ -51,7 +51,7 @@ To create a new Node.js project, run:
 npm init --y
 ```
 
-Next, you will need to install Hardhat and create a new Hardhat project.
+Next, you will need to install [Hardhat](https://hardhat.org/tutorial) and create a new Hardhat project.
 
 To install Hardhat, run:
 
@@ -274,8 +274,8 @@ You can't re-verify a contract identical to one that has already been verified.
 If you attempt to do so, such as verifying the above contract, you'll get a message similar to:
 
 ```text                                                                      
-The contract 0x5B814018c5a002895d0292365cC5a90f1f2d4dCb has already been verified on Etherscan.
-https://sepolia-blockscout.lisk.com/address/0x5B814018c5a002895d0292365cC5a90f1f2d4dCb#code
+The contract 0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D has already been verified on Etherscan.
+https://sepolia-blockscout.lisk.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D#code
 ```
 
 :::
