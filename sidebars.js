@@ -40,7 +40,7 @@ const sidebars = {
       link: {
         type: 'generated-index',
         title: 'Building on Lisk',
-        description: 'A short introduction to Lisk.',
+        description: 'Guides for developers to start building dApps on Lisk L2',
         slug: '/category/building-on-lisk',
         keywords: ['guides'],
       },
