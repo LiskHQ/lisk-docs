@@ -1,5 +1,5 @@
 ---
-title: How to deploy a smart contract (Hardhat)
+title: Deploying a smart contract on Hardhat
 slug: /building-on-lisk/deploying-a-smart-contract
 description: "A guide on deploying a smart contract on the Lisk test network using Hardhat. Includes instructions for setting up the environment, compiling, and deploying the smart contract."
 keywords: [
@@ -19,7 +19,7 @@ keywords: [
     ]
 ---
 
-# How to deploy a smart contract (Hardhat)
+# Deploying a smart contract on Hardhat
 ## Prerequisites
 
 ### Node v18+
