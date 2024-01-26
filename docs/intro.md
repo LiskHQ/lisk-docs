@@ -24,27 +24,31 @@ keywords:
 
 # Introduction to Lisk
 
-Lisk provides a cost-efficient, fast, and scalable Layer 2 (L2) network based on Optimism that is secured by Ethereum.
-Built on the MIT-Licensed [OP Stack](https://docs.optimism.io/) and partnered with [Gelato](https://www.gelato.network/) as a RaaS provider, Lisk contributes to scaling Ethereum to a level where blockchain infrastructure is ready for mass adoption.
+Lisk provides a cost-efficient, fast, and scalable Layer 2 (L2) network based on [Optimism](https://docs.optimism.io/) (OP) that is secured by Ethereum.
+Built on the MIT-Licensed [OP Stack](https://docs.optimism.io/stack/getting-started) and partnered with [Gelato](https://www.gelato.network/) as a RaaS provider, Lisk contributes to scaling Ethereum to a level where blockchain infrastructure is ready for mass adoption.
 
-With [Optimism's Super chain](https://docs.optimism.io/stack/explainer) initiative, Lisk is participating in building the future it always believed in, which is an interoperable, seamless base layer that provides a great user experience, shared liquidity, and cheap transactions to ensure that web3 revolutionizes peoples' lives just as web2 did.
-Lisk is among the initial members joining Optimism's Superchain initiative, and the Lisk L2 will be scaled and built by the experienced Lisk and Optimism teams.
+With [OP's Super chain](https://docs.optimism.io/stack/explainer) initiative, Lisk is participating in building the future it always believed in, which is to develop an interoperable, seamless base layer that provides a great user experience, shared liquidity, and cheap transactions to ensure that **web3** revolutionizes peoples' lives just as **web2** did.
+Lisk is among the initial members joining OP's Superchain initiative, and the Lisk L2 will be scaled and built by the experienced Lisk and OP teams.
 By being part of the Superchain: Lisk offers a network of chains that share bridging, decentralized governance, regular upgrades, a communication layer, and more—all built on the OP Stack, and secured by Ethereum.
 
 We operate a highly reliable [EVM-equivalent](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306) blockchain compatible with the most widely used tooling in the blockchain space thereby creating a great platform for developers.
+For more information, see the [Building on Lisk](category/building-on-lisk) section.
 
 ## How secure is Lisk L2?
 
-Lisk L2 is part of the [Optimism collective](https://community.optimism.io/docs/governance/) and Optimism is seeking to establish a [Security Council](https://optimism.help/Token+House+Governance/Security+Council/Intro+to+Optimism's+Security+Council), for distributed governance, and equal participation of all OP stack chains to the super chain.
+At the moment, it's important to understand that the security of Lisk Mainnet is dependent on a [multisig wallet](https://www.coindesk.com/tech/2020/11/10/multisignature-wallets-can-keep-your-coins-safer-if-you-use-them-right/) managed by several anonymous individuals.
+This multisig wallet can be used to upgrade core Lisk Mainnet smart contracts without upgrade delays.
+However, Lisk L2 is part of the [Optimism collective](https://community.optimism.io/docs/governance/) and OP is seeking to establish a [Security Council](https://optimism.help/Token+House+Governance/Security+Council/Intro+to+Optimism's+Security+Council), for distributed governance, and equal participation of all OP stack chains to the super chain.
 Such measures will ensure that decisions like using distributed sequencers, proposers, challengers, etc. can be made unanimously with the agreement of all the members of the Super chain and the Security Council.
 
 Furthermore, Lisk's mainnet continuously keeps it in sync with the Ethereum L1 to ensure the security and validity of its network.
 This means that apart from the measures taken to secure the Superchain and Lisk's mainnet, the L1 security of Ethereum is also available to users interacting with Lisk L2.
-For more information, see [Optimism's roll-up protocol](https://docs.optimism.io/stack/protocol/overview) and the [How it ensures Fault Proof?](https://docs.optimism.io/stack/protocol/overview#fault-proofs) section.
+For more information, see [OP's roll-up protocol](https://docs.optimism.io/stack/protocol/overview) and the [How it ensures Fault Proof?](https://docs.optimism.io/stack/protocol/overview#fault-proofs) section.
 
 ## Connection to Ethereum
 
-Any L2 based on Optimism is designed so that users can send arbitrary messages between smart contracts on L2 (Lisk Mainnet, Lisk Sepolia, etc.) and the underlying L1 (Ethereum mainnet, Sepolia, etc.). This makes it possible to transfer ETH or tokens such as ERC20, ERC721 tokens, etc. between the two networks.
-For more information on the tokens available on Lisk see, [Optimism Tokens](https://cryptorank.io/blockchains/optimism).
+Any L2 based on OP is designed so that users can send arbitrary messages between smart contracts on L2 (Lisk Mainnet, Lisk Sepolia, etc.) and the underlying L1 (Ethereum mainnet, Sepolia, etc.). This makes it possible to transfer ETH or tokens such as ERC20, ERC721 tokens, etc. between the two networks.
+For more information on the tokens available on Lisk see [Optimism Tokens](https://cryptorank.io/blockchains/optimism).
 
-Lisk is an Optimism stack chain and it is designed to be [EVM equivalent](https://web.archive.org/web/20231127160757/https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), however, there are a few differences between [Ethereum and Optimism stack chains](https://docs.optimism.io/stack/differences), which developers should be aware of.
+:::info
+Lisk is an OP stack chain and it is designed to be [EVM equivalent](https://web.archive.org/web/20231127160757/https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), however, there are a few differences between [Ethereum and OP stack chains](https://docs.optimism.io/stack/differences), which developers should be aware of.

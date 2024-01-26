@@ -37,6 +37,13 @@ const sidebars = {
       items: [
         'building-on-lisk/connecting-to-a-wallet',
       ],
+      link: {
+        type: 'generated-index',
+        title: 'Building on Lisk',
+        description: 'A short introduction to Lisk.',
+        slug: '/category/building-on-lisk',
+        keywords: ['guides'],
+      },
     },
   ],
 
