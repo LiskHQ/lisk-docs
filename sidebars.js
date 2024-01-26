@@ -26,6 +26,7 @@ const sidebars = {
       collapsed: false,
       items: [
         'intro',
+        'about-lisk/network-info',
         'about-lisk/fees'
       ],
     },
