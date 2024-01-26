@@ -36,6 +36,7 @@ const sidebars = {
       collapsed: false,
       items: [
         'building-on-lisk/connecting-to-a-wallet',
+        'building-on-lisk/deploying-a-smart-contract',
       ],
     },
   ],
