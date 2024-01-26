@@ -36,7 +36,7 @@ For more information, see the [Building on Lisk](category/building-on-lisk) sect
 
 ## How secure is Lisk L2?
 
-At the moment, it's important to understand that the security of Lisk Mainnet is dependent on a [multisig wallet](https://www.coindesk.com/tech/2020/11/10/multisignature-wallets-can-keep-your-coins-safer-if-you-use-them-right/) managed by several anonymous individuals.
+At the moment, the security of Lisk Mainnet is dependent on a [multisig wallet](https://www.coindesk.com/tech/2020/11/10/multisignature-wallets-can-keep-your-coins-safer-if-you-use-them-right/) managed by several anonymous individuals.
 This multisig wallet can be used to upgrade core Lisk Mainnet smart contracts without upgrade delays.
 However, Lisk L2 is part of the [Optimism collective](https://community.optimism.io/docs/governance/) and OP is seeking to establish a [Security Council](https://optimism.help/Token+House+Governance/Security+Council/Intro+to+Optimism's+Security+Council), for distributed governance, and equal participation of all OP stack chains to the super chain.
 Such measures will ensure that decisions like using distributed sequencers, proposers, challengers, etc. can be made unanimously with the agreement of all the members of the Super chain and the Security Council.
