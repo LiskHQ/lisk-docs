@@ -1,48 +1,54 @@
 ---
+title: Introduction to Lisk
 slug: /
 sidebar_position: 1
+description: A brief introduction about Lisk L2, its basis, connection to Ethereum and its main contributors
+keywords:
+  [
+    Lisk L2,
+    cost-efficient,
+    scalable,
+    secured by Ethereum,
+    Optimism's L2 rollup,
+    Optimism's Super chain,
+    interoperable,
+    great user experience,
+    shared liquidity,
+    Gelato,
+    cost-saving,
+    transaction timing,
+    fee variations,
+    Lisk platform,
+  ]
 ---
 
-# Tutorial Intro
+# Introduction to Lisk
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Lisk provides a cost-efficient, fast, and scalable Layer 2 (L2) network based on [Optimism](https://docs.optimism.io/) (OP) that is secured by Ethereum.
+Built on the MIT-Licensed [OP Stack](https://docs.optimism.io/stack/getting-started) and partnered with [Gelato](https://www.gelato.network/) as a RaaS provider, Lisk contributes to scaling Ethereum to a level where blockchain infrastructure is ready for mass adoption.
 
-## Getting Started
+With [OP's Super chain](https://docs.optimism.io/stack/explainer) initiative, Lisk is participating in building the future it always believed in, which is to develop an interoperable, seamless base layer that provides a great user experience, shared liquidity, and cheap transactions to ensure that **web3** revolutionizes peoples' lives just as **web2** did.
+Lisk is among the initial members joining OP's Superchain initiative, and the Lisk L2 will be scaled and built by the experienced Lisk and OP teams.
+By being part of the Superchain: Lisk offers a network of chains that share bridging, decentralized governance, regular upgrades, a communication layer, and more—all built on the OP Stack, and secured by Ethereum.
 
-Get started by **creating a new site**.
+We operate a highly reliable [EVM-equivalent](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306) blockchain compatible with the most widely used tooling in the blockchain space thereby creating a great platform for developers.
+For more information, see the [Building on Lisk](category/building-on-lisk) section.
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+## How secure is Lisk L2?
 
-### What you'll need
+At the moment, the security of Lisk Mainnet is dependent on a [multisig wallet](https://www.coindesk.com/tech/2020/11/10/multisignature-wallets-can-keep-your-coins-safer-if-you-use-them-right/) managed by several anonymous individuals.
+This multisig wallet can be used to upgrade core Lisk Mainnet smart contracts without upgrade delays.
+However, Lisk L2 is part of the [Optimism collective](https://community.optimism.io/docs/governance/) and OP is seeking to establish a [Security Council](https://optimism.help/Token+House+Governance/Security+Council/Intro+to+Optimism's+Security+Council), for distributed governance, and equal participation of all OP stack chains to the super chain.
+Such measures will ensure that decisions like using distributed sequencers, proposers, challengers, etc. can be made unanimously with the agreement of all the members of the Super chain and the Security Council.
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+Lisk's mainnet continuously keeps it in sync with the Ethereum L1 to ensure the security and validity of its network.
+For more information, see [OP's roll-up protocol](https://docs.optimism.io/stack/protocol/overview) and the [How it ensures Fault Proof?](https://docs.optimism.io/stack/protocol/overview#fault-proofs) section.
+This means that apart from the measures taken to secure the Superchain and Lisk's mainnet, the L1 security of Ethereum is also available to users interacting with Lisk L2.
 
-## Generate a new site
+## Connection to Ethereum
 
-Generate a new Docusaurus site using the **classic template**.
+Any L2 based on OP is designed so that users can send arbitrary messages between smart contracts on L2 (Lisk Mainnet, Lisk Sepolia, etc.) and the underlying L1 (Ethereum mainnet, Sepolia, etc.). This makes it possible to transfer ETH or tokens such as ERC20, ERC721 tokens, etc. between the two networks.
+For more information on the tokens available on Lisk see [Optimism Tokens](https://cryptorank.io/blockchains/optimism).
 
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+:::info
+Lisk is an OP stack chain and it is designed to be [EVM equivalent](https://web.archive.org/web/20231127160757/https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), however, there are a few differences between [Ethereum and OP stack chains](https://docs.optimism.io/stack/differences), which developers should be aware of.
