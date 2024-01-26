@@ -25,7 +25,6 @@ keywords:
 <!-- 
 TODO: Add link to the Lisk gas price tracker similar to https://optimistic.grafana.net/public-dashboards/c84a5a9924fe4e14b270a42a8651ceb8?orgId=1&refresh=5m - once available
  -->
-
 # Fees
 
 Fees on Lisk Mainnet are, for the most part, significantly lower than on the L1 Ethereum network.

@@ -142,6 +142,7 @@ const config = {
       prism: {
         theme: prismThemes.oneLight,
         darkTheme: prismThemes.palenight,
+        additionalLanguages: ['solidity'],
       },
       colorMode: {
         defaultMode: 'light',
