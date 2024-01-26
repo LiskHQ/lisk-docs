@@ -19,6 +19,9 @@ description: 'Network information, official explorers, and faucets available for
 #   ]
 ---
 
+# Network information, official explorers & faucets
+
+## Network info
 
 | Name            | Value                                                                       |
 | :-------------- | :-------------------------------------------------------------------------- |
@@ -27,3 +30,12 @@ description: 'Network information, official explorers, and faucets available for
 | Chain ID        | 4202                                                                        |
 | Currency Symbol | ETH                                                                         |
 | Block Explorer  | [https://sepolia-blockscout.lisk.com](https://sepolia-blockscout.lisk.com/) |
+
+## Supported block explorers
+- [Blockscout](https://sepolia-blockscout.lisk.com/)
+
+## Faucets
+
+- [Sepolia Testnet Faucet](https://sepoliafaucet.com)
+
+For more information about funding a wallet, see
