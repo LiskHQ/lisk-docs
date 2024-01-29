@@ -24,10 +24,19 @@
   height: 60px;
 }
 
-.navbar__item {
+/* .navbar__item {
   margin-top: .199%;
   font-weight: 650;
+  width: 10em;
+} */
+
+.navbar__item .navbar_link {
+  width: min-content;
 }
+
+/* .navbar_link {
+  width: fit-content;
+} */
 
 .navbar__logo img {
   height: 87%;
@@ -44,6 +53,7 @@
 
 .op-light {
   display: block;
+  /* margin-left: 50%; */
 }
 
 html[data-theme='light'] .op-dark {
@@ -52,6 +62,21 @@ html[data-theme='light'] .op-dark {
 
 .op-dark {
   display: block;
+  /* margin-left: 50%; */
+}
+
+.git-light {
+  display: block;
+  /* margin-left: 80%; */
+}
+
+html[data-theme='light'] .git-dark {
+  display: none;
+}
+
+.git-dark {
+  display: block;
+  /* margin-left: 80%; */
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -66,15 +91,15 @@ html[data-theme='light'] .op-dark {
   --ifm-code-font-size: 95%;
 }
 
-/* html[data-theme='dark'] .lisk-light {
-  display: none;
-} */
-
 html[data-theme='dark'] {
   --ifm-background-color: #0C152E;
   --ifm-background-surface-color: #0C152E;
   --docusaurus-highlighted-code-line-bg: #050915;
   --ifm-footer-background-color: #0C152E;
+
+  .git-light {
+    display: none;
+  }
 
   .op-light {
     display: none;

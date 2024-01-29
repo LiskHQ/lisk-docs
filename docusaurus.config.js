@@ -87,19 +87,29 @@ const config = {
             label: 'Documentation',
           },
           /*{to: '/blog', label: 'Blog', position: 'left'},*/
+          // {
+          //   href: 'https://github.com/LiskHQ',
+          //   html: `
+          //   <img src="img/github-mark-white.svg" width="10%" class="git-dark" />
+          //   <img src="img/github-mark.svg" width="10%"  class="git-light" />
+          // `,
+          //   position: 'left',
+          // },
           {
             href: 'https://stack.optimism.io',
 
             html: `
-              <img src="img/op_stack_dark.svg" width="170" class="op-dark" />
-              <img src="img/op_stack.svg" width="170" class="op-light" />
+              <img src="img/op_stack_dark.svg" width="70%" class="op-dark" />
+              <img src="img/op_stack.svg" width="70%" class="op-light" />
             `,
             position: 'right',
           },
           {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
-
+            href: 'https://github.com/LiskHQ',
+            html: `
+            <img src="img/github-mark-white.svg" width="25%" class="git-dark" />
+            <img src="img/github-mark.svg" width="25%"  class="git-light" />
+          `,
             position: 'right',
           },
         ],
