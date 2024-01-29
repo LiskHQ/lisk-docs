@@ -19,7 +19,7 @@ keywords: [
     ]
 ---
 
-# Deploying a smart contract on Hardhat
+# Deploying a smart contract with Hardhat
 ## Prerequisites
 
 ### Node v18+
