@@ -39,9 +39,11 @@ The Lisk L2 is available on the following network:
 To bridge **Lisk Sepolia Testnet** with **Ethereum Sepolia Testnet**, use the following bridge to [Connect to a Wallet](connecting-to-a-wallet) and transfer ETH across the aforementioned networks.
 :::
 
-#### Faucets
+
+<!-- TODO: Update once Lisk Testnet Faucet is available. -->
+<!-- #### Faucets
 To seed a Sepolia Testnet account, use the following Sepolia Testnet faucet.
 
 - [Sepolia Testnet Faucet](https://sepoliafaucet.com)
 
-For more information about funding a wallet, see the [Wallet funds](building-on-lisk/deploying-a-smart-contract#wallet-funds) section.
+For more information about funding a wallet, see the [Wallet funds](building-on-lisk/deploying-a-smart-contract#wallet-funds) section. -->
