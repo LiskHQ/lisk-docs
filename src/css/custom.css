@@ -17,6 +17,13 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
+.navbar {
+  border-bottom: 1px solid var(--ifm-toc-border-color);
+  display: flex;
+  align-items: center;
+  height: 60px;
+}
+
 .navbar__item {
   margin-top: .199%;
   font-weight: 650;
@@ -35,6 +42,18 @@
   margin-top: 6%;
 }
 
+.op-light {
+  display: block;
+}
+
+html[data-theme='light'] .op-dark {
+  display: none;
+}
+
+.op-dark {
+  display: block;
+}
+
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
   --ifm-color-primary: #3074fc;
@@ -47,11 +66,19 @@
   --ifm-code-font-size: 95%;
 }
 
+/* html[data-theme='dark'] .lisk-light {
+  display: none;
+} */
+
 html[data-theme='dark'] {
   --ifm-background-color: #0C152E;
   --ifm-background-surface-color: #0C152E;
   --docusaurus-highlighted-code-line-bg: #050915;
   --ifm-footer-background-color: #0C152E;
+
+  .op-light {
+    display: none;
+  }
 
   .theme-admonition-tip {
     background-color: rgb(0, 148, 0, .175)

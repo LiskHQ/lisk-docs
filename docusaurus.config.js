@@ -86,12 +86,22 @@ const config = {
             position: 'left',
             label: 'Documentation',
           },
-          /*{to: '/blog', label: 'Blog', position: 'left'},
+          /*{to: '/blog', label: 'Blog', position: 'left'},*/
+          {
+            href: 'https://stack.optimism.io',
+
+            html: `
+              <img src="img/op_stack_dark.svg" width="170" class="op-dark" />
+              <img src="img/op_stack.svg" width="170" class="op-light" />
+            `,
+            position: 'right',
+          },
           {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',
+
             position: 'right',
-          },*/
+          },
         ],
       },
       footer: {
@@ -109,18 +119,14 @@ const config = {
           {
             title: 'Community',
             items: [
-              /* {
-                 label: 'Stack Overflow',
-                 href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-               },
-               {
-                 label: 'Discord',
-                 href: 'https://discordapp.com/invite/docusaurus',
-               },
-               {
-                 label: 'Twitter',
-                 href: 'https://twitter.com/docusaurus',
-               },*/
+              {
+                label: 'Discord',
+                href: 'https://discord.com/invite/7EKWJ7b',
+              },
+              {
+                label: 'Twitter',
+                href: 'https://twitter.com/LiskHQ',
+              },
             ],
           },
           {
@@ -129,11 +135,11 @@ const config = {
               /*{
                  label: 'Blog',
                  to: '/blog',
-               },
-               {
-                 label: 'GitHub',
-                 href: 'https://github.com/facebook/docusaurus',
                },*/
+              {
+                label: 'GitHub',
+                href: 'https://github.com/LiskHQ',
+              },
             ],
           },
         ],
