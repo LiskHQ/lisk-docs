@@ -35,11 +35,22 @@ The low transaction fees can be provided because Lisk is a [Layer 2 optimistic r
 Every Lisk Mainnet transaction has two costs: An **L2 execution fee** and an **L1 data fee**.
 At a high level, the L2 fee is the cost to execute your transaction on L2 and the L1 fee is the estimated cost to publish your transaction on L1 (in a rollup batch).
 
+```text
+transaction_fee = l2_execution_fee + l1_data_fee
+```
+
 - **L2 Execution Fee**: 
-This [L2 Execution Fee](https://docs.optimism.io/stack/transactions/fees#execution-gas-fee) is equal to the amount of gas used by the transaction multiplied by the gas price attached to the transaction.
+The [L2 Execution Fee](https://docs.optimism.io/stack/transactions/fees#execution-gas-fee) is equal to the amount of gas used by the transaction multiplied by the gas price attached to the transaction.
 Like Ethereum, Lisk Mainnet uses the [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) mechanism to set the Base Fee for transactions (although with [different parameter values](https://docs.optimism.io/chain/differences#eip-1559-parameters) compared to Ethereum).
+   ```
+   l2_execution_fee = transaction_gas_price * l2_gas_used
+   ```
 
   The total price per unit gas that a transaction pays is the sum of the [Base Fee](https://ethereum.org/en/developers/docs/gas/#base-fee) and the optional additional [Priority Fee](https://ethereum.org/en/developers/docs/gas/#priority-fee).
+
+  ```
+  transaction_gas_price = l2_base_fee + l2_priority_fee
+  ```
 
   Because Lisk Mainnet is EVM equivalent, the **gas used** by a transaction on Lisk Mainnet is **exactly the same** as the gas used by the same transaction on Ethereum.
   If a transaction costs 100,000 gas on Ethereum, it will cost 100,000 gas on Lisk Mainnet.
@@ -84,5 +95,6 @@ For an L2 transaction, the normal process is:
 
 After step 3, the finality of the transaction is Lisk's responsibility.
 If the L1 gas price spikes, Lisk pays the new cost.
-Also, the cost of L1 gas could increase between steps 1 and 3, it is only updated every five minutes and it does not change by more than 25%.
-So at most, the user will pay 25% more than expected.
+Also, the cost of L1 gas could increase between steps 1 and 3, it is only updated every five minutes and it does not change by more than 12.5%.
+So at most, the user will pay 12.5% more than expected.
+See the [Optimism Docs > Transaction Fees](https://docs.optimism.io/stack/transactions/fees#mechanism) for more information.
