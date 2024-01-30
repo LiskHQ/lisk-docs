@@ -99,16 +99,16 @@ const config = {
             href: 'https://stack.optimism.io',
 
             html: `
-              <img src="img/op_stack_dark.svg" width="70%" class="op-dark" />
-              <img src="img/op_stack.svg" width="70%" class="op-light" />
+              <img src="img/op_stack_dark.svg" class="op-dark" />
+              <img src="img/op_stack.svg" class="op-light" />
             `,
             position: 'right',
           },
           {
             href: 'https://github.com/LiskHQ',
             html: `
-            <img src="img/github-mark-white.svg" width="25%" class="git-dark" />
-            <img src="img/github-mark.svg" width="25%"  class="git-light" />
+            <img src="img/github-mark-white.svg" class="git-dark" />
+            <img src="img/github-mark.svg" class="git-light" />
           `,
             position: 'right',
           },
