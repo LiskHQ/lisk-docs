@@ -50,4 +50,4 @@ Any L2 based on OP is designed so that users can send arbitrary messages between
 For more information on the tokens available on Lisk see [Optimism Tokens](https://cryptorank.io/blockchains/optimism).
 
 :::info
-Lisk is an OP stack chain and it is designed to be [EVM equivalent](https://web.archive.org/web/20231127160757/https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306), however, there are a few differences between [Ethereum and OP stack chains](https://docs.optimism.io/stack/differences), which developers should be aware of.
+Lisk is an OP stack chain and is designed to be [EVM equivalent](https://web.archive.org/web/20231127160757/https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306). However, there are a few differences between [Ethereum and OP stack chains](https://docs.optimism.io/stack/differences), which developers should be aware of.
