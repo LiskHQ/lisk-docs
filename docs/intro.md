@@ -36,7 +36,7 @@ For more information, see the [Building on Lisk](category/building-on-lisk) sect
 
 ## How secure is Lisk L2?
 Lisk's mainnet continuously keeps it in sync with the Ethereum L1 to ensure the security and validity of its network.
-For more information, see [OP's rollup protocol](https://docs.optimism.io/stack/protocol/overview) and its [Fault Proof?](https://docs.optimism.io/stack/protocol/overview#fault-proofs) section.
+For more information, see [OP's rollup protocol](https://docs.optimism.io/stack/protocol/overview) and its [Fault Proof](https://docs.optimism.io/stack/protocol/overview#fault-proofs) section.
 This means that apart from the measures taken to secure the Superchain and Lisk's mainnet, the L1 security of Ethereum is also available to users interacting with Lisk L2.
 
 At the moment, the security of Lisk Mainnet is dependent on a [multisig wallet](https://www.coindesk.com/tech/2020/11/10/multisignature-wallets-can-keep-your-coins-safer-if-you-use-them-right/) managed by several anonymous individuals.
