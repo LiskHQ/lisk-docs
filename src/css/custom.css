@@ -83,7 +83,7 @@ html[data-theme='dark'] .op-light {
 
 .discord-light {
   width: 2.1em;
-  margin-right: 1em;
+  margin-right: .4em;
   margin-top: .22em;
 }
 
@@ -93,7 +93,7 @@ html[data-theme='light'] .discord-dark {
 
 .discord-dark {
   width: 2.1em;
-  margin-right: 1em;
+  margin-right: .4em;
   margin-top: .22em;
 }
 
