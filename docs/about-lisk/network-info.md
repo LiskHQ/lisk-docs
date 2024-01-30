@@ -36,7 +36,7 @@ The Lisk L2 is available on the following network:
 
 
 
-<!-- TODO: Update once Lisk Testnet Faucet is available. -->
+<!-- TODO: Update once Lisk Testnet Faucet is available and include the faucet info in the table as well, once it is available.-->
 <!-- #### Faucets
 To seed a Sepolia Testnet account, use the following Sepolia Testnet faucet.
 
