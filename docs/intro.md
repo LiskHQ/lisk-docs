@@ -27,22 +27,22 @@ keywords:
 Lisk provides a cost-efficient, fast, and scalable Layer 2 (L2) network based on [Optimism](https://docs.optimism.io/) (OP) that is secured by Ethereum.
 Built on the MIT-Licensed [OP Stack](https://docs.optimism.io/stack/getting-started) and partnered with [Gelato](https://www.gelato.network/) as a RaaS provider, Lisk contributes to scaling Ethereum to a level where blockchain infrastructure is ready for mass adoption.
 
-With [OP's Super chain](https://docs.optimism.io/stack/explainer) initiative, Lisk is participating in building the future it always believed in, which is to develop an interoperable, seamless base layer that provides a great user experience, shared liquidity, and cheap transactions to ensure that **web3** revolutionizes peoples' lives just as **web2** did.
+With [OP's Superchain](https://docs.optimism.io/stack/explainer) initiative, Lisk is participating in building the future it always believed in, which is to develop an interoperable, seamless base layer that provides a great user experience, shared liquidity, and cheap transactions to ensure that **web3** revolutionizes peoples' lives just as **web2** did.
 Lisk is among the initial members joining OP's Superchain initiative, and the Lisk L2 will be scaled and built by the experienced Lisk and OP teams.
-By being part of the Superchain: Lisk offers a network of chains that share bridging, decentralized governance, regular upgrades, a communication layer, and more—all built on the OP Stack, and secured by Ethereum.
+By being part of the Superchain, Lisk offers a network of chains that share bridging, decentralized governance, regular upgrades, a communication layer, and more—all built on the OP Stack while being secured by Ethereum.
 
 We operate a highly reliable [EVM-equivalent](https://medium.com/ethereum-optimism/introducing-evm-equivalence-5c2021deb306) blockchain compatible with the most widely used tooling in the blockchain space thereby creating a great platform for developers.
 For more information, see the [Building on Lisk](category/building-on-lisk) section.
 
 ## How secure is Lisk L2?
 Lisk's mainnet continuously keeps it in sync with the Ethereum L1 to ensure the security and validity of its network.
-For more information, see [OP's roll-up protocol](https://docs.optimism.io/stack/protocol/overview) and its [Fault Proof?](https://docs.optimism.io/stack/protocol/overview#fault-proofs) section.
+For more information, see [OP's rollup protocol](https://docs.optimism.io/stack/protocol/overview) and its [Fault Proof?](https://docs.optimism.io/stack/protocol/overview#fault-proofs) section.
 This means that apart from the measures taken to secure the Superchain and Lisk's mainnet, the L1 security of Ethereum is also available to users interacting with Lisk L2.
 
 At the moment, the security of Lisk Mainnet is dependent on a [multisig wallet](https://www.coindesk.com/tech/2020/11/10/multisignature-wallets-can-keep-your-coins-safer-if-you-use-them-right/) managed by several anonymous individuals.
 This multisig wallet can be used to upgrade core Lisk Mainnet smart contracts without upgrade delays.
-However, Lisk L2 is part of the [Optimism collective](https://community.optimism.io/docs/governance/) and OP is seeking to establish a [Security Council](https://optimism.help/Token+House+Governance/Security+Council/Intro+to+Optimism's+Security+Council), for distributed governance, and equal participation of all OP stack chains to the super chain.
-Such measures will ensure that decisions like using distributed sequencers, proposers, challengers, etc. can be made unanimously with the agreement of all the members of the Super chain and the Security Council.
+However, Lisk L2 is part of the [Optimism collective](https://community.optimism.io/docs/governance/) and OP is seeking to establish a [Security Council](https://optimism.help/Token+House+Governance/Security+Council/Intro+to+Optimism's+Security+Council), for distributed governance, and equal participation of all OP-stack chains to the superchain.
+Such measures will ensure that decisions like using distributed sequencers, proposers, challengers, etc. can be made unanimously with the agreement of all the members of the Superchain and the Security Council.
 
 ## Connection to Ethereum
 
