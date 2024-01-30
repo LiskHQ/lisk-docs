@@ -15,11 +15,6 @@
   --ifm-color-primary-lightest: #89b0fd;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-
-}
-
-.navbar {
-  border-bottom: 1px solid var(--ifm-toc-border-color);
 }
 
 .navbar__item {
@@ -48,11 +43,6 @@ html[data-theme='light'] .op-dark {
   display: none;
 }
 
-.op-dark {
-  width: 11em;
-  display: block;
-}
-
 .git-light {
   width: 1.75em;
   display: block;
@@ -65,6 +55,19 @@ html[data-theme='light'] .git-dark {
 .git-dark {
   width: 1.75em;
   display: block;
+}
+
+html[data-theme='dark'] .git-light {
+  display: none;
+}
+
+.op-dark {
+  width: 11em;
+  display: block;
+}
+
+html[data-theme='dark'] .op-light {
+  display: none;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -84,14 +87,6 @@ html[data-theme='dark'] {
   --ifm-background-surface-color: #0C152E;
   --docusaurus-highlighted-code-line-bg: #050915;
   --ifm-footer-background-color: #0C152E;
-
-  .git-light {
-    display: none;
-  }
-
-  .op-light {
-    display: none;
-  }
 
   .theme-admonition-tip {
     background-color: rgb(0, 148, 0, .175)
