@@ -34,10 +34,6 @@ The Lisk L2 is available on the following network:
 | Lisk Testnet Bridge| https://sepolia-bridge.lisk.com/bridge/lisk-sepolia-testnet 
 
 
-:::info
-
-To bridge **Lisk Sepolia Testnet** with **Ethereum Sepolia Testnet**, use the following bridge to [Connect to a Wallet](connecting-to-a-wallet) and transfer ETH across the aforementioned networks.
-:::
 
 
 <!-- TODO: Update once Lisk Testnet Faucet is available. -->
