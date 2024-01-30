@@ -35,9 +35,9 @@ We operate a highly reliable [EVM-equivalent](https://medium.com/ethereum-optimi
 For more information, see the [Building on Lisk](category/building-on-lisk) section.
 
 ## How secure is Lisk L2?
-Lisk's mainnet continuously keeps it in sync with the Ethereum L1 to ensure the security and validity of its network.
+Lisk's Mainnet keeps it in sync with the Ethereum L1 after regular intervals to ensure the security and validity of its network.
 For more information, see [OP's rollup protocol](https://docs.optimism.io/stack/protocol/overview) and its [Fault Proof](https://docs.optimism.io/stack/protocol/overview#fault-proofs) section.
-This means that apart from the measures taken to secure the Superchain and Lisk's mainnet, the L1 security of Ethereum is also available to users interacting with Lisk L2.
+This means that apart from the measures taken to secure the Superchain and Lisk's Mainnet, the L1 security of Ethereum is also available to users interacting with Lisk L2.
 
 At the moment, the security of Lisk Mainnet is dependent on a [multisig wallet](https://www.coindesk.com/tech/2020/11/10/multisignature-wallets-can-keep-your-coins-safer-if-you-use-them-right/) managed by several anonymous individuals.
 This multisig wallet can be used to upgrade core Lisk Mainnet smart contracts without upgrade delays.
@@ -46,7 +46,7 @@ Such measures will ensure that decisions like using distributed sequencers, prop
 
 ## Connection to Ethereum
 
-Any L2 based on OP is designed so that users can send arbitrary messages between smart contracts on L2 (Lisk Mainnet, Lisk Sepolia, etc.) and the underlying L1 (Ethereum mainnet, Sepolia, etc.). This makes it possible to transfer ETH or tokens such as ERC20, ERC721 tokens, etc. between the two networks.
+Any L2 based on OP is designed so that users can send arbitrary messages between smart contracts on L2 (Lisk Mainnet, Lisk Sepolia, etc.) and the underlying L1 (Ethereum Mainnet, Sepolia, etc.). This makes it possible to transfer ETH or tokens such as ERC20, ERC721 tokens, etc. between the two networks.
 For more information on the tokens available on Lisk see [Optimism Tokens](https://cryptorank.io/blockchains/optimism).
 
 :::info
