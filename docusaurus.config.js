@@ -131,17 +131,16 @@ const config = {
             items: [
               {
                 html: `
+                <div class="image-row">
                     <a href="https://lisk.chat" target="_blank" aria-label="Discord">
-                    <img src="img/icon-discord-white.svg" class="git-dark" />
-                    <img src="img/icon-discord.svg" class="git-light" />
+                      <img src="img/icon-discord-white.svg" class="discord-dark" />
+                      <img src="img/icon-discord.svg" class="discord-light" />
                     </a>
-                  `,
-              },
-              {
-                html: `
+                    <p></p>
                     <a href="https://twitter.com/LiskHQ" target="_blank" aria-label="Twitter">
-                    <img src="img/twitter-x-white.svg" class="x-dark" />
+                      <img src="img/twitter-x-white.svg" class="x-dark" />
                     </a>
+                </div>
                   `,
               },
             ],
@@ -157,18 +156,10 @@ const config = {
                     </a>
                   `,
               },
-
               /*{
                  label: 'Blog',
                  to: '/blog',
                },*/
-              // {
-              //   href: 'https://github.com/LiskHQ',
-              //   html: `
-              //   <img src="img/github-mark-white.svg" class="git-dark" />
-              //   <img src="img/github-mark.svg" class="git-light" />
-              // `,
-              // },
             ],
           },
         ],

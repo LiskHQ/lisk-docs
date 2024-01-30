@@ -75,12 +75,37 @@ html[data-theme='dark'] .op-light {
 }
 
 .x-dark {
-  width: 4em;
-  margin-left: -.75em;
+  width: 3.2em;
+  margin-left: -.2em;
+  margin-top: -.1em;
   display: inline-block;
-  padding: 0%;
 }
 
+.discord-light {
+  width: 2.1em;
+  margin-right: 1em;
+  margin-top: .22em;
+}
+
+html[data-theme='light'] .discord-dark {
+  display: none;
+}
+
+.discord-dark {
+  width: 2.1em;
+  margin-right: 1em;
+  margin-top: .22em;
+}
+
+html[data-theme='dark'] .discord-light {
+  display: none;
+}
+
+.image-row {
+  display: flex;
+  width: fit-content;
+  justify-content: space-around;
+}
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
