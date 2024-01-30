@@ -26,6 +26,10 @@
   width: 5em;
 }
 
+a {
+  display: inline-block;
+}
+
 .padding-bottom--lg {
   margin-bottom: 3% !important;
 }
@@ -69,6 +73,14 @@ html[data-theme='dark'] .git-light {
 html[data-theme='dark'] .op-light {
   display: none;
 }
+
+.x-dark {
+  width: 4em;
+  margin-left: -.75em;
+  display: inline-block;
+  padding: 0%;
+}
+
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {

@@ -121,7 +121,7 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Documentation',
+                label: 'Lisk Documentation',
                 to: '/',
               },
             ],
@@ -130,30 +130,49 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Discord',
-                href: 'https://discord.com/invite/7EKWJ7b',
+                html: `
+                    <a href="https://discord.com/invite/7EKWJ7b" target="_blank" aria-label="Discord">
+                    <img src="img/icon-discord-white.svg" class="git-dark" />
+                    <img src="img/icon-discord.svg" class="git-light" />
+                    </a>
+                  `,
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/LiskHQ',
+                html: `
+                    <a href="https://twitter.com/LiskHQ" target="_blank" aria-label="Twitter">
+                    <img src="img/twitter-x-white.svg" class="x-dark" />
+                    </a>
+                  `,
               },
             ],
           },
           {
             title: 'More',
             items: [
+              {
+                html: `
+                    <a href="https://github.com/LiskHQ" target="_blank" aria-label="GitHub" >
+                    <img src="img/github-mark-white.svg" class="git-dark" />
+                    <img src="img/github-mark.svg" class="git-light" />
+                    </a>
+                  `,
+              },
+
               /*{
                  label: 'Blog',
                  to: '/blog',
                },*/
-              {
-                label: 'GitHub',
-                href: 'https://github.com/LiskHQ',
-              },
+              // {
+              //   href: 'https://github.com/LiskHQ',
+              //   html: `
+              //   <img src="img/github-mark-white.svg" class="git-dark" />
+              //   <img src="img/github-mark.svg" class="git-light" />
+              // `,
+              // },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Lisk.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Onchain Foundation.`,
       },
       prism: {
         theme: prismThemes.oneLight,
