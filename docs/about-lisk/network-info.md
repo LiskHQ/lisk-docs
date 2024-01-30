@@ -31,7 +31,7 @@ The Lisk L2 is available on the following network:
 | Chain ID        | 4202                                                                        |
 | Currency Symbol | ETH                                                                         |
 | Block Explorer  | https://sepolia-blockscout.lisk.com/                                        |
-| Lisk Testnet Bridge| https://sepolia-bridge.lisk.com/bridge/lisk-sepolia-testnet 
+| Lisk Testnet Bridge| https://sepolia-bridge.lisk.com
 
 
 
