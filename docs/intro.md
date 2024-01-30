@@ -25,7 +25,7 @@ keywords:
 # Introduction to Lisk
 
 Lisk provides a cost-efficient, fast, and scalable Layer 2 (L2) network based on [Optimism](https://docs.optimism.io/) (OP) that is secured by Ethereum.
-Built on the MIT-Licensed [OP Stack](https://docs.optimism.io/stack/getting-started) and partnered with [Gelato](https://www.gelato.network/) as a RaaS provider, Lisk contributes to scaling Ethereum to a level where blockchain infrastructure is ready for mass adoption.
+Built on the MIT-licensed [OP Stack](https://docs.optimism.io/stack/getting-started) and partnered with [Gelato](https://www.gelato.network/) as a RaaS provider, Lisk contributes to scaling Ethereum to a level where blockchain infrastructure is ready for mass adoption.
 
 With [OP's Superchain](https://docs.optimism.io/stack/explainer) initiative, Lisk is participating in building the future it always believed in, which is to develop an interoperable, seamless base layer that provides a great user experience, shared liquidity, and cheap transactions to ensure that **web3** revolutionizes peoples' lives just as **web2** did.
 Lisk is among the initial members joining OP's Superchain initiative, and the Lisk L2 will be scaled and built by the experienced Lisk and OP teams.
