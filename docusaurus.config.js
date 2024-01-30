@@ -131,7 +131,7 @@ const config = {
             items: [
               {
                 html: `
-                    <a href="https://discord.com/invite/7EKWJ7b" target="_blank" aria-label="Discord">
+                    <a href="https://lisk.chat" target="_blank" aria-label="Discord">
                     <img src="img/icon-discord-white.svg" class="git-dark" />
                     <img src="img/icon-discord.svg" class="git-light" />
                     </a>
