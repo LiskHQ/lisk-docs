@@ -87,12 +87,32 @@ const config = {
             position: 'left',
             label: 'Documentation',
           },
-          /*{to: '/blog', label: 'Blog', position: 'left'},
+          /*{to: '/blog', label: 'Blog', position: 'left'},*/
+          // {
+          //   href: 'https://github.com/LiskHQ',
+          //   html: `
+          //   <img src="img/github-mark-white.svg" width="10%" class="git-dark" />
+          //   <img src="img/github-mark.svg" width="10%"  class="git-light" />
+          // `,
+          //   position: 'left',
+          // },
           {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
+            href: 'https://stack.optimism.io',
+
+            html: `
+              <img src="img/op_stack_dark.svg" class="op-dark" />
+              <img src="img/op_stack.svg" class="op-light" />
+            `,
             position: 'right',
-          },*/
+          },
+          {
+            href: 'https://github.com/LiskHQ',
+            html: `
+            <img src="img/github-mark-white.svg" class="git-dark" />
+            <img src="img/github-mark.svg" class="git-light" />
+          `,
+            position: 'right',
+          },
         ],
       },
       footer: {
@@ -102,7 +122,7 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Documentation',
+                label: 'Lisk Documentation',
                 to: '/',
               },
             ],
@@ -110,35 +130,41 @@ const config = {
           {
             title: 'Community',
             items: [
-              /* {
-                 label: 'Stack Overflow',
-                 href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-               },
-               {
-                 label: 'Discord',
-                 href: 'https://discordapp.com/invite/docusaurus',
-               },
-               {
-                 label: 'Twitter',
-                 href: 'https://twitter.com/docusaurus',
-               },*/
+              {
+                html: `
+                <div class="image-row">
+                    <a href="https://lisk.chat" target="_blank" aria-label="Discord">
+                      <img src="img/icon-discord-white.svg" class="discord-dark" />
+                      <img src="img/icon-discord.svg" class="discord-light" />
+                    </a>
+                    <p></p>
+                    <a href="https://twitter.com/LiskHQ" target="_blank" aria-label="Twitter">
+                      <img src="img/twitter-x-white.svg" class="x-dark" />
+                    </a>
+                </div>
+                  `,
+              },
             ],
           },
           {
             title: 'More',
             items: [
+              {
+                html: `
+                    <a href="https://github.com/LiskHQ" target="_blank" aria-label="GitHub" >
+                    <img src="img/github-mark-white.svg" class="git-dark" />
+                    <img src="img/github-mark.svg" class="git-light" />
+                    </a>
+                  `,
+              },
               /*{
                  label: 'Blog',
                  to: '/blog',
-               },
-               {
-                 label: 'GitHub',
-                 href: 'https://github.com/facebook/docusaurus',
                },*/
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Lisk.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Onchain Foundation.`,
       },
       prism: {
         theme: prismThemes.oneLight,

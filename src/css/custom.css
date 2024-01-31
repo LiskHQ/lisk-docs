@@ -18,13 +18,16 @@
 }
 
 .navbar__item {
-  margin-top: .199%;
-  font-weight: 650;
+  font-weight: var(--ifm-font-weight-bold);
 }
 
 .navbar__logo img {
-  height: 87%;
-  width: 87%;
+  margin-top: -5.5%;
+  width: 5em;
+}
+
+a {
+  display: inline-block;
 }
 
 .padding-bottom--lg {
@@ -33,6 +36,75 @@
 
 .pagination-nav {
   margin-top: 6%;
+}
+
+.op-light {
+  width: 11em;
+  display: block;
+}
+
+html[data-theme='light'] .op-dark {
+  display: none;
+}
+
+.git-light {
+  width: 1.75em;
+  display: block;
+}
+
+html[data-theme='light'] .git-dark {
+  display: none;
+}
+
+.git-dark {
+  width: 1.75em;
+  display: block;
+}
+
+html[data-theme='dark'] .git-light {
+  display: none;
+}
+
+.op-dark {
+  width: 11em;
+  display: block;
+}
+
+html[data-theme='dark'] .op-light {
+  display: none;
+}
+
+.x-dark {
+  width: 3.2em;
+  margin-left: -.2em;
+  margin-top: -.1em;
+  display: inline-block;
+}
+
+.discord-light {
+  width: 2.1em;
+  margin-right: .4em;
+  margin-top: .22em;
+}
+
+html[data-theme='light'] .discord-dark {
+  display: none;
+}
+
+.discord-dark {
+  width: 2.1em;
+  margin-right: .4em;
+  margin-top: .22em;
+}
+
+html[data-theme='dark'] .discord-light {
+  display: none;
+}
+
+.image-row {
+  display: flex;
+  width: fit-content;
+  justify-content: space-around;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
