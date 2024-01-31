@@ -8,10 +8,10 @@ assignees: ''
 
 ### Description
 
-Please describe what functionality is needed
+Please describe what functionality is needed.
 
 ### Motivation
 
-Please describe why it is needed
+Please describe why it is needed.
 
 ### Additional Information

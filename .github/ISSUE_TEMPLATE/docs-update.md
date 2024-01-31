@@ -8,10 +8,10 @@ assignees: ''
 
 ### Description
 
-Please describe what documentation updates are needed
+Please describe what documentation updates are needed.
 
 ### Location
 
-Please describe where the content should be added / updated
+Please describe where the content should be added/updated.
 
 ### Additional Information
