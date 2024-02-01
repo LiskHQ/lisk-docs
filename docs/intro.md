@@ -46,7 +46,7 @@ Such measures will ensure that decisions like using distributed sequencers, prop
 
 ## Connection to Ethereum
 
-Any L2 based on Optimism is designed so that users can send arbitrary messages between smart contracts on L2 (Lisk Mainnet, Lisk Sepolia, etc.) and the underlying L1 (Ethereum Mainnet, Sepolia, etc.). This makes it possible to transfer ETH or tokens such as ERC20, ERC721 tokens, etc. between the two networks.
+Any L2 based on OP Stack is designed so that users can send arbitrary messages between smart contracts on L2 (Lisk Mainnet, Lisk Sepolia, etc.) and the underlying L1 (Ethereum Mainnet, Sepolia, etc.). This makes it possible to transfer ETH or tokens such as ERC20, ERC721 tokens, etc. between the two networks.
 For more information on the tokens available on Lisk see [Optimism Tokens](https://cryptorank.io/blockchains/optimism).
 
 :::info
