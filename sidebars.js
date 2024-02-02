@@ -38,6 +38,13 @@ const sidebars = {
         'building-on-lisk/connecting-to-a-wallet',
         'building-on-lisk/deploying-a-smart-contract',
       ],
+      link: {
+        type: 'generated-index',
+        title: 'Building on Lisk',
+        description: 'Guides for developers to start building dApps on Lisk L2.',
+        slug: '/category/building-on-lisk',
+        keywords: ['guides'],
+      },
     },
   ],
 
