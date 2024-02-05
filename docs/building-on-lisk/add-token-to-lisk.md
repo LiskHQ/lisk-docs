@@ -22,7 +22,7 @@ Lisk uses [Optimism's Superchain token list](https://github.com/ethereum-optimis
 
 :::warning
 
-Tokens approved in the GitHub repository are not necessarily listed on the Lisk Bridge.
+Tokens approved in the GitHub repository are not necessarily listed on the [Lisk Bridge](https://sepolia-bridge.lisk.com).
 
 **Disclaimer:** Lisk does not endorse any of the tokens that are listed in the [**ethereum-optimism.github.io**](https://github.com/ethereum-optimism/ethereum-optimism.github.io) repository and rely on the preliminary checks put in place, which include the [**automated checks**](https://github.com/ethereum-optimism/ethereum-optimism.github.io?tab=readme-ov-file#automated-checks) listed on the repository.
 :::
@@ -34,7 +34,7 @@ To add your token to the Lisk Token list, perform the following steps.
 
 ### Step 1: Deploy your token on Lisk
 
-Use the recommended framework provided by Lisk's [Standard Bridge](network-info#lisk-sepolia-testnet) to deploy an ERC-20 contract for your token on Lisk.
+Use the recommended framework provided by Lisk's [Standard Bridge](https://sepolia-bridge.lisk.com) to deploy an ERC-20 contract for your token on Lisk.
 You can deploy contracts, and your token(s) using the [OptimismMintableERC20Factory](contracts).
 
 ### Step 2: Submit details of your token
