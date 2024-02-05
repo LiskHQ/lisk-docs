@@ -30,7 +30,7 @@ The Lisk L2 is available on the following network:
 | **WS RPC Endpoint** | [wss://ws.sepolia-api.lisk.com](wss://ws.sepolia-api.lisk.com)              |
 | **Chain ID** | 4202                                                                        |
 | **Currency Symbol** | ETH                                                                         |
-| **Block Explorer** | https://sepolia-blockscout.lisk.com/                                        |
+| **Block Explorer** | https://sepolia-blockscout.lisk.com                                        |
 | **Lisk Testnet Bridge** | https://sepolia-bridge.lisk.com                                             |
 | **Lisk Testnet Faucet** | https://app.optimism.io/faucet                                              |
 
