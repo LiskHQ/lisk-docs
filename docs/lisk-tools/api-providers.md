@@ -24,15 +24,23 @@ keywords:
 
 # API Providers
 
+## API reference
+
+- [Ethereum API](https://ethereum.github.io/execution-apis/api-documentation/)
+- [Geth RPC](https://geth.ethereum.org/docs/interacting-with-geth/rpc)
+
+
 ## Lisk RPC
-|               | Lisk Mainnet                      | Lisk Testnet              |
+
+Free, rate limited RPC endpoints for the Lisk networks.
+
+
+|               | Lisk Mainnet                      | Lisk Sepolia Testnet      |
 | :------       | :------                           | :-----------------------  |
 |**HTTP RPC**   | https://rpc.sepolia-api.lisk.com  | https://rpc.api.lisk.com  |
 |**WS RPC**     | `wss://ws.sepolia-api.lisk.com`   | `wss://ws.api.lisk.com`   |
 
-[Ethereum API](https://ethereum.github.io/execution-apis/api-documentation/)
-[Geth RPC](https://geth.ethereum.org/docs/interacting-with-geth/rpc)
 
-## DRPC
+## dRPC
 
 [https://drpc.org/public-endpoints/lisk](https://drpc.org/public-endpoints/lisk)
