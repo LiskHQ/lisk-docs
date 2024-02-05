@@ -5,45 +5,49 @@ slug: /add-token-to-lisk
 description: 'Guide to adding external ERC-20 contracts deployed on Ethereum to Lisk network.'
 keywords:
   [
-    'network information',
+    'ERC-20 contract',
     'Lisk Testnet',
     'Sepolia',
-    'faucet',
-    'block explorer',
+    'Ethereum',
+    'Lisk Mainnet',
+    'Optimism Superchain token list',
   ]
 toc_max_heading_level: 4
 ---
 
 
 # The Lisk Token List
-
-This page is intended for token issuers who already have an ERC-20 contract deployed on Ethereum and would like to submit their token for bridging between Ethereum and Lisk and Lisk Mainnet to Lisk Bridge and other bridges. Lisk uses the [Optimism Superchain token list](https://github.com/ethereum-optimism/ethereum-optimism.github.io/blob/master/optimism.tokenlist.json) as a reference for tokens that have been deployed on Lisk.
+It is possible to submit an ERC-20 contract for bridging with Lisk which has already been deployed on Ethereum.
+Lisk uses [Optimism's Superchain token list](https://github.com/ethereum-optimism/ethereum-optimism.github.io/blob/master/optimism.tokenlist.json) as a reference for tokens that have been deployed on Lisk.
 
 :::warning
 
-Tokens approved in the Github repository are not necessarily listed on the Lisk Bridge.
+Tokens approved in the GitHub repository are not necessarily listed on the Lisk Bridge.
 
-**Disclaimer:** Lisk does not endorse any of the tokens that are listed in the Github repository and has conducted only preliminary checks, which includes automated checks listed on the [**ethereum-optimism.github.io**](https://github.com/ethereum-optimism/ethereum-optimism.github.io) repository.
+**Disclaimer:** Lisk does not endorse any of the tokens that are listed in the [**ethereum-optimism.github.io**](https://github.com/ethereum-optimism/ethereum-optimism.github.io) repository and rely on the preliminary checks put in place, which include the [**automated checks**](https://github.com/ethereum-optimism/ethereum-optimism.github.io?tab=readme-ov-file#automated-checks) listed on the repository.
 :::
 ---
 
 ## Adding your token to the list
 
-The steps below explain how to get your token on the Lisk Token List.
+To add your token to the Lisk Token list, perform the following steps.
 
 ### Step 1: Deploy your token on Lisk
 
-Select your preferred bridging framework and use it to deploy an ERC-20 for your token on Lisk. We recommend you use the framework provided by Lisk's [Standard bridge](network-info#lisk-sepolia-testnet) contracts, and furthermore deploy your token using the [OptimismMintableERC20Factory](contracts). Deploying your token on Lisk in this manner provides us with guarantees that will smooth the approval process. If you choose a different bridging framework, its interface must be compatible with that of the standard bridge, otherwise it may be difficult for us to support.
+Use the recommended framework provided by Lisk's [Standard Bridge](network-info#lisk-sepolia-testnet) to deploy an ERC-20 contract for your token on Lisk.
+You can deploy contracts, and your token(s) using the [OptimismMintableERC20Factory](contracts).
 
-### Step 2: Submit details for your token
+### Step 2: Submit details of your token
 
-Follow the instructions in the [GitHub repository](https://github.com/ethereum-optimism/ethereum-optimism.github.io) and submit a PR containing the required details for your token. You must specify in your token's `data.json` file a section for `lisk-sepolia` and/or `lisk` . The change you need to submit is particularly simple if your token has already been added to the Optimism token list. For example, [this PR](https://github.com/ethereum-optimism/ethereum-optimism.github.io/commit/27ab9b2d3388f7feba3a152e0a0748c73d732a68) shows the change required for cbETH, which was already on Optimism's token list and relies on the Lisk standard bridge.
+Follow the instructions in the [ethereum-optimism.github.io repository's README](https://github.com/ethereum-optimism/ethereum-optimism.github.io?tab=readme-ov-file#superchain-token-list) and submit a pull request containing the required details for your token.
+You must specify a section for `lisk-sepolia` and/or `lisk` in your token's `data.json` file.
+For more information, check out the currently active [pull requests](https://github.com/ethereum-optimism/ethereum-optimism.github.io/pulls) for adding an ERC-20 token to the Lisk network.
 
 ### Step 3: Await final approval
 
-Tokens approved in the Github repository are not necessarily listed on the Lisk Bridge and are not guaranteed or automatic. Lisk Bridge reviews are conducted manually by the Lisk team. For more information, please visit our [Discord](https://lisk.chat/).
-
-
+Tokens approved in the GitHub repository are not necessarily listed on the Lisk Bridge and are not guaranteed or automatic.
+Lisk Bridge reviews are conducted manually by the Lisk team.
+For more information, please visit our [Discord](https://lisk.chat/).
 
 :::tip
 To learn more about bridging various types of ERC-20 tokens to the Lisk Network, see the following guides:
