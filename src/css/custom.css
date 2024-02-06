@@ -13,29 +13,11 @@
   --ifm-color-primary-light: #4e88fc;
   --ifm-color-primary-lighter: #5c92fd;
   --ifm-color-primary-lightest: #89b0fd;
-  --gray60: 91, 97, 110;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  --interactable-border-radius: 16px;
-  --spacing-1: 8px;
-  --ifm-global-spacing: var(--spacing-1) !important;
-  --line: rgba(var(--gray60), 0.2);
-  --doc-sidebar-width: 300px;
-  --interactable-pressed-background: rgba(30, 31, 32, 1);
-  --primary: rgb(var(--ifm-color-primary-darkest));
-  --foreground-muted: rgb(var(--gray60));
-  --spacing-0: 0px;
-  --spacing-0\.5: 4px;
-  --spacing-1: 8px;
-  --spacing-2: 16px;
-  --line: rgba(var(--gray60), 0.2);
-  --ifm-toc-border-color: var(--line) !important;
-  --caption-font-size: 13px;
-  --caption-line-height: 16px;
-  --caption-font-weight: 600;
-  --body-font-size: 16px;
-  --body-line-height: 24px;
-  --body-font-weight: 400;
+}
+
+.menu {
+  overflow-x: unset;
+  padding: 0 !important;
 }
 
 .navbar__item {
