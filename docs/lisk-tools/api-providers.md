@@ -27,10 +27,7 @@ keywords:
 Lisk nodes expose an RPC API that allows other parties to interact with the blockchain by invoking requests.
 
 If you're just getting started and need an RPC URL, you can use our [free endpoints](#Lisk-RPC).
-
 If you're looking to strenghten your app and avoid rate-limiting for your users, please check out our available RPC node providers like [dRPC](#dRPC).
-
-Hardware requirements
 
 ## API reference
 
