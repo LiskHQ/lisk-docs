@@ -27,7 +27,7 @@ The [Lisk Sepolia Bridge](https://sepolia-bridge.lisk.com) allows you to bridge 
 How to deposit funds from Ethereum Sepolia to Lisk Sepolia:
 
 1. Visit the [Lisk Bridge](https://sepolia-bridge.lisk.com) and make sure you are on the `Deposit` tab.
-2. Connect your wallet by clicking `Connect wallet`.
+2. Connect your wallet by clicking `Connect Wallet`.
 3. Switch your network to Ethereum Sepolia in your wallet.
 4. Choose the amount of ETH you'd like to deposit.
 5. Press `Bridge funds` and wait for the transaction to go through.
@@ -42,11 +42,11 @@ After initiating your withdrawal, a 7-day [challenge period](https://docs.optimi
 :::
 
 1. Visit the [Lisk Bridge](https://sepolia-bridge.lisk.com) and switch to the `Withdraw` tab.
-2. Connect your wallet by clicking `Connect wallet`.
+2. Connect your wallet by clicking `Connect Wallet`.
 3. Switch your network to Lisk Sepolia in your wallet.
 4. Choose the amount of ETH you'd like to withdraw.
 5. Press `Bridge funds` and wait for the transaction to go through.
-6. Wait after the challenge period passed to claim the funds and complete the withdrawal.
+6. Wait until the challenge period passes to claim the funds and complete the withdrawal.
 
 :::tip
 
