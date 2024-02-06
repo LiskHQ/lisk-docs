@@ -37,15 +37,7 @@ const sidebars = {
       collapsed: false,
       items: [
         'building-on-lisk/connecting-to-a-wallet',
-        {
-          type: 'category',
-          label: 'Deploying asmart contract',
-          collapsible: true,
-          collapsed: true,
-          items: [
-            'building-on-lisk/deploying-a-smart-contract',
-          ],
-        },
+        'building-on-lisk/deploying-a-smart-contract',
       ],
       link: {
         type: 'generated-index',
