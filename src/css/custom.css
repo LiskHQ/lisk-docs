@@ -127,6 +127,7 @@ html[data-theme='dark'] {
   --ifm-background-surface-color: #0C152E;
   --docusaurus-highlighted-code-line-bg: #050915;
   --ifm-footer-background-color: #0C152E;
+}
 
   .theme-admonition-tip {
     background-color: rgb(0, 148, 0, .175)
@@ -151,4 +152,3 @@ html[data-theme='dark'] {
   .footer {
     box-shadow: 1px 1px 1px 1px white;
   }
-}
