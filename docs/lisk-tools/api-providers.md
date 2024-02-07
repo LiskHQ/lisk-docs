@@ -49,7 +49,7 @@ Free, rate limited RPC endpoints for the Lisk networks.
 
 ## dRPC
 
-[dRPC](https://drpc.org/) is a decentralized Web3 infrastructure provider with focus on resilience and latency.
+[dRPC](https://drpc.org/) is a decentralized Web3 infrastructure provider with a focus on resilience and latency.
 dRPC offers access to a distributed network of public nodes for Lisk.
 They provide a free tier that allows for an unlimited amount of requests over public nodes, or a paid tier that provides access to all providers, as well as other additional features.
 
