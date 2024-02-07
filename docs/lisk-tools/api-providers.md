@@ -19,6 +19,8 @@ keywords:
     developer tools,
     API,
     Web3 infrastructure,
+    dRPC,
+    Sepolia,
   ]
 ---
 
@@ -26,8 +28,8 @@ keywords:
 
 Lisk nodes expose an RPC API that allows other parties to interact with the blockchain by invoking requests.
 
-If you're just getting started and need an RPC URL, you can use our [free endpoints](#Lisk-RPC).
-If you're looking to strenghten your app and avoid rate-limiting for your users, please check out our available RPC node providers like [dRPC](#dRPC).
+If you're just getting started and need an RPC URL, you can use our [free endpoints](#lisk-rpc).
+If you're looking to strengthen your app and avoid rate-limiting for your users, please check out our available RPC node providers like [dRPC](#drpc).
 
 ## API reference
 
@@ -49,6 +51,6 @@ Free, rate limited RPC endpoints for the Lisk networks.
 
 [dRPC](https://drpc.org/) is a decentralized Web3 infrastructure provider with focus on resilience and latency.
 dRPC offers access to a distributed network of public nodes for Lisk.
-They provide a free tier that allows for an unlimited amount of requests over public nodes, or a paid tier which provides access to all providers, as well as other additional features.
+They provide a free tier that allows for an unlimited amount of requests over public nodes, or a paid tier that provides access to all providers, as well as other additional features.
 
-Check the available endpoints for Lisk directly under [https://drpc.org/public-endpoints/lisk](https://drpc.org/public-endpoints/lisk)
+Check the available endpoints for Lisk directly under [https://drpc.org/public-endpoints/lisk](https://drpc.org/public-endpoints/lisk).
