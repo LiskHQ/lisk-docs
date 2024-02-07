@@ -53,7 +53,8 @@ const sidebars = {
       collapsible: false,
       collapsed: false,
       items: [
-        'lisk-tools/bridges'
+        'lisk-tools/bridges',
+        'lisk-tools/api-providers'
       ],
     },
   ],
