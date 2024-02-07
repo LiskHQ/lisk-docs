@@ -3,7 +3,6 @@
   .theme-doc-sidebar-item-category-level-1 > .menu__list-item-collapsible > .menu__link {
     font-weight: 800;
     line-height: 2;
-    font-size: small;
     text-overflow: ellipsis;
     text-transform: uppercase;
     border-top: 1px solid var(--ifm-toc-border-color);
