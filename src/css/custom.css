@@ -138,7 +138,7 @@ html[data-theme='dark'] {
 }
 
 [data-theme='dark'] .theme-admonition-info {
-    background-color: rgba(75, 179, 212, .175)
+    background-color: rgb(75, 179, 212, .175)
 }
 
 [data-theme='dark'] .theme-admonition-note {
