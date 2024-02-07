@@ -129,26 +129,26 @@ html[data-theme='dark'] {
   --ifm-footer-background-color: #0C152E;
 }
 
-  .theme-admonition-tip {
+html[data-theme='dark'] .theme-admonition-tip {
     background-color: rgb(0, 148, 0, .175)
   }
 
-  .theme-admonition-danger {
+  html[data-theme='dark'] .theme-admonition-danger {
     background-color: rgb(225, 50, 56, .175)
   }
 
-  .theme-admonition-info {
+  html[data-theme='dark'] .theme-admonition-info {
     background-color: rgb(75, 179, 212, .175)
   }
 
-  .theme-admonition-note {
+ html[data-theme='dark'] .theme-admonition-note {
     background-color: rgb(253, 253, 254, .175)
   }
 
-  .theme-admonition-caution {
+  html[data-theme='dark'] .theme-admonition-caution {
     background-color: rgb(231, 167, 0, .175)
   }
 
-  .footer {
+  html[data-theme='dark'] .footer {
     box-shadow: 1px 1px 1px 1px white;
   }
