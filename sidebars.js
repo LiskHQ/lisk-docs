@@ -49,6 +49,15 @@ const sidebars = {
         keywords: ['guides'],
       },
     },
+    {
+      type: 'category',
+      label: 'Lisk Tools',
+      collapsible: false,
+      collapsed: false,
+      items: [
+        'lisk-tools/bridges'
+      ],
+    },
   ],
 
 };
