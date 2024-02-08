@@ -37,7 +37,7 @@ const config = {
 
   scripts: [
     {
-      src: '/js/matomo.js',
+      src: '/lisk-documentation/js/matomo.js',
       async: true,
     },
   ],
