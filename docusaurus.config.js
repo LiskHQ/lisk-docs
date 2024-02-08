@@ -38,7 +38,7 @@ const config = {
   scripts: [
     {
       src: '/js/matomo.js',
-      async: false,
+      async: true,
     },
   ],
 
