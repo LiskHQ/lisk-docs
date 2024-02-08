@@ -35,6 +35,13 @@ const config = {
     locales: ['en'],
   },
 
+  scripts: [
+    {
+      src: '/js/matomo.js',
+      async: false,
+    },
+  ],
+
   presets: [
     [
       'classic',
