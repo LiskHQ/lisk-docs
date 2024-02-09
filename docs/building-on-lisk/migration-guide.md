@@ -57,7 +57,7 @@ Depending on the complexity of your modules, it can be beneficial to split the l
 | State-transition logic triggered by a transaction| Commands       | Functions       |
 | Logging to the blockchain| Blockchain Events        | Events                        |
 | API                  | Endpoints                    | View functions                |
-| internal API         | Methods                      | X                             |
+| internal API         | Methods                      | Functions (+ modifiers)       |
 
 ### Stores
 
