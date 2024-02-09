@@ -54,10 +54,10 @@ Depending on the complexity of your modules, it can be beneficial to split the l
 | Description          | Lisk L1                      | Lisk L2                       |
 | :------------------- | :----------------------------|------------------------------ |
 | Onchain data storage | Stores(onchain)              | State variables               |
-| Description          | Commands                     | TBD               |
-| Description          | Blockchain Events            | TBD               |
-| Description          | Endpoints                    | View & pure functions         |
-| Description          | Methods                      | TBD               |
+| State-transition logic triggered by a transaction| Commands       | Functions       |
+| Logging to the blockchain| Blockchain Events        | Events                        |
+| API                  | Endpoints                    | View functions                |
+| internal API         | Methods                      | X                             |
 
 ### Stores
 
