@@ -39,5 +39,25 @@ cd hello_liskl2
 
 ## Module migration
 
-Modules in Lisk L1 are re-implemented as smart contracts in Lisk L2.
+**Modules in Lisk L1 are re-implemented as smart contracts in Lisk L2.**
 
+Create a new smart contract called `hello`. 
+Inside the new contract, we will put all the logic that was residing in the Lisk L1 `Hello` module before.
+
+::: note
+
+Depending on the complexity of your modules, it can be beneficial to split the logic into several smart contracts, too.
+
+:::
+
+### Stores
+
+### Commands
+
+### Events
+
+### Endpoints
+
+### Methods
+
+<!-- ## Plugin migration -->
