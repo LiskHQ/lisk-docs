@@ -1,6 +1,6 @@
 ---
 title: L1 migration guide
-slug: /building-on-lik/migration-guide/index
+slug: /building-on-lisk/migration-guide
 description: "A migration guide, explaining how to smoothly migrate any Lisk L1 app to Lisk L2."
 keywords: [
     "Lisk",
@@ -44,11 +44,20 @@ cd hello_liskl2
 Create a new smart contract called `hello`. 
 Inside the new contract, we will put all the logic that was residing in the Lisk L1 `Hello` module before.
 
-::: note
+:::note
 
 Depending on the complexity of your modules, it can be beneficial to split the logic into several smart contracts, too.
 
 :::
+
+### Table: Lisk L1/L2 comparison
+| Description          | Lisk L1                      | Lisk L2                       |
+| :------------------- | :----------------------------|------------------------------ |
+| Onchain data storage | Stores(onchain)              | State variables               |
+| Description          | Commands                     | TBD               |
+| Description          | Blockchain Events            | TBD               |
+| Description          | Endpoints                    | View & pure functions         |
+| Description          | Methods                      | TBD               |
 
 ### Stores
 
