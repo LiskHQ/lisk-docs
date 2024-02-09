@@ -33,7 +33,7 @@ The following L1 contracts have been deployed to the **Ethereum Sepolia Testnet*
 | **SystemConfig**                   | [0xF54791059df4a12BA461b881B4080Ae81a1d0AC0](https://sepolia.etherscan.io/address/0xF54791059df4a12BA461b881B4080Ae81a1d0AC0) | It contains configuration parameters such as the Sequencer address, the L2 gas limit, and the unsafe block signer address. |
 | **AddressManager**                | [0x27Bb4A7cd8FB20cb816BF4Aac668BF841bb3D5d3](https://sepolia.etherscan.io/address/0x27Bb4A7cd8FB20cb816BF4Aac668BF841bb3D5d3) | The Address Manager is a built-in actor that manages Ethereum's address space. |
 | **OptimismPortal**                | [0xe3d90F21490686Ec7eF37BE788E02dfC12787264](https://sepolia.etherscan.io/address/0xe3d90F21490686Ec7eF37BE788E02dfC12787264) | It is the main entry point to deposit funds from L1 to L2. It also allows proving and finalizing withdrawals. |
-| **ProtocolVersions**              | [0x1Bb17EB31bDdFd30F63D4FAe6c8Eb85D9e9b1f48](https://sepolia.etherscan.io/address/0x1Bb17EB31bDdFd30F63D4FAe6c8Eb85D9e9b1f48) |  |
+| **ProtocolVersions**              | [0x1Bb17EB31bDdFd30F63D4FAe6c8Eb85D9e9b1f48](https://sepolia.etherscan.io/address/0x1Bb17EB31bDdFd30F63D4FAe6c8Eb85D9e9b1f48) | It is used to manage superchain protocol version information. |
 | **OptimismMintableERC20Factory**  | [0x269d632C1E518a922C30C749cFD3f82Eb5C779B0](https://sepolia.etherscan.io/address/0x269d632C1E518a922C30C749cFD3f82Eb5C779B0) | It is responsible for creating ERC20 contracts on L2 that can be used for depositing native L1 tokens into. |
 
 
