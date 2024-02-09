@@ -11,7 +11,7 @@ keywords:
     'Contracts',
     'L1',
     'Lisk Sepolia Testnet',
-    'Predeploy',
+    'Predeployed',
   ]
 
 ---
@@ -41,6 +41,11 @@ The following L1 contracts have been deployed to the **Ethereum Sepolia Testnet*
 
 ### Lisk Sepolia
 
-All L2 contracts are predeployed into the genesis block on the **Lisk Sepolia Testnet**.
-For more information on each contract, see [Predeploy's README](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md).
-Feel free to also take a look at all the aforementioned contract addresses on Block Explorer as mentioned in the [OP Sepolia Contract Addresses](https://docs.optimism.io/chain/addresses#op-sepolia-l2) section.
+All L2 contracts are Predeployed into the genesis block on the **Lisk Sepolia Testnet**.
+For more information on each contract, see [Predeployed's README](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/Predeployeds.md).
+
+:::info 
+A Predeployed is a contract placed in the L2 genesis state (i.e. at the start of the chain) and they exist on Optimism at predetermined addresses in the genesis state.
+Any L2 based on the OP Stack inherits these contracts and can consume them at will.
+All the Predeployeds can be viewed on Block Explorer as mentioned in the [OP Sepolia Contract Addresses](https://docs.optimism.io/chain/addresses#op-sepolia-l2) section.
+:::
