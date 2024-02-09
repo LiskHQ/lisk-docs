@@ -34,8 +34,12 @@ To add your token to the Lisk Token list, perform the following steps. -->
 
 ### Deploying your token on Lisk
 
-Use the recommended framework provided by Lisk's [Standard Bridge](https://sepolia-bridge.lisk.com) to deploy an ERC-20 contract for your token on Lisk.
-You can deploy contracts, and your token(s) using the [OptimismMintableERC20Factory](contracts).
+To deploy a ERC-20 token by using the [OptimismMintableERC20Factory](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#optimismmintableerc20factory), follow the steps mentioned in the [Create an L2 ERC-20 Token](https://docs.optimism.io/builders/dapp-developers/tutorials/standard-bridge-custom-token#create-an-l2-erc-20-token) section.
+
+Furthermore, to learn more about bridging various types of ERC-20 tokens to the Lisk Network, see the following guides:
+
+- [Bridging ERC-20 Tokens to OP Mainnet With the Optimism SDK](https://docs.optimism.io/builders/dapp-developers/tutorials/cross-dom-bridge-erc20)
+- [Bridging Your Standard ERC-20 Token to OP Mainnet Using the Standard Bridge](https://docs.optimism.io/builders/dapp-developers/tutorials/standard-bridge-standard-token)
 
 <!-- ### Step 2: Submit details of your token
 
@@ -50,8 +54,4 @@ Lisk Bridge reviews are conducted manually by the Lisk team.
 For more information, please visit our [Discord](https://lisk.chat/). -->
 
 
-To learn more about bridging various types of ERC-20 tokens to the Lisk Network, see the following guides:
 
-- [Bridging ERC-20 Tokens to OP Mainnet With the Optimism SDK](https://docs.optimism.io/builders/dapp-developers/tutorials/cross-dom-bridge-erc20)
-- [Bridging Your Custom ERC-20 Token to OP Mainnet Using the Standard Bridge](https://docs.optimism.io/builders/dapp-developers/tutorials/standard-bridge-custom-token)
-- [Bridging Your Standard ERC-20 Token to OP Mainnet Using the Standard Bridge](https://docs.optimism.io/builders/dapp-developers/tutorials/standard-bridge-standard-token)
