@@ -19,7 +19,9 @@ keywords:
 # Contracts
 A reference page containing information about all the contracts deployed on different networks.
 
-## Ethereum Sepolia Testnet
+## Testnet
+
+### Ethereum Sepolia
 
 The following L1 contracts have been deployed to the **Ethereum Sepolia Testnet**.
 
@@ -37,7 +39,7 @@ The following L1 contracts have been deployed to the **Ethereum Sepolia Testnet*
 | **OptimismMintableERC20Factory**  | [0x269d632C1E518a922C30C749cFD3f82Eb5C779B0](https://sepolia.etherscan.io/address/0x269d632C1E518a922C30C749cFD3f82Eb5C779B0) | It is responsible for creating ERC20 contracts on L2 that can be used for depositing native L1 tokens into. |
 
 
-## Lisk Sepolia Testnet
+### Lisk Sepolia
 
-All L2 contracts are predeployed into the genesis block on the Lisk Sepolia Testnet.
+All L2 contracts are predeployed into the genesis block on the **Lisk Sepolia Testnet**.
 For more information on each contract, see [Predeploy's README](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md).
