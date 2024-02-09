@@ -38,6 +38,15 @@ const sidebars = {
       items: [
         'building-on-lisk/connecting-to-a-wallet',
         'building-on-lisk/deploying-a-smart-contract',
+        {
+          type: 'category',
+          label: 'L1 Migration Guide',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            'building-on-lisk/migration-guide/index',
+          ],
+        },
       ],
       link: {
         type: 'generated-index',
