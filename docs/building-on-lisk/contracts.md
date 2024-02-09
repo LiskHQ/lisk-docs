@@ -43,3 +43,4 @@ The following L1 contracts have been deployed to the **Ethereum Sepolia Testnet*
 
 All L2 contracts are predeployed into the genesis block on the **Lisk Sepolia Testnet**.
 For more information on each contract, see [Predeploy's README](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md).
+Feel free to also take a look at all the aforementioned contract addresses on Block Explorer as mentioned in the [OP Sepolia Contract Addresses](https://docs.optimism.io/chain/addresses#op-sepolia-l2) section.
