@@ -45,7 +45,7 @@ For more information, check out the currently active [pull requests](https://git
 
 ### Step 3: Await final approval
 
-Tokens approved in the GitHub repository are not necessarily listed on the Lisk Bridge and are not guaranteed or automatic.
+Tokens approved in the GitHub repository are not necessarily listed on the Lisk Bridge; their listing is neither guaranteed nor automatic.
 Lisk Bridge reviews are conducted manually by the Lisk team.
 For more information, please visit our [Discord](https://lisk.chat/). -->
 
