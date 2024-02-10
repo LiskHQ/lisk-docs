@@ -21,11 +21,11 @@ A reference page containing information about all the contracts deployed on diff
 
 ## Testnet
 
-### Ethereum Sepolia
+### Ethereum Sepolia (L1)
 
 The following L1 contracts have been deployed to the **Ethereum Sepolia Testnet**.
 
-| Name                              | Value                                      | Description |
+| Name of Contract                  | Contract Address                           | Description |
 | :--------------                   | :----------------------------------------  |:----------  |
 | **L1ERC721Bridge**                | [0xb4E988CF1aD8C361D56118437502A8f11C7FaA01](https://sepolia.etherscan.io/address/0xb4E988CF1aD8C361D56118437502A8f11C7FaA01) | Handles the sending and receiving of messages between L1 and L2.                                         |
 | **L1CrossDomainMessenger**        | [0x857824E6234f7733ecA4e9A76804fd1afa1A3A2C](https://sepolia.etherscan.io/address/0x857824E6234f7733ecA4e9A76804fd1afa1A3A2C) | Sends messages from L1 to L2 and relays messages from L2 onto L1.                                       |
@@ -39,13 +39,39 @@ The following L1 contracts have been deployed to the **Ethereum Sepolia Testnet*
 | **OptimismMintableERC20Factory**  | [0x269d632C1E518a922C30C749cFD3f82Eb5C779B0](https://sepolia.etherscan.io/address/0x269d632C1E518a922C30C749cFD3f82Eb5C779B0) | It is responsible for creating ERC20 contracts on L2 that can be used for depositing native L1 tokens into. |
 
 
-### Lisk Sepolia
+### Lisk Sepolia (L2)
 
-All L2 contracts are Predeployed into the genesis block on the **Lisk Sepolia Testnet**.
-For more information on each contract, see [Predeployed's README](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/Predeployeds.md).
+All L2 contracts deployed on the **Lisk Sepolia Testnet** are Predeploys.
+A predeployed contract is included in the L2 genesis state, and it exists from the very beginning of the blockchain.
+On Lisk Network, these contracts are located at specific addresses that are determined in advance and are part of the genesis state.
+For more information on Predeploys, see [Predeploys' README](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md).
 
-:::info 
-A Predeployed is a contract placed in the L2 genesis state (i.e. at the start of the chain) and they exist on Optimism at predetermined addresses in the genesis state.
-Any L2 based on the OP Stack inherits these contracts and can consume them at will.
-All the Predeployeds can be viewed on Block Explorer as mentioned in the [OP Sepolia Contract Addresses](https://docs.optimism.io/chain/addresses#op-sepolia-l2) section.
-:::
+| Name of Contract                  | Contract Address                           | 
+| :--------------                   | :----------------------------------------  |
+| [**LegacyMessagePasser**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#legacymessagepasser)  | [0x4200000000000000000000000000000000000000](https://sepolia-blockscout.lisk.com/address/0x4200000000000000000000000000000000000000) |
+| [**DeployerWhitelist**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#deployerwhitelist)       | [0x4200000000000000000000000000000000000002](https://sepolia-blockscout.lisk.com/address/0x4200000000000000000000000000000000000002) |
+| [**LegacyERC20ETH**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#legacyerc20eth)                | 0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000 |
+| [**WETH9**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#weth9)        | [0x4200000000000000000000000000000000000006](https://sepolia-blockscout.lisk.com/address/0x4200000000000000000000000000000000000006) |
+| [**L2CrossDomainMessenger**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#l2crossdomainmessenger)  | [0x4200000000000000000000000000000000000007](https://sepolia-blockscout.lisk.com/address/0x4200000000000000000000000000000000000007) |
+| [**L2StandardBridge**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#l2standardbridge)        | [0x4200000000000000000000000000000000000010](https://sepolia-blockscout.lisk.com/address/0x4200000000000000000000000000000000000010) |
+| [**SequencerFeeVault**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#sequencerfeevault) | [0x4200000000000000000000000000000000000011](https://sepolia-blockscout.lisk.com/address/0x4200000000000000000000000000000000000011) |
+| [**OptimismMintableERC20Factory**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#optimismmintableerc20factory)        | [0x4200000000000000000000000000000000000012](https://sepolia-blockscout.lisk.com/address/0x4200000000000000000000000000000000000012) |
+| [**L1BlockNumber**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#l1blocknumber)                | [0x4200000000000000000000000000000000000013](https://sepolia-blockscout.lisk.com/address/0x4200000000000000000000000000000000000013) |
+| [**GasPriceOracle**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#gaspriceoracle)        | [0x420000000000000000000000000000000000000F](https://sepolia-blockscout.lisk.com/address/0x420000000000000000000000000000000000000F) |
+| **GovernanceToken**                | [0x4200000000000000000000000000000000000042](https://sepolia-blockscout.lisk.com/address/0x4200000000000000000000000000000000000042) |
+| [**L1Block**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#l1block)        | [0x4200000000000000000000000000000000000015](https://sepolia-blockscout.lisk.com/address/0x4200000000000000000000000000000000000015) |                                        |
+| [**L2ToL1MessagePasser**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#l2tol1messagepasser)                | [0x4200000000000000000000000000000000000016](https://sepolia-blockscout.lisk.com/address/0x4200000000000000000000000000000000000016) |
+| **L2ERC721Bridge**        | [0x4200000000000000000000000000000000000014](https://sepolia-blockscout.lisk.com/address/0x4200000000000000000000000000000000000014) |
+| [**OptimismMintableERC721Factory**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#optimismmintableerc721factory)                | [0x4200000000000000000000000000000000000017](https://sepolia-blockscout.lisk.com/address/0x4200000000000000000000000000000000000017) |
+| [**ProxyAdmin**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#proxyadmin)        | [0x4200000000000000000000000000000000000018](https://sepolia-blockscout.lisk.com/address/0x4200000000000000000000000000000000000018) |
+| [**BaseFeeVault**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#basefeevault)                | [0x4200000000000000000000000000000000000019](https://sepolia-blockscout.lisk.com/address/0x4200000000000000000000000000000000000019) |
+| [**L1FeeVault**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#l1feevault)        | [0x420000000000000000000000000000000000001a](https://sepolia-blockscout.lisk.com/address/0x420000000000000000000000000000000000001A) |
+| [**SchemaRegistry**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#schemaregistry)                | [0x4200000000000000000000000000000000000020](https://sepolia-blockscout.lisk.com/address/0x4200000000000000000000000000000000000020) |
+| [**EAS**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#eas)        | [0x4200000000000000000000000000000000000021](https://sepolia-blockscout.lisk.com/address/0x4200000000000000000000000000000000000021) |
+| [**create2Deployer**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#create2deployer)                | [0x13b0D85CcB8bf860b6b79AF3029fCA081AE9beF2](https://sepolia-blockscout.lisk.com/address/0x13b0D85CcB8bf860b6b79AF3029fCA081AE9beF2) |
+
+
+
+
+
+
