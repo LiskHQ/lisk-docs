@@ -17,7 +17,8 @@ toc_max_heading_level: 4
 
 
 # Adding ERC-20 Token to Lisk
-It is possible to deploy an ERC-20 contract for bridging with Lisk that has already been deployed on Ethereum.
+This tutorial is meant for developers with an existing ERC-20 token on Ethereum who want to deploy the same token on Lisk.
+In this guide, you'll learn how to deploy a custom ERC-20 token from Ethereum to Lisk.
 <!-- Lisk uses [Optimism's Superchain token list](https://github.com/ethereum-optimism/ethereum-optimism.github.io/blob/master/optimism.tokenlist.json) as a reference for tokens that have been deployed on Lisk. -->
 
 <!-- :::warning
