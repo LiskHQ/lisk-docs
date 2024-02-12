@@ -39,7 +39,6 @@ To deploy a ERC-20 token by using the [OptimismMintableERC20Factory](https://git
 
 Furthermore, to learn more about bridging various types of ERC-20 tokens to the Lisk Network, see the following guides:
 
-- [Bridging ERC-20 Tokens to OP Mainnet With the Optimism SDK](https://docs.optimism.io/builders/dapp-developers/tutorials/cross-dom-bridge-erc20)
 - [Bridging Your Standard ERC-20 Token to OP Mainnet Using the Standard Bridge](https://docs.optimism.io/builders/dapp-developers/tutorials/standard-bridge-standard-token)
 
 <!-- ### Step 2: Submit details of your token
