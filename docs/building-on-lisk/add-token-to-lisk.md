@@ -39,7 +39,12 @@ To deploy a ERC-20 token by using the [OptimismMintableERC20Factory](https://git
 
 Furthermore, to learn more about bridging various types of ERC-20 tokens to the Lisk Network, see the following guides:
 
-- [Bridging Your Standard ERC-20 Token to OP Mainnet Using the Standard Bridge](https://docs.optimism.io/builders/dapp-developers/tutorials/standard-bridge-standard-token)
+- [Bridging Your Standard ERC-20 Token to OP Mainnet Using the Standard Bridge](https://docs.optimism.io/builders/dapp-developers/tutorials/standard-bridge-standard-token).
+
+  :::note
+  While following the aforementioned guide, update the `TUTORIAL_RPC_URL` variable to `https://rpc.sepolia-api.lisk.com/` to connect with Lisk Sepolia network.
+  The rest of the steps are same for Lisk as they are for Optimism.
+  :::
 
 <!-- ### Step 2: Submit details of your token
 
