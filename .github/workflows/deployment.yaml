@@ -1,18 +1,16 @@
-# https://docs.github.com/en/actions/deployment/deploying-to-your-cloud-provider/deploying-to-amazon-elastic-container-service
 name: Deployment
 
 on:
   push:
     branches:
       - main
-      - 32-add-deployment
 
 env:
   NODE_VERSION: 18.x
 
 jobs:
-  deploy:
-    name: Deploy
+  deplyment:
+    name: Deployment
     runs-on: ubuntu-latest
     environment: ${{ github.ref_name }}
 
@@ -37,8 +35,8 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
       - name: Upload to S3
         run: |
-          aws s3 sync ./build s3://${secrets.AWS_S3_BUCKET} --exact-timestamps --delete --region ${secrets.AWS_REGION} $*
+          aws s3 sync ./build s3://${{ secrets.AWS_S3_BUCKET }} --exact-timestamps --delete --region ${{ secrets.AWS_REGION }} $*
       - name: Invalidate cache
         run: |
-          aws cloudfront create-invalidation --distribution-id ${secrets.AWS_CF_DISTRIBUTION_ID} --paths \"/*\"
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CF_DISTRIBUTION_ID }} --paths "/*"
 
