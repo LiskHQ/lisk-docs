@@ -14,7 +14,6 @@ keywords:
     'Lisk Sepolia Testnet',
     'Predeployed',
   ]
-
 ---
 
 # Contracts
