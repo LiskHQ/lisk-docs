@@ -38,6 +38,7 @@ const sidebars = {
       items: [
         'building-on-lisk/connecting-to-a-wallet',
         'building-on-lisk/add-token-to-lisk',
+        'building-on-lisk/contracts',
         'building-on-lisk/deploying-a-smart-contract',
       ],
       link: {
