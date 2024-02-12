@@ -10,6 +10,7 @@ keywords:
     'Ethereum Sepolia Testnet',
     'Contracts',
     'L1',
+    'L2'
     'Lisk Sepolia Testnet',
     'Predeployed',
   ]
