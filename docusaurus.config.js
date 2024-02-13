@@ -66,9 +66,10 @@ const config = {
         blog: false,
         theme: {
           customCss: [
-            './src/css/custom.css',          
+            './src/css/custom.css',
             './src/css/sidebar.css',
-          ]},
+          ]
+        },
       }),
     ],
   ],
@@ -78,7 +79,7 @@ const config = {
     ({
       docs: {
         sidebar: {
-          hideable: true,
+          hideable: false,
         },
       },
       // Replace with your project's social card
@@ -127,53 +128,59 @@ const config = {
       footer: {
         style: 'light',
         links: [
+          // {
+          // title: 'Docs',
+          // items: [
+          //   {
+          //     label: 'Lisk Documentation',
+          //     to: '/',
+          //   },
+          // ],
+          // },
           {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Lisk Documentation',
-                to: '/',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                html: `
-                <div class="image-row">
-                    <a href="https://lisk.chat" target="_blank" aria-label="Discord">
-                      <img src="img/icon-discord-white.svg" class="discord-dark" />
-                      <img src="img/icon-discord.svg" class="discord-light" />
-                    </a>
-                    <p></p>
-                    <a href="https://twitter.com/LiskHQ" target="_blank" aria-label="Twitter">
-                      <img src="img/twitter-x-white.svg" class="x-dark" />
-                    </a>
-                </div>
-                  `,
-              },
-            ],
-          },
-          {
-            title: 'More',
+            // title: 'Community',
             items: [
               {
                 html: `
-                    <a href="https://github.com/LiskHQ" target="_blank" aria-label="GitHub" >
-                    <img src="img/github-mark-white.svg" class="git-dark" />
-                    <img src="img/github-mark.svg" class="git-light" />
-                    </a>
-                  `,
+              <img src="img/lisk-icon-light.svg" class="git-dark" />
+              <img src="img/lisk-icon-dark.svg" class="git-light" />
+            `},
+              {
+                label: 'Discord',
+                href: 'https://discordapp.com/invite/docusaurus',
               },
-              /*{
-                 label: 'Blog',
-                 to: '/blog',
-               },*/
+              {
+                label: 'Twitter',
+                href: 'https://twitter.com/docusaurus',
+              },
+              {
+                label: 'GitHub',
+                href: 'https://github.com/LiskHQ',
+              },
             ],
           },
+
+          // {
+          //   // title: 'Community',
+          //   items: [
+          //     `<p>copyright: `Copyright © ${ new Date().getFullYear() } Onchain Foundation.`,</p>`
+          //   ],
+          // },
+          /* {
+             // title: 'More',
+             items: [
+               {
+                 label: 'GitHub',
+                 href: 'https://github.com/LiskHQ',
+               },
+               {
+                  label: 'Blog',
+                  to: '/blog',
+                },
+             ],
+           },*/
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Onchain Foundation.`,
+
       },
       prism: {
         theme: prismThemes.oneLight,

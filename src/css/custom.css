@@ -5,6 +5,47 @@
  */
 
 /* You can override the default Infima variables here. */
+
+@font-face {
+  font-family: "Gilroy";
+  src: url('/static/font/Gilroy-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Gilroy-Bold";
+  src: url('/static/font/Gilroy-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Gilroy-BlackItalic";
+  src: url('/static/font/Gilroy-BlackItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Gilroy-BoldItalic";
+  src: url('/static/font/Gilroy-BoldItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Gilroy-Light";
+  src: url('/static/font/Gilroy-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Gilroy-LightItalic";
+  src: url('/static/font/Gilroy-LightItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Gilroy-SemiBold";
+  src: url('/static/font/Gilroy-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Gilroy-Medium";
+  src: url('/static/font/Gilroy-Medium.ttf') format('truetype');
+}
+
 :root {
   --ifm-color-primary: #3074fc;
   --ifm-color-primary-dark: #1260fc;
@@ -13,11 +54,22 @@
   --ifm-color-primary-light: #4e88fc;
   --ifm-color-primary-lighter: #5c92fd;
   --ifm-color-primary-lightest: #89b0fd;
+  --ifm-font-family-base: 'Gilroy';
+  --ifm-font-family-monospace: 'Gilroy';
+  --ifm-heading-font-family: 'Gilroy-Medium';
 }
+
+
+
 
 .menu {
   overflow-x: unset;
   padding: 0 !important;
+  font-weight: bold;
+}
+
+.menu_link {
+  font-weight: bold;
 }
 
 .navbar__item {
@@ -29,9 +81,35 @@
   width: 5em;
 }
 
-a {
-  display: inline-block;
+/* ul .clean-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+} */
+
+/*
+li {
+  float: left;
 }
+*/
+
+li .footer__link-item {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+  float: left;
+}
+
+.footer {
+  padding: 0;
+}
+
+/* a {
+  display: inline-block;
+} */
 
 .padding-bottom--lg {
   margin-bottom: 3% !important;
@@ -61,7 +139,7 @@ html[data-theme='light'] .git-dark {
 
 .git-dark {
   width: 1.75em;
-  display: block;
+  display: inline-block;
 }
 
 html[data-theme='dark'] .git-light {
@@ -130,25 +208,25 @@ html[data-theme='dark'] {
 }
 
 [data-theme='dark'] .theme-admonition-tip {
-    background-color: rgb(0, 148, 0, .175)
+  background-color: rgb(0, 148, 0, .175)
 }
 
 [data-theme='dark'] .theme-admonition-danger {
-    background-color: rgb(225, 50, 56, .175)
+  background-color: rgb(225, 50, 56, .175)
 }
 
 [data-theme='dark'] .theme-admonition-info {
-    background-color: rgb(75, 179, 212, .175)
+  background-color: rgb(75, 179, 212, .175)
 }
 
 [data-theme='dark'] .theme-admonition-note {
-    background-color: rgb(253, 253, 254, .175)
+  background-color: rgb(253, 253, 254, .175)
 }
 
 [data-theme='dark'] .theme-admonition-caution {
-    background-color: rgb(231, 167, 0, .175)
+  background-color: rgb(231, 167, 0, .175)
 }
 
 [data-theme='dark'] .footer {
-    box-shadow: 1px 1px 1px 1px white;
+  box-shadow: 1px 1px 1px 1px white;
 }

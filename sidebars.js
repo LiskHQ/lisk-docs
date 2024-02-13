@@ -22,7 +22,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'About Lisk',
-      collapsible: false,
+      collapsible: true,
       collapsed: false,
       items: [
         'intro',
@@ -33,7 +33,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Building on Lisk',
-      collapsible: false,
+      collapsible: true,
       collapsed: false,
       items: [
         'building-on-lisk/connecting-to-a-wallet',
@@ -51,7 +51,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Lisk Tools',
-      collapsible: false,
+      collapsible: true,
       collapsed: false,
       items: [
         'lisk-tools/bridges',
