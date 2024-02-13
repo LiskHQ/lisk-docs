@@ -45,19 +45,19 @@ Create a new smart contract called `hello`.
 Inside the new contract, we will put all the logic that was residing in the Lisk L1 `Hello` module before.
 
 :::note
-
 Depending on the complexity of your modules, it can be beneficial to split the logic into several smart contracts, too.
-
 :::
 
 ### Table: Lisk L1/L2 comparison
 | Description          | Lisk L1                      | Lisk L2                       |
-| :------------------- | :----------------------------|------------------------------ |
-| Onchain data storage | Stores(onchain)              | State variables               |
-| State-transition logic triggered by a transaction| Commands       | Functions       |
-| Logging to the blockchain| Blockchain Events        | Events                        |
-| API                  | Endpoints                    | View functions                |
-| internal API         | Methods                      | Functions (+ modifiers)       |
+| :------------------- | :----------------------------| :---------------------------- |
+| Onchain business logic| Module                      |[Smart contract](https://solidity-by-example.org/first-app/) |
+| Onchain data storage | Stores (onchain)             |[State variables](https://solidity-by-example.org/variables/)|
+| State-transition logic triggered by a transaction| Commands|[Functions](https://solidity-by-example.org/function/)|
+| Logging to the blockchain| Blockchain Events        |[Events](https://solidity-by-example.org/events/)|
+| API                  | Endpoints                    |[View functions](https://solidity-by-example.org/view-and-pure-functions/)|
+| Internal API         | Methods                      |[Functions (+ modifiers)](https://solidity-by-example.org/function-modifier/)|
+| Logic triggered per block| Lifecycle Hooks          |X                              |
 
 ### Stores
 
