@@ -65,17 +65,27 @@
   font-weight: bold;
 }
 
+.toggle_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module {
+  display: flex;
+  align-self: flex-end;
+}
+
 .menu_link {
-  font-weight: bold;
+  font-weight: bolder;
+  margin-left: -5em;
 }
 
 .navbar__item {
   font-weight: var(--ifm-font-weight-bold);
+  font-family: 'Gilroy-SemiBold';
+  text-transform: uppercase;
+  align-self: flex-end;
 }
 
 .navbar__logo img {
-  margin-top: -5.5%;
-  width: 5em;
+  margin-top: -.1em;
+  width: 4.15em;
+  align-self: flex-end;
 }
 
 /* ul .clean-list {
@@ -101,7 +111,10 @@ li .footer__link-item {
 }
 
 .footer {
+  /* height: 5em; */
   padding: 0;
+  /* display: block; */
+  /* padding: 0px 25em 0px -25em; */
   /* display: flex;
   align-items: center; */
 }
@@ -124,17 +137,16 @@ li .footer__link-item {
   margin-top: 6%;
 }
 
-.col .footer__col {
-  margin-right: 10em;
-  width: 50em;
+.footer__col {
+  /* height: fit-content; */
   text-align: left;
+  /* margin-right: -10em; */
 }
-
 
 .lsk-light {
   margin-top: 7%;
   margin-right: 20em;
-  width: 5em;
+  width: 4.15em;
   display: block;
 }
 
@@ -145,7 +157,7 @@ html[data-theme='light'] .lsk-dark {
 .lsk-dark {
   margin-top: 7%;
   margin-right: 20em;
-  width: 5em;
+  width: 4.15em;
   display: block;
 }
 
@@ -155,7 +167,8 @@ html[data-theme='dark'] .lsk-light {
 
 .op-light {
   width: 11em;
-  display: block;
+  display: flex;
+  align-self: flex-end;
 }
 
 html[data-theme='light'] .op-dark {
@@ -164,7 +177,8 @@ html[data-theme='light'] .op-dark {
 
 .op-dark {
   width: 11em;
-  display: block;
+  display: flex;
+  align-self: flex-end;
 }
 
 html[data-theme='dark'] .op-light {
@@ -173,7 +187,8 @@ html[data-theme='dark'] .op-light {
 
 .git-light {
   width: 1.75em;
-  display: block;
+  display: flex;
+  align-self: flex-end;
 }
 
 html[data-theme='light'] .git-dark {
@@ -182,7 +197,8 @@ html[data-theme='light'] .git-dark {
 
 .git-dark {
   width: 1.75em;
-  display: inline-block;
+  display: flex;
+  align-self: flex-end;
 }
 
 html[data-theme='dark'] .git-light {

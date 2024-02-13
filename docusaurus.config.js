@@ -139,14 +139,13 @@ const config = {
           },
           {
             items: [
-
+              {
+                label: 'X',
+                href: 'https://twitter.com/docusaurus',
+              },
               {
                 label: 'Discord',
                 href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
               },
               {
                 label: 'GitHub',
