@@ -59,9 +59,6 @@
   --ifm-heading-font-family: 'Gilroy-Medium';
 }
 
-
-
-
 .menu {
   overflow-x: unset;
   padding: 0 !important;
@@ -105,6 +102,14 @@ li .footer__link-item {
 
 .footer {
   padding: 0;
+  /* display: flex;
+  align-items: center; */
+}
+
+.copyright {
+  display: block;
+  text-align: right;
+  margin-top: 8.5%;
 }
 
 /* a {
@@ -119,12 +124,50 @@ li .footer__link-item {
   margin-top: 6%;
 }
 
+.col .footer__col {
+  margin-right: 10em;
+  width: 50em;
+  text-align: left;
+}
+
+
+.lsk-light {
+  margin-top: 7%;
+  margin-right: 20em;
+  width: 5em;
+  display: block;
+}
+
+html[data-theme='light'] .lsk-dark {
+  display: none;
+}
+
+.lsk-dark {
+  margin-top: 7%;
+  margin-right: 20em;
+  width: 5em;
+  display: block;
+}
+
+html[data-theme='dark'] .lsk-light {
+  display: none;
+}
+
 .op-light {
   width: 11em;
   display: block;
 }
 
 html[data-theme='light'] .op-dark {
+  display: none;
+}
+
+.op-dark {
+  width: 11em;
+  display: block;
+}
+
+html[data-theme='dark'] .op-light {
   display: none;
 }
 
@@ -146,47 +189,7 @@ html[data-theme='dark'] .git-light {
   display: none;
 }
 
-.op-dark {
-  width: 11em;
-  display: block;
-}
 
-html[data-theme='dark'] .op-light {
-  display: none;
-}
-
-.x-dark {
-  width: 3.2em;
-  margin-left: -.2em;
-  margin-top: -.1em;
-  display: inline-block;
-}
-
-.discord-light {
-  width: 2.1em;
-  margin-right: .4em;
-  margin-top: .22em;
-}
-
-html[data-theme='light'] .discord-dark {
-  display: none;
-}
-
-.discord-dark {
-  width: 2.1em;
-  margin-right: .4em;
-  margin-top: .22em;
-}
-
-html[data-theme='dark'] .discord-light {
-  display: none;
-}
-
-.image-row {
-  display: flex;
-  width: fit-content;
-  justify-content: space-around;
-}
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {

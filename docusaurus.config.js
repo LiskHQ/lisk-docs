@@ -128,23 +128,18 @@ const config = {
       footer: {
         style: 'light',
         links: [
-          // {
-          // title: 'Docs',
-          // items: [
-          //   {
-          //     label: 'Lisk Documentation',
-          //     to: '/',
-          //   },
-          // ],
-          // },
           {
-            // title: 'Community',
             items: [
               {
                 html: `
-              <img src="img/lisk-icon-light.svg" class="git-dark" />
-              <img src="img/lisk-icon-dark.svg" class="git-light" />
+              <img src="img/lisk-icon-light.svg" class="lsk-light" />
+              <img src="img/lisk-icon-dark.svg" class="lsk-dark" />
             `},
+            ],
+          },
+          {
+            items: [
+
               {
                 label: 'Discord',
                 href: 'https://discordapp.com/invite/docusaurus',
@@ -159,26 +154,13 @@ const config = {
               },
             ],
           },
-
-          // {
-          //   // title: 'Community',
-          //   items: [
-          //     `<p>copyright: `Copyright © ${ new Date().getFullYear() } Onchain Foundation.`,</p>`
-          //   ],
-          // },
-          /* {
-             // title: 'More',
-             items: [
-               {
-                 label: 'GitHub',
-                 href: 'https://github.com/LiskHQ',
-               },
-               {
-                  label: 'Blog',
-                  to: '/blog',
-                },
-             ],
-           },*/
+          {
+            items: [
+              {
+                html: `<p class=copyright>Copyright © ${new Date().getFullYear()} Onchain Foundation.</p>`
+              },
+            ],
+          },
         ],
 
       },
