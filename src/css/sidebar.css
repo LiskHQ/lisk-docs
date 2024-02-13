@@ -6,5 +6,4 @@
   line-height: 2.5;
   text-overflow: ellipsis;
   text-transform: uppercase;
-  border-top: 1px solid var(--ifm-toc-border-color);
 }
