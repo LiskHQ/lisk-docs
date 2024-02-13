@@ -1,0 +1,163 @@
+---
+title: L1 migration guide
+slug: /building-on-lisk/migration-guide
+description: "A migration guide, explaining how to smoothly migrate any Lisk L1 app to Lisk L2."
+keywords: [
+    "Lisk",
+    "Lisk migration",
+    "Lisk L1",
+    "Lisk L2",
+    "Lisk testnet",
+    "Lisk SDK",
+    "Solidity",
+    "smart contract deployment",
+    "build on lisk",
+    ]
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# L1 migration guide
+
+How to smoothly migrate any Lisk L1 app to Lisk L2.
+
+## Requirements
+
+You need:
+
+- A Lisk L1 application built on [Lisk SDK](https://github.com/LiskHQ/lisk-sdk) version 6.0.0 or later.
+- The smart contract development framework of your choice. 
+In this guide, we will use the [Foundry](https://book.getfoundry.sh/) framework.
+
+## Project setup
+
+To start with the project migration, first create a new project with Foundry like this:
+
+```bash
+forge init hello_liskl2
+```
+
+This will create a new folder `hello_liskl2`, which will contain the smart contracts we are going to implement.
+
+```bash
+cd hello_liskl2
+```
+
+## Module migration
+
+**Modules in Lisk L1 are re-implemented as smart contracts in Lisk L2.**
+
+To create a new smart contract create a new file `Hello.sol` under `hello_liskl2/src/` and add the following content: 
+
+```solidity
+// SPDX-License-Identifier: MIT
+// compiler version must be greater than or equal to 0.8.20 and less than 0.9.0
+pragma solidity ^0.8.20;
+
+contract Hello {
+
+}
+```
+
+Inside the new contract, we will put all the logic that was residing in the Lisk L1 `Hello` module before.
+
+:::note
+Depending on the complexity of your modules, it can be beneficial to split the logic into several smart contracts, too.
+:::
+
+### Table: Lisk L1/L2 comparison
+| Description          | Lisk L1                      | Lisk L2                       |
+| :------------------- | :----------------------------| :---------------------------- |
+| Onchain business logic| Module                      |[Smart contract](https://solidity-by-example.org/first-app/) |
+| Onchain data storage | Stores (onchain)             |[State variables](https://solidity-by-example.org/variables/)|
+| State-transition logic triggered by a transaction| Commands|[Functions](https://solidity-by-example.org/function/)|
+| Logging to the blockchain| Blockchain Events        |[Events](https://solidity-by-example.org/events/)|
+| API                  | Endpoints                    |[View functions](https://solidity-by-example.org/view-and-pure-functions/)|
+| Internal API         | Methods                      |[Functions (+ modifiers)](https://solidity-by-example.org/function-modifier/)|
+| Logic triggered per block| Lifecycle Hooks          |X                              |
+
+### Stores
+
+<Tabs>
+  <TabItem value="liskl1" label="Lisk L1" default>
+    <Tabs>
+      <TabItem value="message" label="Message Store" default>
+        ```typescript
+        import { BaseStore } from 'lisk-sdk';
+
+        export interface MessageStoreData {
+            message: string;
+        }
+
+        export const messageStoreSchema = {
+            $id: '/hello/message',
+            type: 'object',
+            required: ['message'],
+            properties: {
+                message: {
+                    dataType: 'string',
+                    fieldNumber: 1,
+                },
+            },
+        };
+
+        export class MessageStore extends BaseStore<MessageStoreData> {
+            public schema = messageStoreSchema;
+        }
+        ```
+      </TabItem>
+      <TabItem value="counter" label="Counter Store" default>
+        ```typescript
+        import { BaseStore } from 'lisk-sdk';
+
+        export interface CounterStoreData {
+          counter: number;
+        }
+
+        export const counterKey = Buffer.alloc(0);
+
+        export const counterStoreSchema = {
+          $id: '/hello/counter',
+          type: 'object',
+          required: ['counter'],
+          properties: {
+            counter: {
+              dataType: 'uint32',
+              fieldNumber: 1,
+            },
+          },
+        };
+
+        export class CounterStore extends BaseStore<CounterStoreData> {
+          public schema = counterStoreSchema;
+        }
+        ```
+      </TabItem>
+    </Tabs>
+  </TabItem>
+  <TabItem value="liskl2" label="Lisk L2">
+    ```solidity
+    // SPDX-License-Identifier: MIT
+    // compiler version must be greater than or equal to 0.8.20 and less than 0.9.0
+    pragma solidity ^0.8.20;
+
+    contract Hello {
+      // State variable for the Hello messages
+      mapping(address => string) public message;
+      // State variable for the message counter
+      uint32 public counter = 0;
+    }
+    ```
+  </TabItem>
+</Tabs>
+
+### Commands
+
+### Events
+
+### Endpoints
+
+### Methods
+
+{/* ## Plugin migration */}
