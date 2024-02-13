@@ -81,29 +81,77 @@ Depending on the complexity of your modules, it can be beneficial to split the l
 
 <Tabs>
   <TabItem value="liskl1" label="Lisk L1" default>
+    ```typescript
+    import { BaseStore } from 'lisk-sdk';
+
+    export interface MessageStoreData {
+        message: string;
+    }
+
+    export const messageStoreSchema = {
+        $id: '/hello/message',
+        type: 'object',
+        required: ['message'],
+        properties: {
+            message: {
+                dataType: 'string',
+                fieldNumber: 1,
+            },
+        },
+    };
+
+    export class MessageStore extends BaseStore<MessageStoreData> {
+        public schema = messageStoreSchema;
+    }
+    ```
+  </TabItem>
+  <TabItem value="liskl2" label="Lisk L2">
+    ```solidity
+    // SPDX-License-Identifier: MIT
+    // compiler version must be greater than or equal to 0.8.20 and less than 0.9.0
+    pragma solidity ^0.8.20;
+
+    contract Hello {
+      // State variable for the Hello messages
+      mapping(address => string) public message;
+      // State variable for the message counter
+      uint32 public counter = 0;
+    }
+    ```
+  </TabItem>
+</Tabs>
+
+### Events
+<Tabs>
+  <TabItem value="liskl1" label="Lisk L1" default>
     <Tabs>
       <TabItem value="message" label="Message Store" default>
         ```typescript
-        import { BaseStore } from 'lisk-sdk';
+        import { BaseEvent } from 'lisk-sdk';
 
-        export interface MessageStoreData {
-            message: string;
-        }
-
-        export const messageStoreSchema = {
-            $id: '/hello/message',
-            type: 'object',
-            required: ['message'],
-            properties: {
-                message: {
-                    dataType: 'string',
-                    fieldNumber: 1,
-                },
+        export const newHelloEventSchema = {
+          $id: '/hello/events/new_hello',
+          type: 'object',
+          required: ['senderAddress', 'message'],
+          properties: {
+            senderAddress: {
+              dataType: 'bytes',
+              fieldNumber: 1,
             },
+            message: {
+              dataType: 'string',
+              fieldNumber: 2,
+            },
+          },
         };
 
-        export class MessageStore extends BaseStore<MessageStoreData> {
-            public schema = messageStoreSchema;
+        export interface NewHelloEventData {
+          senderAddress: Buffer;
+          message: string;
+        }
+
+        export class NewHelloEvent extends BaseEvent<NewHelloEventData> {
+          public schema = newHelloEventSchema;
         }
         ```
       </TabItem>
@@ -147,12 +195,13 @@ Depending on the complexity of your modules, it can be beneficial to split the l
       mapping(address => string) public message;
       // State variable for the message counter
       uint32 public counter = 0;
+      // Event for new Hello messages
+      event NewHello(address indexed sender, string message);
+
     }
     ```
   </TabItem>
 </Tabs>
-
-### Events
 
 
 ### Commands
@@ -259,6 +308,14 @@ Depending on the complexity of your modules, it can be beneficial to split the l
       mapping(address => string) public message;
       // State variable for the message counter
       uint32 public counter = 0;
+      // Event for new Hello messages
+      event NewHello(address indexed sender, string message);
+
+      function createHello(string calldata _message) public {
+        message[msg.sender] = _message;
+        counter+1;
+        emit NewHello(msg.sender, _message);
+      }
     }
     ```
   </TabItem>
