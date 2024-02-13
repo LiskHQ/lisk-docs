@@ -185,28 +185,6 @@ html[data-theme='dark'] .op-light {
   display: none;
 }
 
-.git-light {
-  width: 1.75em;
-  display: flex;
-  align-self: flex-end;
-}
-
-html[data-theme='light'] .git-dark {
-  display: none;
-}
-
-.git-dark {
-  width: 1.75em;
-  display: flex;
-  align-self: flex-end;
-}
-
-html[data-theme='dark'] .git-light {
-  display: none;
-}
-
-
-
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
   --ifm-color-primary: #3074fc;
