@@ -17,8 +17,9 @@ toc_max_heading_level: 4
 
 
 # Adding ERC-20 Token to Lisk
-This tutorial is meant for developers with an existing ERC-20 token on Ethereum who want to deploy the same token on Lisk.
-In this guide, you'll learn how to deploy a custom ERC-20 token from Ethereum to Lisk.
+This tutorial is meant for developers with an existing **Standard ERC-20** token or a **Custom ERC-20** token on Ethereum who want to deploy their respective token on Lisk.
+In this guide, you'll learn how to deploy a Standard or a Custom ERC-20 token from Ethereum to Lisk.
+
 <!-- Lisk uses [Optimism's Superchain token list](https://github.com/ethereum-optimism/ethereum-optimism.github.io/blob/master/optimism.tokenlist.json) as a reference for tokens that have been deployed on Lisk. -->
 
 <!-- :::warning
@@ -28,23 +29,28 @@ Tokens approved in the GitHub repository are not necessarily listed on the [Lisk
 **Disclaimer:** Lisk does not endorse any of the tokens that are listed in the [**ethereum-optimism.github.io**](https://github.com/ethereum-optimism/ethereum-optimism.github.io) repository and rely on the preliminary checks put in place, which include the [**automated checks**](https://github.com/ethereum-optimism/ethereum-optimism.github.io?tab=readme-ov-file#automated-checks) listed on the repository.
 ::: -->
 
-
 <!-- ## Adding your token to the list
 
 To add your token to the Lisk Token list, perform the following steps. -->
 
-### Deploying your token on Lisk
+## Deploying an ERC-20 Token
 
-To deploy a ERC-20 token by using the [OptimismMintableERC20Factory](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#optimismmintableerc20factory), follow the steps mentioned in the [Create an L2 ERC-20 Token](https://docs.optimism.io/builders/dapp-developers/tutorials/standard-bridge-custom-token#create-an-l2-erc-20-token) section.
+### Deploying a Standard ERC-20 Token
 
-Furthermore, to learn more about bridging various types of ERC-20 tokens to the Lisk Network, see the following guides:
+To deploy a Standard ERC-20 Token to Lisk Mainnet, follow the steps mentioned in the [Creating and Deploying a Standard L2 ERC-20 Token](https://docs.optimism.io/builders/dapp-developers/tutorials/standard-bridge-standard-token#create-an-l2-erc-20-token) section.
 
-- [Bridging Your Standard ERC-20 Token to OP Mainnet Using the Standard Bridge](https://docs.optimism.io/builders/dapp-developers/tutorials/standard-bridge-standard-token).
+:::important
+While following the aforementioned guide, update the `TUTORIAL_RPC_URL` variable to `https://rpc.sepolia-api.lisk.com/` to connect with Lisk Sepolia network.
+The rest of the steps are the same for Lisk as they are for Optimism.
+:::
 
-  :::note
-  While following the aforementioned guide, update the `TUTORIAL_RPC_URL` variable to `https://rpc.sepolia-api.lisk.com/` to connect with Lisk Sepolia network.
-  The rest of the steps are same for Lisk as they are for Optimism.
-  :::
+
+### Deploying a Custom ERC-20 token
+
+To deploy a Custom ERC-20 token, one needs to implement all the functions defined by the [IOptimismMintableERC20](https://github.com/ethereum-optimism/optimism/blob/v1.1.4/packages/contracts-bedrock/src/universal/IOptimismMintableERC20.sol) interface such as the logic for the `mint`, `burn`, and `l1Token`, functions of the `IOptimismMintableERC20` interface.
+To do the aforementioned, follow the steps mentioned in the [Bridging Your Custom ERC-20 Token to OP Mainnet Using the Standard Bridge](https://docs.optimism.io/builders/dapp-developers/tutorials/standard-bridge-custom-token) guide.
+
+
 
 <!-- ### Step 2: Submit details of your token
 
