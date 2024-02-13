@@ -98,14 +98,6 @@ const config = {
             label: 'Documentation',
           },
           /*{to: '/blog', label: 'Blog', position: 'left'},*/
-          // {
-          //   href: 'https://github.com/LiskHQ',
-          //   html: `
-          //   <img src="img/github-mark-white.svg" width="10%" class="git-dark" />
-          //   <img src="img/github-mark.svg" width="10%"  class="git-light" />
-          // `,
-          //   position: 'left',
-          // },
           {
             href: 'https://stack.optimism.io',
 
@@ -115,14 +107,14 @@ const config = {
             `,
             position: 'right',
           },
-          {
+          /*{
             href: 'https://github.com/LiskHQ',
             html: `
             <img src="img/github-mark-white.svg" class="git-dark" />
             <img src="img/github-mark.svg" class="git-light" />
           `,
             position: 'right',
-          },
+          },*/
         ],
       },
       footer: {
