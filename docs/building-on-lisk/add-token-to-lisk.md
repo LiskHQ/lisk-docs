@@ -47,7 +47,7 @@ The rest of the steps are the same for Lisk as they are for Optimism.
 
 ### Deploying a Custom ERC-20 token
 
-To deploy a Custom ERC-20 token, one needs to implement all the functions defined by the [IOptimismMintableERC20](https://github.com/ethereum-optimism/optimism/blob/v1.1.4/packages/contracts-bedrock/src/universal/IOptimismMintableERC20.sol) interface such as the logic for the `mint`, `burn`, and `l1Token`, functions of the `IOptimismMintableERC20` interface.
+To deploy a Custom ERC-20 token, one needs to implement all the functions defined by the [IOptimismMintableERC20](https://github.com/ethereum-optimism/optimism/blob/v1.1.4/packages/contracts-bedrock/src/universal/IOptimismMintableERC20.sol) interface such as the logic for the `mint`, `burn`, `remoteToken` and `bridge`, functions of the `IOptimismMintableERC20` interface.
 To do the aforementioned, follow the steps mentioned in the [Bridging Your Custom ERC-20 Token to OP Mainnet Using the Standard Bridge](https://docs.optimism.io/builders/dapp-developers/tutorials/standard-bridge-custom-token) guide.
 
 
