@@ -1,5 +1,5 @@
 ---
-title: Adding ERC-20 Token to Lisk
+title: Adding an ERC-20 Token to Lisk
 sidebar_position: 1
 slug: /add-token-to-lisk
 description: 'Guide to adding external ERC-20 contracts deployed on Ethereum to Lisk network.'
