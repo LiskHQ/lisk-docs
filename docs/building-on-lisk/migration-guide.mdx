@@ -79,9 +79,10 @@ Depending on the complexity of your modules, it can be beneficial to split the l
 
 [^1]: No direct equivalent in solidity.
 Please investigate for cutom solutions to migrate logic residing in the lifecycle hooks.
-For example, you could implement something like lazy evaluation to keep last evaluated block height in the state and compute reward only when it is requested.
 
 ### Storage
+
+Migrate the onchain stores of a module by implementing corresponding state variables in the contract as shown below.
 
 <Tabs>
   <TabItem value="liskl1" label="Lisk L1">
@@ -147,6 +148,7 @@ For example, you could implement something like lazy evaluation to keep last eva
     pragma solidity ^0.8.20;
 
     contract Hello {
+      /** State variables */
       // State variable for the Hello messages
       mapping(address => string) public message;
       // State variable for the message counter
@@ -157,6 +159,9 @@ For example, you could implement something like lazy evaluation to keep last eva
 </Tabs>
 
 ### Events
+
+Migrate the blockchain events of a module by implementing corresponding events in the contract as shown below.
+
 <Tabs>
   <TabItem value="liskl1" label="Lisk L1">
     
@@ -196,6 +201,7 @@ For example, you could implement something like lazy evaluation to keep last eva
     pragma solidity ^0.8.20;
 
     contract Hello {
+      /** State variables */
       // State variable for the Hello messages
       mapping(address => string) public message;
       // State variable for the message counter
@@ -203,12 +209,19 @@ For example, you could implement something like lazy evaluation to keep last eva
       // Event for new Hello messages
       event NewHello(address indexed sender, string message);
 
+      /** Events */
+      // Event for new Hello messages
+      event NewHello(address indexed sender, string message);
     }
     ```
   </TabItem>
 </Tabs>
 
 ### Commands
+
+#### Configuration
+#### Verification
+#### Execution
 <Tabs>
   <TabItem value="liskl1" label="Lisk L1">
     ```typescript title="hello_client/src/app/modules/hello/commands/create_hello_command.ts"
