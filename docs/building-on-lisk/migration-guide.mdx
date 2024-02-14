@@ -75,7 +75,11 @@ Depending on the complexity of your modules, it can be beneficial to split the l
 | State-transition logic triggered by a transaction| Commands|[Functions](https://solidity-by-example.org/function/)|
 | API                  | Endpoints                    |[View functions](https://solidity-by-example.org/view-and-pure-functions/)|
 | Internal API         | Methods                      |[Functions (+ modifiers)](https://solidity-by-example.org/function-modifier/)|
-| Logic triggered per block| Lifecycle Hooks          |X                              |
+| Logic triggered per block| Lifecycle Hooks          |X[^1]                              |
+
+[^1]: No direct equivalent in solidity.
+Please investigate for cutom solutions to migrate logic residing in the lifecycle hooks.
+For example, you could implement something like lazy evaluation to keep last evaluated block height in the state and compute reward only when it is requested.
 
 ### Storage
 
