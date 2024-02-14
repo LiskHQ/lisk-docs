@@ -48,9 +48,9 @@ cd hello_liskl2
 
 **Modules in Lisk L1 are re-implemented as smart contracts in Lisk L2.**
 
-To create a new smart contract create a new file `Hello.sol` under `hello_liskl2/src/` and add the following content: 
+To create a new smart contract create a new file `Hello.sol` under `src/` and add the following content: 
 
-```solidity
+```solidity title="hello_liskl2/src/Hello.sol"
 // SPDX-License-Identifier: MIT
 // compiler version must be greater than or equal to 0.8.20 and less than 0.9.0
 pragma solidity ^0.8.20;
@@ -83,7 +83,7 @@ Depending on the complexity of your modules, it can be beneficial to split the l
   <TabItem value="liskl1" label="Lisk L1">
   <Tabs>
       <TabItem value="message" label="Message Store" default>
-        ```typescript
+        ```typescript title="hello_client/src/app/modules/hello/stores/message.ts"
         import { BaseStore } from 'lisk-sdk';
 
         export interface MessageStoreData {
@@ -108,7 +108,7 @@ Depending on the complexity of your modules, it can be beneficial to split the l
         ```
       </TabItem>
       <TabItem value="counter" label="Counter Store">
-        ```typescript
+        ```typescript title="hello_client/src/app/modules/hello/stores/counter.ts"
         import { BaseStore } from 'lisk-sdk';
 
         export interface CounterStoreData {
@@ -137,7 +137,7 @@ Depending on the complexity of your modules, it can be beneficial to split the l
     </Tabs>
   </TabItem>
   <TabItem value="liskl2" label="Lisk L2" default>
-    ```solidity
+    ```solidity title="hello_liskl2/src/Hello.sol"
     // SPDX-License-Identifier: MIT
     // compiler version must be greater than or equal to 0.8.20 and less than 0.9.0
     pragma solidity ^0.8.20;
@@ -156,7 +156,7 @@ Depending on the complexity of your modules, it can be beneficial to split the l
 <Tabs>
   <TabItem value="liskl1" label="Lisk L1">
     
-      ```typescript
+      ```typescript title="hello_client/src/app/modules/hello/events/new_hello.ts"
       import { BaseEvent } from 'lisk-sdk';
 
       export const newHelloEventSchema = {
@@ -186,7 +186,7 @@ Depending on the complexity of your modules, it can be beneficial to split the l
       ```
   </TabItem>
   <TabItem value="liskl2" label="Lisk L2" default>
-    ```solidity
+    ```solidity title="hello_liskl2/src/Hello.sol"
     // SPDX-License-Identifier: MIT
     // compiler version must be greater than or equal to 0.8.20 and less than 0.9.0
     pragma solidity ^0.8.20;
@@ -207,7 +207,7 @@ Depending on the complexity of your modules, it can be beneficial to split the l
 ### Commands
 <Tabs>
   <TabItem value="liskl1" label="Lisk L1">
-    ```typescript
+    ```typescript title="hello_client/src/app/modules/hello/commands/create_hello_command.ts"
     /* eslint-disable class-methods-use-this */
 
     import {
@@ -298,11 +298,11 @@ Depending on the complexity of your modules, it can be beneficial to split the l
     ```
   </TabItem>
   <TabItem value="liskl2" label="Lisk L2" default>
-    ```bash
+    ```bash title="hello_liskl2/"
     forge install willitscale/solidity-util
     ```
 
-    ```solidity
+    ```solidity title="hello_liskl2/src/Hello.sol"
     // SPDX-License-Identifier: MIT
     // compiler version must be greater than or equal to 0.8.20 and less than 0.9.0
     pragma solidity ^0.8.20;
@@ -375,36 +375,38 @@ Depending on the complexity of your modules, it can be beneficial to split the l
 
 <Tabs>
   <TabItem value="liskl1" label="Lisk L1">
-  ```typescript
-  public async getHelloCounter(ctx: ModuleEndpointContext): Promise<CounterStoreData> {
-    const counterSubStore = this.stores.get(CounterStore);
+  ```typescript title="hello_client/src/app/modules/hello/endpoint.ts"
+  export class HelloEndpoint extends BaseEndpoint {
+    public async getHelloCounter(ctx: ModuleEndpointContext): Promise<CounterStoreData> {
+      const counterSubStore = this.stores.get(CounterStore);
 
-    const helloCounter = await counterSubStore.get(
-      ctx,
-      counterKey,
-    );
+      const helloCounter = await counterSubStore.get(
+        ctx,
+        counterKey,
+      );
 
-    return helloCounter;
-  }
-
-  public async getHello(ctx: ModuleEndpointContext): Promise<MessageStoreData> {
-    const messageSubStore = this.stores.get(MessageStore);
-
-    const { address } = ctx.params;
-    if (typeof address !== 'string') {
-      throw new Error('Parameter address must be a string.');
+      return helloCounter;
     }
-    cryptography.address.validateLisk32Address(address);
-    const helloMessage = await messageSubStore.get(
-      ctx,
-      cryptography.address.getAddressFromLisk32Address(address),
-    );
-    return helloMessage;
+
+    public async getHello(ctx: ModuleEndpointContext): Promise<MessageStoreData> {
+      const messageSubStore = this.stores.get(MessageStore);
+
+      const { address } = ctx.params;
+      if (typeof address !== 'string') {
+        throw new Error('Parameter address must be a string.');
+      }
+      cryptography.address.validateLisk32Address(address);
+      const helloMessage = await messageSubStore.get(
+        ctx,
+        cryptography.address.getAddressFromLisk32Address(address),
+      );
+      return helloMessage;
+    }
   }
   ```
   </TabItem>
   <TabItem value="liskl2" label="Lisk L2" default>
-    ```solidity
+    ```solidity title="hello_liskl2/src/Hello.sol"
     // Function to get the Hello message counter
     function getHelloCounter() public view returns (uint32) {
         return counter;
