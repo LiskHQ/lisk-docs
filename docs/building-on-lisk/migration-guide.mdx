@@ -299,24 +299,74 @@ Depending on the complexity of your modules, it can be beneficial to split the l
     ```
   </TabItem>
   <TabItem value="liskl2" label="Lisk L2" default>
+    ```bash
+    forge install willitscale/solidity-util
+    ```
+
     ```solidity
     // SPDX-License-Identifier: MIT
     // compiler version must be greater than or equal to 0.8.20 and less than 0.9.0
     pragma solidity ^0.8.20;
+    import "lib/solidity-util/lib/Strings.sol";
 
     contract Hello {
-      // State variable for the Hello messages
-      mapping(address => string) public message;
-      // State variable for the message counter
-      uint32 public counter = 0;
-      // Event for new Hello messages
-      event NewHello(address indexed sender, string message);
+        using Strings for string;
 
-      function createHello(string calldata _message) public {
-        message[msg.sender] = _message;
-        counter+=1;
-        emit NewHello(msg.sender, _message);
-      }
+        /** State variables */
+        // State variable for the Hello messages
+        mapping(address => string) public message;
+        // State variable for the message counter
+        uint32 public counter = 0;
+        // Address of the contract owner
+        address public owner;
+        // Blacklist of words that are not allowed in the Hello message
+        string[] public blacklist = ["word1","word2"];
+        // Maximum length of the Hello message
+        uint32 public maxLength = 200;
+        // Minimum length of the Hello message
+        uint32 public minlength = 3;
+
+        constructor() {
+            // Set the transaction sender as the owner of the contract.
+            owner = msg.sender;
+        }
+
+        /** Modifiers */
+        // Modifier to check that the caller is the owner of the contract.
+        modifier onlyOwner() {
+            require(msg.sender == owner, "Not owner");
+            _;
+        }
+        // Modifier to check if the message is valid.
+        modifier validMessage(string memory _message) {
+            require(_message.length() >= minlength, "Message too short");
+            require(_message.length() <= maxLength, "Message too long");
+            for (uint i = 0; i < blacklist.length; i++) {
+                require(!_message.contains(blacklist[i]), "Message contains blacklisted word");
+            }
+            _;
+        }
+
+        /** Events */
+        // Event for new Hello messages
+        event NewHello(address indexed sender, string message);
+
+        /** Functions */
+        // Function to configure the blacklist
+        function setBlacklist(string[] calldata _newBlacklist) public onlyOwner {
+            blacklist = _newBlacklist;
+        }
+        // Function to configure min/max message length
+        function setMinMaxMessageLength(uint32 _newMin,uint32 _newMax) public onlyOwner {
+            minlength = _newMin;
+            maxLength = _newMax;
+        }
+        // Function to create a new Hello message
+        function createHello(string calldata _message) public validMessage(_message) {
+            message[msg.sender] = _message;
+            counter+=1;
+            emit NewHello(msg.sender, _message);
+        }
     }
     ```
   </TabItem>
