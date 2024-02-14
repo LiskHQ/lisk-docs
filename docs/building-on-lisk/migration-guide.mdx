@@ -204,7 +204,6 @@ Depending on the complexity of your modules, it can be beneficial to split the l
   </TabItem>
 </Tabs>
 
-
 ### Commands
 <Tabs>
   <TabItem value="liskl1" label="Lisk L1">
@@ -373,6 +372,50 @@ Depending on the complexity of your modules, it can be beneficial to split the l
 </Tabs>
 
 ### Endpoints
+
+<Tabs>
+  <TabItem value="liskl1" label="Lisk L1">
+  ```typescript
+  public async getHelloCounter(ctx: ModuleEndpointContext): Promise<CounterStoreData> {
+    const counterSubStore = this.stores.get(CounterStore);
+
+    const helloCounter = await counterSubStore.get(
+      ctx,
+      counterKey,
+    );
+
+    return helloCounter;
+  }
+
+  public async getHello(ctx: ModuleEndpointContext): Promise<MessageStoreData> {
+    const messageSubStore = this.stores.get(MessageStore);
+
+    const { address } = ctx.params;
+    if (typeof address !== 'string') {
+      throw new Error('Parameter address must be a string.');
+    }
+    cryptography.address.validateLisk32Address(address);
+    const helloMessage = await messageSubStore.get(
+      ctx,
+      cryptography.address.getAddressFromLisk32Address(address),
+    );
+    return helloMessage;
+  }
+  ```
+  </TabItem>
+  <TabItem value="liskl2" label="Lisk L2" default>
+    ```solidity
+    // Function to get the Hello message counter
+    function getHelloCounter() public view returns (uint32) {
+        return counter;
+    }
+    // Function to get the Hello message of an address
+    function getHello(address _address) public view returns (string) {
+        return message[_address];
+    }
+    ```
+  </TabItem>
+</Tabs>
 
 ### Methods
 
