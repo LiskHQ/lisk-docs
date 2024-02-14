@@ -223,20 +223,62 @@ Migrate the blockchain events of a module by implementing corresponding events i
 #### Configuration
 The module-specific configurations, which resided in the `config.json` on Lisk L1, are now part of the smart contract itself, and defined as state variables.
 
+```solidity title="hello_liskl2/src/Hello.sol"
+// Blacklist of words that are not allowed in the Hello message
+string[] public blacklist = ["word1","word2"];
+// Maximum length of the Hello message
+uint32 public maxLength = 200;
+// Minimum length of the Hello message
+uint32 public minlength = 3
+```
 To edit the configuration options of the Hello module, we implement the following functions in the Hello contract:
 
 - `setBlacklist()` to configure the blacklist of words that are not allowed in the Hello message.
 - `setMinMaxMessageLength()` to configure the minimum and maximum length of the Hello message.
 
-Add the following modifiers to the functions:
+```solidity title="hello_liskl2/src/Hello.sol"
+// Function to configure the blacklist
+function setBlacklist(string[] calldata _newBlacklist) public onlyOwner {
+    blacklist = _newBlacklist;
+}
+// Function to configure min/max message length
+function setMinMaxMessageLength(uint32 _newMin,uint32 _newMax) public onlyOwner {
+    minlength = _newMin;
+    maxLength = _newMax;
+}
+```
 
-- `public` to make the function callable from outside the contract.
+As seen in the above code snippet, we add the following modifiers to the functions:
+
+- `public` to make the function callable from outside the contract. 
+This is a default visibility modifier for functions in Solidity.
 - `onlyOwner` to check that the caller is the owner of the contract.
+This is a custom modifier that we need to implement in the contract manually, as shown in the example below.
+ 
+To set the owner of the contract, we add a new state variable `owner` and a constructor which sets the `owner` variable to the account address that deploys the contract.
 
 :::tip
-`public` is the default visibility modifier for functions in Solidity. 
-`onlyOwner` is a custom modifier that we need to implement in the contract ourselves, as shown in the code example below.
+For updating the owner of the smart contract, you can imeplemnt a corresponding function `setOwner()` and use the `onlyOwner` modifier to ensure that only the current owner can call this function.
 :::
+
+Finally, we can check for the message sender being the owner of the contract in the `onlyOwner` modifier which is used for the `setBlacklist()` and `setMinMaxMessageLength()` functions.
+
+```solidity title="hello_liskl2/src/Hello.sol"
+// Address of the contract owner
+address public owner;
+
+constructor() {
+    // Set the transaction sender as the owner of the contract.
+    owner = msg.sender;
+}
+
+/** Modifiers */
+// Modifier to check that the caller is the owner of the contract.
+modifier onlyOwner() {
+    require(msg.sender == owner, "Not owner");
+    _;
+}
+```
 </details>
 
 <details>
