@@ -126,6 +126,7 @@ const config = {
               {
                 label: 'X',
                 href: 'https://twitter.com/docusaurus',
+                // className: 'lsk-dark'
               },
               {
                 label: 'Discord',

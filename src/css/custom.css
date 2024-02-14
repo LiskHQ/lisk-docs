@@ -82,7 +82,6 @@
 .theme-edit-this-page:hover {
   text-decoration: none;
   border-color: var(--ifm-color-primary);
-  /* color: var(--ifm-menu-primary); */
 }
 
 html[data-theme='dark'] .theme-edit-this-page {
@@ -93,14 +92,13 @@ html[data-theme='dark'] .theme-edit-this-page {
   text-decoration: none;
 }
 
-.theme-edit-this-page svg {
+.theme-edit-this-page svg path {
   fill: var(--ifm-menu-color);
 }
 
 html[data-theme='dark'] .theme-edit-this-page:hover {
   text-decoration: none;
   border-color: var(--ifm-color-primary);
-  /* color: var(--ifm-menu-primary); */
 }
 
 .menu_link {
@@ -113,6 +111,8 @@ html[data-theme='dark'] .theme-edit-this-page:hover {
   text-transform: uppercase;
   align-self: center;
   margin-top: .2em;
+  padding: 0%;
+  margin-left: -1.3em;
 }
 
 html[data-theme='dark'] .navbar__item {
@@ -135,48 +135,41 @@ html[data-theme='dark'] .navbar__item {
 }
 
 .footer {
-  /* height: 5em; */
+  height: 5em;
   padding: 0;
   display: flex;
-  /* display: block; */
-  /* padding: 0px 25em 0px -25em; */
-  /* display: flex;
-  align-items: center; */
-  /* width: 100em;
-  flex-wrap: wrap;
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  justify-content: space-around;
-  align-items: center; */
+  align-items: center;
 }
 
 .footer__links {
   margin-bottom: 0;
+}
 
+
+
+footer>.container {
+  max-width: unset;
 }
 
 .footer__link-item {
-  /* display: block; */
-  text-align: center;
-  padding: 1em;
+  display: flex;
+  text-align: right;
+  padding-right: 1em;
   font-weight: bolder;
   float: left;
-  overflow: hidden;
   list-style-type: none;
-
 }
 
-.footer__col {
-  /* height: fit-content; */
-  text-align: left;
-  /* margin-right: -10em; */
+.footer__link-item svg {
+  display: none;
 }
 
 .copyright {
-  display: block;
+  display: flex;
+  align-self: center;
   text-align: right;
-  margin-top: 8.5%;
+  /* margin-top: 8.4%; */
+  padding-left: 15.55em;
   font-weight: bolder;
   color: var(--ifm-footer-link-color);
 }
@@ -190,10 +183,10 @@ html[data-theme='dark'] .navbar__item {
 }
 
 .lsk-light {
-  /* margin-top: 7%; */
-  margin-right: -20em;
+  margin-right: 10em;
+  margin-right: -25em;
   width: 4.15em;
-  display: flex;
+  display: block;
 }
 
 html[data-theme='light'] .lsk-dark {
@@ -201,7 +194,6 @@ html[data-theme='light'] .lsk-dark {
 }
 
 .lsk-dark {
-  margin-top: 7%;
   margin-right: -20em;
   width: 4.15em;
   display: flex;
