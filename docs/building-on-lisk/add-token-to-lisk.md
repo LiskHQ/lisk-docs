@@ -16,7 +16,7 @@ toc_max_heading_level: 4
 ---
 
 
-# Adding ERC-20 Token to Lisk
+# Adding an ERC-20 Token to Lisk
 This tutorial is meant for developers with an existing **Standard ERC-20** token or a **Custom ERC-20** token on Ethereum who want to deploy their respective token on Lisk.
 In this guide, you'll learn how to deploy a Standard or a Custom ERC-20 token from Ethereum to Lisk.
 
