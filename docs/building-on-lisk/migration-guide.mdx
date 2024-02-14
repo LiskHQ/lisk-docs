@@ -78,7 +78,7 @@ Depending on the complexity of your modules, it can be beneficial to split the l
 | Logic triggered per block| Lifecycle Hooks          |X[^1]                              |
 
 [^1]: No direct equivalent in solidity.
-Please investigate for cutom solutions to migrate logic residing in the lifecycle hooks.
+Please investigate for custom solutions to migrate logic residing in the lifecycle hooks.
 
 ### Storage
 
@@ -217,11 +217,96 @@ Migrate the blockchain events of a module by implementing corresponding events i
   </TabItem>
 </Tabs>
 
-### Commands
+### State transition logic
 
+<details>
+<summary>Configuration migration</summary>
 #### Configuration
+The module-specific configurations, which resided in the `config.json` on Lisk L1, are now part of the smart contract itself, and defined as state variables.
+
+To edit the configuration options of the Hello module, we implement the following functions in the Hello contract:
+
+- `setBlacklist()` to configure the blacklist of words that are not allowed in the Hello message.
+- `setMinMaxMessageLength()` to configure the minimum and maximum length of the Hello message.
+
+Add the following modifiers to the functions:
+
+- `public` to make the function callable from outside the contract.
+- `onlyOwner` to check that the caller is the owner of the contract.
+
+:::tip
+`public` is the default visibility modifier for functions in Solidity. 
+`onlyOwner` is a custom modifier that we need to implement in the contract ourselves, as shown in the code example below.
+:::
+</details>
+
+<details>
+<summary>Verification migration</summary>
 #### Verification
+
+To verify the Hello message, we implement a custom modifier `validMessage()` in the contract.
+
+Inside of this modifier, we check the length of the message and if it contains any blacklisted words, like it was done in the `verify()` method of the Lisk L1 Hello module.
+
+To check the length of strings conviniently, we use the `Strings` library, which is part of the Solidity Util library.
+
+You can add `solidity-util` to your projects dependencies by running the following command:
+
+```bash title="hello_liskl2/"
+forge install willitscale/solidity-util
+```
+
+Now import the `Strings.sol` file in the `Hello.sol` contract and add `using Strings for string;` on top of the contract.
+
+```solidity title="hello_liskl2/src/Hello.sol"
+pragma solidity ^0.8.20;
+import "lib/solidity-util/lib/Strings.sol";
+
+contract Hello {
+    using Strings for string;
+
+    // ....
+}
+```
+
+Now you can conveniently check the length of strings in the `validMessage()` modifier like this:
+
+```solidity title="hello_liskl2/src/Hello.sol"
+// Modifier to check if the message is valid.
+modifier validMessage(string memory _message) {
+    require(_message.length() >= minlength, "Message too short");
+    require(_message.length() <= maxLength, "Message too long");
+    for (uint i = 0; i < blacklist.length; i++) {
+        require(!_message.contains(blacklist[i]), "Message contains blacklisted word");
+    }
+    _;
+}
+```
+</details>
+
+<details>
+<summary>Execution migration</summary>
 #### Execution
+
+To execute the Hello message, we implement the `createHello()` function in the contract.
+
+Inside of this function, we save the message of the sender in the `message` mapping under the sender address.
+The sender address is a global variable in Solidity and can be accessed with `msg.sender`.
+
+Additionally, we increment the Hello message counter by +1, and emit the `NewHello` event, like it was done in the `execute()` method of the Lisk L1 Hello module previously.
+
+The `validMessage()` modifier the we defined above in the Verification section is used to check if the message is valid before saving it to the `message` mapping.
+
+```solidity title="hello_liskl2/src/Hello.sol"
+// Function to create a new Hello message
+function createHello(string calldata _message) public validMessage(_message) {
+    message[msg.sender] = _message;
+    counter+=1;
+    emit NewHello(msg.sender, _message);
+}
+```
+
+</details>
 <Tabs>
   <TabItem value="liskl1" label="Lisk L1">
     ```typescript title="hello_client/src/app/modules/hello/commands/create_hello_command.ts"
@@ -315,9 +400,7 @@ Migrate the blockchain events of a module by implementing corresponding events i
     ```
   </TabItem>
   <TabItem value="liskl2" label="Lisk L2" default>
-    ```bash title="hello_liskl2/"
-    forge install willitscale/solidity-util
-    ```
+   
 
     ```solidity title="hello_liskl2/src/Hello.sol"
     // SPDX-License-Identifier: MIT
