@@ -158,23 +158,31 @@ footer>.container {
   display: none;
 }
 
+
 .social_links {
-  overflow: hidden;
+  text-align: center;
+  padding-right: 0%;
+  margin-left: 27.5%;
+  margin-right: -15%;
+  text-decoration: none;
 }
 
 .social_links ul {
-  list-style: none;
+  /* list-style: none;
   position: relative;
   float: left;
   display: block;
   left: 50%;
+  text-align: center; */
+  /* display: inline-block; */
 }
 
 .social_links ul li {
-  position: relative;
+  /* position: relative;
   float: left;
   display: block;
   right: 50%;
+  text-align: center; */
 }
 
 .copyright {

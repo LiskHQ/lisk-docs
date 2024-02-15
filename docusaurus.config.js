@@ -126,17 +126,17 @@ const config = {
               {
                 label: 'X',
                 href: 'https://twitter.com/docusaurus',
-                // className: 'footer__links footer__link-item social_links',
+                className: 'footer__links footer__link-item social_links',
               },
               {
                 label: 'Discord',
                 href: 'https://discordapp.com/invite/docusaurus',
-                // className: 'footer__links footer__link-item social_links',
+                className: 'footer__links footer__link-item social_links',
               },
               {
                 label: 'GitHub',
                 href: 'https://github.com/LiskHQ',
-                // className: 'footer__links footer__link-item social_links',
+                className: 'footer__links footer__link-item social_links',
               },
             ],
           },
