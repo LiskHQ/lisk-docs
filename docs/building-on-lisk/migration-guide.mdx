@@ -517,6 +517,8 @@ function createHello(string calldata _message) public validMessage(_message) {
 
 ### Endpoints
 
+Migrate the module endpoints by implementing corresponding view functions in the contract as shown below.
+
 <Tabs>
   <TabItem value="liskl1" label="Lisk L1">
   ```typescript title="hello_client/src/app/modules/hello/endpoint.ts"
@@ -562,3 +564,22 @@ function createHello(string calldata _message) public validMessage(_message) {
     ```
   </TabItem>
 </Tabs>
+
+## Next steps
+
+Now that we re-implemented the Hello module from Lisk L1 as a smart contract in Lisk L2, it is possible to directly deploy the Hello contract to Lisk L2 and interact with it.
+Before deploying the smart contract to Lisk, it is recommended to [test it locally](#testing-the-smart-contract) by writing corresponding tests for the newly created smart contract.
+Once the smart contract is [deployed](#smart-contract-deployment) to Lisk, you can interact with it by calling its public functions.
+Finally, you can migrate the [plugins and UI](#migration-of-plugins-and-ui) of the Lisk L1 Hello app to be compatible with the new API, to complete the migration process of your Lisk application.
+
+### Testing the smart contract
+
+
+### Smart contract deployment
+
+You can now deploy the smart contract to Lisk.
+We will use the Lisk Sepolia network to deploy our the Hello contract for this example.
+
+### Interacting with the smart contract
+
+### Migration of plugins and UI
