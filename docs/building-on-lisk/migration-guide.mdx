@@ -623,6 +623,9 @@ Finally, you can migrate the [plugins and UI](#migration-of-plugins-and-ui) of t
 ### Testing the smart contract
 
 ```solidity
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.20;
+
 import {Test, console} from "forge-std/Test.sol";
 import {Hello} from "../src/Hello.sol";
 
@@ -636,9 +639,27 @@ contract HelloTest is Test {
 
     function test_CreateHello() public {
         hoax(alice, 100 ether);
-        hello.createHello("Hello word1");
+        hello.createHello("Hello World");
         assertEq(hello.message(alice),"Hello World");
         assertEq(hello.counter(),1);
+    }
+
+    function test_MinLength() public {
+        hoax(alice, 100 ether);
+        vm.expectRevert("Message too short");
+        hello.createHello("Hi");
+    }
+
+    function test_MaxLength() public {
+        hoax(alice, 100 ether);
+        vm.expectRevert("Message too long");
+        hello.createHello("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean porta neque eget elit tristique pharetra. Pellentesque tempus sollicitudin tortor, ut tempus diam. Nulla facilisi. Donec at neque sapien.");
+    }
+
+    function test_Blacklist() public {
+        hoax(alice, 100 ether);
+        vm.expectRevert("Message contains blacklisted word");
+        hello.createHello("Hello word1");
     }
 }
 ```
