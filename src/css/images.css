@@ -1,8 +1,7 @@
 .lsk-light {
-    margin-right: 10em;
-    margin-right: -25em;
-    width: 4.15em;
-    display: block;
+    margin-top: -.35em;
+    width: 5.15em;
+    padding: .5%;
 }
 
 html[data-theme='light'] .lsk-dark {
@@ -10,21 +9,21 @@ html[data-theme='light'] .lsk-dark {
 }
 
 .lsk-dark {
-    margin-right: -20em;
-    width: 4.15em;
-    display: flex;
+    margin-top: -.35em;
+    width: 5.15em;
+    padding: .5%;
 }
 
 html[data-theme='dark'] .lsk-light {
     display: none;
 }
 
-
 .op-light {
-    width: 11em;
+    width: 10em;
     display: flex;
     align-self: center;
     margin-bottom: .09em;
+    padding-right: 10%;
 }
 
 html[data-theme='light'] .op-dark {
@@ -32,9 +31,11 @@ html[data-theme='light'] .op-dark {
 }
 
 .op-dark {
-    width: 11em;
+    width: 10em;
     display: flex;
     align-self: center;
+    margin-bottom: .09em;
+    padding-right: 10%;
 }
 
 html[data-theme='dark'] .op-light {

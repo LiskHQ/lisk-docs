@@ -1,6 +1,6 @@
 .theme-edit-this-page {
     border: 1px solid var(--ifm-color-emphasis-300);
-    padding: 0.5em;
+    padding: .9em;
     border-radius: var(--ifm-pagination-nav-border-radius);
     transition: border-color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
     text-decoration: none;
@@ -13,7 +13,7 @@
 
 html[data-theme='dark'] .theme-edit-this-page {
     border: 1px solid var(--ifm-color-emphasis-300);
-    padding: 0.5em;
+    padding: .9em;
     border-radius: var(--ifm-pagination-nav-border-radius);
     transition: border-color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
     text-decoration: none;

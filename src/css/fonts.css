@@ -37,3 +37,13 @@
     font-family: "Gilroy-Medium";
     src: url('/static/font/Gilroy-Medium.ttf') format('truetype');
 }
+
+@font-face {
+    font-family: "Gilroy-ExtraBold";
+    src: url('/static/font/Gilroy-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Gilroy-Heavy";
+    src: url('/static/font/Gilroy-Heavy.ttf') format('truetype');
+}

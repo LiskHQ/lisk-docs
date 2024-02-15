@@ -26,6 +26,7 @@
   --ifm-font-family-monospace: 'Gilroy';
   --ifm-heading-font-family: 'Gilroy-Medium';
   --ifm-breadcrumb-item-background-active: rgba(64, 112, 244, 0.10);
+  --ifm-tabs-color-active-border: rgba(64, 112, 244, 1);
 }
 
 .toggle_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module {
@@ -48,15 +49,15 @@
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #3074fc;
-  --ifm-color-primary-dark: #1260fc;
-  --ifm-color-primary-darker: #0456fb;
-  --ifm-color-primary-darkest: #0347cf;
-  --ifm-color-primary-light: #4e88fc;
-  --ifm-color-primary-lighter: #5c92fd;
-  --ifm-color-primary-lightest: #89b0fd;
+  --ifm-color-primary: #2BD67B;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
   --ifm-code-font-size: 95%;
-  --ifm-breadcrumb-item-background-active: var(--ifm-menu-color);
+  --ifm-breadcrumb-item-background-active: rgba(43, 214, 123, 0.10);
 }
 
 html[data-theme='dark'] {

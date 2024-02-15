@@ -39,7 +39,7 @@ To add your token to the Lisk Token list, perform the following steps. -->
 
 To deploy a Standard ERC-20 Token to Lisk Mainnet, follow the steps mentioned in the [Creating and Deploying a Standard L2 ERC-20 Token](https://docs.optimism.io/builders/dapp-developers/tutorials/standard-bridge-standard-token#create-an-l2-erc-20-token) section.
 
-:::important
+:::info
 While following the aforementioned guide, update the `TUTORIAL_RPC_URL` variable to `https://rpc.sepolia-api.lisk.com/` to connect with Lisk Sepolia network.
 The rest of the steps are the same for Lisk as they are for Optimism.
 :::
@@ -50,7 +50,7 @@ The rest of the steps are the same for Lisk as they are for Optimism.
 To deploy a Custom ERC-20 token, one needs to implement all the functions defined by the [IOptimismMintableERC20](https://github.com/ethereum-optimism/optimism/blob/v1.1.4/packages/contracts-bedrock/src/universal/IOptimismMintableERC20.sol) interface such as the logic for the `mint`, `burn`, `remoteToken`, and `bridge`, functions of the `IOptimismMintableERC20` interface.
 To do the aforementioned, follow the steps mentioned in the [Bridging Your Custom ERC-20 Token to OP Mainnet Using the Standard Bridge](https://docs.optimism.io/builders/dapp-developers/tutorials/standard-bridge-custom-token#create-an-l2-erc-20-token) guide.
 
-:::important
+:::info
 While following the aforementioned guide, ensure your wallet is connected to **Lisk Sepolia** in **step 6**.
 The rest of the steps are the same for Lisk as they are for Optimism.
 :::
