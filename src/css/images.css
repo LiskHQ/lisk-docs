@@ -1,0 +1,42 @@
+.lsk-light {
+    margin-right: 10em;
+    margin-right: -25em;
+    width: 4.15em;
+    display: block;
+}
+
+html[data-theme='light'] .lsk-dark {
+    display: none;
+}
+
+.lsk-dark {
+    margin-right: -20em;
+    width: 4.15em;
+    display: flex;
+}
+
+html[data-theme='dark'] .lsk-light {
+    display: none;
+}
+
+
+.op-light {
+    width: 11em;
+    display: flex;
+    align-self: center;
+    margin-bottom: .09em;
+}
+
+html[data-theme='light'] .op-dark {
+    display: none;
+}
+
+.op-dark {
+    width: 11em;
+    display: flex;
+    align-self: center;
+}
+
+html[data-theme='dark'] .op-light {
+    display: none;
+}

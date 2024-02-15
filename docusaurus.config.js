@@ -67,7 +67,6 @@ const config = {
         theme: {
           customCss: [
             './src/css/custom.css',
-            './src/css/sidebar.css',
           ]
         },
       }),
@@ -125,12 +124,12 @@ const config = {
             items: [
               {
                 label: 'X',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://twitter.com/LiskHQ',
                 className: 'footer__links footer__link-item social_links',
               },
               {
                 label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                href: 'https://lisk.chat',
                 className: 'footer__links footer__link-item social_links',
               },
               {

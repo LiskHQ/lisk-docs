@@ -1,0 +1,24 @@
+.navbar__item {
+    font-weight: var(--ifm-font-weight-bold);
+    font-family: 'Gilroy-SemiBold';
+    text-transform: uppercase;
+    align-self: center;
+    margin-top: .19%;
+    padding: 0%;
+    margin-left: -1.3em;
+}
+
+html[data-theme='dark'] .navbar__item {
+    font-weight: var(--ifm-font-weight-bold);
+    font-family: 'Gilroy-SemiBold';
+    text-transform: uppercase;
+    align-self: center;
+    margin-top: .2em;
+    color: var(--ifm-menu-color);
+}
+
+.navbar__logo img {
+    margin-top: -.35em;
+    width: 4.15em;
+    align-self: center;
+}

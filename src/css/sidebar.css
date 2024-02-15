@@ -7,3 +7,9 @@
   text-overflow: ellipsis;
   text-transform: uppercase;
 }
+
+.menu {
+  overflow-x: unset;
+  padding: 0 !important;
+  font-weight: bold;
+}
