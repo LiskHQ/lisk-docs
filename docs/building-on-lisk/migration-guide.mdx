@@ -234,13 +234,13 @@ uint32 public minlength = 3
 
 To edit the configuration options of the Hello module, we implement the following functions in the Hello contract:
 
-- `add2Blacklist()` to configure the blacklist of words that are not allowed in the Hello message.
+- `setBlacklist()` to configure the blacklist of words that are not allowed in the Hello message.
 - `setMinMaxMessageLength()` to configure the minimum and maximum length of the Hello message.
 
 ```solidity title="hello_liskl2/src/Hello.sol"
 // Function to configure the blacklist
-function add2Blacklist(string calldata _newWord) public onlyOwner {
-    blacklist.push(_newWord);
+function setBlacklist(string[] memory _newWord) public onlyOwner {
+    blacklist = _newWord;
 } 
 // Function to configure min/max message length
 function setMinMaxMessageLength(uint32 _newMin,uint32 _newMax) public onlyOwner {
@@ -542,8 +542,8 @@ function createHello(string calldata _message) public validMessage(_message) {
 
         /** Functions */
         // Function to configure the blacklist
-        function add2Blacklist(string calldata _newWord) public onlyOwner {
-            blacklist.push(_newWord);
+        function setBlacklist(string[] memory _newWord) public onlyOwner {
+            blacklist = _newWord;
         } 
         // Function to configure min/max message length
         function setMinMaxMessageLength(uint32 _newMin,uint32 _newMax) public onlyOwner {
@@ -614,8 +614,10 @@ Migrate the module endpoints by implementing corresponding view functions in the
 ## Next steps
 
 Now that we re-implemented the Hello module from Lisk L1 as a smart contract in Lisk L2, it is possible to directly deploy the Hello contract to Lisk L2 and interact with it.
+
 Before deploying the smart contract to Lisk, it is recommended to [test it locally](#testing-the-smart-contract) by writing corresponding tests for the newly created smart contract.
 Once the smart contract is [deployed](#smart-contract-deployment) to Lisk, you can [interact](#interacting-with-the-smart-contract) with it by calling its public functions.
+
 Finally, you can migrate the [plugins and UI](#migration-of-plugins-and-ui) of the Lisk L1 Hello app to be compatible with the new API, to complete the migration process of your Lisk application.
 
 ### Testing the smart contract
