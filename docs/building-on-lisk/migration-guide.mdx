@@ -738,6 +738,39 @@ contract HelloTest is Test {
 You can now deploy the smart contract to Lisk.
 We will use the Lisk Sepolia network to deploy our the Hello contract for this example.
 
+```bash
+forge create --rpc-url https://rpc.sepolia-api.lisk.com \
+--etherscan-api-key 123 \
+--verify \
+--verifier blockscout \
+--verifier-url https://sepolia-blockscout.lisk.com/api \
+--private-key <your-private-key> \
+src/Hello.sol:Hello
+```
+
+```text
+[⠢] Compiling...
+No files changed, compilation skipped
+Deployer: 0x3C46A11471f285E36EE8d089473ce98269D1b081
+Deployed to: 0x0a5A1C81F278cAe80d340a4A97E2D7B1c3Ec511a
+Transaction hash: 0x52bb6aab8ceeecef674253ecc0ccfe35baeac7db3cc8e889a9da1f7cf1ce0593
+Starting contract verification...
+Waiting for blockscout to detect contract deployment...
+Start verifying contract `0x0a5A1C81F278cAe80d340a4A97E2D7B1c3Ec511a` deployed on 4202
+
+Submitting verification for [src/Hello.sol:Hello] 0x0a5A1C81F278cAe80d340a4A97E2D7B1c3Ec511a.
+Submitted contract for verification:
+	Response: `OK`
+	GUID: `0a5a1c81f278cae80d340a4a97e2d7b1c3ec511a65cf6f72`
+	URL: https://sepolia-blockscout.lisk.com/address/0x0a5a1c81f278cae80d340a4a97e2d7b1c3ec511a
+Contract verification status:
+Response: `OK`
+Details: `Unknown UID`
+```
+
+#### Remix
+
+
 ### Interacting with the smart contract
 
 ### Migration of plugins and UI
