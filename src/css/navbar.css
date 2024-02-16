@@ -10,11 +10,15 @@
 }
 
 html[data-theme='dark'] .navbar__item {
-    font-family: 'Gilroy-ExtraBold';
+    font-weight: var(--ifm-font-weight-bold);
+    font-family: 'Gilroy-Bold';
     text-transform: uppercase;
     align-self: center;
-    margin-top: .3%;
-    color: var(--ifm-menu-color);
+    margin-top: .4%;
+    padding: 0%;
+    margin-left: -1em;
+    font-size: larger;
+    color: white;
 }
 
 .navbar__logo img {

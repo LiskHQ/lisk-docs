@@ -4,6 +4,11 @@
     background-color: rgba(64, 112, 244, 0.10);
     border: var(--ifm-alert-border-width) solid rgba(64, 112, 244, 1);
     border-left-width: var(--ifm-alert-border-left-width);
+
+}
+
+.theme-admonition-info code {
+    background-color: rgb(246, 247, 248)
 }
 
 .theme-admonition-tip {
@@ -12,10 +17,18 @@
     border-left-width: var(--ifm-alert-border-left-width);
 }
 
+.theme-admonition-tip code {
+    background-color: rgb(246, 247, 248)
+}
+
 .theme-admonition-danger {
     background-color: rgba(255, 69, 87, 0.15);
     border: var(--ifm-alert-border-width) solid rgba(255, 69, 87, 1);
     border-left-width: var(--ifm-alert-border-left-width);
+}
+
+.theme-admonition-danger code {
+    background-color: rgb(246, 247, 248)
 }
 
 .theme-admonition-note {
@@ -24,11 +37,20 @@
     border-left-width: var(--ifm-alert-border-left-width);
 }
 
+.theme-admonition-note code {
+    background-color: rgb(246, 247, 248)
+}
+
 .theme-admonition-caution {
     background-color: rgba(247, 227, 109, 0.15);
     border: var(--ifm-alert-border-width) solid rgba(247, 227, 109, 1);
     border-left-width: var(--ifm-alert-border-left-width);
 }
+
+.theme-admonition-caution code {
+    background-color: rgb(246, 247, 248)
+}
+
 
 /* Dark mode configurations */
 
@@ -38,10 +60,18 @@
     border-left-width: var(--ifm-alert-border-left-width);
 }
 
+[data-theme='dark'] .theme-admonition-info code {
+    background-color: rgb(246 247 248 / 30%)
+}
+
 [data-theme='dark'] .theme-admonition-tip {
     background-color: rgba(43, 214, 123, 0.20);
     border: var(--ifm-alert-border-width) solid rgba(43, 214, 123, 1);
     border-left-width: var(--ifm-alert-border-left-width);
+}
+
+[data-theme='dark'] .theme-admonition-tip code {
+    background-color: rgb(255, 255, 255, .30);
 }
 
 [data-theme='dark'] .theme-admonition-danger {
@@ -50,6 +80,9 @@
     border-left-width: var(--ifm-alert-border-left-width);
 }
 
+[data-theme='dark'] .theme-admonition-danger code {
+    background-color: rgb(246 247 248 / 30%)
+}
 
 [data-theme='dark'] .theme-admonition-note {
     background-color: rgb(197, 207, 228, 0.20);
@@ -57,8 +90,16 @@
     border-left-width: var(--ifm-alert-border-left-width);
 }
 
+[data-theme='dark'] .theme-admonition-note code {
+    background-color: rgb(246 247 248 / 30%)
+}
+
 [data-theme='dark'] .theme-admonition-caution {
     background-color: rgba(247, 227, 109, 0.20);
     border: var(--ifm-alert-border-width) solid rgba(247, 227, 109, 1);
     border-left-width: var(--ifm-alert-border-left-width);
+}
+
+[data-theme='dark'] .theme-admonition-caution code {
+    background-color: rgb(246 247 248 / 30%)
 }
