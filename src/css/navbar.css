@@ -6,7 +6,7 @@
     margin-top: .4%;
     padding: 0%;
     margin-left: -1em;
-    font-size: larger;
+    font-size: large;
 }
 
 html[data-theme='dark'] .navbar__item {
@@ -17,7 +17,7 @@ html[data-theme='dark'] .navbar__item {
     margin-top: .4%;
     padding: 0%;
     margin-left: -1em;
-    font-size: larger;
+    font-size: large;
     color: white;
 }
 
