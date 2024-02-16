@@ -66,9 +66,9 @@ const config = {
         blog: false,
         theme: {
           customCss: [
-            './src/css/custom.css',          
-            './src/css/sidebar.css',
-          ]},
+            './src/css/custom.css',
+          ]
+        },
       }),
     ],
   ],
@@ -78,7 +78,7 @@ const config = {
     ({
       docs: {
         sidebar: {
-          hideable: true,
+          hideable: false,
         },
       },
       // Replace with your project's social card
@@ -97,14 +97,6 @@ const config = {
             label: 'Documentation',
           },
           /*{to: '/blog', label: 'Blog', position: 'left'},*/
-          // {
-          //   href: 'https://github.com/LiskHQ',
-          //   html: `
-          //   <img src="img/github-mark-white.svg" width="10%" class="git-dark" />
-          //   <img src="img/github-mark.svg" width="10%"  class="git-light" />
-          // `,
-          //   position: 'left',
-          // },
           {
             href: 'https://stack.optimism.io',
 
@@ -114,66 +106,48 @@ const config = {
             `,
             position: 'right',
           },
-          {
-            href: 'https://github.com/LiskHQ',
-            html: `
-            <img src="img/github-mark-white.svg" class="git-dark" />
-            <img src="img/github-mark.svg" class="git-light" />
-          `,
-            position: 'right',
-          },
         ],
       },
       footer: {
         style: 'light',
         links: [
           {
-            title: 'Docs',
             items: [
               {
-                label: 'Lisk Documentation',
-                to: '/',
+                html: `
+              <img src="img/lisk-icon-light.svg" class="lsk-light" />
+              <img src="img/lisk-icon-dark.svg" class="lsk-dark" />
+            `},
+            ],
+          },
+          {
+            items: [
+              {
+                label: 'X',
+                href: 'https://twitter.com/LiskHQ',
+                className: 'footer__links footer__link-item social_links',
+              },
+              {
+                label: 'Discord',
+                href: 'https://lisk.chat',
+                className: 'footer__links footer__link-item social_links',
+              },
+              {
+                label: 'GitHub',
+                href: 'https://github.com/LiskHQ',
+                className: 'footer__links footer__link-item social_links',
               },
             ],
           },
           {
-            title: 'Community',
             items: [
               {
-                html: `
-                <div class="image-row">
-                    <a href="https://lisk.chat" target="_blank" aria-label="Discord">
-                      <img src="img/icon-discord-white.svg" class="discord-dark" />
-                      <img src="img/icon-discord.svg" class="discord-light" />
-                    </a>
-                    <p></p>
-                    <a href="https://twitter.com/LiskHQ" target="_blank" aria-label="Twitter">
-                      <img src="img/twitter-x-white.svg" class="x-dark" />
-                    </a>
-                </div>
-                  `,
+                html: `<p class=copyright>Copyright © ${new Date().getFullYear()} Onchain Foundation.</p>`
               },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                html: `
-                    <a href="https://github.com/LiskHQ" target="_blank" aria-label="GitHub" >
-                    <img src="img/github-mark-white.svg" class="git-dark" />
-                    <img src="img/github-mark.svg" class="git-light" />
-                    </a>
-                  `,
-              },
-              /*{
-                 label: 'Blog',
-                 to: '/blog',
-               },*/
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Onchain Foundation.`,
+
       },
       prism: {
         theme: prismThemes.oneLight,

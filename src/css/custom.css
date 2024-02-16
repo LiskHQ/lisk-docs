@@ -5,6 +5,15 @@
  */
 
 /* You can override the default Infima variables here. */
+
+@import url('./fonts.css');
+@import url('./footer.css');
+@import url('./admonitions.css');
+@import url('./sidebar.css');
+@import url('./navbar.css');
+@import url('./edit_page.css');
+@import url('./images.css');
+
 :root {
   --ifm-color-primary: #3074fc;
   --ifm-color-primary-dark: #1260fc;
@@ -13,24 +22,43 @@
   --ifm-color-primary-light: #4e88fc;
   --ifm-color-primary-lighter: #5c92fd;
   --ifm-color-primary-lightest: #89b0fd;
+  --ifm-font-family-base: 'Gilroy';
+  --ifm-font-family-monospace: 'Gilroy';
+  --ifm-heading-font-family: 'Gilroy-Medium';
+  --ifm-breadcrumb-item-background-active: rgba(64, 112, 244, 0.10);
+  --ifm-tabs-color-active-border: rgba(64, 112, 244, 1);
 }
 
-.menu {
-  overflow-x: unset;
-  padding: 0 !important;
+.alert {
+  --ifm-code-background: var(--ifm-color-primary);
+  --ifm-link-color: var(--ifm-color-primary);
+  --ifm-link-hover-color: var(--ifm-color-primary);
+  --ifm-link-decoration: none;
 }
 
-.navbar__item {
-  font-weight: var(--ifm-font-weight-bold);
+.alert a {
+  text-decoration-color: var(--ifm-color-primary);
 }
 
-.navbar__logo img {
-  margin-top: -5.5%;
-  width: 5em;
+html[data-theme='dark'] .alert {
+  --ifm-code-background: var(--ifm-color-primary);
+  --ifm-link-color: var(--ifm-color-primary);
+  --ifm-link-hover-color: var(--ifm-color-primary);
+  --ifm-link-decoration: none;
 }
 
-a {
-  display: inline-block;
+html[data-theme='dark'] .alert a {
+  text-decoration-color: var(--ifm-color-primary);
+}
+
+.toggle_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module {
+  display: flex;
+  align-self: flex-end;
+}
+
+.toggle_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module {
+  display: flex;
+  align-self: center;
 }
 
 .padding-bottom--lg {
@@ -41,85 +69,17 @@ a {
   margin-top: 6%;
 }
 
-.op-light {
-  width: 11em;
-  display: block;
-}
-
-html[data-theme='light'] .op-dark {
-  display: none;
-}
-
-.git-light {
-  width: 1.75em;
-  display: block;
-}
-
-html[data-theme='light'] .git-dark {
-  display: none;
-}
-
-.git-dark {
-  width: 1.75em;
-  display: block;
-}
-
-html[data-theme='dark'] .git-light {
-  display: none;
-}
-
-.op-dark {
-  width: 11em;
-  display: block;
-}
-
-html[data-theme='dark'] .op-light {
-  display: none;
-}
-
-.x-dark {
-  width: 3.2em;
-  margin-left: -.2em;
-  margin-top: -.1em;
-  display: inline-block;
-}
-
-.discord-light {
-  width: 2.1em;
-  margin-right: .4em;
-  margin-top: .22em;
-}
-
-html[data-theme='light'] .discord-dark {
-  display: none;
-}
-
-.discord-dark {
-  width: 2.1em;
-  margin-right: .4em;
-  margin-top: .22em;
-}
-
-html[data-theme='dark'] .discord-light {
-  display: none;
-}
-
-.image-row {
-  display: flex;
-  width: fit-content;
-  justify-content: space-around;
-}
-
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #3074fc;
-  --ifm-color-primary-dark: #1260fc;
-  --ifm-color-primary-darker: #0456fb;
-  --ifm-color-primary-darkest: #0347cf;
-  --ifm-color-primary-light: #4e88fc;
-  --ifm-color-primary-lighter: #5c92fd;
-  --ifm-color-primary-lightest: #89b0fd;
+  --ifm-color-primary: #2BD67B;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
   --ifm-code-font-size: 95%;
+  --ifm-breadcrumb-item-background-active: rgba(43, 214, 123, 0.10);
 }
 
 html[data-theme='dark'] {
@@ -127,28 +87,4 @@ html[data-theme='dark'] {
   --ifm-background-surface-color: #0C152E;
   --docusaurus-highlighted-code-line-bg: #050915;
   --ifm-footer-background-color: #0C152E;
-}
-
-[data-theme='dark'] .theme-admonition-tip {
-    background-color: rgb(0, 148, 0, .175)
-}
-
-[data-theme='dark'] .theme-admonition-danger {
-    background-color: rgb(225, 50, 56, .175)
-}
-
-[data-theme='dark'] .theme-admonition-info {
-    background-color: rgb(75, 179, 212, .175)
-}
-
-[data-theme='dark'] .theme-admonition-note {
-    background-color: rgb(253, 253, 254, .175)
-}
-
-[data-theme='dark'] .theme-admonition-caution {
-    background-color: rgb(231, 167, 0, .175)
-}
-
-[data-theme='dark'] .footer {
-    box-shadow: 1px 1px 1px 1px white;
 }
