@@ -5,6 +5,7 @@
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
 import { themes as prismThemes } from 'prism-react-renderer';
+import * as process from 'process';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -13,10 +14,10 @@ const config = {
   favicon: 'img/favicon.png',
 
   // Set the production url of your site here
-  url: 'https://docs.lisk.com',
+  url: process.env.LISK_DOC_URL ?? 'https://documentation.lisk.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/lisk-documentation/',
+  baseUrl: process.env.LISK_DOC_BASE_URL ?? '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
