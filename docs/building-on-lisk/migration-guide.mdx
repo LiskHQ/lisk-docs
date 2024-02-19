@@ -598,6 +598,7 @@ Migrate the module endpoints by implementing corresponding view functions in the
   ```
   </TabItem>
   <TabItem value="liskl2" label="Lisk L2" default>
+  {/* Are these functions required, or is it enough to declare the state variable public? */}  
     ```solidity title="hello_liskl2/src/Hello.sol"
     // Function to get the Hello message counter
     function getHelloCounter() public view returns (uint32) {
