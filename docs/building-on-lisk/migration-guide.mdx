@@ -239,13 +239,13 @@ To edit the configuration options of the Hello module, we implement the followin
 
 ```solidity title="hello_liskl2/src/Hello.sol"
 // Function to configure the blacklist
-function setBlacklist(string[] memory _newWord) public onlyOwner {
-    blacklist = _newWord;
+function setBlacklist(string[] memory _newBlackList) public onlyOwner {
+    blacklist = _newBlackList;
 } 
 // Function to configure min/max message length
-function setMinMaxMessageLength(uint32 _newMin,uint32 _newMax) public onlyOwner {
-    minlength = _newMin;
-    maxLength = _newMax;
+function setMinMaxMessageLength(uint32 _newMinLength,uint32 _newMaxLength) public onlyOwner {
+    minlength = _newMinLength;
+    maxLength = _newMaxLength;
 }
 ```
 
@@ -290,34 +290,13 @@ To verify the Hello message, we implement custom modifiers in the contract.
 
 Inside of the modifiers, we check the length of the message and if it contains any blacklisted words, like it was done in the `verify()` method of the Lisk L1 Hello module.
 
-To check the length of strings conviniently, we use the `Strings` library, which is part of the Solidity Util library.
-
-You can add `solidity-util` to your projects dependencies by running the following command:
-
-```bash title="hello_liskl2/"
-forge install willitscale/solidity-util
-```
-
-Now import the `Strings.sol` file in the `Hello.sol` contract and add `using Strings for string;` on top of the contract.
-
-```solidity title="hello_liskl2/src/Hello.sol"
-pragma solidity ^0.8.20;
-import "lib/solidity-util/lib/Strings.sol";
-
-contract Hello {
-    using Strings for string;
-
-    // ....
-}
-```
-
-Then you can conveniently check the length of Hello messages in the `validLength` modifier like this:
+Conveniently check the length of Hello messages in the `validLength` modifier like this:
 
 ```solidity title="hello_liskl2/src/Hello.sol"
 // Validate message length
 modifier validLength(string memory _message) {
-    require(_message.length() >= minlength, "Message too short");
-    require(_message.length() <= maxLength, "Message too long");
+    require(bytes(_message).length >= minlength, "Message too short");
+    require(bytes(_message).length <= maxLength, "Message too long");
     _;
 }
 ```
@@ -476,11 +455,8 @@ function createHello(string calldata _message) public validMessage(_message) {
     // SPDX-License-Identifier: MIT
     // compiler version must be greater than or equal to 0.8.20 and less than 0.9.0
     pragma solidity ^0.8.20;
-    import "lib/solidity-util/lib/Strings.sol";
 
     contract Hello {
-        using Strings for string;
-
         /** State variables */
         // State variable for the Hello messages
         mapping(address => string) public message;
@@ -508,8 +484,8 @@ function createHello(string calldata _message) public validMessage(_message) {
         }
         // Validate message length
         modifier validLength(string memory _message) {
-            require(_message.length() >= minlength, "Message too short");
-            require(_message.length() <= maxLength, "Message too long");
+            require(bytes(_message).length >= minlength, "Message too short");
+            require(bytes(_message).length <= maxLength, "Message too long");
             _;
         }
         // Validate message content
@@ -542,13 +518,13 @@ function createHello(string calldata _message) public validMessage(_message) {
 
         /** Functions */
         // Function to configure the blacklist
-        function setBlacklist(string[] memory _newWord) public onlyOwner {
-            blacklist = _newWord;
+        function setBlacklist(string[] memory _newBlackList) public onlyOwner {
+            blacklist = _newBlackList;
         } 
         // Function to configure min/max message length
-        function setMinMaxMessageLength(uint32 _newMin,uint32 _newMax) public onlyOwner {
-            minlength = _newMin;
-            maxLength = _newMax;
+        function setMinMaxMessageLength(uint32 _newMinLength,uint32 _newMaxLength) public onlyOwner {
+            minlength = _newMinLength;
+            maxLength = _newMaxLength;
         }
         // Function to create a new Hello message
         function createHello(string calldata _message) public validLength(_message) validWords(_message) {
@@ -598,16 +574,16 @@ Migrate the module endpoints by implementing corresponding view functions in the
   ```
   </TabItem>
   <TabItem value="liskl2" label="Lisk L2" default>
-  {/* Are these functions required, or is it enough to declare the state variable public? */}  
+  For simple getters, it is sufficient to add the `public` visibility modifier to the state variables.
+  Public state variables can be accessed directly from external parties.
+
+  For more complex endpoints, you can implement corresponding view functions in the contract.
+  
     ```solidity title="hello_liskl2/src/Hello.sol"
-    // Function to get the Hello message counter
-    function getHelloCounter() public view returns (uint32) {
-        return counter;
-    }
-    // Function to get the Hello message of an address
-    function getHello(address _address) public view returns (string) {
-        return message[_address];
-    }
+    // State variable for the Hello messages
+    mapping(address => string) public message;
+    // State variable for the message counter
+    uint32 public counter = 0;
     ```
   </TabItem>
 </Tabs>
@@ -617,9 +593,9 @@ Migrate the module endpoints by implementing corresponding view functions in the
 Now that we re-implemented the Hello module from Lisk L1 as a smart contract in Lisk L2, it is possible to directly deploy the Hello contract to Lisk L2 and interact with it.
 
 Before deploying the smart contract to Lisk, it is recommended to [test it locally](#testing-the-smart-contract) by writing corresponding tests for the newly created smart contract.
-Once the smart contract is [deployed](#smart-contract-deployment) to Lisk, you can [interact](#interacting-with-the-smart-contract) with it by calling its public functions.
+Once the smart contract is [deployed](#smart-contract-deployment) to Lisk, you can interact with it by calling its public functions.
 
-Finally, you can migrate the [plugins and UI](#migration-of-plugins-and-ui) of the Lisk L1 Hello app to be compatible with the new API, to complete the migration process of your Lisk application.
+Finally, you can migrate the plugins and UI of the Lisk L1 Hello app to be compatible with the new API, to complete the migration process of your Lisk application.
 
 ### Testing the smart contract
 
@@ -727,19 +703,6 @@ contract HelloTest is Test {
         hoax(alice, 100 ether);
         vm.expectRevert();
         hello2.setMinMaxMessageLength(newMin,newMax);
-    }
-
-    function test_getHello() public {
-        hoax(alice, 100 ether);
-        hello.createHello("Hello World");
-        assertEq(hello.getHello(alice), "Hello World");
-    }
-
-    function test_getHelloCounter() public {
-        hoax(alice, 100 ether);
-        assertEq(hello.getHelloCounter(), 0);
-        hello.createHello("Hello World");
-        assertEq(hello.getHelloCounter(), 1);
     }
 }
 ```
