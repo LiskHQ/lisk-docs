@@ -30,7 +30,7 @@ The following Oracle services support Lisk already:
 - Use token incentives to motivate data providers to maintain data integrity and uninterrupted service
 - Leverage the Arweave blockchain as cheap and permanent storage for archiving Oracle data and maintaining data providers' accountability
 
-See [this guide](https://docs.redstone.finance/) to learn how to use the RedStone feeds.
+See the [RedStone Docs](https://docs.redstone.finance/) to learn how to use the RedStone feeds.
 
 ### Supported networks
 
