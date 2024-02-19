@@ -768,7 +768,10 @@ Test result: ok. 8 passed; 0 failed; 0 skipped; finished in 3.35ms
 ### Smart contract deployment
 
 You can now deploy the smart contract to Lisk.
-We will use the Lisk Sepolia network to deploy our the Hello contract for this example.
+For this example, we will use the Lisk Sepolia network to deploy the Hello contract.
+
+Add the `--verify` flag to the `forge create` command to directly verify the smart contract on the Lisk network.
+
 
 ```bash
 forge create --rpc-url https://rpc.sepolia-api.lisk.com \
@@ -779,6 +782,8 @@ forge create --rpc-url https://rpc.sepolia-api.lisk.com \
 --private-key <your-private-key> \
 src/Hello.sol:Hello
 ```
+
+If the deployment went successfully, the output should look like this:
 
 ```text
 [⠢] Compiling...
@@ -801,3 +806,7 @@ Details: `Unknown UID`
 ```
 
 After the smart contract is deployed, you can interact with it by calling its public functions.
+
+From here, you can migrate the plugins and UI of the Lisk L1 Hello app to be compatible with the new API, to complete the migration process of your Lisk application.
+
+In case you need further assistance, feel free to reach out to the Lisk community at [Lisk.chat](https://lisk.chat).
