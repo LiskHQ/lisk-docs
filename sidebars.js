@@ -56,7 +56,8 @@ const sidebars = {
       collapsed: false,
       items: [
         'lisk-tools/bridges',
-        'lisk-tools/api-providers'
+        'lisk-tools/api-providers',
+        'lisk-tools/oracles'
       ],
     },
   ],
