@@ -83,12 +83,12 @@ const config = {
         },
       },
       // Replace with your project's social card
-      image: 'img/lisk-icon-light.svg',
+      image: '/img/lisk-icon-light.svg',
       navbar: {
         logo: {
           alt: 'Lisk Logo',
-          src: 'img/lisk-icon-light.svg',
-          srcDark: 'img/lisk-icon-dark.svg',
+          src: '/img/lisk-icon-light.svg',
+          srcDark: '/img/lisk-icon-dark.svg',
         },
         items: [
           {
@@ -102,8 +102,8 @@ const config = {
             href: 'https://stack.optimism.io',
 
             html: `
-              <img src="img/op_stack_dark.svg" class="op-dark" />
-              <img src="img/op_stack.svg" class="op-light" />
+              <img src="/img/op_stack_dark.svg" class="op-dark" />
+              <img src="/img/op_stack.svg" class="op-light" />
             `,
             position: 'right',
           },
@@ -116,8 +116,8 @@ const config = {
             items: [
               {
                 html: `
-              <img src="img/lisk-icon-light.svg" class="lsk-light" />
-              <img src="img/lisk-icon-dark.svg" class="lsk-dark" />
+              <img src="/img/lisk-icon-light.svg" class="lsk-light" />
+              <img src="/img/lisk-icon-dark.svg" class="lsk-dark" />
             `},
             ],
           },
