@@ -31,10 +31,30 @@
   --ifm-alert-border-color: #3074fc;
 }
 
+details {
+  border: var(--ifm-alert-border-width) solid var(--ifm-alert-border-color) !important;
+  border-left-width: var(--ifm-alert-border-left-width) !important;
+}
+
+summary {
+  font-size: large !important;
+  font-weight: 600 !important;
+}
+
 .alert {
   --ifm-link-color: var(--ifm-color-primary);
   --ifm-link-hover-color: var(--ifm-color-primary);
   --ifm-link-decoration: none;
+}
+
+.alert--info {
+  --ifm-alert-background-color: inherit;
+  --ifm-alert-background-color-highlight: #f6f7f8;
+  --ifm-alert-border-color: inherit;
+}
+
+html[data-theme='dark'] .alert--info {
+  --ifm-alert-background-color-highlight: rgb(255 255 255 / 10%);
 }
 
 a {
@@ -62,42 +82,6 @@ html[data-theme='dark'] .alert a {
 
 .pagination-nav {
   margin-top: 6%;
-}
-
-
-.details_node_modules-\@docusaurus-theme-common-lib-components-Details-styles-module {
-  border: var(--ifm-alert-border-width) solid var(--ifm-alert-border-color);
-  border-left-width: var(--ifm-alert-border-left-width);
-}
-
-html[data-theme='dark'] .details_node_modules-\@docusaurus-theme-common-lib-components-Details-styles-module {
-  border: var(--ifm-alert-border-width) solid var(--ifm-alert-border-color);
-  border-left-width: var(--ifm-alert-border-left-width);
-}
-
-.details_node_modules-\@docusaurus-theme-classic-lib-theme-Details-styles-module {
-  border: var(--ifm-alert-border-width) solid var(--ifm-alert-border-color);
-  border-left-width: var(--ifm-alert-border-left-width);
-}
-
-html[data-theme='dark'] .details_node_modules-\@docusaurus-theme-classic-lib-theme-Details-styles-module {
-  border: var(--ifm-alert-border-width) solid var(--ifm-alert-border-color);
-  border-left-width: var(--ifm-alert-border-left-width);
-}
-
-.details_node_modules-\@docusaurus-theme-common-lib-components-Details-styles-module>summary {
-  font-size: large;
-  font-weight: 600;
-}
-
-.alert--info {
-  --ifm-alert-background-color: inherit;
-  --ifm-alert-background-color-highlight: #f6f7f8;
-  --ifm-alert-border-color: inherit;
-}
-
-html[data-theme='dark'] .alert--info {
-  --ifm-alert-background-color-highlight: rgb(255 255 255 / 10%);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
