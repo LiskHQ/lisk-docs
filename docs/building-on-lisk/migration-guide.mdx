@@ -221,7 +221,7 @@ Migrate the blockchain events of a module by implementing corresponding events i
 <details>
 <summary>Configuration migration</summary>
 #### Configuration
-The module-specific configurations, which resided in the `config.json` on Lisk L1, are now part of the smart contract itself, and defined as state variables.
+The module-specific configurations, which resided in the `config.json` on Lisk L1, are now part of the smart contract itself and are defined as state variables.
 
 ```solidity title="hello_liskl2/src/Hello.sol"
 // Blacklist of words that are not allowed in the Hello message
@@ -229,7 +229,7 @@ string[] public blacklist = ["word1","word2"];
 // Maximum length of the Hello message
 uint32 public maxLength = 200;
 // Minimum length of the Hello message
-uint32 public minlength = 3
+uint32 public minlength = 3;
 ```
 
 To edit the configuration options of the Hello module, we implement the following functions in the Hello contract:
@@ -256,10 +256,10 @@ This is a default visibility modifier for functions in Solidity.
 - `onlyOwner` to check that the caller is the owner of the contract.
 This is a custom modifier that we need to implement in the contract manually, as shown in the example below.
  
-To set the owner of the contract, we add a new state variable `owner` and a constructor which sets the `owner` variable to the account address that deploys the contract.
+To set the owner of the contract, we add a new state variable `owner`, and a constructor which sets the `owner` variable to the account address that deploys the contract.
 
 :::tip
-For updating the owner of the smart contract, you can imeplemnt a corresponding function `setOwner()` and use the `onlyOwner` modifier to ensure that only the current owner can call this function.
+To update the smart contract owner, you can implement a corresponding function `setOwner()`, and use the `onlyOwner` modifier to ensure that only the current owner can call this function.
 :::
 
 Finally, we can check for the message sender being the owner of the contract in the `onlyOwner` modifier which is used for the `setBlacklist()` and `setMinMaxMessageLength()` functions.
@@ -288,7 +288,7 @@ modifier onlyOwner() {
 
 To verify the Hello message, we implement custom modifiers in the contract.
 
-Inside of the modifiers, we check the length of the message and if it contains any blacklisted words, like it was done in the `verify()` method of the Lisk L1 Hello module.
+Inside the modifiers, we check the length of the message and if it contains any blacklisted words like it was done in the `verify()` method of the Lisk L1 Hello module.
 
 Conveniently check the length of Hello messages in the `validLength` modifier like this:
 
@@ -336,15 +336,15 @@ modifier validWords(string memory _message) {
 
 To migrate the createHello command execution, we implement the `createHello()` function in the contract.
 
-Inside of this function, we save the message of the sender in the `message` mapping under the sender address.
+Inside this function, we save the message of the sender in the `message` mapping under the sender address.
 
 :::tip
 The sender address is a [global variable](https://solidity-by-example.org/variables/) in Solidity and can be accessed with `msg.sender`.
 :::
 
-Additionally, we increment the Hello message counter by +1, and emit the `NewHello` event, like it was done in the `execute()` method of the Lisk L1 Hello module previously.
+Additionally, we increment the Hello message counter by `1` and emit the `NewHello` event, like it was done in the `execute()` method of the Lisk L1 Hello module previously.
 
-The `validMessage()` modifier the we defined above in the Verification section is used to check if the message is valid, before `createHello()` function is executed.
+The `validMessage()` modifier that we defined above in the [Verification](/building-on-lisk/migration-guide#verification) section is used to check if the message is valid before the `createHello()` function is executed.
 
 ```solidity title="hello_liskl2/src/Hello.sol"
 // Function to create a new Hello message
@@ -577,7 +577,7 @@ Migrate the module endpoints by implementing corresponding view functions in the
   For simple getters, it is sufficient to add the `public` visibility modifier to the state variables.
   Public state variables can be accessed directly from external parties.
 
-  For more complex endpoints, you can implement corresponding view functions in the contract.
+For more complex endpoints, you can implement corresponding [view](https://solidity-by-example.org/view-and-pure-functions/) functions in the contract.
 
     ```solidity title="hello_liskl2/src/Hello.sol"
     // State variable for the Hello messages
@@ -604,7 +604,7 @@ By testing the smart contract, you can verify that the smart contract behaves as
 Foundry provides a testing framework to support you in writing tests for smart contracts.
 See [Tests - Foundry Book](https://book.getfoundry.sh/forge/tests) for examples and references regarding the testing framework.
 
-To test the Hello smart contract, create a new file `Hello.t.sol` under `test/` and add the following content:
+To test the Hello smart contract, create a new file `Hello.t.sol` under `test/`, and add the following content:
 
 <details>
 <summary>Hello.t.sol</summary>
