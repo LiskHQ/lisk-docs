@@ -41,10 +41,15 @@ The available endpoints for Lisk nodes include all [Geth RPC endpoints](https://
 Free, rate limited RPC endpoints for the Lisk networks.
 
 
-|               | Lisk Sepolia Testnet              | Lisk Mainnet              |
+|               | Lisk Sepolia Testnet              | 
+| :------       | :------                           | 
+|**HTTP RPC**   | https://rpc.sepolia-api.lisk.com  | 
+|**WS RPC**     | `wss://ws.sepolia-api.lisk.com`   | 
+
+<!-- |               | Lisk Sepolia Testnet              | Lisk Mainnet              |
 | :------       | :------                           | :-----------------------  |
 |**HTTP RPC**   | https://rpc.sepolia-api.lisk.com  | https://rpc.api.lisk.com  |
-|**WS RPC**     | `wss://ws.sepolia-api.lisk.com`   | `wss://ws.api.lisk.com`   |
+|**WS RPC**     | `wss://ws.sepolia-api.lisk.com`   | `wss://ws.api.lisk.com`   | -->
 
 
 ## dRPC
