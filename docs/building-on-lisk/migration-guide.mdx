@@ -348,7 +348,7 @@ The `validMessage()` modifier that we defined above in the [Verification](/build
 
 ```solidity title="hello_liskl2/src/Hello.sol"
 // Function to create a new Hello message
-function createHello(string calldata _message) public validMessage(_message) {
+function createHello(string calldata _message) public validLength(_message) validWords(_message) {
     message[msg.sender] = _message;
     counter+=1;
     emit NewHello(msg.sender, _message);
@@ -539,7 +539,7 @@ function createHello(string calldata _message) public validMessage(_message) {
 
 ### Endpoints
 
-Migrate the module endpoints by implementing corresponding view functions in the contract as shown below.
+Migrate the module endpoints by implementing corresponding [view functions](https://solidity-by-example.org/view-and-pure-functions/) in the contract as shown below.
 
 <Tabs>
   <TabItem value="liskl1" label="Lisk L1">
@@ -574,17 +574,9 @@ Migrate the module endpoints by implementing corresponding view functions in the
   ```
   </TabItem>
   <TabItem value="liskl2" label="Lisk L2" default>
-  For simple getters, it is sufficient to add the `public` visibility modifier to the state variables.
-  Public state variables can be accessed directly from external parties.
-
-For more complex endpoints, you can implement corresponding [view](https://solidity-by-example.org/view-and-pure-functions/) functions in the contract.
-
-    ```solidity title="hello_liskl2/src/Hello.sol"
-    // State variable for the Hello messages
-    mapping(address => string) public message;
-    // State variable for the message counter
-    uint32 public counter = 0;
-    ```
+  For simple getters, it is sufficient to add the `public` [visibility modifier](https://solidity-by-example.org/visibility/) to the state variables (see [storage](#storage)).
+  
+  Public state variables can be accessed directly from external parties, without implementing the corresponding view function.
   </TabItem>
 </Tabs>
 
