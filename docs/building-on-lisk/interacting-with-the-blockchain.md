@@ -1,5 +1,5 @@
 ---
-title: ethers.js
+title: Interacting with the blockchain
 slug: /building-on-lisk/ethers
 description: Documentation for using ethers.js, a JavaScript library for EVM-compatible blockchain interactions. This page covers installation, setup, connecting to the Lisk network, reading and writing blockchain data, and interacting with smart contracts.
 keywords:
@@ -19,7 +19,7 @@ keywords:
   ]
 ---
 
-# ethers.js
+# Interacting with the blockchain with ethers.js
 
 [ethers.js](https://docs.ethers.org/v5/) is a JavaScript library that allows developers to interact with EVM-compatible blockchain networks.
 
