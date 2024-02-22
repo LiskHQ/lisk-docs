@@ -40,7 +40,7 @@ const sidebars = {
         'building-on-lisk/contracts',
         'building-on-lisk/add-token-to-lisk',
         'building-on-lisk/deploying-a-smart-contract',
-        'building-on-lisk/interacting-with-a-smart-contract',
+        'building-on-lisk/interacting-with-the-blockchain',
         'building-on-lisk/migration-guide',
       ],
       link: {
