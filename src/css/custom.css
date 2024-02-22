@@ -28,7 +28,7 @@
   --ifm-tabs-color-active-border: rgba(64, 112, 244, 1);
   --ifm-code-background: #f6f7f8;
   --ifm-alert-border-color: #3074fc;
-  --ifm-code-font-size: 91%;
+  --ifm-code-font-size: 90%;
 }
 
 [class^='codeBlockTitle'] {
