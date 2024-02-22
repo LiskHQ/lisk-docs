@@ -28,7 +28,12 @@
   --ifm-tabs-color-active-border: rgba(64, 112, 244, 1);
   --ifm-code-background: #f6f7f8;
   --ifm-alert-border-color: #3074fc;
-  --ifm-code-font-size: 90%;
+  --ifm-code-font-size: 91%;
+}
+
+[class^='codeBlockTitle'] {
+  font-weight: 600 !important;
+  font-size: large !important;
 }
 
 details {
@@ -66,27 +71,12 @@ html[data-theme='dark'] .alert a {
   text-decoration-color: var(--ifm-color-primary);
 }
 
-.toggle_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module {
-  display: flex;
-  align-self: flex-end;
-}
-
-.toggle_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module {
-  display: flex;
-  align-self: center;
-}
-
 .padding-bottom--lg {
   margin-bottom: 3% !important;
 }
 
 .pagination-nav {
   margin-top: 6%;
-}
-
-.codeBlockTitle_node_modules-\@docusaurus-theme-classic-lib-theme-CodeBlock-Content-styles-module {
-  font-weight: 600 !important;
-  font-size: large !important;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
