@@ -151,9 +151,9 @@ const config = {
 
       },
       prism: {
-        theme: prismThemes.oneLight,
-        darkTheme: prismThemes.palenight,
-        additionalLanguages: ['solidity'],
+        theme: prismThemes.github,
+        darkTheme: prismThemes.oceanicNext,
+        additionalLanguages: ['solidity', 'bash', 'javascript', 'typescript', 'rust', 'css', 'json'],
       },
       colorMode: {
         defaultMode: 'light',

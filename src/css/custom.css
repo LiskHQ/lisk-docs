@@ -23,12 +23,17 @@
   --ifm-color-primary-lighter: #5c92fd;
   --ifm-color-primary-lightest: #89b0fd;
   --ifm-font-family-base: 'Gilroy';
-  --ifm-font-family-monospace: 'Gilroy';
   --ifm-heading-font-family: 'Gilroy-Medium';
   --ifm-breadcrumb-item-background-active: rgba(64, 112, 244, 0.10);
   --ifm-tabs-color-active-border: rgba(64, 112, 244, 1);
   --ifm-code-background: #f6f7f8;
   --ifm-alert-border-color: #3074fc;
+  --ifm-code-font-size: 91%;
+}
+
+[class^='codeBlockTitle'] {
+  font-weight: 600 !important;
+  font-size: large !important;
 }
 
 details {
@@ -70,16 +75,6 @@ a {
   text-decoration-color: var(--ifm-color-primary);
 }
 
-.toggle_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module {
-  display: flex;
-  align-self: flex-end;
-}
-
-.toggle_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module {
-  display: flex;
-  align-self: center;
-}
-
 .padding-bottom--lg {
   margin-bottom: 3% !important;
 }
@@ -97,7 +92,7 @@ a {
   --ifm-color-primary-light: #29d5b0;
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
-  --ifm-code-font-size: 95%;
+  --ifm-code-font-size: 90%;
   --ifm-breadcrumb-item-background-active: rgba(43, 214, 123, 0.10);
   --ifm-code-background: rgb(246 247 248 / 30%);
   --ifm-alert-border-color: #2BD67B;
