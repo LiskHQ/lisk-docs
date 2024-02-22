@@ -229,7 +229,7 @@ string[] public blacklist = ["word1","word2"];
 // Maximum length of the Hello message
 uint32 public maxLength = 200;
 // Minimum length of the Hello message
-uint32 public minlength = 3;
+uint32 public minLength = 3;
 ```
 
 To edit the configuration options of the Hello module, we implement the following functions in the Hello contract:
@@ -244,7 +244,7 @@ function setBlacklist(string[] memory _newBlackList) public onlyOwner {
 } 
 // Function to configure min/max message length
 function setMinMaxMessageLength(uint32 _newMinLength,uint32 _newMaxLength) public onlyOwner {
-    minlength = _newMinLength;
+    minLength = _newMinLength;
     maxLength = _newMaxLength;
 }
 ```
@@ -295,7 +295,7 @@ Conveniently check the length of Hello messages in the `validLength` modifier li
 ```solidity title="hello_liskl2/src/Hello.sol"
 // Validate message length
 modifier validLength(string memory _message) {
-    require(bytes(_message).length >= minlength, "Message too short");
+    require(bytes(_message).length >= minLength, "Message too short");
     require(bytes(_message).length <= maxLength, "Message too long");
     _;
 }
@@ -469,7 +469,7 @@ function createHello(string calldata _message) public validLength(_message) vali
         // Maximum length of the Hello message
         uint32 public maxLength = 200;
         // Minimum length of the Hello message
-        uint32 public minlength = 3;
+        uint32 public minLength = 3;
 
         constructor() {
             // Set the transaction sender as the owner of the contract.
@@ -484,7 +484,7 @@ function createHello(string calldata _message) public validLength(_message) vali
         }
         // Validate message length
         modifier validLength(string memory _message) {
-            require(bytes(_message).length >= minlength, "Message too short");
+            require(bytes(_message).length >= minLength, "Message too short");
             require(bytes(_message).length <= maxLength, "Message too long");
             _;
         }
@@ -523,7 +523,7 @@ function createHello(string calldata _message) public validLength(_message) vali
         } 
         // Function to configure min/max message length
         function setMinMaxMessageLength(uint32 _newMinLength,uint32 _newMaxLength) public onlyOwner {
-            minlength = _newMinLength;
+            minLength = _newMinLength;
             maxLength = _newMaxLength;
         }
         // Function to create a new Hello message
@@ -575,7 +575,7 @@ Migrate the module endpoints by implementing corresponding [view functions](http
   </TabItem>
   <TabItem value="liskl2" label="Lisk L2" default>
   For simple getters, it is sufficient to add the `public` [visibility modifier](https://solidity-by-example.org/visibility/) to the state variables (see [storage](#storage)).
-  
+
   Public state variables can be accessed directly from external parties, without implementing the corresponding view function.
   </TabItem>
 </Tabs>
