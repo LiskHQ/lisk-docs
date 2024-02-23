@@ -23,7 +23,7 @@
   --ifm-color-primary-lighter: #5c92fd;
   --ifm-color-primary-lightest: #89b0fd;
   --ifm-font-family-base: 'Gilroy-Medium';
-  --ifm-heading-font-family: 'Gilroy';
+  --ifm-heading-font-family: 'Gilroy-Medium';
   --ifm-breadcrumb-item-background-active: rgba(64, 112, 244, 0.10);
   --ifm-tabs-color-active-border: rgba(64, 112, 244, 1);
   --ifm-code-background: #f6f7f8;
