@@ -7,7 +7,6 @@
     padding: 0%;
     margin-left: -1em;
     font-size: large;
-    color: var(--ifm-color-primary);
 }
 
 html[data-theme='dark'] .navbar__item {
