@@ -50,4 +50,4 @@ This allows for a variety of new web3 experiences, as the user can now pay by on
 
 ### Gelato VRF
 [Gelato VRF](https://www.gelato.network/vrf) (Verifiable Random Function) is a tool designed to provide robust randomness with inherent verifiability.
-Create transparent & fair games, NFTs, lotteries and other onchain applications with distributed randomness.
+Create transparent & fair games, NFTs, lotteries, and other onchain applications with distributed randomness.
