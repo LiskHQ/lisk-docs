@@ -123,6 +123,39 @@ async function sendTx(to) {
 :::
 
 The receiving account's balance will increment by `0.01` ETH once the transaction execution is successful.
+
+<details>
+<summary>Complete code example</summary>
+```javascript
+const ethers = require('ethers');
+
+const url = 'https://rpc.sepolia-api.lisk.com';
+const provider = new ethers.JsonRpcProvider(url);
+
+async function getLatestBlock() {
+    const latestBlock = await provider.getBlockNumber();
+    console.log("The latest block's number is:", latestBlock);
+}
+
+getLatestBlock();
+
+
+const privateKey = 'PRIVATE_KEY';
+const signer = new ethers.Wallet(privateKey, provider);
+const receiver = '0x5e1A92F84cA1CE280B3Cb29d79C3368f45b41EBB';
+// Send 1 ether to an ens name.
+async function sendTx(to) {
+    const tx =  await signer.sendTransaction({
+        to: to,
+        value: ethers.parseEther("0.01")
+    });
+
+    console.log(tx);
+}
+
+sendTx(receiver);
+```
+</details>
 ## Interacting with smart contracts
 
 You can use ethers.js to interact with a smart contract on Lisk by instantiating a `Contract` object using the ABI and address of a deployed contract:
@@ -190,18 +223,6 @@ const url = 'https://rpc.sepolia-api.lisk.com';
 const provider = new ethers.JsonRpcProvider(url);
 const privateKey = 'PRIVATE_KEY';
 const signer = new ethers.Wallet(privateKey, provider);
-const receiver = '0x5e1A92F84cA1CE280B3Cb29d79C3368f45b41EBB';
-// Send 1 ether to an ens name.
-async function sendTx(to) {
-    const tx =  await signer.sendTransaction({
-        to: to,
-        value: ethers.parseEther("0.01")
-    });
-
-    console.log(tx);
-}
-
-//sendTx(receiver);
 
 const abi = [
     {
