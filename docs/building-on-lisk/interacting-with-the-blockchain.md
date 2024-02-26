@@ -21,11 +21,10 @@ keywords:
 
 # Interacting with the blockchain with ethers.js
 
-[ethers.js](https://docs.ethers.org/v6/) is a JavaScript library that allows developers to interact with EVM-compatible blockchain networks.
+[ethers.js](https://docs.ethers.org/) is a JavaScript library that allows developers to interact with EVM-compatible blockchain networks.
 
 You can use ethers.js to interact with smart contracts deployed on the Lisk network.
 
----
 
 ## Install
 
@@ -47,7 +46,7 @@ const ethers = require('ethers');
 
 ## Connecting to Lisk
 
-You can connect to Lisk by instantiating a new ethers.js `JsonRpcProvider` object with a RPC URL of the Lisk network:
+You can connect to Lisk by instantiating a new ethers.js `JsonRpcProvider` object with an RPC URL of the Lisk network:
 
 ```javascript
 const ethers = require('ethers');
@@ -57,7 +56,7 @@ const provider = new ethers.JsonRpcProvider(url);
 ```
 
 :::note
-A **Provider** (in ethers.js) is a class which provides an abstraction for a connection to the Ethereum Network. It provides read-only access to the Blockchain and its status.
+A **Provider** (in ethers.js) is a class that provides an abstraction for a connection to the Ethereum Network. It provides read-only access to the Blockchain and its status.
 :::
 
 ## Reading data from the blockchain
@@ -68,9 +67,11 @@ For example, you can use the `getBlockNumber` method to get the latest block:
 
 ```javascript
 async function getLatestBlock() {
-  const latestBlock = await provider.getBlockNumber();
-  console.log(latestBlock);
+    const latestBlock = await provider.getBlockNumber();
+    console.log("The latest block's number is:", latestBlock);
 }
+
+getLatestBlock();
 ```
 
 ## Writing data to the blockchain
@@ -78,7 +79,7 @@ async function getLatestBlock() {
 In order to write data to the Lisk network, you need to create a `Signer`.
 
 :::note
-A **Signer** is a class which (usually) in some way directly or indirectly has access to a private key, which can sign messages and transactions to authorize the network to charge your account ether to perform operations.
+A **Signer** is a class that (usually) in some way directly or indirectly has access to a private key, which can sign messages and transactions to authorize the network to charge your account ether to perform operations.
 :::
 
 You can create a `Signer` by instantiating a new ethers.js `Wallet` object, providing it with a private key and `Provider`.
@@ -88,15 +89,16 @@ const privateKey = 'PRIVATE_KEY';
 const signer = new ethers.Wallet(privateKey, provider);
 // Send 1 ether to an ens name.
 const tx = signer.sendTransaction({
-    to: "lisk.eth",
-    value: ethers.parseEther("1.0")
+    to: "0x5e1A92F84cA1CE280B3Cb29d79C3368f45b41EBB",
+    value: ethers.parseEther("0.01")
 });
 ```
 
 :::info
-`PRIVATE_KEY` is the private key of the wallet to use when creating the signer.
+`PRIVATE_KEY` is the private key of the account that is to be used when creating the `signer` object.
 :::
 
+The receiving account's balance will increment by `0.01` ETH once the transaction execution is successful.
 ## Interacting with smart contracts
 
 You can use ethers.js to interact with a smart contract on Lisk by instantiating a `Contract` object using the ABI and address of a deployed contract:
@@ -114,7 +116,7 @@ const abi = [
 
 const contractAddress = "CONTRACT_ADDRESS"
 
-// read only
+// read-only
 const contract = new ethers.Contract(contractAddress, abi, provider);
 ```
 
@@ -123,10 +125,10 @@ const contract = new ethers.Contract(contractAddress, abi, provider);
 :::
 
 :::note
-A **Contract** (in ethers.js) is an abstraction which represents a connection to a specific contract on the Lisk Network, so that applications can use it like a normal JavaScript object.	
+A **Contract** (in ethers.js) is an abstraction that represents a connection to a specific contract on the Lisk Network, so that applications can use it like a normal JavaScript object.
 :::
 
-For reading and writing to contracts, provide a `Signer` object instead of a `Provider` object:
+For reading and writing contracts, provide a `Signer` object instead of a `Provider` object:
 
 ```javascript
 // read & write 
@@ -142,9 +144,11 @@ async function createHello(message) {
 }
   
 async function getHello() {
-  const value = await contract.message("0x3C46A11471f285E36EE8d089473ce98269D1b081");
-  return value.toString();
+    const value = await contract.message("0x3C46A11471f285E36EE8d089473ce98269D1b081");
+    console.log(value.toString());
 }
+
+getHello();
 ```
 
 :::tip
