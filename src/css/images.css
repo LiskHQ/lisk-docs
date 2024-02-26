@@ -19,7 +19,7 @@ html[data-theme='dark'] .lsk-light {
 }
 
 .op-light {
-    width: 10em;
+    width: 11em;
     display: flex;
     align-self: center;
     margin-bottom: .09em;
@@ -31,7 +31,7 @@ html[data-theme='light'] .op-dark {
 }
 
 .op-dark {
-    width: 10em;
+    width: 11em;
     display: flex;
     align-self: center;
     margin-bottom: .09em;
