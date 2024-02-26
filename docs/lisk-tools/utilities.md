@@ -33,10 +33,15 @@ Web3 Functions serve as a comprehensive tool, enabling developers to effortlessl
 [Safe](https://docs.safe.global) is the account abstraction leader on Ethereum and the EVM with the most secure smart wallet infrastructure and platform.
 Safe brings digital ownership of accounts to everyone by building universal and open contract standards for the custody of digital assets, data, and identity.
 
+In [this repo](https://github.com/gelatodigital/gelato-raas-aa) you can find a demo implementation for sponsoring the fees with 1Balance or paying the fees with Safe balance.
+
 ### 1Balance
 
 [1Balance](https://docs.gelato.network/web3-services/1balance) is a unified multi-chain payments system.
 1Balance makes it easy for you to pay all of your costs across all the networks that you are using from one single easy-to-manage balance.
+
+Gelato deployed a small [react app](https://gelato-raas-aa.web.app/) with a safe-web3auth integration.
+The code for this integration can be found [here](https://github.com/gelatodigital/gelato-raas-aa-ui).
 
 
 ## Relay Service
