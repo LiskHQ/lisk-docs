@@ -131,15 +131,6 @@ const ethers = require('ethers');
 
 const url = 'https://rpc.sepolia-api.lisk.com';
 const provider = new ethers.JsonRpcProvider(url);
-
-async function getLatestBlock() {
-    const latestBlock = await provider.getBlockNumber();
-    console.log("The latest block's number is:", latestBlock);
-}
-
-getLatestBlock();
-
-
 const privateKey = 'PRIVATE_KEY';
 const signer = new ethers.Wallet(privateKey, provider);
 const receiver = '0x5e1A92F84cA1CE280B3Cb29d79C3368f45b41EBB';
@@ -156,6 +147,7 @@ async function sendTx(to) {
 sendTx(receiver);
 ```
 </details>
+
 ## Interacting with smart contracts
 
 You can use ethers.js to interact with a smart contract on Lisk by instantiating a `Contract` object using the ABI and address of a deployed contract:
@@ -166,15 +158,20 @@ The ABI of a contract can be found on the respective contract page in [BlockScou
 For example, you can find the ABI for the `Hello` contract [here](https://sepolia-blockscout.lisk.com/address/0xb18eb752813c2fbedfdf2be6e5e842a85a3b8539?tab=contact_code). Just scroll down to `Contract ABI`.
 :::
 
-```javascript
+```javascript title="Reading from contracts"
+const contractAddress = "CONTRACT_ADDRESS"
+// read-only
+const contract = new ethers.Contract(contractAddress, abi, provider);
 const abi = [
 … // ABI of deployed contract
 ];
 
-const contractAddress = "CONTRACT_ADDRESS"
+async function getHello() {
+    const value = await contract.message("0x3C46A11471f285E36EE8d089473ce98269D1b081");
+    console.log(value.toString());
+}
 
-// read-only
-const contract = new ethers.Contract(contractAddress, abi, provider);
+getHello();
 ```
 
 :::info
@@ -187,7 +184,7 @@ A **Contract** (in ethers.js) is an abstraction that represents a connection to 
 
 For reading and writing contracts, provide a `Signer` object instead of a `Provider` object:
 
-```javascript
+```javascript title="Writing to contracts"
 // read & write 
 const contract = new ethers.Contract(contractAddress, abi, signer);
 ```
@@ -201,13 +198,6 @@ async function createHello(message) {
 }
 
 //createHello("Hello Lisk!");
-  
-async function getHello() {
-    const value = await contract.message("0x3C46A11471f285E36EE8d089473ce98269D1b081");
-    console.log(value.toString());
-}
-
-getHello();
 ```
 
 :::tip
@@ -223,7 +213,11 @@ const url = 'https://rpc.sepolia-api.lisk.com';
 const provider = new ethers.JsonRpcProvider(url);
 const privateKey = 'PRIVATE_KEY';
 const signer = new ethers.Wallet(privateKey, provider);
-
+const contractAddress = "0xb18eb752813c2fbedfdf2be6e5e842a85a3b8539"
+// Read & Write
+const contract = new ethers.Contract(contractAddress, abi, signer);
+// Read-only
+//const contract = new ethers.Contract(contractAddress, abi, provider);
 const abi = [
     {
         "inputs": [],
@@ -384,8 +378,6 @@ const abi = [
         "type": "function"
     }
 ]
-const contractAddress = "0xb18eb752813c2fbedfdf2be6e5e842a85a3b8539"
-const contract = new ethers.Contract(contractAddress, abi, signer);
 
 async function createHello(message) {
     const tx = await contract.createHello(message);
