@@ -33,7 +33,7 @@ Web3 Functions serve as a comprehensive tool, enabling developers to effortlessl
 [Safe](https://docs.safe.global) is the account abstraction leader on Ethereum and the EVM with the most secure smart wallet infrastructure and platform.
 Safe brings digital ownership of accounts to everyone by building universal and open contract standards for the custody of digital assets, data, and identity.
 
-Gelato deployed a small [react app](https://gelato-raas-aa.web.app/) with a safe-web3auth integration.
+Gelato deployed a small example [react app](https://gelato-raas-aa.web.app/) with a safe-web3auth integration.
 The code for this integration can be found [here](https://github.com/gelatodigital/gelato-raas-aa-ui).
 
 ### 1Balance
