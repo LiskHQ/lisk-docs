@@ -150,6 +150,13 @@ const config = {
         ],
 
       },
+      algolia: {
+        appId: 'D8OVOP2W00',
+        apiKey: 'e8ca930ec49db40b3701611a31f1010e',
+        indexName: "umentation-lisk",
+        contextualSearch: false,
+        debug: false,
+      },
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.oceanicNext,

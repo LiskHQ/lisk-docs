@@ -22,8 +22,9 @@
   --ifm-color-primary-light: #4e88fc;
   --ifm-color-primary-lighter: #5c92fd;
   --ifm-color-primary-lightest: #89b0fd;
-  --ifm-font-family-base: 'Gilroy';
+  --ifm-font-family-base: 'Gilroy-Medium';
   --ifm-heading-font-family: 'Gilroy-Medium';
+  --ifm-navbar-link-color: var(--ifm-color-primary);
   --ifm-breadcrumb-item-background-active: rgba(64, 112, 244, 0.10);
   --ifm-tabs-color-active-border: rgba(64, 112, 244, 1);
   --ifm-code-background: #f6f7f8;
@@ -71,7 +72,8 @@ a {
   display: inline-block;
   scroll-margin-top: var(--ifm-navbar-height);
 }
-  html[data-theme='dark'] .alert a {
+
+html[data-theme='dark'] .alert a {
   text-decoration-color: var(--ifm-color-primary);
 }
 

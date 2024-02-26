@@ -9,6 +9,11 @@
 }
 
 @font-face {
+    font-family: "Gilroy-Black";
+    src: url('/static/font/Gilroy-Black.ttf') format('truetype');
+}
+
+@font-face {
     font-family: "Gilroy-BlackItalic";
     src: url('/static/font/Gilroy-BlackItalic.ttf') format('truetype');
 }
