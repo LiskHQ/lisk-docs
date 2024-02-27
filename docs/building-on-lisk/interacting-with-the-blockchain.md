@@ -105,7 +105,7 @@ You can create a `Signer` by instantiating a new ethers.js `Wallet` object, prov
 const privateKey = 'PRIVATE_KEY';
 const signer = new ethers.Wallet(privateKey, provider);
 const receiver = '0x5e1A92F84cA1CE280B3Cb29d79C3368f45b41EBB';
-// Send 1 ether to an ens name.
+// Send 0.01 ether to a given address.
 async function sendTx(to) {
     const tx =  await signer.sendTransaction({
         to: to,
@@ -131,10 +131,11 @@ const ethers = require('ethers');
 
 const url = 'https://rpc.sepolia-api.lisk.com';
 const provider = new ethers.JsonRpcProvider(url);
+// Replace PRIVATE_KEY with the private key of your account.
 const privateKey = 'PRIVATE_KEY';
 const signer = new ethers.Wallet(privateKey, provider);
 const receiver = '0x5e1A92F84cA1CE280B3Cb29d79C3368f45b41EBB';
-// Send 1 ether to an ens name.
+// Send 0.01 ether to a given address.
 async function sendTx(to) {
     const tx =  await signer.sendTransaction({
         to: to,
@@ -155,10 +156,11 @@ You can use ethers.js to interact with a smart contract on Lisk by instantiating
 :::tip
 The ABI of a contract can be found on the respective contract page in [BlockScout](https://sepolia-blockscout.lisk.com/).
 
-For example, you can find the ABI for the `Hello` contract [here](https://sepolia-blockscout.lisk.com/address/0xb18eb752813c2fbedfdf2be6e5e842a85a3b8539?tab=contact_code). Just scroll down to `Contract ABI`.
+For example, you can use the ABI for the [Hello contract](https://sepolia-blockscout.lisk.com/address/0xb18eb752813c2fbedfdf2be6e5e842a85a3b8539?tab=contact_code). Just scroll down to `Contract ABI` and copy the deployed contract's ABI.
 :::
 
 ```javascript title="Reading from contracts"
+// Replace the contractAddress' value with the desired contract.
 const contractAddress = "CONTRACT_ADDRESS"
 // read-only
 const contract = new ethers.Contract(contractAddress, abi, provider);
