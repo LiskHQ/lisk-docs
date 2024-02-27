@@ -26,7 +26,6 @@ A summary of various services available for building on Lisk.
 Gelato's [Web3 Functions](https://www.gelato.network/web3-functions) is a powerful automation system designed to streamline and enhance Web3 operations.
 Web3 Functions serve as a comprehensive tool, enabling developers to effortlessly set up, manage, and automate their smart contract tasks.
 
-
 ## Account Abstraction
 
 ### Safe 
@@ -34,14 +33,14 @@ Web3 Functions serve as a comprehensive tool, enabling developers to effortlessl
 Safe brings digital ownership of accounts to everyone by building universal and open contract standards for the custody of digital assets, data, and identity.
 
 Gelato deployed a small example [react app](https://gelato-raas-aa.web.app/) with a safe-web3auth integration.
-The code for this integration can be found [here](https://github.com/gelatodigital/gelato-raas-aa-ui).
+The code for this integration can be found on the [gelato-raas-aa-ui](https://github.com/gelatodigital/gelato-raas-aa-ui) repository.
 
 ### 1Balance
 
 [1Balance](https://docs.gelato.network/web3-services/1balance) is a unified multi-chain payments system.
 1Balance makes it easy for you to pay all of your costs across all the networks that you are using from one single easy-to-manage balance.
 
-In [this repo](https://github.com/gelatodigital/gelato-raas-aa) you can find a demo implementation for sponsoring the fees with 1Balance or paying the fees with Safe balance.
+In the [gelato-raas-aa](https://github.com/gelatodigital/gelato-raas-aa) repository, you can find a demo implementation for sponsoring the fees with 1Balance or paying the fees with Safe balance.
 
 ## Relay Service
 
