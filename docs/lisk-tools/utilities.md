@@ -25,9 +25,6 @@ A summary of various services available for building on Lisk.
 
 Gelato's [Web3 Functions](https://www.gelato.network/web3-functions) is a powerful automation system designed to streamline and enhance Web3 operations.
 Web3 Functions serve as a comprehensive tool, enabling developers to effortlessly set up, manage, and automate their smart contract tasks.
-For example, the following are a couple of functions designed to list the latest price feed for Lisk Sepolia:
-- [REDSTONE ETH](https://app.gelato.network/functions/task/0x98ab97a550430b0f92bb9d0c89582af773882c1fb60c3cfc043ad780de2cdc9b:4202)
-- [REDSTONE USDC](https://app.gelato.network/functions/task/0x67f917f8c1430b0122d60d9b56a50ad0f18394a7ffa9e9467ee7881995ed7d31:4202)
 
 ## Account Abstraction
 
