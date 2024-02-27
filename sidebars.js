@@ -46,7 +46,7 @@ const sidebars = {
           collapsible: true,
           collapsed: true,
           items: [
-            'building-on-lisk/interacting-with-the-blockchain/interacting-with-the-blockchain',
+            'building-on-lisk/interacting-with-the-blockchain/ethers',
             'building-on-lisk/interacting-with-the-blockchain/viem',
           ],
         },
