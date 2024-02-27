@@ -69,6 +69,8 @@ For more information on Predeploys, see [Predeploys' README](https://github.com/
 | [**SchemaRegistry**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#schemaregistry)                | [0x4200000000000000000000000000000000000020](https://sepolia-blockscout.lisk.com/address/0x4200000000000000000000000000000000000020) |
 | [**EAS**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#eas)        | [0x4200000000000000000000000000000000000021](https://sepolia-blockscout.lisk.com/address/0x4200000000000000000000000000000000000021) |
 | [**create2Deployer**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#create2deployer)                | [0x13b0D85CcB8bf860b6b79AF3029fCA081AE9beF2](https://sepolia-blockscout.lisk.com/address/0x13b0D85CcB8bf860b6b79AF3029fCA081AE9beF2) |
+| **RedstonePriceFeedWithRoundsETH** | [0x6F9A3AC224025B0A9E7b7F47dcb1DF7872e2fA75](https://sepolia-blockscout.lisk.com/address/0x6F9A3AC224025B0A9E7b7F47dcb1DF7872e2fA75) |
+| **RedstonePriceFeedWithRoundsUSDC** | [0xC603180D79a5Afa341A59134d126fC72Bcd19283](https://sepolia-blockscout.lisk.com/address/0xC603180D79a5Afa341A59134d126fC72Bcd19283) |
 
 
 
