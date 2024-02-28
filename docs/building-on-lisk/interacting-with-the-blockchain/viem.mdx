@@ -114,7 +114,7 @@ Once you have created a client, you can use it to read and access data from Lisk
 
 Public Actions are client methods that map one-to-one with a "public" Ethereum RPC method (`eth_blockNumber`, `eth_getBalance`, etc.).
 
-For example, you can use the `getBlockNumber` client method to get the latest block:
+For example, you can use the `getBlockNumber` action to get the latest block:
 
 ```javascript 
 import { publicClientL2 } from './config'
@@ -133,34 +133,122 @@ const l1Gas = await publicClientL2.estimateL1Gas({
 
 Once you have created a client, you can use it to read and access data from Lisk using [Wallet Actions](https://viem.sh/docs/actions/wallet/introduction) and [OP stack wallet actions](https://viem.sh/op-stack/client#layer-2-extensions).
 
+Wallet Actions are actions that map one-to-one with a "wallet" or "signable" Ethereum RPC method (`eth_requestAccounts`, `eth_sendTransaction`, etc). 
+
+For example, you can use the `sendTransaction` action to post a transaction:
+
 ```javascript
 import { account, walletClient } from './config'
 
-walletClient.sendTransaction({ ... });
+const hash = await walletClient.sendTransaction({ 
+  to: '0x...',
+  value: 1000000000000000000n
+})
 ```
 
 ## Interacting with smart contracts
 
 You can use viem to interact with a smart contract on Lisk by creating a `Contract` instance using [`getContract`](https://viem.sh/docs/contract/getContract.html) and passing it the contract ABI, contract address, and and [Public](https://viem.sh/docs/clients/public.html) and/or [Wallet](https://viem.sh/docs/clients/wallet.html) Client:
 
-```javascript
-import { getContract } from 'viem';
-import { wagmiAbi } from './abi';
-import { publicClient } from './client';
+<Tabs>
+<TabItem value="example" label="example.ts">
 
+```js title="example.ts"
+import { getContract } from 'viem'
+import { wagmiAbi } from './abi'
+import { publicClient, walletClient } from './client'
+ 
 // 1. Create contract instance
 const contract = getContract({
   address: 'CONTRACT_ADDRESS',
   abi: wagmiAbi,
-  publicClient,
-});
-
-// 2. Call contract methods, listen to events, etc.
-const result = await contract.read.totalSupply();
+  // 1a. Insert a single client
+  client: publicClient,
+  // 1b. Or public and/or wallet clients
+  client: { public: publicClient, wallet: walletClient }
+})
+ 
+// 2. Call contract methods, fetch events, listen to events, etc.
+const result = await contract.read.totalSupply()
+const logs = await contract.getEvents.Transfer()
+const unwatch = contract.watchEvent.Transfer(
+  { from: '0xA0Cf798816D4b9b9866b5330EEa46a18382f251e' },
+  { onLogs(logs) { console.log(logs) } }
+)
 ```
 
+</TabItem>
+<TabItem value="client" label="client.ts">
+
+```js title="client.ts"
+import { createPublicClient, createWalletClient, http, custom } from 'viem'
+import { mainnet } from 'viem/chains'
+import { EthereumProvider } from '@walletconnect/ethereum-provider'
+ 
+export const publicClient = createPublicClient({
+  chain: mainnet,
+  transport: http(),
+})
+ 
+// eg: Metamask
+export const walletClient = createWalletClient({
+  chain: mainnet,
+  transport: custom(window.ethereum!),
+})
+ 
+// eg: WalletConnect
+const provider = await EthereumProvider.init({
+  projectId: "abcd1234",
+  showQrModal: true,
+  chains: [1],
+})
+ 
+export const walletClientWC = createWalletClient({
+  chain: mainnet,
+  transport: custom(provider),
+})
+```
+
+</TabItem>
+<TabItem value="abi" label="abi.ts">
+
+:::tip
+The ABI of a contract can be found on the respective contract page in [BlockScout](https://sepolia-blockscout.lisk.com/).
+:::
+
+```js title="abi.ts"
+export const wagmiAbi = [
+  ...
+  {
+    inputs: [],
+    name: 'totalSupply',
+    outputs: [{ type: 'uint256' }],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    name: 'Transfer',
+    type: 'event',
+    inputs: [
+      {
+        indexed: true,
+        name: 'from',
+        type: 'address',
+      },
+      { indexed: true, name: 'to', type: 'address' },
+      {
+        indexed: true,
+        name: 'tokenId',
+        type: 'uint256',
+      },
+    ],
+  },
+  ...
+] as const;
+```
+</TabItem>
+</Tabs>
+
 :::info
-
 `CONTRACT_ADDRESS` is the address of the deployed contract.
-
 :::
