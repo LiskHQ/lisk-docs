@@ -46,13 +46,18 @@ See [Layer 2 extensions](https://viem.sh/op-stack/client#layer-2-extensions) for
 
 ```javascript title="config.ts"
 import { createPublicClient, http, parseEther } from 'viem'
-import { liskSepolia } from 'viem/chains'
-import { publicActionsL2 } from 'viem/op-stack'
+import { liskSepolia, sepolia } from 'viem/chains'
+import { publicActionsL2, publicActionsL1 } from 'viem/op-stack'
  
 export const publicClientL2 = createPublicClient({
   chain: liskSepolia,
   transport: http()
 }).extend(publicActionsL2()) 
+
+export const publicClientL1 = createPublicClient({
+  chain: sepolia,
+  transport: http()
+}).extend(publicActionsL1()) 
 ```
 
 ### Wallet Client
@@ -67,7 +72,7 @@ See [Layer 2 extensions](https://viem.sh/op-stack/client#layer-2-extensions) for
 
 ```js title="config.ts"
 import { createWalletClient, custom } from 'viem'
-import { sepolia } from 'viem/chains'
+import { sepolia, liskSepolia } from 'viem/chains'
 import { walletActionsL1 } from 'viem/op-stack'
  
 // Retrieve Account from an EIP-1193 Provider.
@@ -79,7 +84,13 @@ export const walletClientL1 = createWalletClient({
   account, 
   chain: sepolia,
   transport: custom(window.ethereum)
-}).extend(walletActionsL1())
+}).extend(walletActionsL1());
+
+export const walletClientL2 = createWalletClient({
+  account, 
+  chain: liskSepolia,
+  transport: custom(window.ethereum)
+}).extend(walletActionsL2());
 ```
 
 </TabItem>
@@ -88,14 +99,20 @@ export const walletClientL1 = createWalletClient({
 ```js title="config.ts"
 import { createWalletClient, custom } from 'viem'
 import { privateKeyToAccount } from 'viem/accounts'
-import { sepolia } from 'viem/chains'
+import { sepolia, liskSepolia } from 'viem/chains'
 import { walletActionsL1 } from 'viem/op-stack'
  
 export const walletClientL1 = createWalletClient({
   account: privateKeyToAccount('0x...'), 
   chain: sepolia,
   transport: custom(window.ethereum)
-}).extend(walletActionsL1())
+}).extend(walletActionsL1());
+
+export const walletClientL2 = createWalletClient({
+  account: privateKeyToAccount('0x...'), 
+  chain: liskSepolia,
+  transport: custom(window.ethereum)
+}).extend(walletActionsL2());
 ```
 
 </TabItem>
