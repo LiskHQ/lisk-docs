@@ -1,13 +1,14 @@
 ---
-title: Deploying a smart contract with Hardhat
-slug: /building-on-lisk/deploying-a-smart-contract
-description: "A guide on deploying a smart contract on the Lisk test network using Hardhat. Includes instructions for setting up the environment, compiling, and deploying the smart contract."
+title: ... with Foundry
+slug: /building-on-lisk/deploying-smart-contract/with-Foundry
+description: "A guide on deploying a smart contract on the Lisk test network using Foundry. Includes instructions for setting up the environment, compiling, and deploying the smart contract."
 keywords: [
-    "Hardhat",
+    "Foundry",
     "smart contract",
-    "ERC-721", "Lisk",
+    "ERC-20", "Lisk",
     "Lisk test network",
     "Lisk testnet",
+    "Lisk Sepolia",
     "Node.js",
     "Solidity",
     "smart contract deployment",
@@ -19,8 +20,16 @@ keywords: [
     ]
 ---
 
-# Deploying a smart contract with Hardhat
+# Deploying a smart contract with Foundry
+
+In this guide we discuss, the basics of [Foundry](https://book.getfoundry.sh/) development toolchain and will describe how to create and deploy a smart contract with Foundry to the **Lisk Sepolia** testnet.
+
 ## Prerequisites
+You need:
+
+- A basic understanding of [Solidity](https://soliditylang.org/).
+- InsThe smart contract development framework of your choice. 
+In this guide, we will use the [Foundry](https://book.getfoundry.sh/) framework.
 
 ### Node v18+
 
