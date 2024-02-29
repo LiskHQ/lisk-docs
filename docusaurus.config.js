@@ -38,7 +38,7 @@ const config = {
 
   scripts: [
     {
-      src: '/js/matomo.js',
+      src: process.env.LISK_DOC_URL ?? '/' + 'js/matomo.js',
       async: true,
     },
   ],
