@@ -41,11 +41,13 @@ Before you can start using viem, you need to setup a [Client](https://viem.sh/op
 
 ### Public Client
 
+In order to read data from Lisk, you need to create a **Public client**.
+
 By extending the public client with `publicActionsL2` or `publicActionsL1`, you have access to additional methods for Lisk and other chains built on top of the OP stack.
 See [Layer 2 extensions](https://viem.sh/op-stack/client#layer-2-extensions) for more information.
 
-```javascript title="config.ts"
-import { createPublicClient, http, parseEther } from 'viem'
+```javascript title="public-client.js"
+import { createPublicClient, http } from 'viem'
 import { liskSepolia, sepolia } from 'viem/chains'
 import { publicActionsL2, publicActionsL1 } from 'viem/op-stack'
  
@@ -70,7 +72,7 @@ See [Layer 2 extensions](https://viem.sh/op-stack/client#layer-2-extensions) for
 <Tabs>
 <TabItem value="jsonrpc" label="JSON-RPC Account">
 
-```js title="config.ts"
+```js title="wallet-client.js"
 import { createWalletClient, custom } from 'viem'
 import { sepolia, liskSepolia } from 'viem/chains'
 import { walletActionsL1, walletActionsL2 } from 'viem/op-stack'
@@ -96,7 +98,7 @@ export const walletClientL2 = createWalletClient({
 </TabItem>
 <TabItem value="local" label="Local Account">
 
-```js title="config.ts"
+```js title="wallet-client.js"
 import { createWalletClient, custom } from 'viem'
 import { privateKeyToAccount } from 'viem/accounts'
 import { sepolia, liskSepolia } from 'viem/chains'
@@ -127,40 +129,46 @@ In addition to making a JSON-RPC request (`eth_requestAccounts`) to get an Accou
 
 ## Reading data from the blockchain
 
-Once you have created a client, you can use it to read and access data from Lisk using [Public Actions](https://viem.sh/docs/actions/public/introduction) and [OP stack public actions](https://viem.sh/op-stack/client#layer-2-extensions).
+Create a [public client](#public-client) and use it to read and access data from Lisk using [Public Actions](https://viem.sh/docs/actions/public/introduction) and [OP stack public actions](https://viem.sh/op-stack/client#layer-2-extensions).
 
 Public Actions are client methods that map one-to-one with a "public" Ethereum RPC method (`eth_blockNumber`, `eth_getBalance`, etc.).
 
 For example, you can use the `getBlockNumber` action to get the latest block:
 
-```javascript 
-import { publicClientL2 } from './config'
+```javascript title="read-example.js"
+import { parseEther } from 'viem'
+import { publicClientL2 } from './config.js'
 
 const blockNumber = await publicClientL2.getBlockNumber();
 
-const l1Gas = await publicClientL2.estimateL1Gas({ 
-  account: '0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266', 
+export const l1Gas = await publicClientL2.estimateL1Gas({ 
+  account: '0x3C46A11471f285E36EE8d089473ce98269D1b081', 
   to: '0x70997970c51812dc3a010c7d01b50e0d17dc79c8', 
-  value: parseEther('1') 
+  value: parseEther('0.1') 
 }) 
+
+console.log(blockNumber);
+console.log(l1Gas);
 ```
 
 
 ## Writing data to the blockchain
 
-Once you have created a client, you can use it to read and access data from Lisk using [Wallet Actions](https://viem.sh/docs/actions/wallet/introduction) and [OP stack wallet actions](https://viem.sh/op-stack/client#layer-2-extensions).
+Create a [wallet client](#wallet-client) and use it to read and access data from Lisk using [Wallet Actions](https://viem.sh/docs/actions/wallet/introduction) and [OP stack wallet actions](https://viem.sh/op-stack/client#layer-2-extensions).
 
 Wallet Actions are actions that map one-to-one with a "wallet" or "signable" Ethereum RPC method (`eth_requestAccounts`, `eth_sendTransaction`, etc). 
 
 For example, you can use the `sendTransaction` action to post a transaction:
 
-```javascript
-import { account, walletClientL1 } from './config'
+```javascript title="write-example.js"
+import { walletClientL1 } from './config'
 
 const hash = await walletClientL1.sendTransaction({ 
   to: '0x...',
   value: 1000000000000000000n
 })
+
+console.log(hash);
 ```
 
 ## Interacting with smart contracts
@@ -168,9 +176,9 @@ const hash = await walletClientL1.sendTransaction({
 You can use viem to interact with a smart contract on Lisk by creating a `Contract` instance using [`getContract`](https://viem.sh/docs/contract/getContract.html) and passing it the contract ABI, contract address, and and [Public](https://viem.sh/docs/clients/public.html) and/or [Wallet](https://viem.sh/docs/clients/wallet.html) Client:
 
 <Tabs>
-<TabItem value="example" label="example.ts">
+<TabItem value="example" label="contract-example.js">
 
-```js title="example.ts"
+```js title="contract-example.js"
 import { getContract } from 'viem'
 import { wagmiAbi } from './abi'
 import { publicClient, walletClient } from './client'
@@ -195,9 +203,9 @@ const unwatch = contract.watchEvent.Transfer(
 ```
 
 </TabItem>
-<TabItem value="client" label="client.ts">
+<TabItem value="client" label="client.js">
 
-```js title="client.ts"
+```js title="client.js"
 import { createPublicClient, createWalletClient, http, custom } from 'viem'
 import { liskSepolia } from 'viem/chains'
 import { EthereumProvider } from '@walletconnect/ethereum-provider'
@@ -228,13 +236,13 @@ export const walletClientWC = createWalletClient({
 ```
 
 </TabItem>
-<TabItem value="abi" label="abi.ts">
+<TabItem value="abi" label="abi.js">
 
 :::tip
 The ABI of a contract can be found on the respective contract page in [BlockScout](https://sepolia-blockscout.lisk.com/).
 :::
 
-```js title="abi.ts"
+```js title="abi.js"
 export const wagmiAbi = [
   ...
   {
