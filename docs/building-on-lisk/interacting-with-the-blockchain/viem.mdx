@@ -137,7 +137,7 @@ For example, you can use the `getBlockNumber` action to get the latest block:
 
 ```javascript title="read-example.js"
 import { parseEther } from 'viem'
-import { publicClientL2 } from './config.js'
+import { publicClientL2 } from './public-client.js'
 
 const blockNumber = await publicClientL2.getBlockNumber();
 
@@ -161,7 +161,7 @@ Wallet Actions are actions that map one-to-one with a "wallet" or "signable" Eth
 For example, you can use the `sendTransaction` action to post a transaction:
 
 ```javascript title="write-example.js"
-import { walletClientL1 } from './config'
+import { walletClientL1 } from './wallet-client.js'
 
 const hash = await walletClientL1.sendTransaction({ 
   to: '0x...',
@@ -180,8 +180,8 @@ You can use viem to interact with a smart contract on Lisk by creating a `Contra
 
 ```js title="contract-example.js"
 import { getContract } from 'viem'
-import { wagmiAbi } from './abi'
-import { publicClient, walletClient } from './client'
+import { wagmiAbi } from './abi.js'
+import { publicClient, walletClient } from './client.js'
  
 // 1. Create contract instance
 const contract = getContract({
