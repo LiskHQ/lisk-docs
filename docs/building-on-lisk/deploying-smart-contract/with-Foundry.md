@@ -268,15 +268,15 @@ forge verify-contract <DEPLOYED_ADDRESS> ./src/NFT.sol:NFT --chain 84532 --watch
 
 You should see an output similar to:
 
-```
-Start verifying contract `0x71bfCe1172A66c1c25A50b49156FAe45EB56E009` deployed on base-sepolia
+<!-- ```
+Start verifying contract `0x71bfCe1172A66c1c25A50b49156FAe45EB56E009` deployed on lisk-sepolia
 
 Submitting verification for [src/NFT.sol:NFT] 0x71bfCe1172A66c1c25A50b49156FAe45EB56E009.
 Submitted contract for verification:
         Response: `OK`
         GUID: `3i9rmtmtyyzkqpfvy7pcxj1wtgqyuybvscnq8d7ywfuskss1s7`
         URL:
-        https://sepolia.basescan.org/address/0x71bfce1172a66c1c25a50b49156fae45eb56e009
+        https://sepolia.liskscan.org/address/0x71bfce1172a66c1c25a50b49156fae45eb56e009
 Contract verification status:
 Response: `NOTOK`
 Details: `Pending in queue`
@@ -286,17 +286,17 @@ Details: `Pass - Verified`
 Contract successfully verified
 ```
 
-Search for your contract on [Basescan](https://sepolia.basescan.org/) to confirm it is verified.
+Search for your contract on [Basescan](https://sepolia.basescan.org/) to confirm it is verified. -->
 
 :::info
 
 You can't re-verify a contract identical to one that has already been verified. If you attempt to do so, such as verifying the above contract, you'll get an error similar to:
 
-```text
+<!-- ```text
 Start verifying contract `0x71bfCe1172A66c1c25A50b49156FAe45EB56E009` deployed on base-sepolia
 
 Contract [src/NFT.sol:NFT] "0x71bfCe1172A66c1c25A50b49156FAe45EB56E009" is already verified. Skipping verification.
-```
+``` -->
 
 :::
 
@@ -313,7 +313,7 @@ A key component of the Foundry toolkit, `cast` enables us to interact with contr
 From the command-line, run:
 
 ```bash
-cast call <DEPLOYED_ADDRESS> --rpc-url $BASE_SEPOLIA_RPC "balanceOf(address)" <YOUR_ADDRESS_HERE>
+cast call <DEPLOYED_ADDRESS> --rpc-url $LISK_SEPOLIA_RPC "balanceOf(address)" <YOUR_ADDRESS_HERE>
 ```
 
 You should receive `0x0000000000000000000000000000000000000000000000000000000000000000` in response, which equals `0` in hexadecimal. And that makes sense — while you've deployed the NFT contract, no NFTs have been minted yet and therefore your account's balance is zero.
@@ -325,7 +325,7 @@ Now let's sign and publish a transaction, calling the `mint(address)` function o
 Run the following command:
 
 ```bash
-cast send <DEPLOYED_ADDRESS> --rpc-url=$BASE_SEPOLIA_RPC "mint(address)" <YOUR_ADDRESS_HERE> --account deployer
+cast send <DEPLOYED_ADDRESS> --rpc-url=$LISK_SEPOLIA_RPC "mint(address)" <YOUR_ADDRESS_HERE> --account deployer
 ```
 
 :::info
@@ -339,13 +339,13 @@ If successful, Foundry will respond with information about the transaction, incl
 Finally, let's confirm that we did indeed mint ourselves one NFT. If we run the first `cast call` command again, we should see that our balance increased from 0 to 1:
 
 ```bash
-cast call <DEPLOYED_ADDRESS> --rpc-url $BASE_SEPOLIA_RPC "balanceOf(address)" <YOUR_ADDRESS_HERE>
+cast call <DEPLOYED_ADDRESS> --rpc-url $LISK_SEPOLIA_RPC "balanceOf(address)" <YOUR_ADDRESS_HERE>
 ```
 
 And the response: `0x0000000000000000000000000000000000000000000000000000000000000001` (`1` in hex) — congratulations, you deployed a contract and minted an NFT with Foundry!
 
 ## Conclusion
 
-Phew, that was a lot! We learned how to setup a project, deploy to Base, and interact with our smart contract using Foundry. The process is the same for real networks, just more expensive — and of course, you'll want to invest time and effort testing your contracts, to reduce the likelihood of user-impacting bugs before deploying.
+Phew, that was a lot! We learned how to setup a project, deploy to Lisk, and interact with our smart contract using Foundry. The process is the same for real networks, just more expensive — and of course, you'll want to invest time and effort testing your contracts, to reduce the likelihood of user-impacting bugs before deploying.
 
 For all things Foundry, check out the [Foundry book](https://book.getfoundry.sh/), or head to the official Telegram [dev chat](https://t.me/foundry_rs) or [support chat](https://t.me/foundry_support).
