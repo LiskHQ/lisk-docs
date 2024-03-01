@@ -202,13 +202,13 @@ LISK_SEPOLIA_RPC="https://rpc.sepolia-api.lisk.com"
 ETHERSCAN_API_KEY="PLACEHOLDER_STRING"
 ```
 
-Note that even though we're using Basescan as our block explorer, Foundry expects the API key to be defined as `ETHERSCAN_API_KEY`.
+Note that even though we're using Blocksout as our block explorer, Foundry expects the API key to be defined as `ETHERSCAN_API_KEY`.
 
-:::info
+<!-- :::info
 
-When verifying a contract with Basescan on testnet (Sepolia), an API key is not required. You can leave the value as `PLACEHOLDER_STRING`. On mainnet, you can get your Basescan API key from [here](https://basescan.org/myapikey) after you sign up for an account.
+When verifying a contract with Blocksout on testnet (Sepolia), an API key is not required. You can leave the value as `PLACEHOLDER_STRING`. On mainnet, you can get your Blocksout API key from [here](https://basescan.org/myapikey) after you sign up for an account.
 
-:::
+::: -->
 
 ### Loading environment variables
 
@@ -255,7 +255,7 @@ Further, if you want to allow others to interact with your contract using the bl
 
 :::info
 
-When verifying a contract with blockscout on testnet (Sepolia), an API key is not required. You can leave the value as `PLACEHOLDER_STRING`.
+When verifying a contract with Blockscout on testnet (Sepolia), an API key is not required. You can leave the value as `PLACEHOLDER_STRING`.
 <!-- On mainnet, you can get your Basescan API key from [here](https://basescan.org/myapikey) after you sign up for an account. -->
 
 :::
@@ -302,7 +302,7 @@ Contract [src/NFT.sol:NFT] "0x71bfCe1172A66c1c25A50b49156FAe45EB56E009" is alrea
 
 ## Interacting with the Smart Contract
 
-If you verified on Basescan, you can use the `Read Contract` and `Write Contract` sections under the `Contract` tab to interact with the deployed contract. To use `Write Contract`, you'll need to connect your wallet first, by clicking the `Connect to Web3` button (sometimes this can be a little finicky, and you'll need to click `Connect` twice before it shows your wallet is successfully connected).
+If you verified on Blocksout, you can use the `Read Contract` and `Write Contract` sections under the `Contract` tab to interact with the deployed contract. To use `Write Contract`, you'll need to connect your wallet first, by clicking the `Connect to Web3` button (sometimes this can be a little finicky, and you'll need to click `Connect` twice before it shows your wallet is successfully connected).
 
 To practice using the `cast` command-line tool which Foundry provides, we'll perform a call without publishing a transaction (a read), then sign and publish a transaction (a write).
 
