@@ -169,201 +169,183 @@ If the smart contract doesn't have any errors, you will see the following output
 [⠔] Solc 0.8.24 finished in 40.36ms
 Compiler run successful!
 ```
+## Configuring Foundry with Lisk
+
+Next we will configure your Foundry project to deploy smart contracts to the Lisk network. First we'll store your private key in an encrypted keystore, then we'll add Lisk as a network.
+
+### Storing your private key
+
+The following command will import your private key to Foundry's secure keystore. You will be prompted to enter your private key, as well as a password for signing transactions:
+
+```bash
+cast wallet import deployer --interactive
+```
+
+<!-- :::caution
+
+For instructions on how to get your private key from Coinbase Wallet, visit the [Coinbase Wallet documentation](https://docs.cloud.coinbase.com/wallet-sdk/docs/developer-settings#show-private-key). **It is critical that you do NOT commit this to a public repo**. 
+
+:::-->
+
+Run this command to confirm that the 'deployer' account is setup in Foundry:
+
+```bash
+cast wallet list
+```
+
+### Adding Lisk as a network
+
+Now create a `.env` file in the home directory of your project to add the Lisk network and an API key for verifying your contract on Blockscout:
+
+```
+LISK_SEPOLIA_RPC="https://rpc.sepolia-api.lisk.com"
+ETHERSCAN_API_KEY="PLACEHOLDER_STRING"
+```
+
+Note that even though we're using Basescan as our block explorer, Foundry expects the API key to be defined as `ETHERSCAN_API_KEY`.
+
+:::info
+
+When verifying a contract with Basescan on testnet (Sepolia), an API key is not required. You can leave the value as `PLACEHOLDER_STRING`. On mainnet, you can get your Basescan API key from [here](https://basescan.org/myapikey) after you sign up for an account.
+
+:::
+
+### Loading environment variables
+
+Now that you've created the above `.env` file, run the following command to load the environment variables in the current command line session:
+
+```bash
+source .env
+```
 
 ## Deploying the smart contract
 
-Once your contract has been successfully compiled, you can deploy the contract to the Lisk Sepolia test network.
+With your contract compiled and your environment configured, you are ready to deploy to the Lisk Sepolia test network!
 
-To deploy the contract to the Lisk Sepolia test network, you'll need to modify the `scripts/deploy.ts` in your project:
+Today we'll use the `forge create` command, which is a straightforward way to deploy a single contract at a time. In the future, you may want to look into [`forge script`](https://book.getfoundry.sh/tutorials/solidity-scripting), which enables scripting onchain transactions and deploying more complex smart contract projects.
 
-```ts title="scripts/deploy.ts"
-import { ethers } from 'hardhat';
+You'll need testnet ETH in your wallet. See the [prerequisites](#prerequisites) if you haven't done that yet. Otherwise, the deployment attempt will fail.
 
-async function main() {
-  const nft = await ethers.deployContract('NFT');
-
-  await nft.waitForDeployment();
-
-  console.log('NFT Contract Deployed at ' + nft.target);
-}
-
-// We recommend this pattern to be able to use async/await everywhere
-// and properly handle errors.
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
-```
-
-You'll also need Testnet ETH in your wallet.
-See the [Prerequisites](#prerequisites) if you haven't done that yet.
-Otherwise, the deployment attempt will fail.
-
-Finally, run:
+To deploy the contract to the Lisk Sepolia test network, run the following command. You will be prompted to enter the password that you set earlier, when you imported your private key:
 
 ```bash
-npx hardhat run scripts/deploy.ts --network lisk-sepolia
+forge create ./src/NFT.sol:NFT --rpc-url $LISK_SEPOLIA_RPC --account deployer
 ```
 
-<!-- TODO: Add link to the block explorer section -->
-The contract will be deployed on the Lisk Sepolia Testnet.
-You can view the deployment status and contract by using a block explorer and searching for the address returned by your deploy script.
+The contract will be deployed on the Lisk Sepolia test network. You can view the deployment status and contract by using a [block explorer](/tools/block-explorers) and searching for the address returned by your deploy script. If you've deployed an exact copy of the NFT contract above, it will already be verified and you'll be able to read and write to the contract using the web interface.
 
-If you're deploying a new or modified contract, you'll need to verify it first.
+<!-- :::info
+
+If you'd like to deploy to mainnet, you'll modify the command like so:
+
+```bash
+forge create ./src/NFT.sol:NFT --rpc-url $BASE_MAINNET_RPC --account deployer
+```
+
+::: -->
+
+Regardless of the network you're deploying to, if you're deploying a new or modified contract, you'll need to verify it.
+
 
 ## Verifying the Smart Contract
 
-If you want to interact with your contract on the block explorer, you, or someone else needs to verify it first.
-The above contract has already been verified, so you should be able to view your version on a block explorer already.
-For the remainder of this guide, we'll walk through how to verify your contract on the Lisk Sepolia Testnet.
+In web3, it's considered best practice to verify your contracts so that users and other developers can inspect the source code, and be sure that it matches the deployed bytecode on the blockchain.
 
-In `hardhat.config.ts`, configure Lisk Sepolia as a custom network.
-Add the following to your `HardhatUserConfig`:
+Further, if you want to allow others to interact with your contract using the block explorer, it first needs to be verified. The above contract has already been verified, so you should be able to view your version on a block explorer already, but we'll still walk through how to verify a contract on Lisk Sepolia testnet.
 
-```ts title="hardhat.config.ts"
-// Add the following information after the "networks" configuration of the HardhatUserConfig
-const config: HardhatUserConfig = {
-  // Hardhat expects etherscan here, even if you're using Blockscout.
-  etherscan: {
-    // Use "123" as a placeholder, because Blockscout doesn't need a real API key, and Hardhat will complain if this property isn't set.
-     apiKey: {
-      "lisk-sepolia": "123"
-     },
-     customChains: [
-      {
-          network: "lisk-sepolia",
-          chainId: 4202,
-          urls: {
-              apiURL: "https://sepolia-blockscout.lisk.com/api",
-              browserURL: "https://sepolia-blockscout.lisk.com"
-          }
-       }
-     ]
-   },
-   sourcify: {
-    enabled: false
-  },
-};
-```
+:::info
 
-Now, you can verify your contract.
+When verifying a contract with blockscout on testnet (Sepolia), an API key is not required. You can leave the value as `PLACEHOLDER_STRING`.
+<!-- On mainnet, you can get your Basescan API key from [here](https://basescan.org/myapikey) after you sign up for an account. -->
+
+:::
+
 Grab the deployed address and run:
 
 ```bash
-npx hardhat verify --network lisk-sepolia <deployed address>
+forge verify-contract <DEPLOYED_ADDRESS> ./src/NFT.sol:NFT --chain 84532 --watch
 ```
 
 You should see an output similar to:
 
-```text
-Successfully submitted source code for contract
-contracts/NFT.sol:NFT at 0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D
-for verification on the block explorer. Waiting for verification result...
+```
+Start verifying contract `0x71bfCe1172A66c1c25A50b49156FAe45EB56E009` deployed on base-sepolia
 
-Successfully verified contract NFT on the block explorer.
-https://sepolia-blockscout.lisk.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D#code
+Submitting verification for [src/NFT.sol:NFT] 0x71bfCe1172A66c1c25A50b49156FAe45EB56E009.
+Submitted contract for verification:
+        Response: `OK`
+        GUID: `3i9rmtmtyyzkqpfvy7pcxj1wtgqyuybvscnq8d7ywfuskss1s7`
+        URL:
+        https://sepolia.basescan.org/address/0x71bfce1172a66c1c25a50b49156fae45eb56e009
+Contract verification status:
+Response: `NOTOK`
+Details: `Pending in queue`
+Contract verification status:
+Response: `OK`
+Details: `Pass - Verified`
+Contract successfully verified
+```
+
+Search for your contract on [Basescan](https://sepolia.basescan.org/) to confirm it is verified.
+
+:::info
+
+You can't re-verify a contract identical to one that has already been verified. If you attempt to do so, such as verifying the above contract, you'll get an error similar to:
+
+```text
+Start verifying contract `0x71bfCe1172A66c1c25A50b49156FAe45EB56E009` deployed on base-sepolia
+
+Contract [src/NFT.sol:NFT] "0x71bfCe1172A66c1c25A50b49156FAe45EB56E009" is already verified. Skipping verification.
+```
+
+:::
+
+## Interacting with the Smart Contract
+
+If you verified on Basescan, you can use the `Read Contract` and `Write Contract` sections under the `Contract` tab to interact with the deployed contract. To use `Write Contract`, you'll need to connect your wallet first, by clicking the `Connect to Web3` button (sometimes this can be a little finicky, and you'll need to click `Connect` twice before it shows your wallet is successfully connected).
+
+To practice using the `cast` command-line tool which Foundry provides, we'll perform a call without publishing a transaction (a read), then sign and publish a transaction (a write).
+
+### Performing a call
+
+A key component of the Foundry toolkit, `cast` enables us to interact with contracts, send transactions, and get onchain data using Ethereum RPC calls. First we will perform a call from your account, without publishing a transaction.
+
+From the command-line, run:
+
+```bash
+cast call <DEPLOYED_ADDRESS> --rpc-url $BASE_SEPOLIA_RPC "balanceOf(address)" <YOUR_ADDRESS_HERE>
+```
+
+You should receive `0x0000000000000000000000000000000000000000000000000000000000000000` in response, which equals `0` in hexadecimal. And that makes sense — while you've deployed the NFT contract, no NFTs have been minted yet and therefore your account's balance is zero.
+
+### Signing and publishing a transaction
+
+Now let's sign and publish a transaction, calling the `mint(address)` function on the NFT contract we just deployed.
+
+Run the following command:
+
+```bash
+cast send <DEPLOYED_ADDRESS> --rpc-url=$BASE_SEPOLIA_RPC "mint(address)" <YOUR_ADDRESS_HERE> --account deployer
 ```
 
 :::info
 
-You can't re-verify a contract identical to one that has already been verified.
-If you attempt to do so, such as verifying the above contract, you'll get a message similar to:
-
-```text                                                                      
-The contract 0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D has already been verified on Etherscan.
-https://sepolia-blockscout.lisk.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D#code
-```
+Note that in this `cast send` command, we had to include our private key, but this is not required for `cast call`, because that's for calling view-only contract functions and therefore we don't need to sign anything.
 
 :::
 
-View your contract on BlockScout, by following the [link to the deployed contract](https://sepolia-blockscout.lisk.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D?tab=contract) displayed in the previous steps output message.
-The block explorer will confirm that the contract is verified and allow you to [interact](#interacting-with-the-smart-contract) with it.
+If successful, Foundry will respond with information about the transaction, including the `blockNumber`, `gasUsed`, and `transactionHash`.
 
-## Interacting with the Smart Contract
-
-After [the contract is verified](#verifying-the-smart-contract), you can use the `Read Contract` and `Write Contract` tabs to interact with the deployed contract via [BlockScout](https://sepolia-blockscout.lisk.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D?tab=contract).
-Don't forget to update the contract address in the Blockscout URL.
-You'll also need to connect your wallet first, by clicking the `Connect Wallet` button.
-
-
-
-
-<!-- Next, you will need to install [Hardhat](https://hardhat.org/tutorial) and create a new Hardhat project.
-
-To install Hardhat, run:
+Finally, let's confirm that we did indeed mint ourselves one NFT. If we run the first `cast call` command again, we should see that our balance increased from 0 to 1:
 
 ```bash
-npm install --save-dev hardhat
+cast call <DEPLOYED_ADDRESS> --rpc-url $BASE_SEPOLIA_RPC "balanceOf(address)" <YOUR_ADDRESS_HERE>
 ```
 
-To create a new Hardhat project, run:
+And the response: `0x0000000000000000000000000000000000000000000000000000000000000001` (`1` in hex) — congratulations, you deployed a contract and minted an NFT with Foundry!
 
-```bash
-npx hardhat
-```
+## Conclusion
 
-Select `Create a TypeScript project` then press _Enter_ to confirm the project root.
+Phew, that was a lot! We learned how to setup a project, deploy to Base, and interact with our smart contract using Foundry. The process is the same for real networks, just more expensive — and of course, you'll want to invest time and effort testing your contracts, to reduce the likelihood of user-impacting bugs before deploying.
 
-Select `y` for both adding a `.gitignore` and loading the sample project. 
-Optionally, you can decide to share crash reports and usage data with HardHat.
-
-```
-✔ What do you want to do? · Create a TypeScript project
-✔ Hardhat project root: · /Users/lisk/git/hardhat-test
-✔ Do you want to add a .gitignore? (Y/n) · y
-✔ Help us improve Hardhat with anonymous crash reports & basic usage data? (Y/n) · y
-✔ Do you want to install this sample project's dependencies with npm (@nomicfoundation/hardhat-toolbox)? (Y/n) · y
-```
-
-It will take a moment for the project setup process to complete. -->
-
-<!-- ## Configuring Hardhat with Lisk
-
-In order to deploy smart contracts to the Lisk network, you will need to configure your Hardhat project and add the Lisk network.
-
-This example uses [dotenv](https://www.npmjs.com/package/dotenv) to load the `WALLET_KEY` environment variable from a `.env` file to `process.env.WALLET_KEY`.
-You should use a similar method to avoid hardcoding your private keys within your source code.
-
-```bash
-npm install --save-dev dotenv
-```
-
-Once you have `dotenv` installed, create a `.env` file with the following content:
-
-```
-WALLET_KEY=<YOUR_PRIVATE_KEY>
-```
-
-Substitute `<YOUR_PRIVATE_KEY>` with the private key for your wallet.
-
-:::caution
-
-`WALLET_KEY` is the private key of the wallet to use when deploying a contract.
-Follow the instructions of your wallet on how to get your private key.
-E.g. for **MetaMask**, please follow [these instructions](https://support.metamask.io/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key).
-**It is critical that you do NOT commit this to a public repo**
-
-:::
-
-To configure Hardhat to use Lisk, add Lisk as a network to your project's `hardhat.config.ts` file:
-
-```ts title="hardhat.config.ts"
-import { HardhatUserConfig } from "hardhat/config";
-import "@nomicfoundation/hardhat-toolbox";
-
-require('dotenv').config();
-
-const config: HardhatUserConfig = {
-  solidity: "0.8.23",
-  networks: {
-    // for testnet
-    'lisk-sepolia': {
-      url: 'https://rpc.sepolia-api.lisk.com',
-      accounts: [process.env.WALLET_KEY as string],
-      gasPrice: 1000000000,
-    },
-  },
-};
-
-export default config;
-``` -->
+For all things Foundry, check out the [Foundry book](https://book.getfoundry.sh/), or head to the official Telegram [dev chat](https://t.me/foundry_rs) or [support chat](https://t.me/foundry_support).
