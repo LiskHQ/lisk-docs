@@ -98,22 +98,27 @@ export const walletClientL2 = createWalletClient({
 </TabItem>
 <TabItem value="local" label="Local Account">
 
+Replace `<PRIVATE_KEY>` with the private key of the account you want to use.
+The `0x` prefix indicates that the following string is a hexadecimal number.
+
 ```js title="wallet-client.js"
-import { createWalletClient, custom } from 'viem'
+import { createWalletClient, http } from 'viem'
 import { privateKeyToAccount } from 'viem/accounts'
 import { sepolia, liskSepolia } from 'viem/chains'
 import { walletActionsL1, walletActionsL2 } from 'viem/op-stack'
- 
+
+// Wallet client for Ethereum
 export const walletClientL1 = createWalletClient({
-  account: privateKeyToAccount('0x...'), 
+  account: privateKeyToAccount('0x<PRIVATE_KEY>'), 
   chain: sepolia,
-  transport: custom(window.ethereum)
+  transport: http()
 }).extend(walletActionsL1());
 
+// Wallet client for Lisk
 export const walletClientL2 = createWalletClient({
-  account: privateKeyToAccount('0x...'), 
+  account: privateKeyToAccount('0x<PRIVATE_KEY>'), 
   chain: liskSepolia,
-  transport: custom(window.ethereum)
+  transport: http()
 }).extend(walletActionsL2());
 ```
 
@@ -161,9 +166,9 @@ Wallet Actions are actions that map one-to-one with a "wallet" or "signable" Eth
 For example, you can use the `sendTransaction` action to post a transaction:
 
 ```javascript title="write-example.js"
-import { walletClientL1 } from './wallet-client.js'
+import { walletClientL2 } from './wallet-client.js'
 
-const hash = await walletClientL1.sendTransaction({ 
+const hash = await walletClientL2.sendTransaction({ 
   to: '0x...',
   value: 1000000000000000000n
 })
@@ -188,7 +193,7 @@ const contract = getContract({
   address: 'CONTRACT_ADDRESS',
   abi: wagmiAbi,
   // 1a. Insert a single client
-  client: publicClient,
+  //client: publicClient,
   // 1b. Or public and/or wallet clients
   client: { public: publicClient, wallet: walletClient }
 })
@@ -244,33 +249,167 @@ The ABI of a contract can be found on the respective contract page in [BlockScou
 
 ```js title="abi.js"
 export const wagmiAbi = [
-  ...
-  {
-    inputs: [],
-    name: 'totalSupply',
-    outputs: [{ type: 'uint256' }],
-    stateMutability: 'view',
-    type: 'function',
-  },
-  {
-    name: 'Transfer',
-    type: 'event',
-    inputs: [
-      {
-        indexed: true,
-        name: 'from',
-        type: 'address',
-      },
-      { indexed: true, name: 'to', type: 'address' },
-      {
-        indexed: true,
-        name: 'tokenId',
-        type: 'uint256',
-      },
-    ],
-  },
-  ...
-] as const;
+  [
+    {
+        "inputs": [],
+        "stateMutability": "nonpayable",
+        "type": "constructor"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "sender",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "string",
+                "name": "message",
+                "type": "string"
+            }
+        ],
+        "name": "NewHello",
+        "type": "event"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "name": "blacklist",
+        "outputs": [
+            {
+                "internalType": "string",
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "counter",
+        "outputs": [
+            {
+                "internalType": "uint32",
+                "name": "",
+                "type": "uint32"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "_message",
+                "type": "string"
+            }
+        ],
+        "name": "createHello",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "maxLength",
+        "outputs": [
+            {
+                "internalType": "uint32",
+                "name": "",
+                "type": "uint32"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "name": "message",
+        "outputs": [
+            {
+                "internalType": "string",
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "minLength",
+        "outputs": [
+            {
+                "internalType": "uint32",
+                "name": "",
+                "type": "uint32"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "owner",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "string[]",
+                "name": "_newBlackList",
+                "type": "string[]"
+            }
+        ],
+        "name": "setBlacklist",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint32",
+                "name": "_newMin",
+                "type": "uint32"
+            },
+            {
+                "internalType": "uint32",
+                "name": "_newMax",
+                "type": "uint32"
+            }
+        ],
+        "name": "setMinMaxMessageLength",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    }
+  ]
+];
 ```
 </TabItem>
 </Tabs>
