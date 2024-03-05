@@ -145,19 +145,19 @@ If you're coming from the [Adding Your Standard ERC-20 Token to Lisk](./add-toke
 You're going to need some tokens on L1 that you can bridge to L2.
 The L1 testing token located at [`0x5589BB8228C07c4e15558875fAf2B859f678d129`](https://sepolia.etherscan.io/address/0x5589BB8228C07c4e15558875fAf2B859f678d129) has a `faucet` function that makes it easy to get tokens.
 
-#### 8.1 Set the ERC20 ABI
+#### 7.1 Set the ERC20 ABI
 
 ```js
 const erc20ABI = [{ constant: true, inputs: [{ name: "_owner", type: "address" }], name: "balanceOf", outputs: [{ name: "balance", type: "uint256" }], type: "function" }, { inputs: [], name: "faucet", outputs: [], stateMutability: "nonpayable", type: "function" }]
 ```
 
-#### 8.2 Create a Contract instance for the L1 token
+#### 7.2 Create a Contract instance for the L1 token
 
 ```js
 const l1ERC20 = new ethers.Contract(l1Token, erc20ABI, l1Wallet)
 ```
 
-#### 8.3 Request some tokens
+#### 7.3 Request some tokens
 
 ```js
 console.log('Getting L1 tokens from faucet...')
@@ -165,7 +165,7 @@ tx = await l1ERC20.faucet()
 await tx.wait()
 ```
 
-#### 8.4 Check your token balance
+#### 7.4 Check your token balance
 
 ```js
 console.log((await l1ERC20.balanceOf(l1Wallet.address)).toString())
