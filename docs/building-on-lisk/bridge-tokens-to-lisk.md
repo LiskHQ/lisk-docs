@@ -1,6 +1,6 @@
 ---
-title: Bridging ERC-20 tokens with the Optimism SDK
-lang: en-US
+title: Bridging ERC-20 tokens to Lisk
+slug: /building-on-lisk/bridge-tokens-to-lisk
 description: Learn how to use the Optimism SDK to transfer ERC-20 tokens between Layer 1 (Ethereum Sepolia) and Layer 2 (Lisk Sepolia).
 ---
 

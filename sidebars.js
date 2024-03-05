@@ -50,6 +50,7 @@ const sidebars = {
             'building-on-lisk/add-token-to-lisk/custom-token',
           ],
         },
+        'building-on-lisk/bridge-tokens-to-lisk',
         {
           type: 'category',
           label: 'Interacting with the Blockchain',
