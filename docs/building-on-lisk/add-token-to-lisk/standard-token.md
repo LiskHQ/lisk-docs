@@ -1,7 +1,7 @@
 ---
-title: ...for standard tokens
+title: Deploying a standard token
 slug: /building-on-lisk/add-token-to-lisk/standard-token
-description: 'Learn how to bridge your standard ERC-20 token to Lisk using the standard bridge.'
+description: 'Learn how to add your standard ERC-20 token to Lisk using the standard bridge.'
 keywords:
   [
     'ERC-20 contract',
@@ -14,7 +14,7 @@ keywords:
   ]
 ---
 
-# Adding Your Standard ERC-20 Token to Lisk
+# Deploying Your Standard ERC-20 Token to Lisk
 
 :::info
 **This tutorial is for developers who want to bridge a new ERC-20 token to Lisk Sepolia.**

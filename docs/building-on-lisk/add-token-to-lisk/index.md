@@ -1,5 +1,5 @@
 ---
-title: Adding an ERC-20 Token to Lisk
+title: Deploying an ERC-20 Token to Lisk
 sidebar_position: 1
 slug: /building-on-lisk/add-token-to-lisk
 description: 'Guide to adding external ERC-20 contracts deployed on Ethereum to Lisk network.'
@@ -13,9 +13,9 @@ keywords:
     'Optimism Superchain token list',
   ]
 ---
+import DocCardList from '@theme/DocCardList';
 
-
-# Adding an ERC-20 Token to Lisk
+# Deploying an ERC-20 Token to Lisk
 This tutorial is meant for developers with an existing **Standard ERC-20** token or a **Custom ERC-20** token on Ethereum who want to deploy their respective token on Lisk.
 In this guide, you'll learn how to deploy a Standard or a Custom ERC-20 token from Ethereum to Lisk.
 
@@ -40,15 +40,23 @@ To add your token to the Lisk Token list, perform the following steps. -->
 
 ## Deploying an ERC-20 Token
 
-### Deploying a Standard ERC-20 Token
+### [Deploying a Standard ERC-20 Token](./standard-token.md)
 
-To deploy a Standard ERC-20 Token to Lisk Mainnet, follow the steps mentioned in the [Add a Standard ERC-20 Token to Lisk](./standard-token.md) guide.
+To deploy a Standard ERC-20 Token to Lisk Sepolia, follow the steps mentioned in the [Add a Standard ERC-20 Token to Lisk](./standard-token.md) guide.
+
+The guide explains how to use the [OptimismMintableERC20Factory](https://github.com/ethereum-optimism/optimism/blob/186e46a47647a51a658e699e9ff047d39444c2de/packages/contracts-bedrock/contracts/universal/OptimismMintableERC20Factory.sol) to deploy a standardized ERC-20 token on Lisk Sepolia.
+Tokens created by this factory contract implement the `IOptimismMintableERC20` interface and include basic logic for deposits, transfers, and withdrawals.
 
 
-### Deploying a Custom ERC-20 token
+### [Deploying a Custom ERC-20 token](./custom-token.mdx)
 
-To deploy a Custom ERC-20 token, one needs to implement all the functions defined by the [IOptimismMintableERC20](https://github.com/ethereum-optimism/optimism/blob/v1.1.4/packages/contracts-bedrock/src/universal/IOptimismMintableERC20.sol) interface such as the logic for the `mint`, `burn`, `remoteToken`, and `bridge`, functions of the `IOptimismMintableERC20` interface.
-To do the aforementioned, follow the steps mentioned in the [Add a Custom ERC-20 Token to Lisk](./custom-token.md) guide.
+A custom token allows you to do things like trigger extra logic whenever a token is deposited.
+To deploy a custom ERC-20 token to Lisk Sepolia, follow the steps mentioned in the [Add a Custom ERC-20 Token to Lisk](./custom-token.mdx) guide.
+
+The guide explains how to implement all the functions defined by the [IOptimismMintableERC20](https://github.com/ethereum-optimism/optimism/blob/v1.1.4/packages/contracts-bedrock/src/universal/IOptimismMintableERC20.sol) interface such as the logic for the `mint`, `burn`, `remoteToken`, and `bridge` functions of the `IOptimismMintableERC20` interface.
+
+<DocCardList />
+
 
 <!-- ### Step 2: Submit details of your token
 

@@ -41,7 +41,7 @@ const sidebars = {
         'building-on-lisk/deploying-a-smart-contract',
         {
           type: 'category',
-          label: 'Adding a Token to Lisk',
+          label: 'Deploying a Token to Lisk',
           collapsible: true,
           collapsed: true,
           items: [

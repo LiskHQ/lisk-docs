@@ -21,32 +21,34 @@ The Standard Bridge **does not** support [**fee on transfer tokens**](https://gi
 *   [node](https://nodejs.org/en/)
 *   [pnpm](https://pnpm.io/installation)
 
-## Create a Demo Project
+## Prerequisites
+
+### 1. Create a Demo Project
 
 You're going to use the Optimism SDK for this tutorial.
 Since the Optimism SDK is a [Node.js](https://nodejs.org/en/) library, you'll need to create a Node.js project to use it.
 
 
-### 1. Make a Project Folder
+#### 1.1 Make a Project Folder
 
 ```bash
 mkdir op-sample-project
 cd op-sample-project
 ```
 
-### 2. Initialize the Project
+#### 1.2 Initialize the Project
 
 ```bash
 pnpm init
 ```
 
-### 3. Install the Optimism SDK
+#### 1.3 Install the Optimism SDK
 
 ```bash
 pnpm add @eth-optimism/sdk
 ```
 
-### 4. Install ethers.js
+#### 1.4 Install ethers.js
 
 ```bash
 pnpm add ethers@^5
@@ -57,7 +59,7 @@ Want to create a new wallet for this tutorial?
 If you have [`cast`](https://book.getfoundry.sh/getting-started/installation) installed you can run `cast wallet new` in your terminal to create a new wallet and get the private key.
 :::
 
-## Get ETH on Sepolia and Lisk Sepolia
+### 2. Get ETH on Sepolia and Lisk Sepolia
 
 This tutorial explains how to bridge tokens from Sepolia to Lisk Sepolia.
 You will need to get some ETH on both of these testnets.
@@ -67,7 +69,7 @@ You can use [this faucet](https://sepoliafaucet.com) to get ETH on Sepolia.
 You can use the [Superchain Faucet](https://app.optimism.io/faucet?utm_source=docs) to get ETH on Lisk Sepolia.
 :::
 
-## Add a Private Key to Your Environment
+### 3. Add a Private Key to Your Environment
 
 You need a private key in order to sign transactions.
 Set your private key as an environment variable with the `export` command.
@@ -77,7 +79,7 @@ Make sure this private key corresponds to an address that has ETH on both Sepoli
 export TUTORIAL_PRIVATE_KEY=0x...
 ```
 
-## Start the Node REPL
+### 4. Start the Node REPL
 
 You're going to use the Node REPL to interact with the Optimism SDK.
 To start the Node REPL run the following command in your terminal:
@@ -88,43 +90,43 @@ node
 
 This will bring up a Node REPL prompt that allows you to run javascript code.
 
-## Import Dependencies
+### 5. Import Dependencies
 
 You need to import some dependencies into your Node REPL session.
 
-### 1. Import the Optimism SDK
+#### 5.1 Import the Optimism SDK
 
 ```js 
 const optimism = require("@eth-optimism/sdk")
 ```
 
-### 2. Import ethers.js
+#### 5.2 Import ethers.js
 
 ```js
 const ethers = require("ethers")
 ```
 
-## Set Session Variables
+### 6. Set Session Variables
 
 You'll need a few variables throughout this tutorial.
 Let's set those up now.
 
-### 1. Load your private key
+#### 6.1 Load your private key
 
 ```js
 const privateKey = process.env.TUTORIAL_PRIVATE_KEY
 ```
 
-### 2. Create the RPC providers and wallets
+#### 6.2 Create the RPC providers and wallets
 
 ```js
 const l1Provider = new ethers.providers.StaticJsonRpcProvider("https://rpc.ankr.com/eth_sepolia")
-const l2Provider = new ethers.providers.StaticJsonRpcProvider("https://sepolia.optimism.io")
+const l2Provider = new ethers.providers.StaticJsonRpcProvider("https://rpc.sepolia-api.lisk.com")
 const l1Wallet = new ethers.Wallet(privateKey, l1Provider)
 const l2Wallet = new ethers.Wallet(privateKey, l2Provider)
 ```
 
-### 3. Set the L1 and L2 ERC-20 addresses
+#### 6.3 Set the L1 and L2 ERC-20 addresses
 
 This tutorial uses existing ERC-20 tokens that have been deployed on Sepolia and Lisk Sepolia.
 These tokens are designed for testing the bridging process.
@@ -138,24 +140,24 @@ const l2Token = "0xD08a2917653d4E460893203471f0000826fb4034"
 If you're coming from the [Adding Your Standard ERC-20 Token to Lisk](./add-token-to-lisk/standard-token) or [Adding Your Custom ERC-20 Token to Lisk](./add-token-to-lisk/custom-token) tutorials, you can use the addresses of your own ERC-20 tokens here instead.
 :::
 
-## Get L1 Tokens
+### 7. Get L1 Tokens
 
 You're going to need some tokens on L1 that you can bridge to L2.
 The L1 testing token located at [`0x5589BB8228C07c4e15558875fAf2B859f678d129`](https://sepolia.etherscan.io/address/0x5589BB8228C07c4e15558875fAf2B859f678d129) has a `faucet` function that makes it easy to get tokens.
 
-### 1. Set the ERC20 ABI
+#### 8.1 Set the ERC20 ABI
 
 ```js
 const erc20ABI = [{ constant: true, inputs: [{ name: "_owner", type: "address" }], name: "balanceOf", outputs: [{ name: "balance", type: "uint256" }], type: "function" }, { inputs: [], name: "faucet", outputs: [], stateMutability: "nonpayable", type: "function" }]
 ```
 
-### 2. Create a Contract instance for the L1 token
+#### 8.2 Create a Contract instance for the L1 token
 
 ```js
 const l1ERC20 = new ethers.Contract(l1Token, erc20ABI, l1Wallet)
 ```
 
-### 3. Request some tokens
+#### 8.3 Request some tokens
 
 ```js
 console.log('Getting L1 tokens from faucet...')
@@ -163,7 +165,7 @@ tx = await l1ERC20.faucet()
 await tx.wait()
 ```
 
-### 4. Check your token balance
+#### 8.4 Check your token balance
 
 ```js
 console.log((await l1ERC20.balanceOf(l1Wallet.address)).toString())
