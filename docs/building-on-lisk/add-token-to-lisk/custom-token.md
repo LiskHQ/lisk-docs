@@ -1,5 +1,5 @@
 ---
-title: Adding your custom ERC-20 Token to Lisk
+title: ...for custom tokens
 slug: /building-on-lisk/add-token-to-lisk/custom-token
 description: 'Learn how to bridge your custom ERC-20 token to Lisk using the standard bridge.'
 keywords:
@@ -14,4 +14,108 @@ keywords:
   ]
 ---
 
-# Bridging Your Custom ERC-20 Token to Lisk Using the Standard Bridge
+# Adding Your Custom ERC-20 Token to Lisk
+
+:::info
+**This tutorial is for developers who want to bridge a new ERC-20 token to Lisk Mainnet.**
+If you want to bridge existing tokens, you can skip to the tutorial on [Bridging ERC-20 tokens with the Optimism SDK](../bridge-tokens-to-lisk).
+:::
+
+In this tutorial you'll learn how to bridge a custom ERC-20 token from Ethereum to Lisk Sepolia using the Standard Bridge system.
+This tutorial is meant for developers who already have an existing ERC-20 token on Ethereum and want to create a bridged representation of that token on Lisk Mainnet.
+
+This tutorial explains how you can create a custom token that conforms to the [`IOptimismMintableERC20`](https://github.com/ethereum-optimism/optimism/blob/v1.1.4/packages/contracts-bedrock/src/universal/IOptimismMintableERC20.sol) interface so that it can be used with the Standard Bridge system.
+A custom token allows you to do things like trigger extra logic whenever a token is deposited.
+If you don't need extra functionality like this, consider following the tutorial on [Adding Your Standard ERC-20 Token to Lisk](./standard-token) instead.
+
+:::warning
+The Standard Bridge **does not** support [**fee on transfer tokens**](https://github.com/d-xo/weird-erc20#fee-on-transfer) or [**rebasing tokens**](https://github.com/d-xo/weird-erc20#balance-modifications-outside-of-transfers-rebasingairdrops) because they can cause bridge accounting errors.
+:::
+
+## Dependencies
+
+*   [node](https://nodejs.org/en/)
+*   [pnpm](https://pnpm.io/installation)
+
+## Prerequisites
+
+### Get ETH on Sepolia and Lisk Sepolia
+
+This tutorial explains how to create a bridged ERC-20 token on Lisk Sepolia.
+You will need to get some ETH on both of these testnets.
+
+:::info
+You can use [this faucet](https://sepoliafaucet.com/) to get ETH on Sepolia.
+You can use the [Superchain Faucet](https://app.optimism.io/faucet?utm_source=docs) to get ETH on Lisk Sepolia.
+:::
+
+### Add Lisk Sepolia to Your Wallet
+
+This tutorial uses [Remix](https://remix.ethereum.org) to deploy contracts.
+You will need to add the Lisk Sepolia network to your wallet in order to follow this tutorial.
+You can use [this website](https://chainid.link?network=op-sepolia) to connect your wallet to Lisk Sepolia.
+
+### Get an L1 ERC-20 Token Address
+
+You will need an L1 ERC-20 token for this tutorial.
+If you already have an L1 ERC-20 token deployed on Sepolia, you can skip this step.
+Otherwise, you can use the testing token located at [`0x5589BB8228C07c4e15558875fAf2B859f678d129`](https://sepolia.etherscan.io/address/0x5589BB8228C07c4e15558875fAf2B859f678d129) that includes a `faucet()` function that can be used to mint tokens.
+
+## Create an L2 ERC-20 Token
+
+Once you have an L1 ERC-20 token, you can create a corresponding L2 ERC-20 token on OP Sepolia.
+This tutorial will use [Remix](https://remix.ethereum.org) so you can easily deploy a token without a framework like [Hardhat](https://hardhat.org) or [Foundry](https://getfoundry.sh).
+You can follow the same general process within your favorite framework if you prefer.
+
+In this section, you'll be creating an ERC-20 token that can be deposited but cannot be withdrawn.
+This is just one example of the endless ways in which you could customize your L2 token.
+
+### 1. Open Remix
+
+Navigate to [Remix](https://remix.ethereum.org) in your browser.
+
+### 2. Create a new file
+
+Click the 📄 ("Create new file") button to create a new empty Solidity file.
+You can name this file whatever you'd like.
+
+### 3. Copy the example contract
+
+Copy the following example contract into your new file:
+
+```solidity file=<rootDir>/public/tutorials/standard-bridge-custom-token.sol#L1-L97 hash=a0b97f33ab7bff9ceb8271b8fa4fd726
+```
+
+### 4. Review the example contract
+
+Take a moment to review the example contract.
+It's almost the same as the standard [`OptimismMintableERC20`](https://github.com/ethereum-optimism/optimism/blob/v1.1.4/packages/contracts-bedrock/src/universal/OptimismMintableERC20.sol) contract except that the `_burn` function has been made to always revert.
+Since the bridge needs to burn tokens when users want to withdraw them to L1, this means that users will not be able to withdraw tokens from this contract.
+
+```solidity file=<rootDir>/public/tutorials/standard-bridge-custom-token.sol#L85-L96 hash=7c8cdadf1bec4c76dafb5552d1a593fe
+```
+
+### 5. Compile the contract
+
+Save the file to automatically compile the contract.
+If you've disabled auto-compile, you'll need to manually compile the contract by clicking the "Solidity Compiler" tab (this looks like the letter "S") and press the blue "Compile" button.
+
+### 6. Deploy the contract
+
+Open the deployment tab (this looks like an Ethereum logo with an arrow pointing left).
+Make sure that your environment is set to "Injected Provider", your wallet is connected to OP Sepolia, and Remix has access to your wallet.
+Then, select the `MyCustomL2Token` contract from the deployment dropdown and deploy it with the following parameters:
+
+```text
+_BRIDGE:      "0x4200000000000000000000000000000000000007"
+_REMOTETOKEN: "<L1 ERC-20 address>"
+_NAME:        "My Custom L2 Token"
+_SYMBOL:      "MCL2T"
+```
+
+## Bridge Some Tokens
+
+Now that you have an L2 ERC-20 token, you can bridge some tokens from L1 to L2.
+Check out the tutorial on [Bridging ERC-20 tokens with the Optimism SDK](./cross-dom-bridge-erc20) to learn how to bridge your L1 ERC-20 to L2s using the Optimism SDK.
+Remember that the withdrawal step will *not* work for the token you just created!
+This is exactly what this tutorial was meant to demonstrate.
