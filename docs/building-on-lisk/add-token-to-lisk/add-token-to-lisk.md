@@ -1,7 +1,7 @@
 ---
 title: Adding an ERC-20 Token to Lisk
 sidebar_position: 1
-slug: /add-token-to-lisk
+slug: /building-on-lisk/add-token-to-lisk
 description: 'Guide to adding external ERC-20 contracts deployed on Ethereum to Lisk network.'
 keywords:
   [
@@ -19,6 +19,12 @@ toc_max_heading_level: 4
 # Adding an ERC-20 Token to Lisk
 This tutorial is meant for developers with an existing **Standard ERC-20** token or a **Custom ERC-20** token on Ethereum who want to deploy their respective token on Lisk.
 In this guide, you'll learn how to deploy a Standard or a Custom ERC-20 token from Ethereum to Lisk.
+
+## About OptimismMintableERC20s
+
+The Standard Bridge system requires that L2 representations of L1 tokens implement the [`IOptimismMintableERC20`](https://github.com/ethereum-optimism/optimism/blob/v1.1.4/packages/contracts-bedrock/src/universal/IOptimismMintableERC20.sol) interface.
+This interface is a superset of the standard ERC-20 interface and includes functions that allow the bridge to properly verify deposits/withdrawals and mint/burn tokens as needed.
+Your L2 token contract must implement this interface in order to be bridged using the Standard Bridge system.
 
 <!-- Lisk uses [Optimism's Superchain token list](https://github.com/ethereum-optimism/ethereum-optimism.github.io/blob/master/optimism.tokenlist.json) as a reference for tokens that have been deployed on Lisk. -->
 

@@ -38,8 +38,18 @@ const sidebars = {
       items: [
         'building-on-lisk/connecting-to-a-wallet',
         'building-on-lisk/contracts',
-        'building-on-lisk/add-token-to-lisk',
         'building-on-lisk/deploying-a-smart-contract',
+        {
+          type: 'category',
+          label: 'Adding a Token to Lisk',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            'building-on-lisk/add-token-to-lisk/add-token-to-lisk',
+            'building-on-lisk/add-token-to-lisk/standard-token',
+            'building-on-lisk/add-token-to-lisk/custom-token',
+          ],
+        },
         {
           type: 'category',
           label: 'Interacting with the Blockchain',
