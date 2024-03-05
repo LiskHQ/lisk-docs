@@ -16,6 +16,11 @@ keywords:
 
 # Adding Your Standard ERC-20 Token to Lisk
 
+:::info
+**This tutorial is for developers who want to bridge a new ERC-20 token to Lisk Sepolia.**
+If you want to bridge existing tokens, you can skip to the tutorial on [Bridging ERC-20 tokens to Lisk](../bridge-tokens-to-lisk).
+:::
+
 In this tutorial you'll learn how to bridge a standard ERC-20 token from Ethereum to Lisk using the Standard Bridge system.
 This tutorial is meant for developers who already have an existing ERC-20 token on Ethereum and want to create a bridged representation of that token on Lisk.
 
