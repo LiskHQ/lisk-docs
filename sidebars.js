@@ -45,10 +45,13 @@ const sidebars = {
           collapsible: true,
           collapsed: true,
           items: [
-            'building-on-lisk/add-token-to-lisk/add-token-to-lisk',
             'building-on-lisk/add-token-to-lisk/standard-token',
             'building-on-lisk/add-token-to-lisk/custom-token',
           ],
+          link: {
+            type: 'doc',
+            id: 'building-on-lisk/add-token-to-lisk/index',
+          },
         },
         'building-on-lisk/bridge-tokens-to-lisk',
         {

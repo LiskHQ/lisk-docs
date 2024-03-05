@@ -14,7 +14,7 @@ Make sure to check out the [Standard Bridge guide](https://docs.optimism.io/buil
 
 :::warning
 The Standard Bridge **does not** support [**fee on transfer tokens**](https://github.com/d-xo/weird-erc20#fee-on-transfer) or [**rebasing tokens**](https://github.com/d-xo/weird-erc20#balance-modifications-outside-of-transfers-rebasingairdrops) because they can cause bridge accounting errors.
-:::warning
+:::
 
 ## Dependencies
 
@@ -55,7 +55,7 @@ pnpm add ethers@^5
 :::tip
 Want to create a new wallet for this tutorial?
 If you have [`cast`](https://book.getfoundry.sh/getting-started/installation) installed you can run `cast wallet new` in your terminal to create a new wallet and get the private key.
-:::tip
+:::
 
 ## Get ETH on Sepolia and Lisk Sepolia
 
@@ -65,7 +65,7 @@ You will need to get some ETH on both of these testnets.
 :::info
 You can use [this faucet](https://sepoliafaucet.com) to get ETH on Sepolia.
 You can use the [Superchain Faucet](https://app.optimism.io/faucet?utm_source=docs) to get ETH on Lisk Sepolia.
-:::info
+:::
 
 ## Add a Private Key to Your Environment
 
