@@ -12,7 +12,6 @@ keywords:
     'Lisk Mainnet',
     'Optimism Superchain token list',
   ]
-toc_max_heading_level: 4
 ---
 
 

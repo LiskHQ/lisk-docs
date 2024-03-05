@@ -21,7 +21,7 @@ This tutorial is meant for developers who already have an existing ERC-20 token 
 
 This tutorial explains how to use the [`OptimismMintableERC20Factory`](https://github.com/ethereum-optimism/optimism/blob/186e46a47647a51a658e699e9ff047d39444c2de/packages/contracts-bedrock/contracts/universal/OptimismMintableERC20Factory.sol) to deploy a standardized ERC-20 token on Lisk Sepolia.
 Tokens created by this factory contract are compatible with the Standard Bridge system and include basic logic for deposits, transfers, and withdrawals.
-If you want to include specialized logic within your L2 token, see the tutorial on [Bridging Your Custom ERC-20 Token to OP Mainnet Using the Standard Bridge](./custom-token) instead.
+If you want to include specialized logic within your L2 token, see the tutorial on [Bridging Your Custom ERC-20 Token to Lisk](./custom-token) instead.
 
 ## Dependencies
 
@@ -93,7 +93,7 @@ cast send 0x4200000000000000000000000000000000000012 "createOptimismMintableERC2
 ## Bridge Some Tokens
 
 Now that you have an L2 ERC-20 token, you can bridge some tokens from L1 to L2.
-Check out the tutorial on [Bridging ERC-20 tokens with the Optimism SDK](./cross-dom-bridge-erc20) to learn how to bridge your L1 ERC-20 to L2s using the Optimism SDK.
+Check out the tutorial on [Bridging ERC-20 tokens to Lisk](../bridge-tokens-to-lisk.md) to learn how to bridge your L1 ERC-20 to L2s and vice versa using the Optimism SDK.
 
 ## Add to the Superchain Token List
 

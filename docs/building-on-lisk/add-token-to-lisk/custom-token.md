@@ -1,6 +1,6 @@
 ---
 title: Adding your custom ERC-20 Token to Lisk
-slug: /building-on-lisk/add-token-to-lisk/custom/token
+slug: /building-on-lisk/add-token-to-lisk/custom-token
 description: 'Learn how to bridge your custom ERC-20 token to Lisk using the standard bridge.'
 keywords:
   [
