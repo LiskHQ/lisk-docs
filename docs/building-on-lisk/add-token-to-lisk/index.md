@@ -38,9 +38,7 @@ Tokens approved in the GitHub repository are not necessarily listed on the [Lisk
 
 To add your token to the Lisk Token list, perform the following steps. -->
 
-## Deploying an ERC-20 Token
-
-### [Deploying a Standard ERC-20 Token](./standard-token.md)
+## [Deploying a Standard ERC-20 Token](./standard-token.md)
 
 To deploy a Standard ERC-20 Token to Lisk Sepolia, follow the steps mentioned in the [Add a Standard ERC-20 Token to Lisk](./standard-token.md) guide.
 
@@ -48,7 +46,7 @@ The guide explains how to use the [OptimismMintableERC20Factory](https://github.
 Tokens created by this factory contract implement the `IOptimismMintableERC20` interface and include basic logic for deposits, transfers, and withdrawals.
 
 
-### [Deploying a Custom ERC-20 token](./custom-token.mdx)
+## [Deploying a Custom ERC-20 token](./custom-token.mdx)
 
 A custom token allows you to do things like trigger extra logic whenever a token is deposited.
 To deploy a custom ERC-20 token to Lisk Sepolia, follow the steps mentioned in the [Add a Custom ERC-20 Token to Lisk](./custom-token.mdx) guide.
