@@ -18,41 +18,43 @@ keywords: [
     "write smart contract",
     "smart contract development"
     ]
+toc_max_heading_level: 4
 ---
 
 # Deploying a smart contract with Foundry
 
 In this guide we discuss, the basics of [Foundry](https://book.getfoundry.sh/) development toolchain and will describe how to create and deploy a smart contract with Foundry to the **Lisk Sepolia** testnet.
 
-Foundry is a powerful suite of tools to develop, test, and debug your smart contracts. It comprises several individual tools:
+Foundry is a powerful suite of tools to develop, test, and debug your smart contracts.
+It comprises several individual tools such as:
 
-- `forge`: the main workhorse of Foundry — for developing, testing, compiling, and deploying smart contracts
-- `cast`: a command-line tool for performing Ethereum RPC calls (e.g., interacting with contracts, sending transactions, and getting onchain data)
-- `anvil`: a local testnet node, for testing contract behavior from a frontend or over RPC
-- `chisel`: a Solidity [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop), for trying out Solidity snippets on a local or forked network
+- [`forge`](https://book.getfoundry.sh/forge/): is a command-line tool that is shipped with Foundry.
+Forge tests, builds, and deploys your smart contracts.
+- [`cast`](https://book.getfoundry.sh/cast/): is a command-line tool for performing RPC calls e.g., interacting with contracts, sending transactions, and getting onchain data.
+- [`anvil`](https://book.getfoundry.sh/anvil/): is a local testnet node, designed for testing contract behavior from a frontend or over RPC in a local development environment.
+- [`chisel`](https://book.getfoundry.sh/chisel/): is a Solidity [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop), for trying out Solidity snippets on a local or forked network.
 
 
 ## Prerequisites
-You need:
+To build with Foundry, you need:
 
 - A basic understanding of [Solidity](https://soliditylang.org/).
-- This guide requires you have Foundry installed.
-  - From the command-line (terminal), run: `curl -L https://foundry.paradigm.xyz | bash`
-  - Then run `foundryup`, to install the latest (nightly) build of Foundry
-For more information, see the Foundry Book [installation guide](https://book.getfoundry.sh/getting-started/installation).
-
-<!-- ### Node v18+
-
-This guide requires you to have Node version 18+ installed.
-
-- Download [Node v18+](https://nodejs.org/en/download/)
-
-If you are using `nvm` to manage your node versions, you can just run `nvm install 18`. -->
+- Have Foundry installed on your system.
+To do that, perform the following steps:
+  - From the command-line, run: 
+    ```bash
+    curl -L https://foundry.paradigm.xyz | bash
+    ```
+  - After that, to install the latest (nightly) build of Foundry, run:
+    ```bash
+    foundryup
+    ```
+- For more information, see the Foundry Book's [Installation guide](https://book.getfoundry.sh/getting-started/installation).
 
 ### Wallet funds
 
 **Deploying contracts** to the blockchain requires a **gas fee**.
-Therefore, you will need to fund your wallet with ETH to cover those gas fees.
+Therefore, you will need to fund your wallet with ETH to cover such gas fees.
 
 For this guide, you will be deploying a contract to the Lisk Sepolia Testnet. 
 
@@ -62,17 +64,17 @@ In case your wallet doesn't hold enough `SepoliaETH`, use one of the available f
 Then, use the aforementioned Lisk Bridge to send tokens from the **Ethereum Sepolia Testnet** to the **Lisk Sepolia Testnet**.
 
 ## Creating a project
-Before you can begin deploying smart contracts to Lisk, you need to set up your development environment by creating a Foundry project.
+The first step of deploying smart contracts to Lisk is to set up your development environment by creating a Foundry project.
 
 You can separately create a new directory and then initialize a Foundry project, or you can let Foundry create a directory and initiate a Foundry project by running the following command:
 
 ```bash
 forge init foundry_app && cd foundry_app
 ```
-This command will create a `foundry_app` and will change the terminal's directory to the aforementioned folder as well.
+This command will create a `foundry_app` and will change the terminal's working directory to the aforementioned folder as well.
 
 <details>
-<summary>Console output</summary>
+<summary>Execution logs of the `forge init` command</summary>
 ```text
 Initializing /XYZ/L2/25/foundry_app/foundry_app...
 Installing forge-std in /XYZ/L2/25/foundry_app/foundry_app/lib/forge-std (url: Some("https://github.com/foundry-rs/forge-std"), tag: None)
@@ -114,21 +116,23 @@ By default, any application built with Foundry will have a similar directory str
 └── README.md
 ```
 
-For now, delete the files present in the `script/Counter.s.sol`, `src/Counter.sol` and `test/Counter.t.sol` as we will be creating a contract, relevant script and a test code ourselves in the following guide.
+For now, delete the files present in the `script/Counter.s.sol`, `src/Counter.sol` and `test/Counter.t.sol` as we will be creating a contract, and relevant test code ourselves in the following guide.
 
 ### **Creating** the smart contract
-For ease and security, we’ll use the `ERC20` interface provided by the [OpenZeppelin Contracts library](https://docs.openzeppelin.com/contracts/5.x/erc20) to create a simple ERC-20 smart contract.
-With OpenZeppelin, we don’t need to write the whole ERC-20 interface.
+
+For ease and security, we’ll use the `ERC721` contract provided by the [OpenZeppelin Contracts library](https://docs.openzeppelin.com/contracts/5.x/erc721) to create a simple ERC-20 smart contract.
+With OpenZeppelin, we don’t need to write the entire ERC-721 contract.
 Instead, we can import the library contract and use its functions from the get go.
 
-To add the OpenZeppelin Contracts library to your project, run:
+To install the OpenZeppelin Contracts library to your project, run:
 
 ```bash
 forge install openzeppelin/openzeppelin-contracts
 ```
-Inside the `src` folder, create a smart contract called `StakeContract.sol` and add the code below to the newly created file.
 
-```sol title="src/StakeContract.sol"
+Inside the `src` folder, create a smart contract called `NFT.sol` and add the code below to the newly created file.
+
+```sol title="src/NFT.sol"
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.23;
 
@@ -136,9 +140,11 @@ import "openzeppelin-contracts/contracts/token/ERC721/ERC721.sol";
 
 contract NFT is ERC721 {
     uint256 public currentTokenId;
-
+    
+    // The following will create an ERC721 Token called Lisk.
     constructor() ERC721("Lisk", "LSK") {}
 
+    // For simplicity, we will only implement the mint function of the Lisk token.
     function mint(address recipient) public payable returns (uint256) {
         uint256 newItemId = ++currentTokenId;
         _safeMint(recipient, newItemId);
@@ -147,12 +153,8 @@ contract NFT is ERC721 {
 }
 ```
 
-<!-- The aforementioned is a very simple ERC-20 Staking contract. 
-For the purpose of simplicity, users can use the `stake` function of the contract to stake their desired amount.
-They can also then retrieve the details of amount staked to the contract by invoking the the contract also allows  -->
-
 ### **Compiling** the smart contract
-To compile the contract using Foundry, simply run:
+Once the smart contract's code is ready, it must be compiled using Foundry, to do that, simply run:
 
 ```bash
 forge build
@@ -166,119 +168,14 @@ If the smart contract doesn't have any errors, you will see the following output
 Compiler run successful!
 ```
 
-### **Deploying** the smart contract
-
-You can now deploy the smart contract to Lisk.
-For this example, we will use the Lisk Sepolia network to deploy the Hello contract.
-
-Add the `--verify` flag to the `forge create` command to directly verify the smart contract on BlockScout.
-
-
-```bash
-forge create --rpc-url https://rpc.sepolia-api.lisk.com \                                                                                                                                                ─╯
---etherscan-api-key 123 \
---verify \
---verifier blockscout \
---verifier-url https://sepolia-blockscout.lisk.com/api \
---private-key <PRIVATE_KEY> \
-src/NFT.sol:NFT
-```
-
-If the deployment went successfully, the output should look like this:
-
-```text
-The aforementioned command will first deploy the contract and display the following output:
-
-// highlight-start
-[⠒] Compiling...
-No files changed, compilation skipped
-Deployer: 0x5e1A92F84cA1CE280B3Cb29d79C3368f45b41EBB
-Deployed to: 0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5
-Transaction hash: 0xf465528f43e5cbc9b5206e46048feba0b920179813c3eb8c3bdbccbfd13d731e
-// highlight-end
-
-Once the contract is deployed successfully, the above mentioned command will verify the contract as well!
-
-// highlight-start
-Starting contract verification...
-Waiting for blockscout to detect contract deployment...
-Start verifying contract `0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5` deployed on 4202
-
-Submitting verification for [src/NFT.sol:NFT] 0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5.
-Submitted contract for verification:
-        Response: `OK`
-        GUID: `108872f713a27bc22ca1db8ceefcac8cbeddf9e565e71790`
-        URL: https://sepolia-blockscout.lisk.com/address/0x108872f713a27bc22ca1db8ceefcac8cbeddf9e5
-Contract verification status:
-Response: `OK`
-Details: `Pending in queue`
-Contract verification status:
-Response: `OK`
-Details: `Pass - Verified`
-Contract successfully verified
-// highlight-end
-```
-
-After the smart contract is deployed, you can interact with it by calling its public functions.
-
-### **Verifying** the smart contract
-
-Each deployed contract, should be verified so that users and other developers can inspect the source code, and be sure that it matches the deployed bytecode on the blockchain.
-Verification of a contract is also required 
-<!-- In web3, it's considered best practice to verify your contracts so that users and other developers can inspect the source code, and be sure that it matches the deployed bytecode on the blockchain. -->
-
-Further, if you want to allow others to interact with your contract using the block explorer, it first needs to be verified.
-The above contract has already been verified, so you should be able to view your version on a block explorer already, but we'll still walk through how to verify a contract on Lisk Sepolia testnet.
-
-Grab the deployed address and run:
-
-```bash
-forge verify-contract <CONTRACT_ADDRESS> ./src/<NAME_OF_CONTRACT.sol>:<TOKEN_NAME> --chain 4202 --watch --verifier blockscout --verifier-url https://sepolia-blockscout.lisk.com/api
-```
-
-You should see an output similar to:
-
- ```
-Starting contract verification...
-Waiting for blockscout to detect contract deployment...
-Start verifying contract `0xcCaA1C3eb8FEb5b09a5Eac1359BC4c70E18e29d9` deployed on 4202
-
-Submitting verification for [src/NFT.sol:NFT] 0xcCaA1C3eb8FEb5b09a5Eac1359BC4c70E18e29d9.
-Submitted contract for verification:
-        Response: `OK`
-        GUID: `ccaa1c3eb8feb5b09a5eac1359bc4c70e18e29d965e5c95a`
-        URL: https://sepolia-blockscout.lisk.com/address/0xccaa1c3eb8feb5b09a5eac1359bc4c70e18e29d9
-Contract verification status:
-Response: `OK`
-Details: `Pending in queue`
-Contract verification status:
-Response: `OK`
-Details: `Pass - Verified`
-Contract successfully verified
-```
-
-Search for your contract on [Blockscout](https://sepolia-blockscout.lisk.com/) to confirm it is verified.
-
-
-:::info
-
-You can't re-verify a contract identical to one that has already been verified. If you attempt to do so, such as verifying the above contract, you'll get an error similar to:
-
-```text
-Start verifying contract `0xcCaA1C3eb8FEb5b09a5Eac1359BC4c70E18e29d9` deployed on 4202
-
-Contract [src/NFT.sol:NFT] "0xcCaA1C3eb8FEb5b09a5Eac1359BC4c70E18e29d9" is already verified. Skipping verification.
-``` 
-:::
-
 ### **Testing** the smart contract
 
 By testing the smart contract, you can verify that the smart contract behaves as expected and that it is free of bugs, before deploying it to Lisk.
 
-Foundry provides a testing framework to support you in writing tests for smart contracts.
+Foundry provides a rich testing framework to support you in writing tests for smart contracts.
 See [Tests - Foundry Book](https://book.getfoundry.sh/forge/tests) for examples and references regarding the testing framework.
 
-To test the Hello smart contract, create a new file `Hello.t.sol` under `test/`, and add the following content:
+To test the `NFT` smart contract, create a new file `NFT.t.sol` under the `test/` directory, and add the following content:
 
 ```solidity title="foundry_app/test/NFT.t.sol"
 // SPDX-License-Identifier: UNLICENSED
@@ -290,28 +187,30 @@ import {NFT} from "../src/NFT.sol";
 contract NFTTest is Test {
 
     NFT public lsk;
+
+    // Create dummy addresses for alice and bob
     address alice = makeAddr("alice");
     address bob = makeAddr("bob");
 
+    // Initialize the NFT contract's object
     function setUp() public{
         lsk = new NFT();
     }
 
+    // Pass the address of alice and bob to see whether the mint function successfully passes
     function testMintPass() public {
         lsk.mint(alice);
         lsk.mint(bob);
     }
 
+    // To intentionally create a fail test, let's compare the addresses of alice and bob
     function testMintFail() public {
-        lsk.mint(alice);
-        lsk.mint(bob);
         assertEq(alice, bob);
     }
 }
 ```
 
-
-To run the tests, execute the following command:
+To run the tests, execute the following command. The `-vv` flag will output detailed information about the tests ran using the following command.
 
 ```bash
 forge test -vv
@@ -344,47 +243,160 @@ Encountered 1 failing test in test/NFT.t.sol:NFTTest
 Encountered a total of 1 failing tests, 1 tests succeeded
 ```
 
+The first test: `testMintPass` passed successfully as the criteria for the `mint()` function was met.
+We passed the `mint()` function the recipient address as required, hence the success.
 
+The second test: `testMintFail` failed since we asserted that the addresses of `alice` and `bob` are same.
+The highlighted log output elaborates on how the assertion was false.
+
+### **Deploying** the smart contract
+
+After successfully building the smart contract, you can now deploy it to the Lisk network.
+For this example, we will use the Lisk Sepolia network to deploy the `NFT` contract.
+
+Add the `--verify`, `--verifier`, `--verifier-url` and the sender account's `--private-key` flag to the `forge create` command to directly verify the smart contract on BlockScout.
+
+```bash
+forge create --rpc-url https://rpc.sepolia-api.lisk.com \
+--etherscan-api-key 123 \
+--verify \
+--verifier blockscout \
+--verifier-url https://sepolia-blockscout.lisk.com/api \
+--private-key <PRIVATE_KEY> \
+src/NFT.sol:NFT
+```
+
+If the deployment is successful, the output should look like the following:
+
+```text
+# The aforementioned command will first deploy the contract and display the following output:
+
+// highlight-start
+[⠒] Compiling...
+No files changed, compilation skipped
+Deployer: 0x5e1A92F84cA1CE280B3Cb29d79C3368f45b41EBB
+Deployed to: 0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5
+Transaction hash: 0xf465528f43e5cbc9b5206e46048feba0b920179813c3eb8c3bdbccbfd13d731e
+// highlight-end
+
+# Once the contract is deployed successfully, the above mentioned command will then verify the contract as well!
+
+// highlight-start
+Starting contract verification...
+Waiting for blockscout to detect contract deployment...
+Start verifying contract `0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5` deployed on 4202
+
+Submitting verification for [src/NFT.sol:NFT] 0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5.
+Submitted contract for verification:
+        Response: `OK`
+        GUID: `108872f713a27bc22ca1db8ceefcac8cbeddf9e565e71790`
+        URL: https://sepolia-blockscout.lisk.com/address/0x108872f713a27bc22ca1db8ceefcac8cbeddf9e5
+Contract verification status:
+Response: `OK`
+Details: `Pending in queue`
+Contract verification status:
+Response: `OK`
+Details: `Pass - Verified`
+Contract successfully verified
+// highlight-end
+```
+
+After the smart contract is deployed and verified, you can interact with it by calling its public functions.
+
+### **Verifying** the smart contract
+
+Each deployed contract, should be verified so that users and other developers can inspect the source code, and be sure that it matches the deployed bytecode on the blockchain.
+
+Further, if you want to allow others to interact with your contract using the block explorer such as Blockscout's [Read contract](https://sepolia-blockscout.lisk.com/address/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=read_contract) and [Write Contract](https://sepolia-blockscout.lisk.com/address/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=write_contract) interfaces, it first needs to be verified.
+
+
+The above contract has **already been verified**, so you should be able to view your version on a block explorer already, but we'll still walk through how to verify a contract on Lisk Sepolia testnet.
+
+:::info
+You can't re-verify a contract identical to one that has already been verified. If you attempt to do so, such as verifying the above contract, you'll get an error similar to:
+
+```text
+Start verifying contract `0xcCaA1C3eb8FEb5b09a5Eac1359BC4c70E18e29d9` deployed on 4202
+
+Contract [src/NFT.sol:NFT] "0xcCaA1C3eb8FEb5b09a5Eac1359BC4c70E18e29d9" is already verified. Skipping verification.
+``` 
+:::
+
+In case your smart contract isn't verified, grab the deployed address and run:
+
+```bash
+forge verify-contract <CONTRACT_ADDRESS> ./src/<NAME_OF_CONTRACT.sol>:<TOKEN_NAME> --chain 4202 --watch --verifier blockscout --verifier-url https://sepolia-blockscout.lisk.com/api
+```
+
+You should see an output similar to the following:
+
+ ```
+Starting contract verification...
+Waiting for blockscout to detect contract deployment...
+Start verifying contract `0xcCaA1C3eb8FEb5b09a5Eac1359BC4c70E18e29d9` deployed on 4202
+
+Submitting verification for [src/NFT.sol:NFT] 0xcCaA1C3eb8FEb5b09a5Eac1359BC4c70E18e29d9.
+Submitted contract for verification:
+        Response: `OK`
+        GUID: `ccaa1c3eb8feb5b09a5eac1359bc4c70e18e29d965e5c95a`
+        URL: https://sepolia-blockscout.lisk.com/address/0xccaa1c3eb8feb5b09a5eac1359bc4c70e18e29d9
+Contract verification status:
+Response: `OK`
+Details: `Pending in queue`
+Contract verification status:
+Response: `OK`
+Details: `Pass - Verified`
+Contract successfully verified
+```
+
+Use the contract's address e.g., `0xcCaA1C3eb8FEb5b09a5Eac1359BC4c70E18e29d9` to search for your contract on [Blockscout](https://sepolia-blockscout.lisk.com/) to confirm that it is verified.
 
 
 ## Interacting with the Smart Contract
 
-If you verified on Blocksout, you can use the `Read Contract` and `Write Contract` sections under the `Contract` tab to interact with the deployed contract. To use `Write Contract`, you'll need to connect your wallet first, by clicking the `Connect to Web3` button (sometimes this can be a little finicky, and you'll need to click `Connect` twice before it shows your wallet is successfully connected).
+As mentioned earlier, if you verified the smart contract on Blocksout, you can use the `Read contract` and `Write contract` sections under the `Contract` tab to interact with the deployed contract.
 
-To practice using the `cast` command-line tool which Foundry provides, we'll perform a call without publishing a transaction (a read), then sign and publish a transaction (a write).
+The `Read contract` tab can be used without connecting a wallet, however, to use the `Write contract` tab, you'll need to connect your wallet first.
+You can do that by clicking the `Connect wallet` button.
 
-### Performing a call
+### Using **cast** for interaction
 
-A key component of the Foundry toolkit, `cast` enables us to interact with contracts, send transactions, and get onchain data using Ethereum RPC calls. First we will perform a call from your account, without publishing a transaction.
+With foundry's rich command-line tool: [`cast`](https://book.getfoundry.sh/cast/) it is possible to interact with any deployed contract whether its reading or writing data on the blockchain.
+Let's perform a call without publishing a transaction (a read), then sign and publish a transaction (a write) to the deployed contract.
 
-From the command-line, run:
+#### Performing a call
+
+A key component of the Foundry toolkit, `cast` enables us to interact with contracts, send transactions, and get onchain data using Ethereum RPC calls. First we will perform a call from an account, without publishing a transaction.
+
+Fill out the following `<PLACEHOLDERS>` and then, run the command:
 
 ```bash
 cast call <DEPLOYED_CONTRACT_ADDRESS> --rpc-url https://rpc.sepolia-api.lisk.com "balanceOf(address)" <YOUR_ACCOUNT_ADDRESS_HERE>
 ```
 
-You should receive `0x0000000000000000000000000000000000000000000000000000000000000000` in response, which equals `0` in hexadecimal. And that makes sense — while you've deployed the NFT contract, no NFTs have been minted yet and therefore your account's balance is zero.
+You should receive `0x0000000000000000000000000000000000000000000000000000000000000000` in response, which equals `0` in hexadecimal. 
+This makes sense as you've only deployed the NFT contract for now, however, no NFTs have been minted yet, and therefore your account's balance is zero.
 
-### Signing and publishing a transaction
+#### Signing and sending a transaction
 
-Now let's sign and publish a transaction, calling the `mint(address)` function on the NFT contract we just deployed.
+Now let's sign and send a transaction, calling the `mint(address)` function on the `NFT` contract we just deployed.
 
-Run the following command:
+Again, fill out the following `<PLACEHOLDERS>` and then, run the command:
 
 ```bash
 cast send <DEPLOYED_CONTRACT_ADDRESS> --rpc-url https://rpc.sepolia-api.lisk.com "mint(address)" <RECIPIENT_ADDRESS_HERE> --private-key <SENDER_PRIVATE_KEY>
 ```
 
-
-
-https://sepolia-blockscout.lisk.com/token/0xcCaA1C3eb8FEb5b09a5Eac1359BC4c70E18e29d9
 :::info
 
-Note that in this `cast send` command, we had to include our private key, but this is not required for `cast call`, because that's for calling view-only contract functions and therefore we don't need to sign anything.
+As the `cast send` command writes data on the blockchain, it needs a sender account's private key to be passed to the `--private-key` flag.
+The transaction will be sent successfully, if the sender account has sufficient funds.
+
+The aforesaid is not required for `cast call` command, because that only retrieves already published data from the smart contract.
 
 :::
 
-If successful, Foundry will respond with information about the transaction, including the `blockNumber`, `gasUsed`, and `transactionHash` and much more.
+If the transaction execution is successful, Foundry will respond with information about the transaction, including the `blockNumber`, `gasUsed`, and `transactionHash` and much more.
 
 ```text
 blockHash               0xfa9d32794b0fc9c1a10d39c5289613dfe80b55f8ead06475ca877a389e088e67
@@ -410,13 +422,17 @@ l1GasPrice             "0x6d49929"
 l1GasUsed             "0x8a4"
 ```
 
-Finally, let's confirm that we did indeed mint ourselves one NFT. If we run the first `cast call` command again, we should see that our balance increased from 0 to 1:
+Finally, you can confirm the minting by [performing the call](#performing-a-call) again.
+We should see that our balance increased from `0` to `1`.
 
 ```bash
 cast call <DEPLOYED_CONTRACT_ADDRESS> --rpc-url https://rpc.sepolia-api.lisk.com "balanceOf(address)" <YOUR_ACCOUNT_ADDRESS_HERE>
 ```
 
 And the response: `0x0000000000000000000000000000000000000000000000000000000000000001` (`1` in hex) — congratulations, you deployed a contract and minted an NFT with Foundry!
+
+See the minted token for this guide on the [Blockscout explorer](https://sepolia-blockscout.lisk.com/token/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5).
+
 
 ## Conclusion
 
