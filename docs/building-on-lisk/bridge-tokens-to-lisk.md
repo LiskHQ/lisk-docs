@@ -199,7 +199,7 @@ const oneToken = 1000000000000000000n
 
 ### 2. Create a CrossChainMessenger instance
 
-The Optimism SDK exports a `CrossChainMessenger` class that makes it easy to interact with the `L1StandardBridge` contract.
+The Optimism SDK exports a [CrossChainMessenger](https://sdk.optimism.io/classes/crosschainmessenger) class that makes it easy to interact with the `L1StandardBridge` contract.
 
 Create an instance of the `CrossChainMessenger` class:
 
