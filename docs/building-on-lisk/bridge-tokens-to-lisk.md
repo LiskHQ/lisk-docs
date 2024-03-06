@@ -61,8 +61,7 @@ If you have [`cast`](https://book.getfoundry.sh/getting-started/installation) in
 
 ### 2. Get ETH on Sepolia and Lisk Sepolia
 
-This tutorial explains how to bridge tokens from Sepolia to Lisk Sepolia.
-You will need to get some ETH on both of these testnets.
+You will need to get some ETH on both, Sepolia and Lisk Sepolia networks.
 
 :::info
 You can use [this faucet](https://sepoliafaucet.com) to get ETH on Sepolia.
