@@ -92,7 +92,13 @@ This example command creates a token with the name "My Standard Demo Token" and 
 The resulting L2 ERC-20 token address is printed to the console.
 
 ```bash 
-cast send 0x4200000000000000000000000000000000000012 "createOptimismMintableERC20(address,string,string)" $TUTORIAL_L1_ERC20_ADDRESS "My Standard Demo Token" "L2TKN" --private-key $PRIVATE_KEY --rpc-url $TUTORIAL_RPC_URL --json | jq -r '.logs[0].topics[2]' | cast parse-bytes32-address
+cast send 0x4200000000000000000000000000000000000012 \
+"createOptimismMintableERC20(address,string,string)" \ 
+$TUTORIAL_L1_ERC20_ADDRESS "My Standard Demo Token" "L2TKN" \
+--private-key $PRIVATE_KEY \
+--rpc-url $TUTORIAL_RPC_URL \
+--json | jq -r '.logs[0].topics[2]' \
+| cast parse-bytes32-address
 ```
 
 ## Bridge Some Tokens

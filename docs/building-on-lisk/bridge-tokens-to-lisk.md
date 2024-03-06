@@ -51,7 +51,7 @@ pnpm add @eth-optimism/sdk
 #### 1.4 Install ethers.js
 
 ```bash
-pnpm add ethers@^5
+pnpm add ethers@^6
 ```
 
 :::tip
@@ -120,8 +120,22 @@ const privateKey = process.env.TUTORIAL_PRIVATE_KEY
 #### 6.2 Create the RPC providers and wallets
 
 ```js
-const l1Provider = new ethers.providers.StaticJsonRpcProvider("https://rpc.ankr.com/eth_sepolia")
-const l2Provider = new ethers.providers.StaticJsonRpcProvider("https://rpc.sepolia-api.lisk.com")
+/* const l1Provider = new ethers.providers.StaticJsonRpcProvider("https://rpc.ankr.com/eth_sepolia")
+const l2Provider = new ethers.providers.StaticJsonRpcProvider("https://rpc.sepolia-api.lisk.com") */
+const urlL1 = 'https://rpc.ankr.com/eth_sepolia';
+const urlL2 = 'https://rpc.sepolia-api.lisk.com';
+const chainIdL1 = 11155111;
+const chainIdL2 = 4202;
+const l1Provider = new ethers.JsonRpcProvider(
+    urlL1,
+    null,
+    { staticNetwork: ethers.Network.from(chainIdL1) }
+);
+const l2Provider = new ethers.JsonRpcProvider(
+    urlL2,
+    null,
+    { staticNetwork: ethers.Network.from(chainIdL2) }
+);
 const l1Wallet = new ethers.Wallet(privateKey, l1Provider)
 const l2Wallet = new ethers.Wallet(privateKey, l2Provider)
 ```
