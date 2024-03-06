@@ -21,7 +21,7 @@ keywords:
 If you want to bridge existing tokens, you can skip to the tutorial on [Bridging ERC-20 tokens to Lisk](../bridge-tokens-to-lisk).
 :::
 
-In this tutorial you'll learn how to bridge a standard ERC-20 token from Ethereum to Lisk using the Standard Bridge system.
+In this tutorial you'll learn how to bridge a standard ERC-20 token from Ethereum to Lisk using the [Standard Bridge system](https://docs.optimism.io/builders/dapp-developers/bridging/standard-bridge).
 This tutorial is meant for developers who already have an existing ERC-20 token on Ethereum and want to create a bridged representation of that token on Lisk.
 
 This tutorial explains how to use the [`OptimismMintableERC20Factory`](https://github.com/ethereum-optimism/optimism/blob/186e46a47647a51a658e699e9ff047d39444c2de/packages/contracts-bedrock/contracts/universal/OptimismMintableERC20Factory.sol) to deploy a standardized ERC-20 token on Lisk Sepolia.
