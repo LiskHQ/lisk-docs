@@ -49,7 +49,16 @@ const sidebars = {
             'building-on-lisk/deploying-smart-contract/with-Hardhat',
           ],
         },
-        'building-on-lisk/interacting-with-the-blockchain',
+        {
+          type: 'category',
+          label: 'Interacting with the Blockchain',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            'building-on-lisk/interacting-with-the-blockchain/ethers',
+            'building-on-lisk/interacting-with-the-blockchain/viem',
+          ],
+        },
         'building-on-lisk/migration-guide',
       ],
       link: {
@@ -66,8 +75,9 @@ const sidebars = {
       collapsible: true,
       collapsed: false,
       items: [
-        'lisk-tools/bridges',
         'lisk-tools/api-providers',
+        'lisk-tools/bridges',
+        'lisk-tools/oracles',
         'lisk-tools/utilities',
       ],
     },
