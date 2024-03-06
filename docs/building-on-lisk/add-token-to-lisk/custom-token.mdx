@@ -22,7 +22,7 @@ If you want to bridge existing tokens, you can skip to the tutorial on [Bridging
 :::
 
 In this tutorial you'll learn how to bridge a custom ERC-20 token from Ethereum to Lisk Sepolia using the Standard Bridge system.
-This tutorial is meant for developers who already have an existing ERC-20 token on Ethereum and want to create a bridged representation of that token on Lisk Mainnet.
+This tutorial is meant for developers who already have an existing ERC-20 token on Ethereum and want to create a bridged representation of that token on Lisk Sepolia.
 
 This tutorial explains how you can create a custom token that conforms to the [`IOptimismMintableERC20`](https://github.com/ethereum-optimism/optimism/blob/v1.1.4/packages/contracts-bedrock/src/universal/IOptimismMintableERC20.sol) interface so that it can be used with the Standard Bridge system.
 A custom token allows you to do things like trigger extra logic whenever a token is deposited.
@@ -190,7 +190,11 @@ contract MyCustomL2Token is IOptimismMintableERC20, ERC20 {
 
 Take a moment to review the example contract.
 It's almost the same as the standard [`OptimismMintableERC20`](https://github.com/ethereum-optimism/optimism/blob/v1.1.4/packages/contracts-bedrock/src/universal/OptimismMintableERC20.sol) contract except that the `_burn` function has been made to always revert.
-Since the bridge needs to burn tokens when users want to withdraw them to L1, this means that users will not be able to withdraw tokens from this contract.
+
+The contract for the custom token inherits from the [`IOptimismMintableERC20`](https://github.com/ethereum-optimism/optimism/blob/v1.1.4/packages/contracts-bedrock/src/universal/IOptimismMintableERC20.sol) interface and the `ERC20` contract.
+The constructor takes the address of the L2 standard bridge, the address of the corresponding L1 token, the name of the ERC20 token, and the symbol of the ERC20 token.
+The `mint` function allows the bridge to mint tokens to users.
+Since the bridge needs to burn tokens when users want to withdraw them to L1, this means that users will not be able to withdraw tokens from this contract, which is what we intend for this example.
 
 ```solidity
 /// @notice Prevents tokens from being withdrawn to L1.

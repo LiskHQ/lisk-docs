@@ -41,7 +41,7 @@ const sidebars = {
         'building-on-lisk/deploying-a-smart-contract',
         {
           type: 'category',
-          label: 'Deploying a Token to Lisk',
+          label: 'Deploying an ERC-20 token to Lisk',
           collapsible: true,
           collapsed: true,
           items: [
@@ -56,7 +56,7 @@ const sidebars = {
         'building-on-lisk/bridge-tokens-to-lisk',
         {
           type: 'category',
-          label: 'Interacting with the Blockchain',
+          label: 'Interacting with the blockchain',
           collapsible: true,
           collapsed: true,
           items: [
