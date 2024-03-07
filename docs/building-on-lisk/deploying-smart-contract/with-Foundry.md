@@ -120,7 +120,7 @@ For now, delete the files present in the `script/Counter.s.sol`, `src/Counter.so
 
 ### **Creating** the smart contract
 
-For ease and security, we’ll use the `ERC721` contract provided by the [OpenZeppelin Contracts library](https://docs.openzeppelin.com/contracts/5.x/erc721) to create a simple ERC-20 smart contract.
+For ease and security, we’ll use the `ERC721` contract provided by the [OpenZeppelin Contracts library](https://docs.openzeppelin.com/contracts/5.x/erc721) to create a simple ERC-721 smart contract.
 With OpenZeppelin, we don’t need to write the entire ERC-721 contract.
 Instead, we can import the library contract and use its functions from the get-go.
 
