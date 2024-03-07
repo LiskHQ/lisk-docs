@@ -15,13 +15,13 @@
 @import url('./images.css');
 
 :root {
-  --ifm-color-primary: #3074fc;
-  --ifm-color-primary-dark: #1260fc;
-  --ifm-color-primary-darker: #0456fb;
-  --ifm-color-primary-darkest: #0347cf;
-  --ifm-color-primary-light: #4e88fc;
-  --ifm-color-primary-lighter: #5c92fd;
-  --ifm-color-primary-lightest: #89b0fd;
+  --ifm-color-primary: #4070F4;
+  --ifm-color-primary-dark: #235af2;
+  --ifm-color-primary-darker: #144ff1;
+  --ifm-color-primary-darkest: #0c3fcc;
+  --ifm-color-primary-light: #5d86f6;
+  --ifm-color-primary-lighter: #6c91f7;
+  --ifm-color-primary-lightest: #97b1f9;
   --ifm-font-family-base: 'Gilroy-Medium';
   --ifm-heading-font-family: 'Gilroy-Medium';
   --ifm-navbar-link-color: var(--ifm-color-primary);
@@ -30,6 +30,10 @@
   --ifm-code-background: #f6f7f8;
   --ifm-alert-border-color: #3074fc;
   --ifm-code-font-size: 90%;
+  --docusaurus-highlighted-code-line-bg: rgb(12 21 46 / 10%);
+  --ifm-font-color-base: #0C152E;
+  --ifm-menu-color: rgb(12 21 46 / 75%);
+  --ifm-toc-link-color: rgb(12 21 46 / 75%);
 }
 
 [class^='codeBlockTitle'] {
@@ -51,6 +55,7 @@ summary {
   --ifm-link-color: var(--ifm-color-primary);
   --ifm-link-hover-color: var(--ifm-color-primary);
   --ifm-link-decoration: none;
+  color: #0C152E;
 }
 
 .alert--info {
@@ -98,6 +103,9 @@ html[data-theme='dark'] .alert a {
   --ifm-breadcrumb-item-background-active: rgba(43, 214, 123, 0.10);
   --ifm-code-background: rgb(246 247 248 / 30%);
   --ifm-alert-border-color: #2BD67B;
+  --ifm-font-color-base: #DFE6F2;
+  --ifm-toc-link-color: #DFE6F2;
+  --ifm-menu-color: #DFE6F2;
 }
 
 html[data-theme='dark'] {
@@ -105,4 +113,8 @@ html[data-theme='dark'] {
   --ifm-background-surface-color: #0C152E;
   --docusaurus-highlighted-code-line-bg: #050915;
   --ifm-footer-background-color: #0C152E;
+}
+
+html[data-theme='dark'] .alert {
+  color: #DFE6F2;
 }
