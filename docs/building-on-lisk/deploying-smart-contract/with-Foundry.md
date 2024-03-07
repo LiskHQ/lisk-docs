@@ -325,7 +325,12 @@ Contract [src/NFT.sol:NFT] "0xcCaA1C3eb8FEb5b09a5Eac1359BC4c70E18e29d9" is alrea
 In case your smart contract isn't verified, grab the deployed address and run:
 
 ```bash
-forge verify-contract <CONTRACT_ADDRESS> ./src/<NAME_OF_CONTRACT.sol>:<TOKEN_NAME> --chain 4202 --watch --verifier blockscout --verifier-url https://sepolia-blockscout.lisk.com/api
+forge verify-contract <CONTRACT_ADDRESS> \
+./src/<CONTRACT_FILE>.sol:<CONTRACT_NAME> \
+--chain 4202 \
+--watch \
+--verifier blockscout \
+--verifier-url https://sepolia-blockscout.lisk.com/api
 ```
 
 You should see an output similar to the following:
