@@ -92,14 +92,21 @@ This example command creates a token with the name "My Standard Demo Token" and 
 The resulting L2 ERC-20 token address is printed to the console.
 
 ```bash 
-cast send 0x4200000000000000000000000000000000000012 \
-"createOptimismMintableERC20(address,string,string)" \ 
-$TUTORIAL_L1_ERC20_ADDRESS "My Standard Demo Token" "L2TKN" \
---private-key $PRIVATE_KEY \
---rpc-url $TUTORIAL_RPC_URL \
---json | jq -r '.logs[0].topics[2]' \
-| cast parse-bytes32-address
+cast send 0x4200000000000000000000000000000000000012 "createOptimismMintableERC20(address,string,string)" $TUTORIAL_L1_ERC20_ADDRESS "My Standard Demo Token" "L2TKN" --private-key $TUTORIAL_PRIVATE_KEY --rpc-url $TUTORIAL_RPC_URL --json | jq -r '.logs[0].topics[2]' | cast parse-bytes32-address
 ```
+
+If all goes well, it will respond with the address of the newly deployed contract:
+
+```text
+0x891C582b83F69B7c2d3107cd73A3e491CB33962F
+```
+
+:::note[Using factories is **not** recommended for production]
+Factories make it easy to deploy contracts out of the box. 
+The downside of this is, that you do not have control over the source code of the contract that is going to be deployed, as this is performed by the factory.
+
+Furthermore, it is not so straightforward to verify those contracts on Blockscout, as the source code of the contract is required for the verification.
+:::
 
 ## Bridge Some Tokens
 
