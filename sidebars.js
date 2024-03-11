@@ -38,7 +38,16 @@ const sidebars = {
       items: [
         'building-on-lisk/connecting-to-a-wallet',
         'building-on-lisk/contracts',
-        'building-on-lisk/deploying-a-smart-contract',
+        {
+          type: 'category',
+          label: 'Deploying a Smart Contract',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            'building-on-lisk/deploying-smart-contract/with-Foundry',
+            'building-on-lisk/deploying-smart-contract/with-Hardhat',
+          ],
+        },
         {
           type: 'category',
           label: 'Deploying an ERC-20 token to Lisk',
@@ -80,8 +89,9 @@ const sidebars = {
       collapsible: true,
       collapsed: false,
       items: [
-        'lisk-tools/bridges',
         'lisk-tools/api-providers',
+        'lisk-tools/bridges',
+        'lisk-tools/oracles',
         'lisk-tools/utilities',
       ],
     },
