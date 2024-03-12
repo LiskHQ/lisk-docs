@@ -39,7 +39,16 @@ const sidebars = {
         'building-on-lisk/connecting-to-a-wallet',
         'building-on-lisk/contracts',
         'building-on-lisk/add-token-to-lisk',
-        'building-on-lisk/deploying-a-smart-contract',
+        {
+          type: 'category',
+          label: 'Deploying a Smart Contract',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            'building-on-lisk/deploying-smart-contract/with-Foundry',
+            'building-on-lisk/deploying-smart-contract/with-Hardhat',
+          ],
+        },
         {
           type: 'category',
           label: 'Interacting with the Blockchain',
