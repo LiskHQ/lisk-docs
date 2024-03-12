@@ -187,13 +187,34 @@ console.log('Tx hash:', txReceipt.transactionHash)
 
 ## Interacting with smart contracts
 
-You can use web3.js to interact with a smart contract on Lisk by instantiating a `Contract` object using the ABI and address of a deployed contract:
+You can use web3.js to interact with a smart contract on Lisk by instantiating a `Contract` object using the `ABI` and `address` of a deployed contract:
 
-:::tip
+
+<Tabs>
+  <TabItem value="ce" label="contract-example.js" default>
+    ```js
+    const { Web3 } = require('web3');
+    ```
+  </TabItem>
+  <TabItem value="abi" label="abi.js">
+```js
+    const abi = [
+    … // ABI of deployed contract
+    ];
+```
+  </TabItem>
+</Tabs>
+
+
+
+
+
+{/* :::tip
 The ABI of a contract can be found on the respective contract page in [BlockScout](https://sepolia-blockscout.lisk.com/).
 
-For example, you can use the ABI for the [Hello contract](https://sepolia-blockscout.lisk.com/address/0xb18eb752813c2fbedfdf2be6e5e842a85a3b8539?tab=contact_code). Just scroll down to `Contract ABI` and copy the deployed contract's ABI.
-:::
+For example, you can use the ABI for the [Hello contract](https://sepolia-blockscout.lisk.com/address/0xb18eb752813c2fbedfdf2be6e5e842a85a3b8539?tab=contact_code).
+Just scroll down to `Contract ABI` and copy the deployed contract's ABI.
+::: */}
 
 ```javascript title="Reading from contracts"
 // Replace the contractAddress' value with the desired contract.
@@ -216,9 +237,9 @@ getHello();
 `CONTRACT_ADDRESS` is the address of the deployed contract.
 :::
 
-:::note
+{/* :::note
 A **Contract** (in web3.js) is an abstraction that represents a connection to a specific contract on the Lisk Network, so that applications can use it like a normal JavaScript object.
-:::
+::: */}
 
 For reading and writing contracts, provide a `Signer` object instead of a `Provider` object:
 
