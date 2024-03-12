@@ -48,6 +48,7 @@ const sidebars = {
           items: [
             'building-on-lisk/interacting-with-the-blockchain/ethers',
             'building-on-lisk/interacting-with-the-blockchain/viem',
+            'building-on-lisk/interacting-with-the-blockchain/web3',
           ],
         },
         'building-on-lisk/migration-guide',
