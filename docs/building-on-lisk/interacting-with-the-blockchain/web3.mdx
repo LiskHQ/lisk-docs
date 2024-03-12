@@ -19,6 +19,9 @@ keywords:
   ]
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Interacting with the blockchain via web3.js
 
 [web3.js](https://web3js.org/) is a JavaScript library for building and interacting with EVM-compatible blockchain networks.
@@ -29,35 +32,56 @@ You can use web3.js to interact with smart contracts deployed on the Lisk networ
 ## Install
 
 To install web3.js run the following command:
-
-```bash
-npm install --save web3
-```
+<Tabs>
+  <TabItem value="npm" label="NPM" default>
+    ```bash
+    npm install --save web3
+    ```
+  </TabItem>
+  <TabItem value="yarn" label="Yarn">
+    ```bash
+    yarn add web3
+    ```
+  </TabItem>
+</Tabs>
 
 ## Import
 
 Before you can start using web3.js, you need to import it into your project.
 
-Add the following line of code to the top of your file to import web3.js:
+Web3.js v4 supports both CommonJS and native ESM module imports.
 
-```javascript
-const ethers = require('ethers');
-```
+Add the following line of code to the top of your file to import web3.js:
+<Tabs>
+  <TabItem value="cjs" label="CommonJS" default>
+    ```js
+    const { Web3 } = require('web3');
+    ```
+  </TabItem>
+  <TabItem value="esm" label="ESM Module">
+    ```ts
+    import { Web3 } from 'web3';
+    ```
+  </TabItem>
+</Tabs>
 
 ## Connecting to Lisk
 
 You can connect to Lisk by instantiating a new web3.js `JsonRpcProvider` object with an RPC URL of the Lisk network:
 
 ```javascript
-const ethers = require('ethers');
+import { Web3 } from 'web3';
 
-const url = 'https://rpc.sepolia-api.lisk.com';
-const provider = new web3.jsonRpcProvider(url);
+// Instantiate a web3 object by passing the RPC URL of Lisk.
+const web3 = new Web3('https://rpc.sepolia-api.lisk.com');
+
+// Retrieve data from blockchain
+web3.eth.getBlockNumber().then(console.log);
 ```
 
-:::note
+{/* :::note
 A **Provider** (in web3.js) is a class that provides an abstraction for a connection to the Ethereum Network. It provides read-only access to the Blockchain and its status.
-:::
+::: */}
 
 ## Reading data from the blockchain
 
@@ -66,8 +90,9 @@ Once you have created a provider, you can use it to read data from the Lisk netw
 For example, you can use the `getBlockNumber` method to get the latest block:
 
 ```javascript
+// Retrieve data from blockchain
 async function getLatestBlock() {
-    const latestBlock = await provider.getBlockNumber();
+    const latestBlock = await web3.eth.getBlockNumber()
     console.log("The latest block's number is:", latestBlock);
 }
 
@@ -77,13 +102,14 @@ getLatestBlock();
 <details>
 <summary>Complete code example</summary>
 ```javascript
-const ethers = require('ethers');
+import { Web3 } from 'web3';
 
-const url = 'https://rpc.sepolia-api.lisk.com';
-const provider = new web3.jsonRpcProvider(url);
+// Instantiate a web3 object by passing the RPC URL of Lisk.
+const web3 = new Web3('https://rpc.sepolia-api.lisk.com');
 
+// Retrieve data from blockchain
 async function getLatestBlock() {
-    const latestBlock = await provider.getBlockNumber();
+    const latestBlock = await web3.eth.getBlockNumber()
     console.log("The latest block's number is:", latestBlock);
 }
 
@@ -91,61 +117,71 @@ getLatestBlock();
 ```
 </details>
 
+:::tip 
+Web3 provides a wide range of [Web3Eth methods](https://docs.web3js.org/guides/web3_eth/methods/) that can be used to interact with the blockchain.
+:::
 ## Writing data to the blockchain
 
-In order to write data to the Lisk network, you need to create a `Signer`.
+In order to write data to the Lisk network, you need to create a [`Wallet`](https://docs.web3js.org/guides/wallet/).
 
 :::note
-A **Signer** is a class that (usually) in some way directly or indirectly has access to a private key, which can sign messages and transactions to authorize the network to charge your account ether to perform operations.
+A Web3.js `Wallet` is your main entry point if you want to use a private key directly to do any blockchain operations (transactions), also called Signer in other libraries.
 :::
 
-You can create a `Signer` by instantiating a new web3.js `Wallet` object, providing it with a private key and `Provider`.
+You can create a `Wallet` by instantiating a new web3.js `Wallet` object, and add private key(s) into it.
+Such private keys can later be used to send transaction on the blockchain.
 
 ```javascript
-const privateKey = 'PRIVATE_KEY';
-const signer = new ethers.Wallet(privateKey, provider);
-const receiver = '0x5e1A92F84cA1CE280B3Cb29d79C3368f45b41EBB';
-// Send 0.01 ether to a given address.
-async function sendTx(to) {
-    const tx =  await signer.sendTransaction({
-        to: to,
-        value: ethers.parseEther("0.01")
-    });
+// Add an account to a wallet
+const privateKey = '0x<SENDER_PRIVATE_KEY>';
+const account = web3.eth.accounts.wallet.add(privateKey);
 
-    console.log(tx);
-}
+// Create transaction object to send '.0001' eth to '0x.....' address from the account[0]
+const tx =
+{
+    from: account[0].address,
+    to: '<RECIPIENT_ADDRESS>',
+    value: web3.utils.toWei('.0001', 'ether')
+};
+// The 'from' address must match the one previously added with 'wallet.add'
 
-//sendTx(receiver);
+// Send the transaction
+const txReceipt = await web3.eth.sendTransaction(tx);
+
+console.log('Tx hash:', txReceipt.transactionHash)
 ```
 
 :::info
-`PRIVATE_KEY` is the private key of the account that is to be used when creating the `signer` object.
+`PRIVATE_KEY` is the private key of the account that is to be sign and send a transaction using web3.js.
 :::
 
-The receiving account's balance will increment by `0.01` ETH once the transaction execution is successful.
+The receiving account's balance will increment by `0.0001` ETH once the transaction execution is successful.
 
 <details>
 <summary>Complete code example</summary>
-```javascript
-const ethers = require('ethers');
+```js
+import { Web3 } from 'web3';
 
-const url = 'https://rpc.sepolia-api.lisk.com';
-const provider = new web3.jsonRpcProvider(url);
-// Replace PRIVATE_KEY with the private key of your account.
-const privateKey = 'PRIVATE_KEY';
-const signer = new ethers.Wallet(privateKey, provider);
-const receiver = '0x5e1A92F84cA1CE280B3Cb29d79C3368f45b41EBB';
-// Send 0.01 ether to a given address.
-async function sendTx(to) {
-    const tx =  await signer.sendTransaction({
-        to: to,
-        value: ethers.parseEther("0.01")
-    });
+// Instantiate a web3 object by passing the RPC URL of Lisk.
+const web3 = new Web3('https://rpc.sepolia-api.lisk.com');
 
-    console.log(tx);
-}
+// Add an account to a wallet
+const privateKey = '0x<SENDER_PRIVATE_KEY>';
+const account = web3.eth.accounts.wallet.add(privateKey);
 
-sendTx(receiver);
+// Create transaction object to send '.0001' eth to '0x.....' address from the account[0]
+const tx =
+{
+    from: account[0].address,
+    to: '<RECIPIENT_ADDRESS>',
+    value: web3.utils.toWei('.0001', 'ether')
+};
+// The 'from' address must match the one previously added with 'wallet.add'
+
+// Send the transaction
+const txReceipt = await web3.eth.sendTransaction(tx);
+
+console.log('Tx hash:', txReceipt.transactionHash)
 ```
 </details>
 
