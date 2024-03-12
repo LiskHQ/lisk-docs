@@ -59,6 +59,7 @@ const sidebars = {
             'building-on-lisk/interacting-with-the-blockchain/viem',
           ],
         },
+        'building-on-lisk/using-oracle-data',
         'building-on-lisk/migration-guide',
       ],
       link: {
