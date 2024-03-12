@@ -118,7 +118,7 @@ const privateKey = process.env.TUTORIAL_PRIVATE_KEY
 
 #### 6.2 Create the RPC providers and wallets
 
-```js
+<!-- ```js
 /* const l1Provider = new ethers.providers.StaticJsonRpcProvider("https://rpc.ankr.com/eth_sepolia")
 const l2Provider = new ethers.providers.StaticJsonRpcProvider("https://rpc.sepolia-api.lisk.com") */
 const urlL1 = 'https://rpc.ankr.com/eth_sepolia';
@@ -137,6 +137,10 @@ const l2Provider = new ethers.JsonRpcProvider(
 );
 const l1Wallet = new ethers.Wallet(privateKey, l1Provider)
 const l2Wallet = new ethers.Wallet(privateKey, l2Provider)
+``` -->
+
+```js
+
 ```
 
 #### 6.3 Set the L1 and L2 ERC-20 addresses
