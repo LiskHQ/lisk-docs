@@ -1,5 +1,5 @@
 ---
-title: Accessing real-world data using Oracles
+title: Accessing real-world data with Oracles
 slug: /guides/using-oracle-data
 description: A guide on using Redstone Data Feeds to access real-world data such as asset prices, directly from your smart contracts on the Lisk testnet.
 keywords: [
@@ -22,8 +22,16 @@ keywords: [
 
 # Accessing real-world data using the Redstone Oracle
 
-This page will guide you through the process of creating a smart contract on Lisk that utilizes Redstone Data Feeds to access real-world data, such as asset prices, directly from your smart contracts.
+This page will explain how you can access real world / off-chain data using Oracles such as Redstone.
 
+RedStone is a data ecosystem that delivers frequently updated, reliable and diverse data for your dApp and smart contracts.
+
+In case you intend to use the price data inside of your own contract, please jump to the section [How to receive price feeds inside a smart contract](#how-to-receive-price-feeds-inside-a-smart-contract)
+
+If you intend to query the price feeds directly in you webapplication, check out the section [## How to receive price feeds in Javascript](#how-to-receive-price-feeds-in-javascript).
+
+
+## How to receive price feeds in Javascript
 
 ```js
 import { wagmiAbi } from './abi.js'
@@ -54,6 +62,7 @@ console.log(" |- ++++++++++ USDC Price ++++++++++ -|");
 console.log(usdcPrice);
 ```
 
+## How to receive price feeds inside a smart contract
 
 ```solidity
 pragma solidity ^0.8.23;
