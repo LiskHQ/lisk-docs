@@ -189,6 +189,10 @@ console.log((await l1ERC20.balanceOf(l1Wallet.address)).toString())
 Now that you have some tokens on L1 you can deposit those tokens into the `L1StandardBridge` contract.
 You'll then receive the same number of tokens on L2 in return.
 
+:::tip
+The complete code example used in this section can be found in the [Viem examples](https://github.com/wevm/viem/tree/main/examples/op-stack_deposit).
+:::
+
 ```typescript title="deposit.tsx"
 import React, { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom/client'
@@ -253,6 +257,7 @@ function Example() {
     const hash = await walletClientL1.depositTransaction(request)
     setL1Hash(hash)
   }
+
 ```
 
 Now create the HTML elements of the UI.
@@ -426,6 +431,7 @@ Use the [`useEffect`](https://react.dev/learn/synchronizing-with-effects) React 
 }
 ```
 </details>
+
 <details>
 <summary>L2 Receipt</summary>
 ```json
@@ -452,6 +458,7 @@ Use the [`useEffect`](https://react.dev/learn/synchronizing-with-effects) React 
   "l1FeeScalar": null
 }
 ```
+</details>
 
 ## Withdraw Tokens
 
