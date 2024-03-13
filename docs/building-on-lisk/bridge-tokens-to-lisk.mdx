@@ -232,7 +232,12 @@ export const publicClientL2 = createPublicClient({
   transport: http(),
 }).extend(publicActionsL2())
 
+/** Example Component for Depositing Tokens from L1 to L2 */
+
 function Example() {
+
+  /** State variables */
+
   const [account, setAccount] = useState<Address>()
   const [l1Hash, setL1Hash] = useState<Hash>()
   const [l1Receipt, setL1Receipt] = useState<TransactionReceipt>()
@@ -241,8 +246,12 @@ function Example() {
     'idle' | 'preparing' | 'processingL1' | 'processingL2' | 'success'
   >('idle')
 
+  /** User Inputs */
+
   const addressInput = React.createRef<HTMLInputElement>()
   const valueInput = React.createRef<HTMLInputElement>()
+
+  /** Functions */
 
   const connect = async () => {
     const [address] = await walletClientL1.requestAddresses()
@@ -266,54 +275,8 @@ Now create the HTML elements of the UI inside the `Example` component we created
 Here we will create buttons and input fields to allow the user to connect their wallet and deposit tokens.
 
 ```tsx title="deposit.tsx"
-  if (account)
-    return (
-      <>
-        <div>Connected: {account}</div>
-        <input ref={addressInput} placeholder="address" />
-        <input ref={valueInput} placeholder="value (ether)" />
-        <button
-          disabled={
-            state === 'preparing' ||
-            state === 'processingL1' ||
-            state === 'processingL2'
-          }
-          onClick={depositTransaction}
-        >
-          {state === 'preparing'
-            ? 'Preparing...'
-            : state === 'processingL1' || state === 'processingL2'
-              ? 'Processing...'
-              : 'Deposit'}
-        </button>
+  /** UI */
 
-        {state === 'processingL1' && <div>Processing L1 transaction...</div>}
-        {l1Receipt && (
-          <div>
-            L1 Receipt:{' '}
-            <pre>
-              <code>{stringify(l1Receipt, null, 2)}</code>
-            </pre>
-          </div>
-        )}
-
-        {state === 'processingL2' && <div>Processing L2 transaction...</div>}
-        {l2Receipt && (
-          <div>
-            L2 Receipt:{' '}
-            <pre>
-              <code>{stringify(l2Receipt, null, 2)}</code>
-            </pre>
-          </div>
-        )}
-      </>
-    )
-  return <button onClick={connect}>Connect Wallet</button>
-```
-
-Finally, render the UI to the DOM.
-
-```tsx title="deposit.tsx"
   if (account)
     return (
       <>
