@@ -215,6 +215,8 @@ import {
 } from 'viem/op-stack'
 import 'viem/window'
 
+/** Viem Clients */
+
 export const publicClientL1 = createPublicClient({
   chain: sepolia,
   transport: http(),
@@ -257,11 +259,11 @@ function Example() {
     const hash = await walletClientL1.depositTransaction(request)
     setL1Hash(hash)
   }
-
+}
 ```
 
-Now create the HTML elements of the UI.
-The above defined functions will be called when the user interacts with the UI.
+Now create the HTML elements of the UI inside the `Example` component we created above.
+Here we will create buttons and input fields to allow the user to connect their wallet and deposit tokens.
 
 ```tsx title="deposit.tsx"
   if (account)
@@ -307,8 +309,59 @@ The above defined functions will be called when the user interacts with the UI.
       </>
     )
   return <button onClick={connect}>Connect Wallet</button>
-}
+```
 
+Finally, render the UI to the DOM.
+
+```tsx title="deposit.tsx"
+  if (account)
+    return (
+      <>
+        <div>Connected: {account}</div>
+        <input ref={addressInput} placeholder="address" />
+        <input ref={valueInput} placeholder="value (ether)" />
+        <button
+          disabled={
+            state === 'preparing' ||
+            state === 'processingL1' ||
+            state === 'processingL2'
+          }
+          onClick={depositTransaction}
+        >
+          {state === 'preparing'
+            ? 'Preparing...'
+            : state === 'processingL1' || state === 'processingL2'
+              ? 'Processing...'
+              : 'Deposit'}
+        </button>
+
+        {state === 'processingL1' && <div>Processing L1 transaction...</div>}
+        {l1Receipt && (
+          <div>
+            L1 Receipt:{' '}
+            <pre>
+              <code>{stringify(l1Receipt, null, 2)}</code>
+            </pre>
+          </div>
+        )}
+
+        {state === 'processingL2' && <div>Processing L2 transaction...</div>}
+        {l2Receipt && (
+          <div>
+            L2 Receipt:{' '}
+            <pre>
+              <code>{stringify(l2Receipt, null, 2)}</code>
+            </pre>
+          </div>
+        )}
+      </>
+    )
+  return <button onClick={connect}>Connect Wallet</button>
+```
+
+Finally, render the UI to the DOM.
+
+```tsx title="deposit.tsx"
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <Example />,
 )
