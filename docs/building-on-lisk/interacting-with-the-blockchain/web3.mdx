@@ -12,9 +12,10 @@ keywords:
     smart contracts,
     EVM-compatible,
     blockchain,
-    JsonRpcProvider,
-    Signer,
+    Web3,
+    Wallet,
     ABI,
+    eth,
     interacting with smart contract,
   ]
 ---
@@ -26,7 +27,7 @@ import TabItem from '@theme/TabItem';
 
 [web3.js](https://web3js.org/) is a JavaScript library for building and interacting with EVM-compatible blockchain networks.
 
-You can use web3.js to interact with smart contracts deployed on the Lisk network.
+You can also use web3.js to interact with smart contracts deployed on the Lisk network.
 
 
 ## Install
@@ -49,7 +50,7 @@ To install web3.js run the following command:
 
 Before you can start using web3.js, you need to import it into your project.
 
-Web3.js v4 supports both CommonJS and native ESM module imports.
+Web3.js supports both CommonJS and native ESM module imports.
 
 Add the following line of code to the top of your file to import web3.js:
 <Tabs>
@@ -67,21 +68,18 @@ Add the following line of code to the top of your file to import web3.js:
 
 ## Connecting to Lisk
 
-You can connect to Lisk by instantiating a new web3.js `JsonRpcProvider` object with an RPC URL of the Lisk network:
+You can connect to Lisk by instantiating a new `Web3` object with an RPC URL of the Lisk network:
 
 ```javascript
 import { Web3 } from 'web3';
 
 // Instantiate a web3 object by passing the RPC URL of Lisk.
 const web3 = new Web3('https://rpc.sepolia-api.lisk.com');
-
-// Retrieve data from blockchain
-web3.eth.getBlockNumber().then(console.log);
 ```
 
-## Reading data from the blockchain
+### Reading data from the blockchain
 
-Once you have created a provider, you can use it to read data from the Lisk network.
+Once you have created the `Web3` object, you can use it to read data from the Lisk network.
 
 For example, you can use the `getBlockNumber` method to get the latest block:
 
@@ -116,16 +114,18 @@ getLatestBlock();
 :::tip 
 Web3 provides a wide range of [Web3Eth methods](https://docs.web3js.org/guides/web3_eth/methods/) that can be used to interact with the blockchain.
 :::
-## Writing data to the blockchain
 
-In order to write data to the Lisk network, you need to create a [`Wallet`](https://docs.web3js.org/guides/wallet/).
+### Writing data to the blockchain
+
+To write data to the Lisk network, you need to create a [`Wallet`](https://docs.web3js.org/guides/wallet/).
 
 :::note
-A Web3.js `Wallet` is your main entry point if you want to use a private key directly to do any blockchain operations (transactions), also called Signer in other libraries.
+A web3.js `Wallet` is your main entry point if you want to use a private key to do any blockchain operations e.g., sending transactions, etc.
+It is also called a `Signer` in other libraries.
 :::
 
-You can create a `Wallet` by instantiating a new web3.js `Wallet` object, and add private key(s) into it.
-Such private keys can later be used to send transaction on the blockchain.
+You can create a `Wallet` by instantiating a new Web3 `Wallet` object and the add private key(s) into it.
+Such private key(s) can later be used to send transactions on the blockchain.
 
 ```javascript
 // Add an account to a wallet
@@ -148,7 +148,7 @@ console.log('Tx hash:', txReceipt.transactionHash)
 ```
 
 :::info
-`PRIVATE_KEY` is the private key of the account that is to be sign and send a transaction using web3.js.
+`PRIVATE_KEY` is the private key of the account that is used to sign and send a transaction using web3.js.
 :::
 
 The receiving account's balance will increment by `0.0001` ETH once the transaction execution is successful.
@@ -183,10 +183,10 @@ console.log('Tx hash:', txReceipt.transactionHash)
 
 ## Interacting with smart contracts
 
-You can use web3.js to interact with a smart contract on Lisk by instantiating a `Contract` object using the `ABI` and `address` of a deployed contract.
+You can use web3.js to interact with a smart contract on Lisk by instantiating a `Contract` object and passing it the `ABI` and `address` of a deployed contract.
 
 In the following sections, we will:
-- Read data from a deployed contract, specifically we will fetch the **name of the contract**.
+- Read data from a deployed contract, specifically, we will fetch the **name of the contract**.
 - Furthermore, we will **mint a token**, via an already deployed contract.
 
 :::tip
@@ -198,14 +198,14 @@ For an overview of existing public functions for the contract, please check the 
 
 <Tabs>
   <TabItem value="ce" label = "get-contract-name.js" default>
-    ```js  title="Fetching contract's name"
+    ```js  title="Fetching the contract's name"
     // Address of the contract you want to interact with.
     const address = '0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5';
 
     // Instantiate the contract object
     const contract = new web3.eth.Contract(abi, address);
 
-    // Call any of the 'Read contract' function e.g. 'name()'
+    // Call any of the 'Read contract' functions e.g. 'name()'
     const contractName = await contract.methods.name().call();
 
     console.log('Contract\'s Name is: ', contractName);
@@ -225,7 +225,7 @@ const address = '0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5';
 // Instantiate the contract object
 const contract = new web3.eth.Contract(abi, address);
 
-// Call any of the 'Read contract' function e.g. 'name()'
+// Call any of the 'Read contract' functions e.g. 'name()'
 const contractName = await contract.methods.name().call();
 
 console.log('Contract\'s Name is: ', contractName);
@@ -726,24 +726,32 @@ export const abi = [
 
 ### Minting Token
 
-{ /* For reading and writing contracts, provide a `Signer` object instead of a `Provider` object: */}
+To write data through a contract's method, a few things are required such as:
+
+- contract's address
+- recipient's address
+- private key of the sender
+- ... and the method's name
+
+Use the following snippet to interact with an already [deployed contract's](https://sepolia-blockscout.lisk.com/address/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=write_contract) `mint()` function.
+
 
 ```javascript title="miniting-token.js"
 // Address of the contract you want to interact with.
 const contractAddress = '0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5';
 
 // Address of the Recipient account receiving the NFT.
-const recipientAddress = '0x5e1A92F84cA1CE280B3Cb29d79C3368f45b41EBB'
+const recipientAddress = 'RECIPIENT_ADDRESS'
 const amount = web3.utils.toWei('.0001', 'ether')
 
 // PRIVATE_KEY of the sender's account.
-const privateKey = '0xd9df43a4b1cbd84e629c3145465f221f68e8783890e6209c5890e4a2a64188af';
+const privateKey = 'PRIVATE_KEY';
 const account = web3.eth.accounts.wallet.add(privateKey);
 
 // Instantiate the contract object
 const contract = new web3.eth.Contract(abi, contractAddress);
 
-// Send request to the 'mint()' function from the 'Write contract' tab.
+// Send a request to the 'mint()' function to mint a token.
 const txReceipt = await contract.methods.mint(recipientAddress, amount).send({ from: account[0].address });
 
 console.log('Tx hash:', txReceipt.transactionHash);
@@ -762,17 +770,17 @@ const web3 = new Web3('https://rpc.sepolia-api.lisk.com');
 const contractAddress = '0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5';
 
 // Address of the Recipient account receiving the NFT.
-const recipientAddress = '0x5e1A92F84cA1CE280B3Cb29d79C3368f45b41EBB'
+const recipientAddress = 'RECIPIENT_ADDRESS'
 const amount = web3.utils.toWei('.0001', 'ether')
 
 // PRIVATE_KEY of the sender's account.
-const privateKey = '0xd9df43a4b1cbd84e629c3145465f221f68e8783890e6209c5890e4a2a64188af';
+const privateKey = 'PRIVATE_KEY';
 const account = web3.eth.accounts.wallet.add(privateKey);
 
 // Instantiate the contract object
 const contract = new web3.eth.Contract(abi, contractAddress);
 
-// Send request to the 'mint()' function from the 'Write contract' tab.
+// Send a request to the 'mint()' function to mint a token.
 const txReceipt = await contract.methods.mint(recipientAddress, amount).send({ from: account[0].address });
 
 console.log('Tx hash:', txReceipt.transactionHash);
@@ -783,6 +791,6 @@ Transaction hash: 0xe654513f453623d9ce329b575985b7fcd09116325d10150d7cd30dcdedc1
 ```
 
 :::info
-You can check the details of minting transaction on blockscout explorer: [`0xe654513f453623d9ce329b575985b7fcd09116325d10150d7cd30dcdedc124a9`](https://sepolia-blockscout.lisk.com/tx/0xe654513f453623d9ce329b575985b7fcd09116325d10150d7cd30dcdedc124a9).
+You can use the transaction hash received above to check the details of the `mint` transaction on Blockscout Explorer: [`0xe654513f453623d9ce329b575985b7fcd09116325d10150d7cd30dcdedc124a9`](https://sepolia-blockscout.lisk.com/tx/0xe654513f453623d9ce329b575985b7fcd09116325d10150d7cd30dcdedc124a9).
 :::
 </details>
