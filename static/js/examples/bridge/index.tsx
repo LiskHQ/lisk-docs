@@ -210,6 +210,7 @@ function Example() {
     ;(async () => {
       if (!l1ReceiptWD) return
       setStateWithdraw('finalizing withdraw')
+      // TODO: CHeck, if withdrawal is not undefined
       const [withdrawal] = getWithdrawals(l1ReceiptWD)
       // Wait until the withdrawal is ready to finalize.
       await publicClientL1.waitToFinalize({
@@ -231,7 +232,7 @@ function Example() {
       setFinalReceiptWD(receipt)
       setStateWithdraw('withdraw success')
     })()
-  }, [l2HashWD])
+  }, [l1ReceiptWD])
 
   /** User Interface */
 
