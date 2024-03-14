@@ -33,12 +33,12 @@ You can use web3.js to interact with smart contracts deployed on the Lisk networ
 
 To install web3.js run the following command:
 <Tabs>
-  <TabItem value="npm" label="NPM" default>
+  <TabItem value="npm" label = "NPM" default>
     ```bash
     npm install --save web3
     ```
   </TabItem>
-  <TabItem value="yarn" label="Yarn">
+  <TabItem value = "yarn" label = "Yarn">
     ```bash
     yarn add web3
     ```
@@ -53,12 +53,12 @@ Web3.js v4 supports both CommonJS and native ESM module imports.
 
 Add the following line of code to the top of your file to import web3.js:
 <Tabs>
-  <TabItem value="cjs" label="CommonJS" default>
+  <TabItem value="cjs" label = "CommonJS" default>
     ```js
     const { Web3 } = require('web3');
     ```
   </TabItem>
-  <TabItem value="esm" label="ESM Module">
+  <TabItem value = "esm" label = "ESM Module">
     ```ts
     import { Web3 } from 'web3';
     ```
@@ -78,10 +78,6 @@ const web3 = new Web3('https://rpc.sepolia-api.lisk.com');
 // Retrieve data from blockchain
 web3.eth.getBlockNumber().then(console.log);
 ```
-
-{/* :::note
-A **Provider** (in web3.js) is a class that provides an abstraction for a connection to the Ethereum Network. It provides read-only access to the Blockchain and its status.
-::: */}
 
 ## Reading data from the blockchain
 
@@ -187,101 +183,179 @@ console.log('Tx hash:', txReceipt.transactionHash)
 
 ## Interacting with smart contracts
 
-You can use web3.js to interact with a smart contract on Lisk by instantiating a `Contract` object using the `ABI` and `address` of a deployed contract:
+You can use web3.js to interact with a smart contract on Lisk by instantiating a `Contract` object using the `ABI` and `address` of a deployed contract.
 
-
-<Tabs>
-  <TabItem value="ce" label="contract-example.js" default>
-    ```js
-    const { Web3 } = require('web3');
-    ```
-  </TabItem>
-  <TabItem value="abi" label="abi.js">
-```js
-    const abi = [
-    … // ABI of deployed contract
-    ];
-```
-  </TabItem>
-</Tabs>
-
-
-
-
-
-{/* :::tip
-The ABI of a contract can be found on the respective contract page in [BlockScout](https://sepolia-blockscout.lisk.com/).
-
-For example, you can use the ABI for the [Hello contract](https://sepolia-blockscout.lisk.com/address/0xb18eb752813c2fbedfdf2be6e5e842a85a3b8539?tab=contact_code).
-Just scroll down to `Contract ABI` and copy the deployed contract's ABI.
-::: */}
-
-```javascript title="Reading from contracts"
-// Replace the contractAddress' value with the desired contract.
-const contractAddress = "CONTRACT_ADDRESS"
-// read-only
-const contract = new ethers.Contract(contractAddress, abi, provider);
-const abi = [
-… // ABI of deployed contract
-];
-
-async function getHello() {
-    const value = await contract.message("0x3C46A11471f285E36EE8d089473ce98269D1b081");
-    console.log(value.toString());
-}
-
-getHello();
-```
-
-:::info
-`CONTRACT_ADDRESS` is the address of the deployed contract.
-:::
-
-{/* :::note
-A **Contract** (in web3.js) is an abstraction that represents a connection to a specific contract on the Lisk Network, so that applications can use it like a normal JavaScript object.
-::: */}
-
-For reading and writing contracts, provide a `Signer` object instead of a `Provider` object:
-
-```javascript title="Writing to contracts"
-// read & write 
-const contract = new ethers.Contract(contractAddress, abi, signer);
-```
-
-Once you have created a `Contract` object, you can use it to call desired methods on the smart contract:
-
-```javascript
-async function createHello(message) {
-  const tx = await contract.createHello(message);
-  return tx.hash;
-}
-
-//createHello("Hello Lisk!");
-```
+In the following sections, we will:
+- Read data from a deployed contract, specifically we will fetch the **name of the contract**.
+- Furthermore, we will **mint a token**, via an already deployed contract.
 
 :::tip
-For an overview of existing public functions for the contract, please check the [Read Contract](https://sepolia-blockscout.lisk.com/address/0xb18eb752813c2fbedfdf2be6e5e842a85a3b8539?tab=read_contract) and [Write Contract](https://sepolia-blockscout.lisk.com/address/0xb18eb752813c2fbedfdf2be6e5e842a85a3b8539?tab=write_contract) tabs for the specific contract.
+For an overview of existing public functions for the contract, please check the [Read Contract](https://sepolia-blockscout.lisk.com/token/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=read_contract) and [Write Contract](https://sepolia-blockscout.lisk.com/token/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=write_contract) tabs for the specific contract.
 :::
 
+
+### Retrieving Contract's Name
+
+<Tabs>
+  <TabItem value="ce" label = "get-contract-name.js" default>
+    ```js  title="Fetching contract's name"
+    // Address of the contract you want to interact with.
+    const address = '0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5';
+
+    // Instantiate the contract object
+    const contract = new web3.eth.Contract(abi, address);
+
+    // Call any of the 'Read contract' function e.g. 'name()'
+    const contractName = await contract.methods.name().call();
+
+    console.log('Contract\'s Name is: ', contractName);
+    ```
 <details>
 <summary>Complete code example</summary>
-```javascript
-const ethers = require('ethers');
+```javascript title="get-contract-name.js"
+import { Web3 } from 'web3';
+import { abi } from './abi.js';
 
-const url = 'https://rpc.sepolia-api.lisk.com';
-const provider = new web3.jsonRpcProvider(url);
-const privateKey = 'PRIVATE_KEY';
-const signer = new ethers.Wallet(privateKey, provider);
-const contractAddress = "0xb18eb752813c2fbedfdf2be6e5e842a85a3b8539"
-// Read & Write
-const contract = new ethers.Contract(contractAddress, abi, signer);
-// Read-only
-//const contract = new ethers.Contract(contractAddress, abi, provider);
-const abi = [
+// Instantiate a web3 object by passing the RPC URL of Lisk.
+const web3 = new Web3('https://rpc.sepolia-api.lisk.com');
+
+// Address of the contract you want to interact with.
+const address = '0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5';
+
+// Instantiate the contract object
+const contract = new web3.eth.Contract(abi, address);
+
+// Call any of the 'Read contract' function e.g. 'name()'
+const contractName = await contract.methods.name().call();
+
+console.log('Contract\'s Name is: ', contractName);
+```
+
+```text title="Output"
+Contract's Name is:  Lisk
+```
+</details>
+
+
+  </TabItem>
+  <TabItem value = "abi" label = "abi.js">
+:::tip
+The ABI of a contract can be found on the respective contract page in [BlockScout](https://sepolia-blockscout.lisk.com/).
+
+For example, you can use the ABI for the [Lisk NFT Token contract](https://sepolia-blockscout.lisk.com/token/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=contract).
+Just scroll down to `Contract ABI` and copy the deployed contract's ABI.
+:::
+
+
+```js title="abi.js"
+export const abi = [
     {
         "inputs": [],
         "stateMutability": "nonpayable",
         "type": "constructor"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "sender",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+            },
+            {
+                "internalType": "address",
+                "name": "owner",
+                "type": "address"
+            }
+        ],
+        "name": "ERC721IncorrectOwner",
+        "type": "error"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "operator",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+            }
+        ],
+        "name": "ERC721InsufficientApproval",
+        "type": "error"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "approver",
+                "type": "address"
+            }
+        ],
+        "name": "ERC721InvalidApprover",
+        "type": "error"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "operator",
+                "type": "address"
+            }
+        ],
+        "name": "ERC721InvalidOperator",
+        "type": "error"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "owner",
+                "type": "address"
+            }
+        ],
+        "name": "ERC721InvalidOwner",
+        "type": "error"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "receiver",
+                "type": "address"
+            }
+        ],
+        "name": "ERC721InvalidReceiver",
+        "type": "error"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "sender",
+                "type": "address"
+            }
+        ],
+        "name": "ERC721InvalidSender",
+        "type": "error"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+            }
+        ],
+        "name": "ERC721NonexistentToken",
+        "type": "error"
     },
     {
         "anonymous": false,
@@ -289,46 +363,120 @@ const abi = [
             {
                 "indexed": true,
                 "internalType": "address",
-                "name": "sender",
+                "name": "owner",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "approved",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+            }
+        ],
+        "name": "Approval",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "owner",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "operator",
                 "type": "address"
             },
             {
                 "indexed": false,
-                "internalType": "string",
-                "name": "message",
-                "type": "string"
+                "internalType": "bool",
+                "name": "approved",
+                "type": "bool"
             }
         ],
-        "name": "NewHello",
+        "name": "ApprovalForAll",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "from",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "to",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+            }
+        ],
+        "name": "Transfer",
         "type": "event"
     },
     {
         "inputs": [
+            {
+                "internalType": "address",
+                "name": "to",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+            }
+        ],
+        "name": "approve",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "owner",
+                "type": "address"
+            }
+        ],
+        "name": "balanceOf",
+        "outputs": [
             {
                 "internalType": "uint256",
                 "name": "",
                 "type": "uint256"
             }
         ],
-        "name": "blacklist",
-        "outputs": [
-            {
-                "internalType": "string",
-                "name": "",
-                "type": "string"
-            }
-        ],
         "stateMutability": "view",
         "type": "function"
     },
     {
         "inputs": [],
-        "name": "counter",
+        "name": "currentTokenId",
         "outputs": [
             {
-                "internalType": "uint32",
+                "internalType": "uint256",
                 "name": "",
-                "type": "uint32"
+                "type": "uint256"
             }
         ],
         "stateMutability": "view",
@@ -337,64 +485,12 @@ const abi = [
     {
         "inputs": [
             {
-                "internalType": "string",
-                "name": "_message",
-                "type": "string"
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
             }
         ],
-        "name": "createHello",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "inputs": [],
-        "name": "maxLength",
-        "outputs": [
-            {
-                "internalType": "uint32",
-                "name": "",
-                "type": "uint32"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "inputs": [
-            {
-                "internalType": "address",
-                "name": "",
-                "type": "address"
-            }
-        ],
-        "name": "message",
-        "outputs": [
-            {
-                "internalType": "string",
-                "name": "",
-                "type": "string"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "inputs": [],
-        "name": "minLength",
-        "outputs": [
-            {
-                "internalType": "uint32",
-                "name": "",
-                "type": "uint32"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "inputs": [],
-        "name": "owner",
+        "name": "getApproved",
         "outputs": [
             {
                 "internalType": "address",
@@ -408,48 +504,285 @@ const abi = [
     {
         "inputs": [
             {
-                "internalType": "string[]",
-                "name": "_newBlackList",
-                "type": "string[]"
-            }
-        ],
-        "name": "setBlacklist",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "inputs": [
-            {
-                "internalType": "uint32",
-                "name": "_newMin",
-                "type": "uint32"
+                "internalType": "address",
+                "name": "owner",
+                "type": "address"
             },
             {
-                "internalType": "uint32",
-                "name": "_newMax",
-                "type": "uint32"
+                "internalType": "address",
+                "name": "operator",
+                "type": "address"
             }
         ],
-        "name": "setMinMaxMessageLength",
+        "name": "isApprovedForAll",
+        "outputs": [
+            {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "recipient",
+                "type": "address"
+            }
+        ],
+        "name": "mint",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "name",
+        "outputs": [
+            {
+                "internalType": "string",
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+            }
+        ],
+        "name": "ownerOf",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "from",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "to",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+            }
+        ],
+        "name": "safeTransferFrom",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "from",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "to",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+            },
+            {
+                "internalType": "bytes",
+                "name": "data",
+                "type": "bytes"
+            }
+        ],
+        "name": "safeTransferFrom",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "operator",
+                "type": "address"
+            },
+            {
+                "internalType": "bool",
+                "name": "approved",
+                "type": "bool"
+            }
+        ],
+        "name": "setApprovalForAll",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "bytes4",
+                "name": "interfaceId",
+                "type": "bytes4"
+            }
+        ],
+        "name": "supportsInterface",
+        "outputs": [
+            {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "symbol",
+        "outputs": [
+            {
+                "internalType": "string",
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+            }
+        ],
+        "name": "tokenURI",
+        "outputs": [
+            {
+                "internalType": "string",
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "from",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "to",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+            }
+        ],
+        "name": "transferFrom",
         "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"
     }
-]
-
-async function createHello(message) {
-    const tx = await contract.createHello(message);
-    return tx.hash;
-}
-
-//createHello("Hello Lisk!");
-
-async function getHello() {
-    const value = await contract.message("0x3C46A11471f285E36EE8d089473ce98269D1b081");
-    console.log(value.toString());
-}
-
-getHello();
+];
 ```
+  </TabItem>
+</Tabs>
+
+### Minting Token
+
+{ /* For reading and writing contracts, provide a `Signer` object instead of a `Provider` object: */}
+
+```javascript title="miniting-token.js"
+// Address of the contract you want to interact with.
+const contractAddress = '0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5';
+
+// Address of the Recipient account receiving the NFT.
+const recipientAddress = '0x5e1A92F84cA1CE280B3Cb29d79C3368f45b41EBB'
+const amount = web3.utils.toWei('.0001', 'ether')
+
+// PRIVATE_KEY of the sender's account.
+const privateKey = '0xd9df43a4b1cbd84e629c3145465f221f68e8783890e6209c5890e4a2a64188af';
+const account = web3.eth.accounts.wallet.add(privateKey);
+
+// Instantiate the contract object
+const contract = new web3.eth.Contract(abi, contractAddress);
+
+// Send request to the 'mint()' function from the 'Write contract' tab.
+const txReceipt = await contract.methods.mint(recipientAddress, amount).send({ from: account[0].address });
+
+console.log('Tx hash:', txReceipt.transactionHash);
+```
+
+<details>
+<summary>Complete code example</summary>
+```javascript title="miniting-token.js"
+import { Web3 } from 'web3';
+import { abi } from './abi.js';
+
+// Instantiate a web3 object by passing the RPC URL of Lisk.
+const web3 = new Web3('https://rpc.sepolia-api.lisk.com');
+
+// Address of the contract you want to interact with.
+const contractAddress = '0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5';
+
+// Address of the Recipient account receiving the NFT.
+const recipientAddress = '0x5e1A92F84cA1CE280B3Cb29d79C3368f45b41EBB'
+const amount = web3.utils.toWei('.0001', 'ether')
+
+// PRIVATE_KEY of the sender's account.
+const privateKey = '0xd9df43a4b1cbd84e629c3145465f221f68e8783890e6209c5890e4a2a64188af';
+const account = web3.eth.accounts.wallet.add(privateKey);
+
+// Instantiate the contract object
+const contract = new web3.eth.Contract(abi, contractAddress);
+
+// Send request to the 'mint()' function from the 'Write contract' tab.
+const txReceipt = await contract.methods.mint(recipientAddress, amount).send({ from: account[0].address });
+
+console.log('Tx hash:', txReceipt.transactionHash);
+```
+
+```text title="Output"
+Transaction hash: 0xe654513f453623d9ce329b575985b7fcd09116325d10150d7cd30dcdedc124a9
+```
+
+:::info
+You can check the details of minting transaction on blockscout explorer: [`0xe654513f453623d9ce329b575985b7fcd09116325d10150d7cd30dcdedc124a9`](https://sepolia-blockscout.lisk.com/tx/0xe654513f453623d9ce329b575985b7fcd09116325d10150d7cd30dcdedc124a9).
+:::
 </details>
