@@ -11,7 +11,7 @@ import {
   custom,
   parseEther,
   stringify,
-  Withdrawal,
+  Hex,
 } from 'viem'
 import { sepolia, liskSepolia } from 'viem/chains'
 import {
@@ -23,9 +23,16 @@ import {
   getWithdrawals,
 } from 'viem/op-stack'
 import 'viem/window'
-import wdReceipt from './init-receipt.json'
-//import proveReceipt from './prove-receipt.json'
-import wdrawal from './withdrawal.json'
+
+export type Withdrawal = {
+  nonce: bigint
+  sender: Hex
+  target: Hex
+  value: bigint
+  gasLimit: bigint
+  data: Hex
+  withdrawalHash: Hex
+}
 
 export const publicClientL1 = createPublicClient({
   chain: sepolia,
@@ -57,9 +64,8 @@ function Example() {
     'idle' | 'preparing' | 'processingL1' | 'processingL2' | 'success'
   >('idle')
   /** Withdraw variables */
-  const [wd, setWd] = useState<Withdrawal>()
+  const [wd, setWd] = useState<Withdrawal | undefined>(undefined);
   const [secondsTilProve, setSecondsTilProve] = useState<number>()
-  const [secondsTilFinal, setSecondsTilFinal] = useState<number>()
   const [l2HashWD, setL2HashWD] = useState<Hash>()
   const [l1HashWD, setL1HashWD] = useState<Hash>()
   const [l1ReceiptWD, setL1ReceiptWD] = useState<TransactionReceipt>()
@@ -117,26 +123,6 @@ function Example() {
     setSecondsTilProve(seconds);
   }
 
-  /* const checkWithdrawFinal = async () => {
- 
-    const { 
-      period, 
-      seconds, 
-      timestamp, 
-    } = await publicClientL1.getTimeToFinalize({ 
-      withdrawalHash: wdrawal.withdrawalHash as `0x${string}`, 
-      targetChain: liskSepolia 
-    }) 
-
-    console.log("seconds:::::::::::");
-    console.log(seconds);
-    console.log("period:::::::::::");
-    console.log(period);
-    console.log("timestamp:::::::::::");
-    console.log(timestamp);
-    setSecondsTilFinal(seconds);
-  } */
-
   const proveWithdraw = async () => {
     if (!l2ReceiptWD) return
     setStateWithdraw('proving withdraw');
@@ -159,22 +145,20 @@ function Example() {
   }
 
   const finalizeWithdraw = async () => {
-      if (!l1ReceiptWD) return
+      if (!(l1ReceiptWD && wd && account)) return
       setStateWithdraw('finalizing withdraw')
-      const [withdrawal] = getWithdrawals(l1ReceiptWD)
-      // Wait until the withdrawal is ready to finalize.
+
+      // Wait until the withdrawal is ready to finalize. (this seems buggy, it's not waiting for the withdrawal to be ready to finalize)
       await publicClientL1.waitToFinalize({
         targetChain: walletClientL2.chain,
-        //withdrawalHash: wd.withdrawalHash as `0x${string}`,
-        withdrawalHash: withdrawal.withdrawalHash as `0x${string}`,
-      });
+        withdrawalHash: wd.withdrawalHash as `0x${string}`,
+      })
 
       // Finalize the withdrawal.
       const finalizeHash = await walletClientL1.finalizeWithdrawal({
         account,
         targetChain: walletClientL2.chain,
-        //withdrawal: wd,
-        withdrawal,
+        withdrawal: wd,
       })
       
       // Wait until the withdrawal is finalized.
@@ -209,7 +193,7 @@ function Example() {
       setL2Receipt(receipt)
       setState('success')
     })()
-  }, [l1Receipt, publicClientL2])
+  }, [l1Receipt])
 
   /** Withdraw */
 
@@ -228,25 +212,6 @@ function Example() {
   }, [l2HashWD])
 
   /** Prove */
-  
-  /* useEffect(() => {
-    ;(async () => {
-      if (!l2ReceiptWD) return
-      setStateWithdraw('proving withdraw')
-      // Wait until the withdrawal is ready to prove.
-      const { output, withdrawal } = await publicClientL1.waitToProve({
-        receipt: l2ReceiptWD,
-        targetChain: walletClientL2.chain
-      })
-      const args = await publicClientL2.buildProveWithdrawal({ 
-        account, 
-        output, 
-        withdrawal, 
-      }) 
-      const hash = await walletClientL1.proveWithdrawal(args)
-      setL1HashWD(hash)
-    })()
-  }, [l2ReceiptWD, publicClientL1]) */
 
   useEffect(() => {
     ;(async () => {
@@ -258,36 +223,6 @@ function Example() {
       setStateWithdraw('prove success')
     })()
   }, [l1HashWD])
-
-  /** Finalization */
-
-  /* useEffect(() => {
-    ;(async () => {
-      if (!l1ReceiptWD) return
-      setStateWithdraw('finalizing withdraw')
-      // TODO: CHeck, if withdrawal is not undefined
-      const [withdrawal] = getWithdrawals(l1ReceiptWD)
-      // Wait until the withdrawal is ready to finalize.
-      await publicClientL1.waitToFinalize({
-        targetChain: walletClientL2.chain,
-        withdrawalHash: withdrawal.withdrawalHash,
-      });
-
-      // Finalize the withdrawal.
-      const finalizeHash = await walletClientL1.finalizeWithdrawal({
-        account,
-        targetChain: walletClientL2.chain,
-        withdrawal,
-      })
-      
-      // Wait until the withdrawal is finalized.
-      const receipt = await publicClientL1.waitForTransactionReceipt({
-        hash: finalizeHash
-      })
-      setFinalReceiptWD(receipt)
-      setStateWithdraw('withdraw success')
-    })()
-  }, [l1ReceiptWD]) */
 
   /** User Interface */
 
@@ -321,10 +256,6 @@ function Example() {
             Seconds until Prove:{' '}
             <p>{ secondsTilProve }</p>
           </div>
-          <div>
-          Seconds until Final:{' '}
-          <p>{ secondsTilFinal }</p>
-        </div>
        </div>
       )}
 
@@ -342,6 +273,9 @@ function Example() {
         </button>
         <p>Check, if the withdraw is ready to be proven.</p>
         <button
+          disabled={
+            stateWithdraw !== 'processing withdraw L2' 
+          }
           onClick={checkWithdraw}
         >
           Check Withdraw Proving
@@ -349,22 +283,17 @@ function Example() {
         <p>For proving the withdraw, change the network in Metamask to L1 (Sepolia)</p>
         <button
           disabled={
-            stateWithdraw === 'proving withdraw' 
+            stateWithdraw !== 'processing withdraw L2' 
           }
           onClick={proveWithdraw}
         >
           {stateWithdraw === 'proving withdraw' ? 'Proving Withdraw...'
             : 'Prove Withdraw'}
         </button>
-        <p>Check, if the withdraw is ready to be finalized.</p>
-        {/* <button
-          onClick={checkWithdrawFinal}
-        >
-          Check Withdraw Finalization
-        </button> */}
+        <p>Finalize the withdraw:</p>
         <button
           disabled={
-            stateWithdraw === 'finalizing withdraw' 
+            stateWithdraw !== 'prove success' 
           }
           onClick={finalizeWithdraw}
         >
@@ -400,7 +329,6 @@ function Example() {
       {l2ReceiptWD && (
         <div>
           L2 Withdraw Receipt:{' '}
-          <p>Save this init-receipt.json</p>
           <p>For proving the withdraw, change the network in Metamask to L1 (Sepolia)</p>
           <pre>
             <code>{stringify(l2ReceiptWD, null, 2)}</code>
@@ -423,11 +351,10 @@ function Example() {
       {wd && l1ReceiptWD && (
         <div>
           L1 Prove Receipt:{' '}
-          <p>Save this prove-receipt.json</p>
           <pre>
             <code>{stringify(l1ReceiptWD, null, 2)}</code>
           </pre>
-          <p>Save this withdrawal.json</p>
+          <p>Withdrawal:</p>
           <pre>
             <code>{stringify(wd, null, 2)}</code>
           </pre>
