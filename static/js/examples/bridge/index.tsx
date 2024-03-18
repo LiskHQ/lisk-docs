@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import {
   http,
   Address,
+  Account,
   Hash,
   TransactionReceipt,
   createPublicClient,
@@ -22,7 +23,9 @@ import {
   getWithdrawals,
 } from 'viem/op-stack'
 import 'viem/window'
-import wdReceipt from './receipt.json'
+import wdReceipt from './init-receipt.json'
+import proveReceipt from './prove-receipt.json'
+import wdrawal from './withdrawal.json'
 
 export const publicClientL1 = createPublicClient({
   chain: sepolia,
@@ -54,14 +57,16 @@ function Example() {
     'idle' | 'preparing' | 'processingL1' | 'processingL2' | 'success'
   >('idle')
   /** Withdraw variables */
+  const [wd, setWd] = useState<Withdrawal>()
   const [secondsTilProve, setSecondsTilProve] = useState<number>()
+  const [secondsTilFinal, setSecondsTilFinal] = useState<number>()
   const [l2HashWD, setL2HashWD] = useState<Hash>()
   const [l1HashWD, setL1HashWD] = useState<Hash>()
   const [l1ReceiptWD, setL1ReceiptWD] = useState<TransactionReceipt>()
   const [l2ReceiptWD, setL2ReceiptWD] = useState<TransactionReceipt>()
   const [finalReceiptWD, setFinalReceiptWD] = useState<TransactionReceipt>()
   const [stateWithdraw, setStateWithdraw] = useState<
-    'idle' | 'preparing withdraw' | 'processing withdraw L1' | 'processing withdraw L2' | 'proving withdraw' | 'prove success' | 'finalizing withdraw' | 'withdraw success'
+    'idle' | 'preparing withdraw' | 'processing withdraw L2' | 'proving withdraw' | 'prove success' | 'finalizing withdraw' | 'withdraw success'
   >('idle')
 
   const addressInput = React.createRef<HTMLInputElement>()
@@ -106,9 +111,37 @@ function Example() {
     } = await publicClientL1.getTimeToProve({ 
       receipt, 
       targetChain: publicClientL2.chain, 
-    }) 
+    })
 
     setSecondsTilProve(seconds);
+  }
+
+  const checkWithdrawFinal = async () => {
+    /* const receipt = await publicClientL1.getTransactionReceipt({
+      hash: proveReceipt.transactionHash as `0x${string}`
+    })
+     
+    const [message] = getWithdrawals(receipt)
+
+    console.log("message:::::::::::");
+    console.log(message); */
+ 
+    const { 
+      period, 
+      seconds, 
+      timestamp, 
+    } = await publicClientL1.getTimeToFinalize({ 
+      withdrawalHash: wdrawal.withdrawalHash as `0x${string}`, 
+      targetChain: liskSepolia 
+    }) 
+
+    console.log("seconds:::::::::::");
+    console.log(seconds);
+    console.log("period:::::::::::");
+    console.log(period);
+    console.log("timestamp:::::::::::");
+    console.log(timestamp);
+    setSecondsTilFinal(seconds);
   }
 
   const proveWithdraw = async () => {
@@ -126,9 +159,35 @@ function Example() {
       output, 
       withdrawal, 
     }) 
+    setWd(withdrawal);
     const hash = await walletClientL1.proveWithdrawal(args)
     setL1HashWD(hash)
   }
+
+  const finalizeWithdraw = async () => {
+      setStateWithdraw('finalizing withdraw')
+      // TODO: CHeck, if withdrawal is not undefined
+      //const [withdrawal] = getWithdrawals(proveReceipt)
+      // Wait until the withdrawal is ready to finalize.
+      await publicClientL1.waitToFinalize({
+        targetChain: walletClientL2.chain,
+        withdrawalHash: wdrawal.withdrawalHash as `0x${string}`,
+      });
+
+      // Finalize the withdrawal.
+      const finalizeHash = await walletClientL1.finalizeWithdrawal({
+        account,
+        targetChain: walletClientL2.chain,
+        wdrawal,
+      })
+      
+      // Wait until the withdrawal is finalized.
+      const receipt = await publicClientL1.waitForTransactionReceipt({
+        hash: finalizeHash
+      })
+      setFinalReceiptWD(receipt)
+      setStateWithdraw('withdraw success')
+  };
 
   /** Deposit */
 
@@ -206,7 +265,7 @@ function Example() {
 
   /** Finalization */
 
-  useEffect(() => {
+  /* useEffect(() => {
     ;(async () => {
       if (!l1ReceiptWD) return
       setStateWithdraw('finalizing withdraw')
@@ -232,7 +291,7 @@ function Example() {
       setFinalReceiptWD(receipt)
       setStateWithdraw('withdraw success')
     })()
-  }, [l1ReceiptWD])
+  }, [l1ReceiptWD]) */
 
   /** User Interface */
 
@@ -242,6 +301,8 @@ function Example() {
         <div>Connected: {account}</div>
         <input ref={addressInput} placeholder="address" />
         <input ref={valueInput} placeholder="value (ether)" />
+        <h2>Deposit</h2>
+        <p>For depositing, change the network in Metamask to L1 (Sepolia)</p>
         <button
           disabled={
             state === 'preparing' ||
@@ -256,35 +317,66 @@ function Example() {
               ? 'Processing...'
               : 'Deposit'}
         </button>
+        <h2>Withdraw</h2>
+
+        {(
+        <div>
+          <div>
+            Seconds until Prove:{' '}
+            <p>{ secondsTilProve }</p>
+          </div>
+          <div>
+          Seconds until Final:{' '}
+          <p>{ secondsTilFinal }</p>
+        </div>
+       </div>
+      )}
+
+        <p>For initializing the withdraw, change the network in Metamask to L2 (Lisk Sepolia) and click the Withdraw button</p>
         <button
           disabled={
             stateWithdraw === 'preparing withdraw' ||
-            stateWithdraw === 'processing withdraw L1' ||
             stateWithdraw === 'processing withdraw L2'
           }
           onClick={withdrawTransaction}
         >
           {stateWithdraw === 'preparing withdraw' ? 'Preparing Withdraw...'
-            : stateWithdraw === 'processing withdraw L1' || stateWithdraw === 'processing withdraw L2' ? 'Processing Withdraw...'
+            : stateWithdraw === 'processing withdraw L2' ? 'Processing Withdraw...'
             : 'Withdraw'}
         </button>
+        <p>Check, if the withdraw is ready to be proven.</p>
+        <button
+          onClick={checkWithdraw}
+        >
+          Check Withdraw Proving
+        </button>
+        <p>For proving the withdraw, change the network in Metamask to L1 (Sepolia)</p>
         <button
           disabled={
-            stateWithdraw === 'proving withdraw' ||
-            stateWithdraw === 'finalizing withdraw' 
+            stateWithdraw === 'proving withdraw' 
           }
           onClick={proveWithdraw}
         >
           {stateWithdraw === 'proving withdraw' ? 'Proving Withdraw...'
-            : stateWithdraw === 'finalizing withdraw' ? 'Finalizing Withdraw...'
             : 'Prove Withdraw'}
         </button>
+        <p>Check, if the withdraw is ready to be finalized.</p>
         <button
-          onClick={checkWithdraw}
+          onClick={checkWithdrawFinal}
         >
-          Check Withdraw
+          Check Withdraw Finalization
         </button>
-
+        <button
+          disabled={
+            stateWithdraw === 'finalizing withdraw' 
+          }
+          onClick={finalizeWithdraw}
+        >
+          {stateWithdraw === 'finalizing withdraw' ? 'Finalizing Withdraw...'
+            : 'Finalize Withdraw'}
+        </button>
+        
+        {/* Deposit Flow */}
 
         {state === 'processingL1' && <div>Processing L1 transaction...</div>}
         {l1Receipt && (
@@ -306,20 +398,18 @@ function Example() {
           </div>
         )}
 
+      {/* Withdraw Flow */}
+
       {stateWithdraw === 'processing withdraw L2' && <div>Initiating withdraw L2...</div>}
       {l2ReceiptWD && (
         <div>
           L2 Withdraw Receipt:{' '}
+          <p>Save this init-receipt.json</p>
+          <p>For proving the withdraw, change the network in Metamask to L1 (Sepolia)</p>
           <pre>
             <code>{stringify(l2ReceiptWD, null, 2)}</code>
           </pre>
-        </div>
-      )}
-
-      {secondsTilProve && (
-        <div>
-          Seconds until Prove:{' '}
-          <p>{ secondsTilProve }</p>
+          
         </div>
       )}
 
@@ -333,12 +423,17 @@ function Example() {
         </div>
       )}
 
-      {stateWithdraw === 'processing withdraw L1' && <div>Proving withdraw L1...</div>}
-      {l1ReceiptWD && (
+      {stateWithdraw === 'prove success' && <div>Proving success L1...</div>}
+      {wd && l1ReceiptWD && (
         <div>
-          L1 Withdraw Receipt:{' '}
+          L1 Prove Receipt:{' '}
+          <p>Save this prove-receipt.json</p>
           <pre>
             <code>{stringify(l1ReceiptWD, null, 2)}</code>
+          </pre>
+          <p>Save this withdrawal.json</p>
+          <pre>
+            <code>{stringify(wd, null, 2)}</code>
           </pre>
         </div>
       )}
