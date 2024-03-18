@@ -24,7 +24,7 @@ import {
 } from 'viem/op-stack'
 import 'viem/window'
 import wdReceipt from './init-receipt.json'
-import proveReceipt from './prove-receipt.json'
+//import proveReceipt from './prove-receipt.json'
 import wdrawal from './withdrawal.json'
 
 export const publicClientL1 = createPublicClient({
@@ -100,8 +100,9 @@ function Example() {
   }
 
   const checkWithdraw = async () => {
+    if (!l2ReceiptWD) return
     const receipt = await publicClientL2.getTransactionReceipt({
-      hash: wdReceipt.transactionHash as `0x${string}`
+      hash: l2ReceiptWD.transactionHash as `0x${string}`
     })
      
     const { 
@@ -116,15 +117,7 @@ function Example() {
     setSecondsTilProve(seconds);
   }
 
-  const checkWithdrawFinal = async () => {
-    /* const receipt = await publicClientL1.getTransactionReceipt({
-      hash: proveReceipt.transactionHash as `0x${string}`
-    })
-     
-    const [message] = getWithdrawals(receipt)
-
-    console.log("message:::::::::::");
-    console.log(message); */
+  /* const checkWithdrawFinal = async () => {
  
     const { 
       period, 
@@ -142,12 +135,13 @@ function Example() {
     console.log("timestamp:::::::::::");
     console.log(timestamp);
     setSecondsTilFinal(seconds);
-  }
+  } */
 
   const proveWithdraw = async () => {
+    if (!l2ReceiptWD) return
     setStateWithdraw('proving withdraw');
     const receipt = await publicClientL2.getTransactionReceipt({ 
-      hash: wdReceipt.transactionHash as `0x${string}`
+      hash: l2ReceiptWD.transactionHash as `0x${string}`
     })
     // Wait until the withdrawal is ready to prove.
     const { output, withdrawal } = await publicClientL1.waitToProve({
@@ -165,20 +159,22 @@ function Example() {
   }
 
   const finalizeWithdraw = async () => {
+      if (!l1ReceiptWD) return
       setStateWithdraw('finalizing withdraw')
-      // TODO: CHeck, if withdrawal is not undefined
-      //const [withdrawal] = getWithdrawals(proveReceipt)
+      const [withdrawal] = getWithdrawals(l1ReceiptWD)
       // Wait until the withdrawal is ready to finalize.
       await publicClientL1.waitToFinalize({
         targetChain: walletClientL2.chain,
-        withdrawalHash: wdrawal.withdrawalHash as `0x${string}`,
+        //withdrawalHash: wd.withdrawalHash as `0x${string}`,
+        withdrawalHash: withdrawal.withdrawalHash as `0x${string}`,
       });
 
       // Finalize the withdrawal.
       const finalizeHash = await walletClientL1.finalizeWithdrawal({
         account,
         targetChain: walletClientL2.chain,
-        wdrawal,
+        //withdrawal: wd,
+        withdrawal,
       })
       
       // Wait until the withdrawal is finalized.
@@ -361,11 +357,11 @@ function Example() {
             : 'Prove Withdraw'}
         </button>
         <p>Check, if the withdraw is ready to be finalized.</p>
-        <button
+        {/* <button
           onClick={checkWithdrawFinal}
         >
           Check Withdraw Finalization
-        </button>
+        </button> */}
         <button
           disabled={
             stateWithdraw === 'finalizing withdraw' 
