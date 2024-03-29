@@ -56,4 +56,16 @@ For more information, see the [Wallet funds](/building-on-lisk/deploying-smart-c
 - [How to interact with a deployed **ERC-721** contract via Explore?](https://youtu.be/jYEqoIeAoBg?t=7581)
 - [How to interact with a deployed **ERC-1155** contract via Explore?](https://youtu.be/jYEqoIeAoBg?t=8355)
 
-## via solidity SDK
+## via Solidity SDK
+
+### **Creating** the smart contract
+
+### **Compiling** the smart contract
+
+### **Testing** the smart contract
+
+### **Deploying** the smart contract
+
+### **Verifying** the smart contract
+
+### **Interacting** with the Smart Contract
