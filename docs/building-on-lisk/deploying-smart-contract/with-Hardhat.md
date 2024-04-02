@@ -62,7 +62,7 @@ npm install --save-dev hardhat
 To create a new Hardhat project, run:
 
 ```bash
-npx hardhat
+npx hardhat init
 ```
 
 Select `Create a TypeScript project` then press _Enter_ to confirm the project root.
