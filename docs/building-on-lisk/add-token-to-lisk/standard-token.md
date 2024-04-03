@@ -111,7 +111,8 @@ Furthermore, it is not so straightforward to verify those contracts on Blockscou
 ## Bridge Some Tokens
 
 Now that you have an L2 ERC-20 token, you can bridge some tokens from L1 to L2.
-Check out the tutorial on [Bridging ERC-20 tokens to Lisk](../bridge-tokens-to-lisk.md) to learn how to bridge your L1 ERC-20 to L2s and vice versa using the Optimism SDK.
+<!-- Check out the tutorial on [Bridging ERC-20 tokens to Lisk](../bridge-tokens-to-lisk.md) to learn how to bridge your L1 ERC-20 to L2s and vice versa using the Optimism SDK. -->
+Check out the tutorial on [Bridging ERC-20 tokens with the Optimism SDK](https://docs.optimism.io/builders/app-developers/tutorials/cross-dom-bridge-erc20) to learn how to bridge your L1 ERC-20 to L2s and vice versa using the Optimism SDK.
 
 <!-- ## Add to the Superchain Token List
 
