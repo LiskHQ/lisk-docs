@@ -209,16 +209,20 @@ If you've disabled auto-compile, you'll need to manually compile the contract by
 
 ### 6. Deploy the contract
 
-Open the deployment tab (this looks like an Ethereum logo with an arrow pointing left).
+Open the deployment tab (this looks like an Ethereum logo with an arrow pointing right).
 Make sure that your environment is set to "Injected Provider", your wallet is connected to Lisk Sepolia, and Remix has access to your wallet.
 Then, select the `MyCustomL2Token` contract from the deployment dropdown and deploy it with the following parameters:
 
 ```text
 _BRIDGE:      "0x4200000000000000000000000000000000000007"
 _REMOTETOKEN: "<L1 ERC-20 address>"
-_NAME:        "My Custom L2 Token"
+_NAME:        "My Custom Lisk L2 Token"
 _SYMBOL:      "MCL2T"
 ```
+
+:::tip
+If you used the testing token described in step [Get an L1 ERC-20 Token Address](#get-an-l1-erc-20-token-address), use the address `0x5589BB8228C07c4e15558875fAf2B859f678d129` for the `_REMOTETOKEN` parameter.
+:::
 
 ## Bridge Some Tokens
 
