@@ -59,3 +59,7 @@ dRPC offers access to a distributed network of public nodes for Lisk.
 They provide a free tier that allows for an unlimited amount of requests over public nodes, or a paid tier that provides access to all providers, as well as other additional features.
 
 Check the available endpoints for Lisk directly under [https://drpc.org/public-endpoints/lisk](https://drpc.org/public-endpoints/lisk).
+
+:::note[How to create API keys for dRPC]
+In order to use the provided endpoints, you need to [get the corresponding API keys](https://docs.drpc.org/gettingstarted/createaccount).
+:::
