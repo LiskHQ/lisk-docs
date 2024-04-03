@@ -18,7 +18,8 @@ keywords:
 
 :::info
 **This tutorial is for developers who want to bridge a new ERC-20 token to Lisk Sepolia.**
-If you want to bridge existing tokens, you can skip to the tutorial on [Bridging ERC-20 tokens to Lisk](../bridge-tokens-to-lisk).
+<!-- If you want to bridge existing tokens, you can skip to the tutorial on [Bridging ERC-20 tokens to Lisk](../bridge-tokens-to-lisk). -->
+If you want to bridge existing tokens, you can skip to the tutorial on [Bridging ERC-20 tokens with the Optimism SDK](https://docs.optimism.io/builders/app-developers/tutorials/cross-dom-bridge-erc20).
 :::
 
 In this tutorial you'll learn how to bridge a standard ERC-20 token from Ethereum to Lisk using the [Standard Bridge system](https://docs.optimism.io/builders/dapp-developers/bridging/standard-bridge).
