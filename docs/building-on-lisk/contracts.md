@@ -49,6 +49,7 @@ For more information on Predeploys, see [Predeploys' README](https://github.com/
 
 | Name of Contract                  | Contract Address                           | 
 | :--------------                   | :----------------------------------------  |
+| [**ERC-4337 Entrypoint**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/preinstalls.md#erc-4337-entrypoint)  | [0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789](https://sepolia-blockscout.lisk.com/address/0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789) 
 | [**LegacyMessagePasser**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#legacymessagepasser)  | [0x4200000000000000000000000000000000000000](https://sepolia-blockscout.lisk.com/address/0x4200000000000000000000000000000000000000) |
 | [**DeployerWhitelist**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#deployerwhitelist)       | [0x4200000000000000000000000000000000000002](https://sepolia-blockscout.lisk.com/address/0x4200000000000000000000000000000000000002) |
 | [**LegacyERC20ETH**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#legacyerc20eth)                | [0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000](https://sepolia-blockscout.lisk.com/address/0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000) |
