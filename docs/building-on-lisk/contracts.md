@@ -27,6 +27,7 @@ The following L1 contracts have been deployed to the **Ethereum Sepolia Testnet*
 
 | Name of Contract                  | Contract Address                           | Description |
 | :--------------                   | :----------------------------------------  |:----------  |
+| **Batcher**                | [0x246E119a5BcC2875161b23E4e602e25cEcE96E37](https://sepolia.etherscan.io/address/0x246E119a5BcC2875161b23E4e602e25cEcE96E37) | The Batcher is a service that publishes transactions from the Sequencer to the L1 blockchain. The Batcher runs continuously alongside the Sequencer and publishes transactions in batches (hence the name) on a regular basis.                                         |
 | **L1ERC721Bridge**                | [0xb4E988CF1aD8C361D56118437502A8f11C7FaA01](https://sepolia.etherscan.io/address/0xb4E988CF1aD8C361D56118437502A8f11C7FaA01) | Handles the sending and receiving of messages between L1 and L2.                                         |
 | **L1CrossDomainMessenger**        | [0x857824E6234f7733ecA4e9A76804fd1afa1A3A2C](https://sepolia.etherscan.io/address/0x857824E6234f7733ecA4e9A76804fd1afa1A3A2C) | Sends messages from L1 to L2 and relays messages from L2 onto L1.                                       |
 | **L1StandardBridge**              | [0x1Fb30e446eA791cd1f011675E5F3f5311b70faF5](https://sepolia.etherscan.io/address/0x1Fb30e446eA791cd1f011675E5F3f5311b70faF5) | It is the main entry point to deposit ERC20 tokens from L1 to L2. This contract can store any token.     |
@@ -48,6 +49,7 @@ For more information on Predeploys, see [Predeploys' README](https://github.com/
 
 | Name of Contract                  | Contract Address                           | 
 | :--------------                   | :----------------------------------------  |
+| [**ERC-4337 Entrypoint**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/preinstalls.md#erc-4337-entrypoint)  | [0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789](https://sepolia-blockscout.lisk.com/address/0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789) 
 | [**LegacyMessagePasser**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#legacymessagepasser)  | [0x4200000000000000000000000000000000000000](https://sepolia-blockscout.lisk.com/address/0x4200000000000000000000000000000000000000) |
 | [**DeployerWhitelist**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#deployerwhitelist)       | [0x4200000000000000000000000000000000000002](https://sepolia-blockscout.lisk.com/address/0x4200000000000000000000000000000000000002) |
 | [**LegacyERC20ETH**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#legacyerc20eth)                | [0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000](https://sepolia-blockscout.lisk.com/address/0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000) |
