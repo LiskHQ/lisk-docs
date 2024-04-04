@@ -37,7 +37,3 @@ Support for webhooks for notifications, messaging, and other related use cases i
 - [Mirror](https://docs.goldsky.com/introduction#mirror): With just one `.yaml` definition file, you can use Mirror, a serverless data pipeline technology, to obtain real-time data into your database. 
 Data is pushed to your queue or datastore, where it may be queried without any external rate limitations, alongside your existing data.
 Goldsky receives instructions from a mirror pipeline on where to obtain data: [sources](https://docs.goldsky.com/mirror/sources/supported-sources), how to process it (optionally), and where to store the results: [sinks](https://docs.goldsky.com/mirror/sinks/supported-sinks).
-
-
-
-
