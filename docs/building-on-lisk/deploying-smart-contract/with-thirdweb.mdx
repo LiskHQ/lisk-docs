@@ -17,6 +17,7 @@ keywords: [
     "write smart contract",
     "smart contract development"
     ]
+toc_max_heading_level: 4
 ---
 
 import Tabs from '@theme/Tabs';
@@ -41,7 +42,7 @@ However, for this guide, we will mainly talk about the [thirdweb Explore](https:
 
 ## Deploying pre-built contracts via thirdweb Explore
 In case you want to deploy a pre-built contract without any customization, thirdweb offers a convenient way to do so with **Explore**.
-Check out the following video for a quick introduction into Explore:
+Check out the following video for a quick introduction to Explore:
 
 - [What is thirdweb **Explore**?](https://youtu.be/jYEqoIeAoBg?t=5300)
 
@@ -57,24 +58,20 @@ The following videos describe step-by-step, how to deploy different tokens with 
 - [How to deploy a pre-built **ERC-721** contract via Explore?](https://youtu.be/jYEqoIeAoBg?t=6040)
 - [How to deploy a pre-built **ERC-1155** contract via Explore?](https://youtu.be/jYEqoIeAoBg?t=6396)
 
-### Interacting with deployed contracts via Explore
-
-The following videos describe step-by-step, how to interact with different token contracts on Lisk.
-- [How to interact with a deployed **ERC-20** contract via Explore?](https://youtu.be/jYEqoIeAoBg?t=6823)
-- [How to interact with a deployed **ERC-721** contract via Explore?](https://youtu.be/jYEqoIeAoBg?t=7581)
-- [How to interact with a deployed **ERC-1155** contract via Explore?](https://youtu.be/jYEqoIeAoBg?t=8355)
-
 ## via Solidity SDK
 
-### Installing and Configuring thirdweb
+### Prerequisites
+#### Node.js v18+
+
+Download and install [Node v18+](https://nodejs.org/en/download/).
+
+If you are using nvm to manage your node versions, you can just run `nvm install 18`.
+
+#### Installing and Configuring thirdweb
 
 To develop custom contracts, it is required to download and configure thirdweb.
-But, first, let's install some pre-requisites.
 
-#### Prerequisites
-
-1. Download and install [Node v18+](https://nodejs.org/en/download/).
-2. To install thirdweb run the following command:
+1. To install thirdweb run the following command:
     <Tabs>
     <TabItem value="npm" label="NPM" default>
         ```bash
@@ -87,38 +84,40 @@ But, first, let's install some pre-requisites.
         ```
     </TabItem>
     </Tabs>
-3. [Set up your thirdweb API key](https://youtu.be/jYEqoIeAoBg?t=9467).
-4. The next step is to log in to thirdweb via CLI, so to do that type the following:
+2. [Set up your thirdweb API key](https://youtu.be/jYEqoIeAoBg?t=9467).
+
+#### Logging in with your API key
+
+1. The next step is to log in to thirdweb via CLI, so to do that type the following:
     ```bash
-    thirweb login
+    thirdweb login
     ```
-    1. Once, you execute the aforementioned command, the terminal will open a browser window where it will ask you to authenticate the device:
-        ```text
-        .......
+2. Once, you execute the aforementioned command, the terminal will open a browser window where it will ask you to authenticate the device:
+    ```text
+    .......
 
-        💎 thirdweb v0.13.60 💎
+    💎 thirdweb v0.13.60 💎
 
-        Automatically attempting to open a link to authenticate with our dashboard...
+    Automatically attempting to open a link to authenticate with our dashboard...
 
-        If the browser doesn't open, please use this link to authenticate:
+    If the browser doesn't open, please use this link to authenticate:
 
-        https://thirdweb.com/cli/login?payload=%7B%22payload%22%3A%7B%22type%22%3A%22evm%22%2C%22domain%22%3A%22thirdweb.com%22%2C%22address%22%3A%220x4fA5f77Fadcc319c626b28Ea6260FB0c3Ba6e41C%22%2C%22statement%22%3A%22Please%20ensure%20that%20the%20domain%20above%20matches%20the%20URL%20of%20the%20cuhdksjahjkdhkshajkdhkshakjhsjhdsajkhhdhs
+    https://thirdweb.com/cli/login?payload=%7B%22payload%22%3A%7B%22type%22%3A%22evm%22%2C%22domain%22%3A%22thirdweb.com%22%2C%22address%22%3A%220x4fA5f77Fadcc319c626b28Ea6260FB0c3Ba6e41C%22%2C%22statement%22%3A%22Please%20ensure%20that%20the%20domain%20above%20matches%20the%20URL%20of%20the%20cuhdksjahjkdhkshajkdhkshakjhsjhdsajkhhdhs
 
-        ⠙ Waiting for a response from the dashboard
-        ```
-    2. Once you authenticate via the browser, the terminal will log the following message:
-        ```text
-        Successfully linked your account to this device 
-        ```
-    3. You can verify your login status by re-running the `thirdweb login` command.
-        ```text
-        💎 thirdweb v0.13.60 💎
-        You are already logged in
-        ```
+    ⠙ Waiting for a response from the dashboard
+    ```
+3. Once you authenticate via the browser, the terminal will log the following message:
+    ```text
+    Successfully linked your account to this device 
+    ```
+4. You can verify your login status by re-running the `thirdweb login` command.
+    ```text
+    💎 thirdweb v0.13.60 💎
 
 ## Creating a project
 The first step of deploying smart contracts to Lisk is to set up your development environment by creating a project.
 The thirdweb supports two of the most popular smart contracts development frameworks such as [Foundry](https://book.getfoundry.sh/) and [Hardhat](https://hardhat.org).
+
 For this guide, we are using Foundry for smart contract development.
 However, you can use Hardhat if you are more comfortable with that.
 The project creation steps are similar for both Foundry and Hardhat.
@@ -138,6 +137,10 @@ The project creation steps are similar for both Foundry and Hardhat.
     ✔ What is your project named? … thirdweb-contracts
     ``` 
 4. Next, choose `Forge` as the framework, `NFT` as the name of the contract, `ERC721` as the type of smart contract, and `None` for the extensions option.
+    :::info
+    In case you want to use the Hardhat framework, choose `Hardhat` instead of `Forge` in the following dialogue.
+    :::
+
     ```text
     ✔ What framework do you want to use? › Forge
     ✔ What will be the name of your new smart contract? … NFT
@@ -319,4 +322,9 @@ If you want to test your Foundry-based contract, follow the steps mentioned in t
 
 ## Interacting with the Smart Contract
 
-Once the contract is deployed, you can interact with it as explained in the [Interacting with deployed contracts via Explore](#interacting-with-deployed-contracts-via-explore) section.
+Once the contract is deployed, you can interact with it via Explore.
+The following videos describe step-by-step, how to interact with different token contracts on Lisk.
+
+- [How to interact with a deployed **ERC-20** contract via Explore?](https://youtu.be/jYEqoIeAoBg?t=6823)
+- [How to interact with a deployed **ERC-721** contract via Explore?](https://youtu.be/jYEqoIeAoBg?t=7581)
+- [How to interact with a deployed **ERC-1155** contract via Explore?](https://youtu.be/jYEqoIeAoBg?t=8355)
