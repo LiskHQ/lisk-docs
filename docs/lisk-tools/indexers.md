@@ -3,19 +3,15 @@ title: Data Indexers
 slug: /lisk-tools/indexers
 description: "Brief introduction to all the indexers linked with Lisk L2."
 keywords: [
-    "thirdweb",
-    "smart contract",
-    "ERC-721", "Lisk",
+    "indexers",
+    "data indexers",
+    "Lisk",
     "Lisk test network",
     "Lisk testnet",
-    "Node.js",
+    "Goldsky",
     "Solidity",
-    "smart contract deployment",
-    "deploy a smart contract",
-    "deploying smart contracts",
-    "build on lisk",
-    "write smart contract",
-    "smart contract development"
+    "Mirror",
+    "Subgraph"
     ]
 ---
 
