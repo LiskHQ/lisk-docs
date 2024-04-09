@@ -14,15 +14,15 @@ keywords:
   ]
 ---
 
-# Deploying Your Standard ERC-20 Token to Lisk
+# Deploying your Standard ERC-20 token to Lisk
 
 :::info
-**This tutorial is for developers who want to bridge a new ERC-20 token to Lisk Sepolia.**
+**This tutorial is for developers who want to bridge a new Standard ERC-20 token to Lisk Sepolia.**
 <!-- If you want to bridge existing tokens, you can skip to the tutorial on [Bridging ERC-20 tokens to Lisk](../bridge-tokens-to-lisk). -->
-If you want to bridge existing tokens, you can skip to the tutorial on [Bridging ERC-20 tokens with the Optimism SDK](https://docs.optimism.io/builders/app-developers/tutorials/cross-dom-bridge-erc20).
+If you want to bridge existing tokens, you can follow the tutorial on [Bridging ERC-20 tokens with the Optimism SDK](https://docs.optimism.io/builders/app-developers/tutorials/cross-dom-bridge-erc20).
 :::
 
-In this tutorial you'll learn how to bridge a standard ERC-20 token from Ethereum to Lisk using the [Standard Bridge system](https://docs.optimism.io/builders/dapp-developers/bridging/standard-bridge).
+In this tutorial, you'll learn how to bridge a standard ERC-20 token from Ethereum to Lisk using the [Standard Bridge system](https://docs.optimism.io/builders/dapp-developers/bridging/standard-bridge).
 This tutorial is meant for developers who already have an existing ERC-20 token on Ethereum and want to create a bridged representation of that token on Lisk.
 
 This tutorial explains how to use the [`OptimismMintableERC20Factory`](https://github.com/ethereum-optimism/optimism/blob/186e46a47647a51a658e699e9ff047d39444c2de/packages/contracts-bedrock/contracts/universal/OptimismMintableERC20Factory.sol) to deploy a standardized ERC-20 token on Lisk Sepolia.
@@ -41,7 +41,7 @@ This tutorial explains how to create a bridged ERC-20 token on Lisk Sepolia.
 You will need to get some ETH on both of these testnets.
 
 :::info
-You can use [this faucet](https://sepoliafaucet.com) to get ETH on Sepolia.
+You can use [ETH Sepolia Faucet](https://sepoliafaucet.com/) to get ETH on Sepolia.
 You can use the [Superchain Faucet](https://app.optimism.io/faucet?utm_source=docs) to get ETH on Lisk Sepolia.
 :::
 
@@ -51,10 +51,11 @@ You will need an L1 ERC-20 token for this tutorial.
 If you already have an L1 ERC-20 token deployed on Sepolia, you can skip this step.
 Otherwise, you can use the testing token located at [`0x5589BB8228C07c4e15558875fAf2B859f678d129`](https://sepolia.etherscan.io/address/0x5589BB8228C07c4e15558875fAf2B859f678d129) that includes a `faucet()` function that can be used to mint tokens.
 
-## Create an L2 ERC-20 Token
+## Create an L2 ERC-20 token
 
 Once you have an L1 ERC-20 token, you can use the [`OptimismMintableERC20Factory`](https://github.com/ethereum-optimism/optimism/blob/186e46a47647a51a658e699e9ff047d39444c2de/packages/contracts-bedrock/contracts/universal/OptimismMintableERC20Factory.sol) to create a corresponding L2 ERC-20 token on Lisk Sepolia.
 All tokens created by the factory implement the `IOptimismMintableERC20` interface and are compatible with the Standard Bridge system.
+To create an L2 ERC-20 token, do the following:
 
 ### 1. Add a private key to your environment
 
@@ -66,7 +67,7 @@ Make sure this private key corresponds to an address that has ETH on Lisk Sepoli
 export TUTORIAL_PRIVATE_KEY=0x...
 ```
 
-### 2. Add an Lisk Sepolia RPC URL to your environment
+### 2. Add the Lisk Sepolia RPC URL to your environment
 
 You'll need an RPC URL in order to connect to Lisk Sepolia.
 Set your RPC URL as an environment variable with the `export` command.
@@ -87,7 +88,7 @@ export TUTORIAL_L1_ERC20_ADDRESS=0x5589BB8228C07c4e15558875fAf2B859f678d129
 
 ### 4. Deploy your L2 ERC-20 token
 
-You can now deploy our L2 ERC-20 token using the [`OptimismMintableERC20Factory`](https://github.com/ethereum-optimism/optimism/blob/186e46a47647a51a658e699e9ff047d39444c2de/packages/contracts-bedrock/contracts/universal/OptimismMintableERC20Factory.sol).
+You can now deploy your L2 ERC-20 token using the [`OptimismMintableERC20Factory`](https://github.com/ethereum-optimism/optimism/blob/186e46a47647a51a658e699e9ff047d39444c2de/packages/contracts-bedrock/contracts/universal/OptimismMintableERC20Factory.sol).
 Use the `cast` command to trigger the deployment function on the factory contract.
 This example command creates a token with the name "My Standard Demo Token" and the symbol "L2TKN".
 The resulting L2 ERC-20 token address is printed to the console.
