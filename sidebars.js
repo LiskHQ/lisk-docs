@@ -81,10 +81,10 @@ const sidebars = {
         'lisk-tools/bridges',
         'lisk-tools/oracles',
         'lisk-tools/utilities',
+        'lisk-tools/indexers'
       ],
     },
   ],
-
 };
 
 export default sidebars;
