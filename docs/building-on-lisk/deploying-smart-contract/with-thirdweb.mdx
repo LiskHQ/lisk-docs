@@ -51,8 +51,6 @@ Before you try out the following guides, please ensure that your [wallet is conn
 For more information, see the [Wallet funds](/building-on-lisk/deploying-smart-contract/with-Foundry#wallet-funds) section.
 :::
 
-### Deploying pre-built contracts via Explore
-
 The following videos describe step-by-step, how to deploy different tokens with pre-built contracts on Lisk.
 - [How to deploy a pre-built **ERC-20** contract via Explore?](https://youtu.be/jYEqoIeAoBg?t=5776)
 - [How to deploy a pre-built **ERC-721** contract via Explore?](https://youtu.be/jYEqoIeAoBg?t=6040)
@@ -114,7 +112,7 @@ To develop custom contracts, it is required to download and configure thirdweb.
     ```text
     💎 thirdweb v0.13.60 💎
 
-## Creating a project
+### Creating a project
 The first step of deploying smart contracts to Lisk is to set up your development environment by creating a project.
 The thirdweb supports two of the most popular smart contracts development frameworks such as [Foundry](https://book.getfoundry.sh/) and [Hardhat](https://hardhat.org).
 
@@ -206,7 +204,7 @@ The project creation steps are similar for both Foundry and Hardhat.
     └── README.md
     ``` 
 
-### **Creating** the smart contract
+#### **Creating** the smart contract
 
 For ease and security, thirdweb already provides base contracts, which can be easily customized via code.
 Since we chose to create an `ERC721` token earlier, an `NFT.sol` file will be present in the `src/` folder.
@@ -238,7 +236,7 @@ contract NFT is ERC721Base {
 
 ```
 
-### **Building** the smart contract
+#### **Building** the smart contract
 Once the smart contract's code is ready, it must be built using thirdweb.
 
 1. To do that, simply run:
@@ -290,7 +288,7 @@ Once the smart contract's code is ready, it must be built using thirdweb.
      yarn deploy
     ```
 
-### **Deploying** the smart contract
+#### **Deploying** the smart contract
 All checks passed, which means that the smart contract is ready to be deployed using thirdweb.
 
 1. To do that, simply run:
