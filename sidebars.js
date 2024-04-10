@@ -46,6 +46,7 @@ const sidebars = {
           items: [
             'building-on-lisk/deploying-smart-contract/with-Foundry',
             'building-on-lisk/deploying-smart-contract/with-Hardhat',
+            'building-on-lisk/deploying-smart-contract/with-thirdweb',
           ],
         },
         {
@@ -95,10 +96,10 @@ const sidebars = {
         'lisk-tools/bridges',
         'lisk-tools/oracles',
         'lisk-tools/utilities',
+        'lisk-tools/indexers'
       ],
     },
   ],
-
 };
 
 export default sidebars;

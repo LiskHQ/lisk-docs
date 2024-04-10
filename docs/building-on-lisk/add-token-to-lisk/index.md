@@ -45,14 +45,13 @@ The guide explains how to use the [OptimismMintableERC20Factory](https://github.
 Tokens created by this factory contract implement the `IOptimismMintableERC20` interface, including basic logic for deposits, transfers, and withdrawals.
 
 
+
 ## [Deploying a Custom ERC-20 token](./custom-token.mdx)
 
 A custom token allows you to do things like trigger extra logic whenever a token is deposited.
 To deploy a custom ERC-20 token to Lisk Sepolia, follow the steps mentioned in the [Deploying your Custom ERC-20 token to Lisk](./custom-token.mdx) guide.
 
 The guide explains how to implement all the functions defined by the [IOptimismMintableERC20](https://github.com/ethereum-optimism/optimism/blob/v1.1.4/packages/contracts-bedrock/src/universal/IOptimismMintableERC20.sol) interface such as the logic for the `mint`, `burn`, `remoteToken`, and `bridge` functions of the `IOptimismMintableERC20` interface.
-
-
 
 <!-- ### Step 2: Submit details of your token
 
