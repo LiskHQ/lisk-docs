@@ -16,11 +16,10 @@ keywords:
 
 # Deploying your Standard ERC-20 token to Lisk
 
-:::info
+<!-- :::info
 **This tutorial is for developers who want to bridge a new Standard ERC-20 token to Lisk Sepolia.**
-<!-- If you want to bridge existing tokens, you can skip to the tutorial on [Bridging ERC-20 tokens to Lisk](../bridge-tokens-to-lisk). -->
 If you want to bridge existing tokens, you can follow the tutorial on [Bridging ERC-20 tokens with the Optimism SDK](https://docs.optimism.io/builders/app-developers/tutorials/cross-dom-bridge-erc20).
-:::
+::: -->
 
 In this tutorial, you'll learn how to bridge a standard ERC-20 token from Ethereum to Lisk using the [Standard Bridge system](https://docs.optimism.io/builders/dapp-developers/bridging/standard-bridge).
 This tutorial is meant for developers who already have an existing ERC-20 token on Ethereum and want to create a bridged representation of that token on Lisk.
@@ -110,11 +109,10 @@ The downside of this is, that you do not have control over the source code of th
 Furthermore, it is not so straightforward to verify those contracts on Blockscout, as the source code of the contract is required for the verification.
 :::
 
-## Bridge Some Tokens
+<!-- ## Bridge Some Tokens
 
 Now that you have an L2 ERC-20 token, you can bridge some tokens from L1 to L2.
-<!-- Check out the tutorial on [Bridging ERC-20 tokens to Lisk](../bridge-tokens-to-lisk.md) to learn how to bridge your L1 ERC-20 to L2s and vice versa using the Optimism SDK. -->
-Check out the tutorial on [Bridging ERC-20 tokens with the Optimism SDK](https://docs.optimism.io/builders/app-developers/tutorials/cross-dom-bridge-erc20) to learn how to bridge your L1 ERC-20 to L2s and vice versa using the Optimism SDK.
+Check out the tutorial on [Bridging ERC-20 tokens with the Optimism SDK](https://docs.optimism.io/builders/app-developers/tutorials/cross-dom-bridge-erc20) to learn how to bridge your L1 ERC-20 to L2s and vice versa using the Optimism SDK. -->
 
 <!-- ## Add to the Superchain Token List
 
