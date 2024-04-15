@@ -38,7 +38,6 @@ const sidebars = {
       items: [
         'building-on-lisk/connecting-to-a-wallet',
         'building-on-lisk/contracts',
-        'building-on-lisk/add-token-to-lisk',
         {
           type: 'category',
           label: 'Deploying a Smart Contract',
@@ -47,11 +46,27 @@ const sidebars = {
           items: [
             'building-on-lisk/deploying-smart-contract/with-Foundry',
             'building-on-lisk/deploying-smart-contract/with-Hardhat',
+            'building-on-lisk/deploying-smart-contract/with-thirdweb',
           ],
         },
         {
           type: 'category',
-          label: 'Interacting with the Blockchain',
+          label: 'Deploying an ERC-20 token to Lisk',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            'building-on-lisk/add-token-to-lisk/standard-token',
+            'building-on-lisk/add-token-to-lisk/custom-token',
+          ],
+          link: {
+            type: 'doc',
+            id: 'building-on-lisk/add-token-to-lisk/index',
+          },
+        },
+/*         'building-on-lisk/bridge-tokens-to-lisk', */
+        {
+          type: 'category',
+          label: 'Interacting with the blockchain',
           collapsible: true,
           collapsed: true,
           items: [
@@ -81,10 +96,10 @@ const sidebars = {
         'lisk-tools/bridges',
         'lisk-tools/oracles',
         'lisk-tools/utilities',
+        'lisk-tools/indexers'
       ],
     },
   ],
-
 };
 
 export default sidebars;
