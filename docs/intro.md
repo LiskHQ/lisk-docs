@@ -39,10 +39,7 @@ Lisk's Mainnet keeps it in sync with the Ethereum L1 after regular intervals to 
 For more information, see [Optimism's rollup protocol](https://docs.optimism.io/stack/protocol/overview) and its [Fault Proof](https://docs.optimism.io/stack/protocol/overview#fault-proofs) section.
 This means that apart from the measures taken to secure the Superchain and Lisk's Mainnet, the L1 security of Ethereum is also available to users interacting with Lisk L2.
 
-At the moment, the security of Lisk Mainnet is dependent on a [multisig wallet](https://www.coindesk.com/tech/2020/11/10/multisignature-wallets-can-keep-your-coins-safer-if-you-use-them-right/) managed by several anonymous individuals as discussed in the [OP Mainnet Security Model](https://docs.optimism.io/chain/security/faq) page.
-This multisig wallet can be used to upgrade core Lisk Mainnet smart contracts without upgrade delays.
-However, Lisk L2 is part of the [Optimism collective](https://community.optimism.io/docs/governance/) and Optimism is seeking to establish a [Security Council](https://optimism.help/Token+House+Governance/Security+Council/Intro+to+Optimism's+Security+Council), for distributed governance, and equal participation of all OP stack chains to the superchain.
-Such measures will ensure that decisions like using distributed sequencers, proposers, challengers, etc. can be made unanimously with the agreement of all the members of the Superchain and the Security Council.
+For more information, check out the [Governance](/about-lisk/governance)
 
 ## Connection to Ethereum
 
