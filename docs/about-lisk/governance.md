@@ -42,7 +42,7 @@ The [Lisk Governance Forum](https://forum.lisk.com/) is the place for the commun
 Tally is the platform used to create and vote for proposals of the Lisk DAO.
 
 <!-- TODO: Update link to tally instance -->
-The [Lisk DAO Tally instance]() is the place where users can vote on proposals or delegate their voting power.
+The [Lisk DAO Tally instance](https://www.tally.xyz/gov/3rd-testing) is the place where users can vote on proposals or delegate their voting power.
 
 ### Voting Power
 To get some voting power, users must lock some LSK tokens. This works as follows:
@@ -67,7 +67,7 @@ The foundation will have an administrative role and will take care of the follow
 3. Administration of network maintenance, such as emergency bug fixes or release rollbacks (with or without a governance vote).
 
 ## Proposals Creation
-Proposal are created on Tally. For spam protection, the following requirement must be fulfilled in order to create a proposal:
+Proposal are created on [Tally](#tally). For spam protection, the following requirement must be fulfilled in order to create a proposal:
 
 - **Proposal threshold**: For creating a proposal, the voting power of the proposer must be at least 300,000 vpLSK, i.e., the value corresponding to 100,000 LSK locked for 2 years where the countdown is paused.
 
