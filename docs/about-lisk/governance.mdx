@@ -15,6 +15,9 @@ keywords:
   ]
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Governance
 
 At the moment, the security of the Lisk Mainnet is dependent on a [multisig wallet](https://www.coindesk.com/tech/2020/11/10/multisignature-wallets-can-keep-your-coins-safer-if-you-use-them-right/) managed by several individuals of the Onchain Foundation.
@@ -26,21 +29,28 @@ To decentralize the governance of the Lisk project further, Lisk introduces a de
 The Lisk DAO provides the opportunity for LSK token holders to participate in the overall governance of the Lisk project, including allocation of funds, protocol updates, or strategic directions. Decisions are made via [proposals](#proposals).
 
 ### Tools
-#### Discord
-The `#lisk-dao` channel in the [Lisk Chat](https://lisk.chat) Discord server is a comunity chat dedicated to discuss topics all around the Lisk DAO, share news and updates, or share ideas for new proposals.
-#### Lisk Governance Forum
-The [Lisk Governance Forum](https://forum.lisk.com/) is the place for the community to discuss the Lisk gonvernance and draft proposals, before they are submitted on Tally.
-#### Tally
-Tally is the platform used to create and vote for proposals of the Lisk DAO.
+The following tools are available to participate in the Lisk DAO:
 
-<!-- TODO: Update link to tally instance -->
-The [Lisk DAO Tally instance](https://www.tally.xyz/gov/3rd-testing) is the place where users can vote on proposals or delegate their voting power.
+<Tabs>
+  <TabItem value="tally" label="Tally">
+  Tally is the platform used to create and vote for proposals of the Lisk DAO.
+
+  {/* TODO: Update link to tally instance */}
+  The [Lisk DAO Tally instance](https://www.tally.xyz/gov/3rd-testing) is the place where users can vote on proposals or delegate their voting power.
+  </TabItem>
+  <TabItem value="forum" label="Forum">
+  The [Lisk Governance Forum](https://forum.lisk.com/) is the place for the community to discuss the Lisk gonvernance and draft proposals, before they are submitted on Tally.
+  </TabItem>
+  <TabItem value="discord" label="Discord">
+  The `#lisk-dao` channel in the [Lisk Chat](https://lisk.chat) Discord server is a comunity chat dedicated to discuss topics all around the Lisk DAO, share news and updates, or share ideas for new proposals.
+  </TabItem>
+</Tabs>
 
 ### Treasury
-<!-- TODO: Answer questions:
+{/* TODO: Answer questions:
 Where do the funds come from?
-How are new funds added to the treasury?
- -->
+How are new funds added to the treasury? */}
+
 The Lisk DAO has an associated treasury (the balance of the Governor contract). The treasury is NOT managed by the Onchain Foundation. Instead, the funds from the treasury can only be transferred via successful proposals. This means, the proposal must specify the transfer transaction including the amount in their setup, and if the proposal was successful, the transaction can be send. 
 
 ### Administrative role of the Onchain Foundation
