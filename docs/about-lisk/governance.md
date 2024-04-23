@@ -25,14 +25,6 @@ To decentralize the governance of the Lisk project further, Lisk introduces a de
 ## Lisk DAO
 The Lisk DAO provides the opportunity for LSK token holders to participate in the overall governance of the Lisk project, including allocation of funds, protocol updates, or strategic directions.
 
-### Proposals
-#### Funding proposals
-A proposal for receiving a certain amount of funds to an address. If approved, the recipient receives the amount given in the proposal. 
-
-The transfer from the [Lisk DAO treasury](#treasury) can be executed by anyone, once the proposal is approved. Funding proposals are **binding**, which means that no-one, not even the Onchain Foundation, can prevent the transfer, if the proposal passed.
-#### General proposals
-Generic, **non-binding** proposals about protocol parameters or the project direction in general that may be followed by the Lisk Foundation or not, depending also on feasibility and cost.
-
 ### Tools
 #### Discord
 The `#lisk-dao` channel in the [Lisk Chat](https://lisk.chat) Discord server is a comunity chat dedicated to discuss topics all around the Lisk DAO, share news and updates, or share ideas for new proposals.
@@ -44,27 +36,27 @@ Tally is the platform used to create and vote for proposals of the Lisk DAO.
 <!-- TODO: Update link to tally instance -->
 The [Lisk DAO Tally instance](https://www.tally.xyz/gov/3rd-testing) is the place where users can vote on proposals or delegate their voting power.
 
-### Voting Power
-To get some voting power, users must lock some LSK tokens. This works as follows:
-
-- Users can lock tokens for a specific locking duration (between 2 weeks and 2 years). After the locking duration ends, the users can redeem their tokens. Locking happens on our portal.
-- Voting power calculation:
-  - Locked tokens provide a voting power proportional to the amount of locked tokens. Concretely, 1 locked LSK provides one unit of voting power.
-  - To enable voting power proportional to the promised locking duration, users have the option to pause the countdown of the locking period. That means, the counting towards the end of the locking period is paused until the user decides to resume it. In the case of pausing, the user receives a boost of the voting power. It is set to `lockedAmount * (1 + remainingLockingDurationInDays/365)`. Hence, the voting power can be increased by up to 200%.
-- The Governor framework also requires to delegate the voting power in order to use it. The voting power can be delegated to other users or to themselves. But self-delegation is a requirement if users want to vote themselves. Delegation happens on Tally.
 
 ### Treasury
-What is the Lisk DAO treasury?
 Where do the funds come from?
 How are new funds added to the treasury?
-What is the treasury used for?
 
-## Administrative role of the foundation
+The Lisk DAO has an associated treasury (the balance of the Governor contract). The treasury is NOT managed by the Onchain Foundation. Instead, the funds from the treasury can only be transferred via successful proposals. This means, the proposal must specify the transfer transaction including the amount in their setup, and if the proposal was successful, the transaction can be send. 
+
+## Administrative role of the Onchain Foundation
 The foundation will have an administrative role and will take care of the following
 
 1. Removal of draft proposals that reasonably appear to be fraudulent, spam-oriented, defamatory, hateful, or otherwise inappropriate.
 2. Management of mutually contradictory proposals that are submitted simultaneously or in close proximity to one another.
 3. Administration of network maintenance, such as emergency bug fixes or release rollbacks (with or without a governance vote).
+
+### Proposal types
+#### Funding proposals
+A proposal for receiving a certain amount of funds to an address. If approved, the recipient receives the amount given in the proposal. 
+
+The transfer from the [Lisk DAO treasury](#treasury) can be executed by anyone, once the proposal is approved. Funding proposals are **binding**, which means that no-one, not even the Onchain Foundation, can prevent the transfer, if the proposal passed.
+#### General proposals
+Generic, **non-binding** proposals about protocol parameters or the project direction in general that may be followed by the Lisk Foundation or not, depending also on feasibility and cost.
 
 ## Proposals Creation
 Proposal are created on [Tally](#tally). For spam protection, the following requirement must be fulfilled in order to create a proposal:
@@ -82,6 +74,24 @@ The following requirements must be fulfilled for a proposal to pass:
 Funding proposals can be executed by anyone, once the proposal is approved.
 ### Implementation of general proposals
 For approved general proposals, the Onchain Foundation will determine whether the proposal is safe, secure, consistent with the scope of Lisk governance, and capable of being implemented in a legally compliant manner. If it is, the Foundation will act diligently and in a commercially reasonable manner to cause the proposal to be implemented.
+
+### Voting Power
+To get some voting power, users must **lock/stake** some LSK tokens. This works as follows:
+
+Users can lock tokens for a specific locking duration (between 2 weeks and 2 years). After the locking duration ends, the users can redeem their tokens. Locking happens on our portal.
+
+Initially, the voting power of a locked token will be constant during its locking duration. But it is possible to [boost the voting power](#boosting-the-voting-power) by up to 200% where the boost is proportional to remaining locking duration.
+
+We consider to transition to a voting-escrow-Token model at some point. In this model the voting power decreases linearly when getting closer to end of the locking duration. But this requires custom integration from Tally.
+
+#### Voting power calculation:
+Locked tokens provide a voting power proportional to the amount of locked tokens. Concretely, 1 locked LSK provides one unit of voting power.
+
+#### Boosting the voting power
+To enable voting power proportional to the promised locking duration, users have the option to pause the countdown of the locking period. That means, the counting towards the end of the locking period is paused until the user decides to resume it. In the case of pausing, the user receives a boost of the voting power. It is set to `lockedAmount * (1 + remainingLockingDurationInDays/365)`. Hence, the voting power can be increased by up to 200%.
+
+### Delegation
+The Governor framework also requires to delegate the voting power in order to use it. The voting power can be delegated to other users or to themselves. But self-delegation is a requirement if users want to vote themselves. Delegation happens on [Tally](#tally).
 
 ## Governance Goals
 There are two primary goals of Lisks governance system:
