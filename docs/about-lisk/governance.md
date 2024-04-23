@@ -25,12 +25,33 @@ To decentralize the governance of the Lisk project further, Lisk introduces a de
 ## Lisk DAO
 The Lisk DAO provides the opportunity for LSK token holders to participate in the overall governance of the Lisk project, including allocation of funds, protocol updates, or strategic directions.
 
-### Funding proposals
+### Proposals
+#### Funding proposals
 A proposal for receiving a certain amount of funds to an address. If approved, the recipient receives the amount given in the proposal. 
 
 The transfer from the [Lisk DAO treasury](#treasury) can be executed by anyone, once the proposal is approved. Funding proposals are **binding**, which means that no-one, not even the Onchain Foundation, can prevent the transfer, if the proposal passed.
-### General proposals
+#### General proposals
 Generic, **non-binding** proposals about protocol parameters or the project direction in general that may be followed by the Lisk Foundation or not, depending also on feasibility and cost.
+
+### Tools
+#### Discord
+The `#lisk-dao` channel in the [Lisk Chat](https://lisk.chat) Discord server is a comunity chat dedicated to discuss topics all around the Lisk DAO, share news and updates, or share ideas for new proposals.
+#### Lisk Governance Forum
+The [Lisk Governance Forum](https://forum.lisk.com/) is the place for the community to discuss the Lisk gonvernance and draft proposals, before they are submitted on Tally.
+#### Tally
+Tally is the platform used to create and vote for proposals of the Lisk DAO.
+
+<!-- TODO: Update link to tally instance -->
+The [Lisk DAO Tally instance]() is the place where users can vote on proposals or delegate their voting power.
+
+### Voting Power
+To get some voting power, users must lock some LSK tokens. This works as follows:
+
+- Users can lock tokens for a specific locking duration (between 2 weeks and 2 years). After the locking duration ends, the users can redeem their tokens. Locking happens on our portal.
+- Voting power calculation:
+  - Locked tokens provide a voting power proportional to the amount of locked tokens. Concretely, 1 locked LSK provides one unit of voting power.
+  - To enable voting power proportional to the promised locking duration, users have the option to pause the countdown of the locking period. That means, the counting towards the end of the locking period is paused until the user decides to resume it. In the case of pausing, the user receives a boost of the voting power. It is set to `lockedAmount * (1 + remainingLockingDurationInDays/365)`. Hence, the voting power can be increased by up to 200%.
+- The Governor framework also requires to delegate the voting power in order to use it. The voting power can be delegated to other users or to themselves. But self-delegation is a requirement if users want to vote themselves. Delegation happens on Tally.
 
 ### Treasury
 What is the Lisk DAO treasury?
@@ -45,8 +66,22 @@ The foundation will have an administrative role and will take care of the follow
 2. Management of mutually contradictory proposals that are submitted simultaneously or in close proximity to one another.
 3. Administration of network maintenance, such as emergency bug fixes or release rollbacks (with or without a governance vote).
 
+## Proposals Creation
+Proposal are created on Tally. For spam protection, the following requirement must be fulfilled in order to create a proposal:
+
+- **Proposal threshold**: For creating a proposal, the voting power of the proposer must be at least 300,000 vpLSK, i.e., the value corresponding to 100,000 LSK locked for 2 years where the countdown is paused.
+
+## Proposal Evaluation
+The following requirements must be fulfilled for a proposal to pass:
+
+- **Quorum**: For a proposal to pass, the “yes” and “abstain” votes must sum up at least to 24,000,000 vpLSK, i.e., the value that corresponds to 8,000,000 LSK locked for 2 years where the countdown is paused.
+- There must be strictly more “yes” than “no” votes.
+
 ## Implementation of proposals
-For approved general proposals, the foundation will determine whether the proposal is safe, secure, consistent with the scope of Lisk governance, and capable of being implemented in a legally compliant manner. If it is, the Foundation will act diligently and in a commercially reasonable manner to cause the proposal to be implemented.
+### Implementation of funding proposals
+Funding proposals can be executed by anyone, once the proposal is approved.
+### Implementation of general proposals
+For approved general proposals, the Onchain Foundation will determine whether the proposal is safe, secure, consistent with the scope of Lisk governance, and capable of being implemented in a legally compliant manner. If it is, the Foundation will act diligently and in a commercially reasonable manner to cause the proposal to be implemented.
 
 ## Governance Goals
 There are two primary goals of Lisks governance system:
