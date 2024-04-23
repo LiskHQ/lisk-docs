@@ -23,7 +23,7 @@ This multisig wallet can be used to upgrade core Lisk Mainnet smart contracts wi
 To decentralize the governance of the Lisk project further, Lisk introduces a decentralized autonomous organization, the Lisk DAO, which allows Lisk token holders to participate together in the governance of the Lisk project.
 
 ## Lisk DAO
-The Lisk DAO provides the opportunity for LSK token holders to participate in the overall governance of the Lisk project, including allocation of funds, protocol updates, or strategic directions.
+The Lisk DAO provides the opportunity for LSK token holders to participate in the overall governance of the Lisk project, including allocation of funds, protocol updates, or strategic directions. Decisions are made via [proposals](#proposals).
 
 ### Tools
 #### Discord
@@ -36,11 +36,11 @@ Tally is the platform used to create and vote for proposals of the Lisk DAO.
 <!-- TODO: Update link to tally instance -->
 The [Lisk DAO Tally instance](https://www.tally.xyz/gov/3rd-testing) is the place where users can vote on proposals or delegate their voting power.
 
-
 ### Treasury
+<!-- TODO: Answer questions:
 Where do the funds come from?
 How are new funds added to the treasury?
-
+ -->
 The Lisk DAO has an associated treasury (the balance of the Governor contract). The treasury is NOT managed by the Onchain Foundation. Instead, the funds from the treasury can only be transferred via successful proposals. This means, the proposal must specify the transfer transaction including the amount in their setup, and if the proposal was successful, the transaction can be send. 
 
 ### Administrative role of the Onchain Foundation
@@ -56,12 +56,11 @@ Proposal are created on [Tally](#tally). For spam protection, the following requ
 - **Proposal threshold**: For creating a proposal, the voting power of the proposer must be at least 300,000 vpLSK, i.e., the value corresponding to 100,000 LSK locked for 2 years where the countdown is paused.
 
 #### Proposal types
-##### Funding proposals
-A proposal for receiving a certain amount of funds to an address. If approved, the recipient receives the amount given in the proposal. 
 
-The transfer from the [Lisk DAO treasury](#treasury) can be executed by anyone, once the proposal is approved. Funding proposals are **binding**, which means that no-one, not even the Onchain Foundation, can prevent the transfer, if the proposal passed.
-##### General proposals
-Generic, **non-binding** proposals about protocol parameters or the project direction in general that may be followed by the Lisk Foundation or not, depending also on feasibility and cost.
+| Type   | Funding          | General          |
+| :----------|:------------- |:------------- |
+| **Description** | A proposal for receiving a certain amount of funds to an address. If approved, the recipient receives the amount given in the proposal. | General proposals about protocol parameters or the project direction in general that may be followed by the Lisk Foundation or not, depending also on feasibility and cost.  |
+| **Binding?**  | Yes  | No  |
 
 #### Proposal Evaluation
 The following requirements must be fulfilled for a proposal to pass:
@@ -69,10 +68,9 @@ The following requirements must be fulfilled for a proposal to pass:
 - **Quorum**: For a proposal to pass, the “yes” and “abstain” votes must sum up at least to 24,000,000 vpLSK, i.e., the value that corresponds to 8,000,000 LSK locked for 2 years where the countdown is paused.
 - There must be strictly more “yes” than “no” votes.
 
-#### Implementation of proposals
-##### Implementation of funding proposals
-Funding proposals can be executed by anyone, once the proposal is approved.
-##### Implementation of general proposals
+#### Implementation of funding proposals
+The transfer from the [Lisk DAO treasury](#treasury) can be executed by anyone, once a funding proposal is approved. Funding proposals are **binding**, which means that no-one, not even the Onchain Foundation, can prevent the transfer, if the proposal passed.
+#### Implementation of general proposals
 For approved general proposals, the Onchain Foundation will determine whether the proposal is safe, secure, consistent with the scope of Lisk governance, and capable of being implemented in a legally compliant manner. If it is, the Foundation will act diligently and in a commercially reasonable manner to cause the proposal to be implemented.
 
 ### Voting Power
