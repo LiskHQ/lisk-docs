@@ -23,16 +23,20 @@ This multisig wallet can be used to upgrade core Lisk Mainnet smart contracts wi
 To decentralize the governance of the Lisk project further, Lisk introduces a decentralized autonomous organization, the Lisk DAO, which allows Lisk token holders to participate together in the governance of the Lisk project.
 
 ## Lisk DAO
-The Lisk DAO provides multiple opportunities for LSK token holders to participate in the overall governance of the Lisk project, including:
-
-- Allocation of funds
-- Protocol updates
-- Strategic directions
+The Lisk DAO provides the opportunity for LSK token holders to participate in the overall governance of the Lisk project, including allocation of funds, protocol updates, or strategic directions.
 
 ### Funding proposals
-A proposal for receiving a certain amount of funds to an address. If approved, the recipient receives the amount given in the proposal. The transfer from the Lisk DAO treasury can be executed by anyone, once the proposal is approved. Funding proposals are binding, which means that no-one, not even the Onchain Foundation, can prevent the transfer, if the proposal passed.
+A proposal for receiving a certain amount of funds to an address. If approved, the recipient receives the amount given in the proposal. 
+
+The transfer from the [Lisk DAO treasury](#treasury) can be executed by anyone, once the proposal is approved. Funding proposals are **binding**, which means that no-one, not even the Onchain Foundation, can prevent the transfer, if the proposal passed.
 ### General proposals
-Generic, non-binding proposals about protocol parameters or the project direction in general that may be followed by the Lisk Foundation or not, depending also on feasibility and cost.
+Generic, **non-binding** proposals about protocol parameters or the project direction in general that may be followed by the Lisk Foundation or not, depending also on feasibility and cost.
+
+### Treasury
+What is the Lisk DAO treasury?
+Where do the funds come from?
+How are new funds added to the treasury?
+What is the treasury used for?
 
 ## Administrative role of the foundation
 The foundation will have an administrative role and will take care of the following
