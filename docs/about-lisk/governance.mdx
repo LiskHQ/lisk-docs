@@ -47,11 +47,23 @@ The following tools are available to participate in the Lisk DAO:
 </Tabs>
 
 ### Treasury
-{/* TODO: Answer questions:
-Where do the funds come from?
-How are new funds added to the treasury? */}
+{/* TODO: Update link to timelock contract */}
+The Lisk DAO has an associated treasury, which resides in the [TimeLock contract].
+The current balance of the treasury can be checked on the [Lisk BlockScout Explorer](https://sepolia-blockscout.lisk.com/address/0x4b727D3f74DD4c124Ced030335DebD5e7EBB8366).
+The treasury is NOT managed by the Onchain Foundation.
+Instead, the funds from the treasury can only be transferred via successful [funding proposals](#proposal-types).
 
-The Lisk DAO has an associated treasury (the balance of the Governor contract). The treasury is NOT managed by the Onchain Foundation. Instead, the funds from the treasury can only be transferred via successful proposals. This means, the proposal must specify the transfer transaction including the amount in their setup, and if the proposal was successful, the transaction can be send. 
+Tokens for the Lisk DAO fund are minted newly and added to the Lisk DAO according to the following vesting plan:
+
+| Year | Amount (LSK) | Description |
+|------|--------------|-------------|
+| 2024 | 15,000,000 | 6,250,000 LSK liquid at migration, 8,750,000 LSK are linearly released in 2024, starting from the migration. |
+| 2025 | 15,000,000 | 15,000,000 LSK are linearly released over the year|
+| 2026 | 15,000,000 | 15,000,000 LSK are linearly released over the year|
+
+:::note
+The DAO fund may be increased further in the future by additional 100,000,000 LSK over the following 7 years, if the DAO members approve the corresponding proposals.
+:::
 
 ### Administrative role of the Onchain Foundation
 The foundation will have an administrative role and will take care of the following
@@ -61,7 +73,8 @@ The foundation will have an administrative role and will take care of the follow
 3. Administration of network maintenance, such as emergency bug fixes or release rollbacks (with or without a governance vote).
 
 ### Proposals
-Proposal are created on [Tally](#tally). For spam protection, the following requirement must be fulfilled in order to create a proposal:
+Proposal are created on [Tally](#tally).
+For spam protection, the following requirement must be fulfilled in order to create a proposal:
 
 - **Proposal threshold**: For creating a proposal, the voting power of the proposer must be at least 300,000 vpLSK, i.e., the value corresponding to 100,000 LSK locked for 2 years where the countdown is paused.
 
@@ -79,50 +92,77 @@ The following requirements must be fulfilled for a proposal to pass:
 - There must be strictly more “yes” than “no” votes.
 
 #### Implementation of funding proposals
-The transfer from the [Lisk DAO treasury](#treasury) can be executed by anyone, once a funding proposal is approved. Funding proposals are **binding**, which means that no-one, not even the Onchain Foundation, can prevent the transfer, if the proposal passed.
+The transfer from the [Lisk DAO treasury](#treasury) can be executed by anyone, once a funding proposal is approved.
+Funding proposals are **binding**, which means that no-one, not even the Onchain Foundation, can prevent the transfer, if the proposal passed.
 #### Implementation of general proposals
-For approved general proposals, the Onchain Foundation will determine whether the proposal is safe, secure, consistent with the scope of Lisk governance, and capable of being implemented in a legally compliant manner. If it is, the Foundation will act diligently and in a commercially reasonable manner to cause the proposal to be implemented.
+For approved general proposals, the Onchain Foundation will determine whether the proposal is safe, secure, consistent with the scope of Lisk governance, and capable of being implemented in a legally compliant manner.
+If it is, the Foundation will act diligently and in a commercially reasonable manner to cause the proposal to be implemented.
 
 ### Voting Power
 To get some voting power, users must **lock/stake** some LSK tokens. This works as follows:
 
-Users can lock tokens for a specific locking duration (between 2 weeks and 2 years). After the locking duration ends, the users can redeem their tokens. Locking happens on our portal.
+Users can lock tokens for a specific locking duration (between 2 weeks and 2 years).
+After the locking duration ends, the users can redeem their tokens.
+Locking happens on our portal.
 
-Initially, the voting power of a locked token will be constant during its locking duration. But it is possible to [boost the voting power](#boosting-the-voting-power) by up to 200% where the boost is proportional to remaining locking duration.
+Initially, the voting power of a locked token will be constant during its locking duration.
+But it is possible to [boost the voting power](#boosting-the-voting-power) by up to 200% where the boost is proportional to remaining locking duration.
 
-We consider to transition to a voting-escrow-Token model at some point. In this model the voting power decreases linearly when getting closer to end of the locking duration. But this requires custom integration from Tally.
+We consider to transition to a voting-escrow-Token model at some point.
+In this model the voting power decreases linearly when getting closer to end of the locking duration.
+But this requires custom integration from Tally.
 
 #### Voting power calculation:
 Locked tokens provide a voting power proportional to the amount of locked tokens. Concretely, 1 locked LSK provides one unit of voting power.
 
 #### Boosting the voting power
-To enable voting power proportional to the promised locking duration, users have the option to pause the countdown of the locking period. That means, the counting towards the end of the locking period is paused until the user decides to resume it. In the case of pausing, the user receives a boost of the voting power. It is set to `lockedAmount * (1 + remainingLockingDurationInDays/365)`. Hence, the voting power can be increased by up to 200%.
+To enable voting power proportional to the promised locking duration, users have the option to pause the countdown of the locking period.
+That means, the counting towards the end of the locking period is paused until the user decides to resume it.
+In the case of pausing, the user receives a boost of the voting power. It is set to `lockedAmount * (1 + remainingLockingDurationInDays/365)`.
+Hence, the voting power can be increased by up to 200%.
 
 ### Delegation
-The Governor framework also requires to delegate the voting power in order to use it. The voting power can be delegated to other users or to themselves. But self-delegation is a requirement if users want to vote themselves. Delegation happens on [Tally](#tally).
+The Governor framework also requires to delegate the voting power in order to use it.
+The voting power can be delegated to other users or to themselves.
+But self-delegation is a requirement if users want to vote themselves.
+Delegation happens on [Tally](#tally).
 
 ## Governance Goals
 There are two primary goals of Lisks governance system:
 
 ### Capture resistance
-Governance plays a key role in securing the anti-capture and censorship resistance of the Lisk protocol. Governance should:
+Governance plays a key role in securing the anti-capture and censorship resistance of the Lisk protocol.
+Governance should:
 
 1. make it possible for the chain or network operations to continue without reliance on any individual entity, and 
 2. prevent any one entity or small group of entities from being able to control or censor the protocol or its functions.
 
 ### Resource allocation
-Governance’s second primary responsibility is to allocate resources effectively to support the Lisks vision and accrue sustainable value to the Lisk DAO. Vision & value may often be in conflict, and allocating resources effectively involves a blend of short- and long-term thinking. This includes allocation of both the token treasury and protocol revenue.
+Governance’s second primary responsibility is to allocate resources effectively to support the Lisks vision and accrue sustainable value to the Lisk DAO.
+Vision & value may often be in conflict, and allocating resources effectively involves a blend of short- and long-term thinking.
+This includes allocation of both the token treasury and protocol revenue.
 
 ## Design Principles
 Design decisions for Lisks governance system should be made in line with three key principles:
 
 ### Governance minimization
-The set of governance responsibilities that are encoded onchain or formalized in voting processes should remain as minimal as possible. The Lisk DAO aims to reduce governance to its essence and to avoid introducing regulation where freedom can achieve the same result. This principle is key to encouraging permissionless innovation. In practice, this looks like a minimal set of:
+The set of governance responsibilities that are encoded onchain or formalized in voting processes should remain as minimal as possible.
+The Lisk DAO aims to reduce governance to its essence and to avoid introducing regulation where freedom can achieve the same result.
+This principle is key to encouraging permissionless innovation.
+In practice, this looks like a minimal set of:
+
 1. onchain governance processes to upgrade Lisk contracts and tune the economic parameters of the system, and
 2. offchain social processes to maintain a healthy community.
 
 ### Iteration
-Lisk is decentralizing iteratively to increase the chances of building a healthy system that lasts for the long-term. This means the Foundation will play a role in establishing processes, help the DAO through its first few rapid feedback loops in improving those processes, then reduce its role over time. (This also means the design principles and goals outlined in this document may be invalidated or updated along the way.) This iteration gives the DAO a chance to learn how to make thoughtful decisions using an un-intuitive but essential loop: introduce a governance process that involves active participation, then gradually work to automate or minimize it over time. Governance’s responsibility then becomes to adjust the autopilot when necessary, not to keep two hands on the wheel.
+Lisk is decentralizing iteratively to increase the chances of building a healthy system that lasts for the long-term.
+This means the Foundation will play a role in establishing processes, help the DAO through its first few rapid feedback loops in improving those processes, then reduce its role over time.
+(This also means the design principles and goals outlined in this document may be invalidated or updated along the way.)
+This iteration gives the DAO a chance to learn how to make thoughtful decisions using an un-intuitive but essential loop: introduce a governance process that involves active participation, then gradually work to automate or minimize it over time.
+Governance’s responsibility then becomes to adjust the autopilot when necessary, not to keep two hands on the wheel.
 
 ### Forking 
-The ability to fork and the ability to exit are critical to protect individual freedoms.  All of the core software and tooling required to run the Lisk network should be made open source, freely available, and easy to use such that a fork is always a viable alternative. This isn’t just about vibes: in crypto, where credible commitments not to extract are what makes decentralized platforms valuable, this is a competitive advantage. Participants will be more likely to join Lisk if they have the ability to make an alternative.
+The ability to fork and the ability to exit are critical to protect individual freedoms.
+All of the core software and tooling required to run the Lisk network should be made open source, freely available, and easy to use such that a fork is always a viable alternative.
+This isn’t just about vibes: in crypto, where credible commitments not to extract are what makes decentralized platforms valuable, this is a competitive advantage.
+Participants will be more likely to join Lisk if they have the ability to make an alternative.
