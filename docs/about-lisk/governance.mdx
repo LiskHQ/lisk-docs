@@ -43,16 +43,16 @@ The following tools are available to participate in the Lisk DAO:
   The [Lisk DAO Tally instance](https://www.tally.xyz/gov/3rd-testing) is the place where users can vote on proposals or delegate their voting power.
   </TabItem>
   <TabItem value="forum" label="Forum">
-  The [Lisk Governance Forum](https://forum.lisk.com/) is the place for the community to discuss the Lisk gonvernance and draft proposals, before they are submitted on Tally.
+  The [Lisk Governance Forum](https://forum.lisk.com/) is the place for the community to discuss the Lisk governance and draft proposals, before they are submitted on Tally.
   </TabItem>
   <TabItem value="discord" label="Discord">
-  The `#lisk-dao` channel in the [Lisk Chat](https://lisk.chat) Discord server is a comunity chat dedicated to discuss topics all around the Lisk DAO, share news and updates, or share ideas for new proposals.
+  The `#lisk-dao` channel in the [Lisk Chat](https://lisk.chat) Discord server is a community chat dedicated to discuss topics all around the Lisk DAO, share news and updates, or share ideas for new proposals.
   </TabItem>
 </Tabs>
 
 ### Treasury
 {/* TODO: Update link to timelock contract */}
-The Lisk DAO has an associated treasury, which resides in the [TimeLock contract](https://sepolia-blockscout.lisk.com/address/0x4b727D3f74DD4c124Ced030335DebD5e7EBB8366).
+The Lisk DAO has an associated treasury, which resides in the [TimelockController contract](https://sepolia-blockscout.lisk.com/address/0x4b727D3f74DD4c124Ced030335DebD5e7EBB8366).
 The current balance of the treasury can be checked on the [Lisk BlockScout Explorer](https://sepolia-blockscout.lisk.com/address/0x4b727D3f74DD4c124Ced030335DebD5e7EBB8366).
 The treasury is NOT managed by the Onchain Foundation.
 Instead, the funds from the treasury can only be transferred via successful [funding proposals](#proposal-types).
@@ -138,7 +138,7 @@ We consider to transition to a voting-escrow-Token model at some point.
 In this model the voting power decreases linearly when getting closer to end of the locking duration.
 But this requires custom integration from Tally.
 
-#### Voting power calculation:
+#### Voting power calculation
 Locked tokens provide a voting power proportional to the amount of locked tokens. Concretely, 1 locked LSK provides one unit of voting power.
 
 #### Boosting the voting power
