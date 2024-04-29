@@ -26,7 +26,7 @@ This multisig wallet can be used to upgrade core Lisk Mainnet smart contracts wi
 To decentralize the governance of the Lisk project further, Lisk introduces a decentralized autonomous organization, the Lisk DAO, which allows Lisk token holders to participate together in the governance of the Lisk project.
 
 :::info
-Every LSK token holder who participates in the DAO is rewared with [staking rewards](#staking-rewards), to incentivize participation in the Lisk governance.
+Every LSK token holder who participates in the DAO is rewarded with [staking rewards](#staking-rewards), to incentivize participation in the Lisk governance.
 :::
 
 ## Lisk DAO
@@ -66,7 +66,7 @@ Tokens for the Lisk DAO fund are minted newly and added to the Lisk DAO accordin
 | 2026 | 15,000,000 | LSK are linearly released over the year. |
 
 :::note
-The DAO fund may be increased further in the future by additional 100,000,000 LSK over the following 7 years, if the DAO members approve the corresponding proposals.
+The DAO fund may be increased further in the future by an additional 100,000,000 LSK over the following 7 years if the DAO members approve the corresponding proposals.
 :::
 
 ### Voting power
@@ -81,7 +81,7 @@ This works as follows:
 Staking happens on the [Lisk portal](https://portal.lisk.com/).
 
 Initially, the voting power of a locked token will be constant during its locking duration.
-But it is possible to [boost the voting power](#boosting-the-voting-power) by up to 200% where the boost is proportional to remaining locking duration.
+But it is possible to [boost the voting power](#boosting-the-voting-power) by up to 200% where the boost is proportional to the remaining locking duration.
 
 #### Voting power calculation
 Locked tokens provide a voting power proportional to the amount of locked tokens. Concretely, 1 locked LSK provides one unit of voting power.
@@ -93,7 +93,7 @@ In the case of pausing, the user receives a boost of the voting power. It is set
 Hence, the voting power can be increased by up to 200%.
 
 ### Delegation
-The Governor framework requires to **delegate the voting power** in order to use it.
+The Governor framework requires **delegating the voting power** in order to use it.
 The voting power can be delegated to other users or to themselves, but self-delegation is a requirement if users want to vote themselves.
 
 Delegation happens on [Tally](#tally).
@@ -135,7 +135,7 @@ The following requirements must be fulfilled for a proposal to pass:
 
 #### Implementation of funding proposals
 The transfer from the [Lisk DAO treasury](#treasury) can be executed by anyone, once a funding proposal is approved.
-Funding proposals are **binding**, which means that no-one, not even the Onchain Foundation, can prevent the transfer, if the proposal passed.
+Funding proposals are **binding**, which means that no one, not even the Onchain Foundation, can prevent the transfer if the proposal passes.
 #### Implementation of general proposals
 For approved general proposals, the Onchain Foundation will determine whether the proposal is safe, secure, consistent with the scope of Lisk governance, and capable of being implemented in a legally compliant manner.
 If it is, the Foundation will act diligently and in a commercially reasonable manner to cause the proposal to be implemented.
@@ -164,18 +164,18 @@ Note that this results in **higher staking rewards**, since the weight remains f
 
 #### Staking rewards distribution
 {/* TODO: Add Blockscout link to address of the Staking contract */}
-Rewards are taken from the balance of the `Staking` constract and calculated on a daily basis, based on the amount locked and the remaining locking duration.
+Rewards are taken from the balance of the `Staking` contract and calculated daily, based on the amount locked and the remaining locking duration.
 Concretely, the weight for a locked amount is given by `lockedAmount * (remainingLockingDurationInDays + 150)`.
 The total daily amount of staking rewards, 8,000,000 / 365  LSK, is then shared by all users proportional to their weight.
 
 We plan to use a total of 24 million LSK tokens over the course of 3 years for the LSK staking rewards program (8 million LSK per year).
-After the end of this 3 year span, we expect that developments in the Optimism Superchain Ecosystem (shared, decentralized sequencers)  would lead us to a new staking mechanism.
+After the end of this 3-year span, we expect that developments in the Optimism Superchain Ecosystem (shared, decentralized sequencers) will lead us to a new staking mechanism.
 
 However, even in case the current staking mechanism has to be continued, extra funding could be provided; potential sources are: 
 
-1. the unclaimed LSK tokens (recall they would be moved to Lisk DAO treasury after the 2-years claim window)
-2. the staking rewards of the Onchain Foundation, which would be provided to the ecosystem and
-3. the profit of the Onchain Foundation from sequencing rewards. 
+1. Unclaimed LSK tokens 
+2. The staking rewards of the Onchain Foundation, which would be provided to the ecosystem and
+3. The profit of the Onchain Foundation from sequencing rewards. 
 
 ## Governance Goals
 There are two primary goals of Lisks governance system:
@@ -192,7 +192,7 @@ Governance’s second primary responsibility is to allocate resources effectivel
 Vision & value may often be in conflict, and allocating resources effectively involves a blend of short- and long-term thinking.
 
 ## Design Principles
-Design decisions for Lisks governance system should be made in line with three key principles:
+Design decisions for Lisk's governance system should be made in line with three key principles:
 
 ### Governance minimization
 The set of governance responsibilities that are encoded onchain or formalized in voting processes should remain as minimal as possible.
@@ -204,7 +204,7 @@ In practice, this looks like a minimal set of:
 2. offchain social processes to maintain a healthy community.
 
 ### Iteration
-Lisk is decentralizing iteratively to increase the chances of building a healthy system that lasts for the long-term.
+Lisk is decentralizing iteratively to increase the chances of building a healthy system that lasts for the long term.
 This means the Foundation will play a role in establishing processes, help the DAO through its first few rapid feedback loops in improving those processes, then reduce its role over time.
 (This also means the design principles and goals outlined in this document may be invalidated or updated along the way.)
 This iteration gives the DAO a chance to learn how to make thoughtful decisions using an un-intuitive but essential loop: introduce a governance process that involves active participation, then gradually work to automate or minimize it over time.
