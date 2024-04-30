@@ -27,8 +27,17 @@ const sidebars = {
       items: [
         'intro',
         'about-lisk/network-info',
-        'about-lisk/governance',
         'about-lisk/fees'
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Governance',
+      collapsible: true,
+      collapsed: false,
+      items: [
+        'governance',
+        'creating-proposals',
       ],
     },
     {
