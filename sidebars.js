@@ -36,8 +36,8 @@ const sidebars = {
       collapsible: true,
       collapsed: false,
       items: [
-        'governance',
-        'creating-proposals',
+        'governance/index',
+        'governance/creating-proposals',
       ],
     },
     {
