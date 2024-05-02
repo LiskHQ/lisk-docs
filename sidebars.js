@@ -27,7 +27,6 @@ const sidebars = {
       items: [
         'intro',
         'about-lisk/network-info',
-        'about-lisk/governance',
         'about-lisk/fees'
       ],
     },

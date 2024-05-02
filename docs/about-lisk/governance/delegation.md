@@ -12,14 +12,17 @@ keywords:
     Delegation,
     Voting,
     Proposals,
+    Lisk Delegates,
+    Delegates,
+    Voting Power
   ]
 ---
 
 # Delegation
-Delegation is a key feature of the Lisk DAO, as it allows token holders to participate in the governance of the Lisk project passively by entrusting a representative to vote on proposals in a way that aligns with their own beliefs and values.
-By delegating their [voting power](governance#voting-power) to a delegate of their choice, token holders can ensure that their interests are represented in the decision-making process.
-However, token holders give a lot of power to the delegate to make the right decisions on proposals.
+Delegation is a key feature of the Lisk DAO, as it allows token holders to participate in the governance of the Lisk project passively by entrusting a representative with voting on proposals in a way that aligns with their own beliefs and values.
+By delegating their [voting power](governance#voting-power) to a delegate of their choice, token holders can influence that their interests are represented in the decision-making process.
 
+However, token holders give a lot of power to the delegate to make the right decisions on proposals.
 This is why it is important to choose a delegate that you trust and that you believe will act in the best interest of the Lisk project and the community.
 We recommend to choose a delegate that is active in the community, has a good reputation, and has a track record of making good decisions.
 
