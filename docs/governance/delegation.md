@@ -2,7 +2,7 @@
 title: Delegation
 sidebar_position: 1
 slug: /governance/delegation
-description: Documentation about the governance of the Lisk project.
+description: Documentation about the delegation process of the Lisk DAO.
 keywords:
   [
     Lisk governance,
