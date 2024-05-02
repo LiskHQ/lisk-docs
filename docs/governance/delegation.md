@@ -19,8 +19,8 @@ keywords:
 ---
 
 # Delegation
-Delegation is a key feature of the [Lisk DAO](governance), as it allows token holders to participate in the governance of the Lisk project passively by entrusting a representative with voting on [proposals](governance#proposals) in a way that aligns with their own beliefs and values.
-By delegating their [voting power](governance#voting-power) to a delegate of their choice, token holders can influence that their interests are represented in the decision-making process.
+Delegation is a key feature of the [Lisk DAO](governance/overview), as it allows token holders to participate in the governance of the Lisk project passively by entrusting a representative with voting on [proposals](governance/overview#proposals) in a way that aligns with their own beliefs and values.
+By delegating their [voting power](governance/overview#voting-power) to a delegate of their choice, token holders can influence that their interests are represented in the decision-making process.
 
 However, token holders give a lot of power to the delegate to make the right decisions on proposals.
 This is why it is important to choose a delegate that you trust and that you believe will act in the best interest of the Lisk project and the community.
@@ -31,8 +31,8 @@ The following sources might support you in your delegation decision:
 - [Lisk Chat](https://lisk.chat): Get in touch with your delegate in the Lisk chat, or ask other users about their experiences with the delegate.
 - [Lisk Governance Forum](https://forum.lisk.com/c/delegates/): The Lisk Governance Forum provides a section for delegates to present themselves to the community.
 - **Lisk DAO Tally instance**: Check the delegate's profile, voting history and activity on the Lisk DAO Tally instance.
-{/* TODO: Uncomment link on DAO launch */}
-{/* - [Lisk DAO Tally instance](https://www.tally.xyz/gov/3rd-testing): */}
+<!-- {/* TODO: Uncomment link on DAO launch */}
+{/* - [Lisk DAO Tally instance](https://www.tally.xyz/gov/3rd-testing): */} -->
 
 ## How to delegate your voting power 🗳️
 
@@ -52,7 +52,7 @@ Through Tally, you can change or revoke your delegation at any time.
 
 ## Responsibility of delegates
 Delegates play a crucial role in the governance of the Lisk project.
-They are the ones who create [proposals](governance#proposals), vote on behalf of the token holders, and represent the interests of the community as a whole.
+They are the ones who create [proposals](governance/overview#proposals), vote on behalf of the token holders, and represent the interests of the community as a whole.
 
 Delegates are required to:
 
@@ -74,21 +74,21 @@ Excellent delegates will do even more than that, for example:
   - Ensure that the Lisk DAO acts in the best interest of the Lisk community.
   - Decide directly about fund allocation of the Lisk DAO treasury.
   {/* TODO: Confirm rewards */}
-{/* - **Rewards**:
+<!-- {/* - **Rewards**:
   - Being a delegate is required for some LSK air drops.
   - Being a delegate can be benefitial e.g. when applying for the Grant or Ambassador programs.
-  - Receive extra rewards for being an excellent delegate (e.g., being most active/constructive, having most delegations, etc). */}
+  - Receive extra rewards for being an excellent delegate (e.g., being most active/constructive, having most delegations, etc). */} -->
 - **Reputation**:
   - Gain a trustworthy reputation by being an active delegate.
 
-{/* TODO: Create guide */}
-{/* For more information, check the guide on [How to delegate your voting power] */}
+<!-- {/* TODO: Create guide */}
+{/* For more information, check the guide on [How to delegate your voting power] */} -->
 
 ## How to become a delegate 🚀
 
 Basically anyone who is able to accumulate some voting power can become a delegate.
 
-You simply need to stake some LSK tokens and then self-delegate your [voting power](governance#voting-power).
+You simply need to stake some LSK tokens and then self-delegate your [voting power](governance/overview#voting-power).
 However, in order to create proposals, a delegate must meet the threshold of at least 300,000 vpLSK.
 
 If you wish to increase your voting power to be able to create your own proposals and/or to have more influence on votings, it is possible to get delegations from other users.
