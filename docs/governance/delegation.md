@@ -19,7 +19,7 @@ keywords:
 ---
 
 # Delegation
-Delegation is a key feature of the Lisk DAO, as it allows token holders to participate in the governance of the Lisk project passively by entrusting a representative with voting on proposals in a way that aligns with their own beliefs and values.
+Delegation is a key feature of the [Lisk DAO](governance), as it allows token holders to participate in the governance of the Lisk project passively by entrusting a representative with voting on [proposals](governance#proposals) in a way that aligns with their own beliefs and values.
 By delegating their [voting power](governance#voting-power) to a delegate of their choice, token holders can influence that their interests are represented in the decision-making process.
 
 However, token holders give a lot of power to the delegate to make the right decisions on proposals.
@@ -39,20 +39,20 @@ The following sources might support you in your delegation decision:
 The Lisk DAO uses [Tally](https://www.tally.xyz/) to facilitate delegation. 
 
 The process in a nutshell:
-
-1. Connect your wallet to Tally and navigate to the Lisk DAO page.
-2. Select the "delegate" button.
-3. Search for the delegate you'd like to delegate your voting power to and confirm the delegation by following Tally's prompts.
+<!-- TODO: Add link to Lisk delegates on Tally -->
+<!-- 1. Connect your wallet to Tally and navigate to the [Lisk DAO delegates](https://www.tally.xyz/gov/<DAO name>/delegates) page. -->
+1. Connect your wallet to Tally and navigate to the **Lisk DAO delegates** page.
+2. Search for the delegate you'd like to delegate your voting power to.
+3. Click the "delegate" button on the delegate's profile.
+3. Confirm the delegation by following Tally's prompts.
 
 :::tip
 Through Tally, you can change or revoke your delegation at any time. 
-
-You can also proportionally delegate your voting power to multiple delegates. 
 :::
 
 ## Responsibility of delegates
 Delegates play a crucial role in the governance of the Lisk project.
-They are the ones who create proposals, vote on behalf of the token holders, and represent the interests of the community as a whole.
+They are the ones who create [proposals](governance#proposals), vote on behalf of the token holders, and represent the interests of the community as a whole.
 
 Delegates are required to:
 
@@ -60,8 +60,12 @@ Delegates are required to:
 - Act in the best interest of the token holders whom they represent
 - Be active in the decision-making process of the DAO, this means specifically:
   - Vote on proposals
-  - Create proposals
-  - Give feedback on other draft proposals
+
+Excellent delegates will do even more than that, for example:
+
+- Create proposals
+- Give feedback on draft proposals
+- Engage activly with the Lisk community online and/or offline
 
 ## Benefits of being a delegate
 
@@ -82,7 +86,7 @@ Delegates are required to:
 
 ## How to become a delegate 🚀
 
-Basically anyone who owns some LSK tokens can become a delegate.
+Basically anyone who is able to accumulate some voting power can become a delegate.
 
 You simply need to stake some LSK tokens and then self-delegate your [voting power](governance#voting-power).
 However, in order to create proposals, a delegate must meet the threshold of at least 300,000 vpLSK.
