@@ -87,8 +87,13 @@ Excellent delegates will do even more than that, for example:
 ## How to become a delegate 🚀
 
 Basically anyone who is able to accumulate some voting power can become a delegate.
+All you need to do is to set up a profile on the Lisk DAO Tally instance.
 
-You simply need to stake some LSK tokens and then self-delegate your [voting power](overview#voting-power).
+To get some initial [voting power](overview#voting-power), you can either: 
+
+* stake some LSK tokens and then **self-delegate** or
+* **receive delegations** from other users on your Tally profile
+
 However, in order to create proposals, a delegate must meet the threshold of at least 300,000 vpLSK.
 
 If you wish to increase your voting power to be able to create your own proposals and/or to have more influence on votings, it is possible to get delegations from other users.
