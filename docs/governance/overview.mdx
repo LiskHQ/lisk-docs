@@ -1,0 +1,179 @@
+---
+title: Overview
+sidebar_position: 1
+slug: /governance/overview
+description: Documentation about the governance of the Lisk project.
+keywords:
+  [
+    Lisk governance,
+    Lisk DAO,
+    Lisk Grants,
+    Funding,
+    Delegation,
+    Voting,
+    Voting Power,
+    Proposals,
+  ]
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Governance overview
+
+At the moment, the security of the Lisk Mainnet is dependent on a [multisig wallet](https://www.coindesk.com/tech/2020/11/10/multisignature-wallets-can-keep-your-coins-safer-if-you-use-them-right/) managed by several key members involved in the Lisk project.
+This multisig wallet can be used to upgrade core Lisk Mainnet smart contracts without upgrade delays.
+
+To decentralize the governance of the Lisk project further, Lisk introduces a decentralized autonomous organization, the Lisk DAO, which allows Lisk token holders to participate together in the governance of the Lisk project.
+
+:::info
+Every LSK token holder who participates in the DAO is rewarded with [staking rewards](#staking-rewards), to incentivize participation in the Lisk governance.
+:::
+
+## Lisk DAO
+The Lisk DAO provides the opportunity for LSK token holders to participate in the overall governance of the Lisk project, including allocation of funds, protocol updates, or strategic directions.
+Decisions are made via [proposals](#proposals).
+
+### Tools
+The following are the main tools to participate in the Lisk DAO:
+
+<Tabs>
+  <TabItem value="tally" label="Tally">
+  Tally is the platform used to create and vote for proposals of the Lisk DAO.
+
+  {/* TODO: Update link to tally instance */}
+  {/* The [Lisk DAO Tally instance](https://www.tally.xyz/gov/3rd-testing) is the place where users can vote on proposals or delegate their voting power. */}
+  The Lisk DAO Tally instance is the place where users can vote on proposals or delegate their voting power.
+  It will be available once the Lisk DAO is launched.
+  </TabItem>
+  <TabItem value="forum" label="Forum">
+  The [Lisk Governance Forum](https://forum.lisk.com/) is the place for the community to discuss the Lisk governance and draft proposals, before they are submitted on Tally.
+  </TabItem>
+  <TabItem value="discord" label="Discord">
+  The `#lisk-dao` channel in the [Lisk Chat](https://lisk.chat) Discord server is a community chat dedicated to discuss topics all around the Lisk DAO, share news and updates, or share ideas for new proposals.
+  </TabItem>
+</Tabs>
+
+### Treasury
+The Lisk DAO has an associated treasury, which resides in the `Timelock` contract.
+{/* TODO: Update link to timelock contract */}
+{/* The Lisk DAO has an associated treasury, which resides in the [Timelock contract](https://sepolia-blockscout.lisk.com/address/0x4b727D3f74DD4c124Ced030335DebD5e7EBB8366).
+The current balance of the treasury can be checked on the [Lisk BlockScout Explorer](https://sepolia-blockscout.lisk.com/address/0x4b727D3f74DD4c124Ced030335DebD5e7EBB8366). */}
+The treasury is NOT managed by the Onchain Foundation.
+Instead, the funds from the treasury can only be transferred via successful [funding proposals](#proposal-types).
+
+Tokens for the Lisk DAO fund are minted newly and added to the Lisk DAO according to the following vesting plan:
+
+| Year | Amount (LSK) | Description |
+|------|--------------|-------------|
+| 2024 | 15,000,000 | 6,250,000 LSK liquid at migration, 8,750,000 LSK are linearly released in 2024, starting from the migration. |
+| 2025 | 15,000,000 | LSK are linearly released over the year. |
+| 2026 | 15,000,000 | LSK are linearly released over the year. |
+
+:::note
+The DAO fund may be increased further in the future by an additional 100,000,000 LSK over the following 7 years if the DAO members approve the corresponding proposals.
+:::
+
+### Voting power
+Every account holding **LSK** is able to **stake/lock** a specific amount of LSK tokens to get some voting power  and [staking rewards](#staking-rewards).
+
+This works as follows:
+
+- Stake tokens for a specific locking duration (between 2 weeks and 2 years) on the Lisk Portal.
+- Receive voting power and staking rewards proportional to the amount of locked tokens.
+- [Delegate](#delegation) the voting power on Tally to yourself or another delegate in order to use it.
+- After the locking duration ends, the users can redeem their staked tokens.
+
+{/* TODO: Uncomment once staking is implemented */}
+{/* Staking happens on the [Lisk portal](https://portal.lisk.com/). */}
+
+Initially, the voting power of a locked token will be constant during its locking duration.
+But it is possible to [boost the voting power](#boosting-the-voting-power) by up to 200% where the boost is proportional to the remaining locking duration.
+
+#### Voting power calculation
+Locked tokens provide a voting power proportional to the amount of locked tokens.
+Concretely, 1 locked LSK provides one unit of voting power (= 1 vpLSK).
+
+##### Boosting the voting power
+Users have the option to pause the countdown of the locking period.
+That means, the counting towards the end of the locking period is paused until the user decides to resume it.
+In the case of pausing, the user receives a boost of the voting power. It is set to `lockedAmount * (1 + remainingLockingDurationInDays/365)`.
+Hence, the voting power can be increased by up to 200%.
+
+### Delegation
+The Governor framework requires **delegating the voting power** in order to use it.
+The voting power can be delegated to other users or to yourself.
+Self-delegation is a requirement if you want to vote on your own.
+
+Delegation happens on [Tally](#tools).
+
+:::info
+Please go to the [Delegation](delegation) page to find out more about the delegation process, including guides how to delegate and how to become a delegate.
+:::
+
+### Proposals
+Proposals are created on [Tally](#tools).
+For spam protection, the following requirement must be fulfilled in order to create a proposal:
+
+- **Proposal threshold**: For creating a proposal, the voting power of the proposer must be at least 300,000 vpLSK, i.e., the value corresponding to 100,000 LSK locked for 2 years where the countdown is paused.
+
+#### Proposal types
+
+| Type        | Description   | Binding?      |
+| :---------- |:------------- |:------------- |
+| **Funding** | A proposal for receiving a certain amount of funds to an address. If approved, the recipient receives the amount given in the proposal. | Yes|
+| **General** |  General proposals about protocol parameters or the project direction in general that may be followed by the Onchain Foundation or not, depending also on feasibility and cost.  | No  |
+
+#### Proposal evaluation
+The following requirements must be fulfilled for a proposal to pass:
+
+- **Quorum**: For a proposal to pass, the “yes” and “abstain” votes must sum up at least to 24,000,000 vpLSK, i.e., the value that corresponds to 8,000,000 LSK locked for 2 years where the countdown is paused.
+- There must be strictly more “yes” than “no” votes.
+
+#### Implementation of funding proposals
+The transfer from the [Lisk DAO treasury](#treasury) can be executed by anyone, once a funding proposal is approved.
+Funding proposals are **binding**, which means that no one, not even the Onchain Foundation, can prevent the transfer if the proposal passes.
+#### Implementation of general proposals
+For approved general proposals, the Onchain Foundation will determine whether the proposal is safe, secure, consistent with the scope of Lisk governance, and capable of being implemented in a legally compliant manner.
+If it is, the Foundation will act diligently and in a commercially reasonable manner to cause the proposal to be implemented.
+
+### Administrative role of the Onchain Foundation
+The foundation will have an administrative role and will take care of the following
+
+1. Removal of draft proposals that reasonably appear to be fraudulent, spam-oriented, defamatory, hateful, or otherwise inappropriate.
+2. Management of mutually contradictory proposals that are submitted simultaneously or in close proximity to one another.
+3. Administration of network maintenance, such as emergency bug fixes or release rollbacks (with or without a governance vote).
+
+### Staking rewards
+Staking rewards incentivize users to participate in governance, making the decision making more decentralized and community-driven.  
+In short, users get [voting power](#voting-power) and rewards for locking/staking tokens for a specific time period.
+
+The Lisk DAO applies a **time-weight boosting** on rewards:
+The further the end of the locking duration is in the future, the more rewards you get.
+This also implies that the rewards decrease every day.
+This way, we reward token holders for committing long-term to the Lisk project so we attract them as long-term advocates for Lisk while reducing short-term speculation and volatility. 
+
+- Users can modify their locking positions (increase amount, extend/pause locking duration) at any time they want.
+- Users can claim their rewards at any time.   
+- Users have the option to **pause** their locking period countdown.
+That means, the remaining locking duration remains fixed until the user decides to resume it.
+Note that this results in **higher staking rewards**, since the weight remains fixed, as opposed to a weight daily decreasing when the countdown is active. 
+
+#### Staking rewards distribution
+{/* TODO: 
+- Add Blockscout link to address of the Staking contract 
+- Update contract overview link, once the repository is public
+*/}
+{/* Rewards are taken from the balance of the [Rewards contract](https://github.com/LiskHQ/lisk-contracts-private/blob/main/documentation/staking-governance.md#contracts-overview) and calculated daily, based on the amount locked and the remaining locking duration. */}
+Rewards are taken from the balance of the Rewards contract and calculated daily, based on the amount locked and the remaining locking duration.
+Concretely, the weight for a locked amount is given by `lockedAmount * (remainingLockingDurationInDays + 150)`.
+The total daily amount of staking rewards, 8,000,000 / 365  LSK, is then shared by all users proportional to their weight.
+
+We plan to use a total of 24 million LSK tokens over the course of 3 years for the LSK staking rewards program (8 million LSK per year).
+After the end of this 3-year span, we expect that developments in the Optimism Superchain Ecosystem (shared, decentralized sequencers) will lead us to a new staking mechanism.
+
+However, even in case the current staking mechanism has to be continued, extra funding could be provided; potential sources are: 
+
+1. Unclaimed LSK tokens 
+2. The staking rewards of the Onchain Foundation, which would be provided to the ecosystem and
+3. The profit of the Onchain Foundation from sequencing rewards. 

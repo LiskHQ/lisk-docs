@@ -32,6 +32,19 @@ const sidebars = {
     },
     {
       type: 'category',
+      label: 'Governance',
+      collapsible: true,
+      collapsed: false,
+      link: {
+        type: 'generated-index',
+      },
+      items: [
+        'governance/overview',
+        'governance/delegation',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Building on Lisk',
       collapsible: true,
       collapsed: false,
