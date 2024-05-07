@@ -23,12 +23,12 @@ keywords:
 
 The lifecycle of a proposal consists of the following steps:
 
-1. [Discussion & draft proposals](#1-discussion--draft-proposals)
+1. [Discussion & draft](#1-discussion--draft)
 2. [Proposal creation](#2-proposal-creation)
 3. [Voting & Results](#3-voting--results)
 
 ## 1. Discussion & draft 
-Ideas for proposals can be discussed on Discord or on a new discussion thread on the [Governance Forum](https://forum.lisk.com).
+Ideas for proposals can be discussed in the `#lisk-dao` channel on [Lisk Chat](https://lisk.chat) or on a new discussion thread on the [Governance Forum](https://forum.lisk.com).
 Once an idea results in a concrete proposal, create a new **draft proposal** thread in the forum:
 
 - For funding proposals under the [Proposals|Funding](https://forum.lisk.com/c/proposals/funding) category 
@@ -56,15 +56,13 @@ If all requirements are met, anyone who considers the proposal mature enough, ca
 
 1. Include the full proposal text in the description. 
 2. At the bottom, add the following line to the proposal:
-`#proposer=0x???` where `???` is proposer address to prevent frontrunning[^1].
-
+`#proposer=0x???` where `???` is the proposer address, to prevent frontrunning[^1].
 Example:
 ```
 My proposal text
 #proposer=0x???
 ```
-
-If a corresponding draft proposal exists in the forum, post the link to the proposal on Tally in the respective thread.
+3. If a corresponding draft proposal exists in the forum, post the link to the proposal on Tally in the respective thread.
 
 [^1]: This is used for frontrunning protection.
 By adding this pattern at the end of their proposal, one can ensure that no other address can submit the same proposal.
