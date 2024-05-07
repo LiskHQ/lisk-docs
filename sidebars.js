@@ -41,6 +41,7 @@ const sidebars = {
       items: [
         'governance/overview',
         'governance/delegation',
+        'governance/proposal-lifecycle',
       ],
     },
     {

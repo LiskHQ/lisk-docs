@@ -1,6 +1,6 @@
 ---
 title: Proposal Lifecycle
-sidebar_position: 1
+sidebar_position: 3
 slug: /governance/proposal-lifecycle
 description: Summarizes the lifecycle of a proposal for the Lisk DAO.
 keywords:
@@ -20,6 +20,13 @@ keywords:
 ---
 
 # Lifecycle of a proposal
+
+The lifecycle of a proposal consists of the following steps:
+
+1. [Discussion & draft proposals](#1-discussion--draft-proposals)
+2. [Proposal creation](#2-proposal-creation)
+3. [Voting](#3-voting)
+4. [Results & Implementation](#4-results--implementation)
 
 ## 1. Discussion & draft proposals
 Ideas for proposals can be discussed on Discord or on a new discussion thread on the [Governance Forum](https://forum.lisk.com).
@@ -59,12 +66,15 @@ My proposal text
 
 If a corresponding draft proposal exists in the forum, post the link to the proposal on Tally in the respective thread.
 
+[^1]: This is used for frontrunning protection.
+By adding this pattern at the end of their proposal, one can ensure that no other address can submit the same proposal.
+An attacker would have to either remove or change that part, which would result in a different proposal id.
+See OpenZeppelin's [Governor docs](https://docs.openzeppelin.com/contracts/4.x/api/governance) for more information.
+
 ## 3. Voting
 Once a new proposal is created, the community has exactly **1 week** time to vote on the proposal on Tally.
 Delegates should use the time to read and consider the proposal carefully, and place their vote according to their conclusion.
 
 ## 4. Results & Implementation
-- If the proposal on Tally was successful, the foundation will act on the proposal if it is in accordance with the scope of Lisk governance as defined in <TBD>. See the implementation section for more details.
+If the proposal on Tally was successful, the foundation will act on the proposal if it is in accordance with the scope of Lisk governance as defined in TBD. See the implementation section for more details.
 
-
-[^1]: This is used for frontrunning protection. By adding this pattern at the end of their proposal, one can ensure that no other address can submit the same proposal. An attacker would have to either remove or change that part, which would result in a different proposal id.
