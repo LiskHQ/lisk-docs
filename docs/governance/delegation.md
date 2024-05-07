@@ -24,13 +24,13 @@ By delegating their [voting power](overview#voting-power) to a delegate of their
 
 However, token holders give a lot of power to the delegate to make the right decisions on proposals.
 This is why it is important to choose a delegate that you trust and that you believe will act in the best interest of the Lisk project and the community.
-We recommend to choose a delegate that is active in the community, has a good reputation, and has a track record of making good decisions.
+We recommend choosing a delegate who is active in the community, has a good reputation, and has a track record of making good decisions.
 
 The following sources might support you in your delegation decision:
 
 - [Lisk Chat](https://lisk.chat): Get in touch with your delegate in the Lisk chat, or ask other users about their experiences with the delegate.
 - [Lisk Governance Forum](https://forum.lisk.com/c/delegates/): The Lisk Governance Forum provides a section for delegates to present themselves to the community.
-- **Lisk DAO Tally instance**: Check the delegate's profile, voting history and activity on the Lisk DAO Tally instance.
+- **Lisk DAO Tally instance**: Check the delegate's profile, voting history, and activity on the Lisk DAO Tally instance.
 <!-- {/* TODO: Uncomment link on DAO launch */}
 {/* - [Lisk DAO Tally instance](https://www.tally.xyz/gov/3rd-testing): */} -->
 
@@ -65,7 +65,7 @@ Excellent delegates will do even more than that, for example:
 
 - Create proposals
 - Give feedback on draft proposals
-- Engage activly with the Lisk community online and/or offline
+- Engage actively with the Lisk community online and/or offline
 
 ## Benefits of being a delegate
 
@@ -86,7 +86,7 @@ Excellent delegates will do even more than that, for example:
 
 ## How to become a delegate 🚀
 
-Basically anyone who is able to accumulate some voting power can become a delegate.
+Anyone who can accumulate some voting power can become a delegate.
 All you need to do is to set up a profile on the Lisk DAO Tally instance.
 
 To get some initial [voting power](overview#voting-power), you can either: 
@@ -96,7 +96,7 @@ To get some initial [voting power](overview#voting-power), you can either:
 
 However, in order to create proposals, a delegate must meet the threshold of at least 300,000 vpLSK.
 
-If you wish to increase your voting power to be able to create your own proposals and/or to have more influence on votings, it is possible to get delegations from other users.
+If you wish to increase your voting power to be able to create your own proposals and/or to have more influence on voting, it is possible to get delegations from other users.
 There are various ways to do this:
 
 1. Fill out your delegate profile on Tally.
