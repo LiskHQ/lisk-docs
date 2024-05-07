@@ -35,8 +35,12 @@ const sidebars = {
       label: 'Governance',
       collapsible: true,
       collapsed: false,
+      link: {
+        type: 'generated-index',
+      },
       items: [
-        'governance/index',
+        'governance/overview',
+        'governance/delegation',
         'governance/creating-proposals',
       ],
     },

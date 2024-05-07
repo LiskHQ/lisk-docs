@@ -39,7 +39,7 @@ Lisk's Mainnet keeps it in sync with the Ethereum L1 after regular intervals to 
 For more information, see [Optimism's rollup protocol](https://docs.optimism.io/stack/protocol/overview) and its [Fault Proof](https://docs.optimism.io/stack/protocol/overview#fault-proofs) section.
 This means that apart from the measures taken to secure the Superchain and Lisk's Mainnet, the L1 security of Ethereum is also available to users interacting with Lisk L2.
 
-For more information, check out the [Governance](/governance)
+For more information, check out the [Governance overview](/governance/overview).
 
 ## Connection to Ethereum
 
