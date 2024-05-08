@@ -22,9 +22,20 @@ keywords: [
 toc_max_heading_level: 4
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Deploying a smart contract with Foundry
 
 In this guide, we discuss, the basics of the [Foundry](https://book.getfoundry.sh/) development toolchain and will describe how to create and deploy a smart contract with Foundry to the **Lisk Sepolia** testnet.
+
+:::note
+You can deploy a contract on **Lisk** mainnet by adopting the same process.
+For deploying to mainnet, ensure that your wallet has enough ETH.
+
+The subsequent text contains commands for both Lisk and Lisk Sepolia for your ease.
+For more information, see the [available Lisk networks](/network-info) and [how to connect a wallet with them](/connecting-to-a-wallet).
+:::
 
 Foundry is a powerful suite of tools to develop, test, and debug your smart contracts.
 It comprises several individual tools such as:
@@ -59,7 +70,7 @@ Therefore, you will need to fund your wallet with ETH to cover such gas fees.
 
 For this guide, you will be deploying a contract to the Lisk Sepolia Testnet. 
 
-You can deposit the required tokens by using the [Lisk Bridge](https://sepolia-bridge.lisk.com/bridge/lisk-sepolia-testnet).
+You can deposit the required tokens by using the [Lisk Sepolia Bridge](https://sepolia-bridge.lisk.com/bridge/lisk-sepolia-testnet).
 
 In case your wallet doesn't hold enough `SepoliaETH`, use one of the available faucets for the **Ethereum Sepolia** Testnet like [https://sepoliafaucet.com](https://sepoliafaucet.com/) to receive free Testnet ETH.
 Then, use the aforementioned Lisk Bridge to send tokens from the **Ethereum Sepolia Testnet** to the **Lisk Sepolia Testnet**.
@@ -257,15 +268,32 @@ For this example, we will use the Lisk Sepolia network to deploy the `NFT` contr
 
 Add the `--verify`, `--verifier`, `--verifier-url`, and the sender account's `--private-key` flag to the `forge create` command to directly verify the smart contract on BlockScout.
 
-```bash
-forge create --rpc-url https://rpc.sepolia-api.lisk.com \
---etherscan-api-key 123 \
---verify \
---verifier blockscout \
---verifier-url https://sepolia-blockscout.lisk.com/api \
---private-key <PRIVATE_KEY> \
-src/NFT.sol:NFT
-```
+
+<Tabs>
+  <TabItem value="mainnet" label="Lisk" >
+    ```bash
+    forge create --rpc-url https://rpc.api.lisk.com \
+    --etherscan-api-key 123 \
+    --verify \
+    --verifier blockscout \
+    --verifier-url https://blockscout.lisk.com/api \
+    --private-key <PRIVATE_KEY> \
+    src/NFT.sol:NFT
+    ```
+  </TabItem>
+  <TabItem value="testnet" label="Lisk Sepolia" default>
+    ```bash
+    forge create --rpc-url https://rpc.sepolia-api.lisk.com \
+    --etherscan-api-key 123 \
+    --verify \
+    --verifier blockscout \
+    --verifier-url https://sepolia-blockscout.lisk.com/api \
+    --private-key <PRIVATE_KEY> \
+    src/NFT.sol:NFT
+    ```
+  </TabItem>
+</Tabs>
+
 
 If the deployment is successful, the output should look like the following:
 
@@ -325,14 +353,28 @@ Contract [src/NFT.sol:NFT] "0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5" is alrea
 
 In case your smart contract isn't verified, grab the deployed address and run:
 
-```bash
-forge verify-contract <CONTRACT_ADDRESS> \
-./src/<CONTRACT_FILE>.sol:<CONTRACT_NAME> \
---chain 4202 \
---watch \
---verifier blockscout \
---verifier-url https://sepolia-blockscout.lisk.com/api
-```
+<Tabs>
+  <TabItem value="mainnet" label="Lisk" >
+    ```bash
+    forge verify-contract <CONTRACT_ADDRESS> \
+    ./src/<CONTRACT_FILE>.sol:<CONTRACT_NAME> \
+    --chain 4202 \
+    --watch \
+    --verifier blockscout \
+    --verifier-url https://blockscout.lisk.com/api
+    ```
+  </TabItem>
+  <TabItem value="testnet" label="Lisk Sepolia" default>
+    ```bash
+    forge verify-contract <CONTRACT_ADDRESS> \
+    ./src/<CONTRACT_FILE>.sol:<CONTRACT_NAME> \
+    --chain 4202 \
+    --watch \
+    --verifier blockscout \
+    --verifier-url https://sepolia-blockscout.lisk.com/api
+    ```
+  </TabItem>
+</Tabs>
 
 You should see an output similar to the following:
 
@@ -377,9 +419,18 @@ First, we will perform a call from an account, without publishing a transaction.
 
 Fill out the following `<PLACEHOLDERS>` and then, run the command:
 
-```bash
-cast call <DEPLOYED_CONTRACT_ADDRESS> --rpc-url https://rpc.sepolia-api.lisk.com "balanceOf(address)" <YOUR_ACCOUNT_ADDRESS_HERE>
-```
+<Tabs>
+  <TabItem value="mainnet" label="Lisk" >
+    ```bash
+    cast call <DEPLOYED_CONTRACT_ADDRESS> --rpc-url https://rpc.api.lisk.com "balanceOf(address)" <YOUR_ACCOUNT_ADDRESS_HERE>
+    ```
+  </TabItem>
+  <TabItem value="testnet" label="Lisk Sepolia" default>
+    ```bash
+    cast call <DEPLOYED_CONTRACT_ADDRESS> --rpc-url https://rpc.sepolia-api.lisk.com "balanceOf(address)" <YOUR_ACCOUNT_ADDRESS_HERE>
+    ```
+  </TabItem>
+</Tabs>
 
 You should receive `0x0000000000000000000000000000000000000000000000000000000000000000` in response, which equals `0` in hexadecimal. 
 This makes sense as you've only deployed the NFT contract for now, however, no NFTs have been minted yet, and therefore your account's balance is zero.
@@ -390,9 +441,20 @@ Now let's sign and send a transaction, calling the `mint(address)` function on t
 
 Again, fill out the following `<PLACEHOLDERS>` and then, run the command:
 
-```bash
-cast send <DEPLOYED_CONTRACT_ADDRESS> --rpc-url https://rpc.sepolia-api.lisk.com "mint(address)" <RECIPIENT_ADDRESS_HERE> --private-key <SENDER_PRIVATE_KEY>
-```
+<Tabs>
+  <TabItem value="mainnet" label="Lisk" >
+    ```bash
+    cast send <DEPLOYED_CONTRACT_ADDRESS> --rpc-url https://rpc.api.lisk.com "mint(address)" <RECIPIENT_ADDRESS_HERE> --private-key <SENDER_PRIVATE_KEY>
+    ```
+  </TabItem>
+  <TabItem value="testnet" label="Lisk Sepolia" default>
+    ```bash
+    cast send <DEPLOYED_CONTRACT_ADDRESS> --rpc-url https://rpc.sepolia-api.lisk.com "mint(address)" <RECIPIENT_ADDRESS_HERE> --private-key <SENDER_PRIVATE_KEY>
+    ```
+  </TabItem>
+</Tabs>
+
+
 
 :::info
 
@@ -432,9 +494,18 @@ l1GasUsed             "0x8a4"
 Finally, you can confirm the minting by [performing the call](#performing-a-call) again.
 We should see that our balance increased from `0` to `1`.
 
-```bash
-cast call <DEPLOYED_CONTRACT_ADDRESS> --rpc-url https://rpc.sepolia-api.lisk.com "balanceOf(address)" <YOUR_ACCOUNT_ADDRESS_HERE>
-```
+<Tabs>
+  <TabItem value="mainnet" label="Lisk" >
+    ```bash
+    cast call <DEPLOYED_CONTRACT_ADDRESS> --rpc-url https://rpc.api.lisk.com "balanceOf(address)" <YOUR_ACCOUNT_ADDRESS_HERE>
+    ```
+  </TabItem>
+  <TabItem value="testnet" label="Lisk Sepolia" default>
+    ```bash
+    cast call <DEPLOYED_CONTRACT_ADDRESS> --rpc-url https://rpc.sepolia-api.lisk.com "balanceOf(address)" <YOUR_ACCOUNT_ADDRESS_HERE>
+    ```
+  </TabItem>
+</Tabs>
 
 And the response: `0x0000000000000000000000000000000000000000000000000000000000000001` (`1` in hex) — congratulations, you deployed a contract and minted an NFT with Foundry!
 
