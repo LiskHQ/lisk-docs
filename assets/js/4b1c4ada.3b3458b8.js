@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunklisk_docs=self.webpackChunklisk_docs||[]).push([[158],{7584:e=>{e.exports=JSON.parse('{"title":"Governance","slug":"/category/governance","permalink":"/category/governance","navigation":{"previous":{"title":"Fees","permalink":"/fees"},"next":{"title":"Overview","permalink":"/governance/overview"}}}')}}]);
