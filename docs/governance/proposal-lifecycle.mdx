@@ -45,10 +45,10 @@ The updated proposal should contain a “change log” or “updates” section 
 
 ### Requirements
 
-The following requirements need to be met to create a new proposal:
+The following requirements need to be met:
 
 - **Account on Tally**: You need to be a registered delegate on the Lisk DAO Tally instance.
-- **Proposal threshold**: 300,000 vpLSK are required to create new proposals.
+- **Proposal threshold**: Your delegated voting power must be at least 300,000 vpLSK.
 - **Discussion time**: Minimum 2 weeks of discussion in the governance forum.
 
 :::note
@@ -58,11 +58,11 @@ To get an overview about the existing delegates and their voting power, you can 
 :::
 
 ### Creating the proposal on Tally
-If all requirements are met, anyone who considers the proposal mature enough, can create a proposal on Tally:
+Anyone who considers the proposal mature enough and who fulfills the requirements from above, can create a proposal on Tally:
 
 1. Include the full proposal text in the description. 
-2. At the bottom, add the following line to the proposal:
-`#proposer=0x???` where `???` is the proposer address, to prevent frontrunning[^1].
+2. Optional to prevent frontrunning[^1]: At the bottom, add the following line to the proposal:
+`#proposer=0x???` where `???` is the proposer address, to prevent frontrunning.
 Example:
 ```
 My proposal text
@@ -83,3 +83,11 @@ The following requirements must be fulfilled for a proposal to pass:
 
 - **Quorum**: For a proposal to pass, the “yes” and “abstain” votes must sum up to at least  **24,000,000 vpLSK**, i.e., the value that corresponds to 8,000,000 LSK locked for 2 years where the countdown is paused.
 - **Majority**: There must be strictly **more “yes” than “no”** votes.
+
+
+### What happens when a proposal passed
+
+- Funding proposals: one must first queue the proposal in Tally and then execute the proposal.
+Anyone can do this, but each step requires a transaction.
+- General proposals: Foundation will evaluate if they implement it or not
+what happens when a proposal did not passed: nothing
