@@ -27,7 +27,7 @@ import TabItem from '@theme/TabItem';
 
 # Deploying a smart contract with Foundry
 
-In this guide, we discuss, the basics of the [Foundry](https://book.getfoundry.sh/) development toolchain and will describe how to create and deploy a smart contract with Foundry to the **Lisk Sepolia** testnet.
+In this guide, we discuss the basics of the [Foundry](https://book.getfoundry.sh/) development toolchain and will describe how to create and deploy a smart contract with Foundry to the **Lisk Sepolia** testnet.
 
 :::note
 You can deploy a contract on **Lisk** mainnet by adopting the same process.
@@ -358,7 +358,7 @@ In case your smart contract isn't verified, grab the deployed address and run:
     ```bash
     forge verify-contract <CONTRACT_ADDRESS> \
     ./src/<CONTRACT_FILE>.sol:<CONTRACT_NAME> \
-    --chain 4202 \
+    --chain 1135 \
     --watch \
     --verifier blockscout \
     --verifier-url https://blockscout.lisk.com/api
