@@ -59,7 +59,7 @@ See [Layer 2 extensions](https://viem.sh/op-stack/client#layer-2-extensions) for
     }).extend(publicActionsL2()) 
 
     export const publicClientL1 = createPublicClient({
-      chain: lisk,
+      chain: ethereum,
       transport: http()
     }).extend(publicActionsL1()) 
     ```
