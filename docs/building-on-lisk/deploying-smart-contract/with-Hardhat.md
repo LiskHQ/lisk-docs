@@ -19,6 +19,9 @@ keywords: [
     ]
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Deploying a smart contract with Hardhat
 ## Prerequisites
 
@@ -41,6 +44,15 @@ You can deposit the required tokens by using the [Lisk Bridge](https://sepolia-b
 
 In case your wallet doesn't hold enough `SepoliaETH`, use one of the available faucets for the **Ethereum Sepolia** Testnet like [https://sepoliafaucet.com](https://sepoliafaucet.com/) to receive free Testnet ETH.
 Then, use the aforementioned Lisk Bridge to send tokens from the **Ethereum Sepolia Testnet** to the **Lisk Sepolia Testnet**.
+
+:::note
+You can deploy a contract on Lisk Mainnet by adopting the same process.
+For deploying to mainnet, ensure that your wallet has enough ETH.
+
+The subsequent text contains commands for both Lisk and Lisk Sepolia for your ease.
+For more information, see the [available Lisk networks](/network-info) and [how to connect a wallet with them](/connecting-to-a-wallet).
+:::
+
 
 ## Creating a project
 Before you can begin deploying smart contracts to Lisk, you need to set up your development environment by creating a Node.js project.
@@ -110,26 +122,52 @@ E.g. for **MetaMask**, please follow [these instructions](https://support.metama
 
 To configure Hardhat to use Lisk, add Lisk as a network to your project's `hardhat.config.ts` file:
 
-```ts title="hardhat.config.ts"
-import { HardhatUserConfig } from "hardhat/config";
-import "@nomicfoundation/hardhat-toolbox";
+<Tabs>
+  <TabItem value="mainnet" label="Lisk" >
+    ```ts title="hardhat.config.ts"
+    import { HardhatUserConfig } from "hardhat/config";
+    import "@nomicfoundation/hardhat-toolbox";
 
-require('dotenv').config();
+    require('dotenv').config();
 
-const config: HardhatUserConfig = {
-  solidity: "0.8.23",
-  networks: {
-    // for testnet
-    'lisk-sepolia': {
-      url: 'https://rpc.sepolia-api.lisk.com',
-      accounts: [process.env.WALLET_KEY as string],
-      gasPrice: 1000000000,
-    },
-  },
-};
+    const config: HardhatUserConfig = {
+      solidity: "0.8.23",
+      networks: {
+        // for mainnet
+        'lisk': {
+          url: 'https://rpc.api.lisk.com',
+          accounts: [process.env.WALLET_KEY as string],
+          gasPrice: 1000000000,
+        },
+      },
+    };
 
-export default config;
-```
+    export default config;
+    ```
+  </TabItem>
+  <TabItem value="testnet" label="Lisk Sepolia" default>
+    ```ts title="hardhat.config.ts"
+    import { HardhatUserConfig } from "hardhat/config";
+    import "@nomicfoundation/hardhat-toolbox";
+
+    require('dotenv').config();
+
+    const config: HardhatUserConfig = {
+      solidity: "0.8.23",
+      networks: {
+        // for testnet
+        'lisk-sepolia': {
+          url: 'https://rpc.sepolia-api.lisk.com',
+          accounts: [process.env.WALLET_KEY as string],
+          gasPrice: 1000000000,
+        },
+      },
+    };
+
+    export default config;
+    ```
+  </TabItem>
+</Tabs>
 
 ## Creating the contract
 For ease and security, we’ll use the `ERC721` interface provided by the [OpenZeppelin Contracts library](https://docs.openzeppelin.com/contracts/5.x/) to create an NFT smart contract.
@@ -205,9 +243,21 @@ Otherwise, the deployment attempt will fail.
 
 Finally, run:
 
-```bash
-npx hardhat run scripts/deploy.ts --network lisk-sepolia
-```
+<Tabs>
+  <TabItem value="mainnet" label="Lisk" >
+  ```bash
+  npx hardhat run scripts/deploy.ts --network lisk
+  ```
+  </TabItem>
+  <TabItem value="testnet" label="Lisk Sepolia" default>
+  ```bash
+  npx hardhat run scripts/deploy.ts --network lisk-sepolia
+  ```
+  </TabItem>
+</Tabs>
+
+
+
 
 <!-- TODO: Add link to the block explorer section -->
 The contract will be deployed on the Lisk Sepolia Testnet.
@@ -224,38 +274,78 @@ For the remainder of this guide, we'll walk through how to verify your contract 
 In `hardhat.config.ts`, configure Lisk Sepolia as a custom network.
 Add the following to your `HardhatUserConfig`:
 
-```ts title="hardhat.config.ts"
-// Add the following information after the "networks" configuration of the HardhatUserConfig
-const config: HardhatUserConfig = {
-  // Hardhat expects etherscan here, even if you're using Blockscout.
-  etherscan: {
-    // Use "123" as a placeholder, because Blockscout doesn't need a real API key, and Hardhat will complain if this property isn't set.
-     apiKey: {
-      "lisk-sepolia": "123"
-     },
-     customChains: [
-      {
-          network: "lisk-sepolia",
-          chainId: 4202,
-          urls: {
-              apiURL: "https://sepolia-blockscout.lisk.com/api",
-              browserURL: "https://sepolia-blockscout.lisk.com"
-          }
-       }
-     ]
-   },
-   sourcify: {
-    enabled: false
-  },
-};
-```
+<Tabs>
+  <TabItem value="mainnet" label="Lisk" >
+  ```ts title="hardhat.config.ts"
+  // Add the following information after the "networks" configuration of the HardhatUserConfig
+  const config: HardhatUserConfig = {
+    // Hardhat expects etherscan here, even if you're using Blockscout.
+    etherscan: {
+      // Use "123" as a placeholder, because Blockscout doesn't need a real API key, and Hardhat will complain if this property isn't set.
+      apiKey: {
+        "lisk": "123"
+      },
+      customChains: [
+        {
+            network: "lisk",
+            chainId: 1135,
+            urls: {
+                apiURL: "https://blockscout.lisk.com/api",
+                browserURL: "https://blockscout.lisk.com"
+            }
+        }
+      ]
+    },
+    sourcify: {
+      enabled: false
+    },
+  };
+  ```
+  </TabItem>
+  <TabItem value="testnet" label="Lisk Sepolia" default>
+  ```ts title="hardhat.config.ts"
+  // Add the following information after the "networks" configuration of the HardhatUserConfig
+  const config: HardhatUserConfig = {
+    // Hardhat expects etherscan here, even if you're using Blockscout.
+    etherscan: {
+      // Use "123" as a placeholder, because Blockscout doesn't need a real API key, and Hardhat will complain if this property isn't set.
+      apiKey: {
+        "lisk-sepolia": "123"
+      },
+      customChains: [
+        {
+            network: "lisk-sepolia",
+            chainId: 4202,
+            urls: {
+                apiURL: "https://sepolia-blockscout.lisk.com/api",
+                browserURL: "https://sepolia-blockscout.lisk.com"
+            }
+        }
+      ]
+    },
+    sourcify: {
+      enabled: false
+    },
+  };
+  ```
+  </TabItem>
+</Tabs>
 
 Now, you can verify your contract.
 Grab the deployed address and run:
 
-```bash
-npx hardhat verify --network lisk-sepolia <deployed address>
-```
+<Tabs>
+  <TabItem value="mainnet" label="Lisk" >
+  ```bash
+  npx hardhat verify --network lisk <deployed address>
+  ```
+  </TabItem>
+  <TabItem value="testnet" label="Lisk Sepolia" default>
+  ```bash
+  npx hardhat verify --network lisk-sepolia <deployed address>
+  ```
+  </TabItem>
+</Tabs>
 
 You should see an output similar to:
 
