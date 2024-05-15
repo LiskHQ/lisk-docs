@@ -41,15 +41,15 @@ The available endpoints for Lisk nodes include all [Geth RPC endpoints](https://
 Free, rate limited RPC endpoints for the Lisk networks.
 
 
-|               | Lisk Sepolia Testnet              | 
+<!-- |               | Lisk Sepolia Testnet              | 
 | :------       | :------                           | 
 |**HTTP RPC**   | https://rpc.sepolia-api.lisk.com  | 
-|**WS RPC**     | `wss://ws.sepolia-api.lisk.com`   | 
+|**WS RPC**     | `wss://ws.sepolia-api.lisk.com`   |  -->
 
-<!-- |               | Lisk Sepolia Testnet              | Lisk Mainnet              |
+|               | Lisk Sepolia Testnet              | Lisk                      |
 | :------       | :------                           | :-----------------------  |
 |**HTTP RPC**   | https://rpc.sepolia-api.lisk.com  | https://rpc.api.lisk.com  |
-|**WS RPC**     | `wss://ws.sepolia-api.lisk.com`   | `wss://ws.api.lisk.com`   | -->
+|**WS RPC**     | `wss://ws.sepolia-api.lisk.com`   | `wss://ws.api.lisk.com`   |
 
 
 ## dRPC
@@ -58,7 +58,12 @@ Free, rate limited RPC endpoints for the Lisk networks.
 dRPC offers access to a distributed network of public nodes for Lisk.
 They provide a free tier that allows for an unlimited amount of requests over public nodes, or a paid tier that provides access to all providers, as well as other additional features.
 
-Check the available endpoints for Lisk directly under [https://drpc.org/public-endpoints/lisk](https://drpc.org/public-endpoints/lisk).
+|               | Lisk Sepolia Testnet              | Lisk                      |
+| :------       | :------                           | :-----------------------  |
+|**HTTP RPC**   | https://lisk-sepolia.drpc.org  | https://lisk.drpc.org  |
+|**WS RPC**     | `wss://lisk-sepolia.drpc.org`   | `wss://lisk.drpc.org`   |
+
+You can also check the available endpoints for Lisk directly under [https://drpc.org/public-endpoints/lisk](https://drpc.org/public-endpoints/lisk).
 
 :::note[How to create API keys for dRPC]
 In order to use the provided endpoints, you need to [get the corresponding API keys](https://docs.drpc.org/gettingstarted/createaccount).

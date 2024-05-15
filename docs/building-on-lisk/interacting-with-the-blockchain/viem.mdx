@@ -46,21 +46,42 @@ In order to read data from Lisk, you need to create a **Public client**.
 By extending the public client with `publicActionsL2` or `publicActionsL1`, you have access to additional methods for Lisk and other chains built on top of the OP stack.
 See [Layer 2 extensions](https://viem.sh/op-stack/client#layer-2-extensions) for more information.
 
-```javascript title="public-client.js"
-import { createPublicClient, http } from 'viem'
-import { liskSepolia, sepolia } from 'viem/chains'
-import { publicActionsL2, publicActionsL1 } from 'viem/op-stack'
- 
-export const publicClientL2 = createPublicClient({
-  chain: liskSepolia,
-  transport: http()
-}).extend(publicActionsL2()) 
+<Tabs>
+  <TabItem value="mainnet" label="Lisk" >
+    ```javascript title="public-client.js"
+    import { createPublicClient, http } from 'viem'
+    import { lisk, ethereum } from 'viem/chains'
+    import { publicActionsL2, publicActionsL1 } from 'viem/op-stack'
+    
+    export const publicClientL2 = createPublicClient({
+      chain: lisk,
+      transport: http()
+    }).extend(publicActionsL2()) 
 
-export const publicClientL1 = createPublicClient({
-  chain: sepolia,
-  transport: http()
-}).extend(publicActionsL1()) 
-```
+    export const publicClientL1 = createPublicClient({
+      chain: ethereum,
+      transport: http()
+    }).extend(publicActionsL1()) 
+    ```
+  </TabItem>
+  <TabItem value="testnet" label="Lisk Sepolia" default>
+    ```javascript title="public-client.js"
+    import { createPublicClient, http } from 'viem'
+    import { liskSepolia, sepolia } from 'viem/chains'
+    import { publicActionsL2, publicActionsL1 } from 'viem/op-stack'
+    
+    export const publicClientL2 = createPublicClient({
+      chain: liskSepolia,
+      transport: http()
+    }).extend(publicActionsL2()) 
+
+    export const publicClientL1 = createPublicClient({
+      chain: sepolia,
+      transport: http()
+    }).extend(publicActionsL1()) 
+    ```
+  </TabItem>
+</Tabs>
 
 ### Wallet Client
 
@@ -72,28 +93,59 @@ See [Layer 2 extensions](https://viem.sh/op-stack/client#layer-2-extensions) for
 <Tabs>
 <TabItem value="jsonrpc" label="JSON-RPC Account">
 
-```js title="wallet-client.js"
-import { createWalletClient, custom } from 'viem'
-import { sepolia, liskSepolia } from 'viem/chains'
-import { walletActionsL1, walletActionsL2 } from 'viem/op-stack'
- 
-// Retrieve Account from an EIP-1193 Provider.
-const [account] = await window.ethereum.request({ 
-  method: 'eth_requestAccounts'
-}) 
- 
-export const walletClientL1 = createWalletClient({
-  account, 
-  chain: sepolia,
-  transport: custom(window.ethereum)
-}).extend(walletActionsL1());
 
-export const walletClientL2 = createWalletClient({
-  account, 
-  chain: liskSepolia,
-  transport: custom(window.ethereum)
-}).extend(walletActionsL2());
-```
+<Tabs>
+  <TabItem value="mainnet" label="Lisk" >
+    ```js title="wallet-client.js"
+    import { createWalletClient, custom } from 'viem'
+    import { ethereum, lisk } from 'viem/chains'
+    import { walletActionsL1, walletActionsL2 } from 'viem/op-stack'
+    
+    // Retrieve Account from an EIP-1193 Provider.
+    const [account] = await window.ethereum.request({ 
+      method: 'eth_requestAccounts'
+    }) 
+    
+    export const walletClientL1 = createWalletClient({
+      account, 
+      chain: ethereum,
+      transport: custom(window.ethereum)
+    }).extend(walletActionsL1());
+
+    export const walletClientL2 = createWalletClient({
+      account, 
+      chain: lisk,
+      transport: custom(window.ethereum)
+    }).extend(walletActionsL2());
+    ```
+  </TabItem>
+  <TabItem value="testnet" label="Lisk Sepolia" default>
+    ```js title="wallet-client.js"
+    import { createWalletClient, custom } from 'viem'
+    import { sepolia, liskSepolia } from 'viem/chains'
+    import { walletActionsL1, walletActionsL2 } from 'viem/op-stack'
+    
+    // Retrieve Account from an EIP-1193 Provider.
+    const [account] = await window.ethereum.request({ 
+      method: 'eth_requestAccounts'
+    }) 
+    
+    export const walletClientL1 = createWalletClient({
+      account, 
+      chain: sepolia,
+      transport: custom(window.ethereum)
+    }).extend(walletActionsL1());
+
+    export const walletClientL2 = createWalletClient({
+      account, 
+      chain: liskSepolia,
+      transport: custom(window.ethereum)
+    }).extend(walletActionsL2());
+    ```
+  </TabItem>
+</Tabs>
+
+
 
 </TabItem>
 <TabItem value="local" label="Local Account">
@@ -101,26 +153,54 @@ export const walletClientL2 = createWalletClient({
 Replace `<PRIVATE_KEY>` with the private key of the account you want to use.
 The `0x` prefix indicates that the following string is a hexadecimal number.
 
-```js title="wallet-client.js"
-import { createWalletClient, http } from 'viem'
-import { privateKeyToAccount } from 'viem/accounts'
-import { sepolia, liskSepolia } from 'viem/chains'
-import { walletActionsL1, walletActionsL2 } from 'viem/op-stack'
+<Tabs>
+  <TabItem value="mainnet" label="Lisk" >
+    ```js title="wallet-client.js"
+    import { createWalletClient, http } from 'viem'
+    import { privateKeyToAccount } from 'viem/accounts'
+    import { ethereum, lisk } from 'viem/chains'
+    import { walletActionsL1, walletActionsL2 } from 'viem/op-stack'
 
-// Wallet client for Ethereum
-export const walletClientL1 = createWalletClient({
-  account: privateKeyToAccount('0x<PRIVATE_KEY>'), 
-  chain: sepolia,
-  transport: http()
-}).extend(walletActionsL1());
+    // Wallet client for Ethereum
+    export const walletClientL1 = createWalletClient({
+      account: privateKeyToAccount('0x<PRIVATE_KEY>'), 
+      chain: ethereum,
+      transport: http()
+    }).extend(walletActionsL1());
 
-// Wallet client for Lisk
-export const walletClientL2 = createWalletClient({
-  account: privateKeyToAccount('0x<PRIVATE_KEY>'), 
-  chain: liskSepolia,
-  transport: http()
-}).extend(walletActionsL2());
-```
+    // Wallet client for Lisk
+    export const walletClientL2 = createWalletClient({
+      account: privateKeyToAccount('0x<PRIVATE_KEY>'), 
+      chain: lisk,
+      transport: http()
+    }).extend(walletActionsL2());
+    ```
+  </TabItem>
+  <TabItem value="testnet" label="Lisk Sepolia" default>
+    ```js title="wallet-client.js"
+    import { createWalletClient, http } from 'viem'
+    import { privateKeyToAccount } from 'viem/accounts'
+    import { sepolia, liskSepolia } from 'viem/chains'
+    import { walletActionsL1, walletActionsL2 } from 'viem/op-stack'
+
+    // Wallet client for Ethereum
+    export const walletClientL1 = createWalletClient({
+      account: privateKeyToAccount('0x<PRIVATE_KEY>'), 
+      chain: sepolia,
+      transport: http()
+    }).extend(walletActionsL1());
+
+    // Wallet client for Lisk
+    export const walletClientL2 = createWalletClient({
+      account: privateKeyToAccount('0x<PRIVATE_KEY>'), 
+      chain: liskSepolia,
+      transport: http()
+    }).extend(walletActionsL2());
+    ```
+  </TabItem>
+</Tabs>
+
+
 
 </TabItem>
 </Tabs>
@@ -128,7 +208,7 @@ export const walletClientL2 = createWalletClient({
 :::info
 In addition to making a JSON-RPC request (`eth_requestAccounts`) to get an Account, viem provides various helper methods for creating an `Account`, including: [`privateKeyToAccount`](https://viem.sh/docs/accounts/privateKey.html), [`mnemonicToAccount`](https://viem.sh/docs/accounts/mnemonic.html), and [`hdKeyToAccount`](https://viem.sh/docs/accounts/hd.html).
  
-{/* To use Lisk Sepolia (testnet), replace `lisk` with `liskSepolia`.
+{ /* To use Lisk Sepolia (testnet), replace `lisk` with `liskSepolia`.
  */}
 :::
 
@@ -210,35 +290,72 @@ const unwatch = contract.watchEvent.Transfer(
 </TabItem>
 <TabItem value="client" label="client.js">
 
-```js title="client.js"
-import { createPublicClient, createWalletClient, http, custom } from 'viem'
-import { liskSepolia } from 'viem/chains'
-import { EthereumProvider } from '@walletconnect/ethereum-provider'
-import { publicActionsL2 } from 'viem/op-stack'
- 
-export const publicClient = createPublicClient({
-  chain: liskSepolia,
-  transport: http(),
-}).extend(publicActionsL2());
- 
-// eg: Metamask
-export const walletClient = createWalletClient({
-  chain: liskSepolia,
-  transport: custom(window.ethereum),
-})
- 
-// eg: WalletConnect
-const provider = await EthereumProvider.init({
-  projectId: "abcd1234",
-  showQrModal: true,
-  chains: [1],
-})
- 
-export const walletClientWC = createWalletClient({
-  chain: liskSepolia,
-  transport: custom(provider),
-})
-```
+<Tabs>
+  <TabItem value="mainnet" label="Lisk" >
+    ```js title="client.js"
+    import { createPublicClient, createWalletClient, http, custom } from 'viem'
+    import { lisk } from 'viem/chains'
+    import { EthereumProvider } from '@walletconnect/ethereum-provider'
+    import { publicActionsL2 } from 'viem/op-stack'
+    
+    export const publicClient = createPublicClient({
+      chain: lisk,
+      transport: http(),
+    }).extend(publicActionsL2());
+    
+    // eg: Metamask
+    export const walletClient = createWalletClient({
+      chain: lisk,
+      transport: custom(window.ethereum),
+    })
+    
+    // eg: WalletConnect
+    const provider = await EthereumProvider.init({
+      projectId: "abcd1234",
+      showQrModal: true,
+      chains: [1],
+    })
+    
+    export const walletClientWC = createWalletClient({
+      chain: lisk,
+      transport: custom(provider),
+    })
+    ```
+  </TabItem>
+  <TabItem value="testnet" label="Lisk Sepolia" default>
+    ```js title="client.js"
+    import { createPublicClient, createWalletClient, http, custom } from 'viem'
+    import { liskSepolia } from 'viem/chains'
+    import { EthereumProvider } from '@walletconnect/ethereum-provider'
+    import { publicActionsL2 } from 'viem/op-stack'
+    
+    export const publicClient = createPublicClient({
+      chain: liskSepolia,
+      transport: http(),
+    }).extend(publicActionsL2());
+    
+    // eg: Metamask
+    export const walletClient = createWalletClient({
+      chain: liskSepolia,
+      transport: custom(window.ethereum),
+    })
+    
+    // eg: WalletConnect
+    const provider = await EthereumProvider.init({
+      projectId: "abcd1234",
+      showQrModal: true,
+      chains: [1],
+    })
+    
+    export const walletClientWC = createWalletClient({
+      chain: liskSepolia,
+      transport: custom(provider),
+    })
+    ```
+  </TabItem>
+</Tabs>
+
+
 
 </TabItem>
 <TabItem value="abi" label="abi.js">

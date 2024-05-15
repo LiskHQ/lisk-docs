@@ -14,6 +14,9 @@ keywords:
   ]
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Deploying your Standard ERC-20 token to Lisk
 
 <!-- :::info
@@ -24,7 +27,7 @@ If you want to bridge existing tokens, you can follow the tutorial on [Bridging 
 In this tutorial, you'll learn how to bridge a standard ERC-20 token from Ethereum to Lisk using the [Standard Bridge system](https://docs.optimism.io/builders/dapp-developers/bridging/standard-bridge).
 This tutorial is meant for developers who already have an existing ERC-20 token on Ethereum and want to create a bridged representation of that token on Lisk.
 
-This tutorial explains how to use the [`OptimismMintableERC20Factory`](https://github.com/ethereum-optimism/optimism/blob/186e46a47647a51a658e699e9ff047d39444c2de/packages/contracts-bedrock/contracts/universal/OptimismMintableERC20Factory.sol) to deploy a standardized ERC-20 token on Lisk Sepolia.
+This tutorial explains how to use the [`OptimismMintableERC20Factory`](https://github.com/ethereum-optimism/optimism/blob/186e46a47647a51a658e699e9ff047d39444c2de/packages/contracts-bedrock/contracts/universal/OptimismMintableERC20Factory.sol) to deploy a standardized ERC-20 token on Lisk or Lisk Sepolia network.
 Tokens created by this factory contract are compatible with the Standard Bridge system and include basic logic for deposits, transfers, and withdrawals.
 If you want to include specialized logic within your L2 token, see the tutorial on [Bridging Your Custom ERC-20 Token to Lisk](./custom-token) instead.
 
@@ -33,6 +36,15 @@ If you want to include specialized logic within your L2 token, see the tutorial 
 *   [cast](https://book.getfoundry.sh/getting-started/installation)
 
 ## Prerequisites
+
+:::note
+You can deploy your **Standard ERC-20** token on Lisk Mainnet by adopting the same process.
+For deploying to mainnet, ensure that your wallet has enough ETH.
+
+The subsequent text contains commands for both Lisk and Lisk Sepolia for your ease.
+For more information, see the [available Lisk networks](/network-info) and [how to connect a wallet with them](/connecting-to-a-wallet).
+:::
+
 
 ### Get ETH on Sepolia and Lisk Sepolia
 
@@ -47,12 +59,12 @@ You can use the [Superchain Faucet](https://app.optimism.io/faucet?utm_source=do
 ### Get an L1 ERC-20 Token Address
 
 You will need an L1 ERC-20 token for this tutorial.
-If you already have an L1 ERC-20 token deployed on Sepolia, you can skip this step.
-Otherwise, you can use the testing token located at [`0x5589BB8228C07c4e15558875fAf2B859f678d129`](https://sepolia.etherscan.io/address/0x5589BB8228C07c4e15558875fAf2B859f678d129) that includes a `faucet()` function that can be used to mint tokens.
+If you already have an L1 ERC-20 token deployed on Ethereum Mainnet or Sepolia, you can skip this step.
+For Sepolia, you can use the testing token located at [`0x5589BB8228C07c4e15558875fAf2B859f678d129`](https://sepolia.etherscan.io/address/0x5589BB8228C07c4e15558875fAf2B859f678d129) that includes a `faucet()` function that can be used to mint tokens.
 
 ## Create an L2 ERC-20 token
 
-Once you have an L1 ERC-20 token, you can use the [`OptimismMintableERC20Factory`](https://github.com/ethereum-optimism/optimism/blob/186e46a47647a51a658e699e9ff047d39444c2de/packages/contracts-bedrock/contracts/universal/OptimismMintableERC20Factory.sol) to create a corresponding L2 ERC-20 token on Lisk Sepolia.
+Once you have an L1 ERC-20 token, you can use the [`OptimismMintableERC20Factory`](https://github.com/ethereum-optimism/optimism/blob/186e46a47647a51a658e699e9ff047d39444c2de/packages/contracts-bedrock/contracts/universal/OptimismMintableERC20Factory.sol) to create a corresponding L2 ERC-20 token on Lisk or Lisk Sepolia network.
 All tokens created by the factory implement the `IOptimismMintableERC20` interface and are compatible with the Standard Bridge system.
 To create an L2 ERC-20 token, do the following:
 
@@ -60,24 +72,35 @@ To create an L2 ERC-20 token, do the following:
 
 You'll need a private key in order to sign transactions.
 Set your private key as an environment variable with the `export` command.
-Make sure this private key corresponds to an address that has ETH on Lisk Sepolia.
+Make sure this private key corresponds to an address that has ETH on Lisk or Lisk Sepolia network.
 
 ```bash
 export TUTORIAL_PRIVATE_KEY=0x...
 ```
 
-### 2. Add the Lisk Sepolia RPC URL to your environment
+### 2. Add the Lisk RPC URL to your environment
 
-You'll need an RPC URL in order to connect to Lisk Sepolia.
+You'll need an RPC URL in order to connect to Lisk or Lisk Sepolia network.
 Set your RPC URL as an environment variable with the `export` command.
 
-```bash 
-export TUTORIAL_RPC_URL=https://rpc.sepolia-api.lisk.com
-```
+<Tabs>
+  <TabItem value="mainnet" label="Lisk" >
+    ```bash 
+    export TUTORIAL_RPC_URL=https://rpc.api.lisk.com
+    ```
+  </TabItem>
+  <TabItem value="testnet" label="Lisk Sepolia" default>
+    ```bash 
+    export TUTORIAL_RPC_URL=https://rpc.sepolia-api.lisk.com
+    ```
+  </TabItem>
+</Tabs>
+
+
 
 ### 3. Add your L1 ERC-20 token address to your environment
 
-You'll need to know the address of your L1 ERC-20 token in order to create a bridged representation of it on Lisk Sepolia.
+You'll need to know the address of your L1 ERC-20 token in order to create a bridged representation of it on Lisk or Lisk Sepolia network.
 Set your L1 ERC-20 token address as an environment variable with the `export` command.
 
 ```bash

@@ -10,6 +10,7 @@ keywords:
     'Sepolia',
     'Ethereum',
     'Lisk Mainnet',
+    'Lisk',
     'Optimism Superchain token list',
   ]
 ---
@@ -39,9 +40,9 @@ To add your token to the Lisk Token list, perform the following steps. -->
 
 ## [Deploying a Standard ERC-20 token](./standard-token.md)
 
-To deploy a Standard ERC-20 Token to Lisk Sepolia, follow the steps mentioned in the [Deploying Your Standard ERC-20 Token to Lisk](./standard-token.md) guide.
+To deploy a Standard ERC-20 Token to Lisk or Lisk Sepolia network, follow the steps mentioned in the [Deploying Your Standard ERC-20 Token to Lisk](./standard-token.md) guide.
 
-The guide explains how to use the [OptimismMintableERC20Factory](https://github.com/ethereum-optimism/optimism/blob/186e46a47647a51a658e699e9ff047d39444c2de/packages/contracts-bedrock/contracts/universal/OptimismMintableERC20Factory.sol) to deploy a standardized ERC-20 token on Lisk Sepolia.
+The guide explains how to use the [OptimismMintableERC20Factory](https://github.com/ethereum-optimism/optimism/blob/186e46a47647a51a658e699e9ff047d39444c2de/packages/contracts-bedrock/contracts/universal/OptimismMintableERC20Factory.sol) to deploy a standardized ERC-20 token on Lisk or Lisk Sepolia network.
 Tokens created by this factory contract implement the `IOptimismMintableERC20` interface, including basic logic for deposits, transfers, and withdrawals.
 
 
@@ -49,7 +50,7 @@ Tokens created by this factory contract implement the `IOptimismMintableERC20` i
 ## [Deploying a Custom ERC-20 token](./custom-token.mdx)
 
 A custom token allows you to do things like trigger extra logic whenever a token is deposited.
-To deploy a custom ERC-20 token to Lisk Sepolia, follow the steps mentioned in the [Deploying your Custom ERC-20 token to Lisk](./custom-token.mdx) guide.
+To deploy a custom ERC-20 token to Lisk or Lisk Sepolia network, follow the steps mentioned in the [Deploying your Custom ERC-20 token to Lisk](./custom-token.mdx) guide.
 
 The guide explains how to implement all the functions defined by the [IOptimismMintableERC20](https://github.com/ethereum-optimism/optimism/blob/v1.1.4/packages/contracts-bedrock/src/universal/IOptimismMintableERC20.sol) interface such as the logic for the `mint`, `burn`, `remoteToken`, and `bridge` functions of the `IOptimismMintableERC20` interface.
 

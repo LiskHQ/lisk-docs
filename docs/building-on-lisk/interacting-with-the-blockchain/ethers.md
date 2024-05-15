@@ -19,6 +19,9 @@ keywords:
   ]
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Interacting with the blockchain with ethers.js
 
 [ethers.js](https://docs.ethers.org/) is a JavaScript library that allows developers to interact with EVM-compatible blockchain networks.
@@ -48,12 +51,24 @@ const ethers = require('ethers');
 
 You can connect to Lisk by instantiating a new ethers.js `JsonRpcProvider` object with an RPC URL of the Lisk network:
 
-```javascript
-const ethers = require('ethers');
+<Tabs>
+  <TabItem value="mainnet" label="Lisk" >
+    ```javascript
+    const ethers = require('ethers');
 
-const url = 'https://rpc.sepolia-api.lisk.com';
-const provider = new ethers.JsonRpcProvider(url);
-```
+    const url = 'https://rpc.api.lisk.com';
+    const provider = new ethers.JsonRpcProvider(url);
+    ```
+  </TabItem>
+  <TabItem value="testnet" label="Lisk Sepolia" default>
+    ```javascript
+    const ethers = require('ethers');
+
+    const url = 'https://rpc.sepolia-api.lisk.com';
+    const provider = new ethers.JsonRpcProvider(url);
+    ```
+  </TabItem>
+</Tabs>
 
 :::note
 A **Provider** (in ethers.js) is a class that provides an abstraction for a connection to the Ethereum Network. It provides read-only access to the Blockchain and its status.
@@ -79,7 +94,12 @@ getLatestBlock();
 ```javascript
 const ethers = require('ethers');
 
+// For Lisk Sepolia network
 const url = 'https://rpc.sepolia-api.lisk.com';
+
+// For Lisk network
+// const url = 'https://rpc.api.lisk.com';
+
 const provider = new ethers.JsonRpcProvider(url);
 
 async function getLatestBlock() {
@@ -129,7 +149,12 @@ The receiving account's balance will increment by `0.01` ETH once the transactio
 ```javascript
 const ethers = require('ethers');
 
+// For Lisk Sepolia network
 const url = 'https://rpc.sepolia-api.lisk.com';
+
+// For Lisk network
+// const url = 'https://rpc.api.lisk.com';
+
 const provider = new ethers.JsonRpcProvider(url);
 // Replace PRIVATE_KEY with the private key of your account.
 const privateKey = 'PRIVATE_KEY';
@@ -211,7 +236,12 @@ For an overview of existing public functions for the contract, please check the 
 ```javascript
 const ethers = require('ethers');
 
+// For Lisk Sepolia network
 const url = 'https://rpc.sepolia-api.lisk.com';
+
+// For Lisk network
+// const url = 'https://rpc.api.lisk.com';
+
 const provider = new ethers.JsonRpcProvider(url);
 const privateKey = 'PRIVATE_KEY';
 const signer = new ethers.Wallet(privateKey, provider);
