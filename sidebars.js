@@ -30,19 +30,19 @@ const sidebars = {
         'about-lisk/fees'
       ],
     },
-    {
-      type: 'category',
-      label: 'Governance',
-      collapsible: true,
-      collapsed: false,
-      link: {
-        type: 'generated-index',
-      },
-      items: [
-        'governance/overview',
-        'governance/delegation',
-      ],
-    },
+    // {
+    //   type: 'category',
+    //   label: 'Governance',
+    //   collapsible: true,
+    //   collapsed: false,
+    //   link: {
+    //     type: 'generated-index',
+    //   },
+    //   items: [
+    //     'governance/overview',
+    //     'governance/delegation',
+    //   ],
+    // },
     {
       type: 'category',
       label: 'Building on Lisk',
@@ -76,7 +76,7 @@ const sidebars = {
             id: 'building-on-lisk/add-token-to-lisk/index',
           },
         },
-/*         'building-on-lisk/bridge-tokens-to-lisk', */
+        /*         'building-on-lisk/bridge-tokens-to-lisk', */
         {
           type: 'category',
           label: 'Interacting with the blockchain',
