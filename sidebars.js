@@ -30,19 +30,20 @@ const sidebars = {
         'about-lisk/fees'
       ],
     },
-    // {
-    //   type: 'category',
-    //   label: 'Governance',
-    //   collapsible: true,
-    //   collapsed: false,
-    //   link: {
-    //     type: 'generated-index',
-    //   },
-    //   items: [
-    //     'governance/overview',
-    //     'governance/delegation',
-    //   ],
-    // },
+    {
+      type: 'category',
+      label: 'Governance',
+      collapsible: true,
+      collapsed: false,
+      link: {
+        type: 'generated-index',
+      },
+      items: [
+        'governance/overview',
+        'governance/delegation',
+        'governance/proposal-lifecycle',
+      ],
+    },
     {
       type: 'category',
       label: 'Building on Lisk',

@@ -82,6 +82,10 @@ html[data-theme='dark'] .alert a {
   text-decoration-color: var(--ifm-color-primary);
 }
 
+.menu {
+  overflow-y: auto;
+}
+
 .padding-bottom--lg {
   margin-bottom: 3% !important;
 }

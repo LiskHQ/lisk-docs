@@ -1,6 +1,6 @@
 ---
 title: Delegation
-sidebar_position: 1
+sidebar_position: 2
 slug: /governance/delegation
 description: Documentation about the delegation process of the Lisk DAO.
 keywords:
