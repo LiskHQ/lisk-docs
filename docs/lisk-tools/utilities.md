@@ -31,7 +31,7 @@ Web3 Functions serve as a comprehensive tool, enabling developers to effortlessl
 ### Safe 
 [Safe](https://docs.safe.global) is the account abstraction leader on Ethereum and the EVM with the most secure smart wallet infrastructure and platform.
 Safe brings digital ownership of accounts to everyone by building universal and open contract standards for the custody of digital assets, data, and identity.
-To create a Safe account with Lisk, [connect your wallet](https://safe.optimism.io/welcome?chain=lisksep) through the Superchain-Safe portal.
+To create a Safe account with Lisk, connect your wallet to [Lisk](https://safe.optimism.io/welcome?chain=lisk) or [Lisk Sepolia](https://safe.optimism.io/welcome?chain=lisksep) network through the Superchain-Safe portal.
 
 Gelato deployed a small example [react app](https://gelato-raas-aa.web.app/) with a safe-web3auth integration.
 The code for this integration can be found on the [gelato-raas-aa-ui](https://github.com/gelatodigital/gelato-raas-aa-ui) repository.

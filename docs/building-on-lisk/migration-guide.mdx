@@ -713,19 +713,36 @@ Test result: ok. 8 passed; 0 failed; 0 skipped; finished in 3.35ms
 
 You can now deploy the smart contract to Lisk.
 For this example, we will use the Lisk Sepolia network to deploy the Hello contract.
+However, the steps are the same for Lisk network as well.
 
 Add the `--verify` flag to the `forge create` command to directly verify the smart contract on BlockScout.
 
+<Tabs>
+  <TabItem value="mainnet" label="Lisk" >
+    ```bash
+    forge create --rpc-url https://rpc.api.lisk.com \
+    --etherscan-api-key 123 \
+    --verify \
+    --verifier blockscout \
+    --verifier-url https://blockscout.lisk.com/api \
+    --private-key <your-private-key> \
+    src/Hello.sol:Hello
+    ```
+  </TabItem>
+  <TabItem value="testnet" label="Lisk Sepolia" default>
+  ```bash
+  forge create --rpc-url https://rpc.sepolia-api.lisk.com \
+  --etherscan-api-key 123 \
+  --verify \
+  --verifier blockscout \
+  --verifier-url https://sepolia-blockscout.lisk.com/api \
+  --private-key <your-private-key> \
+  src/Hello.sol:Hello
+  ```
+  </TabItem>
+</Tabs>
 
-```bash
-forge create --rpc-url https://rpc.sepolia-api.lisk.com \
---etherscan-api-key 123 \
---verify \
---verifier blockscout \
---verifier-url https://sepolia-blockscout.lisk.com/api \
---private-key <your-private-key> \
-src/Hello.sol:Hello
-```
+
 
 If the deployment went successfully, the output should look like this:
 

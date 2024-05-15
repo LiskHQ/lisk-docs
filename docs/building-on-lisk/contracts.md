@@ -19,6 +19,51 @@ keywords:
 # Contracts
 A reference page containing information about all the contracts deployed on different networks.
 
+## Mainnet
+
+### Ethereum (L1)
+
+| Name of Contract                  | Contract Address                           | Description |
+| :--------------                   | :----------------------------------------  |:----------  |
+| **ProxyAdmin**                | [0xeC432c4F1d0E12737f3a42a459B84848Af979b2d](https://etherscan.io/address/0xeC432c4F1d0E12737f3a42a459B84848Af979b2d) | Owner of AddressManager. Admin of LiskPortal, SystemConfig, L2OutputOracle, L1StandardBridge.                                        |
+| **SystemConfig**                | [0x05f23282FFDCA8286E4738C1aF79079f3d843750](https://etherscan.io/address/0x05f23282ffdca8286e4738c1af79079f3d843750) | It contains configuration parameters such as the Sequencer address, the L2 gas limit, and the unsafe block signer address.                                    |
+| **AddressManager**        | [0x2dF7057d3F25212E51aFEA8dA628668229Ea423f](https://etherscan.io/address/0x2dF7057d3F25212E51aFEA8dA628668229Ea423f) | The Address Manager is a built-in actor that manages Ethereum's address space.                                       |
+| **L1ERC721Bridge**              | [0x3A44A3b263FB631cdbf25f339e2D29497511A81f](https://etherscan.io/address/0x3A44A3b263FB631cdbf25f339e2D29497511A81f) | Handles the sending and receiving of messages between L1 and L2.     |
+| **L2OutputOracle**                | [0x113cB99283AF242Da0A0C54347667edF531Aa7d6](https://etherscan.io/address/0x113cB99283AF242Da0A0C54347667edF531Aa7d6) | Contains a list of proposed state roots which Proposers assert to be a result of block execution.        |
+| **OptimismPortal**                    | [0x26dB93F8b8b4f7016240af62F7730979d353f9A7](https://etherscan.io/address/0x26dB93F8b8b4f7016240af62F7730979d353f9A7) | It is the main entry point to deposit funds from L1 to L2. It also allows proving and finalizing withdrawals.             |
+| **L1StandardBridge**                   | [0x2658723Bf70c7667De6B25F99fcce13A16D25d08](https://etherscan.io/address/0x2658723Bf70c7667De6B25F99fcce13A16D25d08) |  |
+| **ProtocolVersions**                | [0xDd9C27910327d3f4A4007Ad8f7B53332DB6f1079](https://etherscan.io/address/0xDd9C27910327d3f4A4007Ad8f7B53332DB6f1079) | It is used to manage superchain protocol version information.  |
+| **L1CrossDomainMessenger**                | [0x31B72D76FB666844C41EdF08dF0254875Dbb7edB](https://etherscan.io/address/0x31B72D76FB666844C41EdF08dF0254875Dbb7edB) | Sends messages from L1 to L2 and relays messages from L2 onto L1.  |
+| **OptimismMintableERC20Factory**  | [0xD00e38514d66bf1B761a8937559c6b2854A5B3ad](https://etherscan.io/address/0xD00e38514d66bf1B761a8937559c6b2854A5B3ad) | It is responsible for creating ERC20 contracts on L2 that can be used for depositing native L1 tokens into.  |
+
+### Lisk (L2)
+
+| Name of Contract                  | Contract Address                           | 
+| :--------------                   | :----------------------------------------  |
+| [**ERC-4337 Entrypoint**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/preinstalls.md#erc-4337-entrypoint)  | [0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789](https://blockscout.lisk.com/address/0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789) 
+| [**LegacyMessagePasser**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#legacymessagepasser)  | [0x4200000000000000000000000000000000000000](https://blockscout.lisk.com/address/0x4200000000000000000000000000000000000000) |
+| [**DeployerWhitelist**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#deployerwhitelist)       | [0x4200000000000000000000000000000000000002](https://blockscout.lisk.com/address/0x4200000000000000000000000000000000000002) |
+| [**WETH9**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#weth9)        | [0x4200000000000000000000000000000000000006](https://blockscout.lisk.com/address/0x4200000000000000000000000000000000000006) |
+| [**L2CrossDomainMessenger**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#l2crossdomainmessenger)  | [0x4200000000000000000000000000000000000007](https://blockscout.lisk.com/address/0x4200000000000000000000000000000000000007) |
+| [**L2StandardBridge**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#l2standardbridge)        | [0x4200000000000000000000000000000000000010](https://blockscout.lisk.com/address/0x4200000000000000000000000000000000000010) |
+| [**SequencerFeeVault**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#sequencerfeevault) | [0x4200000000000000000000000000000000000011](https://blockscout.lisk.com/address/0x4200000000000000000000000000000000000011) |
+| [**OptimismMintableERC20Factory**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#optimismmintableerc20factory)        | [0x4200000000000000000000000000000000000012](https://blockscout.lisk.com/address/0x4200000000000000000000000000000000000012) |
+| [**L1BlockNumber**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#l1blocknumber)                | [0x4200000000000000000000000000000000000013](https://blockscout.lisk.com/address/0x4200000000000000000000000000000000000013) |
+| [**GasPriceOracle**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#gaspriceoracle)        | [0x420000000000000000000000000000000000000F](https://blockscout.lisk.com/address/0x420000000000000000000000000000000000000F) |
+| **GovernanceToken**                | [0x4200000000000000000000000000000000000042](https://blockscout.lisk.com/address/0x4200000000000000000000000000000000000042) |
+| [**L1Block**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#l1block)        | [0x4200000000000000000000000000000000000015](https://blockscout.lisk.com/address/0x4200000000000000000000000000000000000015) |                                        |
+| [**L2ToL1MessagePasser**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#l2tol1messagepasser)                | [0x4200000000000000000000000000000000000016](https://blockscout.lisk.com/address/0x4200000000000000000000000000000000000016) |
+| **L2ERC721Bridge**        | [0x4200000000000000000000000000000000000014](https://blockscout.lisk.com/address/0x4200000000000000000000000000000000000014) |
+| [**OptimismMintableERC721Factory**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#optimismmintableerc721factory)                | [0x4200000000000000000000000000000000000017](https://blockscout.lisk.com/address/0x4200000000000000000000000000000000000017) |
+| [**ProxyAdmin**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#proxyadmin)        | [0x4200000000000000000000000000000000000018](https://blockscout.lisk.com/address/0x4200000000000000000000000000000000000018) |
+| [**BaseFeeVault**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#basefeevault)                | [0x4200000000000000000000000000000000000019](https://blockscout.lisk.com/address/0x4200000000000000000000000000000000000019) |
+| [**L1FeeVault**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#l1feevault)        | [0x420000000000000000000000000000000000001a](https://blockscout.lisk.com/address/0x420000000000000000000000000000000000001A) |
+| [**SchemaRegistry**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#schemaregistry)                | [0x4200000000000000000000000000000000000020](https://blockscout.lisk.com/address/0x4200000000000000000000000000000000000020) |
+| [**EAS**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#eas)        | [0x4200000000000000000000000000000000000021](https://blockscout.lisk.com/address/0x4200000000000000000000000000000000000021) |
+| [**create2Deployer**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#create2deployer)                | [0x13b0D85CcB8bf860b6b79AF3029fCA081AE9beF2](https://blockscout.lisk.com/address/0x13b0D85CcB8bf860b6b79AF3029fCA081AE9beF2) |
+
+
+
 ## Testnet
 
 ### Ethereum Sepolia (L1)
@@ -51,8 +96,7 @@ For more information on Predeploys, see [Predeploys' README](https://github.com/
 | :--------------                   | :----------------------------------------  |
 | [**ERC-4337 Entrypoint**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/preinstalls.md#erc-4337-entrypoint)  | [0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789](https://sepolia-blockscout.lisk.com/address/0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789) 
 | [**LegacyMessagePasser**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#legacymessagepasser)  | [0x4200000000000000000000000000000000000000](https://sepolia-blockscout.lisk.com/address/0x4200000000000000000000000000000000000000) |
-| [**DeployerWhitelist**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#deployerwhitelist)       | [0x4200000000000000000000000000000000000002](https://sepolia-blockscout.lisk.com/address/0x4200000000000000000000000000000000000002) |
-| [**LegacyERC20ETH**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#legacyerc20eth)                | [0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000](https://sepolia-blockscout.lisk.com/address/0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000) |
+| [**DeployerWhitelist**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#deployerwhitelist)       | [0x4200000000000000000000000000000000000002](https://sepolia-blockscout.lisk.com/address/0x4200000000000000000000000000000000000002) |\
 | [**WETH9**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#weth9)        | [0x4200000000000000000000000000000000000006](https://sepolia-blockscout.lisk.com/address/0x4200000000000000000000000000000000000006) |
 | [**L2CrossDomainMessenger**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#l2crossdomainmessenger)  | [0x4200000000000000000000000000000000000007](https://sepolia-blockscout.lisk.com/address/0x4200000000000000000000000000000000000007) |
 | [**L2StandardBridge**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#l2standardbridge)        | [0x4200000000000000000000000000000000000010](https://sepolia-blockscout.lisk.com/address/0x4200000000000000000000000000000000000010) |
@@ -71,8 +115,6 @@ For more information on Predeploys, see [Predeploys' README](https://github.com/
 | [**SchemaRegistry**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#schemaregistry)                | [0x4200000000000000000000000000000000000020](https://sepolia-blockscout.lisk.com/address/0x4200000000000000000000000000000000000020) |
 | [**EAS**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#eas)        | [0x4200000000000000000000000000000000000021](https://sepolia-blockscout.lisk.com/address/0x4200000000000000000000000000000000000021) |
 | [**create2Deployer**](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md#create2deployer)                | [0x13b0D85CcB8bf860b6b79AF3029fCA081AE9beF2](https://sepolia-blockscout.lisk.com/address/0x13b0D85CcB8bf860b6b79AF3029fCA081AE9beF2) |
-| **RedstonePriceFeedWithRoundsETH** | [0x6F9A3AC224025B0A9E7b7F47dcb1DF7872e2fA75](https://sepolia-blockscout.lisk.com/address/0x6F9A3AC224025B0A9E7b7F47dcb1DF7872e2fA75) |
-| **RedstonePriceFeedWithRoundsUSDC** | [0xC603180D79a5Afa341A59134d126fC72Bcd19283](https://sepolia-blockscout.lisk.com/address/0xC603180D79a5Afa341A59134d126fC72Bcd19283) |
 
 
 

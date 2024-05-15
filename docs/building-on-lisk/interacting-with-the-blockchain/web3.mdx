@@ -70,12 +70,27 @@ Add the following line of code to the top of your file to import web3.js:
 
 You can connect to Lisk by instantiating a new `Web3` object with an RPC URL of the Lisk network:
 
-```javascript
-import { Web3 } from 'web3';
 
-// Instantiate a web3 object by passing the RPC URL of Lisk.
-const web3 = new Web3('https://rpc.sepolia-api.lisk.com');
-```
+<Tabs>
+  <TabItem value="mainnet" label="Lisk" >
+    ```javascript
+    import { Web3 } from 'web3';
+
+    // Instantiate a web3 object by passing the RPC URL of Lisk.
+    const web3 = new Web3('https://rpc.api.lisk.com');
+    ```
+  </TabItem>
+  <TabItem value="testnet" label="Lisk Sepolia" default>
+    ```javascript
+    import { Web3 } from 'web3';
+
+    // Instantiate a web3 object by passing the RPC URL of Lisk Sepolia.
+    const web3 = new Web3('https://rpc.sepolia-api.lisk.com');
+    ```
+  </TabItem>
+</Tabs>
+
+
 
 ### Reading data from the blockchain
 
@@ -92,24 +107,30 @@ async function getLatestBlock() {
 
 getLatestBlock();
 ```
-
 <details>
-<summary>Complete code example</summary>
-```javascript
-import { Web3 } from 'web3';
+    <summary>Complete code example</summary>
+    ```javascript
+    import { Web3 } from 'web3';
 
-// Instantiate a web3 object by passing the RPC URL of Lisk.
-const web3 = new Web3('https://rpc.sepolia-api.lisk.com');
+    // Instantiate a web3 object by passing the RPC URL of Lisk Sepolia.
+    const web3 = new Web3('https://rpc.sepolia-api.lisk.com');
 
-// Retrieve data from blockchain
-async function getLatestBlock() {
-    const latestBlock = await web3.eth.getBlockNumber()
-    console.log("The latest block's number is:", latestBlock);
-}
+    // Instantiate a web3 object by passing the RPC URL of Lisk.
+    // const web3 = new Web3('https://rpc.api.lisk.com');
 
-getLatestBlock();
-```
+    // Retrieve data from blockchain
+    async function getLatestBlock() {
+        const latestBlock = await web3.eth.getBlockNumber()
+        console.log("The latest block's number is:", latestBlock);
+    }
+
+    getLatestBlock();
+    ```
 </details>
+
+
+
+
 
 :::tip 
 Web3 provides a wide range of [Web3Eth methods](https://docs.web3js.org/guides/web3_eth/methods/) that can be used to interact with the blockchain.
@@ -154,32 +175,38 @@ console.log('Tx hash:', txReceipt.transactionHash)
 The receiving account's balance will increment by `0.0001` ETH once the transaction execution is successful.
 
 <details>
-<summary>Complete code example</summary>
-```js
-import { Web3 } from 'web3';
+    <summary>Complete code example</summary>
+    ```js
+    import { Web3 } from 'web3';
 
-// Instantiate a web3 object by passing the RPC URL of Lisk.
-const web3 = new Web3('https://rpc.sepolia-api.lisk.com');
+    // Instantiate a web3 object by passing the RPC URL of Lisk Sepolia.
+    const web3 = new Web3('https://rpc.sepolia-api.lisk.com');
 
-// Add an account to a wallet
-const privateKey = '0x<SENDER_PRIVATE_KEY>';
-const account = web3.eth.accounts.wallet.add(privateKey);
+    // Instantiate a web3 object by passing the RPC URL of Lisk.
+    // const web3 = new Web3('https://rpc.api.lisk.com');
 
-// Create transaction object to send '.0001' eth to '0x.....' address from the account[0]
-const tx =
-{
-    from: account[0].address,
-    to: '<RECIPIENT_ADDRESS>',
-    value: web3.utils.toWei('.0001', 'ether')
-};
-// The 'from' address must match the one previously added with 'wallet.add'
+    // Add an account to a wallet
+    const privateKey = '0x<SENDER_PRIVATE_KEY>';
+    const account = web3.eth.accounts.wallet.add(privateKey);
 
-// Send the transaction
-const txReceipt = await web3.eth.sendTransaction(tx);
+    // Create transaction object to send '.0001' eth to '0x.....' address from the account[0]
+    const tx =
+    {
+        from: account[0].address,
+        to: '<RECIPIENT_ADDRESS>',
+        value: web3.utils.toWei('.0001', 'ether')
+    };
+    // The 'from' address must match the one previously added with 'wallet.add'
 
-console.log('Tx hash:', txReceipt.transactionHash)
-```
+    // Send the transaction
+    const txReceipt = await web3.eth.sendTransaction(tx);
+
+    console.log('Tx hash:', txReceipt.transactionHash)
+    ```
 </details>
+
+
+
 
 ## Interacting with smart contracts
 
@@ -212,31 +239,34 @@ Once the aforementioned information is passed, any read-only function of the sma
 
     console.log('Contract\'s Name is: ', contractName);
     ```
-<details>
-<summary>Complete code example</summary>
-```javascript title="get-contract-name.js"
-import { Web3 } from 'web3';
-import { abi } from './abi.js';
+    <details>
+        <summary>Complete code example</summary>
+        ```javascript title="get-contract-name.js"
+        import { Web3 } from 'web3';
+        import { abi } from './abi.js';
 
-// Instantiate a web3 object by passing the RPC URL of Lisk.
-const web3 = new Web3('https://rpc.sepolia-api.lisk.com');
+        // Instantiate a web3 object by passing the RPC URL of Lisk Sepolia.
+        const web3 = new Web3('https://rpc.sepolia-api.lisk.com');
 
-// Address of the contract you want to interact with.
-const address = '0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5';
+        // Instantiate a web3 object by passing the RPC URL of Lisk.
+        // const web3 = new Web3('https://rpc.api.lisk.com');
 
-// Instantiate the contract object
-const contract = new web3.eth.Contract(abi, address);
+        // Address of the contract you want to interact with.
+        const address = '0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5';
 
-// Call any of the 'Read contract' functions e.g. 'name()'
-const contractName = await contract.methods.name().call();
+        // Instantiate the contract object
+        const contract = new web3.eth.Contract(abi, address);
 
-console.log('Contract\'s Name is: ', contractName);
-```
+        // Call any of the 'Read contract' functions e.g. 'name()'
+        const contractName = await contract.methods.name().call();
 
-```text title="Output"
-Contract's Name is:  Lisk
-```
-</details>
+        console.log('Contract\'s Name is: ', contractName);
+        ```
+
+        ```text title="Output"
+        Contract's Name is:  Lisk
+        ```
+    </details>
 
 
   </TabItem>
@@ -767,6 +797,9 @@ import { abi } from './abi.js';
 
 // Instantiate a web3 object by passing the RPC URL of Lisk.
 const web3 = new Web3('https://rpc.sepolia-api.lisk.com');
+
+// For Lisk network
+//const web3 = new Web3('https://rpc.api.lisk.com');
 
 // Address of the contract you want to interact with.
 const contractAddress = '0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5';

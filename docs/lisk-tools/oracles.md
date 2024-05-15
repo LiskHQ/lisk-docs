@@ -37,4 +37,5 @@ Interested in integration? [Get in contact](https://discord.com/invite/PVxBZKFr4
 
 #### Supported Networks
 
+- Lisk
 - Lisk Sepolia
