@@ -52,6 +52,7 @@ const sidebars = {
       items: [
         'building-on-lisk/connecting-to-a-wallet',
         'building-on-lisk/contracts',
+        'building-on-lisk/run-a-lisk-node',
         {
           type: 'category',
           label: 'Deploying a Smart Contract',
