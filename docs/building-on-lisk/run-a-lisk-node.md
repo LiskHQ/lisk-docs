@@ -19,7 +19,6 @@ keywords:
   ]
 tags: ['nodes']
 difficulty: beginner
-displayed_sidebar: null
 ---
 
 This tutorial will walk you through setting up your own [Lisk Node].
