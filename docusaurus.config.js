@@ -14,7 +14,7 @@ const config = {
   favicon: 'img/favicon.png',
 
   // Set the production url of your site here
-  url: process.env.LISK_DOC_URL ?? 'https://documentation.lisk.com',
+  url: process.env.LISK_DOC_URL ?? 'https://docs.lisk.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: process.env.LISK_DOC_BASE_URL ?? '/',
@@ -151,9 +151,9 @@ const config = {
 
       },
       algolia: {
-        appId: 'D8OVOP2W00',
-        apiKey: 'e8ca930ec49db40b3701611a31f1010e',
-        indexName: "umentation-lisk",
+        appId: 'VJKTDEEV6C',
+        apiKey: 'cc866f1f0b964dd7552427d70a95ab18',
+        indexName: "lisk",
         contextualSearch: false,
         debug: false,
       },
