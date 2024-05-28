@@ -48,21 +48,21 @@ If you're looking to harden your app and avoid rate-limiting for your users, ple
 
 ## System requirements
 
-The following system requirements are recommended to run Lisk L2 node.
+The following system requirements are recommended to run a Lisk L2 node.
 
 ### Memory
 
-- Modern multi-core CPU with good single-core performance
-- Machines with a minimum of 16 GB RAM (32 GB recommended)
+- Modern multi-core CPU with good single-core performance.
+- Machines with a minimum of 16 GB RAM (32 GB recommended).
 
 ### Storage
 
-- Machines with a high performance SSD drive with at least 4 TB free
+- Machines with a high-performing SSD drive with at least 4 TB free.
 
 ## Usage
 
 :::note
-It is currently not possible to run the nodes with the `--op-network` flag until the configs for Lisk have been merged to the [superchain-registry](https://github.com/ethereum-optimism/superchain-registry).
+It is currently not possible to run the nodes with the `--op-network` flag until the configs for Lisk have been merged into the [superchain-registry](https://github.com/ethereum-optimism/superchain-registry).
 
 There is currently an [open PR](https://github.com/ethereum-optimism/superchain-registry/pull/234) to add the Lisk Mainnet config.
 The Lisk Sepolia Testnet will be supported soon as well.
@@ -111,7 +111,6 @@ $( curl -s -d '{"id":0,"jsonrpc":"2.0","method":"optimism_syncStatus"}' -H "Cont
    jq -r .result.unsafe_l2.timestamp))/60)) minutes
 ```
 
----
 
 [partners]: /lisk-tools/api-providers
 [lisk node]: https://github.com/LiskHQ/lisk-node
