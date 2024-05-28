@@ -72,6 +72,9 @@ The Lisk Sepolia Testnet will be supported soon as well.
 
 ```sh
 git clone https://github.com/LiskHQ/lisk-node.git
+```
+
+```sh
 cd lisk-node
 ```
 
