@@ -49,10 +49,10 @@ To access data from the Legacy Lisk L1 chain, please use the legacy chain servic
 
 How to use the legacy chain service:
 
-- Get a block by height `https://legacy.lisk.com/blocks/<BLOCK_HEIGHT>.json`
-- Get a transaction by id `https://legacy.lisk.com/transactions/<TRANSACTION_ID>.json`
-- Get an account by address `https://legacy.lisk.com/accounts/<LEGACY_ACCOUNT_ADDRESS>.json`
-- Get histories by address `https://legacy.lisk.com/histories/<LEGACY_ACCOUNT_ADDRESS>.csv`
+- Get a **block by height** `https://legacy.lisk.com/blocks/<BLOCK_HEIGHT>.json`
+- Get a **transaction by id** `https://legacy.lisk.com/transactions/<TRANSACTION_ID>.json`
+- Get an **account by address** `https://legacy.lisk.com/accounts/<LEGACY_ACCOUNT_ADDRESS>.json`
+- Get **histories by address** `https://legacy.lisk.com/histories/<LEGACY_ACCOUNT_ADDRESS>.csv`
  
   This serves for all block histories in the past from height 1 https://legacy.lisk.com/blocks/1.json
 
