@@ -86,16 +86,15 @@ If running your own L1 node, it needs to be synced before the Lisk node will be 
 By default, it is set to `.env.mainnet`.
 3. Run:
 
-```
-docker compose up --build --detach
-```
+    ```
+    docker compose up --build --detach
+    ```
 
 4. You should now be able to `curl` your Lisk node:
-
-```
-curl -s -d '{"id":0,"jsonrpc":"2.0","method":"eth_getBlockByNumber","params":["latest",false]}' \
-  -H "Content-Type: application/json" http://localhost:8545
-```
+    ```
+    curl -s -d '{"id":0,"jsonrpc":"2.0","method":"eth_getBlockByNumber","params":["latest",false]}' \
+      -H "Content-Type: application/json" http://localhost:8545
+    ```
 
 ### Syncing
 
