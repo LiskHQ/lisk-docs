@@ -20,12 +20,6 @@ keywords:
 
 A summary of various services available for building on Lisk.
 
-## Automation
-### Web3 Functions
-
-Gelato's [Web3 Functions](https://www.gelato.network/web3-functions) is a powerful automation system designed to streamline and enhance Web3 operations.
-Web3 Functions serve as a comprehensive tool, enabling developers to effortlessly set up, manage, and automate their smart contract tasks.
-
 ## Account Abstraction
 
 ### Safe 
@@ -43,15 +37,35 @@ The code for this integration can be found on the [gelato-raas-aa-ui](https://gi
 
 In the [gelato-raas-aa](https://github.com/gelatodigital/gelato-raas-aa) repository, you can find a demo implementation for sponsoring the fees with 1Balance or paying the fees with Safe balance.
 
-## Relay Service
+## Automation
+### Web3 Functions
 
-### Gelato Relay
+Gelato's [Web3 Functions](https://www.gelato.network/web3-functions) is a powerful automation system designed to streamline and enhance Web3 operations.
+Web3 Functions serve as a comprehensive tool, enabling developers to effortlessly set up, manage, and automate their smart contract tasks.
 
-Use Gelato [Relay](https://www.gelato.network/relay), to relay your user's transactions on-chain, enabling secure gasless transactions for an ultra-smooth UX for your app.
-This allows for a variety of new web3 experiences, as the user can now pay by only signing a message, or their transaction costs can be sponsored by the developer.
+## Legacy Chain Service
+
+To access data from the Legacy Lisk L1 chain, please use the legacy chain service available under https://legacy.lisk.com.
+
+How to use the legacy chain service:
+
+- Get a **block by height** `https://legacy.lisk.com/blocks/<BLOCK_HEIGHT>.json`
+- Get a **transaction by id** `https://legacy.lisk.com/transactions/<TRANSACTION_ID>.json`
+- Get an **account by address** `https://legacy.lisk.com/accounts/<LEGACY_ACCOUNT_ADDRESS>.json`
+- Get **histories by address** `https://legacy.lisk.com/histories/<LEGACY_ACCOUNT_ADDRESS>.csv`
+ 
+  This serves for all block histories in the past from height 1 https://legacy.lisk.com/blocks/1.json
+
 
 ## Randomness
 
 ### Gelato VRF
 [Gelato VRF](https://www.gelato.network/vrf) (Verifiable Random Function) is a tool designed to provide robust randomness with inherent verifiability.
 Create transparent & fair games, NFTs, lotteries, and other onchain applications with distributed randomness.
+
+## Relay Service
+
+### Gelato Relay
+
+Use Gelato [Relay](https://www.gelato.network/relay), to relay your user's transactions on-chain, enabling secure gasless transactions for an ultra-smooth UX for your app.
+This allows for a variety of new web3 experiences, as the user can now pay by only signing a message, or their transaction costs can be sponsored by the developer.
