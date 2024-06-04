@@ -101,17 +101,12 @@ const config = {
           src: '/img/lisk-icon-light.svg',
           srcDark: '/img/lisk-icon-dark.svg',
         },
+
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'documentationSidebar',
-            position: 'left',
-            label: 'Documentation',
-          },
-          {
-            type: 'docSidebar',
             sidebarId: 'userSidebar',
-            label: 'Guides',
+            label: 'User Guides',
             to: 'docs-user/intro',
             position: 'left',
             docsPluginId: 'docs-user',

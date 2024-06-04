@@ -1,17 +1,5 @@
-.lsk-light {
-    margin-top: -.35em;
-    width: 5.15em;
-    padding: .5%;
-}
-
 html[data-theme='light'] .lsk-dark {
     display: none;
-}
-
-.lsk-dark {
-    margin-top: -.35em;
-    width: 5.15em;
-    padding: .5%;
 }
 
 html[data-theme='dark'] .lsk-light {
