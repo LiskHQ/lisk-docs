@@ -49,7 +49,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: './sidebars.js',
+          sidebarPath: require.resolve('./sidebars.js'),
           // sidebarCollapsible: false,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -71,6 +71,17 @@ const config = {
           ]
         },
       }),
+    ],
+  ],
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'docs-user',
+        path: 'docs-user',
+        routeBasePath: 'docs-user',
+        sidebarPath: require.resolve('./userSidebar.js'),
+      },
     ],
   ],
 
@@ -96,6 +107,15 @@ const config = {
             sidebarId: 'documentationSidebar',
             position: 'left',
             label: 'Documentation',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'userSidebar',
+            label: 'Guides',
+            to: 'docs-user/intro',
+            position: 'left',
+            docsPluginId: 'docs-user',
+            activeBasePath: 'docs-user',
           },
           /*{to: '/blog', label: 'Blog', position: 'left'},*/
           {
