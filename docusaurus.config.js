@@ -79,7 +79,7 @@ const config = {
       {
         id: 'docs-user',
         path: 'docs-user',
-        routeBasePath: 'docs-user',
+        routeBasePath: 'user',
         sidebarPath: require.resolve('./userSidebar.js'),
       },
     ],

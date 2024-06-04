@@ -1,6 +1,6 @@
 ---
-title: 'Product #1'
+title: 'Test User Guide'
 sidebar_position: 1
 ---
 
-Prod1
+This is a test user guide.
