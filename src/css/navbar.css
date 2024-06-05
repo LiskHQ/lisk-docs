@@ -6,6 +6,13 @@
     margin-bottom: -1%;
     margin-left: 1.05em;
     font-size: large;
+
+    /* color: #0c152ebf; */
+
+}
+
+a:hover {
+    color: yellow;
 }
 
 html[data-theme='dark'] .navbar__item {
@@ -17,6 +24,7 @@ html[data-theme='dark'] .navbar__item {
     margin-left: 1.05em;
     font-size: large;
     color: white;
+    transition: color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
 }
 
 .navbar--fixed-top {
