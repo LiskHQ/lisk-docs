@@ -73,11 +73,6 @@ a {
   scroll-margin-top: var(--ifm-navbar-height);
 }
 
-a {
-  display: inline-block;
-  scroll-margin-top: var(--ifm-navbar-height);
-}
-
 html[data-theme='dark'] .alert a {
   text-decoration-color: var(--ifm-color-primary);
 }
