@@ -10,5 +10,3 @@ In this section, we will walk you through various ways of interacting with Lisk'
 <h2>Getting started</h2>
 <img src="/img/bannerwhite.svg " alt="Getting started" title="Getting started" style={{ display: 'block', marginLeft: 'auto'}}/> 
 </span>
-
-
