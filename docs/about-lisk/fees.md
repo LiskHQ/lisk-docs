@@ -22,9 +22,6 @@ keywords:
   ]
 ---
 
-<!-- 
-TODO: Add link to the Lisk gas price tracker similar to https://optimistic.grafana.net/public-dashboards/c84a5a9924fe4e14b270a42a8651ceb8?orgId=1&refresh=5m - once available
- -->
 # Fees
 
 Fees on Lisk Mainnet are, for the most part, significantly lower than on the L1 Ethereum network.
@@ -59,10 +56,34 @@ The [L2 Execution Fee](https://docs.optimism.io/stack/transactions/fees#executio
 
   For this component of the fee, you can estimate the total cost of a transaction using the same tools you would use to estimate the cost of a transaction on Ethereum.
   You can read more about how Ethereum's gas fees work over on [Ethereum.org](https://ethereum.org/en/developers/docs/gas/).
+
 - **L1 Data Fee**: 
 The [L1 Data Fee](https://docs.optimism.io/stack/transactions/fees#l1-data-fee) is the only part of the Lisk Mainnet transaction fee that differs from the Ethereum transaction fee.
 This fee arises from the fact that the transaction data for all Lisk Mainnet transactions is published to Ethereum.
 This guarantees that the transaction data is available for nodes to download and execute.
+
+This function uses the following parameters:
+
+- The **signed transaction** serialized according to the standard Ethereum transaction RLP encoding.
+- The **current Ethereum base fee** and/or blob base fee (trustlessly relayed from Ethereum).
+- Two new **scalar parameters** that independently scale the base fee and blob base fee.
+
+  The L1 data fee is claculated according to the following formula:
+  ```
+  l1_data_fee = tx_compressed_size * weighted_gas_price
+  ```
+
+  Where the `tx_compressed_size` is calculated like this:
+
+  ```
+  tx_compressed_size = [(count_zero_bytes(tx_data)*4 + count_non_zero_bytes(tx_data)*16)] / 16
+  ```
+
+  Next, the two scalars are applied to the base fee and blob base fee parameters to compute a weighted gas price multiplier.
+
+  ```
+  weighted_gas_price = 16*base_fee_scalar*base_fee + blob_base_fee_scalar*blob_base_fee
+  ```
 
   The L1 Data Fee is automatically charged for any transaction that is included in a Lisk Mainnet block.
   This fee is deducted directly from the address that sent the transaction.
