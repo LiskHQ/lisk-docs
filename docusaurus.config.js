@@ -121,7 +121,7 @@ const config = {
           },
           /*{to: '/blog', label: 'Blog', position: 'left'},*/
           {
-            href: 'https://stack.optimism.io',
+            href: 'https://docs.optimism.io/',
 
             html: `
               <img src="/img/op_stack_dark.svg" class="op-dark" />

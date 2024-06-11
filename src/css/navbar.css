@@ -1,9 +1,9 @@
 .navbar__item {
     font-weight: var(--ifm-font-weight-bold);
-    font-family: 'Gilroy-Bold';
+    font-family: 'Gilroy-SemiBold';
     text-transform: uppercase;
     align-self: center;
-    margin-bottom: -1.2%;
+    margin-bottom: -.75%;
     margin-left: 1.05em;
     font-size: large;
 }
@@ -14,10 +14,10 @@
 
 html[data-theme='dark'] .navbar__item {
     font-weight: var(--ifm-font-weight-bold);
-    font-family: 'Gilroy-Bold';
+    font-family: 'Gilroy-SemiBold';
     text-transform: uppercase;
     align-self: center;
-    margin-bottom: -1.2%;
+    margin-bottom: -.75%;
     margin-left: 1.05em;
     font-size: large;
     color: white;
