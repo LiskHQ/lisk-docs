@@ -23,7 +23,7 @@ const config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'LiskHQ', // Usually your GitHub org/user name.
   projectName: 'lisk-documentation', // Usually your repo name.
-  trailingSlash: true,
+  trailingSlash: false,
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -55,7 +55,7 @@ const config = {
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/LiskHQ/lisk-documentation/tree/main/',
-          routeBasePath: '/',
+          routeBasePath: '/docs',
         },
         /*blog: {
           showReadingTime: true,
@@ -101,12 +101,19 @@ const config = {
           src: '/img/lisk-icon-light.svg',
           srcDark: '/img/lisk-icon-dark.svg',
         },
-
         items: [
+
+          {
+            type: 'docSidebar',
+            sidebarId: 'documentationSidebar',
+            position: 'left',
+            to: 'docs/intro',
+            label: 'Building with Lisk',
+          },
           {
             type: 'docSidebar',
             sidebarId: 'userSidebar',
-            label: 'User Guides',
+            label: 'Using Lisk',
             to: 'docs-user/intro',
             position: 'left',
             docsPluginId: 'docs-user',
@@ -131,8 +138,8 @@ const config = {
             items: [
               {
                 html: `
-              <img src="/img/lisk-icon-light.svg" class="lsk-light" />
-              <img src="/img/lisk-icon-dark.svg" class="lsk-dark" />
+              <img src="/img/lisk-icon-light-footer.svg" class="lsk-light" />
+              <img src="/img/lisk-icon-dark-footer.svg" class="lsk-dark" />
             `},
             ],
           },
