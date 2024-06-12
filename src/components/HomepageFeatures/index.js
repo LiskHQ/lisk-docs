@@ -9,7 +9,7 @@ const FeatureList = [
     Svg: require('/img/lisk-icon-light-footer.svg').default,
     description: (
       <>
-        Lisk offers a highly efficient, lightning-fast, and easily scalable Layer 2 (L2) network built on Optimism (OP) and secured by Ethereum.
+        <Link to="/docs">Lisk</Link> offers a highly efficient, lightning-fast, and easily scalable Layer 2 (L2) network built on Optimism (OP) and secured by Ethereum.
       </>
     ),
   },
@@ -18,7 +18,7 @@ const FeatureList = [
     Svg: require('/img/build-dark.svg').default,
     description: (
       <>
-        Lisk offers low-cost transactions, EVM compatibility, and support for all major developer frameworks, making it the top choice for developers. Join Lisk to access essential technical materials for your development journey.
+        Lisk offers low-cost transactions, EVM compatibility, and support for all major developer frameworks, making it the top choice for developers. Join Lisk to access essential<Link to="/docs/category/building-on-lisk"> technical materials</Link> for your development journey.
       </>
     ),
   },
@@ -27,9 +27,7 @@ const FeatureList = [
     Svg: require('/img/lisk-ecosystem-dark.svg').default,
     description: (
       <>
-        <p>Embracing the superchain framework, Lisk presents an
-          decentralized <Link to="/user/category/governance">governance</Link> interoperable ecosystem, reinforcing
-          and offering <Link to="https://lisk.com/blog/posts/say-hello-to-the-new-Lisk-L2-grant-program">grant programs</Link> to advocate the principles of a decentralized world and inclusivity.</p>
+        <p>Lisk embraces the superchain framework, offering decentralized <Link to="/user/category/governance">governance</Link> and an interoperable ecosystem. We provide <Link to="https://lisk.com/blog/posts/say-hello-to-the-new-Lisk-L2-grant-program">grant programs</Link> to support the development of products and advocate for the principles of a decentralized world and inclusivity.</p>
       </>
     ),
   },
