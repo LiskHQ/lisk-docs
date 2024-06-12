@@ -30,18 +30,14 @@ The following sources might support you in your delegation decision:
 
 - [Lisk Chat](https://lisk.chat): Get in touch with your delegate in the Lisk chat, or ask other users about their experiences with the delegate.
 - [Lisk Governance Forum](https://forum.lisk.com/c/delegates/): The Lisk Governance Forum provides a section for delegates to present themselves to the community.
-- **Lisk DAO Tally instance**: Check the delegate's profile, voting history, and activity on the Lisk DAO Tally instance.
-<!-- {/* TODO: Uncomment link on DAO launch */}
-{/* - [Lisk DAO Tally instance](https://www.tally.xyz/gov/3rd-testing): */} -->
+- [Lisk DAO Tally instance](https://www.tally.xyz/gov/lisk): Check the delegate's profile, voting history, and activity on the Lisk DAO Tally instance.
 
 ## How to delegate your voting power 🗳️
 
 The Lisk DAO uses [Tally](https://www.tally.xyz/) to facilitate delegation. 
 
 The process in a nutshell:
-<!-- TODO: Add link to Lisk delegates on Tally -->
-<!-- 1. Connect your wallet to Tally and navigate to the [Lisk DAO delegates](https://www.tally.xyz/gov/<DAO name>/delegates) page. -->
-1. Connect your wallet to Tally and navigate to the **Lisk DAO delegates** page.
+1. Connect your wallet to Tally and navigate to the [Lisk DAO delegates](https://www.tally.xyz/gov/lisk/delegates) page.
 2. Search for the delegate you'd like to delegate your voting power to.
 3. Click the "delegate" button on the delegate's profile.
 3. Confirm the delegation by following Tally's prompts.
@@ -80,9 +76,6 @@ Excellent delegates will do even more than that, for example:
   - Receive extra rewards for being an excellent delegate (e.g., being most active/constructive, having most delegations, etc). */} -->
 - **Reputation**:
   - Gain a trustworthy reputation by being an active delegate.
-
-<!-- {/* TODO: Create guide */}
-{/* For more information, check the guide on [How to delegate your voting power] */} -->
 
 ## How to become a delegate 🚀
 
