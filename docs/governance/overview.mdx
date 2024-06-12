@@ -62,7 +62,8 @@ The current balance of the treasury can be checked on the [Lisk BlockScout Explo
 The treasury is NOT managed by the Onchain Foundation.
 Instead, the funds from the treasury can only be transferred via successful [funding proposals](#proposal-types).
 
-Tokens for the Lisk DAO fund are minted newly and added to the Lisk DAO according to the following vesting plan:
+Tokens for the Lisk DAO fund are minted.
+They are added to the treasury according to the following vesting plan:
 
 | Year | Amount (LSK) | Description |
 |------|--------------|-------------|
@@ -71,7 +72,7 @@ Tokens for the Lisk DAO fund are minted newly and added to the Lisk DAO accordin
 | 2026 | 15,000,000 | LSK are linearly released over the year. |
 
 :::note
-The DAO fund may be increased further in the future by an additional 100,000,000 LSK over the following 7 years if the DAO members approve the corresponding proposals.
+The DAO fund may be increased further in the future by an additional 100,000,000 LSK over the following 7 years (2026-2033) if the DAO members approve the corresponding proposals.
 :::
 
 ### Voting power
@@ -87,20 +88,21 @@ This works as follows:
 {/* TODO: Uncomment once staking is implemented */}
 {/* Staking happens on the [Lisk portal](https://portal.lisk.com/). */}
 
-Initially, the voting power of a locked token will be constant during its locking duration.
-But it is possible to [boost the voting power](#boosting-the-voting-power) by up to 200% where the boost is proportional to the remaining locking duration.
-
 #### Voting power calculation
 Locked tokens provide a voting power proportional to the amount of locked tokens.
 Concretely, 1 locked LSK provides one unit of voting power (= 1 vpLSK).
 
+:::info
 The voting power for each proposal is counted from a snapshot on the [creation of the proposal](proposal-lifecycle#2-proposal-creation).
+Therefore, pausing the locking duration after a proposal is created does not increase the voting power for this proposal, but for the future ones.
+:::
 
 ##### Boosting the voting power
 Users have the option to pause the countdown of the locking period.
 This means that the counting towards the end of the locking period is paused until the user decides to resume it.
-In the case of pausing, the user receives a boost of the voting power. It is set to `lockedAmount * (1 + remainingLockingDurationInDays/365)`.
-Hence, the voting power can be increased by up to 200%.
+In the case of pausing, the user receives a boost of the voting power.
+It is set to `lockedAmount * (1 + remainingLockingDurationInDays/365)`.
+Hence, the voting power can be increased by up to 200%, which is achieved at the maximum locking duration of 2 years
 
 ### Delegation
 The Governor framework requires **delegating the voting power** in order to use it.
