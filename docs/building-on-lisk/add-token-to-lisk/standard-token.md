@@ -42,7 +42,7 @@ You can deploy your **Standard ERC-20** token on Lisk Mainnet by adopting the sa
 For deploying to mainnet, ensure that your wallet has enough ETH.
 
 The subsequent text contains commands for both Lisk and Lisk Sepolia for your ease.
-For more information, see the [available Lisk networks](/network-info) and [how to connect a wallet with them](/connecting-to-a-wallet).
+For more information, see the [available Lisk networks](/docs/network-info) and [how to connect a wallet with them](/docs/connecting-to-a-wallet).
 :::
 
 

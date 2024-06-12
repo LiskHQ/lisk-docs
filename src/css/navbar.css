@@ -4,7 +4,6 @@
     text-transform: uppercase;
     align-self: center;
     margin-bottom: -.75%;
-    margin-left: 1.05em;
     font-size: large;
 }
 
@@ -18,7 +17,6 @@ html[data-theme='dark'] .navbar__item {
     text-transform: uppercase;
     align-self: center;
     margin-bottom: -.75%;
-    margin-left: 1.05em;
     font-size: large;
     color: white;
     transition: color var(--ifm-transition-fast) var(--ifm-transition-timing-default);

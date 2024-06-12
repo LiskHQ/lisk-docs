@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
+import Link from '@docusaurus/Link';
 
 const FeatureList = [
   {
@@ -8,27 +9,27 @@ const FeatureList = [
     Svg: require('/img/lisk-icon-light-footer.svg').default,
     description: (
       <>
-        Lisk provides a cost-efficient, fast, and scalable Layer 2 (L2) network based on Optimism (OP) that is secured by Ethereum.
+        Lisk offers a highly efficient, lightning-fast, and easily scalable Layer 2 (L2) network built on Optimism (OP) and secured by Ethereum.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Build with Lisk',
     Svg: require('/img/build-dark.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Lisk offers low-cost transactions, EVM compatibility, and support for all major developer frameworks, making it the top choice for developers. Join Lisk to access essential technical materials for your development journey.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Ecosystem for the future',
     Svg: require('/img/lisk-ecosystem-dark.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        <p>Embracing the superchain framework, Lisk presents an
+          decentralized <Link to="/user/category/governance">governance</Link> interoperable ecosystem, reinforcing
+          and offering <Link to="https://lisk.com/blog/posts/say-hello-to-the-new-Lisk-L2-grant-program">grant programs</Link> to advocate the principles of a decentralized world and inclusivity.</p>
       </>
     ),
   },
