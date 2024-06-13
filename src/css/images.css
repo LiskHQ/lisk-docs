@@ -61,3 +61,9 @@ html[data-theme='light'] .op-dark {
 html[data-theme='dark'] .op-light {
     display: none;
 }
+
+.overview-img {
+    display: block;
+    margin-left: auto;
+    margin-right: -3em;
+}
