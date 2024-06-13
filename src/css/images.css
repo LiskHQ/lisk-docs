@@ -18,6 +18,26 @@ html[data-theme='dark'] .lsk-light {
     display: none;
 }
 
+.lisk-smp-light {
+    height: 200px;
+    width: 200px;
+    margin-bottom: -5%;
+}
+
+.lisk-smp-dark {
+    height: 200px;
+    width: 200px;
+    margin-bottom: -5%;
+}
+
+html[data-theme='light'] .lisk-smp-dark {
+    display: none;
+}
+
+html[data-theme='dark'] .lisk-smp-light {
+    display: none;
+}
+
 .op-light {
     width: 11em;
     display: flex;

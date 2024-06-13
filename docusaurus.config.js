@@ -98,8 +98,8 @@ const config = {
       navbar: {
         logo: {
           alt: 'Lisk Logo',
-          src: '/img/lisk-icon-light.svg',
-          srcDark: '/img/lisk-icon-dark.svg',
+          src: '/img/lisk-docs-light.svg',
+          srcDark: '/img/lisk-docs-dark.svg',
         },
         items: [
 

@@ -91,15 +91,13 @@ html[data-theme='dark'] .alert a {
 
 .btn-custom {
   width: 100%;
-  /* background-color: var(--ifm-color-primary);
-  color: white; */
 }
 
 .text-style-custom {
   padding-top: 5%;
-  height: 55%;
+  height: 58.5%;
   background-color: rgb(197, 207, 228, 0.05);
-  border-radius: 2%;
+  border-radius: 4%;
 }
 
 
