@@ -58,7 +58,7 @@ const FeatureList = [
         <p>Lisk embraces the superchain framework, offering decentralized <Link to="/user/category/governance">governance</Link> and an interoperable ecosystem. We provide <Link to="https://lisk.com/blog/posts/say-hello-to-the-new-Lisk-L2-grant-program">grant programs</Link> to support the development of products and advocate for the principles of a decentralized world and inclusivity.</p>
         <Link
           className="button button--secondary button--lg btn-custom"
-          to="/user/category/governance">
+          to="/user/">
           LEARN MORE
         </Link>
       </>
