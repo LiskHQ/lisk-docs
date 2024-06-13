@@ -89,6 +89,20 @@ html[data-theme='dark'] .alert a {
   margin-top: 6%;
 }
 
+.btn-custom {
+  width: 100%;
+  /* background-color: var(--ifm-color-primary);
+  color: white; */
+}
+
+.text-style-custom {
+  padding-top: 5%;
+  height: 55%;
+  background-color: rgb(197, 207, 228, 0.05);
+  border-radius: 2%;
+}
+
+
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
   --ifm-color-primary: #2BD67B;
