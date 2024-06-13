@@ -15,7 +15,7 @@ function HomepageHeader() {
         <Heading as="h1" className="hero__title">
           Welcome to the Lisk Documentation 🎉
         </Heading>
-        <p className="hero__subtitle">We are thrilled to have you here. Explore this site for technical details and guides on creating and utilizing the Lisk L2 blockchain.</p>
+        <p className="hero__subtitle">Explore our comprehensive knowledge base tailored for both developers and users! Find in-depth technical information and helpful guides all about the Lisk blockchain.</p>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
