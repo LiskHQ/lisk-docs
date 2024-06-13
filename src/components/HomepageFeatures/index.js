@@ -14,7 +14,6 @@ const FeatureList = [
     title: 'What is Lisk?',
     description: (
       <>
-
         <p><Link to="/docs">Lisk</Link> offers a highly efficient, lightning-fast, and easily scalable Layer 2 (L2) network built on Optimism (OP) and secured by Ethereum.</p>
         <br></br>
         <br></br>
