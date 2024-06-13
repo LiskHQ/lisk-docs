@@ -13,7 +13,7 @@ function HomepageHeader() {
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
         <Heading as="h1" className="hero__title">
-          Welcome to Lisk Docs
+          Welcome to the Lisk Documentation 🎉
         </Heading>
         <p className="hero__subtitle">We are thrilled to have you here. Explore this site for technical details and guides on creating and utilizing the Lisk L2 blockchain.</p>
         <div className={styles.buttons}>
