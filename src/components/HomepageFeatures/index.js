@@ -1,47 +1,77 @@
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
+import Link from '@docusaurus/Link';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    img: (
+      <>
+        <img src='/img/lisk-light.svg' className='lisk-smp-light'></img>
+        <img src='/img/lisk-dark.svg' className='lisk-smp-dark'></img>
+      </>
+    ),
+    title: 'What is Lisk?',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        <p>Lisk offers a highly efficient, lightning-fast, and easily scalable Layer 2 (L2) network built on Optimism (OP) and secured by Ethereum.</p>
+        <br></br>
+        <br></br>
+        <Link
+          className="button button--secondary button--lg btn-custom"
+          to="/docs/">
+          EXPLORE
+        </Link>
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    img: (
+      <>
+        <img src='/img/build-light.svg' className='lisk-smp-light'></img>
+        <img src='/img/build-dark.svg' className='lisk-smp-dark'></img>
+      </>
+    ),
+    title: 'Build with Lisk',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        <p>Lisk offers low-cost transactions, EVM compatibility, and support for all major developer frameworks, making it the top choice for developers. Join Lisk to access essential technical materials for your development journey.</p>
+        <Link
+          className="button button--secondary button--lg btn-custom"
+          to="/category/building-on-lisk">
+          GET STARTED
+        </Link>
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    img: (
+      <>
+        <img src='/img/lisk-ecosystem-light.svg' className='lisk-smp-light'></img>
+        <img src='/img/lisk-ecosystem-dark.svg' className='lisk-smp-dark'></img>
+      </>
+    ),
+    title: 'Ecosystem for the future',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        <p>Lisk embraces the superchain framework, offering decentralized <Link to="/category/governance">governance</Link> and an interoperable ecosystem. We provide <Link to="https://lisk.com/blog/posts/say-hello-to-the-new-Lisk-L2-grant-program">grant programs</Link> to support the development of products and advocate for the principles of a decentralized world and inclusivity.</p>
+        <Link
+          className="button button--secondary button--lg btn-custom"
+          to="/governance/overview">
+          LEARN MORE
+        </Link>
       </>
     ),
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({ img, title, description }) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+        <p>{img}</p>
       </div>
-      <div className="text--center padding-horiz--md">
+      <div className="text--center text-style-custom padding-horiz--md">
         <Heading as="h3">{title}</Heading>
         <p>{description}</p>
       </div>
