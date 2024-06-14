@@ -60,6 +60,10 @@ How to use the legacy chain service:
 
   For unintialized accounts you can find the account history under: `https://legacy.lisk.com/histories/<legacy-address-ending-with-L>.csv`
 
+:::info[INFO: When is an account initialized?]
+A legacy account is initialized, if it either has an outgoing transaction on Lisk Core v2, or had performed a [legacy reclaim transaction](https://github.com/LiskArchive/lisk-core/blob/development/src/application/modules/legacy/commands/reclaim.ts) on Lisk Core v3/v4, prior to the Lisk L2 migration, which happened end of May 2024, at block height 24,823,618.
+:::
+
 ## Randomness
 
 ### Gelato VRF
