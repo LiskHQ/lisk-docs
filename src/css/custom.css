@@ -73,11 +73,6 @@ a {
   scroll-margin-top: var(--ifm-navbar-height);
 }
 
-a {
-  display: inline-block;
-  scroll-margin-top: var(--ifm-navbar-height);
-}
-
 html[data-theme='dark'] .alert a {
   text-decoration-color: var(--ifm-color-primary);
 }
@@ -92,6 +87,27 @@ html[data-theme='dark'] .alert a {
 
 .pagination-nav {
   margin-top: 6%;
+}
+
+.btn-custom {
+  width: 100%;
+}
+
+.text-style-custom {
+  padding-top: 5%;
+  height: 58.5%;
+  background-color: rgb(197, 207, 228, 0.09);
+  border-radius: 4%;
+}
+
+.overview-span {
+  display: grid;
+  align-items: center;
+  column-gap: 5px;
+  background-color: #4070f41a;
+  border-radius: 1em;
+  padding: 5%;
+  margin-bottom: 2%;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
