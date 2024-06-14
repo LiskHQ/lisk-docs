@@ -34,7 +34,7 @@ You can deploy a contract on **Lisk** mainnet by adopting the same process.
 For deploying to mainnet, ensure that your wallet has enough ETH.
 
 The subsequent text contains commands for both Lisk and Lisk Sepolia for your ease.
-For more information, see the [available Lisk networks](/network-info) and [how to connect a wallet with them](/connecting-to-a-wallet).
+For more information, see the [available Lisk networks](/network-info) and [how to connect a wallet with them](/user/connecting-to-a-wallet).
 :::
 
 Foundry is a powerful suite of tools to develop, test, and debug your smart contracts.

@@ -30,27 +30,14 @@ const sidebars = {
         'about-lisk/fees'
       ],
     },
-    {
-      type: 'category',
-      label: 'Governance',
-      collapsible: true,
-      collapsed: false,
-      link: {
-        type: 'generated-index',
-      },
-      items: [
-        'governance/overview',
-        'governance/delegation',
-        'governance/proposal-lifecycle',
-      ],
-    },
+
     {
       type: 'category',
       label: 'Building on Lisk',
       collapsible: true,
       collapsed: false,
       items: [
-        'building-on-lisk/connecting-to-a-wallet',
+        { type: 'ref', id: 'docs-user/connecting-to-a-wallet' },
         'building-on-lisk/contracts',
         'building-on-lisk/run-a-lisk-node',
         {
@@ -91,7 +78,6 @@ const sidebars = {
 
           ],
         },
-        'building-on-lisk/migration-guide',
       ],
       link: {
         type: 'generated-index',
@@ -100,6 +86,16 @@ const sidebars = {
         slug: '/category/building-on-lisk',
         keywords: ['guides'],
       },
+    },
+    {
+      type: 'category',
+      label: 'Lisk L1 legacy chain',
+      collapsible: true,
+      collapsed: false,
+      items: [
+        'lisk-l1/legacy-chain-service',
+        'lisk-l1/migration-guide',
+      ],
     },
     {
       type: 'category',
@@ -112,6 +108,34 @@ const sidebars = {
         'lisk-tools/oracles',
         'lisk-tools/utilities',
         'lisk-tools/indexers'
+      ],
+    },
+  ],
+
+
+  userSidebar: [
+    {
+      type: 'category',
+      label: 'Using Lisk',
+      collapsible: true,
+      collapsed: false,
+      items: [
+        // 'docs-user/intro-user',
+        'docs-user/connecting-to-a-wallet',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Governance',
+      collapsible: true,
+      collapsed: false,
+      link: {
+        type: 'generated-index',
+      },
+      items: [
+        'docs-user/governance/overview',
+        'docs-user/governance/delegation',
+        'docs-user/governance/proposal-lifecycle',
       ],
     },
   ],
