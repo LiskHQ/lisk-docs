@@ -26,7 +26,12 @@ footer>.container {
     padding-right: 0%;
     margin-left: 27.5%;
     margin-right: -15%;
+    color: #0c152ebf;
+    transition: color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+}
 
+[data-theme='dark'] .social_links {
+    color: white;
 }
 
 .copyright {
@@ -34,6 +39,11 @@ footer>.container {
     font-weight: bolder;
     color: var(--ifm-footer-link-color);
     margin-top: 3%;
+    color: #0c152ebf;
+}
+
+[data-theme='dark'] .copyright {
+    color: white;
 }
 
 [data-theme='dark'] .footer {
