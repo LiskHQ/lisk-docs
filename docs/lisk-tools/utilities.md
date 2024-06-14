@@ -54,13 +54,13 @@ How to use the legacy chain service:
 - Get an **account by address** `https://legacy.lisk.com/accounts/<LEGACY_ACCOUNT_ADDRESS>.json`
 - Get **histories by address** `https://legacy.lisk.com/histories/<LEGACY_ACCOUNT_ADDRESS>.csv`
 
-  where `<LEGACY_ACCOUNT_ADDRESS>` is the legacy Lisk address of the format:`lsk**************************************` or `*******************L` (for uninitialized accounts).
+  where `<LEGACY_ACCOUNT_ADDRESS>` is the Lisk L1 address of the format:`lsk**************************************` or `*******************L` (for uninitialized accounts).
  
-  If the legacy account was initialized, the entire history including that of the corresponding `*******L` legacy address will be consolidated under the `lsk` address and the `*******L` address's history won't be available separately.
+  If a Lisk L1 legacy account (`*******************L` address) was initialized, the entire history including that of the `*******************L` legacy address will be consolidated under the corresponding `lsk` address. The `*******************L` address's history won't be available separately.
 
 
-:::info[INFO: When is an account initialized?]
-A legacy account is initialized, if it either has an outgoing transaction on Lisk Core v2, or had performed a [legacy reclaim transaction](https://github.com/LiskArchive/lisk-core/blob/development/src/application/modules/legacy/commands/reclaim.ts) on Lisk Core v3/v4, prior to the Lisk L2 migration, which happened end of May 2024, at block height 24,823,618.
+:::info[INFO: When is a Lisk L1 account initialized?]
+A Lisk L1 legacy account is considered initialized, if it either has an outgoing transaction on Lisk Core v2, or had performed a [legacy reclaim transaction](https://github.com/LiskArchive/lisk-core/blob/development/src/application/modules/legacy/commands/reclaim.ts) on Lisk Core v3/v4, prior to the Lisk L2 migration, which happened end of May 2024, at block height 24,823,618.
 :::
 
 ## Randomness
