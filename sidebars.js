@@ -78,7 +78,6 @@ const sidebars = {
 
           ],
         },
-        'building-on-lisk/migration-guide',
       ],
       link: {
         type: 'generated-index',
@@ -87,6 +86,16 @@ const sidebars = {
         slug: '/category/building-on-lisk',
         keywords: ['guides'],
       },
+    },
+    {
+      type: 'category',
+      label: 'Lisk L1 legacy chain',
+      collapsible: true,
+      collapsed: false,
+      items: [
+        'lisk-l1/legacy-chain-service',
+        'lisk-l1/migration-guide',
+      ],
     },
     {
       type: 'category',
