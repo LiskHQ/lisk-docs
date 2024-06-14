@@ -34,7 +34,7 @@ A reference page containing information about all the contracts deployed on diff
 | **L1StandardBridge**                   | [0x2658723Bf70c7667De6B25F99fcce13A16D25d08](https://etherscan.io/address/0x2658723Bf70c7667De6B25F99fcce13A16D25d08) |  |
 | **ProtocolVersions**                | [0xDd9C27910327d3f4A4007Ad8f7B53332DB6f1079](https://etherscan.io/address/0xDd9C27910327d3f4A4007Ad8f7B53332DB6f1079) | It is used to manage superchain protocol version information.  |
 | **L1CrossDomainMessenger**                | [0x31B72D76FB666844C41EdF08dF0254875Dbb7edB](https://etherscan.io/address/0x31B72D76FB666844C41EdF08dF0254875Dbb7edB) | Sends messages from L1 to L2 and relays messages from L2 onto L1.  |
-| **OptimismMintableERC20Factory**  | [0xD00e38514d66bf1B761a8937559c6b2854A5B3ad](https://etherscan.io/address/0xD00e38514d66bf1B761a8937559c6b2854A5B3ad) | It is responsible for creating ERC20 contracts on L2 that can be used for depositing native L1 tokens into.  |
+| **OptimismMintableERC20Factory**  | [0xc1dA06CC5DD5cE23bABa924463de7F762039252d](https://etherscan.io/address/0xc1dA06CC5DD5cE23bABa924463de7F762039252d) | It is responsible for creating ERC20 contracts on L1 that can be used for depositing native L2 tokens into.  |
 
 ### Lisk (L2)
 
@@ -82,7 +82,7 @@ The following L1 contracts have been deployed to the **Ethereum Sepolia Testnet*
 | **AddressManager**                | [0x27Bb4A7cd8FB20cb816BF4Aac668BF841bb3D5d3](https://sepolia.etherscan.io/address/0x27Bb4A7cd8FB20cb816BF4Aac668BF841bb3D5d3) | The Address Manager is a built-in actor that manages Ethereum's address space. |
 | **OptimismPortal**                | [0xe3d90F21490686Ec7eF37BE788E02dfC12787264](https://sepolia.etherscan.io/address/0xe3d90F21490686Ec7eF37BE788E02dfC12787264) | It is the main entry point to deposit funds from L1 to L2. It also allows proving and finalizing withdrawals. |
 | **ProtocolVersions**              | [0x1Bb17EB31bDdFd30F63D4FAe6c8Eb85D9e9b1f48](https://sepolia.etherscan.io/address/0x1Bb17EB31bDdFd30F63D4FAe6c8Eb85D9e9b1f48) | It is used to manage superchain protocol version information. |
-| **OptimismMintableERC20Factory**  | [0x269d632C1E518a922C30C749cFD3f82Eb5C779B0](https://sepolia.etherscan.io/address/0x269d632C1E518a922C30C749cFD3f82Eb5C779B0) | It is responsible for creating ERC20 contracts on L2 that can be used for depositing native L1 tokens into. |
+| **OptimismMintableERC20Factory**  | [0x269d632C1E518a922C30C749cFD3f82Eb5C779B0](https://sepolia.etherscan.io/address/0x269d632C1E518a922C30C749cFD3f82Eb5C779B0) | It is responsible for creating ERC20 contracts on L1 that can be used for depositing native L2 tokens into. |
 
 
 ### Lisk Sepolia (L2)
