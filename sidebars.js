@@ -37,7 +37,7 @@ const sidebars = {
       collapsible: true,
       collapsed: false,
       items: [
-        'building-on-lisk/connecting-to-a-wallet',
+        { type: 'ref', id: 'docs-user/connecting-to-a-wallet' },
         'building-on-lisk/contracts',
         'building-on-lisk/run-a-lisk-node',
         {
@@ -99,6 +99,34 @@ const sidebars = {
         'lisk-tools/oracles',
         'lisk-tools/utilities',
         'lisk-tools/indexers'
+      ],
+    },
+  ],
+
+
+  userSidebar: [
+    {
+      type: 'category',
+      label: 'Using Lisk',
+      collapsible: true,
+      collapsed: false,
+      items: [
+        // 'docs-user/intro-user',
+        'docs-user/connecting-to-a-wallet',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Governance',
+      collapsible: true,
+      collapsed: false,
+      link: {
+        type: 'generated-index',
+      },
+      items: [
+        'docs-user/governance/overview',
+        'docs-user/governance/delegation',
+        'docs-user/governance/proposal-lifecycle',
       ],
     },
   ],

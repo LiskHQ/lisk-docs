@@ -55,7 +55,7 @@ const config = {
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/LiskHQ/lisk-documentation/tree/main/',
-          routeBasePath: '/docs',
+          routeBasePath: '/',
         },
         /*blog: {
           showReadingTime: true,
@@ -71,17 +71,6 @@ const config = {
           ]
         },
       }),
-    ],
-  ],
-  plugins: [
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'docs-user',
-        path: 'docs-user',
-        routeBasePath: 'user',
-        sidebarPath: require.resolve('./userSidebar.js'),
-      },
     ],
   ],
 
@@ -102,22 +91,17 @@ const config = {
           srcDark: '/img/lisk-docs-dark.svg',
         },
         items: [
-
           {
-            type: 'docSidebar',
-            sidebarId: 'documentationSidebar',
+            type: 'doc',
             position: 'left',
-            to: 'docs/intro',
+            docId: 'intro',
             label: 'Building with Lisk',
           },
           {
             type: 'docSidebar',
+            position: 'left',
             sidebarId: 'userSidebar',
             label: 'Using Lisk',
-            to: 'docs-user/intro',
-            position: 'left',
-            docsPluginId: 'docs-user',
-            activeBasePath: 'docs-user',
           },
           /*{to: '/blog', label: 'Blog', position: 'left'},*/
           {

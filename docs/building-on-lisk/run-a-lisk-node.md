@@ -111,5 +111,5 @@ $( curl -s -d '{"id":0,"jsonrpc":"2.0","method":"optimism_syncStatus"}' -H "Cont
 ```
 
 
-[partners]: /docs/lisk-tools/api-providers
+[partners]: /lisk-tools/api-providers
 [lisk node]: https://github.com/LiskHQ/lisk-node
