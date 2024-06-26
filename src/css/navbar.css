@@ -1,30 +1,25 @@
 .navbar__item {
     font-weight: var(--ifm-font-weight-bold);
-    font-family: 'Gilroy-Bold';
+    font-family: 'Gilroy-SemiBold';
     text-transform: uppercase;
     align-self: center;
-    margin-top: .4%;
-    padding: 0%;
-    margin-left: -1em;
+    margin-bottom: -.75%;
     font-size: large;
+}
+
+.navbar__item:hover {
+    text-decoration: underline;
 }
 
 html[data-theme='dark'] .navbar__item {
     font-weight: var(--ifm-font-weight-bold);
-    font-family: 'Gilroy-Bold';
+    font-family: 'Gilroy-SemiBold';
     text-transform: uppercase;
     align-self: center;
-    margin-top: .4%;
-    padding: 0%;
-    margin-left: -1em;
+    margin-bottom: -.75%;
     font-size: large;
     color: white;
-}
-
-.navbar__logo img {
-    margin-top: -.3em;
-    width: 5.15em;
-    align-self: center;
+    transition: color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
 }
 
 .navbar--fixed-top {

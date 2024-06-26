@@ -144,7 +144,7 @@ The foundation will have an administrative role and will take care of the follow
 
 ### Staking rewards
 Staking rewards incentivize users to participate in governance, making the decision making more decentralized and community-driven.  
-In short, users get [voting power](#voting-power) and rewards for locking/staking tokens for a specific time period.
+In short, users get [voting power](#voting-power) and rewards for staking tokens for a specific time period.
 
 The Lisk DAO applies a **time-weight boosting** on rewards:
 The further the end of the locking duration is in the future, the more rewards you get.
@@ -160,14 +160,12 @@ Note that this results in **higher staking rewards**, since the weight remains f
 #### Staking rewards distribution
 {/* TODO: 
 - Add Blockscout link to address of the Staking contract 
-- Update contract overview link, once the repository is public
 */}
-{/* Rewards are taken from the balance of the [Rewards contract](https://github.com/LiskHQ/lisk-contracts-private/blob/main/documentation/staking-governance.md#contracts-overview) and calculated daily, based on the amount locked and the remaining locking duration. */}
-Rewards are taken from the balance of the Rewards contract and calculated daily, based on the amount locked and the remaining locking duration.
+Rewards are taken from the balance of the [Rewards contract](https://github.com/LiskHQ/lisk-contracts/blob/main/documentation/staking-governance.md#contracts-overview) and calculated daily, based on the amount locked and the remaining locking duration.
 Concretely, the weight for a locked amount is given by `lockedAmount * (remainingLockingDurationInDays + 150)`.
 The total daily amount of staking rewards, 8,000,000 / 365  LSK, is then shared by all users proportional to their weight.
 
-We plan to use a total of 24 million LSK tokens over the course of 3 years for the LSK staking rewards program (8 million LSK per year).
+A total of 24 million LSK tokens will be used over the course of 3 years for the LSK staking rewards program (8 million LSK per year).
 After the end of this 3-year span, we expect that developments in the Optimism Superchain Ecosystem (shared, decentralized sequencers) will lead us to a new staking mechanism.
 
 However, even in case the current staking mechanism has to be continued, extra funding could be provided; potential sources are: 

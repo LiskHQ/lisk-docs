@@ -26,7 +26,7 @@ const config = {
   trailingSlash: false,
 
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenMarkdownLinks: 'throw',
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -49,7 +49,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: './sidebars.js',
+          sidebarPath: require.resolve('./sidebars.js'),
           // sidebarCollapsible: false,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -80,6 +80,7 @@ const config = {
       docs: {
         sidebar: {
           hideable: false,
+          autoCollapseCategories: true,
         },
       },
       // Replace with your project's social card
@@ -87,19 +88,25 @@ const config = {
       navbar: {
         logo: {
           alt: 'Lisk Logo',
-          src: '/img/lisk-icon-light.svg',
-          srcDark: '/img/lisk-icon-dark.svg',
+          src: '/img/lisk-docs-light.svg',
+          srcDark: '/img/lisk-docs-dark.svg',
         },
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'documentationSidebar',
+            type: 'doc',
             position: 'left',
-            label: 'Documentation',
+            docId: 'intro',
+            label: 'Building with Lisk',
+          },
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'userSidebar',
+            label: 'Using Lisk',
           },
           /*{to: '/blog', label: 'Blog', position: 'left'},*/
           {
-            href: 'https://stack.optimism.io',
+            href: 'https://docs.optimism.io/',
 
             html: `
               <img src="/img/op_stack_dark.svg" class="op-dark" />
@@ -116,8 +123,8 @@ const config = {
             items: [
               {
                 html: `
-              <img src="/img/lisk-icon-light.svg" class="lsk-light" />
-              <img src="/img/lisk-icon-dark.svg" class="lsk-dark" />
+              <img src="/img/lisk-icon-light-footer.svg" class="lsk-light" />
+              <img src="/img/lisk-icon-dark-footer.svg" class="lsk-dark" />
             `},
             ],
           },
