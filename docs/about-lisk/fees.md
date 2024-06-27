@@ -83,8 +83,6 @@ The actual amount of this fee depends on the following input values:
 1. The **signed transaction** serialized according to the standard Ethereum transaction RLP encoding.
 2. The **current Ethereum base fee** and/or blob base fee (trustlessly relayed from Ethereum).
 3. Two **scalar parameters** that independently scale the base fee and blob base fee.
-  - `base_fee_scalar` = 0.786381
-  - `blob_base_fee_scalar` = 0.01734
 
 #### L1 Data Fee calculation
 The L1 data fee is claculated according to the following formula:
@@ -111,6 +109,13 @@ Next, the two scalars are applied to the base fee and blob base fee parameters t
 ```
 weighted_gas_price = 16*base_fee_scalar*base_fee + blob_base_fee_scalar*blob_base_fee
 ```
+
+The default values for the scalars are:
+
+  - `base_fee_scalar` = 0.786381
+  - `blob_base_fee_scalar` = 0.01734[^1]                              |
+
+They can be adjusted depending on network conditions, to mitigate spikes in the transaction fees. 
 
 :::note
 
