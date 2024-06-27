@@ -27,6 +27,14 @@ keywords:
 Fees on Lisk Mainnet are, for the most part, significantly lower than on the L1 Ethereum network.
 The low transaction fees can be provided because Lisk is a [Layer 2 optimistic rollup](https://ethereum.org/en/developers/docs/scaling/optimistic-rollups) network.
 
+## Gas tracker
+
+To track the current and past gas fees on Lisk, check the gas tracker for the respective network on blockscout:
+
+- Lisk Mainnet: https://blockscout.lisk.com/gas-tracker
+- Lisk Sepolia Testnet: https://sepolia-blockscout.lisk.com/gas-tracker 
+
+
 ## How are fees on Lisk calculated?
 
 Every Lisk Mainnet transaction has two costs: An **L2 execution fee** and an **L1 data fee**.
