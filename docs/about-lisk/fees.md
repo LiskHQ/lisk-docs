@@ -116,15 +116,15 @@ For further information about transaction fees, please check the [Optimism Devel
 
 The [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) parameters used by the Lisk Mainnet differ from those used by Ethereum as follows:
 
- Parameter                             | Lisk Mainnet value | Ethereum value (for reference) |
+| Parameter                             | Lisk Mainnet value | Ethereum value (for reference) |
 | ------------------------------------- | ---------------: | -----------------------------: |
-| Block gas limit                       |            ? gas |                 30,000,000 gas |
-| Block gas target                      |            ? gas |                 15,000,000 gas |
-| EIP-1559 elasticity multiplier        |                ? |                              2 |
-| EIP-1559 denominator                  |                ? |                              8 |
-| Maximum base fee increase (per block) |                ? |                          12.5% |
-| Maximum base fee decrease (per block) |                ? |                          12.5% |
-| Block time in seconds                 |                ? |                             12 |
+| Block gas limit                       |   30,000,000 gas |                 30,000,000 gas |
+| Block gas target                      |    1,500,000 gas |                 15,000,000 gas |
+| EIP-1559 elasticity multiplier        |               20 |                              2 |
+| EIP-1559 denominator                  |            1,000 |                              8 |
+| Maximum base fee increase (per block) |             1.9% |                          12.5% |
+| Maximum base fee decrease (per block) |             0.1% |                          12.5% |
+| Block time in seconds                 |                2 |                             12 |
 
 
 ## How do fluctuation in gas price on Ethereum (L1) affect transaction costs on Lisk (L2)?
