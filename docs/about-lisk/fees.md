@@ -97,6 +97,8 @@ Where the `tx_compressed_size` is calculated like this:
 tx_compressed_size = [(count_zero_bytes(tx_data)*4 + count_non_zero_bytes(tx_data)*16)] / 16
 ```
 
+`tx_data` is the byte representation of the serialized transaction.
+
 :::note
 `tx_compressed_size` is an estimation of the size that a transaction will occupy in blobs.
 The divisor of 16 represents the storage savings of using blobs vs calldata.
@@ -110,7 +112,7 @@ Next, the two scalars are applied to the base fee and blob base fee parameters t
 weighted_gas_price = 16*base_fee_scalar*base_fee + blob_base_fee_scalar*blob_base_fee
 ```
 
-The default values for the scalars are:
+The current values for the scalars are:
 
   - `base_fee_scalar` = 0.786381
   - `blob_base_fee_scalar` = 0.01734
