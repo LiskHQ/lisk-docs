@@ -80,7 +80,7 @@ The L1 Data Fee is most heavily influenced by the Ethereum base fee that is cont
 
 The actual amount of this fee depends on the following input values:
 
-1. The **signed transaction** is serialized according to the standard Ethereum transaction RLP encoding.
+1. The **signed transaction**, serialized according to the standard Ethereum transaction RLP encoding.
 2. The **current Ethereum base fee** and/or blob base fee (trustlessly relayed from Ethereum).
 3. Two **scalar parameters** that independently scale the base fee and blob base fee.
 
