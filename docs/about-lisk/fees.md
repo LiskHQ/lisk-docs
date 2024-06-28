@@ -156,9 +156,10 @@ For an L2 transaction, the normal process is:
     - Then, it deducts the gas cost, based on the L1 and L2 gas prices at that time.
 4. After that, the transaction is written to L1.
 
-In principle, between steps 1 and 3 the gas price might change. However, it can not increase by more than 12.5%, therefore the difference between the price shown to user in step 1 and the actual one is bounded by 12.5%.  
+In principle, between steps 1 and 3 the gas price might change.
+However, it can not increase by more than 12.5%, therefore the difference between the price shown to the user in step 1 and the actual one is bounded by 12.5%. 
 After step 3, the finality of the transaction is Lisk's responsibility.
 If the L1 gas price spikes, Lisk pays the new cost.
 
 In conclusion, the user will pay at most 12.5% more than expected.
-See the [Optimism Docs > Transaction Fees](https://docs.optimism.io/stack/transactions/fees#mechanism) for more information around transaction fees.
+See the [Optimism Docs > Transaction Fees](https://docs.optimism.io/stack/transactions/fees#mechanism) for more information about transaction fees.
