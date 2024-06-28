@@ -29,7 +29,7 @@ The low transaction fees can be provided because Lisk is a [Layer 2 optimistic r
 
 ## Gas tracker
 
-To track the current and past gas fees on Lisk, check the gas tracker for the respective network on blockscout:
+To track the current and past gas fees on Lisk, check the gas tracker for the respective network on Blockscout:
 
 - Lisk Mainnet: https://blockscout.lisk.com/gas-tracker
 - Lisk Sepolia Testnet: https://sepolia-blockscout.lisk.com/gas-tracker 
@@ -52,7 +52,7 @@ l2_execution_fee = transaction_gas_price * l2_gas_used
 ```
 
 Because Lisk Mainnet is EVM equivalent, the **gas used** by a transaction on Lisk Mainnet is **exactly the same** as the gas used by the same transaction on Ethereum.
-If a transaction costs 100,000 gas on Ethereum, it will cost 100,000 gas on Lisk Mainnet.
+If a transaction costs 100,000 gas units on Ethereum, it will cost 100,000 gas units on Lisk Mainnet.
 **The only difference is that the gas price on Lisk Mainnet is much lower** than the gas price on Ethereum so you'll end up paying much less in ETH.
 This also means that the total cost of the L2 Execution Fee of a transaction can be estimated using the same tools you would use to estimate the cost of a transaction on Ethereum.
 
@@ -80,12 +80,12 @@ The L1 Data Fee is most heavily influenced by the Ethereum base fee that is cont
 
 The actual amount of this fee depends on the following input values:
 
-1. The **signed transaction** serialized according to the standard Ethereum transaction RLP encoding.
+1. The **signed transaction** is serialized according to the standard Ethereum transaction RLP encoding.
 2. The **current Ethereum base fee** and/or blob base fee (trustlessly relayed from Ethereum).
 3. Two **scalar parameters** that independently scale the base fee and blob base fee.
 
 #### L1 Data Fee calculation
-The L1 data fee is claculated according to the following formula:
+The L1 data fee is calculated according to the following formula:
 
 ```
 l1_data_fee = tx_compressed_size * weighted_gas_price
@@ -98,10 +98,10 @@ tx_compressed_size = [(count_zero_bytes(tx_data)*4 + count_non_zero_bytes(tx_dat
 ```
 
 :::note
-`tx_compressed_size` is an estimation on the size the transaction will occupy in blobs.
+`tx_compressed_size` is an estimation of the size that a transaction will occupy in blobs.
 The divisor of 16 represents the storage savings of using blobs vs calldata.
 
-The "L1 Gas used by txn" field of transaction details in [blockcsout](https://blockscout.lisk.com/) contains the `tx_compressed_size` multiplied by 16 (i.e., the calldata size).
+The "L1 Gas used by txn" field of transaction details in [Blockscout](https://blockscout.lisk.com/) contains the `tx_compressed_size` multiplied by 16 (i.e., the `calldata` size).
 :::
 
 Next, the two scalars are applied to the base fee and blob base fee parameters to compute a weighted gas price multiplier.
@@ -113,7 +113,7 @@ weighted_gas_price = 16*base_fee_scalar*base_fee + blob_base_fee_scalar*blob_bas
 The default values for the scalars are:
 
   - `base_fee_scalar` = 0.786381
-  - `blob_base_fee_scalar` = 0.01734[^1]                              |
+  - `blob_base_fee_scalar` = 0.01734
 
 They can be adjusted depending on network conditions, to mitigate spikes in the transaction fees. 
 
@@ -140,9 +140,9 @@ The [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) parameters used by the L
 | Block time in seconds                 |                2 |                             12 |
 
 
-## How do fluctuation in gas price on Ethereum (L1) affect transaction costs on Lisk (L2)?
+## How do fluctuations in gas price on Ethereum (L1) affect transaction costs on Lisk (L2)?
 
-While the L1 Data Fee will be always cheaper compared to posting the transaction directly to Ethereum mainnet (due to the efficient encoding in batching transactions), it's value will vary depending on the amount of transactions on the L1.
+While the L1 Data Fee will be always cheaper compared to posting the transaction directly to the Ethereum mainnet (due to the efficient encoding in batching transactions), its value will vary depending on the amount of transactions on the L1.
 If the timing of your transaction is flexible, you can save cost by submitting transactions during periods when gas prices on L1 are lower than usual for example, over the weekend.
 
 Changes after the transaction is processed on the sequencer do not affect the cost the user pays.
