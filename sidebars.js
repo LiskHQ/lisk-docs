@@ -127,6 +127,21 @@ const sidebars = {
     },
     {
       type: 'category',
+      label: 'Staking',
+      collapsible: true,
+      collapsed: false,
+      link: {
+        type: 'generated-index',
+      },
+      items: [
+        'docs-user/staking/staking',
+        'docs-user/staking/stake-unstake',
+        'docs-user/staking/increase-stake',
+        'docs-user/staking/pause-locking-period',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Governance',
       collapsible: true,
       collapsed: false,
