@@ -24,7 +24,7 @@ keywords:
 
 # Exchanges
 
-Lisk(LSK) is available for trading on a variety of <!-- decentralized and centralized --> exchanges.
+Lisk (LSK) is available for trading on various <!-- decentralized and centralized --> exchanges.
 
 <!-- ## DEX (Decentralized Exchanges) -->
 
