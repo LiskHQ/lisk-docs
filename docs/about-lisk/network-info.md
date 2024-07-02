@@ -46,5 +46,5 @@ The Lisk L2 is available on the following network:
 | **Block Explorer**                                     | https://sepolia-blockscout.lisk.com                                         |
 | **Block Explorer API**                                 | https://sepolia-blockscout.lisk.com/api                                     |
 | **Lisk Testnet Bridge**                                | https://sepolia-bridge.lisk.com                                             |
-| **Lisk Testnet Faucet** (Grants LSK on Lisk Sepolia)   | https://sepolia-faucet.lisk.com/                                            |
-| **Superchain Testnet Faucet** (Grants ETH on Sepolia, Lisk Sepolia, etc.)    | https://app.optimism.io/faucet                                              |
+| **Lisk Testnet Faucet** (Grants LSK)   | https://sepolia-faucet.lisk.com/                                            |
+| **Superchain Testnet Faucet** (Grants ETH )    | https://app.optimism.io/faucet                                              |
