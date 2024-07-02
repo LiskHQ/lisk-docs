@@ -36,14 +36,15 @@ The Lisk L2 is available on the following network:
 
 ### Lisk Sepolia Testnet
 
-| Name                    | Value                                                                       |
-| :--------------         | :-------------------------------------------------------------------------- |
-| **Network Name**        | Lisk Sepolia Testnet                                                        |
-| **HTTP RPC Endpoint**   | [https://rpc.sepolia-api.lisk.com](https://rpc.sepolia-api.lisk.com)        |
-| **WS RPC Endpoint**     | [wss://ws.sepolia-api.lisk.com](wss://ws.sepolia-api.lisk.com)              |
-| **Chain ID**            | 4202                                                                        |
-| **Currency Symbol**     | ETH                                                                         |
-| **Block Explorer**      | https://sepolia-blockscout.lisk.com                                         |
-| **Block Explorer API**  | https://sepolia-blockscout.lisk.com/api                                     |
-| **Lisk Testnet Bridge** | https://sepolia-bridge.lisk.com                                             |
-| **Lisk Testnet Faucet** | https://app.optimism.io/faucet                                              |
+| Name                                                   | Value                                                                       |
+| :--------------                                        | :-------------------------------------------------------------------------- |
+| **Network Name**                                       | Lisk Sepolia Testnet                                                        |
+| **HTTP RPC Endpoint**                                  | [https://rpc.sepolia-api.lisk.com](https://rpc.sepolia-api.lisk.com)        |
+| **WS RPC Endpoint**                                    | [wss://ws.sepolia-api.lisk.com](wss://ws.sepolia-api.lisk.com)              |
+| **Chain ID**                                           | 4202                                                                        |
+| **Currency Symbol**                                    | ETH                                                                         |
+| **Block Explorer**                                     | https://sepolia-blockscout.lisk.com                                         |
+| **Block Explorer API**                                 | https://sepolia-blockscout.lisk.com/api                                     |
+| **Lisk Testnet Bridge**                                | https://sepolia-bridge.lisk.com                                             |
+| **Lisk Testnet Faucet** (Grants LSK on Lisk Sepolia)   | https://sepolia-faucet.lisk.com/                                            |
+| **Optimism Testnet Faucet** (Grants ETH on Sepolia)    | https://app.optimism.io/faucet                                              |
