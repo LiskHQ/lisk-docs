@@ -48,6 +48,6 @@ After the end of this 3-year span, we expect that developments in the Optimism S
 
 ## Staking Guides
 
-- [How to stake and un-stake](stake-unstake.md)
+- [How to stake, claim and un-stake](stake-unstake.md)
 - [How to increase the stake](increase-stake.md)
 - [How to pause the locking period](pause-locking-period.md)
