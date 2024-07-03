@@ -82,6 +82,10 @@ html[data-theme='dark'] .alert a {
   border-radius: 5%; */
   border: var(--ifm-alert-border-color) solid 1px;
   border-radius: 15px 15px 5px 5px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 1em;
 }
 
 .imageCaption > p {

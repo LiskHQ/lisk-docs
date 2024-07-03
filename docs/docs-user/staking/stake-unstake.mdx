@@ -18,14 +18,13 @@ import duration from '../../../static/img/docs/staking/duration.png';
 import approve from '../../../static/img/docs/staking/approve-small.png';
 import stake from '../../../static/img/docs/staking/stake.png';
 import staked from '../../../static/img/docs/staking/staked.png';
-import staked2 from '../../../static/img/docs/staking/staked.png';
 
 :::info
 You can stake any amount of LSK tokens, starting from a minimum of 0.01 LSK
 :::
 
 <div className="imageCaption">
-  <p>_Image: Staking at the Lisk Portal_</p>
+  <p>Image1: _Staking at the Lisk Portal_</p>
   <a href="https://portal.lisk.com/staking/stake" target="_blank"><img src={form} /></a>
 </div>
 
@@ -49,8 +48,11 @@ As long as the tokens are staked, they are locked for any other usage.
 
 That's it! 🎉 You have now successfully staked your LSK tokens.
 
-<img src={staked2}  alt="Confirmation"/>
 
+<div className="imageCaption">
+  <p>_Image2: Staking confirmation message_</p>
+  <img src={staked}  alt="Confirmation" width="50%"/>
+</div>
 
 As you can see on your [Staking Dashboard](https://portal.lisk.com/staking/dashboard), you receive voting power in the Lisk DAO and staking rewards, proportional to your staked amount and locking duration.
 
@@ -83,6 +85,6 @@ LSK tokens can only be unstaked, if the locking period of the staked tokens has 
   → https://portal.lisk.com/staking/stake ← 
 2. **Click on the `Unstake` tab.**
 3. **Connect your Lisk wallet** to the Lisk Portal, if you haven't already.
-4. **Select the network you want to stake on.** 
+4. **Select the network you want to unstake on.** 
   This should be either `Lisk` or `Lisk Sepolia Testnet`.
 5. **Select the expired locking position** you wish to unstake.
