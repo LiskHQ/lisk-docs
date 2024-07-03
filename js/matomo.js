@@ -1,11 +1,1 @@
-var _paq = window._paq = window._paq || [];
-  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="https://lisk.matomo.cloud/";
-    _paq.push(['setTrackerUrl', u+'matomo.php']);
-    _paq.push(['setSiteId', '6']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.async=true; g.src='//cdn.matomo.cloud/lisk.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
-  })();
+var _paq=window._paq=window._paq||[];_paq.push(["trackPageView"]),_paq.push(["enableLinkTracking"]),function(){_paq.push(["setTrackerUrl","https://lisk.matomo.cloud/matomo.php"]),_paq.push(["setSiteId","6"]);var a=document,e=a.createElement("script"),t=a.getElementsByTagName("script")[0];e.async=!0,e.src="//cdn.matomo.cloud/lisk.matomo.cloud/matomo.js",t.parentNode.insertBefore(e,t)}();
