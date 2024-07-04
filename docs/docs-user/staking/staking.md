@@ -1,5 +1,5 @@
 ---
-title: LSK Staking
+title: LSK Staking Intro
 sidebar_position: 1
 slug: /user/staking
 description: 'How to stake LSK tokens to receive staking rewards.'
