@@ -37,7 +37,7 @@ This also implies that the rewards decrease every day.
 This way, we reward token holders for committing long-term to the Lisk project so we attract them as long-term advocates for Lisk while reducing short-term speculation and volatility. 
 
 <!-- {/* TODO: Remove "coming soon" once features are implemented on Lisk Mainnet */} -->
-- Users can claim their rewards at any time.   
+- Users can [claim](stake-unstake.mdx#how-to-claim-staking-rewards) their rewards at any time.   
 - **[Coming soon]** Users can modify their locking positions (increase amount, extend/pause locking duration) at any time they want.
 - **[Coming soon]** Users have the option to **pause** their locking period countdown.
 That means, the remaining locking duration remains fixed until the user decides to resume it.
@@ -48,7 +48,12 @@ A total of 24 million LSK tokens will be used over the course of 3 years for the
 This amount is provided to the [Rewards contract](https://blockscout.lisk.com/address/0xD35ca9577a9DADa7624a35EC10C2F55031f0Ab1f).
 
 Rewards are taken from the balance of the Rewards contract and calculated daily, based on the amount locked and the remaining locking duration.
-Concretely, the weight for a locked amount is given by `lockedAmount * (remainingLockingDurationInDays + 150)`.
+Concretely, the weight for a locked amount is given by:
+
+```
+lockedAmount * (remainingLockingDurationInDays + 150)
+```
+
 The total daily amount of staking rewards, 8,000,000 / 365 LSK, is then shared by all users proportional to their weight.
 
 After the end of this 3-year span, we expect that developments in the Optimism Superchain Ecosystem (shared, decentralized sequencers) will lead us to a new staking mechanism.
