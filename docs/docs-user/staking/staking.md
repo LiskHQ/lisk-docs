@@ -17,7 +17,7 @@ keywords:
 
 # Staking LSK tokens
 
-Lisk staking is rewarding LSK token holders based on their commitment duration with [staking rewards](#staking-rewards) and [voting power](docs-user/governance/overview.mdx#voting-power) in the on-chain governance of Lisk.
+Lisk staking is rewarding LSK token holders based on their commitment duration with [staking rewards](#staking-rewards) and [voting power](docs-user/governance/overview.mdx#voting-power) in the [Lisk DAO](https://www.tally.xyz/gov/lisk).
 
 ## Locking positions
 
