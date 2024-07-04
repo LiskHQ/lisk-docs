@@ -19,6 +19,13 @@ keywords:
 
 Lisk staking is rewarding LSK token holders based on their commitment duration with [staking rewards](#staking-rewards) and [voting power](docs-user/governance/overview.mdx#voting-power) in the on-chain governance of Lisk.
 
+## Locking positions
+
+Every time you stake a certain amount of LSK for a specific timeframe, this will create a new **locking position**.
+
+Locking positions are represented as **NFTs** using the ERC-721 standard, similar to Uniswap v3 liquidity positions.
+This enhances composability into DeFi and potential future uses.
+
 ## Staking rewards
 
 Staking rewards incentivize users to participate in governance, making the decision making more decentralized and community-driven.  
@@ -45,6 +52,31 @@ Concretely, the weight for a locked amount is given by `lockedAmount * (remainin
 The total daily amount of staking rewards, 8,000,000 / 365 LSK, is then shared by all users proportional to their weight.
 
 After the end of this 3-year span, we expect that developments in the Optimism Superchain Ecosystem (shared, decentralized sequencers) will lead us to a new staking mechanism.
+
+## Unstaking
+
+Once the locking period of a [locking position](#locking-positions) has expired, it is possible to unlock the staked tokens again, by [unstaking](stake-unstake.mdx#how-to-unstake-your-lsk-tokens) them.
+
+:::tip
+In case you need to unlock your tokens earlier that the defined locking period, it is possible to unstake your tokens before the locking period expired by using the [fast unlock](#fast-unlock) option.
+
+Using fast unlock will involve a penalty to be paid.
+:::
+
+Once they are unstaked, the LSK tokens can be used as before for any other purpose.
+
+### Fast Unlock
+Fast unlock allows you to unstake your LSK tokens before their locking period has expired.
+It involves paying a penalty and waiting for a 3-day emergency unlocking period.
+The penalty is proportional to the remaining days in the staking period.
+
+The penalty is calculated using the formula:
+
+```
+Penalty = 0.5 * Staked Amount * (Remaining Days / 730)
+```
+
+For example, unlocking 100 LSK after 147 days would incur a penalty of 10.068 LSK.
 
 ## Staking Guides
 
