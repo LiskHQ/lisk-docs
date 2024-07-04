@@ -21,7 +21,7 @@ Lisk staking is rewarding LSK token holders based on their commitment duration w
 
 ## Locking positions
 
-Every time you stake a certain amount of LSK for a specific timeframe, this will create a new **locking position**.
+Every time you [stake](stake-unstake.mdx#how-to-stake-your-lsk-tokens) a certain amount of LSK for a specific timeframe, this will create a new **locking position**.
 
 Locking positions are represented as **NFTs** using the ERC-721 standard, similar to Uniswap v3 liquidity positions.
 This enhances composability into DeFi and potential future uses.
@@ -36,10 +36,9 @@ The further the end of the locking duration is in the future, the more rewards y
 This also implies that the rewards decrease every day.
 This way, we reward token holders for committing long-term to the Lisk project so we attract them as long-term advocates for Lisk while reducing short-term speculation and volatility. 
 
-<!-- {/* TODO: Remove "coming soon" once features are implemented on Lisk Mainnet */} -->
 - Users can [claim](stake-unstake.mdx#how-to-claim-staking-rewards) their rewards at any time.   
-- **[Coming soon]** Users can modify their locking positions (increase amount, extend/pause locking duration) at any time they want.
-- **[Coming soon]** Users have the option to **pause** their locking period countdown.
+- Users can modify their locking positions (increase amount, extend locking duration) at any time they want.
+- Users have the option to **pause** their locking period countdown.
 That means, the remaining locking duration remains fixed until the user decides to resume it.
 Note that this results in **higher staking rewards**, since the weight remains fixed, as opposed to a weight daily decreasing when the countdown is active. 
 
