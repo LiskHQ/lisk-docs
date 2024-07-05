@@ -38,7 +38,7 @@ Lisk (LSK) is available for trading on various <!-- decentralized and centralize
 | **Binance**              | 🟡 Ethereum        | [LSK/USDT](https://www.binance.com/en/trade/LSK_USDT?type=spot)<br />[LSK/BTC](https://www.binance.com/en/trade/LSK_BTC?type=spot)<br />[LSK/ETH](https://www.binance.com/en/trade/LSK_ETH?type=spot) |
 | **BinanceUS**            | 🟡 Ethereum        | [LSK/USDT](https://www.binance.us/spot-trade/lsk_usdt)        |
 | **Bitflyer**             | 🟡 Ethereum        | [LSK/EUR](https://bitflyer.com/fr-eu/lisk-chart)              |
-| **Bitget**               | 🟡 Ethereum        | [LSK/USD](https://www.bitget.com/futures/usdt/LSKUSDT)          |
+| **Bitget**               | 🟡 Ethereum        | [LSK/USDT](https://www.bitget.com/futures/usdt/LSKUSDT)          |
 | **Bithumb** (Korea)      | 🟡 Ethereum        | [LSK / KRW](https://www.bithumb.com/react/trade/order/LSK-KRW)|
 | **Bitrue**               | 🟡 Ethereum        | [LSK/USDT](https://www.bitrue.com/trade/lsk_usdt)             |
 | **BitVavo**              | 🟡 Ethereum        | [LSK/EUR](https://account.bitvavo.com/markets/LSK-EUR)        |
