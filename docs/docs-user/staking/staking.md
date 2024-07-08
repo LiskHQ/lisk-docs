@@ -22,6 +22,7 @@ Lisk staking is rewarding LSK token holders based on their commitment duration w
 ## Staking Guides
 
 - [How to stake, claim and un-stake](stake-unstake.mdx)
+
 <!-- - [How to increase the stake](increase-stake.md)
 - [How to pause the locking period](pause-locking-period.md) -->
 
