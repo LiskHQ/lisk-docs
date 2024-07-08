@@ -137,8 +137,8 @@ const sidebars = {
       items: [
         'docs-user/staking/staking',
         'docs-user/staking/stake-unstake',
-        'docs-user/staking/increase-stake',
-        'docs-user/staking/pause-locking-period',
+        /* 'docs-user/staking/increase-stake',
+        'docs-user/staking/pause-locking-period', */
       ],
     },
     {

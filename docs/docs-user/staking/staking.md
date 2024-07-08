@@ -19,6 +19,12 @@ keywords:
 
 Lisk staking is rewarding LSK token holders based on their commitment duration with [staking rewards](#staking-rewards) and [voting power](docs-user/governance/overview.mdx#voting-power) in the [Lisk DAO](https://www.tally.xyz/gov/lisk).
 
+## Staking Guides
+
+- [How to stake, claim and un-stake](stake-unstake.mdx)
+<!-- - [How to increase the stake](increase-stake.md)
+- [How to pause the locking period](pause-locking-period.md) -->
+
 ## Locking positions
 
 Every time you [stake](stake-unstake.mdx#how-to-stake-your-lsk-tokens) a certain amount of LSK for a specific timeframe, this will create a new **locking position**.
@@ -81,9 +87,3 @@ Penalty = 0.5 * Staked Amount * (Remaining Days / 730)
 ```
 
 For example, unlocking 100 LSK after 147 days would incur a penalty of 10.068 LSK.
-
-## Staking Guides
-
-- [How to stake, claim and un-stake](stake-unstake.mdx)
-- [How to increase the stake](increase-stake.md)
-- [How to pause the locking period](pause-locking-period.md)
