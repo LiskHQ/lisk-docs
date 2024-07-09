@@ -30,6 +30,10 @@ Lisk staking is rewarding LSK token holders based on their commitment duration w
 
 Every time you [stake](stake-unstake.mdx#how-to-stake-your-lsk-tokens) a certain amount of LSK for a specific timeframe, this will create a new **locking position**.
 
+:::tip
+The **minimum locking duration** for staking is **two weeks**.
+:::
+
 Locking positions are represented as **NFTs** using the ERC-721 standard, similar to Uniswap v3 liquidity positions.
 This enhances composability into DeFi and potential future uses.
 
