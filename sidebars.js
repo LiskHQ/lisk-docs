@@ -105,6 +105,7 @@ const sidebars = {
       items: [
         'lisk-tools/api-providers',
         'lisk-tools/bridges',
+        'lisk-tools/faucets',
         'lisk-tools/oracles',
         'lisk-tools/utilities',
         'lisk-tools/indexers'
