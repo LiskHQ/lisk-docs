@@ -1,0 +1,93 @@
+---
+title: How to claim LSK
+sidebar_position: 1
+slug: /user/claiming
+description: 'How to claim LSK tokens on Lisk L2.'
+keywords:
+  [
+    'Lisk claiming',
+    'Lisk migration',
+    'Lisk L2',
+    'LSK Lisk L2',
+    'LSK claiming',
+    'Claim Lisk',
+    'Claim LSK',
+  ]
+---
+
+import claim from '../../static/img/docs/claiming/1-claim-tokens.png';
+import walletConnect from '../../static/img/docs/claiming/2-connect-wallet.png';
+import walletPrompt from '../../static/img/docs/claiming/3-connect-prompt.png';
+import claimReview from '../../static/img/docs/claiming/4-claim-review.png';
+import signMessage from '../../static/img/docs/claiming/5-sign-message.png';
+import signPrompt from '../../static/img/docs/claiming/6-sign-prompt.png';
+import signConfirm from '../../static/img/docs/claiming/7-sign-prompt-confirm.png';
+import claimSubmit from '../../static/img/docs/claiming/8-submit-claim.png';
+
+# Claiming LSK tokens
+
+Everyone who held tokens on the Lisk L1 chain is entitled to claim the exact same amount of LSK on Lisk L2.
+This guide explains step-by-step, how to complete the claiming process.
+
+:::info
+Lisk token holders have a **2-year window starting May 21st, 2024** to claim and migrate their tokens to Lisk L2.
+:::
+
+## Requirements
+
+To claim your LSK tokens on Lisk L2, you need the following:
+
+1. An account on the Lisk L1 legacy chain, with some LSK tokens.
+2. Latest version of the [Lisk Migration Wallet](https://lisk.com/wallet) installed (3.0.3)
+3. An account on Lisk L2 with a small amount of ETH, to pay for the gas fees.
+  If you need to bridge ETH tokens from Ethereum to Lisk, please refer to the section [How to bridge ETH from Ethereum to Lisk](#how-to-bridge-eth-from-ethereum-to-lisk) below.
+4. If you have a Ledger hardware wallet, you need the latest version of the Lisk app installed (Lisk legacy 4.0.0).
+
+## Claiming process step-by-step
+
+:::note
+This guide is for regular accounts.
+If you have a multisignature account, please refer to the [multisignature claiming guide](https://lisk.com/blog/posts/claiming-your-lsk-tokens-with-multisig-accounts-step-by-step-guide).
+:::
+
+1. Open [claiming page on the Lisk Portal](https://portal.lisk.com/claim/regular-account) in the browser. <br />
+    <img src={claim} title="Claiming page on the Lisk Portal"/> <br />
+    If you haven't already connect your wallet with the portal on the top right corner.
+2. On the **claiming page**, click `Connect Lisk account` button.
+    This will open a WalleConnect prompt.
+3. Copy the connection URI by clicking the button next to `Connect your wallet`.
+5. Open the [Lisk Migration Wallet](https://lisk.com/wallet) and sign in with the account you intend to migrate.
+Make sure you have the latest version of the Lisk Migration Wallet installed (3.0.3).
+6. Go to the `Applications` page and click on the `Wallet connections` tab.
+7. Now, click the `Connect Wallet` button.<br/>
+    <img src={walletConnect} width="60%"/>
+8. Paste the connection URI you just copied in step 3 an press `Connect`. 
+    This will open a prompt showing all your available accounts.<br/>
+    <img src={walletPrompt} width="40%"/>
+9. Select the account you wish to migrate the LSK tokens from and click the `Connect` button.
+10. Now go back to the [Lisk Portal](https://portal.lisk.com/claim/regular-account), you will see it shows the amount of LSK from your L1 account you selected in step 9, ready to be claimed.<br/>
+    <img src={claimReview} width="60%"/>
+11. Click the `Sign message` button, which will take you back to **Lisk Migration Wallet**, where you need to sign the migration message on Lisk L1.<br/>
+    <img src={signMessage} />
+    Click the `Continue` button twice and confirm by entering your password, to sign the migration message on Lisk L1.<br/>
+    <img src={signPrompt} width="40%"/><br/>
+    When you see the transaction receipt in the window, close it to complete the process.<br/>
+:::warning
+  You will need a small amount of **ETH** on Lisk L2 to pay the **gas fees** for the claiming transaction in the next step.
+  For details how to bridge ETH from Ethereum to Lisk, please refer to the section [How to bridge ETH from Ethereum to Lisk](#how-to-bridge-eth-from-ethereum-to-lisk) below.
+:::
+12. Go back to the [Lisk Portal](https://portal.lisk.com/claim/regular-account).
+  You will see that the `Sign message` button has changed again to `Submit Claim`.
+  Click the button to finalize the claiming process on Lisk L2.<br/>
+  <img src={claimSubmit} />
+  This will open a MetaMask prompt, where you can verify the claim you are intending to make.
+  Click `Confirm` to complete the claiming of your LSK tokens.
+
+After you completed the claiming process, you can check the **transaction receipt** on the claiming page in the Lisk Portal, to verify that the claiming of the LSK tokens was executed successfully.
+
+:::tip
+If you want to see your LSK token balance in MetaMask directly, it is possible to [import the LSK token to MetaMask](using-lisk/import-lsk.mdx).
+:::
+
+## How to bridge ETH from Ethereum to Lisk
+
