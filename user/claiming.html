@@ -5,8 +5,8 @@
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">How to claim LSK | Lisk Documentation</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://docs.lisk.com/lisk-documentation/img/lisk-icon-light.svg"><meta data-rh="true" name="twitter:image" content="https://docs.lisk.com/lisk-documentation/img/lisk-icon-light.svg"><meta data-rh="true" property="og:url" content="https://docs.lisk.com/lisk-documentation/user/claiming"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="How to claim LSK | Lisk Documentation"><meta data-rh="true" name="description" content="How to claim LSK tokens on Lisk L2."><meta data-rh="true" property="og:description" content="How to claim LSK tokens on Lisk L2."><meta data-rh="true" name="keywords" content="Lisk claiming,Lisk migration,Lisk L2,LSK Lisk L2,LSK claiming,Claim Lisk,Claim LSK"><link data-rh="true" rel="icon" href="/lisk-documentation/img/favicon.png"><link data-rh="true" rel="canonical" href="https://docs.lisk.com/lisk-documentation/user/claiming"><link data-rh="true" rel="alternate" href="https://docs.lisk.com/lisk-documentation/user/claiming" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs.lisk.com/lisk-documentation/user/claiming" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://VJKTDEEV6C-dsn.algolia.net" crossorigin="anonymous"><link rel="search" type="application/opensearchdescription+xml" title="Lisk Documentation" href="/lisk-documentation/opensearch.xml">
 <script src="/js/matomo.js" async></script><link rel="stylesheet" href="/lisk-documentation/assets/css/styles.7dfe2c5a.css">
-<script src="/lisk-documentation/assets/js/runtime~main.0d7328a1.js" defer="defer"></script>
-<script src="/lisk-documentation/assets/js/main.5f2fe24a.js" defer="defer"></script>
+<script src="/lisk-documentation/assets/js/runtime~main.2681d208.js" defer="defer"></script>
+<script src="/lisk-documentation/assets/js/main.4c134a64.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/lisk-documentation/"><div class="navbar__logo"><img src="/lisk-documentation/img/lisk-docs-light.svg" alt="Lisk Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/lisk-documentation/img/lisk-docs-dark.svg" alt="Lisk Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div></a><a class="navbar__item navbar__link" href="/lisk-documentation/docs">Building with Lisk</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/lisk-documentation/user/connecting-to-a-wallet">Using Lisk</a></div><div class="navbar__items navbar__items--right"><a href="https://docs.optimism.io/" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">
@@ -19,7 +19,9 @@ This guide explains step-by-step, how to complete the claiming process.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="requirements">Requirements<a class="hash-link" aria-label="Direct link to Requirements" title="Direct link to Requirements" href="/lisk-documentation/user/claiming#requirements">​</a></h2>
 <p>To claim your LSK tokens on Lisk L2, you need the following:</p>
 <ol>
-<li>An account on the Lisk L1 legacy chain, with some LSK tokens.</li>
+<li>An account on the Lisk L1 legacy chain, with some LSK tokens.
+The account must hold some LSK tokens at the snapshot height <code>24,823,618</code>.
+The amount of LSK tokens you can claim on Lisk L2 is the same as the amount you held on Lisk L1 at the snapshot height.</li>
 <li>Latest version of the <a href="https://lisk.com/wallet" target="_blank" rel="noopener noreferrer">Lisk Migration Wallet</a> installed (3.0.3)</li>
 <li>An account on Lisk L2 with a small amount of ETH, to pay for the gas fees.
 If you need to bridge ETH tokens from Ethereum to Lisk, please refer to one of the available <a href="/lisk-documentation/lisk-tools/bridges">bridges</a>.</li>
@@ -32,12 +34,13 @@ If you have a multisignature account, please refer to the <a href="https://lisk.
 <li>Open <a href="https://portal.lisk.com/claim/regular-account" target="_blank" rel="noopener noreferrer">claiming page on the Lisk Portal</a> in the browser. <br>
 <img src="/lisk-documentation/assets/images/1-claim-tokens-0a50831b18fbc2c8cc282aec95173e1c.png" title="Claiming page on the Lisk Portal">
 <br>
-<!-- -->If you haven&#x27;t already connect your wallet with the portal on the top right corner.</li>
+<!-- -->If you haven&#x27;t already, connect your wallet with the portal on the top right corner.</li>
 <li>On the <strong>claiming page</strong>, click <code>Connect Lisk account</code> button.
-This will open a WalleConnect prompt.</li>
+This will open a WalletConnect prompt.</li>
 <li>Copy the connection URI by clicking the button next to <code>Connect your wallet</code>.</li>
 <li>Open the <a href="https://lisk.com/wallet" target="_blank" rel="noopener noreferrer">Lisk Migration Wallet</a> and sign in with the account you intend to migrate.
-Make sure you have the latest version of the Lisk Migration Wallet installed (3.0.3).</li>
+Make sure you have the latest version of the Lisk Migration Wallet installed (3.0.3).
+You can verify the version by clicking on the <code>Lisk</code>&gt;<code>About</code> button in the wallet menu.</li>
 <li>Go to the <code>Applications</code> page and click on the <code>Wallet connections</code> tab.</li>
 <li>Now, click the <code>Connect Wallet</code> button.<br>
 <img src="/lisk-documentation/assets/images/2-connect-wallet-40d66ce4922bd80108ebf5ebd82ee5d2.png" width="60%">
@@ -47,7 +50,7 @@ This will open a prompt showing all your available accounts.<br>
 <img src="/lisk-documentation/assets/images/3-connect-prompt-8fbb0ea55d3d623df349e9664c1665c6.png" width="40%">
 </li>
 <li>Select the account you wish to migrate the LSK tokens from and click the <code>Connect</code> button.</li>
-<li>Now go back to the <a href="https://portal.lisk.com/claim/regular-account" target="_blank" rel="noopener noreferrer">Lisk Portal</a>, you will see it shows the amount of LSK from your L1 account you selected in step 9, ready to be claimed.<br>
+<li>Now go back to the <a href="https://portal.lisk.com/claim/regular-account" target="_blank" rel="noopener noreferrer">Lisk Portal</a>, you will see it shows the amount of LSK from your L1 account you selected in step 8, ready to be claimed.<br>
 <img src="/lisk-documentation/assets/images/4-claim-review-913286771cba2ecece9259502b8fad5c.png" width="60%">
 </li>
 <li>Click the <code>Sign message</code> button, which will take you back to <strong>Lisk Migration Wallet</strong>, where you need to sign the migration message on Lisk L1.<br>
@@ -59,13 +62,13 @@ This will open a prompt showing all your available accounts.<br>
 </ol>
 <div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>warning</div><div class="admonitionContent_BuS1"><p>You will need a small amount of <strong>ETH</strong> on Lisk L2 to pay the <strong>gas fees</strong> for the claiming transaction in the next step.
 To bridge ETH from Ethereum to Lisk, you can use one of the available <a href="/lisk-documentation/lisk-tools/bridges">bridges</a>.</p></div></div>
-<ol start="12">
+<ol start="11">
 <li>Go back to the <a href="https://portal.lisk.com/claim/regular-account" target="_blank" rel="noopener noreferrer">Lisk Portal</a>.
 You will see that the <code>Sign message</code> button has changed to <code>Submit Claim</code>.
 Click the button to finalize the claiming process on Lisk L2.<br></li>
 </ol>
 <img src="/lisk-documentation/assets/images/8-submit-claim-33f9a3cb87352eb36966411041feb4a4.png">
-<p>This will open a MetaMask prompt, where you can verify the claim you are intending to make.
+<p>This will open a wallet prompt, where you can verify the claim you are intending to make.
 Click <code>Confirm</code> to complete the claiming of your LSK tokens.</p>
 <p>That&#x27;s it! 🎉 You have now successfully claimed your Lisk L1 LSK tokens on Lisk L2.</p>
 <p>After you completed the claiming process, you can check the <strong>transaction receipt</strong> on the claiming page in the Lisk Portal, to verify that the claiming of the LSK tokens was executed successfully.</p>
