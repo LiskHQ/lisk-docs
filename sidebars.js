@@ -125,6 +125,7 @@ const sidebars = {
         'docs-user/connecting-to-a-wallet',
         'docs-user/using-lisk/import-lsk',
         'docs-user/exchanges',
+        'docs-user/claiming',
       ],
     },
     {
