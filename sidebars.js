@@ -105,6 +105,7 @@ const sidebars = {
       items: [
         'lisk-tools/api-providers',
         'lisk-tools/bridges',
+        'lisk-tools/faucets',
         'lisk-tools/oracles',
         'lisk-tools/utilities',
         'lisk-tools/indexers'
@@ -124,6 +125,7 @@ const sidebars = {
         'docs-user/connecting-to-a-wallet',
         'docs-user/using-lisk/import-lsk',
         'docs-user/exchanges',
+        'docs-user/claiming',
       ],
     },
     {
