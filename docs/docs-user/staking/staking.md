@@ -32,6 +32,8 @@ Every time you [stake](stake-unstake.mdx#how-to-stake-your-lsk-tokens) a certain
 
 :::tip
 The **minimum locking duration** for staking is **two weeks**.
+
+The **maximum locking duration** for staking is **two years**.
 :::
 
 Locking positions are represented as **NFTs** using the ERC-721 standard, similar to Uniswap v3 liquidity positions.
@@ -72,6 +74,29 @@ That means, the daily rewards for a locking position are calculated as:
 dailyRewards = weight/totalWeight * TotalDailyRewards
 ```
 
+The current value of `totalWeight` can be checked in the [Rewards contract](https://blockscout.lisk.com/address/0xD35ca9577a9DADa7624a35EC10C2F55031f0Ab1f?tab=read_proxy).
+
+
+For example, if someone stakes 100LSK for *1 year*, this would result in the following reward for that day, assuming `totalWeight` is `12462098705` for this example:
+
+```
+weight = 100 * (365 + 150) = 51500
+```
+
+```
+dailyRewards = 0.0905726657 LSK = 51500 / 12462098705 * 21917
+```
+
+If the 100 staked LSK expire in *two years*, this would result in the following reward on that day:
+
+```
+weight = 88000 = 100 LSK * (730 + 150)
+```
+
+```
+dailyRewards = 0.15476494334 LSK = 88000 / 12462098705 * 21917
+```
+
 After the end of this 3-year span, we expect that developments in the Optimism Superchain Ecosystem (shared, decentralized sequencers) will lead us to a new staking mechanism.
 
 ## Unstaking
@@ -97,4 +122,13 @@ The penalty is calculated using the formula:
 Penalty = 0.5 * Staked Amount * (Remaining Days / 730)
 ```
 
-For example, unlocking 100 LSK after 147 days would incur a penalty of 10.068 LSK.
+Please note that the maximum value for the remaining days is 730.
+
+For example, if a user wants to fast unlock a position with 100 LSK and remaining locking duration of 150 days, then the penalty is calculated as follows:
+
+```
+Penalty = 0.5 x 100 x (147 / 730) = 10.068 LSK
+```
+
+Note that we multiply by 147 and not 150, since the user will still have to wait for 3 days, so the locking duration decreased by 147 overall. 
+
