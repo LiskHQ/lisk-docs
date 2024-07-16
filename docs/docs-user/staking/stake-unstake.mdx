@@ -18,8 +18,11 @@ import duration from '../../../static/img/docs/staking/duration.png';
 import approve from '../../../static/img/docs/staking/approve-small.png';
 import stake from '../../../static/img/docs/staking/stake.png';
 import staked from '../../../static/img/docs/staking/staked.png';
-import claim from '../../../static/img/docs/staking/claim-ui.png';
+import unstake from '../../../static/img/docs/staking/unstake.png';
+import unstakePrompt from '../../../static/img/docs/staking/unstake-prompt.png';
 import claimApprove from '../../../static/img/docs/staking/claim-approve.png';
+
+# How to stake LSK
 
 <div className="imageCaption">
   <p>Image1: _Staking at the Lisk Portal_</p>
@@ -34,19 +37,21 @@ You can stake any amount of LSK tokens, starting from a minimum of 0.01 LSK
 
 
 1. **Go to the `Stake Tokens` page** on the Lisk Portal: <br />
-→ https://portal.lisk.com/staking/stake ← 
+    → https://portal.lisk.com/staking/stake ← 
 2. **Connect your Lisk wallet** to the Lisk Portal, if you haven't already.
 3. **Select the network you want to stake on.** 
-  This should be either `Lisk` or `Lisk Sepolia Testnet`.
+    This should be either `Lisk` or `Lisk Sepolia Testnet`.
 4. Now fill out the form as described in the following steps to complete the staking process.
- **Enter the amount of LSK you wish to stake.** <img src={amount} />
- You may use the %-Buttons below to conveniently stake a certain percentage of your total LSK balance.
-5. **Set the locking period.**  <img src={duration} />
-By setting the locking period, you define the duration for which your LSK tokens will be staked.
-As long as the tokens are staked, they are locked for any other usage.
-6. **Approve the staking by clicking the `Approve` button.** <img src={approve} />
+   **Enter the amount of LSK you wish to stake.** <br />
+   <img src={amount} /><br />
+   You may use the %-Buttons below to conveniently stake a certain percentage of your total LSK balance.
+5. **Set the locking period.** <br />
+    <img src={duration} /><br />
+    By setting the locking period, you define the duration for which your LSK tokens will be staked.
+    As long as the tokens are staked, they are locked for any other usage.
+6. **Approve the staking by clicking the `Approve` button.** <img src={approve} width="80%"/>
   Before you can stake your LSK tokens, you need to approve the spending cap for the Staking contract in your wallet.
-7. **Create the locking position by clicking the `Stake` button.** <img src={stake} />
+7. **Create the locking position by clicking the `Stake` button.** <img src={stake} width="80%"/>
   To complete the staking process, create the locking position with the amount and period defined in the previous steps, by approving the transaction in your wallet.
 
 That's it! 🎉 You have now successfully staked your LSK tokens.
@@ -61,7 +66,7 @@ As you can see on your [Staking Dashboard](https://portal.lisk.com/staking/dashb
 
 In order to use your voting power to participate in the decentralized governance of Lisk, make sure to [Delegate your voting power](/governance/delegation) to yourself or a delegate of your choice.
 
-After at least one day of staking, you should see an accumulated amount of your [staking rewards](staking#staking-rewards) you received until then.
+After at least one day of staking, you should see an accumulated amount of your [staking rewards](staking#staking-rewards) you are eligible for until then.
 Check out the next section to learn how to claim your rewards.
 
 ## How to claim staking rewards
@@ -69,17 +74,16 @@ Check out the next section to learn how to claim your rewards.
 Staking rewards can be claimed at any time.
 When claiming, you can choose to either receive the rewards or re-stake them, increasing your locked amount and thereby boosting your voting power in governance.
 
-1. **Go to the `Stake Tokens` page** on the Lisk Portal:<br />
-  → https://portal.lisk.com/staking/stake ← 
-2. **Click on the `Claim` tab.**
-3. **Connect your Lisk wallet** to the Lisk Portal, if you haven't already.
-4. **Select the network you want to stake on.** 
-  This should be either `Lisk` or `Lisk Sepolia Testnet`.
+1. **Go to the `Claim` tab of the `Stake Tokens` page** on the Lisk Portal:<br />
+    → https://portal.lisk.com/staking/claim ← <br />
+     **Connect your Lisk wallet** to the Lisk Portal, if you haven't already.
+2. **Select the network you want to stake on.** 
+    This should be either `Lisk` or `Lisk Sepolia Testnet`.
+3. **Click the `Claim Rewards` button.**
+4. **Verify your rewards ready to be claimed.**<br />
+    <img src={claimApprove} width="60%"/>
 5. **Click the `Claim Rewards` button.**
-6. **Verify your rewards ready to be claimed.**<br />
-  <img src={claimApprove} width="60%"/>
-7. **Click the `Claim Rewards` button.**
-8. **Approve the transaction in your wallet** to complete the claiming process.
+6. **Approve the transaction in your wallet** to complete the claiming process.
 
 ## How to unstake your LSK tokens
 
@@ -89,10 +93,13 @@ If you wish to unstqke your staked LSK in order to use them for different purpos
 LSK tokens can only be unstaked, if the locking period of the staked tokens has expired.
 :::
 
-1. **Go to the `Stake Tokens` page** on the Lisk Portal: <br /> 
-  → https://portal.lisk.com/staking/stake ← 
-2. **Click on the `Unstake` tab.**
-3. **Connect your Lisk wallet** to the Lisk Portal, if you haven't already.
-4. **Select the network you want to unstake on.** 
-  This should be either `Lisk` or `Lisk Sepolia Testnet`.
-5. **Select the expired locking position** you wish to unstake and follow the described process.
+1. **Go to the `Unstake` tab of the `Stake Tokens` page** on the Lisk Portal: <br /> 
+    → https://portal.lisk.com/staking/unstake ← <br />
+    **Connect your Lisk wallet** to the Lisk Portal, if you haven't already.
+2. **Select the network you want to unstake on.** 
+    This should be either `Lisk` or `Lisk Sepolia Testnet`.
+3. **Select the expired locking position** you wish to unstake and follow the described process.<br />
+    <img src={unstake} width="60%"/>
+4. A prompt will appear, waiting for you to confirm the unstaking process in your wallet. <br />
+    <img src={unstakePrompt} width="60%"/><br />
+    **Approve the transaction in your wallet** to complete the unstaking process.

@@ -66,6 +66,12 @@ lockedAmount * (remainingLockingDurationInDays + 150)
 
 The total daily amount of staking rewards, 8,000,000 / 365 LSK, is then shared by all users proportional to their weight.
 
+That means, the daily rewards for a locking position are calculated as: 
+
+```
+dailyRewards = weight/totalWeight * TotalDailyRewards
+```
+
 After the end of this 3-year span, we expect that developments in the Optimism Superchain Ecosystem (shared, decentralized sequencers) will lead us to a new staking mechanism.
 
 ## Unstaking
