@@ -17,7 +17,7 @@ keywords:
 
 # Staking LSK tokens
 
-Lisk staking is rewarding LSK token holders based on their commitment duration with [staking rewards](#staking-rewards) and [voting power](docs-user/governance/overview.mdx#voting-power) in the [Lisk DAO](https://www.tally.xyz/gov/lisk).
+LSK staking is required for participating in the [Lisk DAO](https://www.tally.xyz/gov/lisk) and having therefore an active involvement in the project's decision making. Our staking system rewards LSK stakers for their participation with [staking rewards](#staking-rewards) based on their commitment duration . 
 
 ## Staking Guides
 
@@ -28,7 +28,7 @@ Lisk staking is rewarding LSK token holders based on their commitment duration w
 
 ## Locking positions
 
-Every time you [stake](stake-unstake.mdx#how-to-stake-your-lsk-tokens) a certain amount of LSK for a specific timeframe, this will create a new **locking position**.
+Every time you [stake](stake-unstake.mdx#how-to-stake-your-lsk-tokens) a certain amount of LSK for a specific locking duration, this will create a new **locking position**.
 
 :::tip
 The **minimum locking duration** for staking is **two weeks**.
@@ -57,11 +57,11 @@ Note that this results in **higher staking rewards**, since the weight remains f
 A total of 24 million LSK tokens will be used over the course of 3 years for the LSK staking rewards program (8 million LSK per year).
 This amount is provided to the [Rewards contract](https://blockscout.lisk.com/address/0xD35ca9577a9DADa7624a35EC10C2F55031f0Ab1f).
 
-Rewards are taken from the balance of the Rewards contract and calculated daily, based on the amount locked and the remaining locking duration.
+**Daily Reward Calculation:** Rewards are taken from the balance of the Rewards contract and calculated daily, based on the amount locked and the remaining locking duration.
 Concretely, the weight for a locked amount is given by:
 
 ```
-lockedAmount * (remainingLockingDurationInDays + 150)
+weight = lockedAmount * (remainingLockingDurationInDays + 150)
 ```
 
 The total daily amount of staking rewards, 8,000,000 / 365 LSK, is then shared by all users proportional to their weight.
@@ -89,7 +89,7 @@ Once they are unstaked, the LSK tokens can be used as before for any other purpo
 ### Fast Unlock
 Fast unlock allows you to unstake your LSK tokens before their locking period has expired.
 It involves paying a penalty and waiting for a 3-day emergency unlocking period.
-The penalty is proportional to the remaining days in the staking period.
+The penalty is proportional to the remaining days in the staking period that will be skipped.
 
 The penalty is calculated using the formula:
 
