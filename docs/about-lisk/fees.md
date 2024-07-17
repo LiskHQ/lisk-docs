@@ -96,7 +96,7 @@ The L1 data fee is calculated according to the following formula:
 l1_data_fee = estimatedSize * weighted_gas_price
 ```
 
-Where `estimatedSize` is an estimation on the size that the transaction will occupy when posted in Ethereum L1 blobs.
+Here `estimatedSize` is an estimation on the size that the transaction will occupy when posted in Ethereum L1 blobs.
 It’s calculated based on the size of the serialized transaction, using a linear regression model based on historical OP Mainnet data, assuming that it’s compressed with Brotli compression. 
 For more details see the [OP documentation](https://docs.optimism.io/stack/transactions/fees#fjord) or the [smart contract code](https://github.com/ethereum-optimism/optimism/blob/e00f23ad0208f2e35aef5435d8a3d2e369144419/packages/contracts-bedrock/src/L2/GasPriceOracle.sol#L203). 
 
