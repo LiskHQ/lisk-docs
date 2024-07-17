@@ -44,6 +44,11 @@ At a high level, the L2 fee is the cost to execute your transaction on L2 and th
 transaction_fee = l2_execution_fee + l1_data_fee
 ```
 
+:::note
+Lisks fee calculation is based on the fee system of OP Mainnet, using the latest **Fjord** upgrade.
+Check the [Fees page](https://docs.optimism.io/stack/transactions/fees#fjord) in the Optmism documentation, to learn more about how the fee system works in detail.
+:::
+
 ### L2 Execution Fee 
 The [L2 Execution Fee](https://docs.optimism.io/stack/transactions/fees#execution-gas-fee) is equal to the amount of gas used by the transaction multiplied by the gas price attached to the transaction.
 
@@ -88,23 +93,12 @@ The actual amount of this fee depends on the following input values:
 The L1 data fee is calculated according to the following formula:
 
 ```
-l1_data_fee = tx_compressed_size * weighted_gas_price
+l1_data_fee = estimatedSize * weighted_gas_price
 ```
 
-Where the `tx_compressed_size` is calculated like this:
-
-```
-tx_compressed_size = [(count_zero_bytes(tx_data)*4 + count_non_zero_bytes(tx_data)*16)] / 16
-```
-
-`tx_data` is the byte representation of the serialized transaction.
-
-:::note
-`tx_compressed_size` is an estimation of the size that a transaction will occupy in blobs.
-The divisor of 16 represents the storage savings of using blobs vs calldata.
-
-The "L1 Gas used by txn" field of transaction details in [Blockscout](https://blockscout.lisk.com/) contains the `tx_compressed_size` multiplied by 16 (i.e., the `calldata` size).
-:::
+Where `estimatedSize` is an estimation on the size that the transaction will occupy when posted in Ethereum L1 blobs.
+It’s calculated based on the size of the serialized transaction, using a linear regression model based on historical OP Mainnet data, assuming that it’s compressed with Brotli compression. 
+For more details see the [OP documentation](https://docs.optimism.io/stack/transactions/fees#fjord) or the [smart contract code](https://github.com/ethereum-optimism/optimism/blob/e00f23ad0208f2e35aef5435d8a3d2e369144419/packages/contracts-bedrock/src/L2/GasPriceOracle.sol#L203). 
 
 Next, the two scalars are applied to the base fee and blob base fee parameters to compute a weighted gas price multiplier.
 
@@ -114,8 +108,8 @@ weighted_gas_price = 16*base_fee_scalar*base_fee + blob_base_fee_scalar*blob_bas
 
 The current values for the scalars are:
 
-  - `base_fee_scalar` = 0.786381
-  - `blob_base_fee_scalar` = 0.01734
+  - `base_fee_scalar` = 0.020698
+  - `blob_base_fee_scalar` = 1.364961
 
 They can be adjusted depending on network conditions, to mitigate spikes in the transaction fees. 
 
