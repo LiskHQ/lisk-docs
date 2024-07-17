@@ -84,7 +84,7 @@ weight = 100 * (365 + 150) = 51500
 ```
 
 ```
-dailyRewards = 0.0905726657 LSK = 51500 / 12462098705 * 21917
+dailyRewards = 51500 / 12462098705 * 21917 = 0.0905726657 LSK 
 ```
 
 If the 100 staked LSK expire in *two years*, this would result in the following reward on that day:
@@ -94,7 +94,7 @@ weight = 88000 = 100 LSK * (730 + 150)
 ```
 
 ```
-dailyRewards = 0.15476494334 LSK = 88000 / 12462098705 * 21917
+dailyRewards = 88000 / 12462098705 * 21917 = 0.15476494334 LSK 
 ```
 
 After the end of this 3-year span, we expect that developments in the Optimism Superchain Ecosystem (shared, decentralized sequencers) will lead us to a new staking mechanism.
