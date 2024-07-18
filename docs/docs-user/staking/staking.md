@@ -75,6 +75,7 @@ dailyRewards = weight/totalWeight * TotalDailyRewards
 ```
 
 The current value of `totalWeight` can be checked in the [Rewards contract](https://blockscout.lisk.com/address/0xD35ca9577a9DADa7624a35EC10C2F55031f0Ab1f?tab=read_proxy).
+`totalDailyRewards` can be calculated by taking the yearly available rewards and dividing it by 365:  `8,000,000 / 365 = 21917`
 
 ### Example: Reward calculation for 1 vs 2 years
 For example, if someone stakes 100LSK for *1 year*, this would result in the following reward for that day, assuming `totalWeight` is `12462098705` for this example:
@@ -90,7 +91,7 @@ dailyRewards = 51500 / 12462098705 * 21917 = 0.0905726657 LSK
 If the 100 staked LSK expire in *two years*, this would result in the following reward on that day:
 
 ```
-weight = 88000 = 100 LSK * (730 + 150)
+weight  = 100 * (730 + 150) = 88000
 ```
 
 ```
