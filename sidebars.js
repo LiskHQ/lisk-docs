@@ -153,6 +153,7 @@ const sidebars = {
       items: [
         'docs-user/staking/staking',
         'docs-user/staking/stake-unstake',
+        'docs-user/staking/pause-position',
         /* 'docs-user/staking/increase-stake',
         'docs-user/staking/pause-locking-period', */
       ],
