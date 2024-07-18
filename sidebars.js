@@ -154,8 +154,7 @@ const sidebars = {
         'docs-user/staking/staking',
         'docs-user/staking/stake-unstake',
         'docs-user/staking/pause-position',
-        /* 'docs-user/staking/increase-stake',
-        'docs-user/staking/pause-locking-period', */
+        'docs-user/staking/increase-stake',
       ],
     },
   ],
