@@ -1,7 +1,7 @@
 ---
 title: How to increase stake
 sidebar_position: 3
-slug: /user/increase-stake
+slug: /user/staking/increase-stake
 description: 'How to inscrease the stake of a particular locking position.'
 keywords:
   [
