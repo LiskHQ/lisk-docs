@@ -23,7 +23,7 @@ LSK staking is required for participating in the [Lisk DAO](https://www.tally.xy
 
 - [How to stake, claim and un-stake](stake-unstake.mdx)
 - [How to pause a locking position](pause-position.mdx)
-- [How to increase the stake](../staking/increase-stake.md)
+- [How to increase the stake](../staking/increase-stake.mdx)
 
 ## Locking positions
 
