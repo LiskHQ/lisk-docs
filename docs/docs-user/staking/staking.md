@@ -24,6 +24,8 @@ LSK staking is required for participating in the [Lisk DAO](https://www.tally.xy
 - [How to stake, claim and un-stake](stake-unstake.mdx)
 - [How to pause a locking position](pause-position.mdx)
 - [How to increase the stake](../staking/increase-stake.mdx)
+- [How to extend the duration of a stake](extend-duration.mdx)
+- [How to unstake early](early-unlock.mdx)
 
 ## Locking positions
 
@@ -111,8 +113,8 @@ Using fast unlock will involve a penalty to be paid.
 
 Once they are unstaked, the LSK tokens can be used as before for any other purpose.
 
-### Fast Unlock
-Fast unlock allows you to unstake your LSK tokens before their locking period has expired.
+### Early Unlock
+Early unlock allows you to unstake your LSK tokens before their locking period has expired.
 It involves paying a penalty and waiting for a 3-day emergency unlocking period.
 The penalty is proportional to the remaining days in the staking period that will be skipped.
 

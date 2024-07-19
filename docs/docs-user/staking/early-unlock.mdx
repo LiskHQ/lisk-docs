@@ -1,0 +1,55 @@
+---
+title: How to unstake early
+sidebar_position: 5
+slug: /user/staking/early-unstake
+description: 'How to unstake a particular locking position before it has expired.'
+keywords:
+  [
+    'Lisk',
+    'Lisk staking',
+    'staking LSK',
+    'early unstake',
+    'fast unstake',
+    'early unlocking',
+    'fast unlocking',
+    'emergency unstake',
+    'emergency unlock',
+    'modify stake',
+    'modify locking position',
+    'update locking position',
+  ]
+---
+
+import positions from '../../../static/img/docs/staking/positions.png';
+import fastUnlock from '../../../static/img/docs/staking/fast-unlock.png';
+import fastUnlocked from '../../../static/img/docs/staking/fast-unlocked.png';
+import fastReview from '../../../static/img/docs/staking/fast-review.png';
+
+This guide explains ste-by-step how to unstake a [locking position](overview#locking-positions) before it has expired.
+
+:::warning
+Early unstaking involves a **penalty fee**.
+
+The penalty fee is calculated based on the remaining duration of the locking position and the amount of LSK being unstaked.
+The penalty fee is deducted from the LSK being unstaked.
+
+For more details check [Early Unlock](overview#early-unlock).
+:::
+
+1. Go to your [Staking Dashboard](https://portal.lisk.com/staking/dashboard) in the Lisk Portal.
+    Connect your wallet if you haven't already.
+2. In the list of your locking positions, click on the locking position you wish to unstake early, to expand it.
+    <img src={positions} /><br />
+    :::tip
+    You can do early unstake for paused and unpaused locking positions alike.
+    :::
+3. Click on the `Early Unlock` button.
+4. Confirm you understand the consequences of early unstaking.
+    Review the amount of LSK you will receive after the penalty fee is deducted.
+    <img src={fastUnlock} /><br />
+    Click on the `Early Unlock` button to confirm.
+5. Confirm the transaction in your wallet.
+6. A prompt will show up confirming the early unlock was successfull.
+    <img src={fastUnlocked} /><br />
+7. Now if you go back to the staking dashboard, you will see the locking position will now expire in 3 days.
+    <img src={fastReview} /><br />
