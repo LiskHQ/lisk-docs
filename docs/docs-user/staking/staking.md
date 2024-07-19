@@ -106,7 +106,7 @@ After the end of this 3-year span, we expect that developments in the Optimism S
 Once the locking period of a [locking position](#locking-positions) has expired, it is possible to unlock the staked tokens again, by [unstaking](stake-unstake.mdx#how-to-unstake-your-lsk-tokens) them.
 
 :::tip
-In case you need to unlock your tokens earlier that the defined locking period, it is possible to unstake your tokens before the locking period expired by using the [fast unlock](#fast-unlock) option.
+In case you need to unlock your tokens earlier that the defined locking period, it is possible to unstake your tokens before the locking period expired by using the [early unlock](#early-unlock) option.
 
 Using fast unlock will involve a penalty to be paid.
 :::
