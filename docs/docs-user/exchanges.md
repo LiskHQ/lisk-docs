@@ -46,6 +46,7 @@ Lisk (LSK) is available for trading on various <!-- decentralized and centralize
 | **CoinEx**               | 🟡 Ethereum        | [LSK/USDT](https://www.coinex.com/en/exchange/LSK-USDT)<br />[LSK/BTC](https://www.coinex.com/en/exchange/LSK-BTC)  |
 | **DigiFinex**            | 🟡 Ethereum        | [LSK/USDT](https://www.digifinex.com/en-ww/trade/USDT/LSK)    |
 | **Gate.io**              | 🟡 Ethereum        | [LSK/USDT](https://www.gate.io/fr/trade/LSK_USDT)<br />[LSK/BTC](https://www.gate.io/fr/trade/LSK_BTC) |
+| **Kraken**               | 🟡 Ethereum        | [LSK/EUR](https://pro.kraken.com/app/trade/lsk-eur)<br/>[LSK/USD](https://pro.kraken.com/app/trade/lsk-usd)             |
 | **Kucoin**               | 🟡 Ethereum        | [LSK/USDT](https://www.kucoin.com/trade/LSK-USDT)             |
 | **Poloniex**             | 🟡 Ethereum        | [LSK/USDT](https://poloniex.com/trade/LSK_USDT/?type=spot)<br />[LSK/BTC](https://poloniex.com/trade/LSK_BTC/?type=spot) |
 | **TokoCrypto** (Indo)    | 🟡 Ethereum        | [LSK/USDT](https://www.tokocrypto.com/en/trade/LSK_USDT)<br />[LSK/BTC](https://www.tokocrypto.com/en/trade/LSK_BTC)  |
@@ -58,7 +59,6 @@ Lisk (LSK) is available for trading on various <!-- decentralized and centralize
 | **Binance.Japan**        | Ethereum          |
 | **BitTrade** (HTX Japan) | Ethereum          |
 | **Coincheck** (Japan)    | Ethereum          |
-| **Kraken**               | Ethereum          |
 | **OkCoin** (OKX Japan)   | Lisk              |
 | **YellowCard** (Africa)  | Lisk              |
 
