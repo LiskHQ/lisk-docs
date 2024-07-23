@@ -77,6 +77,31 @@ html[data-theme='dark'] .alert a {
   text-decoration-color: var(--ifm-color-primary);
 }
 
+figure {
+  padding: 4px;
+  margin: auto;
+}
+
+figure>img {
+  display: block !important;
+}
+
+figcaption {
+  background-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary-contrast-background);
+  font-style: italic;
+  padding: 2px;
+  text-align: center;
+}
+
+article img,
+article iframe {
+  display: inline;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}
+
 .menu {
   overflow-y: auto;
 }
