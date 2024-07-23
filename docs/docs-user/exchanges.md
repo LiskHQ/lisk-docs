@@ -54,8 +54,8 @@ Lisk (LSK) is available for trading on various <!-- decentralized and centralize
 
 
 [^1]: The LSK token is supported on the Ethereum and the Lisk blockchain.
-The supported network indicates the network being used to trade LSK.
-Please note that trading LSK over the Lisk network will result in significantly lower transaction fees.
+The "Supported network" column indicates the network being used to trade LSK.
+Please note that trading LSK over the Lisk network will result in significantly lower transaction fees, compared to the Ethereum network.
 
 ### Coming soon
 
