@@ -28,7 +28,7 @@ Lisk (LSK) is available for trading on various <!-- decentralized and centralize
 
 ## Centralized Exchanges
 
-| Name                     | Supported network | LSK Pairs                                                     |
+| Name                     | Supported network[^1] | LSK Pairs                                                     |
 | :----------------------- |:----------------- |:------------------------------------------------------------- |
 | **Crypto.com**           | 🟢 Lisk            | [LSK/USD](https://crypto.com/exchange/trade/LSK_USD)          |
 | **OKX**                  | 🟢 Lisk            | [LSK/USDT](https://www.okx.com/fr/trade-spot/lsk-usdt)        |
@@ -52,6 +52,11 @@ Lisk (LSK) is available for trading on various <!-- decentralized and centralize
 | **TokoCrypto** (Indo)    | 🟡 Ethereum        | [LSK/USDT](https://www.tokocrypto.com/en/trade/LSK_USDT)<br />[LSK/BTC](https://www.tokocrypto.com/en/trade/LSK_BTC)  |
 | **Zonda**                | 🟡 Ethereum        | [LSK/USDT](https://zondacrypto.com/en/exchange-rate/lisk-price-usdt)<br />[LSK/EUR](https://zondacrypto.com/en/exchange-rate/lisk-price-eur)<br />[LSK/BTC](https://zondacrypto.com/en/exchange-rate/lisk-price-btc)<br />[LSK/PLN](https://zondacrypto.com/en/exchange-rate/lisk-price-pln) |
 
+
+[^1]: The LSK token is supported on the Ethereum and the Lisk blockchain.
+The supported network indicates the network being used to trade LSK.
+Please note that trading LSK over the Lisk network will result in significantly lower transaction fees.
+
 ### Coming soon
 
 | Name                     | Supported network |
@@ -70,3 +75,5 @@ Lisk (LSK) is available for trading on various <!-- decentralized and centralize
 | :---------------------------- |
 | **Oku.Trade** (Uniswap Clone) | 
 | **Velodrome**                 | 
+
+
