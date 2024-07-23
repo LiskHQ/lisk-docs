@@ -77,22 +77,20 @@ html[data-theme='dark'] .alert a {
   text-decoration-color: var(--ifm-color-primary);
 }
 
-.imageCaption {
-  /* border: var(--ifm-alert-border-color) solid 1px;
-  border-radius: 5%; */
-  border: var(--ifm-alert-border-color) solid 1px;
-  border-radius: 15px 15px 5px 5px;
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-bottom: 1em;
+figure {
+  padding: 4px;
+  margin: auto;
 }
 
-.imageCaption > p {
-  border-bottom: var(--ifm-alert-border-color) solid 1px;
-  /* border-radius: 15px 15px 5px 5px; */
-  padding: 0.3em 2em 0.3em 2em;
-  margin: 0;
+figure>img {
+  display: block !important;
+}
+
+figcaption {
+  background-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary-contrast-background);
+  font-style: italic;
+  padding: 2px;
   text-align: center;
 }
 
