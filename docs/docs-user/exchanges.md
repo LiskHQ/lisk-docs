@@ -53,9 +53,9 @@ Lisk (LSK) is available for trading on various <!-- decentralized and centralize
 | **Zonda**                | 🟡 Ethereum        | [LSK/USDT](https://zondacrypto.com/en/exchange-rate/lisk-price-usdt)<br />[LSK/EUR](https://zondacrypto.com/en/exchange-rate/lisk-price-eur)<br />[LSK/BTC](https://zondacrypto.com/en/exchange-rate/lisk-price-btc)<br />[LSK/PLN](https://zondacrypto.com/en/exchange-rate/lisk-price-pln) |
 
 
-[^1]: The LSK token is supported on the Ethereum and the Lisk blockchain.
-The "Supported network" column indicates the network being used to trade LSK.
-Please note that trading LSK over the Lisk network will result in significantly lower transaction fees, compared to the Ethereum network.
+[^1]: The LSK token is supported on both the Ethereum L1 and the Lisk L2 blockchains.
+The "supported network" field indicates the blockchain being used by the exchange for deposits & withdrawals of LSK. 
+Please note that using the wrong network / blockchain when depositing funds to an exchange could result in lost funds.
 
 ### Coming soon
 
