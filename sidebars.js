@@ -142,6 +142,23 @@ const sidebars = {
         'docs-user/governance/proposal-lifecycle',
       ],
     },
+    {
+      type: 'category',
+      label: 'Staking',
+      collapsible: true,
+      collapsed: false,
+      link: {
+        type: 'generated-index',
+      },
+      items: [
+        'docs-user/staking/staking',
+        'docs-user/staking/stake-unstake',
+        'docs-user/staking/pause-position',
+        'docs-user/staking/increase-stake',
+        'docs-user/staking/extend-duration',
+        'docs-user/staking/early-unlock',
+      ],
+    },
   ],
 };
 

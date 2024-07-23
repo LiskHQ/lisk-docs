@@ -81,9 +81,12 @@ cd lisk-node
 ### Docker
 
 1. Ensure you have an Ethereum L1 full node RPC available (not Lisk), and set the `OP_NODE_L1_ETH_RPC` and the `OP_NODE_L1_BEACON` variables (within the `.env.*` files, if using docker-compose).
-If running your own L1 node, it needs to be synced before the Lisk node will be able to fully sync.
+    If running your own L1 node, it needs to be synced before the Lisk node will be able to fully sync.
 2. Please ensure that the environment file relevant to your network (`.env.sepolia`, or `.env.mainnet`) is set for the `env_file` properties within `docker-compose.yml`.
-By default, it is set to `.env.mainnet`.
+    By default, it is set to `.env.mainnet`.
+    :::info
+    We currently support running either the `op-geth` or the `op-reth` nodes alongside the `op-node`. By default, we run the `op-geth` node. If you would like to run the `op-reth` node instead, please set the `CLIENT` environment variable to `reth` before starting the node.
+    :::
 3. Run:
 
     ```
