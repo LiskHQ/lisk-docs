@@ -17,11 +17,11 @@ keywords:
 
 # Staking LSK tokens
 
-LSK staking is required for participating in the [Lisk DAO](https://www.tally.xyz/gov/lisk) and having therefore an active involvement in the project's decision making. Our staking system rewards LSK stakers for their participation with [staking rewards](#staking-rewards) based on their commitment duration . 
+LSK staking is necessary to participate in the [Lisk DAO](https://www.tally.xyz/gov/lisk), enabling active involvement in the project's decision-making. Our staking system rewards LSK stakers for their participation with [staking rewards](#staking-rewards) based on their commitment duration.
 
 ## Staking Guides
 
-- [How to stake, claim and unstake](stake-unstake.mdx)
+- [How to stake, claim, and unstake](stake-unstake.mdx)
 - [How to pause a locking position](pause-position.mdx)
 - [How to increase the stake](../staking/increase-stake.mdx)
 - [How to extend the duration of a stake](extend-duration.mdx)
@@ -29,7 +29,7 @@ LSK staking is required for participating in the [Lisk DAO](https://www.tally.xy
 
 ## Locking positions
 
-Every time you [stake](stake-unstake.mdx#how-to-stake-your-lsk-tokens) a certain amount of LSK for a specific locking duration, this will create a new **locking position**.
+Every time you [stake](stake-unstake.mdx#how-to-stake-your-lsk-tokens) a certain amount of LSK for a specific locking duration, a new **locking position** will be created.
 
 :::tip
 The **minimum locking duration** for staking is **two weeks**.
@@ -42,7 +42,7 @@ This enhances composability into DeFi and potential future uses.
 
 ## Staking rewards
 
-Staking rewards incentivize users to participate in governance, making the decision making more decentralized and community-driven.  
+Staking rewards incentivize users to participate in governance, making the decision-making more decentralized and community-driven.  
 In short, users get [voting power](docs-user/governance/overview.mdx#voting-power) and rewards for staking tokens for a specific time period.
 
 Lisk applies a **time-weight boosting** on rewards:
@@ -106,7 +106,7 @@ After the end of this 3-year span, we expect that developments in the Optimism S
 Once the locking period of a [locking position](#locking-positions) has expired, it is possible to unlock the staked tokens again, by [unstaking](stake-unstake.mdx#how-to-unstake-your-lsk-tokens) them.
 
 :::tip
-In case you need to unlock your tokens earlier that the defined locking period, it is possible to unstake your tokens before the locking period expired by using the [early unlock](#early-unlock) option.
+In case you need to unlock your tokens earlier than the defined locking period, it is possible to unstake your tokens before the locking period expires by using the [early unlock](#early-unlock) option.
 
 Using fast unlock will involve a penalty to be paid.
 :::
@@ -126,7 +126,7 @@ Penalty = 0.5 * Staked Amount * (Remaining Days / 730)
 
 Please note that the maximum value for the remaining days is 730.
 
-For example, if a user wants to fast unlock a position with 100 LSK and remaining locking duration of 150 days, then the penalty is calculated as follows:
+For example, if a user wants to fast unlock a position with 100 LSK and a remaining locking duration of 150 days, then the penalty is calculated as follows:
 
 ```
 Penalty = 0.5 x 100 x (147 / 730) = 10.068 LSK
