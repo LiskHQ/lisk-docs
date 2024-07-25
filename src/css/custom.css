@@ -100,10 +100,6 @@ html[data-theme='dark'] .alert a {
   border-radius: 4%;
 }
 
-.table-text-custom {
-  text-align: left;
-}
-
 .overview-span {
   display: grid;
   align-items: center;
