@@ -247,8 +247,8 @@ For more information on Predeploys, see [Predeploys' README](https://github.com/
 
 Details of smart contracts deployed on 🔵 **Lisk Mainnet** and 🟣 **Lisk Sepolia Testnet** are as follows.
 
+### Predeploys (L2)
 <table >
-
   <thead>
     <tr>
       <th scope="col" className="table-test-custom">Name of Contract</th>
@@ -347,10 +347,116 @@ Details of smart contracts deployed on 🔵 **Lisk Mainnet** and 🟣 **Lisk Sep
     <td>🟣</td>
     </tr>
 
+    <tr>
+      <th scope="row" rowSpan="2">[**L2Airdrop**](https://github.com/LiskHQ/lisk-contracts/blob/development/src/L2/L2Airdrop.sol)</th>
+      <td>[0xC7315f4FaaB2F700fc6b4704BB801c46ff6327AC](https://blockscout.lisk.com/address/0xC7315f4FaaB2F700fc6b4704BB801c46ff6327AC)</td>
+      <td>🔵</td>
+    </tr>
+    <tr>
+    <td>[0xDdE1998B8842b1C925Eef7eDFDAA2Df24A75048a](https://sepolia-blockscout.lisk.com/address/0xDdE1998B8842b1C925Eef7eDFDAA2Df24A75048a)</td>
+    <td>🟣</td>
+    </tr>
   </tbody>
   <tfoot>
   </tfoot>
 </table>
+
+### Feature Smart Contracts
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col" className="table-test-custom">Name of Contract</th>
+      <th scope="col" className="table-test-custom">Description</th>
+      <th scope="col" colSpan="2">Contract Address</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row" rowSpan="2">L2Airdrop</th>
+       <td scope="row" rowSpan="2">L2Airdrop is an implementation of the Lisk v4 migration airdrop on L2. It is responsible for the airdrop computation and distribution of LSK tokens to the recipient's accounts that have migrated to L2.</td>
+      <td>[0xC7315f4FaaB2F700fc6b4704BB801c46ff6327AC](https://blockscout.lisk.com/address/0xC7315f4FaaB2F700fc6b4704BB801c46ff6327AC)</td>
+      <td>🔵</td>
+    </tr>
+    <tr>
+    <td>[0xDdE1998B8842b1C925Eef7eDFDAA2Df24A75048a](https://sepolia-blockscout.lisk.com/address/0xDdE1998B8842b1C925Eef7eDFDAA2Df24A75048a)</td>
+    <td>🟣</td>
+    </tr>
+
+    <tr>
+      <th scope="row" rowSpan="2">L2Claim (Proxy)</th>
+       <td scope="row" rowSpan="2"> Proxy contract for claiming LSK tokens from Lisk Chain on L2.</td>
+      <td>[0xC7315f4FaaB2F700fc6b4704BB801c46ff6327AC](https://blockscout.lisk.com/address/0xC7315f4FaaB2F700fc6b4704BB801c46ff6327AC)</td>
+      <td>🔵</td>
+    </tr>
+    <tr>
+    <td>[0xDdE1998B8842b1C925Eef7eDFDAA2Df24A75048a](https://sepolia-blockscout.lisk.com/address/0xDdE1998B8842b1C925Eef7eDFDAA2Df24A75048a)</td>
+    <td>🟣</td>
+    </tr>
+
+        <tr>
+      <th scope="row" rowSpan="2">L2Claim (Implementation)</th>
+       <td scope="row" rowSpan="2"> Enables users to claim their LSK tokens from Lisk Chain on L2 using Merkle proofs, with support for both regular and multisig accounts.</td>
+      <td>[0x60790Dc2d45BaA8B36282889569BbB301F4D0c41](https://blockscout.lisk.com/address/0x60790Dc2d45BaA8B36282889569BbB301F4D0c41)</td>
+      <td>🔵</td>
+    </tr>
+    <tr>
+    <td>[0xAE4A95E412d7d669AbE6bB23031Ae0250B832710](https://sepolia-blockscout.lisk.com/address/0xAE4A95E412d7d669AbE6bB23031Ae0250B832710)</td>
+    <td>🟣</td>
+    </tr>
+
+
+    <tr>
+      <th scope="row" rowSpan="2">L2Governor (Proxy)</th>
+       <td scope="row" rowSpan="2">Proxy contract for the governance related operations of Lisk L2</td>
+      <td>[0x58a61b1807a7bDA541855DaAEAEe89b1DDA48568](https://blockscout.lisk.com/address/0x58a61b1807a7bDA541855DaAEAEe89b1DDA48568)</td>
+      <td>🔵</td>
+    </tr>
+    <tr>
+    <td>[0xf9181aaD773d423A2cc0155Cb4263E563D51B467](https://sepolia-blockscout.lisk.com/address/0xf9181aaD773d423A2cc0155Cb4263E563D51B467)</td>
+    <td>🟣</td>
+    </tr>
+
+    <tr>
+      <th scope="row" rowSpan="2">L2Governor (Implementation)</th>
+       <td scope="row" rowSpan="2">Handles the governance related operations of Lisk L2.</td>
+      <td>[0x18a0b8c653c291D69F21A6Ef9a1000335F71618e](https://blockscout.lisk.com/address/0x18a0b8c653c291D69F21A6Ef9a1000335F71618e)</td>
+      <td>🔵</td>
+    </tr>
+    <tr>
+    <td>[0xff5e32726fF30E9a15F6485C3Bd1e31e63B26625](https://sepolia-blockscout.lisk.com/address/0xff5e32726fF30E9a15F6485C3Bd1e31e63B26625)</td>
+    <td>🟣</td>
+    </tr>
+
+    <tr>
+      <th scope="row" rowSpan="2">L2LiskToken</th>
+       <td scope="row" rowSpan="2">Interface for the `OptimismMintableERC20` contract. Includes functionalities for minting, burning, querying tokens and bridging addresses.</td>
+      <td>[0xac485391EB2d7D88253a7F1eF18C37f4242D1A24](https://blockscout.lisk.com/address/0xac485391EB2d7D88253a7F1eF18C37f4242D1A24)</td>
+      <td>🔵</td>
+    </tr>
+    <tr>
+    <td>[0x8a21CF9Ba08Ae709D64Cb25AfAA951183EC9FF6D](https://sepolia-blockscout.lisk.com/address/0x8a21CF9Ba08Ae709D64Cb25AfAA951183EC9FF6D)</td>
+    <td>🟣</td>
+    </tr>
+
+    <tr>
+      <th scope="row" rowSpan="2">L2LockingPosition</th>
+       <td scope="row" rowSpan="2">Contract for locking positions. It allows creating, modifying, and removing locking positions.</td>
+      <td>[0xC39F0C944FB3eeF9cd2556488e37d7895DC77aB8](https://blockscout.lisk.com/address/0xC39F0C944FB3eeF9cd2556488e37d7895DC77aB8)</td>
+      <td>🔵</td>
+    </tr>
+    <tr>
+    <td>[0x1220Cd967ED2EE4c593211EabCb2E3b1dC8E4930](https://sepolia-blockscout.lisk.com/address/0x1220Cd967ED2EE4c593211EabCb2E3b1dC8E4930)</td>
+    <td>🟣</td>
+    </tr>
+    
+
+
+  </tbody>
+  <tfoot>
+  </tfoot>
+</table>
+
 
 
 ### Vesting Wallets (L2)
