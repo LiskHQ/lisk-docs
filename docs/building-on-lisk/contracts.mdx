@@ -19,7 +19,7 @@ keywords:
 # Contracts
 A reference page that includes information about all contracts deployed on various networks.
 
-## Ethereum Network (L1)
+## Ethereum network (L1)
 
 Details of smart contracts deployed on 🟢 **Ethereum Mainnet** and 🟡 **Sepolia Testnet** are as follows.
 <table >
@@ -154,7 +154,7 @@ Details of smart contracts deployed on 🟢 **Ethereum Mainnet** and 🟡 **Sepo
 
     <tr>
       <th scope="row" rowSpan="2">L1VestingWallet</th>
-      <td scope="row" rowSpan="2">This contract handles the Vesting functionality of LSK Token for the Ethereum network.</td>
+      <td scope="row" rowSpan="2">This contract handles the Vesting functionality of the LSK token for the Ethereum network.</td>
       <td>[0xd590c2e71739c551eba7aebe00e7855df4cf5fb7](https://etherscan.io/address/0xd590c2e71739c551eba7aebe00e7855df4cf5fb7)</td>
       <td>🟢</td>
     </tr>
@@ -169,7 +169,7 @@ Details of smart contracts deployed on 🟢 **Ethereum Mainnet** and 🟡 **Sepo
 
 
 ### Vesting Wallets (L1)
-Details of vesting wallet contracts deployed on 🟢 **Ethereum Mainnet** and 🟡 **Sepolia Testnet** are as follows.
+Details of **vesting wallet** contracts deployed on 🟢 **Ethereum Mainnet** and 🟡 **Sepolia Testnet** are as follows.
 <table>
   <thead>
     <tr>
@@ -237,16 +237,16 @@ Details of vesting wallet contracts deployed on 🟢 **Ethereum Mainnet** and �
 
 
 
-## Lisk Network
+## Lisk network (L2)
 
-All L2 contracts deployed on the **Lisk Sepolia Testnet** are Predeploys.
+
+### Predeploys (L2)
+
 A predeployed contract is included in the L2 genesis state, and it exists from the very beginning of the blockchain.
 On Lisk Network, these contracts are located at specific addresses that are determined in advance and are part of the genesis state.
 For more information on Predeploys, see [Predeploys' README](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md).
 
-Details of smart contracts deployed on 🔵 **Lisk Mainnet** and 🟣 **Lisk Sepolia Testnet** are as follows.
-
-### Predeploys (L2)
+Details of **predeployed** contracts deployed on 🔵 **Lisk Mainnet** and 🟣 **Lisk Sepolia Testnet** are as follows.
 <table >
   <thead>
     <tr>
@@ -345,22 +345,14 @@ Details of smart contracts deployed on 🔵 **Lisk Mainnet** and 🟣 **Lisk Sep
     <td>[0x4200000000000000000000000000000000000018](https://sepolia-blockscout.lisk.com/address/0x4200000000000000000000000000000000000018)</td>
     <td>🟣</td>
     </tr>
-
-    <tr>
-      <th scope="row" rowSpan="2">[**L2Airdrop**](https://github.com/LiskHQ/lisk-contracts/blob/development/src/L2/L2Airdrop.sol)</th>
-      <td>[0xC7315f4FaaB2F700fc6b4704BB801c46ff6327AC](https://blockscout.lisk.com/address/0xC7315f4FaaB2F700fc6b4704BB801c46ff6327AC)</td>
-      <td>🔵</td>
-    </tr>
-    <tr>
-    <td>[0xDdE1998B8842b1C925Eef7eDFDAA2Df24A75048a](https://sepolia-blockscout.lisk.com/address/0xDdE1998B8842b1C925Eef7eDFDAA2Df24A75048a)</td>
-    <td>🟣</td>
-    </tr>
   </tbody>
   <tfoot>
   </tfoot>
 </table>
 
-### Feature Smart Contracts
+### Lisk features-specific contracts (L2)
+
+Details of **Lisk features-specific** contracts deployed on 🔵 **Lisk Mainnet** and 🟣 **Lisk Sepolia Testnet** are as follows.
 
 <table>
   <thead>
@@ -383,7 +375,7 @@ Details of smart contracts deployed on 🔵 **Lisk Mainnet** and 🟣 **Lisk Sep
     </tr>
 
     <tr>
-      <th scope="row" rowSpan="2">L2Claim (Proxy)</th>
+      <th scope="row" rowSpan="2">L2Claim <br/>(Proxy)</th>
        <td scope="row" rowSpan="2"> Proxy contract for claiming LSK tokens from Lisk Chain on L2.</td>
       <td>[0xC7315f4FaaB2F700fc6b4704BB801c46ff6327AC](https://blockscout.lisk.com/address/0xC7315f4FaaB2F700fc6b4704BB801c46ff6327AC)</td>
       <td>🔵</td>
@@ -405,8 +397,8 @@ Details of smart contracts deployed on 🔵 **Lisk Mainnet** and 🟣 **Lisk Sep
     </tr>
 
     <tr>
-      <th scope="row" rowSpan="2">L2Governor (Proxy)</th>
-       <td scope="row" rowSpan="2">Proxy contract for the governance-related operations of Lisk L2</td>
+      <th scope="row" rowSpan="2">L2Governor <br/>(Proxy)</th>
+       <td scope="row" rowSpan="2">Proxy contract for the governance-related operations of Lisk L2.</td>
       <td>[0x58a61b1807a7bDA541855DaAEAEe89b1DDA48568](https://blockscout.lisk.com/address/0x58a61b1807a7bDA541855DaAEAEe89b1DDA48568)</td>
       <td>🔵</td>
     </tr>
@@ -439,7 +431,7 @@ Details of smart contracts deployed on 🔵 **Lisk Mainnet** and 🟣 **Lisk Sep
 
     <tr>
       <th scope="row" rowSpan="2">L2LockingPosition (Proxy)</th>
-       <td scope="row" rowSpan="2">Contract for locking positions. It allows creating, modifying, and removing locking positions.</td>
+       <td scope="row" rowSpan="2">Proxy contract for locking positions.</td>
       <td>[0xC39F0C944FB3eeF9cd2556488e37d7895DC77aB8](https://blockscout.lisk.com/address/0xC39F0C944FB3eeF9cd2556488e37d7895DC77aB8)</td>
       <td>🔵</td>
     </tr>
@@ -460,20 +452,20 @@ Details of smart contracts deployed on 🔵 **Lisk Mainnet** and 🟣 **Lisk Sep
     </tr>
 
     <tr>
-      <th scope="row" rowSpan="2">L2Reward (Proxy)</th>
+      <th scope="row" rowSpan="2">L2Reward <br/>(Proxy)</th>
        <td scope="row" rowSpan="2">Proxy contract for managing and handling L2 Staking Rewards.</td>
       <td>[0xD35ca9577a9DADa7624a35EC10C2F55031f0Ab1f](https://blockscout.lisk.com/address/0xD35ca9577a9DADa7624a35EC10C2F55031f0Ab1f)</td>
       <td>🔵</td>
     </tr>
     <tr>
-    <td>[0x1220Cd967ED2EE4c593211EabCb2E3b1dC8E4930](https://sepolia-blockscout.lisk.com/address/0x1220Cd967ED2EE4c593211EabCb2E3b1dC8E4930)</td>
+    <td>[0xFd322B4724C497E59D48fff8f79c16b4D48837f5](https://sepolia-blockscout.lisk.com/address/0xFd322B4724C497E59D48fff8f79c16b4D48837f5)</td>
     <td>🟣</td>
     </tr>
 
     <tr>
       <th scope="row" rowSpan="2">L2Reward (Implementation)</th>
        <td scope="row" rowSpan="2">This contract manages and handles L2 Staking Rewards.</td>
-      <td>[0xFd322B4724C497E59D48fff8f79c16b4D48837f5](https://blockscout.lisk.com/address/0xFd322B4724C497E59D48fff8f79c16b4D48837f5)</td>
+      <td>[0xA82138726caF68901933838135Fb103E08fb858e](https://blockscout.lisk.com/address/0xA82138726caF68901933838135Fb103E08fb858e)</td>
       <td>🔵</td>
     </tr>
     <tr>
@@ -494,7 +486,7 @@ Details of smart contracts deployed on 🔵 **Lisk Mainnet** and 🟣 **Lisk Sep
 
     <tr>
       <th scope="row" rowSpan="2">L2VestingWallet</th>
-       <td scope="row" rowSpan="2">This contract handles the Vesting functionality of LSK Token for the L2 network.</td>
+       <td scope="row" rowSpan="2">This contract handles the Vesting functionality of the LSK token for the L2 network.</td>
       <td>[0xdF2363BE4644f160EEbFe5AE6F8728e64D8Db211](https://blockscout.lisk.com/address/0xdF2363BE4644f160EEbFe5AE6F8728e64D8Db211)</td>
       <td>🔵</td>
     </tr>
@@ -504,8 +496,8 @@ Details of smart contracts deployed on 🔵 **Lisk Mainnet** and 🟣 **Lisk Sep
     </tr>
 
     <tr>
-      <th scope="row" rowSpan="2">L2VotingPower</th>
-       <td scope="row" rowSpan="2">This contract handles the Vesting functionality of LSK Token for the L2 network.</td>
+      <th scope="row" rowSpan="2">L2VotingPower <br/>(Proxy)</th>
+       <td scope="row" rowSpan="2">Proxy contract for handling voting powers of stakers on Lisk L2 network.</td>
       <td>[0x2eE6Eca46d2406454708a1C80356a6E63b57D404](https://blockscout.lisk.com/address/0x2eE6Eca46d2406454708a1C80356a6E63b57D404)</td>
       <td>🔵</td>
     </tr>
@@ -515,8 +507,8 @@ Details of smart contracts deployed on 🔵 **Lisk Mainnet** and 🟣 **Lisk Sep
     </tr>
 
     <tr>
-      <th scope="row" rowSpan="2">L2VotingPowerImplementation</th>
-       <td scope="row" rowSpan="2">This contract handles the Vesting functionality of LSK Token for the L2 network.</td>
+      <th scope="row" rowSpan="2">L2VotingPower (Implementation)</th>
+       <td scope="row" rowSpan="2">Contract for handling voting powers, locking positions, etc. of stakers on the Lisk L2 network.</td>
       <td>[0x99137F8880fB38e770EB7eF3d68038bC673D58EF](https://blockscout.lisk.com/address/0x99137F8880fB38e770EB7eF3d68038bC673D58EF)</td>
       <td>🔵</td>
     </tr>
@@ -531,7 +523,7 @@ Details of smart contracts deployed on 🔵 **Lisk Mainnet** and 🟣 **Lisk Sep
 </table>
 
 ### Vesting Wallets (L2)
-Details of vesting wallet contracts deployed on 🔵 **Lisk Mainnet** and 🟣 **Lisk Sepolia Testnet** are as follows.
+Details of **vesting wallet** contracts deployed on 🔵 **Lisk Mainnet** and 🟣 **Lisk Sepolia Testnet** are as follows.
 <table>
   <thead>
     <tr>
@@ -585,7 +577,9 @@ Details of vesting wallet contracts deployed on 🔵 **Lisk Mainnet** and 🟣 *
   </tfoot>
 </table>
 
-### ERC-20 Tokens deployed on Lisk L2
+### ERC-20 tokens deployed on Lisk L2
+
+Details of **ERC-20 tokens** contracts deployed on 🔵 **Lisk Mainnet** and 🟣 **Lisk Sepolia Testnet** are as follows.
 
 <table>
   <thead>
