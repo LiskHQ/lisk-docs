@@ -23,6 +23,11 @@ Lisk uses the Superchain Token List as a reference for tokens that have been dep
 The [Superchain Token List](https://github.com/ethereum-optimism/ethereum-optimism.github.io) exists to help users discover the right bridged token addresses for any given native token.
 
 Consider checking this list to make sure that you're not using the wrong bridged representation of a token when bridging a native token.
+<!-- TODO: Add reference to Bridges tokens addresses page, once created for Lisk: https://docs.optimism.io/builders/app-developers/bridging/standard-bridge#searching-the-token-list -->
+
+:::warning
+Lisk does not endorse any of the tokens that are listed in the [**ethereum-optimism.github.io**](https://github.com/ethereum-optimism/ethereum-optimism.github.io) repository and relies on the preliminary checks put in place, listed on the repository.
+:::
 
 Developers who are creating their own bridged tokens should consider [adding their token to the list](#adding-your-token-to-the-list).
 
@@ -34,12 +39,18 @@ Lisk Bridge reviews are conducted manually by the Lisk team.
 :::
 
 ## The Standard Bridge
+Before a token native to one chain can be bridged to the other chain, a bridged representation of that token must be created on the receiving side.
 The [Standard Bridge](https://docs.optimism.io/builders/app-developers/bridging/standard-bridge) allows users to convert tokens that are native to one chain (like Ethereum) into a representation of those tokens on the other chain (like Lisk).
 Users can then convert these bridged representations back into their original native tokens at any time.
 
 :::tip
 This bridging mechanism functions identically in both directions — tokens native to Lisk can be bridged to Ethereum, just like tokens native to Ethereum can be bridged to Lisk.
 :::
+
+A bridged representation of a token is an ERC-20 token that implements the `IOptimismMintableERC20`[^1] interface. 
+A native token may have more than one bridged representation at the same time.
+Users must always specify which bridged token they wish to use when using the bridge.
+Different bridged representations of the same native token are considered entirely independent tokens.
 
 The Standard Bridge is a simple smart contract with the functionality to move ERC-20 tokens between Lisk and Ethereum.
 
@@ -50,25 +61,22 @@ The protocol consists of two pertinent contracts:
 
 These two contracts interact with one another via the `CrossDomainMessenger` system for sending messages between Ethereum and Lisk.
 
-## Adding your token to the list
+[^1]: The `IOptimismMintableERC20` interface is a superset of the [standard ERC-20 interface](https://eips.ethereum.org/EIPS/eip-20) and includes functions that allow the bridge to properly verify deposits/withdrawals and mint/burn tokens as needed.
+All bridged versions of tokens must implement this interface in order to be bridged with the [Standard Bridge](#the-standard-bridge) system.
+Native tokens do not need to implement this interface.
 
-Lisk uses [Optimism's Superchain token list](https://github.com/ethereum-optimism/ethereum-optimism.github.io/blob/master/optimism.tokenlist.json) as a reference for tokens that have been deployed on Lisk.
+
+## Adding your token to the list
 
 To add your token to the Superchain Token List, perform the following steps.
 
-:::warning
-Lisk does not endorse any of the tokens that are listed in the [**ethereum-optimism.github.io**](https://github.com/ethereum-optimism/ethereum-optimism.github.io) repository and relies on the preliminary checks put in place, listed on the repository.
-:::
-
+Lisk uses [Optimism's Superchain token list](https://github.com/ethereum-optimism/ethereum-optimism.github.io/blob/master/optimism.tokenlist.json) as a reference for tokens that have been deployed on Lisk.
 
 ### Step 1: Deploy your token on Lisk
 Select your preferred bridging framework and use it to deploy an ERC-20 for your token on Lisk.
-We recommend you use the framework provided by Lisk's [standard bridge](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/bridges.md) contracts, and furthermore deploy your token using the [OptimismMintableERC20Factory](https://docs.lisk.com/contracts#lisk-l2)[^1]. 
+We recommend you use the framework provided by Lisk's [standard bridge](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/bridges.md) contracts, and furthermore deploy your token using the [OptimismMintableERC20Factory](https://docs.lisk.com/contracts#lisk-l2). 
 Deploying your token on Lisk in this manner provides us with guarantees that will smooth the approval process.
 If you choose a different bridging framework, its interface must be compatible with that of the standard bridge, otherwise it may be difficult for us to support.
-
-[^1]: The `IOptimismMintableERC20` interface is a superset of the standard ERC-20 interface and includes functions that allow the bridge to properly verify deposits/withdrawals and mint/burn tokens as needed.
-Your L2 token contract must implement this interface in order to be bridged using the Standard Bridge system.
 
 For step by step instructions how to deploy ERC-20 tokens on Lisk, check the following guides:
 
@@ -86,9 +94,3 @@ For example, [this PR](https://github.com/ethereum-optimism/ethereum-optimism.gi
 
 ### Step 3: Await final approval
 Reviews are regularly conducted by the Lisk team and you should receive a reply within 24-72 hours (depending on if the PR is opened on a weekday, weekend or holiday).
-
-
-
-
-
-
