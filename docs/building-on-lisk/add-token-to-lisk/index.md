@@ -32,7 +32,6 @@ Lisk does not endorse any of the tokens that are listed in the [**ethereum-optim
 Developers who are creating their own bridged tokens should consider [adding their token to the list](#adding-your-token-to-the-list).
 
 Tokens on the Superchain Token List will automatically appear on certain tools like the [Superchain Bridges UI](https://app.optimism.io/bridge).
-
 However, tokens are not necessarily listed on the [Lisk Bridge UI](https://bridge.lisk.com/bridge/lisk); their listing is neither guaranteed nor automatic.
 Lisk Bridge reviews are conducted manually by the Lisk team.
 
@@ -72,7 +71,7 @@ To add your token to the list, perform the following steps.
 
 ### Step 1: Deploy your token on Lisk
 Select your preferred bridging framework and use it to deploy an ERC-20 for your token on Lisk.
-We recommend you use the framework provided by Lisk's [standard bridge](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/bridges.md) contracts, and furthermore deploy your token using the [OptimismMintableERC20Factory](https://docs.lisk.com/contracts#lisk-l2). 
+We recommend you use the framework provided by Lisk's [standard bridge](#the-standard-bridge) contracts, and furthermore deploy your token using the [OptimismMintableERC20Factory](https://docs.lisk.com/contracts#lisk-l2). 
 Deploying your token on Lisk in this manner provides us with guarantees that will smooth the approval process.
 If you choose a different bridging framework, its interface must be compatible with that of the standard bridge, otherwise it may be difficult for us to support.
 
