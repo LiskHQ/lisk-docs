@@ -31,12 +31,10 @@ Lisk does not endorse any of the tokens that are listed in the [**ethereum-optim
 
 Developers who are creating their own bridged tokens should consider [adding their token to the list](#adding-your-token-to-the-list).
 
-:::note
 Tokens on the Superchain Token List will automatically appear on certain tools like the [Superchain Bridges UI](https://app.optimism.io/bridge).
 
 However, tokens are not necessarily listed on the [Lisk Bridge UI](https://bridge.lisk.com/bridge/lisk); their listing is neither guaranteed nor automatic.
 Lisk Bridge reviews are conducted manually by the Lisk team.
-:::
 
 ## The Standard Bridge
 Before a token native to one chain can be bridged to the other chain, a bridged representation of that token must be created on the receiving side.
@@ -49,7 +47,7 @@ This bridging mechanism functions identically in both directions — tokens nati
 
 A bridged representation of a token is an ERC-20 token that implements the `IOptimismMintableERC20`[^1] interface. 
 A native token may have more than one bridged representation at the same time.
-Users must always specify which bridged token they wish to use when using the bridge.
+Users must always specify which bridged token they wish to use when using the bridge, see [Superchain Token List](#superchain-token-list).
 Different bridged representations of the same native token are considered entirely independent tokens.
 
 The Standard Bridge is a simple smart contract with the functionality to move ERC-20 tokens between Lisk and Ethereum.
