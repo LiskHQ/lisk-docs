@@ -22,9 +22,7 @@ Lisk uses the Superchain Token List as a reference for tokens that have been dep
 ## Superchain Token List
 The [Superchain Token List](https://github.com/ethereum-optimism/ethereum-optimism.github.io) exists to help users discover the right bridged token addresses for any given native token.
 
-:::tip
 Consider checking this list to make sure that you're not using the wrong bridged representation of a token when bridging a native token.
-:::
 
 Developers who are creating their own bridged tokens should consider [adding their token to the list](#adding-your-token-to-the-list).
 
