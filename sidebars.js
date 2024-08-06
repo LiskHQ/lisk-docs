@@ -104,8 +104,8 @@ const sidebars = {
       collapsed: false,
       items: [
         'lisk-tools/api-providers',
-        'lisk-tools/bridges',
         'lisk-tools/faucets',
+        { type: 'ref', id: 'docs-user/bridges' },
         'lisk-tools/oracles',
         'lisk-tools/utilities',
         'lisk-tools/indexers'
@@ -126,6 +126,7 @@ const sidebars = {
         'docs-user/using-lisk/import-lsk',
         'docs-user/exchanges',
         'docs-user/claiming',
+        'docs-user/bridges',
       ],
     },
     {
