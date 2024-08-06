@@ -66,11 +66,11 @@ All bridged versions of tokens must implement this interface in order to be brid
 Native tokens do not need to implement this interface.
 
 
-## Adding your token to the list
+## Adding your token to the Superchain Token List
 
-To add your token to the Superchain Token List, perform the following steps.
+Lisk uses the [Superchain Token List](https://github.com/ethereum-optimism/ethereum-optimism.github.io/blob/master/optimism.tokenlist.json) as a reference for tokens that have been deployed on Lisk.
 
-Lisk uses [Optimism's Superchain token list](https://github.com/ethereum-optimism/ethereum-optimism.github.io/blob/master/optimism.tokenlist.json) as a reference for tokens that have been deployed on Lisk.
+To add your token to the list, perform the following steps.
 
 ### Step 1: Deploy your token on Lisk
 Select your preferred bridging framework and use it to deploy an ERC-20 for your token on Lisk.
