@@ -53,19 +53,15 @@ const sidebars = {
         },
         {
           type: 'category',
-          label: 'Deploying an ERC-20 token to Lisk',
+          label: 'Bridging an L1 token to Lisk',
           collapsible: true,
           collapsed: true,
           items: [
+            'building-on-lisk/add-token-to-lisk/index',
             'building-on-lisk/add-token-to-lisk/standard-token',
             'building-on-lisk/add-token-to-lisk/custom-token',
           ],
-          link: {
-            type: 'doc',
-            id: 'building-on-lisk/add-token-to-lisk/index',
-          },
         },
-        /*         'building-on-lisk/bridge-tokens-to-lisk', */
         {
           type: 'category',
           label: 'Interacting with the blockchain',
