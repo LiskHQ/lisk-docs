@@ -29,7 +29,7 @@ Consider checking this list to make sure that you're not using the wrong bridged
 Lisk does not endorse any of the tokens that are listed in the [**ethereum-optimism.github.io**](https://github.com/ethereum-optimism/ethereum-optimism.github.io) repository and relies on the preliminary checks put in place, listed on the repository.
 :::
 
-Developers who are creating their own bridged tokens should consider [adding their token to the list](#adding-your-token-to-the-list).
+Developers who are creating their own bridged tokens should consider [adding their token to the list](#adding-your-token-to-the-superchain-token-list).
 
 Tokens on the Superchain Token List will automatically appear on certain tools like the [Superchain Bridges UI](https://app.optimism.io/bridge).
 However, tokens are not necessarily listed on the [Lisk Bridge UI](https://bridge.lisk.com/bridge/lisk); their listing is neither guaranteed nor automatic.
