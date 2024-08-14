@@ -20,15 +20,91 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # Governance overview
-
-At the moment, the security of the Lisk Mainnet is dependent on a [multisig wallet](https://www.coindesk.com/tech/2020/11/10/multisignature-wallets-can-keep-your-coins-safer-if-you-use-them-right/) managed by several key members involved in the Lisk project.
-This multisig wallet can be used to upgrade core Lisk Mainnet smart contracts without upgrade delays.
-
-To decentralize the governance of the Lisk project further, Lisk introduces a decentralized autonomous organization, the Lisk DAO, which allows Lisk token holders to participate together in the governance of the Lisk project.
+The security of the Lisk Mainnet is mainly dependent on the [security council](#security-council) and the [Lisk DAO](#lisk-dao), which allows Lisk token holders to participate together in the governance of the Lisk project.
 
 :::info
 Every LSK token holder who participates in the DAO is rewarded with [staking rewards](../user/staking/overview#staking-rewards), to incentivize participation in the Lisk governance.
 :::
+
+## Security council
+
+The security council is a 3-of-5 multi-signature wallet with key members of Lisk team and Onchain Foundation.
+
+The purpose of the security council is to be responsible for smart contract upgrades in case a security vulnerability is discovered.
+Therefore, it is crucial that in case of a security incident the security council can act promptly, i.e., at least 3 members are available for signing a contract upgrade.
+
+The security council has the power to upgrade the following contracts:
+
+- Claims contract
+- Governance contracts
+- Staking and Rewards contracts
+- all Vesting contracts
+- Airdrop contract
+
+The ERC-20 token contract cannot be upgraded by the security council, but the security council has the special power to add accounts that can burn LSK tokens.
+This is only planned to be used in case the community decides to burn the 100M LSK allocated to the Lisk DAO.
+
+## Lisk Admin Addresses
+
+Details of **Admin account** addresses on 🟢 **Ethereum Mainnet** and 🟡 **Sepolia Testnet** are as follows.
+
+<table >
+  <thead>
+    <tr>
+      <th scope="col">Admin Role</th>
+      <th scope="col">Controlled/Owned by</th>
+      <th scope="col" colSpan="2">Address</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row" rowSpan="2">L1 Proxy Admin</th>
+      <th scope="row" rowSpan="2">Gelato</th>
+      <td>[0xeC432c4F1d0E12737f3a42a459B84848Af979b2d](https://etherscan.io/address/0xeC432c4F1d0E12737f3a42a459B84848Af979b2d)</td>
+      <td>🟢</td>
+    </tr>
+    <tr>
+    <td>[0x5Db9F05921d8d5a6a157F6f49c411cc0e46c6330](https://sepolia.etherscan.io/address/0x5Db9F05921d8d5a6a157F6f49c411cc0e46c6330)</td>
+    <td>🟡</td>
+    </tr>
+
+    <tr>
+      <th scope="row" rowSpan="2">SystemConfig</th>
+      <th scope="row" rowSpan="2">Gelato</th>
+      <td>[0x05f23282FFDCA8286E4738C1aF79079f3d843750](https://etherscan.io/address/0x05f23282FFDCA8286E4738C1aF79079f3d843750)</td>
+      <td>🟢</td>
+    </tr>
+    <tr>
+    <td>[0xF54791059df4a12BA461b881B4080Ae81a1d0AC0](https://sepolia.etherscan.io/address/0xF54791059df4a12BA461b881B4080Ae81a1d0AC0)</td>
+    <td>🟡</td>
+    </tr>
+
+    <tr>
+      <th scope="row" rowSpan="2">Batcher</th>
+      <th scope="row" rowSpan="2">Gelato</th>
+      <td>[0xa6Ea2f3299b63c53143c993d2d5E60A69Cd6Fe24](https://etherscan.io/address/0xa6Ea2f3299b63c53143c993d2d5E60A69Cd6Fe24)</td>
+      <td>🟢</td>
+    </tr>
+    <tr>
+    <td>[0x246E119a5BcC2875161b23E4e602e25cEcE96E37](https://sepolia.etherscan.io/address/0x246E119a5BcC2875161b23E4e602e25cEcE96E37)</td>
+    <td>🟡</td>
+    </tr>
+
+    <tr>
+      <th scope="row" rowSpan="2">Proposer</th>
+      <th scope="row" rowSpan="2">Gelato</th>
+      <td>[0x0AbD6da1cE10D1cD6c7C9C14b905786D20f3EB23](https://etherscan.io/address/0x0AbD6da1cE10D1cD6c7C9C14b905786D20f3EB23)</td>
+      <td>🟢</td>
+    </tr>
+    <tr>
+    <td>[0xBbD3a1D90B0Ef416581ACdC6a72046b38D3af9AD](https://sepolia.etherscan.io/address/0xBbD3a1D90B0Ef416581ACdC6a72046b38D3af9AD)</td>
+    <td>🟡</td>
+    </tr>
+  </tbody>
+  <tfoot>
+  </tfoot>
+</table>
+
 
 ## Lisk DAO
 The Lisk DAO provides the opportunity for LSK token holders to participate in the overall governance of the Lisk project, including allocation of funds, protocol updates, or strategic directions.
@@ -141,65 +217,3 @@ The foundation will have an administrative role and will take care of the follow
 1. Removal of draft proposals that reasonably appear to be fraudulent, spam-oriented, defamatory, hateful, or otherwise inappropriate.
 2. Management of mutually contradictory proposals that are submitted simultaneously or in close proximity to one another.
 3. Administration of network maintenance, such as emergency bug fixes or release rollbacks (with or without a governance vote).
-
-#### Lisk Admin Addresses
-
-Details of **Admin account** addresses on 🟢 **Ethereum Mainnet** and 🟡 **Sepolia Testnet** are as follows.
-
-<table >
-  <thead>
-    <tr>
-      <th scope="col">Admin Role</th>
-      <th scope="col">Controlled/Owned by</th>
-      <th scope="col" colSpan="2">Address</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row" rowSpan="2">L1 Proxy Admin</th>
-      <th scope="row" rowSpan="2">Gelato</th>
-      <td>[0xeC432c4F1d0E12737f3a42a459B84848Af979b2d](https://etherscan.io/address/0xeC432c4F1d0E12737f3a42a459B84848Af979b2d)</td>
-      <td>🟢</td>
-    </tr>
-    <tr>
-    <td>[0x5Db9F05921d8d5a6a157F6f49c411cc0e46c6330](https://sepolia.etherscan.io/address/0x5Db9F05921d8d5a6a157F6f49c411cc0e46c6330)</td>
-    <td>🟡</td>
-    </tr>
-
-    <tr>
-      <th scope="row" rowSpan="2">SystemConfig</th>
-      <th scope="row" rowSpan="2">Gelato</th>
-      <td>[0x05f23282FFDCA8286E4738C1aF79079f3d843750](https://etherscan.io/address/0x05f23282FFDCA8286E4738C1aF79079f3d843750)</td>
-      <td>🟢</td>
-    </tr>
-    <tr>
-    <td>[0xF54791059df4a12BA461b881B4080Ae81a1d0AC0](https://sepolia.etherscan.io/address/0xF54791059df4a12BA461b881B4080Ae81a1d0AC0)</td>
-    <td>🟡</td>
-    </tr>
-
-    <tr>
-      <th scope="row" rowSpan="2">Batcher</th>
-      <th scope="row" rowSpan="2">Gelato</th>
-      <td>[0xa6Ea2f3299b63c53143c993d2d5E60A69Cd6Fe24](https://etherscan.io/address/0xa6Ea2f3299b63c53143c993d2d5E60A69Cd6Fe24)</td>
-      <td>🟢</td>
-    </tr>
-    <tr>
-    <td>[0x246E119a5BcC2875161b23E4e602e25cEcE96E37](https://sepolia.etherscan.io/address/0x246E119a5BcC2875161b23E4e602e25cEcE96E37)</td>
-    <td>🟡</td>
-    </tr>
-
-    <tr>
-      <th scope="row" rowSpan="2">Proposer</th>
-      <th scope="row" rowSpan="2">Gelato</th>
-      <td>[0x0AbD6da1cE10D1cD6c7C9C14b905786D20f3EB23](https://etherscan.io/address/0x0AbD6da1cE10D1cD6c7C9C14b905786D20f3EB23)</td>
-      <td>🟢</td>
-    </tr>
-    <tr>
-    <td>[0xBbD3a1D90B0Ef416581ACdC6a72046b38D3af9AD](https://sepolia.etherscan.io/address/0xBbD3a1D90B0Ef416581ACdC6a72046b38D3af9AD)</td>
-    <td>🟡</td>
-    </tr>
-  </tbody>
-  <tfoot>
-  </tfoot>
-</table>
-
