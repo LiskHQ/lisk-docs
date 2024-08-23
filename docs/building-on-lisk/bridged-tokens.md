@@ -15,4 +15,4 @@ keywords:
 
 | Bridged Token Name | Symbol | L1 Token          | L2 Token           |
 | :----------------- | :----- |:----------------- | :----------------- |
-| Tether USD         | USDT   |
+|Remark placeholder|

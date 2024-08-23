@@ -18,16 +18,70 @@ export const generatedDocs = () => {
       row.children.forEach(cell => {
         //console.log(cell.type);
         cell.children.forEach(cellChild => {
-          if( cellChild.value === 'Tether USD') {
+          if( cellChild.value === 'Remark placeholder') {
             console.log(cell);
+            console.log(row);
+            cellChild.value =  'Some Token';
             row.children.push({
               type: 'tableCell',
               children: [
                 {
                   type: 'text',
-                  value: 'PUSHED FROM PLUGIN'
+                  value: 'STK'
                 }]
             });
+            row.children.push({
+              type: 'tableCell',
+              children: [
+                {
+                  type: 'text',
+                  value: '0x0'
+                }]
+            });
+            row.children.push({
+              type: 'tableCell',
+              children: [
+                {
+                  type: 'text',
+                  value: '0x1'
+                }]
+            });
+            node.children.push({
+              type: 'tableRow',
+              children: [
+                {
+                  type: 'tableCell',
+                  children: [
+                    {
+                      type: 'text',
+                      value: 'Some other token'
+                    }]
+                },
+                {
+                  type: 'tableCell',
+                  children: [
+                    {
+                      type: 'text',
+                      value: 'SOT'
+                    }]
+                },
+                {
+                  type: 'tableCell',
+                  children: [
+                    {
+                      type: 'text',
+                      value: '0x2'
+                    }]
+                },
+                {
+                  type: 'tableCell',
+                  children: [
+                    {
+                      type: 'text',
+                      value: '0x3'
+                    }]
+                }]
+              });
           }
         });
       });
