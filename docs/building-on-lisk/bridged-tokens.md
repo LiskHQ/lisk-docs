@@ -15,4 +15,3 @@ keywords:
 
 | Bridged Token Name | Symbol | L1 Token          | L2 Token           |
 | :----------------- | :----- |:----------------- | :----------------- |
-|Remark placeholder|

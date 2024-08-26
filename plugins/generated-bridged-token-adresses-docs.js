@@ -8,10 +8,34 @@ const tokens = List.tokens;
 let chainIds =  [1135, 4202];
 
 var LiskAdresses = tokens.filter(function(token) {
+ /*  var tokensLisk = chainIds.indexOf(token.chainId) != -1
+  var tokenEth;
+  if (tokensLisk) {
+    tokenEth = tokens.find(function(tkn) {
+      return tkn.symbol === token.symbol && token.chainId === 1;
+    });
+  }
+  return tokensLisk && tokenEth; */
   return chainIds.indexOf(token.chainId) != -1
 });
 console.log("LiskAdresses");
 console.log(LiskAdresses);
+LiskAdresses.forEach(token => {
+  var ethAddress;
+  if (token.chainId === chainIds[0]) {
+    ethAddress = tokens.find(function(tkn) {
+        return tkn.symbol === token.symbol && tkn.chainId === 1;
+    });
+  } else if (token.chainId === chainIds[1]) {
+    ethAddress = tokens.find(function(tkn) {
+      return tkn.symbol === token.symbol && tkn.chainId === 11155111;
+  });
+  } else {
+    console.log("Error: chainId not found")
+  }
+  token.ethAddress = ethAddress.address;
+});
+
 export const generatedDocs = () => {
   console.log("+++ Running generatedDocs +++");
   return async (root) => {
@@ -26,70 +50,47 @@ export const generatedDocs = () => {
       row.children.forEach(cell => {
         //console.log(cell.type);
         cell.children.forEach(cellChild => {
-          if( cellChild.value === 'Remark placeholder') {
+          if( cellChild.value === 'Bridged Token Name') {
             console.log(cell);
             console.log(row);
-            cellChild.value =  'Some Token';
-            row.children.push({
-              type: 'tableCell',
-              children: [
-                {
-                  type: 'text',
-                  value: 'STK'
-                }]
+            LiskAdresses.forEach(token => {
+              node.children.push({
+                type: 'tableRow',
+                children: [
+                  {
+                    type: 'tableCell',
+                    children: [
+                      {
+                        type: 'text',
+                        value: token.name
+                      }]
+                  },
+                  {
+                    type: 'tableCell',
+                    children: [
+                      {
+                        type: 'text',
+                        value: token.symbol
+                      }]
+                  },
+                  {
+                    type: 'tableCell',
+                    children: [
+                      {
+                        type: 'text',
+                        value: token.ethAddress
+                      }]
+                  },
+                  {
+                    type: 'tableCell',
+                    children: [
+                      {
+                        type: 'text',
+                        value: token.address
+                      }]
+                  }]
+                });
             });
-            row.children.push({
-              type: 'tableCell',
-              children: [
-                {
-                  type: 'text',
-                  value: '0x0'
-                }]
-            });
-            row.children.push({
-              type: 'tableCell',
-              children: [
-                {
-                  type: 'text',
-                  value: '0x1'
-                }]
-            });
-            node.children.push({
-              type: 'tableRow',
-              children: [
-                {
-                  type: 'tableCell',
-                  children: [
-                    {
-                      type: 'text',
-                      value: 'Some other token'
-                    }]
-                },
-                {
-                  type: 'tableCell',
-                  children: [
-                    {
-                      type: 'text',
-                      value: 'SOT'
-                    }]
-                },
-                {
-                  type: 'tableCell',
-                  children: [
-                    {
-                      type: 'text',
-                      value: '0x2'
-                    }]
-                },
-                {
-                  type: 'tableCell',
-                  children: [
-                    {
-                      type: 'text',
-                      value: '0x3'
-                    }]
-                }]
-              });
           }
         });
       });
