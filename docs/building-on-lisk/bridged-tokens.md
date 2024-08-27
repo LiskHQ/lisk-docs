@@ -13,5 +13,12 @@ keywords:
 
 # Bridged tokens
 
-| Bridged Token Name | Symbol | L1 Token          | L2 Token           |
+## Lisk Mainnet
+
+| Bridged Tokens Mainnet | Symbol | L1 Token          | L2 Token           |
+| :----------------- | :----- |:----------------- | :----------------- |
+
+## Lisk Sepolia
+
+| Bridged Tokens Sepolia | Symbol | L1 Token          | L2 Token           |
 | :----------------- | :----- |:----------------- | :----------------- |

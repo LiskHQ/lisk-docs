@@ -1,8 +1,17 @@
-import List from './optimism.tokenlist.json';
 import {visit} from 'unist-util-visit';
+import {XMLHttpRequest} from 'xmlhttprequest';
+
+function Get(url){
+  var Httpreq = new XMLHttpRequest(); // a new request
+  Httpreq.open("GET",url,false);
+  Httpreq.send(null);
+  return Httpreq.responseText;          
+}
+
+var json_obj = JSON.parse(Get("https://raw.githubusercontent.com/ethereum-optimism/ethereum-optimism.github.io/master/optimism.tokenlist.json"));
 
 // Superchain Token List
-const tokens = List.tokens;
+const tokens = json_obj.tokens;
 
 // Lisk Chain IDs
 let chainIds =  [1135, 4202];
@@ -41,47 +50,103 @@ export const generatedDocs = () => {
       row.children.forEach(cell => {
         // Find a cell with the value 'Bridged Token Name'
         cell.children.forEach(cellChild => {
-          if( cellChild.value === 'Bridged Token Name') {
-            console.log(cell);
-            console.log(row);
+          if( cellChild.value === 'Bridged Tokens Mainnet') {
+            cellChild.value = 'Bridged Token Name';
             // Add a new row for each token
             LiskAdresses.forEach(token => {
-              node.children.push({
-                type: 'tableRow',
-                children: [
-                  {
-                    type: 'tableCell',
-                    children: [
-                      {
-                        type: 'text',
-                        value: token.name
-                      }]
-                  },
-                  {
-                    type: 'tableCell',
-                    children: [
-                      {
-                        type: 'text',
-                        value: token.symbol
-                      }]
-                  },
-                  {
-                    type: 'tableCell',
-                    children: [
-                      {
-                        type: 'text',
-                        value: token.ethAddress
-                      }]
-                  },
-                  {
-                    type: 'tableCell',
-                    children: [
-                      {
-                        type: 'text',
-                        value: token.address
-                      }]
-                  }]
-                });
+              if (token.chainId === chainIds[0]) {
+                node.children.push({
+                  type: 'tableRow',
+                  children: [
+                    {
+                      type: 'tableCell',
+                      children: [
+                        {
+                          type: 'text',
+                          value: token.name
+                        }]
+                    },
+                    {
+                      type: 'tableCell',
+                      children: [
+                        {
+                          type: 'text',
+                          value: token.symbol
+                        }]
+                    },
+                    {
+                      type: 'tableCell',
+                      children: [
+                        {
+                          type: 'link',
+                          url: "https://etherscan.io/address/" + token.ethAddress,
+                          children: [{type: 'text', value: token.ethAddress }]
+                        }
+                      ]
+                    },
+                    {
+                      type: 'tableCell',
+                      children: [
+                        {
+                          type: 'link',
+                          url: "https://blockscout.lisk.com/address/" + token.address,
+                          children: [{type: 'text', value: token.address }]
+                        }
+                      ]
+                    }]
+                  });
+                } else {
+                  console.log("Info: chainId not found")
+                }
+            });
+          } else if (cellChild.value === 'Bridged Tokens Sepolia') {
+            cellChild.value = 'Bridged Token Name';
+            // Add a new row for each token
+            LiskAdresses.forEach(token => {
+              if (token.chainId === chainIds[1]) {
+                node.children.push({
+                  type: 'tableRow',
+                  children: [
+                    {
+                      type: 'tableCell',
+                      children: [
+                        {
+                          type: 'text',
+                          value: token.name
+                        }]
+                    },
+                    {
+                      type: 'tableCell',
+                      children: [
+                        {
+                          type: 'text',
+                          value: token.symbol
+                        }]
+                    },
+                    {
+                      type: 'tableCell',
+                      children: [
+                        {
+                          type: 'link',
+                          url: "https://sepolia.etherscan.io/address/" + token.ethAddress+ ")",
+                          children: [{type: 'text', value: token.ethAddress }]
+                        }
+                      ]
+                    },
+                    {
+                      type: 'tableCell',
+                      children: [
+                        {
+                          type: 'link',
+                          url: "https://sepolia-blockscout.lisk.com/address/" + token.address+ ")",
+                          children: [{type: 'text', value: token.address }]
+                        }
+                      ]
+                    }]
+                  });
+                } else {
+                  console.log("Error: chainId not found")
+                }
             });
           }
         });
