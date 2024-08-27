@@ -48,11 +48,11 @@ export const generatedDocs = () => {
     // For every table in the docs
     node.children.forEach(row => {
       row.children.forEach(cell => {
-        // Find a cell with the value 'Bridged Token Name'
         cell.children.forEach(cellChild => {
+          // Find a cell with the value 'Bridged Token Mainnet'
           if( cellChild.value === 'Bridged Tokens Mainnet') {
             cellChild.value = 'Bridged Token Name';
-            // Add a new row for each token
+            // Add a new row for each Mainnet token
             LiskAdresses.forEach(token => {
               if (token.chainId === chainIds[0]) {
                 node.children.push({
@@ -99,9 +99,10 @@ export const generatedDocs = () => {
                   console.log("Info: chainId not found")
                 }
             });
+          // Find a cell with the value 'Bridged Token Sepolia'
           } else if (cellChild.value === 'Bridged Tokens Sepolia') {
             cellChild.value = 'Bridged Token Name';
-            // Add a new row for each token
+            // Add a new row for each Sepolia token
             LiskAdresses.forEach(token => {
               if (token.chainId === chainIds[1]) {
                 node.children.push({
