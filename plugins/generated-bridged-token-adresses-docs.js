@@ -129,7 +129,7 @@ export const generatedDocs = () => {
                       children: [
                         {
                           type: 'link',
-                          url: "https://sepolia.etherscan.io/address/" + token.ethAddress+ ")",
+                          url: "https://sepolia.etherscan.io/address/" + token.ethAddress,
                           children: [{type: 'text', value: token.ethAddress }]
                         }
                       ]
@@ -139,7 +139,7 @@ export const generatedDocs = () => {
                       children: [
                         {
                           type: 'link',
-                          url: "https://sepolia-blockscout.lisk.com/address/" + token.address+ ")",
+                          url: "https://sepolia-blockscout.lisk.com/address/" + token.address,
                           children: [{type: 'text', value: token.address }]
                         }
                       ]
