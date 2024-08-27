@@ -1,31 +1,25 @@
-//import { Plugin } from 'unified';
 import List from './optimism.tokenlist.json';
 import {visit} from 'unist-util-visit';
 
-console.log("+++ Running generated-bridged-token-adresses-docs.js +++");  
+// Superchain Token List
 const tokens = List.tokens;
 
+// Lisk Chain IDs
 let chainIds =  [1135, 4202];
 
+// Filter all tokens deployed on Lisk chains
 var LiskAdresses = tokens.filter(function(token) {
- /*  var tokensLisk = chainIds.indexOf(token.chainId) != -1
-  var tokenEth;
-  if (tokensLisk) {
-    tokenEth = tokens.find(function(tkn) {
-      return tkn.symbol === token.symbol && token.chainId === 1;
-    });
-  }
-  return tokensLisk && tokenEth; */
   return chainIds.indexOf(token.chainId) != -1
 });
-console.log("LiskAdresses");
-console.log(LiskAdresses);
+// Add corresponding L1 address to each token
 LiskAdresses.forEach(token => {
   var ethAddress;
+  // For Lisk Mainnet, add Ethereum Mainnet address
   if (token.chainId === chainIds[0]) {
     ethAddress = tokens.find(function(tkn) {
         return tkn.symbol === token.symbol && tkn.chainId === 1;
     });
+  // For Lisk Sepolia, add Ethereum Sepolia address
   } else if (token.chainId === chainIds[1]) {
     ethAddress = tokens.find(function(tkn) {
       return tkn.symbol === token.symbol && tkn.chainId === 11155111;
@@ -37,22 +31,20 @@ LiskAdresses.forEach(token => {
 });
 
 export const generatedDocs = () => {
-  console.log("+++ Running generatedDocs +++");
   return async (root) => {
-    //root.children = tokens;
    visit(root, (node) => {
     if (node.type !== 'table') {
       return 
     }
-
+    // For every table in the docs
     node.children.forEach(row => {
-      //console.dir("++++" + row.children[0]);
       row.children.forEach(cell => {
-        //console.log(cell.type);
+        // Find a cell with the value 'Bridged Token Name'
         cell.children.forEach(cellChild => {
           if( cellChild.value === 'Bridged Token Name') {
             console.log(cell);
             console.log(row);
+            // Add a new row for each token
             LiskAdresses.forEach(token => {
               node.children.push({
                 type: 'tableRow',
