@@ -26,23 +26,21 @@ This page will explain how you can access real world / off-chain data using Orac
 
 RedStone is a data ecosystem that delivers frequently updated, reliable and diverse data for your dApp and smart contracts deployed on Lisk.
 
-:::info
-This guides uses the [Redstone Core model](https://docs.redstone.finance/docs/get-started/models/redstone-core) to fetch the data.
-
-For an overview about the different modules Redstone offers to receive oracle data, go [Oracles > Redstone](lisk-tools/oracles#redstone).
-:::
-
-
 ## How to pull oracle data from Redstone
 
 To create a smart contract that directly fetches the latest data from the Redstone oracle, follow this guide.
 
+This guides uses the [Redstone Core model](https://docs.redstone.finance/docs/get-started/models/redstone-core) to fetch the data.
+
+For an overview about the different modules Redstone offers to receive oracle data, go [Oracles > Redstone](lisk-tools/oracles#redstone).
+
+[Hardhat](https://hardhat.org/) is used in this guide to create the smart contract.
+In case you want to use Foundry, check out the [Redstone docs](https://docs.redstone.finance/docs/get-started/models/redstone-core#foundry) for isntructions.
+
 ### Dependencies
 
-The Redstone EVM connector has the following dependencies
-
-- ethers 5.7.2
-- hardhat 2.14.0
+- ethers ^5.7.2
+- hardhat ^2.14.0
 
 ### Install the evm connector
 Install the [@redstone-finance/evm-connector](https://www.npmjs.com/package/@redstone-finance/evm-connector) package.
