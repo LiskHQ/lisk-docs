@@ -40,6 +40,7 @@ const sidebars = {
         { type: 'ref', id: 'docs-user/connecting-to-a-wallet' },
         'building-on-lisk/contracts',
         'building-on-lisk/run-a-lisk-node',
+        'building-on-lisk/use-oracle-data',
         {
           type: 'category',
           label: 'Deploying a Smart Contract',
