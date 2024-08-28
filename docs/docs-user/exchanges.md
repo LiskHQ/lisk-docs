@@ -69,11 +69,14 @@ Please note that using the wrong network/blockchain when depositing funds to an 
 
 ## Decentralized Exchanges (DEX)
 
+| Name                          | Token pairs                                 |
+| :---------------------------- | :------------------------------------------ |
+| [Oku.Trade](https://oku.trade/app/lisk/trade/0xac485391eb2d7d88253a7f1ef18c37f4242d1a24?quoteToken=0x05D032ac25d322df992303dCa074EE7392C117b9) | LSK/USDT, LSK/WETH, LSK/ETH, etc. |
+
 ### Coming soon
 
 | Name                          | 
 | :---------------------------- |
-| **Oku.Trade** (Uniswap Clone) | 
 | **Velodrome**                 | 
 
 
