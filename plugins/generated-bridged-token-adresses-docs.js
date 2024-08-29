@@ -20,6 +20,8 @@ let chainIds =  [1135, 4202];
 var LiskAdresses = tokens.filter(function(token) {
   return chainIds.indexOf(token.chainId) != -1
 });
+console.log("LiskAdresses");
+console.log(LiskAdresses);
 // Add corresponding L1 address to each token
 LiskAdresses.forEach(token => {
   var ethAddress;
@@ -34,7 +36,8 @@ LiskAdresses.forEach(token => {
       return tkn.symbol === token.symbol && tkn.chainId === 11155111;
   });
   } else {
-    console.log("Error: chainId not found")
+    console.log("Error: chainId not found");
+    console.log(token.chainId);
   }
   token.ethAddress = ethAddress.address;
 });
@@ -95,8 +98,6 @@ export const generatedDocs = () => {
                       ]
                     }]
                   });
-                } else {
-                  console.log("Info: chainId not found")
                 }
             });
           // Find a cell with the value 'Bridged Token Sepolia'
@@ -145,8 +146,6 @@ export const generatedDocs = () => {
                       ]
                     }]
                   });
-                } else {
-                  console.log("Error: chainId not found")
                 }
             });
           }

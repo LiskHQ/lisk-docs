@@ -1625,10 +1625,6 @@
     utility-types "^3.10.0"
     webpack "^5.88.1"
 
-"@eth-optimism/tokenlist@github:ethereum-optimism/ethereum-optimism.github.io":
-  version "10.0.111"
-  resolved "git+ssh://git@github.com/ethereum-optimism/ethereum-optimism.github.io.git#423b32bd13c386c51cddd12d5e920eb38aeed5cb"
-
 "@hapi/hoek@^9.0.0", "@hapi/hoek@^9.3.0":
   version "9.3.0"
   resolved "https://registry.npmjs.org/@hapi/hoek/-/hoek-9.3.0.tgz"
