@@ -111,3 +111,43 @@ function getLatestEthBtcPrices() public view returns (uint256) {
     return values;
 }
 ```
+
+### Testing 
+
+In order to test the EVM connector related functions in your contract, it is necessary to wrap the contract using the `WrapperBuilder` provided by the `@redstone-finance/evm-connector` package.
+
+```typescript title="test/YourContract.ts"
+import { expect } from "chai";
+import { ethers } from "hardhat";
+import { WrapperBuilder } from "@redstone-finance/evm-connector";
+
+describe("YourContract", function () {
+    describe("Redstone", function () {
+        it("Get ETH price securely", async function () {
+        const YourContract = await ethers.getContractFactory("YourContract");
+        const contract = await YourContract.deploy(1896456000);
+        const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
+            dataFeeds: ["ETH"],
+        });
+
+        // Interact with the contract (getting oracle value securely)
+        const ethPriceFromContract = await wrappedContract.getLatestEthPrice();
+        console.log("Latest ETH price:");
+        console.log({ ethPriceFromContract });
+        });
+    });
+});
+```
+
+Now run the test:
+
+```bash
+npx hardhat test
+```
+
+This should output the latest ETH price in the console:
+
+``` title="Output"
+Latest ETH price:
+{ ethPriceFromContract: BigNumber { value: "250255087192" } }
+```
