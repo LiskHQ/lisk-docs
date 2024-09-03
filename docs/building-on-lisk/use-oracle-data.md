@@ -72,6 +72,8 @@ Get the oracle data by using the provided functions of the EVM connector.
 
 #### Get a single value
 
+To get a single price feed, use the function `getOracleNumericValueFromTxMsg()` and provide the data feed ID as parameter.
+
 ```solidity
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.9;
@@ -96,6 +98,8 @@ contract YourContract is RapidDemoConsumerBase {
 ```
 
 #### Get mutiple values
+
+To get data from multiple price feeds, use the function `getOracleNumericValuesFromTxMsg()` and provide the data feed ID array as parameter.
 
 ```solidity
 /**
@@ -151,3 +155,7 @@ This should output the latest ETH price in the console:
 Latest ETH price:
 { ethPriceFromContract: BigNumber { value: "250255087192" } }
 ```
+
+## Deploying on Lisk
+
+To deploy the smart contract on Lisk Sepolia or Lisk Mainnet, follow the guide [Deploying a smart contract with Hardhat](deploying-smart-contract/with-Hardhat.md)
