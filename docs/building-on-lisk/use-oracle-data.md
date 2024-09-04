@@ -30,7 +30,7 @@ RedStone is a data ecosystem that delivers frequently updated, reliable and dive
 
 To create a smart contract that directly fetches the latest data from the Redstone oracle, follow this guide.
 
-This guides uses the [Redstone Core model](https://docs.redstone.finance/docs/get-started/models/redstone-core) to fetch the data.
+This guides uses the [Redstone Pull model](https://docs.redstone.finance/docs/get-started/models/redstone-pull) to fetch the data.
 
 For an overview about the different modules Redstone offers to receive oracle data, go [Oracles > Redstone](../lisk-tools/oracles#redstone).
 
