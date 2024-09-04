@@ -35,7 +35,7 @@ This guides uses the [Redstone Core model](https://docs.redstone.finance/docs/ge
 For an overview about the different modules Redstone offers to receive oracle data, go [Oracles > Redstone](../lisk-tools/oracles#redstone).
 
 [Hardhat](https://hardhat.org/) is used in this guide to create the smart contract.
-In case you want to use Foundry, check out the [Redstone docs](https://docs.redstone.finance/docs/get-started/models/redstone-core#foundry) for isntructions.
+In case you want to use Foundry, check out the [Redstone docs](https://docs.redstone.finance/docs/get-started/models/redstone-core#foundry) for instructions.
 
 ### Dependencies
 
@@ -97,7 +97,7 @@ contract YourContract is RapidDemoConsumerBase {
 }
 ```
 
-#### Get mutiple values
+#### Get multiple values
 
 To get data from multiple price feeds, use the function `getOracleNumericValuesFromTxMsg()` and provide the data feed ID array as parameter.
 
