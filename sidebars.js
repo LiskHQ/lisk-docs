@@ -86,16 +86,6 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Lisk L1 legacy chain',
-      collapsible: true,
-      collapsed: false,
-      items: [
-        'lisk-l1/legacy-chain-service',
-        'lisk-l1/migration-guide',
-      ],
-    },
-    {
-      type: 'category',
       label: 'Lisk Tools',
       collapsible: true,
       collapsed: false,
@@ -106,6 +96,16 @@ const sidebars = {
         'lisk-tools/oracles',
         'lisk-tools/utilities',
         'lisk-tools/indexers'
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Lisk L1 legacy chain',
+      collapsible: true,
+      collapsed: false,
+      items: [
+        'lisk-l1/legacy-chain-service',
+        'lisk-l1/migration-guide',
       ],
     },
   ],
