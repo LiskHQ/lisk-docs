@@ -39,6 +39,7 @@ const sidebars = {
       items: [
         { type: 'ref', id: 'docs-user/connecting-to-a-wallet' },
         'building-on-lisk/contracts',
+        'building-on-lisk/bridged-tokens',
         'building-on-lisk/run-a-lisk-node',
         {
           type: 'category',
