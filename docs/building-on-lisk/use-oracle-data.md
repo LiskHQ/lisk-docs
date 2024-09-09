@@ -24,15 +24,15 @@ keywords: [
 
 This page will explain how you can access real world / off-chain data using Oracles such as Redstone.
 
-RedStone is a data ecosystem that delivers frequently updated, reliable and diverse data for your dApp and smart contracts deployed on Lisk.
+RedStone is a data ecosystem that delivers frequently updated, reliable, and diverse data for your dApp and smart contracts deployed on Lisk.
 
 ## How to pull oracle data from Redstone
 
 To create a smart contract that directly fetches the latest data from the Redstone oracle, follow this guide.
 
-This guides uses the [Redstone Pull model](https://docs.redstone.finance/docs/get-started/models/redstone-pull) to fetch the data.
+This guide uses the [Redstone Pull model](https://docs.redstone.finance/docs/get-started/models/redstone-pull) to fetch the data.
 
-For an overview about the different modules Redstone offers to receive oracle data, go [Oracles > Redstone](../lisk-tools/oracles#redstone).
+For an overview of the different modules that Redstone offers to receive oracle data, go to [Oracles > Redstone](../lisk-tools/oracles#redstone).
 
 [Hardhat](https://hardhat.org/) is used in this guide to create the smart contract.
 In case you want to use Foundry, check out the [Redstone docs](https://docs.redstone.finance/docs/get-started/models/redstone-core#foundry) for instructions.
@@ -68,11 +68,11 @@ contract YourContract is RapidDemoConsumerBase {
 ```
 ### Get oracle data
 
-Get the oracle data by using the provided functions of the EVM connector.
+Get the oracle data using the functions provided by the EVM connector.
 
 #### Get a single value
 
-To get a single price feed, use the function `getOracleNumericValueFromTxMsg()` and provide the data feed ID as parameter.
+To get a single price feed, use the function `getOracleNumericValueFromTxMsg()` and provide the data feed ID as a parameter.
 
 ```solidity
 // SPDX-License-Identifier: UNLICENSED
@@ -99,7 +99,7 @@ contract YourContract is RapidDemoConsumerBase {
 
 #### Get multiple values
 
-To get data from multiple price feeds, use the function `getOracleNumericValuesFromTxMsg()` and provide the data feed ID array as parameter.
+To get data from multiple price feeds, use the function `getOracleNumericValuesFromTxMsg()` and provide the data feed ID array as a parameter.
 
 ```solidity
 /**
