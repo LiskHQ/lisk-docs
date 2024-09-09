@@ -6,6 +6,8 @@
 
 import { themes as prismThemes } from 'prism-react-renderer';
 import * as process from 'process';
+import { generatedDocs } from './plugins/generated-bridged-token-adresses-docs';
+
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -56,6 +58,7 @@ const config = {
           editUrl:
             'https://github.com/LiskHQ/lisk-documentation/tree/main/',
           routeBasePath: '/',
+          remarkPlugins: [generatedDocs],
         },
         /*blog: {
           showReadingTime: true,
