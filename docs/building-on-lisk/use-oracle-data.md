@@ -35,7 +35,7 @@ This guide uses the [Redstone Pull model](https://docs.redstone.finance/docs/get
 For an overview of the different modules that Redstone offers to receive oracle data, go to [Oracles > Redstone](../lisk-tools/oracles#redstone).
 
 [Hardhat](https://hardhat.org/) is used in this guide to create the smart contract.
-In case you want to use Foundry, check out the [Redstone docs](https://docs.redstone.finance/docs/get-started/models/redstone-core#foundry) for instructions.
+In case you want to use Foundry, check out the [Redstone docs](https://docs.redstone.finance/docs/get-started/models/redstone-pull#foundry) for instructions.
 
 ### Dependencies
 
@@ -158,4 +158,7 @@ Latest ETH price:
 
 ## Deploying on Lisk
 
-To deploy the smart contract on Lisk Sepolia or Lisk Mainnet, follow the guide [Deploying a smart contract with Hardhat](deploying-smart-contract/with-Hardhat.md)
+To deploy the smart contract on Lisk Sepolia or Lisk Mainnet, follow the guides 
+
+- [Deploying a smart contract with Hardhat](deploying-smart-contract/with-Hardhat.md), or
+- [Deploying a smart contract with Foundry](deploying-smart-contract/with-Foundry.md)
