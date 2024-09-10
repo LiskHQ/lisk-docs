@@ -43,7 +43,7 @@ There are two different options to acquire free Testnet ETH:
 
 ## dRPC Faucet
 
-Grants up to 0.1 Testnet ETH per day.
+Grants up to 0.1 Testnet **ETH** per day on Lisk Sepolia.
 
 The dRPC faucet for Lisk Sepolia is available here: https://drpc.org/faucet/lisk
 
@@ -52,5 +52,5 @@ There are two different options to acquire free Testnet ETH:
 1. **Proof-of-Work:**
   Mine to get up to 0.1 test ETH/day on Lisk Sepolia.
   The process of "mining" doesn't create new coins, it's just a time-limited method of spam protection.
-2. **Verify via Gitcoin:**
+2. **Verify via Gitcoin Passport:**
   Get up to 0.1 test ETH/day on Lisk Sepolia by identifying via your Gitcoin Passport.
