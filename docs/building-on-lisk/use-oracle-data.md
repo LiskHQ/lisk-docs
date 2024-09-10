@@ -105,13 +105,11 @@ To get data from multiple price feeds, use the function `getOracleNumericValuesF
 /**
 * Returns the latest prices of ETH and BTC
 */
-function getLatestEthBtcPrices() public view returns (uint256) {
+function getLatestEthBtcPrices() public view returns (uint256[] memory) {
     bytes32[] memory dataFeedIds = new bytes32[](2);
     dataFeedIds[0] = bytes32("ETH");
     dataFeedIds[1] = bytes32("BTC");
     uint256[] memory values = getOracleNumericValuesFromTxMsg(dataFeedIds);
-    uint256 ethPrice = values[0];
-    uint256 btcPrice = values[1];
     return values;
 }
 ```
@@ -129,7 +127,7 @@ describe("YourContract", function () {
     describe("Redstone", function () {
         it("Get ETH price securely", async function () {
         const YourContract = await ethers.getContractFactory("YourContract");
-        const contract = await YourContract.deploy(1896456000);
+        const contract = await YourContract.deploy();
         const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
             dataFeeds: ["ETH"],
         });
