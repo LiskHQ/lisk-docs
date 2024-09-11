@@ -23,19 +23,22 @@ var LiskAdresses = tokens.filter(function(token) {
 // Add corresponding L1 address to each token
 LiskAdresses.forEach(token => {
   var ethAddress;
+  var result;
   // For Lisk Mainnet, add Ethereum Mainnet address
   if (token.chainId === chainIds[0]) {
-    ethAddress = tokens.find(function(tkn) {
+    result = tokens.find(function(tkn) {
         return tkn.symbol === token.symbol && tkn.chainId === 1;
     });
+    ethAddress = result? result : {address: "Not Found"};
   // For Lisk Sepolia, add Ethereum Sepolia address
   } else if (token.chainId === chainIds[1]) {
-    ethAddress = tokens.find(function(tkn) {
+    result = tokens.find(function(tkn) {
       return tkn.symbol === token.symbol && tkn.chainId === 11155111;
-  });
+    });
+    ethAddress = result? result : {address: "Not Found"};
   } else {
     console.log("Error: chainId not found");
-    console.log(token.chainId);
+    ethAddress = {address: "Not Found"};
   }
   token.ethAddress = ethAddress.address;
 });
