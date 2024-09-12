@@ -32,20 +32,6 @@ The following sources might support you in your delegation decision:
 - [Lisk Governance Forum](https://forum.lisk.com/c/delegates/): The Lisk Governance Forum provides a section for delegates to present themselves to the community.
 - [Lisk DAO Tally instance](https://www.tally.xyz/gov/lisk): Check the delegate's profile, voting history, and activity on the Lisk DAO Tally instance.
 
-## How to delegate your voting power 🗳️
-
-The Lisk DAO uses [Tally](https://www.tally.xyz/) to facilitate delegation. 
-
-The process in a nutshell:
-1. Connect your wallet to Tally and navigate to the [Lisk DAO delegates](https://www.tally.xyz/gov/lisk/delegates) page.
-2. Search for the delegate you'd like to delegate your voting power to.
-3. Click the "delegate" button on the delegate's profile.
-3. Confirm the delegation by following Tally's prompts.
-
-:::tip
-Through Tally, you can change or revoke your delegation at any time. 
-:::
-
 ## Responsibility of delegates
 Delegates play a crucial role in the governance of the Lisk project.
 They are the ones who create [proposals](overview#proposals), vote on behalf of the token holders, and represent the interests of the community as a whole.
@@ -100,3 +86,23 @@ Here it is also possible for token holders to ask questions and get to know thei
 Additionally, it might be beneficial to join the `#lisk-dao` channel in the [Lisk Chat](https://lisk.chat) Discord server to get in touch with the community.
 3. Actively participate in the governance process.
 This includes voting on proposals, creating proposals, and giving feedback on other draft proposals.
+
+## How to delegate your voting power 🗳️
+
+The Lisk DAO uses [Tally](https://www.tally.xyz/) to facilitate delegation. 
+
+The process in a nutshell:
+1. Connect your wallet to Tally and navigate to the [Lisk DAO delegates](https://www.tally.xyz/gov/lisk/delegates) page.
+2. Search for the delegate you'd like to delegate your voting power to.
+3. Click the "delegate" button on the delegate's profile.
+3. Confirm the delegation by following Tally's prompts.
+
+:::tip
+Through Tally, you can change or revoke your delegation at any time. 
+:::
+
+## How to delegate without Tally
+
+### Prerequisites
+
+### Steps
