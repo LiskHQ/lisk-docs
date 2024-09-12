@@ -30,5 +30,4 @@ Most importantly, voting and delegating should always be possible by interacting
 You must know the proposal ID of the proposal you want to vote for.
 The proposal ID is a very long integer (uint256).
 
-
 ### Steps

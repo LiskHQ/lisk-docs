@@ -89,6 +89,7 @@ This includes voting on proposals, creating proposals, and giving feedback on ot
 
 ## How to delegate your voting power 🗳️
 
+Follow the steps described below to delegate your voting power to a delegate of your choice.
 The Lisk DAO uses [Tally](https://www.tally.xyz/) to facilitate delegation. 
 
 The process in a nutshell:
@@ -103,6 +104,11 @@ Through Tally, you can change or revoke your delegation at any time.
 
 ## How to delegate without Tally
 
+It is crucial that members of the Lisk DAO can interact with the DAO at any point in time, even when Tally, the standard front end for the Lisk DAO, is down.
+Most importantly, voting and delegating should always be possible by interacting directly with the smart contract, which is described here.
+
 ### Prerequisites
+
+If you want to delegate to someone else’s account, you must know their address.
 
 ### Steps
