@@ -1,0 +1,56 @@
+---
+title: Voting
+sidebar_position: 4
+slug: /governance/voting
+description: Documentation about the voting process of the Lisk DAO.
+keywords:
+  [
+    Lisk governance,
+    Lisk DAO,
+    Lisk Grants,
+    Funding,
+    Delegation,
+    Voting,
+    Proposals,
+    Voting Power
+  ]
+---
+
+import voteConnect from '../../../static/img/docs/governance/vote-connect.png';
+import voteSelect from '../../../static/img/docs/governance/vote-select.png';
+import voteSubmit from '../../../static/img/docs/governance/vote-submit.png';
+
+# Voting
+
+## Voting on Tally
+
+## Voting without Tally
+
+It is crucial that members of the Lisk DAO can interact with the DAO at any point in time, even when Tally, the standard front end for the Lisk DAO, is down.
+Most importantly, voting and delegating should always be possible by interacting directly with the smart contract, which is described here.
+
+### Prerequisites
+
+You must know the proposal ID of the proposal you want to vote for.
+The proposal ID is a very long integer (uint256).
+
+### Steps
+1. Go to the `Write proxy` tab on the L2Governor proxy contract on Blockscout: https://blockscout.lisk.com/address/0x58a61b1807a7bDA541855DaAEAEe89b1DDA48568?tab=write_proxy.
+2. If your wallet is not already connected to Blockscout, click on `Connect wallet` and follow the instructions to connect your wallet[^1].
+  <img src={voteConnect}/>
+3. Click on `3. castVote` to unfold the form for the castVote function.
+  <img src={voteSelect}/>
+4. Insert the proposal ID of the proposal you want to vote on into the field `proposalId (uint256)*`.
+5. Fill the `support (uint8)*` field as follows:
+  - If you want to vote **against** the proposal, insert `0`.
+  - If you want to vote **for** the proposal, insert `1`.
+  - If you want to vote with **abstain**, insert `2`.
+6. Click on the `Write` button.
+  <img src={voteSubmit}/>
+7. Confirm the transaction in your wallet.
+
+To verify the vote was submitted correctly, you can check the `VoteCast` event of your transaction.
+It contains the information, but also just with numbers 0, 1 or 2 and not with yes, no or abstain.
+
+[^1]: At the time of writing, there was an issue with connecting MetaMask to blockscout on Firefox; you may have to use another browser like Brave or Chrome
+
