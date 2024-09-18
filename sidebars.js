@@ -75,6 +75,7 @@ const sidebars = {
 
           ],
         },
+        'building-on-lisk/token-development',
         'building-on-lisk/use-oracle-data',
       ],
       link: {
