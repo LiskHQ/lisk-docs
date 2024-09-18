@@ -74,7 +74,7 @@ async function main() {
 main()
 ```
 
-The return value is an array of logs, and for each log one gets also the corresponding transaction hash.
+The return value is an array of logs, where each log corresponds to one proposal (creation) and for each log one gets also the corresponding transaction hash.
 ```javascript
 [
   Log {
@@ -88,7 +88,7 @@ The return value is an array of logs, and for each log one gets also the corresp
 ]
 ```
 The transaction hash can then be pasted into [Blockscout](https://blockscout.lisk.com/) to see more details of the proposal.
-To see the proposal ID, click on the `Logs` tab and look for the `proposalId` field in the `ProposalCreated` event.
+To see if the proposal is the one you are looking for, click on the `Logs` tab and look for the `ProposalCreated` event. If the values, in particular the ones for `description`, `voteStart` and `voteEnd`, match with the proposal you want to on, then it is the right one. To get the proposal ID, copy the value of the field `proposalId`.
 <img src={proposalId}/>
 
 ### Steps
