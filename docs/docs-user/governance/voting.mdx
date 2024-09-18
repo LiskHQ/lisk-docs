@@ -22,6 +22,7 @@ import voteSubmit from '../../../static/img/docs/governance/vote-submit.png';
 import voteList from '../../../static/img/docs/governance/vote-list.avif';
 import voteButton from '../../../static/img/docs/governance/vote-button.avif';
 import voteForm from '../../../static/img/docs/governance/vote-form.avif';
+import proposalId from '../../../static/img/docs/governance/proposal-id.png';
 
 # Voting
 
@@ -53,8 +54,42 @@ For a guide how to delegate your voting power manually, see the [Delegation](del
 
 ### Prerequisites
 
-You must know the proposal ID of the proposal you want to vote for.
+You must know the **proposal ID** of the proposal you want to vote for.
 The proposal ID is a very long integer (uint256).
+To get the ID for a proposal, get the respective Logs from an RPC node:
+
+```javascript
+async function main() {
+    const { ethers } = require("ethers"); 
+    const provider = new ethers.JsonRpcProvider("https://rpc.api.lisk.com"); 
+    const logs = await provider.getLogs({
+        fromBlock: 568778, // block when Governor contract got deployed
+        toBlock: 'latest',
+        address: "0x58a61b1807a7bDA541855DaAEAEe89b1DDA48568", // L2Governor Proxy
+        topics:['0x7d84a6263ae0d98d3329bd7b46bb4e8d6f98cd35a7adb45c274c8b7fd5ebd5e0'] // signature of `ProposalCreated` event
+    });
+    console.log(logs);
+}
+ 
+main()
+```
+
+The return value is an array of logs, and for each log one gets also the corresponding transaction hash.
+```javascript
+[
+  Log {
+    provider: JsonRpcProvider {},
+    // highlight-next-line
+    transactionHash: '0xc2663d2ffc0c6082e8766a18879972692515f37c02c97b193776f4b9b6bb71c3',
+    blockHash: '0x5710e760423b493ad5eb644c1a4e2ee4e95f3b5da1675c80a9d1bbf421832186',
+    blockNumber: 3952205,
+    // ...
+  }
+]
+```
+The transaction hash can then be pasted into [Blockscout](https://blockscout.lisk.com/) to see more details of the proposal.
+To see the proposal ID, click on the `Logs` tab and look for the `proposalId` field in the `ProposalCreated` event.
+<img src={proposalId}/>
 
 ### Steps
 1. Go to the `Write proxy` tab on the L2Governor proxy contract on Blockscout: https://blockscout.lisk.com/address/0x58a61b1807a7bDA541855DaAEAEe89b1DDA48568?tab=write_proxy.
