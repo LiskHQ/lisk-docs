@@ -14,6 +14,7 @@ A standard interface allows any tokens on Ethereum to be re-used by other applic
 
 The full list of [ERC proposals](https://eips.ethereum.org/erc).
 
+A summary of some interesting ERC tokens standars can be found below.
 
 ## Fungible Token standards
 
@@ -22,7 +23,7 @@ Introduces a standard for Fungible Tokens
 - [ERC-223](https://ethereum.org/en/developers/docs/standards/tokens/erc-223/):
 Similar to the ERC-20 standard.
 The key difference is that ERC-223 defines not only the token API but also the logic for transferring tokens from sender to recipient.
-- [ERC-777]: Improves the ERC-20 standard, but is difficult to implement properly, due to its [susceptibility to different forms of attack](https://github.com/OpenZeppelin/openzeppelin-contracts/issues/2620).
+- [ERC-777](https://ethereum.org/en/developers/docs/standards/tokens/erc-777/): Improves the ERC-20 standard, but is difficult to implement properly, due to its [susceptibility to different forms of attack](https://github.com/OpenZeppelin/openzeppelin-contracts/issues/2620).
 It is recommended to use ERC-20 instead.
 - [ERC-4626](https://ethereum.org/en/developers/docs/standards/tokens/erc-4626/):
 An extension on the ERC-20 standard that provides basic functionality for depositing and withdrawing tokens and reading balances.
@@ -31,6 +32,8 @@ An extension on the ERC-20 standard that provides basic functionality for deposi
 
 - [ERC-721](https://ethereum.org/en/developers/docs/standards/tokens/erc-721/):
 Introduces a standard for Non-Fungible Tokens.
+
+## Hybrid token standards
 - [ERC-1155](https://ethereum.org/en/developers/docs/standards/tokens/erc-1155/):
 A standard interface for contracts that manage multiple token types.
 A single deployed contract may include any combination of fungible tokens, non-fungible tokens or other configurations (e.g. semi-fungible tokens).
@@ -39,10 +42,13 @@ A single deployed contract may include any combination of fungible tokens, non-f
 
 - [ERC-1400]
 - [ERC-1404]
+- [ERC-3643](https://eips.ethereum.org/EIPS/eip-3643)(T-Rex)
+- [ERC-6960](https://eips.ethereum.org/EIPS/eip-6960)
 
 ## Digital Identity standards
 
-- [ERC-725]
+- [ERC-725](https://eips.ethereum.org/EIPS/eip-725)
+- [ERC-735]
 
 ## Development ressources
 ### General
