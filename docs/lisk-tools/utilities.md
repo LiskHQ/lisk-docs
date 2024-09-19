@@ -61,5 +61,5 @@ Create transparent & fair games, NFTs, lotteries, and other onchain applications
 
 ### Gelato Relay
 
-Use Gelato [Relay](https://www.gelato.network/relay), to relay your user's transactions on-chain, enabling secure gasless transactions for an ultra-smooth UX for your app.
+Use [Gelato Relay](https://www.gelato.network/relay), to relay your user's transactions on-chain, enabling secure gasless transactions for an ultra-smooth UX for your app.
 This allows for a variety of new web3 experiences, as the user can now pay by only signing a message, or their transaction costs can be sponsored by the developer.
