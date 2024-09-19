@@ -43,6 +43,14 @@ In the [gelato-raas-aa](https://github.com/gelatodigital/gelato-raas-aa) reposit
 Gelato's [Web3 Functions](https://www.gelato.network/web3-functions) is a powerful automation system designed to streamline and enhance Web3 operations.
 Web3 Functions serve as a comprehensive tool, enabling developers to effortlessly set up, manage, and automate their smart contract tasks.
 
+## Interoperability
+
+### Hyperlane
+
+[Hyperlane](https://hyperlane.xyz/) is a blockchain interoperability protocol that allows different blockchains to communicate and share information with each other.
+It acts like a "highway" between blockchains, enabling them to send messages, transfer assets, and interact with decentralized applications (dApps) across different networks.
+This helps improve the connectivity between blockchains, making them more efficient and integrated.
+
 ## Randomness
 
 ### Gelato VRF
