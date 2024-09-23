@@ -1,0 +1,113 @@
+---
+title: Voting
+sidebar_position: 4
+slug: /governance/voting
+description: Documentation about the voting process of the Lisk DAO.
+keywords:
+  [
+    Lisk governance,
+    Lisk DAO,
+    Lisk Grants,
+    Funding,
+    Delegation,
+    Voting,
+    Proposals,
+    Voting Power
+  ]
+---
+
+import voteConnect from '../../../static/img/docs/governance/vote-connect.png';
+import voteSelect from '../../../static/img/docs/governance/vote-select.png';
+import voteSubmit from '../../../static/img/docs/governance/vote-submit.png';
+import voteList from '../../../static/img/docs/governance/vote-list.avif';
+import voteButton from '../../../static/img/docs/governance/vote-button.avif';
+import voteForm from '../../../static/img/docs/governance/vote-form.avif';
+import proposalId from '../../../static/img/docs/governance/proposal-id.png';
+
+# Voting
+
+## Voting on Tally
+
+Follow the steps described below to vote on a proposal of the Lisk DAO.
+The Lisk DAO uses [Tally](https://www.tally.xyz/gov/lisk) to facilitate the voting on proposals. 
+
+The process in a nutshell:
+1. Go to [Lisk DAO](https://www.tally.xyz/gov/lisk) and connect your wallet to Tally. 
+2. Navigate to the [Lisk DAO proposals](https://www.tally.xyz/gov/lisk/proposals) page.
+  <img src={voteList}/>
+3. Select the active proposal you would like to vote on.
+4. Click on the `Vote` button in the upper right corner of the page.
+  <img src={voteButton}/>
+5. In the Voting pop up, choose your vote — For, Against, or Abstain.
+If you'd like, add a comment to explain the reason for your vote to the rest of your DAO.
+Once you're done, click `Submit`.
+  <img src={voteForm} width="50%"/>
+6. Confirm and sign the transaction via your connected wallet.
+
+
+## Voting without Tally
+
+It is crucial that members of the Lisk DAO can interact with the DAO at any point in time, even when Tally, the standard front end for the Lisk DAO, is down.
+Most importantly, voting and delegating should always be possible by interacting directly with the smart contract.
+How to vote manually is described below.
+For a guide on how to delegate your voting power manually, see the [Delegation](delegation) page.
+
+### Prerequisites
+
+You must know the **proposal ID** of the proposal you want to vote for.
+The proposal ID is a very long integer (uint256).
+To get the ID for a proposal, get the respective Logs from an RPC node:
+
+```javascript
+async function main() {
+    const { ethers } = require("ethers"); 
+    const provider = new ethers.JsonRpcProvider("https://rpc.api.lisk.com"); 
+    const logs = await provider.getLogs({
+        fromBlock: 568778, // block when Governor contract got deployed
+        toBlock: 'latest',
+        address: "0x58a61b1807a7bDA541855DaAEAEe89b1DDA48568", // L2Governor Proxy
+        topics:['0x7d84a6263ae0d98d3329bd7b46bb4e8d6f98cd35a7adb45c274c8b7fd5ebd5e0'] // signature of `ProposalCreated` event
+    });
+    console.log(logs);
+}
+ 
+main()
+```
+
+The return value is an array of logs, where each log corresponds to one proposal (creation) and has the corresponding transaction hash.
+```javascript
+[
+  Log {
+    provider: JsonRpcProvider {},
+    // highlight-next-line
+    transactionHash: '0xc2663d2ffc0c6082e8766a18879972692515f37c02c97b193776f4b9b6bb71c3',
+    blockHash: '0x5710e760423b493ad5eb644c1a4e2ee4e95f3b5da1675c80a9d1bbf421832186',
+    blockNumber: 3952205,
+    // ...
+  }
+]
+```
+The transaction hash can then be pasted into [Blockscout](https://blockscout.lisk.com/) to see more details of the proposal.
+To see if the proposal is the one you are looking for, click on the `Logs` tab and look for the `ProposalCreated` event. If the values, in particular the ones for `description`, `voteStart` and `voteEnd`, match with the proposal you want to vote on, then it is the right one. To get the proposal ID, copy the value of the field `proposalId`.
+<img src={proposalId}/>
+
+### Steps
+1. Go to the `Write proxy` tab on the L2Governor proxy contract on Blockscout: https://blockscout.lisk.com/address/0x58a61b1807a7bDA541855DaAEAEe89b1DDA48568?tab=write_proxy.
+2. If your wallet is not already connected to Blockscout, click on `Connect wallet` and follow the instructions to connect your wallet[^1].
+  <img src={voteConnect}/>
+3. Click on `3. castVote` to unfold the form for the castVote function.
+  <img src={voteSelect}/>
+4. Insert the proposal ID of the proposal you want to vote on into the field `proposalId (uint256)*`.
+5. Fill the `support (uint8)*` field as follows:
+  - If you want to vote **against** the proposal, insert `0`.
+  - If you want to vote **for** the proposal, insert `1`.
+  - If you want to vote with **abstain**, insert `2`.
+6. Click on the `Write` button.
+  <img src={voteSubmit}/>
+7. Confirm the transaction in your wallet.
+
+To verify the vote was submitted correctly, you can check the `VoteCast` event of your transaction.
+
+[^1]: At the time of writing, there is an [issue](https://github.com/blockscout/frontend/issues/2059) with connecting MetaMask to Blockscout on Firefox;
+you may have to use another browser like Brave or Chrome.
+

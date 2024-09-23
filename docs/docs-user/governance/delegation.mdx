@@ -18,6 +18,11 @@ keywords:
   ]
 ---
 
+import delegateConnect from '../../../static/img/docs/governance/delegate-connect.png';
+import delegateSelect from '../../../static/img/docs/governance/delegate-select.png';
+import delegateSubmit from '../../../static/img/docs/governance/delegate-submit.png';
+
+
 # Delegation
 Delegation is a key feature of the [Lisk DAO](overview), as it allows token holders to participate in the governance of the Lisk project passively by entrusting a representative with voting on [proposals](overview#proposals) in a way that aligns with their own beliefs and values.
 By delegating their [voting power](overview#voting-power) to a delegate of their choice, token holders can influence that their interests are represented in the decision-making process.
@@ -31,20 +36,6 @@ The following sources might support you in your delegation decision:
 - [Lisk Chat](https://lisk.chat): Get in touch with your delegate in the Lisk chat, or ask other users about their experiences with the delegate.
 - [Lisk Governance Forum](https://forum.lisk.com/c/delegates/): The Lisk Governance Forum provides a section for delegates to present themselves to the community.
 - [Lisk DAO Tally instance](https://www.tally.xyz/gov/lisk): Check the delegate's profile, voting history, and activity on the Lisk DAO Tally instance.
-
-## How to delegate your voting power 🗳️
-
-The Lisk DAO uses [Tally](https://www.tally.xyz/) to facilitate delegation. 
-
-The process in a nutshell:
-1. Connect your wallet to Tally and navigate to the [Lisk DAO delegates](https://www.tally.xyz/gov/lisk/delegates) page.
-2. Search for the delegate you'd like to delegate your voting power to.
-3. Click the "delegate" button on the delegate's profile.
-3. Confirm the delegation by following Tally's prompts.
-
-:::tip
-Through Tally, you can change or revoke your delegation at any time. 
-:::
 
 ## Responsibility of delegates
 Delegates play a crucial role in the governance of the Lisk project.
@@ -70,10 +61,10 @@ Excellent delegates will do even more than that, for example:
   - Ensure that the Lisk DAO acts in the best interest of the Lisk community.
   - Decide directly about fund allocation of the Lisk DAO treasury.
   {/* TODO: Confirm rewards */}
-<!-- {/* - **Rewards**:
+{/* <!-- {/* - **Rewards**:
   - Being a delegate is required for some LSK air drops.
   - Being a delegate can be benefitial e.g. when applying for the Grant or Ambassador programs.
-  - Receive extra rewards for being an excellent delegate (e.g., being most active/constructive, having most delegations, etc). */} -->
+  - Receive extra rewards for being an excellent delegate (e.g., being most active/constructive, having most delegations, etc). */}
 - **Reputation**:
   - Gain a trustworthy reputation by being an active delegate.
 
@@ -100,3 +91,47 @@ Here it is also possible for token holders to ask questions and get to know thei
 Additionally, it might be beneficial to join the `#lisk-dao` channel in the [Lisk Chat](https://lisk.chat) Discord server to get in touch with the community.
 3. Actively participate in the governance process.
 This includes voting on proposals, creating proposals, and giving feedback on other draft proposals.
+
+## How to delegate your voting power 🗳️
+
+Follow the steps described below to delegate your voting power to a delegate of your choice.
+The Lisk DAO uses [Tally](https://www.tally.xyz/) to facilitate delegation. 
+
+The process in a nutshell:
+1. Go to [Lisk DAO](https://www.tally.xyz/gov/lisk) and connect your wallet to Tally. 
+2. Navigate to the [Lisk DAO delegates](https://www.tally.xyz/gov/lisk/delegates) page.
+3. Search for the delegate you'd like to delegate your voting power to.
+4. Click the `Delegate` button on the delegate's profile.
+5. Submit the delegation by clicking the `Delegate votes` button.
+6. Confirm and sign the transaction via your connected wallet.
+
+:::tip
+Through Tally, you can change or revoke your delegation at any time. 
+:::
+
+## How to delegate your voting power without Tally
+
+It is crucial that members of the Lisk DAO can interact with the DAO at any point in time, even when Tally, the standard front end for the Lisk DAO, is down.
+Most importantly, voting and delegating should always be possible by interacting directly with the smart contract.
+How to delegate manually is described below.
+For a guide on how to vote manually, see the [Voting](voting) page.
+
+### Prerequisites
+
+If you want to delegate to someone else's account, you must know their address.
+
+### Steps
+
+1. Go to the `Write proxy` tab of the L2VotingPower proxy contract on Blockscout: https://blockscout.lisk.com/address/0x2eE6Eca46d2406454708a1C80356a6E63b57D404?tab=write_proxy
+2. If your wallet is not already connected to Blockscout, click on `Connect wallet` and follow the instructions to connect your wallet[^1].
+  <img src={delegateConnect}/>
+3. Click on `3. delegate` to unfold the form for the delegate function.
+  <img src={delegateSelect}/>
+4. Insert the address of the account you want to delegate to into the field `delegatee (address)*`
+ If you want to self-delegate, insert your address.
+5. Click on the `Write` button.
+  <img src={delegateSubmit}/>
+6. Confirm the transaction in your wallet.
+
+[^1]: At the time of writing, there is an [issue](https://github.com/blockscout/frontend/issues/2059) with connecting MetaMask to Blockscout on Firefox;
+you may have to use another browser like Brave or Chrome.

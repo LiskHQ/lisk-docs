@@ -140,6 +140,7 @@ const sidebars = {
         'docs-user/governance/overview',
         'docs-user/governance/delegation',
         'docs-user/governance/proposal-lifecycle',
+        'docs-user/governance/voting',
       ],
     },
     {
