@@ -23,6 +23,9 @@ function HomepageHeader() {
             Let's build with Lisk  🛠
           </Link>
         </div>
+        <div>
+          <img src='/img/built-superchain-light.svg' className='superchain'></img>
+        </div>
       </div>
     </header>
   );

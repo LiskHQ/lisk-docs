@@ -135,6 +135,10 @@ article iframe {
   margin-bottom: 2%;
 }
 
+.heroBanner_src-pages-index-module {
+  padding: 5em 0 0 0 !important;
+}
+
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
   --ifm-color-primary: #2BD67B;

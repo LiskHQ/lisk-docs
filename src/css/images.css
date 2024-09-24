@@ -38,28 +38,9 @@ html[data-theme='dark'] .lisk-smp-light {
     display: none;
 }
 
-.op-light {
-    width: 11em;
-    display: flex;
-    align-self: center;
-    margin-bottom: .09em;
-    padding-right: 10%;
-}
-
-html[data-theme='light'] .op-dark {
-    display: none;
-}
-
-.op-dark {
-    width: 11em;
-    display: flex;
-    align-self: center;
-    margin-bottom: .09em;
-    padding-right: 10%;
-}
-
-html[data-theme='dark'] .op-light {
-    display: none;
+.superchain {
+    height: 150px;
+    width: 150px;
 }
 
 .overview-img {
