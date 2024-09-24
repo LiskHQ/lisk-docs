@@ -167,3 +167,8 @@ html[data-theme='dark'] {
 html[data-theme='dark'] .alert {
   color: #DFE6F2;
 }
+
+html[data-theme='dark'] .hero--primary {
+  --ifm-hero-background-color: #0C152E;
+  --ifm-hero-text-color: color: #DFE6F2;
+}
