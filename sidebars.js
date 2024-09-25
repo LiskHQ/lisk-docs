@@ -123,6 +123,7 @@ const sidebars = {
         'docs-user/connecting-to-a-wallet',
         'docs-user/using-lisk/import-lsk',
         'docs-user/exchanges',
+        'docs-user/wallets',
         'docs-user/claiming',
         'docs-user/bridges',
       ],
