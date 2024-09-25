@@ -38,7 +38,21 @@ html[data-theme='dark'] .lisk-smp-light {
     display: none;
 }
 
-.superchain {
+
+html[data-theme='dark'] .superchain-black {
+    display: none;
+}
+
+.superchain-black {
+    height: 150px;
+    width: 150px;
+}
+
+html[data-theme='light'] .superchain-white {
+    display: none;
+}
+
+.superchain-white {
     height: 150px;
     width: 150px;
 }

@@ -24,7 +24,8 @@ function HomepageHeader() {
           </Link>
         </div>
         <div>
-          <img src='/img/built-superchain-light.svg' className='superchain'></img>
+          <img src='/img/built-superchain-white.svg' className='superchain-white'></img>
+          <img src='/img/built-superchain-black.svg' className='superchain-black'></img>
         </div>
       </div>
     </header>
