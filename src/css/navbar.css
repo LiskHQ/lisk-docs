@@ -26,6 +26,6 @@ html[data-theme='dark'] .navbar__item {
     box-shadow: 0px 0px 0px .2px var(--ifm-color-emphasis-600);
 }
 
-[class^='navbarSearchContainer'] {
-    padding-left: 4.962% !important;
+.toggle_node_modules-\@docusaurus-theme-classic-lib-theme-ColorModeToggle-styles-module {
+    margin-right: .8em;
 }

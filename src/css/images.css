@@ -38,28 +38,23 @@ html[data-theme='dark'] .lisk-smp-light {
     display: none;
 }
 
-.op-light {
-    width: 11em;
-    display: flex;
-    align-self: center;
-    margin-bottom: .09em;
-    padding-right: 10%;
-}
 
-html[data-theme='light'] .op-dark {
+html[data-theme='dark'] .superchain-black {
     display: none;
 }
 
-.op-dark {
-    width: 11em;
-    display: flex;
-    align-self: center;
-    margin-bottom: .09em;
-    padding-right: 10%;
+.superchain-black {
+    height: 150px;
+    width: 150px;
 }
 
-html[data-theme='dark'] .op-light {
+html[data-theme='light'] .superchain-white {
     display: none;
+}
+
+.superchain-white {
+    height: 150px;
+    width: 150px;
 }
 
 .overview-img {
