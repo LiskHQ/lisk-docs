@@ -64,6 +64,7 @@ Main features:
 - **Native integration of the Lisk network**
 - **Compatible with any EVM network, BTC, Solana, and TRON**
 - **Token on- and off-ramp**
+- **Recover a wallet via social login**
 
 ### Zerion
 
