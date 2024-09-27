@@ -57,6 +57,13 @@ Main features:
 
 ### Xellar
 
+Main features:
+- **Embedded wallet provider**
+- **Non-custodial**
+- **Web and Mobile versions**
+- **Native integration of the Lisk network**
+- **Token on- and off-ramp**
+
 ### Zerion
 
 
