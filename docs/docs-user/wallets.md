@@ -62,6 +62,7 @@ Main features:
 - **Non-custodial**
 - **Web and Mobile versions**
 - **Native integration of the Lisk network**
+- **Compatible with any EVM network, BTC, Solana, and TRON**
 - **Token on- and off-ramp**
 
 ### Zerion
