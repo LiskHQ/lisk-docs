@@ -23,7 +23,7 @@ keywords:
 ---
 
 # Wallets
-This page provides an overview of the most important wallets[^1] which support the LSK token.
+This page provides an overview of the most important wallets[^1] which support the Lisk chain and LSK token.
 
 [^1]: A cryptocurrency wallet is a device, app or online service which stores the public and/or private keys to facilitate cryptocurrency transactions. 
 
@@ -36,8 +36,8 @@ Unlike most crypto wallets, the Brave Wallet does not require extensions; it’s
 
 Main features:
 - **Non-custodial**
+- **EVM wallet**
 - **Integrated in the Brave browser**
-- **Compatible with any EVM chain**
 - **Token Support**: ETH, ERC 20 (including LSK), and ERC 721 (NFTs) support.
 
 See the [full feature list](https://support.brave.com/hc/en-us/articles/14380262951053-What-features-are-available-in-Brave-Wallet).
@@ -48,8 +48,8 @@ MetaMask is one of the most popular user choices among hot wallets.
 
 Main features:
 - **Non-custodial**
+- **multi-chain wallet** via [Snaps](https://support.metamask.io/metamask-snaps/what-are-interoperability-snaps/).
 - **Browser extension** and **Mobile version**
-- **Compatible with EVM and non-EVM chain** via [Snaps](https://support.metamask.io/metamask-snaps/what-are-interoperability-snaps/).
 - **Token Support**: ETH, ERC 20 (including LSK), and ERC 721 (NFTs) support.
 
 ### Safe
@@ -58,10 +58,10 @@ Main features:
 DeFi apps can be accessed and user funds can be put to work from inside the Safe UI.
 
 Main features:
-- **Multisig**: Mutisignature for individuals and teams of any size
 - **Non-custodial**
+- **EVM wallet**
+- **Multisig**: Mutisignature for individuals and teams of any size
 - **Web and Mobile versions**
-- **Compatible with any EVM chain**
 - **Token Support**: ETH, ERC 20 (including LSK), and ERC 721/1155 (NFTs) support.
 
 
@@ -72,21 +72,19 @@ Enables users to create wallets with Social Login native to the App.
 
 Main features:
 - **Non-custodial**
-- **multi-chain**
+- **multi-chain**: Compatible with any EVM chain, BTC, Solana, and TRON
 - **Native integration of the Lisk network**
 - **Embedded wallet provider**
-- **Compatible with any EVM chain, BTC, Solana, and TRON**
 - **Token on- and off-ramp**
-- **Recover a wallet via social login**
+- **Wallet recovery via social login**
 
 ### Zerion
 [Zerion](https://zerion.io/) is a crypto wallet for everything onchain so you can manage all your investments, collections, staked positions and airdrops across 14 chains in one place.
 
 Main features:
 - **Non-custodial**
-- **multi-chain**
+- **EVM wallet**
 - **Compatible with Ledger**
-- **Compatible with any EVM chain**
 - **Browser extension** and **Mobile version**
 - **Token Support**: ETH, ERC 20 (including LSK), and ERC 721 (NFTs) support.
 
@@ -96,6 +94,7 @@ Main features:
 [Ledger](https://www.ledger.com/) provides uncompromising security for the crypto ecosystem, offering cutting-edge hardware wallets designed with security in mind.
 Ledger believes in secure self-custody, and with a Ledger device, you can take ownership of your private keys with confidence.
 
+Main features:
 - **Non-custodial**
 - **Hardware wallet**
-- **multi-chain wallet**: See [list of supported tokens](https://www.ledger.com/supported-crypto-assets).
+- **multi-chain**: See [list of supported tokens](https://www.ledger.com/supported-crypto-assets).
