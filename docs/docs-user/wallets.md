@@ -2,21 +2,28 @@
 title: Wallets supporting Lisk
 sidebar_position: 1
 slug: /user/wallets
-description: 'A summary of all wallets supporting the LSK token.'
+description: 'A summary of the most important wallets supporting the LSK token.'
 keywords:
   [
     'Lisk wallets',
+    'LSK wallets',
+    'EVM wallets',
     'Wallets',
+    'Non-custodial',
+    'hot wallet',
+    'cold wallet',
     'Zerion',
     'MetaMask',
     'Rainbow',
     'Xellar',
     'Safe',
+    'Ledger',
+    'Brave',
   ]
 ---
 
 # Wallets
-This page provides an overview of wallets[^1] that support the LSK token.
+This page provides an overview of the most important wallets[^1] which support the LSK token.
 
 [^1]: A cryptocurrency wallet is a device, app or online service which stores the public and/or private keys to facilitate cryptocurrency transactions. 
 
@@ -36,7 +43,8 @@ Main features:
 See the [full feature list](https://support.brave.com/hc/en-us/articles/14380262951053-What-features-are-available-in-Brave-Wallet).
 
 ### MetaMask
-Available as a browser extension and as a mobile app, MetaMask equips you with a key vault, secure login, token wallet, and more — everything you need to manage your digital assets.
+Available as a browser extension and as a mobile app, [MetaMask](https://metamask.io/) equips you with a key vault, secure login, token wallet, and more — everything you need to manage your digital assets.
+MetaMask is one of the most popular user choices among hot wallets.
 
 Main features:
 - **Non-custodial**
@@ -85,7 +93,7 @@ Main features:
 ## Cold wallets
 
 ### Ledger
-Ledger provides uncompromising security for the crypto ecosystem, offering cutting-edge hardware wallets designed with security in mind.
+[Ledger](https://www.ledger.com/) provides uncompromising security for the crypto ecosystem, offering cutting-edge hardware wallets designed with security in mind.
 Ledger believes in secure self-custody, and with a Ledger device, you can take ownership of your private keys with confidence.
 
 - **Non-custodial**
