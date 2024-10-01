@@ -107,15 +107,6 @@ const config = {
             label: 'Using Lisk',
           },
           /*{to: '/blog', label: 'Blog', position: 'left'},*/
-          {
-            href: 'https://docs.optimism.io/',
-
-            html: `
-              <img src="/img/op_stack_dark.svg" class="op-dark" />
-              <img src="/img/op_stack.svg" class="op-light" />
-            `,
-            position: 'right',
-          },
         ],
       },
       footer: {
