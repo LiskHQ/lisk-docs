@@ -59,7 +59,8 @@ Main features:
 
 ### Xellar
 
-[Xellar](https://xellar.co/) offers a mobile wallet and a devkit for embedded Wallets that allow users to create wallets with Social Login native to the App.
+[Xellar](https://xellar.co/) offers a mobile wallet and a devkit for embedded Wallets to be integrated in apps and websites.
+Enables users to create wallets with Social Login native to the App.
 
 Main features:
 - **Non-custodial**
