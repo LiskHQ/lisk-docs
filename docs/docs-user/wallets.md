@@ -29,6 +29,64 @@ This page provides an overview of the most important wallets[^1] which support t
 
 ## Hot wallets
 
+### Rainbow
+
+:::note
+Rainbow will soon support Lisk network natively on both Mobile and Desktop.
+:::
+
+Rainbow is a fun, simple, and secure Ethereum wallet that makes managing your assets a joy.
+
+Great for newcomers and power users alike, Rainbow allows you to be in total control of your crypto.
+You own your assets directly thanks to the power of cryptography and the Ethereum blockchain, and Rainbow makes managing all of your wallets and keys a breeze.
+
+Main features:
+- **Native integration of the Lisk network**
+- **Non-custodial**
+- **EVM wallet**
+- **Browser extension** and **Mobile version**
+- **Compatible with Ledger and Trezor**
+- **Token Support**: ETH, ERC 20 (including LSK), and ERC 721/1155 (NFTs) support.
+
+### MetaMask
+Available as a browser extension and as a mobile app, [MetaMask](https://metamask.io/) equips you with a key vault, secure login, token wallet, and more — everything you need to manage your digital assets.
+MetaMask is one of the most popular user choices among hot wallets.
+
+:::tip
+Add the Lisk network to MetaMask with one click via [ChainList](https://chainlist.org/?search=lisk).
+:::
+
+Main features:
+- **Non-custodial**
+- **Multi-chain wallet** via [Snaps](https://support.metamask.io/metamask-snaps/what-are-interoperability-snaps/).
+- **Browser extension** and **Mobile version**
+- **Token Support**: ETH, ERC 20 (including LSK), and ERC 721 (NFTs) support.
+
+### Zerion
+[Zerion](https://zerion.io/) is a crypto wallet for everything onchain. 
+It allows you to manage all your investments, collections, staked positions and airdrops across 14 chains in one place.
+
+Main features:
+- **Native integration of the Lisk network**
+- **Non-custodial**
+- **EVM wallet**
+- **Compatible with Ledger**
+- **Browser extension** and **Mobile version**
+- **Token Support**: ETH, ERC 20 (including LSK), and ERC 721 (NFTs) support.
+
+### Xellar
+
+[Xellar](https://xellar.co/) offers a mobile wallet and a devkit for embedded Wallets to be integrated into apps and websites.
+Enables users to create wallets with Social Login native to the App.
+
+Main features:
+- **Native integration of the Lisk network**
+- **Non-custodial**
+- **Multi-chain**: Compatible with any EVM chain, BTC, Solana, and TRON.
+- **Embedded wallet provider**
+- **Token on- and off-ramp**
+- **Wallet recovery via social login**
+
 ### Brave Wallet
 A crypto wallet built into the [Brave browser](https://brave.com/), enabling Brave users to store, manage, grow, and swap their crypto portfolio from a single wallet.
 
@@ -42,15 +100,17 @@ Main features:
 
 See the [full feature list](https://support.brave.com/hc/en-us/articles/14380262951053-What-features-are-available-in-Brave-Wallet).
 
-### MetaMask
-Available as a browser extension and as a mobile app, [MetaMask](https://metamask.io/) equips you with a key vault, secure login, token wallet, and more — everything you need to manage your digital assets.
-MetaMask is one of the most popular user choices among hot wallets.
+### Rabby
+Rabby is an open source crypto wallet for Ethereum and EVM chains.
+Designed for DeFi users with a smooth multi-chain experience. 
+Protects your assets with pre-transaction potential risk scanning and shows the upcoming balance change before you sign a transaction. 
 
 Main features:
+- **Native integration of the Lisk network**
 - **Non-custodial**
-- **Multi-chain wallet** via [Snaps](https://support.metamask.io/metamask-snaps/what-are-interoperability-snaps/).
-- **Browser extension** and **Mobile version**
-- **Token Support**: ETH, ERC 20 (including LSK), and ERC 721 (NFTs) support.
+- **EVM wallet**
+- **Browser extension, Desktop and Mobile versions**
+- **Compatible with various hardware wallets**
 
 ### Safe
 
@@ -63,31 +123,6 @@ Main features:
 - **Multisig**: Mutisignature for individuals and teams of any size.
 - **Web and Mobile versions**
 - **Token Support**: ETH, ERC 20 (including LSK), and ERC 721/1155 (NFTs) support.
-
-
-### Xellar
-
-[Xellar](https://xellar.co/) offers a mobile wallet and a devkit for embedded Wallets to be integrated into apps and websites.
-Enables users to create wallets with Social Login native to the App.
-
-Main features:
-- **Non-custodial**
-- **Multi-chain**: Compatible with any EVM chain, BTC, Solana, and TRON.
-- **Native integration of the Lisk network**
-- **Embedded wallet provider**
-- **Token on- and off-ramp**
-- **Wallet recovery via social login**
-
-### Zerion
-[Zerion](https://zerion.io/) is a crypto wallet for everything onchain. 
-It allows you to manage all your investments, collections, staked positions and airdrops across 14 chains in one place.
-
-Main features:
-- **Non-custodial**
-- **EVM wallet**
-- **Compatible with Ledger**
-- **Browser extension** and **Mobile version**
-- **Token Support**: ETH, ERC 20 (including LSK), and ERC 721 (NFTs) support.
 
 ## Cold wallets
 
