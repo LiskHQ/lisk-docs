@@ -133,4 +133,4 @@ Ledger believes in secure self-custody, and with a Ledger device, you can take o
 Main features:
 - **Non-custodial**
 - **Hardware wallet**
-- **multi-chain**: See the [list of supported tokens](https://www.ledger.com/supported-crypto-assets).
+- **Multi-chain**: See the [list of supported tokens](https://www.ledger.com/supported-crypto-assets).
