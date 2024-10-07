@@ -35,7 +35,7 @@ This page provides an overview of the most important wallets[^1] which support t
 Rainbow will soon support Lisk network natively on both Mobile and Desktop.
 :::
 
-Rainbow is a fun, simple, and secure Ethereum wallet that makes managing your assets a joy.
+[Rainbow](https://rainbow.me/en/) is a fun, simple, and secure Ethereum wallet that makes managing your assets a joy.
 
 Great for newcomers and power users alike, Rainbow allows you to be in total control of your crypto.
 You own your assets directly thanks to the power of cryptography and the Ethereum blockchain, and Rainbow makes managing all of your wallets and keys a breeze.
@@ -101,7 +101,7 @@ Main features:
 See the [full feature list](https://support.brave.com/hc/en-us/articles/14380262951053-What-features-are-available-in-Brave-Wallet).
 
 ### Rabby
-Rabby is an open source crypto wallet for Ethereum and EVM chains.
+[Rabby](https://rabby.io/) is an open source crypto wallet for Ethereum and EVM chains.
 Designed for DeFi users with a smooth multi-chain experience. 
 Protects your assets with pre-transaction potential risk scanning and shows the upcoming balance change before you sign a transaction. 
 
