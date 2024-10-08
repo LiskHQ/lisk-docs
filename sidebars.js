@@ -95,6 +95,7 @@ const sidebars = {
         'lisk-tools/api-providers',
         'lisk-tools/faucets',
         { type: 'ref', id: 'docs-user/bridges' },
+        { type: 'ref', id: 'docs-user/wallets' },
         'lisk-tools/oracles',
         'lisk-tools/utilities',
         'lisk-tools/indexers'
@@ -124,6 +125,7 @@ const sidebars = {
         'docs-user/connecting-to-a-wallet',
         'docs-user/using-lisk/import-lsk',
         'docs-user/exchanges',
+        'docs-user/wallets',
         'docs-user/claiming',
         'docs-user/bridges',
       ],
