@@ -27,9 +27,9 @@ Introduces a standard for Fungible Tokens.
 This guide explains how to deploy a new ERC-20 token to Lisk.
 In case you want to bridge an existing token from Ethereum, please refer to the guide [Bridging an L1 token to Lisk](add-token-to-lisk).
 
-#### Prerequisites
-
+:::note
 We will use Remix as framework for smart contract development in this guide, but feel free to choose a [smart contract development framework](/category/building-on-lisk/deploying-smart-contract) of your choice to implement your token contract.
+:::
 
 #### The token contract
 
@@ -87,16 +87,8 @@ Introduces a standard for Non-Fungible Tokens.
 
 ### How to deploy a new ERC-721 token on Lisk
 
-#### Prerequisites
-
-We will use HardHat as framework for smart contract development in this guide, but feel free to choose a smart contract development framework of your choice to implement your token contract.
-
-:::tip
-If you haven't yet setup a framework for smart contract development, we have guides for several frameworks to get you started:
-
-- [Deploying smart contracts with Hardhat](deploying-smart-contract/with-Hardhat)
-- [Deploying smart contracts with Foundry](deploying-smart-contract/with-Foundry)
-- [Deploying smart contracts with thirdweb](deploying-smart-contract/with-thirdweb)
+:::note
+We will use Remix as framework for smart contract development in this guide, but feel free to choose a [smart contract development framework](/category/building-on-lisk/deploying-smart-contract) of your choice to implement your token contract.
 :::
 
 #### The token contract
@@ -112,16 +104,8 @@ A single deployed contract may include any combination of fungible tokens, non-f
 
 ### How to deploy a new ERC-1155 token on Lisk
 
-#### Prerequisites
-
-We will use HardHat as framework for smart contract development in this guide, but feel free to choose a smart contract development framework of your choice to implement your token contract.
-
-:::tip
-If you haven't yet setup a framework for smart contract development, we have guides for several frameworks to get you started:
-
-- [Deploying smart contracts with Hardhat](deploying-smart-contract/with-Hardhat)
-- [Deploying smart contracts with Foundry](deploying-smart-contract/with-Foundry)
-- [Deploying smart contracts with thirdweb](deploying-smart-contract/with-thirdweb)
+:::note
+We will use Remix as framework for smart contract development in this guide, but feel free to choose a [smart contract development framework](/category/building-on-lisk/deploying-smart-contract) of your choice to implement your token contract.
 :::
 
 #### The token contract
