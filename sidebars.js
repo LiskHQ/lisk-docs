@@ -51,6 +51,13 @@ const sidebars = {
             'building-on-lisk/deploying-smart-contract/with-Hardhat',
             'building-on-lisk/deploying-smart-contract/with-thirdweb',
           ],
+          link: {
+            type: 'generated-index',
+            title: 'Deploying a Smart Contract',
+            description: 'Guides explainig how to deploy a smart contract on Lisk for different smart contract development frameworks.',
+            slug: '/category/building-on-lisk/deploying-smart-contract',
+            keywords: ['guides','smart contracts','deployment'],
+          },
         },
         {
           type: 'category',
