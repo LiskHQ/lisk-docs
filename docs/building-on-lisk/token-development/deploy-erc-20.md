@@ -1,4 +1,5 @@
 ---
+title: 'Deploying a new ERC-20 token on Lisk'
 description: 'A guide on how to deploy a new ERC-20 token on Lisk.'
 keywords:
   [

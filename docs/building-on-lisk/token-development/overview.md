@@ -1,7 +1,7 @@
 ---
 title: Overview
 slug: /token-development
-description: 'An introduction into token development on Lisk.'
+description: 'An introduction into and ERC token standards and token development on Lisk.'
 keywords:
   [
     'Lisk',

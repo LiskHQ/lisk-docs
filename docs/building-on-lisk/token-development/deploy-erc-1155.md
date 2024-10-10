@@ -1,4 +1,5 @@
 ---
+title: 'Deploying a new ERC-1155 token on Lisk'
 description: 'A guide on how to deploy a new ERC-1155 token on Lisk.'
 keywords:
   [
@@ -9,6 +10,7 @@ keywords:
     'EIP',
     'ERC-1155',
     'Hybrid token',
+    'Multi token',
   ]
 ---
 
