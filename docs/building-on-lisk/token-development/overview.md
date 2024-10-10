@@ -56,9 +56,10 @@ This makes [ERC-20](https://eips.ethereum.org/EIPS/eip-20) tokens useful for thi
 ### Further reading
 - [Understand the ERC-20 token smart contract](https://ethereum.org/en/developers/tutorials/understand-the-erc-20-token-smart-contract/)
 - [ERC-20 EIP](https://eips.ethereum.org/EIPS/eip-20)
-- [OpenZeppelin: ERC-20 implementation](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol)
-- [Ethereum Docs: ERC-20](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/)
+- [OpenZeppelin: ERC-20 API](https://docs.openzeppelin.com/contracts/3.x/api/token/erc20)
+- [OpenZeppelin: ERC-20 contract](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol)
 - [Solidity by example: ERC-20](https://solidity-by-example.org/app/erc20/)
+- [Ethereum Docs: ERC-20](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/)
 - [Alchemy: Complete guide to ERC-20](https://www.alchemy.com/overviews/erc20-solidity)
 
 ## ERC-721
@@ -72,7 +73,9 @@ To represent these unique features on chain, the ERC-721 includes metadata prope
 
 ### Further reading
 - [Ethereum Docs: ERC-721](https://ethereum.org/en/developers/docs/standards/tokens/erc-721/)
-- [OpenZeppelin: ERC-721 implementation](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721.sol)
+- [ERC-721 EIP](https://eips.ethereum.org/EIPS/eip-721)
+- [OpenZeppelin: ERC-721 API](https://docs.openzeppelin.com/contracts/3.x/api/token/erc721)
+- [OpenZeppelin: ERC-721 contract](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721.sol)
 - [Solidity by example: ERC721](https://solidity-by-example.org/app/erc721/)
 - [How to implement an ERC-721 market](https://ethereum.org/en/developers/tutorials/how-to-implement-an-erc721-market/)
 
@@ -97,5 +100,7 @@ Please note that there is currently less ecosystem support for ERC-1155 as compa
 
 ### Further reading
 - [Ethereum Docs: ERC-1155](https://ethereum.org/en/developers/docs/standards/tokens/erc-1155/)
-- [OpenZeppelin: ERC-1155 implementation](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC1155/ERC1155.sol)
+- [ERC-1155 EIP](https://eips.ethereum.org/EIPS/eip-1155)
+- [OpenZeppelin: ERC-1155 API](https://docs.openzeppelin.com/contracts/3.x/api/token/erc1155)
+- [OpenZeppelin: ERC-1155 contract](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC1155/ERC1155.sol)
 - [Solidity by example: ERC1155](https://solidity-by-example.org/app/erc1155/)
