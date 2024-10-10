@@ -82,7 +82,18 @@ const sidebars = {
 
           ],
         },
-        'building-on-lisk/token-development',
+        {
+          type: 'category',
+          label: 'Token development',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            'building-on-lisk/token-development/overview',
+            'building-on-lisk/token-development/deploy-erc-20',
+            'building-on-lisk/token-development/deploy-erc-721',
+            'building-on-lisk/token-development/deploy-erc-1155',
+          ],
+        },
         'building-on-lisk/use-oracle-data',
       ],
       link: {
