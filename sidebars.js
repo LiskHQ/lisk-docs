@@ -69,6 +69,13 @@ const sidebars = {
             'building-on-lisk/add-token-to-lisk/standard-token',
             'building-on-lisk/add-token-to-lisk/custom-token',
           ],
+          link: {
+            type: 'generated-index',
+            title: 'Bridging an L1 token to Lisk',
+            description: 'Guides explainig how to bridge tokens from Ethereum to Lisk and add them to the superchain token list.',
+            slug: '/category/building-on-lisk/add-token-to-lisk',
+            keywords: ['guides','smart contracts','bridging','superchain token list'],
+          },
         },
         {
           type: 'category',
@@ -93,6 +100,13 @@ const sidebars = {
             'building-on-lisk/token-development/deploy-erc-721',
             'building-on-lisk/token-development/deploy-erc-1155',
           ],
+          link: {
+            type: 'generated-index',
+            title: 'Token development',
+            description: 'Guides explainig how to create a new token on Lisk.',
+            slug: '/category/building-on-lisk/token-development',
+            keywords: ['guides','smart contracts','token development','token standards','erc-20','erc-721','erc-1155'],
+          },
         },
         'building-on-lisk/use-oracle-data',
       ],
