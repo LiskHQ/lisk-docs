@@ -50,6 +50,7 @@ The most widespread token standard for fungible tokens.
 Any token is exactly equal to any other token; no tokens have special rights or behavior associated with them.
 This makes [ERC-20](https://eips.ethereum.org/EIPS/eip-20) tokens useful for things like a medium of exchange currency, voting rights, staking, and more.
 
+### Guides
 [How to deploy a new ERC-20 token on Lisk](deploy-erc-20.md)
 
 ### Further reading
@@ -66,6 +67,7 @@ Non-fungible tokens(NFTs) are used to represent unique objects like real estate 
 
 To represent these unique features on chain, the ERC-721 includes metadata properties that offer information about the token's specific features, such as the title, the creator, and an image preview.
 
+### Guides
 [How to deploy a new ERC-721 token on Lisk](deploy-erc-721.md)
 
 ### Further reading
@@ -86,6 +88,7 @@ ERC-1155 accounts have a distinct balance for each token id; non-fungible tokens
 This approach leads to massive gas savings for projects that require multiple tokens.
 Instead of deploying a new contract for each token type, a single ERC-1155 token contract can hold the entire system state, reducing deployment costs and complexity.
 
+### Guides
 [How to deploy a new ERC-1155 token on Lisk](deploy-erc-1155.md)
 
 :::warning
