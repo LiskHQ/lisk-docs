@@ -61,6 +61,18 @@ const sidebars = {
         },
         {
           type: 'category',
+          label: 'Interacting with the blockchain',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            'building-on-lisk/interacting-with-the-blockchain/viem',
+            'building-on-lisk/interacting-with-the-blockchain/ethers',
+            'building-on-lisk/interacting-with-the-blockchain/web3',
+
+          ],
+        },
+        {
+          type: 'category',
           label: 'Bridging an L1 token to Lisk',
           collapsible: true,
           collapsed: true,
@@ -76,18 +88,6 @@ const sidebars = {
             slug: '/category/building-on-lisk/add-token-to-lisk',
             keywords: ['guides','smart contracts','bridging','superchain token list'],
           },
-        },
-        {
-          type: 'category',
-          label: 'Interacting with the blockchain',
-          collapsible: true,
-          collapsed: true,
-          items: [
-            'building-on-lisk/interacting-with-the-blockchain/viem',
-            'building-on-lisk/interacting-with-the-blockchain/ethers',
-            'building-on-lisk/interacting-with-the-blockchain/web3',
-
-          ],
         },
         {
           type: 'category',
