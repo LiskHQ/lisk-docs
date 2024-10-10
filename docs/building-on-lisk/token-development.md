@@ -74,11 +74,33 @@ Then, select the `MyToken` contract from the deployment dropdown and deploy it w
 - Symbol: MYT
 - InitalSupply: 1000000000000000000000
 
+After defining the constructor parameters, under "Deploy", click the orange `transact` button to deploy the contract and confirm the contract deployment in your connected wallet.
+Check the Remix log messages, it should include the contract address.
+Paste this address in BlockScout, to see the contract in the Lisk blockchain explorer: https://sepolia-blockscout.lisk.com/address/0x6e8fF2E042c1637a2Da9563763c62362a3bbD712
+
+6. Verify the contract
+
+If you want to interact with your contract on the block explorer, you, or someone else needs to verify it first.
+The above contract has already been verified, so you should be able to view your version on a block explorer already.
+For the remainder of this guide, we'll walk through how to verify your contract with Remix on the Lisk Sepolia Testnet.
+
+  - In Remix, rightlick on the contract you wish to verify and select `Flatten`.
+  This will create a new file `MyToken_flattened.sol`.
+  - Now, switch to your [newly deployed contract](https://sepolia-blockscout.lisk.com/address/0x6e8fF2E042c1637a2Da9563763c62362a3bbD712) on https://sepolia-blockscout.lisk.com/
+  - Go to the contract tabe and click on the blue `Verify and Publish` button
+    - (Optional) Set a license for your contract.
+    - Choose ‘Solidity single file’ as verification method.
+    - Choose the fitting compiler version for your contract.
+    - Copy the flattened source code from Remix and paste it into the ‘Enter the Solidity Contract Code’ field.
+  - Check that all info is correct and click the `Verify and Publish` button, to verify your contract.
+  
+  Once verified, the code tab will include the ✅ icon and source code will be viewable.
+
 ### Further reading
 - [Understand the ERC-20 token smart contract](https://ethereum.org/en/developers/tutorials/understand-the-erc-20-token-smart-contract/)
-- [Ethereum Docs: ERC-20](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/)
 - [ERC-20 EIP](https://eips.ethereum.org/EIPS/eip-20)
 - [OpenZeppelin: ERC-20 implementation](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol)
+- [Ethereum Docs: ERC-20](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/)
 - [Solidity by example: ERC-20](https://solidity-by-example.org/app/erc20/)
 - [Alchemy: Complete guide to ERC-20](https://www.alchemy.com/overviews/erc20-solidity)
 
