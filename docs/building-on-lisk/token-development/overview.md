@@ -19,9 +19,9 @@ keywords:
 ---
 
 # Token development
-
-This page gives an introduction into token development on Lisk.
+This page is intended for token issuers who wish to create a new ERC-20 contract on Lisk.
 It includes an explanation of ERCs, a summary of the most important token standards and examples how to deploy these tokens on Lisk.
+In case you already have a token deployed on the Ethereum network, an wish to bridge it to Lisk, please refer to the guide [Bridging an L1 token to Lisk](../add-token-to-lisk/index.md).
 
 ## ERC token standards
 
