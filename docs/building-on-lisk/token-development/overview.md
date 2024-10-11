@@ -20,8 +20,8 @@ keywords:
 
 # Token development
 This page is intended for token issuers who wish to create a new ERC-20 contract on Lisk.
-It includes an explanation of ERCs, a summary of the most important token standards and examples how to deploy these tokens on Lisk.
-In case you already have a token deployed on the Ethereum network, an wish to bridge it to Lisk, please refer to the guide [Bridging an L1 token to Lisk](../add-token-to-lisk/index.md).
+It includes an explanation of ERCs, a summary of the most important token standards and examples of how to deploy these tokens on Lisk.
+In case you already have a token deployed on the Ethereum network, and wish to bridge it to Lisk, please refer to the guide [Bridging an L1 token to Lisk](../add-token-to-lisk/index.md).
 
 ## ERC token standards
 
@@ -34,7 +34,7 @@ Following the most popular ERC token standards when creating a new token has sev
 - **High application compatibility:** Most applications only support the most popular ERC token standards. By following these standars you ensure your token will be compatible with most external application like wallets or decentralized exchanges.
 - **Great documentation:** Benefit from the vast amount of tutorials and guides that are available to develop ERC compliant tokens.
 
-ERCs are a subcategory of **EIPs**(= Ethereum Inprovemnt Proposals).
+ERCs are a subcategory of **EIPs**(= Ethereum Improvement Proposals).
 New EIPs are added following the process outlined in [EIP-1](https://eips.ethereum.org/EIPS/eip-1).
 
 The full list of [ERC proposals](https://eips.ethereum.org/erc).
