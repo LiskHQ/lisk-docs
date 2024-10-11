@@ -57,7 +57,7 @@ Press the green play button at the top to compile the contract.
 
 Open the deployment tab (this looks like an Ethereum logo with an arrow pointing right).
 Make sure that your environment is set to "Injected Provider", your wallet is connected to the Lisk Sepolia network, and Remix has access to your wallet.
-Then, select the `MyNFT` contract from the deployment dropdown and click the orange `Deploy` button to deploy the contract.
+Then, select the `MyToken` contract from the deployment dropdown and click the orange `Deploy` button to deploy the contract.
 Finally, confirm the contract deployment in your connected wallet.
 
 Check the Remix log messages, it should include the contract address.
@@ -72,7 +72,7 @@ For the remainder of this guide, we'll walk through how to verify your contract 
 1. In Remix, rightlick on the contract you wish to verify and select `Flatten`.
   This will create a new file `MyToken_flattened.sol`.
 2. Now, switch to your [newly deployed contract](https://sepolia-blockscout.lisk.com/address/0x6e8fF2E042c1637a2Da9563763c62362a3bbD712) on https://sepolia-blockscout.lisk.com/
-3. Go to the contract tabe and click on the blue `Verify and Publish` button.
+3. Go to the contract tab and click on the blue `Verify and Publish` button.
     - (Optional) Set a license for your contract.
     - Choose `Solidity (Single file)` as verification method.
     - Choose the fitting compiler version for your contract.

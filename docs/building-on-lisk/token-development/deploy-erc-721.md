@@ -73,7 +73,7 @@ For the remainder of this guide, we'll walk through how to verify your contract 
   - In Remix, rightlick on the contract you wish to verify and select `Flatten`.
   This will create a new file `MyNFT_flattened.sol`.
   - Now, switch to your [newly deployed contract](https://sepolia-blockscout.lisk.com/address/0x73e7a94dD5760d862F6FD9f8ea5D4245Bb143446) on https://sepolia-blockscout.lisk.com/
-  - Go to the contract tabe and click on the blue `Verify and Publish` button
+  - Go to the contract tab and click on the blue `Verify and Publish` button
     - (Optional) Set a license for your contract.
     - Choose `Solidity (Single file)` as verification method.
     - Choose the fitting compiler version for your contract.

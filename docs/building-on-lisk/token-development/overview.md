@@ -31,7 +31,7 @@ A standard interface allows any tokens on Ethereum to be re-used by other applic
 Following the most popular ERC token standards when creating a new token has several benefits:
 
 - **Increased security:** Let your contract inherit from heavily audited and reviewed implementations of the standard, mitigating the possibility of bugs greatly.
-- **High application compatibility:** Most applications only support the most popular ERC token standards. By following these standars you ensure your token will be compatible with most external application like wallets or decentralized exchanges.
+- **High application compatibility:** Most applications only support the most popular ERC token standards. By following these standards you ensure your token will be compatible with most external application like wallets or decentralized exchanges.
 - **Great documentation:** Benefit from the vast amount of tutorials and guides that are available to develop ERC compliant tokens.
 
 ERCs are a subcategory of **EIPs**(= Ethereum Improvement Proposals).
@@ -39,7 +39,7 @@ New EIPs are added following the process outlined in [EIP-1](https://eips.ethere
 
 The full list of [ERC proposals](https://eips.ethereum.org/erc).
 
-A summary of some interesting ERC tokens standars can be found below.
+A summary of some interesting ERC tokens standards can be found below.
 
 - [ERC-20](#erc-20): the most widespread token standard for fungible tokens, albeit somewhat limited by its simplicity.
 - [ERC-721](#erc-721): the most popular token standard for non-fungible tokens, often used for collectibles and games.
