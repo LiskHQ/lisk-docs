@@ -36,12 +36,7 @@ const config = {
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'ind'],
-    localeConfigs: {
-      // You can omit a locale (e.g. fr) if you don't need to override the defaults
-      fa: {
-        direction: 'rtl',
-      },
-    },
+    localeConfigs: {},
   },
 
   scripts: [
@@ -102,7 +97,7 @@ const config = {
         items: [
           {
             type: 'localeDropdown',
-            position: 'left',
+            position: 'right',
           },
           {
             type: 'doc',
