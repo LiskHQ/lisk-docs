@@ -51,6 +51,8 @@ contract MyToken is ERC20 {
 
 ## 4. Compile the contract
 
+Please double-check that the compiler version of the Remix IDE is matching  with the compiler version mentioned in the smart contract: `pragma solidity ^0.8.28;`.
+
 Press the green play button at the top to compile the contract.
 
 ## 5. Deploy the contract
