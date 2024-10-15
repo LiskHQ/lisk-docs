@@ -19,7 +19,7 @@ This guide explains how to deploy a new ERC-20 token to Lisk.
 In case you want to bridge an existing token from Ethereum, please refer to the guide [Bridging an L1 token to Lisk](../add-token-to-lisk).
 
 :::note
-We will use Remix as framework for smart contract development in this guide, but feel free to choose a [smart contract development framework](/category/building-on-lisk/deploying-smart-contract) of your choice to implement your token contract.
+We will use Remix IDE for smart contract development in this guide, but feel free to choose a [smart contract development framework](/category/building-on-lisk/deploying-smart-contract) of your choice to implement your token contract.
 :::
 
 ## 1. Open Remix
