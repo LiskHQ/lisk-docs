@@ -57,7 +57,13 @@ Press the green play button at the top to compile the contract.
 
 Open the `Deploy & run transactions` tab (this looks like an Ethereum logo with an arrow pointing right).
 Make sure that your environment is set to "Injected Provider", your wallet is connected to the Lisk or Lisk Sepolia network, and Remix has access to your wallet.
-Then, select the `MyToken` contract from the deployment dropdown and click the orange `Deploy` button to deploy the contract.
+Then, select the `MyToken` contract from the deployment dropdown and deploy it with the parameters of your choice, for example:
+
+- Name: MyToken
+- Symbol: MYT
+- InitalSupply: 1000000000000000000000
+
+Click on the orange `Deploy` button to deploy the contract.
 Finally, confirm the contract deployment in your connected wallet.
 
 Check the Remix log messages; they should include the contract address.
