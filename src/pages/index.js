@@ -6,6 +6,7 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
+import Translate from '@docusaurus/Translate';
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -13,14 +14,14 @@ function HomepageHeader() {
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
         <Heading as="h1" className="hero__title">
-          Welcome to the Lisk Documentation 🎉
+          <Translate>Welcome to the Lisk Documentation 🎉</Translate>
         </Heading>
-        <p className="hero__subtitle">Explore our comprehensive knowledge base tailored for both developers and users! Find in-depth technical information and helpful guides all about the Lisk blockchain.</p>
+        <p className="hero__subtitle"><Translate>Explore our comprehensive knowledge base tailored for both developers and users! Find in-depth technical information and helpful guides all about the Lisk blockchain.</Translate></p>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
             to="/category/building-on-lisk">
-            Let's build with Lisk  🛠
+            <Translate>Let's build with Lisk  🛠</Translate>
           </Link>
         </div>
         <div>

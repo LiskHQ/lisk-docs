@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 import Link from '@docusaurus/Link';
+import Translate, {translate} from '@docusaurus/Translate';
 
 const FeatureList = [
   {
@@ -11,16 +12,16 @@ const FeatureList = [
         <img src='/img/lisk-dark.svg' className='lisk-smp-dark'></img>
       </>
     ),
-    title: 'What is Lisk?',
+    title: translate({message:'What is Lisk?'}),
     description: (
       <>
-        <p>Lisk offers a highly efficient, lightning-fast, and easily scalable Layer 2 (L2) network built on Optimism (OP) and secured by Ethereum.</p>
+        <p><Translate>Lisk offers a highly efficient, lightning-fast, and easily scalable Layer 2 (L2) network built on Optimism (OP) and secured by Ethereum.</Translate></p>
         <br></br>
         <br></br>
         <Link
           className="button button--secondary button--lg btn-custom"
           to="/docs/">
-          EXPLORE
+          <Translate>EXPLORE</Translate>
         </Link>
       </>
     ),
@@ -32,14 +33,14 @@ const FeatureList = [
         <img src='/img/build-dark.svg' className='lisk-smp-dark'></img>
       </>
     ),
-    title: 'Build with Lisk',
+    title: translate({message:"Build with Lisk"}),
     description: (
       <>
-        <p>Lisk offers low-cost transactions, EVM compatibility, and support for all major developer frameworks, making it the top choice for developers. Join Lisk to access essential technical materials for your development journey.</p>
+        <p><Translate>Lisk offers low-cost transactions, EVM compatibility, and support for all major developer frameworks, making it the top choice for developers. Join Lisk to access essential technical materials for your development journey.</Translate></p>
         <Link
           className="button button--secondary button--lg btn-custom"
           to="/category/building-on-lisk">
-          GET STARTED
+          <Translate>GET STARTED</Translate>
         </Link>
       </>
     ),
@@ -51,14 +52,14 @@ const FeatureList = [
         <img src='/img/lisk-ecosystem-dark.svg' className='lisk-smp-dark'></img>
       </>
     ),
-    title: 'Ecosystem for the future',
+    title: translate({message:'Ecosystem for the future'}),
     description: (
       <>
-        <p>Lisk embraces the superchain framework, offering decentralized <Link to="/category/governance">governance</Link> and an interoperable ecosystem. We provide <Link to="https://lisk.com/blog/posts/say-hello-to-the-new-Lisk-L2-grant-program">grant programs</Link> to support the development of products and advocate for the principles of a decentralized world and inclusivity.</p>
+        <p><Translate>Lisk embraces the superchain framework, offering decentralized governance and an interoperable ecosystem. We provide </Translate><Link to="https://lisk.com/blog/posts/say-hello-to-the-new-Lisk-L2-grant-program"><Translate description="ecosystem-lisk.description-link">grant programs</Translate></Link> <Translate>to support the development of products and advocate for the principles of a decentralized world and inclusivity.</Translate></p>
         <Link
           className="button button--secondary button--lg btn-custom"
           to="/governance/overview">
-          LEARN MORE
+          <Translate>LEARN MORE</Translate>
         </Link>
       </>
     ),

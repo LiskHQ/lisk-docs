@@ -1,0 +1,328 @@
+---
+title: ... with thirdweb
+slug: /building-on-lisk/deploying-smart-contract/with-thirdweb
+description: "A guide on deploying a smart contract on the Lisk test network using thirdweb. Includes instructions for setting up the environment, compiling, and deploying the smart contract."
+keywords: [
+    "thirdweb",
+    "smart contract",
+    "ERC-721", "Lisk",
+    "Lisk test network",
+    "Lisk testnet",
+    "Node.js",
+    "Solidity",
+    "smart contract deployment",
+    "deploy a smart contract",
+    "deploying smart contracts",
+    "build on lisk",
+    "write smart contract",
+    "smart contract development"
+    ]
+toc_max_heading_level: 4
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Deploying a smart contract with thirdweb
+[thirdweb](https://thirdweb.com/) is an end-to-end framework for smart contract development and deployment.
+
+It enables developers to deploy, standard contracts such as ERC-20, ERC-721, or ERC-1155, etc. without writing a line of code.
+More of this is discussed in the [via thirdweb Explore](#deploying-pre-built-contracts-via-thirdweb-explore) section.
+
+Furthermore, developers looking to develop and deploy custom smart contracts can use the [Solidity SDK](https://portal.thirdweb.com/contracts/build/overview) provided by thirdweb, among others such as [TypeScript SDK](https://portal.thirdweb.com/typescript/v5) and [Unity SDK](https://portal.thirdweb.com/unity).
+However, for this guide, we will mainly talk about the [thirdweb Explore](https://thirdweb.com/explore) and the [Solidity SDK](https://portal.thirdweb.com/contracts/build/overview).
+
+**Features:**
+
+- [Explore](https://portal.thirdweb.com/contracts/explore/overview): Ready to deploy pre-built contracts.
+- [Build (Solidity SDK)](https://portal.thirdweb.com/contracts/build/overview): Write custom smart contracts.
+- [Deploy](https://portal.thirdweb.com/contracts/deploy/overview): Support for contract deployment built for any use case.
+- [Publish](https://portal.thirdweb.com/contracts/publish/overview): Publish your contracts onchain.
+- [Interact](https://portal.thirdweb.com/contracts/interact/overview): Interact with smart contracts and integrate smart contracts directly into your app.
+
+## Deploying pre-built contracts via thirdweb Explore
+In case you want to deploy a pre-built contract without any customization, thirdweb offers a convenient way to do so with **Explore**.
+Check out the following video for a quick introduction to Explore:
+
+- [What is thirdweb **Explore**?](https://youtu.be/jYEqoIeAoBg?t=5300)
+
+:::note
+Before you try out the following guides, please ensure that your [wallet is connected to Lisk's Network](/user/connecting-to-a-wallet) and it has sufficient funds in it.
+For more information, see the [Wallet funds](/building-on-lisk/deploying-smart-contract/with-Foundry#wallet-funds) section.
+:::
+
+The following videos describe step-by-step, how to deploy different tokens with pre-built contracts on Lisk.
+- [How to deploy a pre-built **ERC-20** contract via Explore?](https://youtu.be/jYEqoIeAoBg?t=5776)
+- [How to deploy a pre-built **ERC-721** contract via Explore?](https://youtu.be/jYEqoIeAoBg?t=6040)
+- [How to deploy a pre-built **ERC-1155** contract via Explore?](https://youtu.be/jYEqoIeAoBg?t=6396)
+
+## via Solidity SDK
+
+### Prerequisites
+#### Node.js v18+
+
+Download and install [Node v18+](https://nodejs.org/en/download/).
+
+If you are using nvm to manage your node versions, you can just run `nvm install 18`.
+
+#### Installing and Configuring thirdweb
+
+To develop custom contracts, it is required to download and configure thirdweb.
+
+1. To install thirdweb run the following command:
+    <Tabs>
+    <TabItem value="npm" label="NPM" default>
+        ```bash
+        npm i -g thirdweb
+        ```
+    </TabItem>
+    <TabItem value="yarn" label="Yarn">
+        ```bash
+        yarn global add thirdweb
+        ```
+    </TabItem>
+    </Tabs>
+2. [Set up your thirdweb API key](https://youtu.be/jYEqoIeAoBg?t=9467).
+
+#### Logging in with your API key
+
+1. The next step is to log in to thirdweb via CLI, so to do that type the following:
+    ```bash
+    thirdweb login
+    ```
+2. Once, you execute the aforementioned command, the terminal will open a browser window where it will ask you to authenticate the device:
+    ```text
+    .......
+
+    💎 thirdweb v0.13.60 💎
+
+    Automatically attempting to open a link to authenticate with our dashboard...
+
+    If the browser doesn't open, please use this link to authenticate:
+
+    https://thirdweb.com/cli/login?payload=%7B%22payload%22%3A%7B%22type%22%3A%22evm%22%2C%22domain%22%3A%22thirdweb.com%22%2C%22address%22%3A%220x4fA5f77Fadcc319c626b28Ea6260FB0c3Ba6e41C%22%2C%22statement%22%3A%22Please%20ensure%20that%20the%20domain%20above%20matches%20the%20URL%20of%20the%20cuhdksjahjkdhkshajkdhkshakjhsjhdsajkhhdhs
+
+    ⠙ Waiting for a response from the dashboard
+    ```
+3. Once you authenticate via the browser, the terminal will log the following message:
+    ```text
+    Successfully linked your account to this device 
+    ```
+4. You can verify your login status by re-running the `thirdweb login` command.
+    ```text
+    💎 thirdweb v0.13.60 💎
+
+### Creating a project
+The first step of deploying smart contracts to Lisk is to set up your development environment by creating a project.
+The thirdweb supports two of the most popular smart contracts development frameworks such as [Foundry](https://book.getfoundry.sh/) and [Hardhat](https://hardhat.org).
+
+For this guide, we are using Foundry for smart contract development.
+However, you can use Hardhat if you are more comfortable with that.
+The project creation steps are similar for both Foundry and Hardhat.
+
+1. For Foundry, install its [prerequisites](/building-on-lisk/deploying-smart-contract/with-Foundry#prerequisites) on your system before proceeding with the creation of a thirdweb project.
+2. Once, the aforementioned is installed, proceed with the following:
+    ```bash
+    npx thirdweb create
+    ```
+3. Choose `Contract` as the type of your project and give an appropriate name to your project.
+    ```text
+    .......
+
+    💎 thirdweb v0.13.60 💎
+
+    ✔ What type of project do you want to create? › Contract
+    ✔ What is your project named? … thirdweb-contracts
+    ``` 
+4. Next, choose `Forge` as the framework, `NFT` as the name of the contract, `ERC721` as the type of smart contract, and `None` for the extensions option.
+    :::info
+    In case you want to use the Hardhat framework, choose `Hardhat` instead of `Forge` in the following dialogue.
+    :::
+
+    ```text
+    ✔ What framework do you want to use? › Forge
+    ✔ What will be the name of your new smart contract? … NFT
+    ✔ What type of contract do you want to start from? › ERC721
+    ✔ What extensions do you want to add to your contract? › None
+    ```
+5. thirdweb will install all the relevant dependencies and set up a contract project for you.
+    <details>
+    <summary>Execution logs of the thirdweb `contract` project creation</summary>
+    ```text
+    Creating a new thirdweb contracts project in /Users/XYZ/Lightcurve-Code/L2/thirdweb-contracts.
+
+    Downloading files. This might take a moment.
+    Installing packages. This might take a couple of minutes.
+
+    yarn install v1.22.19
+    warning ../../../package.json: No license field
+    info No lockfile found.
+    [1/4] 🔍  Resolving packages...
+    [2/4] 🚚  Fetching packages...
+    [3/4] 🔗  Linking dependencies...
+    [4/4] 🔨  Building fresh packages...
+    success Saved lockfile.
+    ✨  Done in 9.73s.
+
+    Initialized a git repository.
+
+    Success! Created thirdweb-contracts at /Users/XYZ/Lightcurve-Code/L2/thirdweb-contracts
+
+    Inside that directory, you can run several commands:
+
+    yarn build
+        Compiles your contracts and detects thirdweb extensions implemented on them.
+
+    yarn deploy
+        Deploys your contracts with the thirdweb deploy flow.
+
+    yarn publish
+        Publishes your contracts with the thirdweb publish flow.
+
+    We suggest that you begin by typing:
+
+    cd thirdweb-contracts
+    ```
+    </details>
+
+6. Foundry applications created with thirdweb have a similar directory structure to the following:
+
+    ```bash
+    .
+    ├── .github
+    ├── .cache
+    ├── lib
+    ├── node_modules
+    ├── out
+    ├── src
+    │   └── NFT.sol
+    ├── test
+    │   └── Contract.t.sol
+    ├── .gitignore
+    ├── .gitmodules
+    ├── foundry.toml
+    └── README.md
+    ``` 
+
+#### **Creating** the smart contract
+
+For ease and security, thirdweb already provides base contracts, which can be easily customized via code.
+Since we chose to create an `ERC721` token earlier, an `NFT.sol` file will be present in the `src/` folder.
+The `NFT.sol` will already have the base code required for an NFT contract.
+
+```sol title="src/NFT.sol"
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import "@thirdweb-dev/contracts/base/ERC721Base.sol";
+
+contract NFT is ERC721Base {
+    constructor(
+        address _defaultAdmin,
+        string memory _name,
+        string memory _symbol,
+        address _royaltyRecipient,
+        uint128 _royaltyBps
+    )
+        ERC721Base(
+            _defaultAdmin,
+            _name,
+            _symbol,
+            _royaltyRecipient,
+            _royaltyBps
+        )
+    {}
+}
+
+```
+
+#### **Building** the smart contract
+Once the smart contract's code is ready, it must be built using thirdweb.
+
+1. To do that, simply run:
+    ```bash
+    npx thirdweb build
+    ```
+2. If the smart contract doesn't have any errors, you will see the following output on the terminal:
+    ```text
+    .......
+
+    💎 thirdweb v0.13.62 💎
+
+    ✔ Detected project type: foundry
+    ✔ Compilation successful
+    ✔ Choose which contracts to run detection on · NFT
+
+
+    🔎 Detected extension on NFT
+    ✔️ ERC721
+    ✔️ ERC721Burnable
+    ✔️ ERC721Supply
+    ✔️ ERC721AQueryable
+    ✔️ ERC721Mintable
+    ✔️ ERC721BatchMintable
+    ✔️ Royalty
+    ✔️ ContractMetadata
+    ✔️ Ownable
+    ✔️ Fallback
+
+    ℹ Suggested extensions
+    - ERC721Enumerable - https://portal.thirdweb.com/interfaces/erc721enumerable
+    - ERC721LazyMintable - https://portal.thirdweb.com/interfaces/erc721lazymintable
+    - ERC721SignatureMintV1 - https://portal.thirdweb.com/interfaces/erc721signaturemintv1
+    - ERC721SignatureMintV2 - https://portal.thirdweb.com/interfaces/erc721signaturemintv2
+    - ERC721TieredDrop - https://portal.thirdweb.com/interfaces/erc721tiereddrop
+    - ERC721ClaimCustom - https://portal.thirdweb.com/interfaces/erc721claimcustom
+    - ERC721ClaimZora - https://portal.thirdweb.com/interfaces/erc721claimzora
+    - ERC721ClaimConditionsV1 - https://portal.thirdweb.com/interfaces/erc721claimconditionsv1
+    - ERC721ClaimConditionsV2 - https://portal.thirdweb.com/interfaces/erc721claimconditionsv2
+    - ERC721ClaimPhasesV1 - https://portal.thirdweb.com/interfaces/erc721claimphasesv1
+    - ERC721ClaimPhasesV2 - https://portal.thirdweb.com/interfaces/erc721claimphasesv2
+    - ERC721SharedMetadata - https://portal.thirdweb.com/interfaces/erc721sharedmetadata
+    - ERC721LoyaltyCard - https://portal.thirdweb.com/interfaces/erc721loyaltycard
+    - ERC721UpdatableMetadata - https://portal.thirdweb.com/interfaces/erc721updatablemetadata
+    - Permissions - https://portal.thirdweb.com/interfaces/permissions
+
+    ℹ Once you're done writing your contracts, you can run the following command to deploy them:
+
+     yarn deploy
+    ```
+
+#### **Deploying** the smart contract
+All checks passed, which means that the smart contract is ready to be deployed using thirdweb.
+
+1. To do that, simply run:
+    ```bash
+    npx thirdweb deploy
+    ```
+2. If the smart contract doesn't have any errors, you will see the following output on the terminal:
+    ```text
+    .......
+
+    💎 thirdweb v0.13.60 💎
+
+    ✔ Detected project type: foundry
+    ✔ Compilation successful
+    ✔ Choose which contract(s) to deploy · NFT
+    ✔ Upload successful
+    // highlight-next-line
+    ✔ Open this link to deploy your contracts: https://thirdweb.com/contracts/deploy/QmSJExQJfPYFuaRZuDu9XRR2jUu9yp3kaFX3Sdc1KRWxiP
+    ```
+
+3. The terminal will also open a browser window, directing towards a unique URL, as highlighted above.
+4. Fill out the form as suggested in the [Fill Parameter](https://portal.thirdweb.com/contracts/deploy/deploy-contract#Fill%20parameter) section.
+5. Once you fill out the details of the ERC721 smart contract, click on the `Deploy Now` button and it will deploy the contract to the chosen network of your wallet.
+
+:::info
+If you want to test your Foundry-based contract, follow the steps mentioned in the [Testing the Smart Contract](/building-on-lisk/deploying-smart-contract/with-Foundry#testing-the-smart-contract) guide.
+:::
+
+
+## Interacting with the Smart Contract
+
+Once the contract is deployed, you can interact with it via Explore.
+The following videos describe step-by-step, how to interact with different token contracts on Lisk.
+
+- [How to interact with a deployed **ERC-20** contract via Explore?](https://youtu.be/jYEqoIeAoBg?t=6823)
+- [How to interact with a deployed **ERC-721** contract via Explore?](https://youtu.be/jYEqoIeAoBg?t=7581)
+- [How to interact with a deployed **ERC-1155** contract via Explore?](https://youtu.be/jYEqoIeAoBg?t=8355)

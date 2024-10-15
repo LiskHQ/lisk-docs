@@ -35,7 +35,13 @@ const config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'ind'],
+    localeConfigs: {
+      // You can omit a locale (e.g. fr) if you don't need to override the defaults
+      fa: {
+        direction: 'rtl',
+      },
+    },
   },
 
   scripts: [
@@ -94,6 +100,10 @@ const config = {
           srcDark: '/img/lisk-docs-dark.svg',
         },
         items: [
+          {
+            type: 'localeDropdown',
+            position: 'left',
+          },
           {
             type: 'doc',
             position: 'left',
