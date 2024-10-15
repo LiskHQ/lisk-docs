@@ -20,26 +20,26 @@ keywords:
 
 # Token development
 This page is intended for token issuers who wish to create a new ERC-20 contract on Lisk.
-It includes an explanation of ERCs, a summary of the most important token standards and examples of how to deploy these tokens on Lisk.
+It includes an explanation of ERCs, a summary of the most important token standards, and examples of how to deploy these tokens on Lisk.
 In case you already have a token deployed on the Ethereum network, and wish to bridge it to Lisk, please refer to the guide [Bridging an L1 token to Lisk](../add-token-to-lisk/index.md).
 
 ## ERC token standards
 
 A standard interface allows any tokens on Ethereum to be re-used by other applications: from wallets to decentralized exchanges.
-**ERCs**(= Ethereum Request for Comments) are a set of application-level standards and conventions, including contract standards such as token standards (ERC-20), name registries (ERC-137), URI schemes, library/package formats, and wallet formats for the Ethereum blockchain.
+**ERCs**(Ethereum Request for Comments) are a set of application-level standards and conventions, including contract standards such as token standards (ERC-20), name registries (ERC-137), URI schemes, library/package formats, and wallet formats for the Ethereum blockchain.
 
 Following the most popular ERC token standards when creating a new token has several benefits:
 
 - **Increased security:** Let your contract inherit from heavily audited and reviewed implementations of the standard, mitigating the possibility of bugs greatly.
-- **High application compatibility:** Most applications only support the most popular ERC token standards. By following these standards you ensure your token will be compatible with most external application like wallets or decentralized exchanges.
-- **Great documentation:** Benefit from the vast amount of tutorials and guides that are available to develop ERC compliant tokens.
+- **High application compatibility:** Most applications only support the most popular ERC token standards. By following these standards, you ensure your token will be compatible with most external applications like wallets or decentralized exchanges.
+- **Great documentation:** Benefit from the vast number of tutorials and guides that are available to develop ERC-compliant tokens.
 
-ERCs are a subcategory of **EIPs**(= Ethereum Improvement Proposals).
+ERCs are a subcategory of **EIPs**(Ethereum Improvement Proposals).
 New EIPs are added following the process outlined in [EIP-1](https://eips.ethereum.org/EIPS/eip-1).
 
-The full list of [ERC proposals](https://eips.ethereum.org/erc).
+Here's the full list of [ERC proposals](https://eips.ethereum.org/erc).
 
-A summary of some interesting ERC tokens standards can be found below.
+A summary of some interesting ERC token standards can be found below.
 
 - [ERC-20](#erc-20): the most widespread token standard for fungible tokens, albeit somewhat limited by its simplicity.
 - [ERC-721](#erc-721): the most popular token standard for non-fungible tokens, often used for collectibles and games.
@@ -64,9 +64,9 @@ This makes [ERC-20](https://eips.ethereum.org/EIPS/eip-20) tokens useful for thi
 
 ## ERC-721
 [ERC-721](https://eips.ethereum.org/EIPS/eip-721) is a standard for representing ownership of non-fungible tokens.
-Non-fungible tokens(NFTs) are used to represent unique objects like real estate or collectibles, where some items are valued more than others, due to their usefulness, rarity, or other individual characteristics.
+Non-fungible tokens(NFTs) are used to represent unique objects like real estate or collectibles, where some items are valued more than others due to their usefulness, rarity, or other individual characteristics.
 
-To represent these unique features on chain, the ERC-721 includes metadata properties that offer information about the token's specific features, such as the title, the creator, and an image preview.
+To represent these unique features onchain, the ERC-721 includes metadata properties that offer information about the token's specific features, such as the title, the creator, and an image preview.
 
 ### Guides
 [How to deploy a new ERC-721 token on Lisk](deploy-erc-721.md)

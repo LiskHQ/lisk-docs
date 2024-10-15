@@ -25,8 +25,8 @@ We will use Remix as framework for smart contract development in this guide, but
 Navigate to [Remix](https://remix.ethereum.org) in your browser.
 
 ## 2. Create a new file
-Click the 📄 ("Create new file") button to create a new empty Solidity file.
-You can name this file whatever you'd like, e.g. `MyItems.sol`.
+Inside the `contracts` folder, click the 📄 ("Create new file") button to create a new empty Solidity file.
+You can name this file whatever you'd like, e.g., `MyItems.sol`.
 
 ## 3. Copy the example contract
 
@@ -61,7 +61,7 @@ Gold, Silver,Sword and shield are fungible tokens whilst Thor’s Hammer is a no
 
 An URI pointing to the JSON metadata of the different items/ tokens needs to be specified in the constructor, see [ERC-1155 contract API](https://docs.openzeppelin.com/contracts/3.x/api/token/erc1155#ERC1155).
 
-The URI can include the string `{id}` which clients must replace with the actual token ID, in lowercase hexadecimal (with no 0x prefix) and leading zero padded to 64 hex characters.
+The URI can include the string `{id}`, which clients must replace with the actual token ID, in lowercase hexadecimal (with no 0x prefix) and leading zero-padded to 64 hex characters.
 The URI MUST point to a JSON file that conforms to the [ERC-1155 Metadata URI JSON Schema](https://eips.ethereum.org/EIPS/eip-1155).
 
 
@@ -86,29 +86,29 @@ Press the green play button at the top to compile the contract.
 
 ## 5. Deploy the contract
 
-Open the deployment tab (this looks like an Ethereum logo with an arrow pointing right).
+Open the `Deploy & run transactions` tab (this looks like an Ethereum logo with an arrow pointing right).
 Make sure that your environment is set to "Injected Provider", your wallet is connected to Lisk or Lisk Sepolia network, and Remix has access to your wallet.
 Then, select the `MyItems` contract from the deployment dropdown and click the orange `Deploy` button to deploy the contract.
 Finally, confirm the contract deployment in your connected wallet.
 
-Check the Remix log messages, it should include the contract address.
+Check the Remix log messages; they should include the contract address.
 Paste this address in BlockScout, to see the contract in the Lisk blockchain explorer: https://sepolia-blockscout.lisk.com/address/0x8b2f45e810F539647e70fBCd6441B73d332Ef1A0
 
 ## 6. Verify the contract
 
 If you want to interact with your contract on the block explorer, you, or someone else needs to verify it first.
 The above contract has already been verified, so you should be able to view your version on a block explorer already.
-For the remainder of this guide, we'll walk through how to verify your contract with Remix on the Lisk Sepolia Testnet.
+For the remainder of this guide, we'll walk you through how to verify your contract with Remix on the Lisk Sepolia Testnet.
 
 1. In Remix, rightlick on the contract you wish to verify and select `Flatten`.
 This will create a new file `MyItems_flattened.sol`.
 2.  Now, switch to your [newly deployed contract](https://sepolia-blockscout.lisk.com/address/0x8b2f45e810F539647e70fBCd6441B73d332Ef1A0) on https://sepolia-blockscout.lisk.com/
 3. Go to the `Contract` tab and click on the blue `Verify and Publish` button.
     - (Optional) Set a license for your contract.
-    - Choose `Solidity (Single file)` as verification method.
+    - Choose `Solidity (Single file)` as the verification method.
     - Choose the fitting compiler version for your contract.
     - Disable code optimization.
     - Copy the flattened source code from Remix and paste it into the `Enter the Solidity Contract Code` field.
 - Check that all info is correct and click the `Verify and Publish` button, to verify your contract.
   
-  Once verified, the code tab will include the ✅ icon and source code will be viewable.
+  Once verified, the code tab will include the ✅ icon, and the source code will be viewable.

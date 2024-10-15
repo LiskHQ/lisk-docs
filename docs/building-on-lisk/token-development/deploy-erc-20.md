@@ -28,8 +28,8 @@ Navigate to [Remix](https://remix.ethereum.org) in your browser.
 
 ## 2. Create a new file
 
-Click the 📄 ("Create new file") button to create a new empty Solidity file.
-You can name this file whatever you'd like, e.g. `MyToken.sol`.
+Inside the `contracts` folder, click the 📄 ("Create new file") button to create a new empty Solidity file.
+You can name this file whatever you'd like, e.g., `MyToken.sol`.
 
 ## 3. Copy the example contract
 
@@ -55,12 +55,12 @@ Press the green play button at the top to compile the contract.
 
 ## 5. Deploy the contract
 
-Open the deployment tab (this looks like an Ethereum logo with an arrow pointing right).
-Make sure that your environment is set to "Injected Provider", your wallet is connected to the Lisk Sepolia network, and Remix has access to your wallet.
+Open the `Deploy & run transactions` tab (this looks like an Ethereum logo with an arrow pointing right).
+Make sure that your environment is set to "Injected Provider", your wallet is connected to the Lisk or Lisk Sepolia network, and Remix has access to your wallet.
 Then, select the `MyToken` contract from the deployment dropdown and click the orange `Deploy` button to deploy the contract.
 Finally, confirm the contract deployment in your connected wallet.
 
-Check the Remix log messages, it should include the contract address.
+Check the Remix log messages; they should include the contract address.
 Paste this address in BlockScout, to see the contract in the Lisk blockchain explorer: https://sepolia-blockscout.lisk.com/address/0x6e8fF2E042c1637a2Da9563763c62362a3bbD712
 
 ## 6. Verify the contract
@@ -74,10 +74,10 @@ For the remainder of this guide, we'll walk through how to verify your contract 
 2. Now, switch to your [newly deployed contract](https://sepolia-blockscout.lisk.com/address/0x6e8fF2E042c1637a2Da9563763c62362a3bbD712) on https://sepolia-blockscout.lisk.com/
 3. Go to the contract tab and click on the blue `Verify and Publish` button.
     - (Optional) Set a license for your contract.
-    - Choose `Solidity (Single file)` as verification method.
+    - Choose `Solidity (Single file)` as the verification method.
     - Choose the fitting compiler version for your contract.
     - Disable code optimization.
     - Copy the flattened source code from Remix and paste it into the `Enter the Solidity Contract Code` field.
 4. Check that all info is correct and click the `Verify and Publish` button, to verify your contract.
   
-  Once verified, the code tab will include the ✅ icon and source code will be viewable.
+  Once verified, the code tab will include the ✅ icon, and the source code will be viewable.
