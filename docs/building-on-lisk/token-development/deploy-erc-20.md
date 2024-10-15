@@ -71,11 +71,15 @@ Finally, confirm the contract deployment in your connected wallet.
 Check the Remix log messages; they should include the contract address.
 Paste this address in BlockScout, to see the contract in the Lisk blockchain explorer: https://sepolia-blockscout.lisk.com/address/0x6e8fF2E042c1637a2Da9563763c62362a3bbD712
 
+In case you chose to deploy on the Lisk Mainnet, you need to paste the address on https://blockscout.lisk.com instead.
+
 ## 6. Verify the contract
 
 If you want to interact with your contract on the block explorer, you, or someone else needs to verify it first.
 The above contract has already been verified, so you should be able to view your version on a block explorer already.
 For the remainder of this guide, we'll walk through how to verify your contract with Remix on the Lisk Sepolia Testnet.
+
+You can apply the same steps for verifying a contract on Lisk Mainnet, just use https://blockscout.lisk.com instead of https://sepolia-blockscout.lisk.com in step 2.
 
 1. In Remix, rightlick on the contract you wish to verify and select `Flatten`.
   This will create a new file `MyToken_flattened.sol`.

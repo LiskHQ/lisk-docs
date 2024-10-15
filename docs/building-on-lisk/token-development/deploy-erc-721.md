@@ -66,11 +66,15 @@ Then, select the `MyNFT` contract from the deployment dropdown and click the ora
 Check the Remix log messages; they should include the contract address.
 Paste this address in BlockScout, to see the contract in the Lisk blockchain explorer: https://sepolia-blockscout.lisk.com/address/0x73e7a94dD5760d862F6FD9f8ea5D4245Bb143446
 
+In case you chose to deploy on the Lisk Mainnet, you need to paste the address on https://blockscout.lisk.com instead.
+
 ## 6. Verify the contract
 
 If you want to interact with your contract on the block explorer, you, or someone else needs to verify it first.
 The above contract has already been verified, so you should be able to view your version on a block explorer already.
 For the remainder of this guide, we'll walk through how to verify your contract with Remix on the Lisk Sepolia Testnet.
+
+You can apply the same steps for verifying a contract on Lisk Mainnet, just use https://blockscout.lisk.com instead of https://sepolia-blockscout.lisk.com in step 2.
 
   - In Remix, rightlick on the contract you wish to verify and select `Flatten`.
   This will create a new file `MyNFT_flattened.sol`.
