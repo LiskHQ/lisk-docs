@@ -74,7 +74,7 @@ If you want to interact with your contract on the block explorer, you, or someon
 The above contract has already been verified, so you should be able to view your version on a block explorer already.
 For the remainder of this guide, we'll walk through how to verify your contract with Remix on the Lisk Sepolia Testnet.
 
-You can apply the same steps for verifying a contract on Lisk Mainnet, just use https://blockscout.lisk.com instead of https://sepolia-blockscout.lisk.com in step 2.
+You can apply the same steps for verifying a contract on Lisk Mainnet, in case you deployed it there in the previous step, just use https://blockscout.lisk.com instead of https://sepolia-blockscout.lisk.com in step 2.
 
   - In Remix, rightlick on the contract you wish to verify and select `Flatten`.
   This will create a new file `MyNFT_flattened.sol`.
