@@ -65,7 +65,7 @@ Then, select the `MyToken` contract from the deployment dropdown and deploy it w
 - Symbol: MYT
 - InitalSupply: 1000000000000000000000
 
-Click on the orange `Deploy` button to deploy the contract.
+Click on the orange `transact` button to deploy the contract.
 Finally, confirm the contract deployment in your connected wallet.
 
 Check the Remix log messages; they should include the contract address.
