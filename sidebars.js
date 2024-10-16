@@ -51,17 +51,13 @@ const sidebars = {
             'building-on-lisk/deploying-smart-contract/with-Hardhat',
             'building-on-lisk/deploying-smart-contract/with-thirdweb',
           ],
-        },
-        {
-          type: 'category',
-          label: 'Bridging an L1 token to Lisk',
-          collapsible: true,
-          collapsed: true,
-          items: [
-            'building-on-lisk/add-token-to-lisk/index',
-            'building-on-lisk/add-token-to-lisk/standard-token',
-            'building-on-lisk/add-token-to-lisk/custom-token',
-          ],
+          link: {
+            type: 'generated-index',
+            title: 'Deploying a Smart Contract',
+            description: 'Guides explainig how to deploy a smart contract on Lisk for different smart contract development frameworks.',
+            slug: '/category/building-on-lisk/deploying-smart-contract',
+            keywords: ['guides','smart contracts','deployment'],
+          },
         },
         {
           type: 'category',
@@ -74,6 +70,43 @@ const sidebars = {
             'building-on-lisk/interacting-with-the-blockchain/web3',
 
           ],
+        },
+        {
+          type: 'category',
+          label: 'Bridging an L1 token to Lisk',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            'building-on-lisk/add-token-to-lisk/index',
+            'building-on-lisk/add-token-to-lisk/standard-token',
+            'building-on-lisk/add-token-to-lisk/custom-token',
+          ],
+          link: {
+            type: 'generated-index',
+            title: 'Bridging an L1 token to Lisk',
+            description: 'Guides explainig how to bridge tokens from Ethereum to Lisk and add them to the superchain token list.',
+            slug: '/category/building-on-lisk/add-token-to-lisk',
+            keywords: ['guides','smart contracts','bridging','superchain token list'],
+          },
+        },
+        {
+          type: 'category',
+          label: 'Token development',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            'building-on-lisk/token-development/overview',
+            'building-on-lisk/token-development/deploy-erc-20',
+            'building-on-lisk/token-development/deploy-erc-721',
+            'building-on-lisk/token-development/deploy-erc-1155',
+          ],
+          link: {
+            type: 'generated-index',
+            title: 'Token development',
+            description: 'Guides explainig how to create a new token on Lisk.',
+            slug: '/category/building-on-lisk/token-development',
+            keywords: ['guides','smart contracts','token development','token standards','erc-20','erc-721','erc-1155'],
+          },
         },
         'building-on-lisk/use-oracle-data',
       ],
