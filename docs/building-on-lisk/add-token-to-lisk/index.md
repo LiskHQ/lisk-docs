@@ -18,6 +18,7 @@ keywords:
 # Bridging an L1 token to Lisk
 This page is intended for token issuers who already have an ERC-20 contract deployed on Ethereum and would like to submit their token for bridging between Ethereum and Lisk. 
 Lisk uses the Superchain Token List as a reference for tokens that have been deployed on Lisk.
+In case you want to create a new token on Lisk, please refer to the page [Token development](../token-development/overview.md).
 
 ## Superchain Token List
 The [Superchain Token List](https://github.com/ethereum-optimism/ethereum-optimism.github.io) exists to help users discover the correct bridged token addresses for any given native token.
