@@ -108,7 +108,16 @@ const sidebars = {
             keywords: ['guides','smart contracts','token development','token standards','erc-20','erc-721','erc-1155'],
           },
         },
-        'building-on-lisk/use-oracle-data',
+        {
+          type: 'category',
+          label: 'Using oracle data',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            'building-on-lisk/using-oracle-data/redstone-pull',
+            'building-on-lisk/using-oracle-data/tellor',
+          ],
+        }
       ],
       link: {
         type: 'generated-index',
