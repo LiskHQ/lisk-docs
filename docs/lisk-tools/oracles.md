@@ -44,7 +44,7 @@ Interested in integration? [Get in contact](https://discord.com/invite/PVxBZKFr4
 
 ### Guides
 
-- [Accessing real-world data with Oracles](../building-on-lisk/using-oracle-data/redstone-pull.md)
+- [Accessing oracle data with Redstone (Pull)](../building-on-lisk/using-oracle-data/redstone-pull.md)
 
 ## Tellor
 
@@ -58,7 +58,7 @@ This incentivizes an open, permissionless network of data reporting and data val
 [List of current token & oracle contracts available in the Tellor Documentation](https://docs.tellor.io/tellor/the-basics/contracts-reference#lisk)
 
 ### Guides
-
+- [Accessing oracle data with Tellor](../building-on-lisk/using-oracle-data/tellor.md)
 
 #### Supported Networks
 
