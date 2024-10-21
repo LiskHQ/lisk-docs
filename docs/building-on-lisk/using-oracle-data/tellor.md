@@ -21,6 +21,12 @@ keywords: [
 ---
 
 # Using oracle data with Tellor
+[Tellor](https://tellor.io/) is an immutable decentralized oracle protocol where parties can request the value of an off-chain data point (e.g. ETH/USD, LSK/USD) and reporters compete to add this value to an on-chain data-bank.
+The inputs to this data-bank are secured by a network of staked reporters.
+
+Tellor utilizes crypto-economic incentive mechanisms, rewarding honest data submissions by reporters and punishing bad actors through the issuance of Tellor’s token, Tributes (TRB) and a dispute mechanism.
+
+This incentivizes an open, permissionless network of data reporting and data validation, ensuring that data can be provided by anyone and checked by everyone.
 
 ## Installation
 The first thing you'll want to do is install the basic tools necessary for using Tellor as your oracle.
