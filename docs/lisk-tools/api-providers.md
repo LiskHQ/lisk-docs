@@ -73,11 +73,12 @@ In order to use the provided endpoints, you need to [get the corresponding API k
 
 ## Moralis
 
-With [Moralis](https://developers.moralis.com/chains/lisk/) APIs, elevate your dapps with unmatched speed, security, and scalability across EVM-compatible chains, now including Lisk on Optimism’s OP Stack.
+[Moralis](https://developers.moralis.com/chains/lisk/) APIs elevate your dapps with unmatched speed, security, and scalability across EVM-compatible chains.
 
 Moralis enforces rate limits at the account level to ensure fair usage across all users.
 Each account has a set number of allowed requests per minute, based on your plan.
-For more information on rate limits and how to optimize your usage, visit the [RPC nodes FAQ page of Moralis](https://docs.moralis.com/rpc-faqs).
+
+[Get Free Lisk RPC Nodes using Moralis](https://developers.moralis.com/nodes/lisk/)
 
 The free plan for Moralis includes:
 
