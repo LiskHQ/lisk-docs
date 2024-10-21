@@ -22,7 +22,7 @@ keywords: [
 
 # Accessing real-world data using the Redstone Oracle
 
-This page will explain how you can access real world / off-chain data using Oracles such as Redstone.
+This page will explain how you can access oracle data using Redstone.
 
 RedStone is a data ecosystem that delivers frequently updated, reliable, and diverse data for your dApp and smart contracts deployed on Lisk.
 
