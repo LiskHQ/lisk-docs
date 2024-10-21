@@ -23,10 +23,16 @@ keywords: [
 # Using oracle data with Tellor
 
 ## Installation
-To install `usingtellor`, run one the following commands:
+The first thing you'll want to do is install the basic tools necessary for using Tellor as your oracle.
+
+To install [usingtellor](https://github.com/tellor-io/usingtellor), run one the following commands:
 
 - Hardhat: `npm install usingtellor`
 - Foundry: `forge install tellor-io/usingtellor`
+
+Once installed this will allow your contracts to inherit the functions from the contract 'UsingTellor'.
+
+Great! Now that you've got the tools ready, let's go through a simple exercise where we retrieve the eth/usd and lsk/usd prices from Tellor.
 
 ## Import
 
@@ -34,7 +40,10 @@ To install `usingtellor`, run one the following commands:
 pragma solidity >=0.8.0;
 
 import "usingtellor/contracts/UsingTellor.sol";
-
+/**
+     * Network: Lisk Mainnet
+     * Address: 0x896419Ed2E0dC848a1f7d2814F4e5Df4b9B9bFcc
+*/
 contract MyContract is UsingTellor {
 
   constructor(address payable _tellorOracle) UsingTellor(_tellorOracle) {
@@ -62,7 +71,7 @@ pragma solidity >=0.8.0;
 
 import { UsingTellor } from "usingtellor/contracts/UsingTellor.sol";
 
-contract TellorUser is UsingTellor {
+contract MyContract is UsingTellor {
 
     uint256 public ethLastStoredTimestamp;
     uint256 public ethLastStoredPrice;
@@ -166,6 +175,7 @@ contract TellorUser is UsingTellor {
 }
 ```
 
+You can adapt this contract to your needs.
 The example utilizes some best practices[^1] for using Tellor by implementing a dispute time buffer and a data staleness check.
 In addition, it also seeks to mitigate back-in-time dispute attacks by caching the most recent value and timestamp.
 
@@ -181,3 +191,9 @@ To deploy the smart contract on Lisk Sepolia or Lisk Mainnet, follow the guides
 
 - [Deploying a smart contract with Hardhat](../deploying-smart-contract/with-Hardhat.md), or
 - [Deploying a smart contract with Foundry](../deploying-smart-contract/with-Foundry.md)
+
+## Further resources
+
+- For a more robust implementation of the Tellor oracle, check out the full list of available functions [here](https://github.com/tellor-io/usingtellor/blob/master/README.md).
+- Have a specific Data Feed Request? [Fill out this form](https://github.com/tellor-io/dataSpecs/issues/new?assignees=&labels=&template=new_query_type.yaml&title=%5BNew+Data+Request+Form%5D%3A+).
+- Still have question? Reach out to the Tellor team on Discord [here](https://discord.gg/tellor).
