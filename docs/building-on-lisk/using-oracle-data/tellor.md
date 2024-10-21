@@ -1,6 +1,6 @@
 ---
 title: ...with Tellor
-slug: /building-on-lisk/use-oracle-data
+slug: /building-on-lisk/use-oracle-data/tellor
 description: A guide on using Redstone Data Feeds to access real-world data such as asset prices, directly from your smart contracts on the Lisk testnet.
 keywords: [
     Oracle
@@ -47,7 +47,7 @@ contract MyContract is UsingTellor {
 ```
 
 To import the UsingTellor contract into your Solidity file, pass the desired Tellor Oracle address as a parameter. 
-For the Lisk Mainnet, the Tellor Oracle address is: [0x896419Ed2E0dC848a1f7d2814F4e5Df4b9B9bFcc]()
+For the Lisk Mainnet, the Tellor Oracle address is: [0x896419Ed2E0dC848a1f7d2814F4e5Df4b9B9bFcc](https://blockscout.lisk.com/address/0x896419Ed2E0dC848a1f7d2814F4e5Df4b9B9bFcc)
 
 ## Reading data
 
@@ -58,7 +58,7 @@ In the example below, we add two functions:
 
 ```solidity
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.26;
+pragma solidity >=0.8.0;
 
 import { UsingTellor } from "usingtellor/contracts/UsingTellor.sol";
 
@@ -77,7 +77,7 @@ contract TellorUser is UsingTellor {
     error NoValueRetrieved(uint256 timestamp);
 
     /** 
-     * @dev the constructor sets the Tellor address and the ETH queryId
+     * @dev the constructor sets the Tellor address and the ETH and LSK queryIds
      * @param _tellorOracle is the address of the Tellor oracle
      */
     constructor (address payable _tellorOracle) UsingTellor(_tellorOracle) {
@@ -179,5 +179,5 @@ For a general overview of best practices using Tellor, go to the [User checklist
 
 To deploy the smart contract on Lisk Sepolia or Lisk Mainnet, follow the guides 
 
-- [Deploying a smart contract with Hardhat](deploying-smart-contract/with-Hardhat.md), or
-- [Deploying a smart contract with Foundry](deploying-smart-contract/with-Foundry.md)
+- [Deploying a smart contract with Hardhat](../deploying-smart-contract/with-Hardhat.md), or
+- [Deploying a smart contract with Foundry](../deploying-smart-contract/with-Foundry.md)
