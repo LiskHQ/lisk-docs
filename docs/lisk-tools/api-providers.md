@@ -78,7 +78,7 @@ In order to use the provided endpoints, you need to [get the corresponding API k
 Moralis enforces rate limits at the account level to ensure fair usage across all users.
 Each account has a set number of allowed requests per minute, based on your plan.
 
-[Get Free Lisk RPC Nodes using Moralis](https://developers.moralis.com/nodes/lisk/)
+[Get Free Lisk RPC Nodes using Moralis](https://developers.moralis.com/chains/lisk/)
 
 The free plan for Moralis includes:
 
