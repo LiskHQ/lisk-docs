@@ -57,10 +57,10 @@ This incentivizes an open, permissionless network of data reporting and data val
 
 [List of current token & oracle contracts available in the Tellor Documentation](https://docs.tellor.io/tellor/the-basics/contracts-reference#lisk)
 
-### Guides
-- [Accessing oracle data with Tellor](../building-on-lisk/using-oracle-data/tellor.md)
-
 #### Supported Networks
 
 - Lisk
 - Lisk Sepolia
+
+### Guides
+- [Accessing oracle data with Tellor](../building-on-lisk/using-oracle-data/tellor.md)
