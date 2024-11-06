@@ -1,6 +1,6 @@
 .navbar__item {
     font-weight: var(--ifm-font-weight-bold);
-    font-family: 'Gilroy-SemiBold';
+    font-family: 'InstrumentSans-SemiBold';
     text-transform: uppercase;
     align-self: center;
     margin-bottom: -.75%;
@@ -13,7 +13,7 @@
 
 html[data-theme='dark'] .navbar__item {
     font-weight: var(--ifm-font-weight-bold);
-    font-family: 'Gilroy-SemiBold';
+    font-family: 'InstrumentSans-SemiBold';
     text-transform: uppercase;
     align-self: center;
     margin-bottom: -.75%;

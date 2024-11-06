@@ -72,7 +72,7 @@ function Feature({ img, title, description }) {
         <p>{img}</p>
       </div>
       <div className="text--center text-style-custom padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
+        <Heading as="h5">{title}</Heading>
         <p>{description}</p>
       </div>
     </div>
