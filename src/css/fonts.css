@@ -8,8 +8,6 @@
      src: url('/static/font/InstrumentSans-Bold.ttf') format('truetype');
  }
 
-
-
  @font-face {
      font-family: "InstrumentSans-BoldItalic";
      src: url('/static/font/InstrumentSans-BoldItalic.ttf') format('truetype');
@@ -24,35 +22,3 @@
      font-family: "InstrumentSans-Medium";
      src: url('/static/font/InstrumentSans-Medium.ttf') format('truetype');
  }
-
- /* @font-face {
-    font-family: "Gilroy-ExtraBold";
-    src: url('/static/font/Gilroy-ExtraBold.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: "Gilroy-LightItalic";
-    src: url('/static/font/Gilroy-LightItalic.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: "Gilroy-Heavy";
-    src: url('/static/font/Gilroy-Heavy.ttf') format('truetype');
-}
-
-@font-face {
-     font-family: "InstrumentSans-Black";
-     src: url('/static/font/InstrumentSans-Black.ttf') format('truetype');
- }
-
- @font-face {
-     font-family: "InstrumentSans-BlackItalic";
-     src: url('/static/font/InstrumentSans-BlackItalic.ttf') format('truetype');
- }
-
-
- @font-face {
-     font-family: "InstrumentSans-Light";
-     src: url('/static/font/InstrumentSans-Light.ttf') format('truetype');
- }
- */

@@ -4,7 +4,7 @@
     text-transform: uppercase;
     align-self: center;
     margin-bottom: -.75%;
-    font-size: large;
+    font-size: 18px;
 }
 
 .navbar__item:hover {
@@ -17,7 +17,7 @@ html[data-theme='dark'] .navbar__item {
     text-transform: uppercase;
     align-self: center;
     margin-bottom: -.75%;
-    font-size: large;
+    font-size: 18px;
     color: white;
     transition: color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
 }

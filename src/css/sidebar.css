@@ -2,7 +2,7 @@
 
 .theme-doc-sidebar-item-category-level-1>.menu__list-item-collapsible>.menu__link {
   font-family: 'InstrumentSans-SemiBold';
-  font-size: large;
+  font-size: 18px;
   line-height: 2.5;
   text-overflow: ellipsis;
   text-transform: uppercase;
