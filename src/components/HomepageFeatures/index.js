@@ -7,8 +7,7 @@ const FeatureList = [
   {
     img: (
       <>
-        <img src='/img/lisk-light.svg' className='lisk-smp-light'></img>
-        <img src='/img/lisk-dark.svg' className='lisk-smp-dark'></img>
+        <img src='/img/Lisk.svg' className='lisk-smp'></img>
       </>
     ),
     title: 'What is Lisk?',
@@ -28,8 +27,7 @@ const FeatureList = [
   {
     img: (
       <>
-        <img src='/img/build-light.svg' className='lisk-smp-light'></img>
-        <img src='/img/build-dark.svg' className='lisk-smp-dark'></img>
+        <img src='/img/build.svg' className='lisk-smp'></img>
       </>
     ),
     title: 'Build with Lisk',
@@ -47,8 +45,7 @@ const FeatureList = [
   {
     img: (
       <>
-        <img src='/img/lisk-ecosystem-light.svg' className='lisk-smp-light'></img>
-        <img src='/img/lisk-ecosystem-dark.svg' className='lisk-smp-dark'></img>
+        <img src='/img/lisk-ecosystem.svg' className='lisk-smp'></img>
       </>
     ),
     title: 'Ecosystem for the future',
