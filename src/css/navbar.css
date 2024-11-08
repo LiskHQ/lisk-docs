@@ -3,7 +3,7 @@
     font-family: 'InstrumentSans-SemiBold';
     text-transform: uppercase;
     align-self: center;
-    margin-bottom: -.75%;
+    margin-bottom: -.45%;
     font-size: 18px;
 }
 
@@ -16,7 +16,7 @@ html[data-theme='dark'] .navbar__item {
     font-family: 'InstrumentSans-SemiBold';
     text-transform: uppercase;
     align-self: center;
-    margin-bottom: -.75%;
+    margin-bottom: -.45%;
     font-size: 18px;
     color: white;
     transition: color var(--ifm-transition-fast) var(--ifm-transition-timing-default);

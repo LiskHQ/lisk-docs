@@ -16,13 +16,6 @@ function HomepageHeader() {
           Welcome to the Lisk Documentation 🎉
         </Heading>
         <p className="hero__subtitle">Explore our comprehensive knowledge base tailored for both developers and users! Find in-depth technical information and helpful guides all about the Lisk blockchain.</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/category/building-on-lisk">
-            Let's build with Lisk  🛠
-          </Link>
-        </div>
         <div>
           <img src='/img/built-superchain-white.svg' className='superchain-white'></img>
           <img src='/img/built-superchain-black.svg' className='superchain-black'></img>

@@ -11,7 +11,7 @@
 }
 
 .navbar__logo img {
-    height: 89%;
+    height: 80%;
 }
 
 html[data-theme='light'] .lsk-dark {
@@ -25,7 +25,7 @@ html[data-theme='dark'] .lsk-light {
 .lisk-smp {
     height: 200px;
     width: 200px;
-    margin-top: 3%;
+    margin-top: 6.5%;
 }
 
 html[data-theme='dark'] .superchain-black {
@@ -35,6 +35,7 @@ html[data-theme='dark'] .superchain-black {
 .superchain-black {
     height: 150px;
     width: 150px;
+    margin: -3.5%
 }
 
 html[data-theme='light'] .superchain-white {
@@ -44,6 +45,7 @@ html[data-theme='light'] .superchain-white {
 .superchain-white {
     height: 150px;
     width: 150px;
+    margin: -3.5%
 }
 
 /* .overview-img {

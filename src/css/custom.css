@@ -22,6 +22,7 @@
   --ifm-color-primary-light: #000000;
   --ifm-color-primary-lighter: #000000;
   --ifm-color-primary-lightest: #000000;
+  --ifm-color-secondary: rgba(230, 230, 230, .5);
   --ifm-font-family-base: 'InstrumentSans';
   --ifm-heading-font-family: 'InstrumentSans-SemiBold';
   --ifm-navbar-link-color: var(var(--ifm-color-primary)) --ifm-breadcrumb-item-background-active: rgba(0, 0, 0, 0.20);
@@ -34,6 +35,7 @@
   --ifm-menu-color: #000000;
   --ifm-toc-link-color: #000000;
   --ifm-link-color: rgba(97, 63, 255, 1);
+  --ifm-button-color: #000000;
 }
 
 [class^='codeBlockTitle'] {
@@ -172,14 +174,19 @@ h6 {
   margin-top: 6%;
 }
 
-.btn-custom {
-  width: 100%;
+.button {
+  border: none;
+  color: #000000 !important;
 }
 
-.text-style-custom {
+.btn-custom {
+  width: 100%;
+
+}
+
+.homepage-text-style-custom {
   padding-top: 5%;
-  height: 58.5%;
-  background-color: rgb(197, 207, 228, 0.09);
+  height: 54%;
   border-radius: 4%;
 }
 
@@ -212,6 +219,7 @@ h6 {
   --ifm-color-primary-light: #FFFFFF;
   --ifm-color-primary-lighter: #FFFFFF;
   --ifm-color-primary-lightest: #FFFFFF;
+  --ifm-color-secondary: rgba(230, 230, 230, 1);
   --ifm-code-font-size: 90%;
   --ifm-code-background: rgba(230, 230, 230, 1, .25) !important;
   --ifm-breadcrumb-item-background-active: rgba(255, 255, 255, .25);
@@ -239,5 +247,3 @@ html[data-theme='dark'] .hero--primary {
   --ifm-hero-background-color: #000000;
   --ifm-hero-text-color: #FFFFFF;
 }
-
-/* --ifm-navbar-link-color: red; // var(--ifm-color-primary); */
