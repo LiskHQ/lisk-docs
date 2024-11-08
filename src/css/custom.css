@@ -181,16 +181,44 @@ h6 {
 
 .btn-custom {
   width: 100%;
+  border: solid #000000;
+  background-color: #FFFFFF;
+  border-radius: 0%;
+  margin-top: 5%;
+}
 
+[data-theme='dark'] .btn-custom {
+  width: 100%;
+  border: solid #FFFFFF;
+  background-color: #000000;
+  color: #FFFFFF !important;
+  border-radius: 0%;
+  margin-top: 5%;
+}
+
+.btn-custom:hover {
+  background-color: rgba(0, 0, 0, .05) !important;
+}
+
+[data-theme='dark'] .btn-custom:hover {
+  background-color: rgba(255, 255, 255, .1) !important;
 }
 
 .homepage-text-style-custom {
   padding-top: 5%;
   height: 54%;
-  border-radius: 4%;
+  margin-bottom: 35%;
 }
 
-.overview-span {
+.line-space-subtile {
+  line-height: 32px;
+}
+
+.line-space-text {
+  line-height: 24px;
+}
+
+/* .overview-span {
   display: grid;
   align-items: center;
   column-gap: 5px;
@@ -198,7 +226,7 @@ h6 {
   border-radius: 1em;
   padding: 5%;
   margin-bottom: 2%;
-}
+} */
 
 .heroBanner_src-pages-index-module {
   padding: 3em 0 0 0 !important;

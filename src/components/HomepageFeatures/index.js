@@ -13,13 +13,14 @@ const FeatureList = [
     title: 'What is Lisk?',
     description: (
       <>
-        <p>Lisk offers a highly efficient, lightning-fast, and easily scalable Layer 2 (L2) network built on Optimism (OP) and secured by Ethereum.</p>
+        <p className='line-space-text' style={{ marginBottom: '4%' }}>Lisk offers a highly efficient, lightning-fast, and easily scalable Layer 2 (L2) network built on Optimism (OP) and secured by Ethereum.
+        </p>
         <br></br>
         <br></br>
         <Link
           className="button button--secondary button--lg btn-custom"
           to="/docs/">
-          EXPLORE
+          Explore
         </Link>
       </>
     ),
@@ -33,11 +34,12 @@ const FeatureList = [
     title: 'Build with Lisk',
     description: (
       <>
-        <p>Lisk offers low-cost transactions, EVM compatibility, and support for all major developer frameworks, making it the top choice for developers. Join Lisk to access essential technical materials for your development journey.</p>
+        <p className='line-space-text'>Lisk offers low-cost transactions, EVM compatibility, and support for all major developer frameworks, making it the top choice for developers. Join Lisk to access essential technical materials for your development journey.</p>
+        {/* <br></br> */}
         <Link
           className="button button--secondary button--lg btn-custom"
           to="/category/building-on-lisk">
-          GET STARTED
+          Get started
         </Link>
       </>
     ),
@@ -51,11 +53,11 @@ const FeatureList = [
     title: 'Ecosystem for the future',
     description: (
       <>
-        <p>Lisk embraces the superchain framework, offering decentralized <Link to="/category/governance">governance</Link> and an interoperable ecosystem. We provide <Link to="https://lisk.com/blog/posts/say-hello-to-the-new-Lisk-L2-grant-program">grant programs</Link> to support the development of products and advocate for the principles of a decentralized world and inclusivity.</p>
+        <p className='line-space-text'>Lisk embraces the superchain framework, offering decentralized <Link to="/category/governance">governance</Link> and an interoperable ecosystem. We provide <Link to="https://lisk.com/blog/posts/say-hello-to-the-new-Lisk-L2-grant-program">grant programs</Link> to support the development of products and advocate for the principles of a decentralized world and inclusivity.</p>
         <Link
           className="button button--secondary button--lg btn-custom"
           to="/governance/overview">
-          LEARN MORE
+          Learn more
         </Link>
       </>
     ),

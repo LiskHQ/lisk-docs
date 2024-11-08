@@ -23,8 +23,8 @@ html[data-theme='dark'] .lsk-light {
 }
 
 .lisk-smp {
-    height: 200px;
-    width: 200px;
+    height: 80px;
+    width: 80px;
     margin-top: 6.5%;
 }
 
@@ -35,7 +35,6 @@ html[data-theme='dark'] .superchain-black {
 .superchain-black {
     height: 150px;
     width: 150px;
-    margin: -3.5%
 }
 
 html[data-theme='light'] .superchain-white {
@@ -45,7 +44,6 @@ html[data-theme='light'] .superchain-white {
 .superchain-white {
     height: 150px;
     width: 150px;
-    margin: -3.5%
 }
 
 /* .overview-img {
