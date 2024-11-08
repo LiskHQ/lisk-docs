@@ -26,7 +26,9 @@
   --ifm-color-secondary: rgba(230, 230, 230, .5);
   --ifm-font-family-base: 'InstrumentSans';
   --ifm-heading-font-family: 'InstrumentSans-SemiBold';
-  --ifm-navbar-link-color: var(var(--ifm-color-primary)) --ifm-breadcrumb-item-background-active: rgba(0, 0, 0, 0.20);
+  --ifm-color-gray-900: #000000;
+  --ifm-navbar-link-color: var(var(--ifm-color-primary));
+  --ifm-breadcrumb-item-background-active: rgba(230, 230, 230, .5);
   --ifm-tabs-color-active-border: rgba(97, 63, 255, 1);
   --ifm-code-background: rgba(40, 49, 61, 1);
   --ifm-alert-border-color: rgba(97, 63, 255, 1);
@@ -50,8 +52,9 @@
 .hero--primary {
   --ifm-hero-background-color: #FFFFFF;
   --ifm-hero-text-color: #000000;
-  margin-bottom: -2.5% !important;
+  margin-bottom: -2.5%;
 }
+
 
 [class^='codeBlockTitle'] {
   font-weight: 600 !important;
@@ -87,8 +90,8 @@ details {
 }
 
 summary {
-  font-size: large !important;
-  font-weight: 600 !important;
+  font-size: large;
+  font-weight: 600;
 }
 
 .alert {
@@ -128,7 +131,7 @@ figure {
 }
 
 figure>img {
-  display: block !important;
+  display: block;
 }
 
 figcaption {
@@ -152,16 +155,11 @@ article iframe {
 }
 
 .padding-bottom--lg {
-  margin-bottom: 3% !important;
+  margin-bottom: 3%;
 }
 
 .pagination-nav {
   margin-top: 6%;
-}
-
-.button {
-  border: none;
-  color: #000000 !important;
 }
 
 .btn-custom {
@@ -176,17 +174,17 @@ article iframe {
   width: 100%;
   border: solid #FFFFFF;
   background-color: #000000;
-  color: #FFFFFF !important;
+  color: #FFFFFF;
   border-radius: 0%;
   margin-top: 5%;
 }
 
 .btn-custom:hover {
-  background-color: rgba(0, 0, 0, .05) !important;
+  background-color: rgba(0, 0, 0, .05);
 }
 
 [data-theme='dark'] .btn-custom:hover {
-  background-color: rgba(255, 255, 255, .1) !important;
+  background-color: rgba(255, 255, 255, .1);
 }
 
 /* .overview-span {
@@ -210,8 +208,8 @@ article iframe {
   --ifm-color-primary-lightest: #FFFFFF;
   --ifm-color-secondary: rgba(230, 230, 230, 1);
   --ifm-code-font-size: 90%;
-  --ifm-code-background: rgba(230, 230, 230, 1, .25) !important;
-  --ifm-breadcrumb-item-background-active: rgba(255, 255, 255, .25);
+  --ifm-code-background: rgba(230, 230, 230, 1, .25);
+  --ifm-breadcrumb-item-background-active: rgba(230, 230, 230, .2);
   --ifm-alert-border-color: rgba(97, 63, 255, 1);
   --ifm-font-color-base: #FFFFFF;
   --ifm-toc-link-color: #FFFFFF;
