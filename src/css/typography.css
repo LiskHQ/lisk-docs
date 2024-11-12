@@ -1,0 +1,43 @@
+h1 {
+    font-size: 60px;
+    font-family: 'InstrumentSans-SemiBold';
+}
+
+h2 {
+    font-size: 48px;
+    font-family: 'InstrumentSans-SemiBold';
+}
+
+h3 {
+    font-size: 40px;
+    font-family: 'InstrumentSans-SemiBold';
+}
+
+h4 {
+    font-size: 32px;
+    font-family: 'InstrumentSans-SemiBold';
+}
+
+h5 {
+    font-size: 24px;
+    font-family: 'InstrumentSans';
+}
+
+h6 {
+    font-family: 'InstrumentSans';
+    font-size: 16px;
+}
+
+.line-space-subtile {
+    line-height: 32px;
+}
+
+.line-space-text {
+    line-height: 24px;
+}
+
+.homepage-text-style-custom {
+    padding-top: 5%;
+    height: 54%;
+    margin-bottom: 35%;
+}
