@@ -1,0 +1,85 @@
+h1 {
+    font-size: 3.75rem;
+    font-family: 'InstrumentSans-SemiBold';
+}
+
+h2 {
+    font-size: 3rem;
+    font-family: 'InstrumentSans-SemiBold';
+}
+
+h3 {
+    font-size: 2.5rem;
+    font-family: 'InstrumentSans-SemiBold';
+}
+
+h4 {
+    font-size: 2rem;
+    font-family: 'InstrumentSans-SemiBold';
+}
+
+h5 {
+    font-size: 1.5rem;
+    font-family: 'InstrumentSans';
+}
+
+h6 {
+    font-size: 1.125rem;
+    font-family: 'InstrumentSans';
+}
+
+.line-space-subtile {
+    line-height: 32px;
+}
+
+.line-space-text {
+    line-height: 24px;
+}
+
+.homepage-text-style-custom {
+    padding-top: 5%;
+    height: 54%;
+    margin-bottom: 35%;
+}
+
+@media (max-width: 576px) {
+    .markdown h1:first-child {
+        --ifm-h1-font-size: 2.5rem
+    }
+
+    .markdown>h2 {
+        --ifm-h2-font-size: 2.25rem
+    }
+
+    .markdown>h3 {
+        --ifm-h3-font-size: 2rem
+    }
+
+    .hero__title {
+        font-size: var(--ifm-h1-font-size);
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2.25rem;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+
+    h4 {
+        font-size: 1.75rem;
+    }
+
+    h5 {
+        font-size: 1.5rem;
+    }
+
+    h6 {
+        font-size: 1.25rem;
+    }
+}

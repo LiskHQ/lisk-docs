@@ -1,54 +1,24 @@
-@font-face {
-    font-family: "Gilroy";
-    src: url('/static/font/Gilroy-Regular.ttf') format('truetype');
-}
+ @font-face {
+     font-family: "InstrumentSans";
+     src: url('/static/font/InstrumentSans-Regular.ttf') format('truetype');
+ }
 
-@font-face {
-    font-family: "Gilroy-Bold";
-    src: url('/static/font/Gilroy-Bold.ttf') format('truetype');
-}
+ @font-face {
+     font-family: "InstrumentSans-Bold";
+     src: url('/static/font/InstrumentSans-Bold.ttf') format('truetype');
+ }
 
-@font-face {
-    font-family: "Gilroy-Black";
-    src: url('/static/font/Gilroy-Black.ttf') format('truetype');
-}
+ @font-face {
+     font-family: "InstrumentSans-BoldItalic";
+     src: url('/static/font/InstrumentSans-BoldItalic.ttf') format('truetype');
+ }
 
-@font-face {
-    font-family: "Gilroy-BlackItalic";
-    src: url('/static/font/Gilroy-BlackItalic.ttf') format('truetype');
-}
+ @font-face {
+     font-family: "InstrumentSans-SemiBold";
+     src: url('/static/font/InstrumentSans-SemiBold.ttf') format('truetype');
+ }
 
-@font-face {
-    font-family: "Gilroy-BoldItalic";
-    src: url('/static/font/Gilroy-BoldItalic.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: "Gilroy-Light";
-    src: url('/static/font/Gilroy-Light.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: "Gilroy-LightItalic";
-    src: url('/static/font/Gilroy-LightItalic.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: "Gilroy-SemiBold";
-    src: url('/static/font/Gilroy-SemiBold.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: "Gilroy-Medium";
-    src: url('/static/font/Gilroy-Medium.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: "Gilroy-ExtraBold";
-    src: url('/static/font/Gilroy-ExtraBold.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: "Gilroy-Heavy";
-    src: url('/static/font/Gilroy-Heavy.ttf') format('truetype');
-}
+ @font-face {
+     font-family: "InstrumentSans-Medium";
+     src: url('/static/font/InstrumentSans-Medium.ttf') format('truetype');
+ }
