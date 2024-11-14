@@ -36,7 +36,11 @@ const config = {
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'ind'],
-    localeConfigs: {},
+    localeConfigs: {
+      ind: {
+        label: 'Indonesian',
+      },
+    },
   },
 
   scripts: [
@@ -98,6 +102,7 @@ const config = {
           {
             type: 'localeDropdown',
             position: 'right',
+            queryString: '?persistLocale=true',
           },
           {
             type: 'doc',
