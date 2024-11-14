@@ -225,3 +225,11 @@ html[data-theme='dark'] .hero--primary {
   --ifm-hero-background-color: #000000;
   --ifm-hero-text-color: #FFFFFF;
 }
+
+html[data-theme='dark'] .DocSearch-Hit-Container {
+  background-color: #000000;
+}
+
+html[data-theme='dark'] .DocSearch-Hit[aria-selected=true] a {
+  background-color: #000000;
+}
