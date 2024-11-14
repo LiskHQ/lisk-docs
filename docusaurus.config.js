@@ -13,7 +13,7 @@ import { generatedDocs } from './plugins/generated-bridged-token-adresses-docs';
 const config = {
   title: 'Lisk Documentation',
   //tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.png',
+  favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
   url: process.env.LISK_DOC_URL ?? 'https://docs.lisk.com',

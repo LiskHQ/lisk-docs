@@ -46,7 +46,7 @@ transaction_fee = l2_execution_fee + l1_data_fee
 
 :::note
 Lisk's fee calculation is based on the fee system of OP Mainnet, using the latest **Fjord** upgrade.
-Check the [Fees page](https://docs.optimism.io/stack/transactions/fees#fjord) in the Optmism documentation, to learn more about how the fee system works in detail.
+Check the [Fees page](https://docs.optimism.io/stack/transactions/fees#fjord) in the Optimism documentation, to learn more about how the fee system works in detail.
 :::
 
 ### L2 Execution Fee 

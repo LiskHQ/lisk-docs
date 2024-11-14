@@ -14,16 +14,9 @@ function HomepageHeader() {
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
         <Heading as="h1" className="hero__title">
-          <Translate>Welcome to the Lisk Documentation 🎉</Translate>
+        <Translate>Welcome to the Lisk documentation 🎉</Translate>
         </Heading>
-        <p className="hero__subtitle"><Translate>Explore our comprehensive knowledge base tailored for both developers and users! Find in-depth technical information and helpful guides all about the Lisk blockchain.</Translate></p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/category/building-on-lisk">
-            <Translate>Let's build with Lisk  🛠</Translate>
-          </Link>
-        </div>
+        <p className="hero__subtitle line-space-subtile"><Translate>Explore our comprehensive knowledge base tailored for both developers and users! Find in-depth technical information and helpful guides all about the Lisk blockchain.</Translate></p>
         <div>
           <img src='/img/built-superchain-white.svg' className='superchain-white'></img>
           <img src='/img/built-superchain-black.svg' className='superchain-black'></img>
