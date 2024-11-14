@@ -88,7 +88,7 @@ The free plan for Moralis includes:
 
 To use the Moralis RPC Nodes, follow these steps:
 
-1. **Create a Moralis Account:** [Sign up](https://admin.moralis.com/) for free and access your RPC nodes.
-2. **Set Up Your Node:** Visit the [Setting Up RPC Nodes](https://docs.moralis.com/get-your-node-api-key) guide to create and configure your RPC node.
-3. **Make Your First RPC Call:** Once you have your node set up, follow the [tutorial](https://docs.moralis.com/make-your-first-rpc-call) to make your first JSON-RPC call using ethers.js.
+1. **Create a Moralis account:** [Sign up](https://admin.moralis.com/) for free and access your RPC nodes.
+2. **Set up your node:** Visit the [Setting Up RPC Nodes](https://docs.moralis.com/get-your-node-api-key) guide to create and configure your RPC node.
+3. **Make your first RPC call:** Once you have your node set up, follow the [tutorial](https://docs.moralis.com/make-your-first-rpc-call) to make your first JSON-RPC call using ethers.js.
 
