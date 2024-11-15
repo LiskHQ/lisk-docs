@@ -102,7 +102,6 @@ const config = {
           {
             type: 'localeDropdown',
             position: 'right',
-            queryString: '?persistLocale=true',
           },
           {
             type: 'doc',
