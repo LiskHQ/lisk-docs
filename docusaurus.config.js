@@ -99,10 +99,12 @@ const config = {
           srcDark: '/img/lisk-docs-dark.svg',
         },
         items: [
-          {
+          /*{
+            TODO: Uncomment when all localozed pages are translated
+          /* {
             type: 'localeDropdown',
             position: 'right',
-          },
+          }, */
           {
             type: 'doc',
             position: 'left',
