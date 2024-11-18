@@ -108,6 +108,24 @@ const sidebars = {
             keywords: ['guides','smart contracts','token development','token standards','erc-20','erc-721','erc-1155'],
           },
         },
+        {
+          type: 'category',
+          label: 'Web3 app development',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            'building-on-lisk/web3-app-development/overview',
+            'building-on-lisk/web3-app-development/build-a-web3-mobile-app',
+            'building-on-lisk/web3-app-development/build-a-web3-pwa',
+          ],
+          link: {
+            type: 'generated-index',
+            title: 'Web3 app development',
+            description: 'Guides explainig how to develop Web3 apps on Lisk.',
+            slug: '/category/building-on-lisk/web3-app-development',
+            keywords: ['guides','apps','dapps','app development','web3 app','web3 apps','pwa','mobile app'],
+          },
+        },
         'building-on-lisk/use-oracle-data',
       ],
       link: {

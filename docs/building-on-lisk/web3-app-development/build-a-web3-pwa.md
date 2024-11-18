@@ -1,6 +1,6 @@
 ---
 title: 'Building a Web3 PWA'
-description: 'A guide on how to build a progressive web application (PWA) on Lisk using ThirdWeb.'
+description: 'A tutorial on how to build a progressive web application (PWA) on Lisk using thirdweb.'
 keywords:
   [
     'Lisk',
@@ -14,8 +14,8 @@ keywords:
     'Mobile app development',
     'Lisk apps',
     'Lisk dApps',
-    'ThirdWeb',
+    'thirdweb',
   ]
 ---
 
-# How to build a Web3 PWA on Lisk with ThirdWeb
+# How to build a Web3 PWA on Lisk with thirdweb

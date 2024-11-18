@@ -1,6 +1,6 @@
 ---
 title: 'Building a Web3 mobile app'
-description: 'A guide on how to build a Web3 mobile application on Lisk using ThirdWeb.'
+description: 'A tutorial on how to build a Web3 mobile application on Lisk using thirdweb.'
 keywords:
   [
     'Lisk',
@@ -13,8 +13,8 @@ keywords:
     'Mobile app development',
     'Lisk apps',
     'Lisk dApps',
-    'ThirdWeb',
+    'thirdweb',
   ]
 ---
 
-# How to build a Web3 mobile app on Lisk with ThirdWeb
+# How to build a Web3 mobile app on Lisk with thirdweb
