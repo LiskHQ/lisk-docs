@@ -42,12 +42,6 @@ h6 {
     margin-bottom: 35%;
 }
 
-@media (min-width: 577px) {
-    .mobile_only {
-        display: none;
-    }
-}
-
 @media (max-width: 576px) {
     .markdown h1:first-child {
         --ifm-h1-font-size: 2.5rem
@@ -93,3 +87,10 @@ h6 {
         font-size: 1.25rem;
     }
 }
+
+@media (min-width: 577px) {
+    .mobile_only {
+        display: none;
+    }
+}
+
