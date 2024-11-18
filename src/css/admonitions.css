@@ -1,10 +1,9 @@
 /* Light mode configurations */
 
 .theme-admonition-info {
-    background-color: rgba(64, 112, 244, 0.10);
-    border: var(--ifm-alert-border-width) solid rgba(64, 112, 244, 1);
+    background-color: rgba(209, 208, 251, 0.25);
+    border: var(--ifm-alert-border-width) solid rgba(97, 63, 255, 1);
     border-left-width: var(--ifm-alert-border-left-width);
-
 }
 
 .theme-admonition-info code {
@@ -12,8 +11,8 @@
 }
 
 .theme-admonition-tip {
-    background-color: rgba(43, 214, 123, 0.15);
-    border: var(--ifm-alert-border-width) solid rgba(43, 214, 123, 1);
+    background-color: rgba(204, 255, 238, 0.25);
+    border: var(--ifm-alert-border-width) solid rgba(0, 170, 98, 1);
     border-left-width: var(--ifm-alert-border-left-width);
 }
 
@@ -22,8 +21,8 @@
 }
 
 .theme-admonition-danger {
-    background-color: rgba(255, 69, 87, 0.15);
-    border: var(--ifm-alert-border-width) solid rgba(255, 69, 87, 1);
+    background-color: rgba(250, 199, 190, .25);
+    border: var(--ifm-alert-border-width) solid rgba(232, 77, 49, 1);
     border-left-width: var(--ifm-alert-border-left-width);
 }
 
@@ -32,8 +31,8 @@
 }
 
 .theme-admonition-note {
-    background-color: rgb(197, 207, 228, 0.15);
-    border: var(--ifm-alert-border-width) solid rgb(197, 207, 228, 1);
+    background-color: rgba(209, 215, 225, .25);
+    border: var(--ifm-alert-border-width) solid rgba(40, 49, 61, 1);
     border-left-width: var(--ifm-alert-border-left-width);
 }
 
@@ -42,8 +41,8 @@
 }
 
 .theme-admonition-caution {
-    background-color: rgba(247, 227, 109, 0.15);
-    border: var(--ifm-alert-border-width) solid rgba(247, 227, 109, 1);
+    background-color: rgba(250, 225, 183, 0.25);
+    border: var(--ifm-alert-border-width) solid rgba(232, 177, 77, 1);
     border-left-width: var(--ifm-alert-border-left-width);
 }
 
@@ -51,55 +50,54 @@
     background-color: rgb(246, 247, 248)
 }
 
-
 /* Dark mode configurations */
 
 [data-theme='dark'] .theme-admonition-info {
-    background-color: rgba(64, 112, 244, 0.20);
-    border: var(--ifm-alert-border-width) solid rgba(64, 112, 244, 1);
+    background-color: rgba(97, 63, 255, .5);
+    border: var(--ifm-alert-border-width) solid rgba(97, 63, 255, 1);
     border-left-width: var(--ifm-alert-border-left-width);
 }
 
 [data-theme='dark'] .theme-admonition-info code {
-    background-color: rgb(246 247 248 / 30%)
+    background-color: rgba(209, 208, 251, 0.30);
 }
 
 [data-theme='dark'] .theme-admonition-tip {
-    background-color: rgba(43, 214, 123, 0.20);
-    border: var(--ifm-alert-border-width) solid rgba(43, 214, 123, 1);
+    background-color: rgba(0, 170, 98, .5);
+    border: var(--ifm-alert-border-width) solid rgba(0, 170, 98, 1);
     border-left-width: var(--ifm-alert-border-left-width);
 }
 
 [data-theme='dark'] .theme-admonition-tip code {
-    background-color: rgb(255, 255, 255, .30);
+    background-color: rgba(209, 208, 251, 0.30);
 }
 
 [data-theme='dark'] .theme-admonition-danger {
-    background-color: rgba(255, 69, 87, 0.20);
-    border: var(--ifm-alert-border-width) solid rgba(255, 69, 87, 1);
+    background-color: rgba(232, 77, 49, .5);
+    border: var(--ifm-alert-border-width) solid rgba(232, 77, 49, 1);
     border-left-width: var(--ifm-alert-border-left-width);
 }
 
 [data-theme='dark'] .theme-admonition-danger code {
-    background-color: rgb(246 247 248 / 30%)
+    background-color: rgba(209, 208, 251, 0.30);
 }
 
 [data-theme='dark'] .theme-admonition-note {
-    background-color: rgb(197, 207, 228, 0.20);
-    border: var(--ifm-alert-border-width) solid rgb(197, 207, 228, 1);
+    background-color: rgba(40, 49, 61, .5);
+    border: var(--ifm-alert-border-width) solid rgba(40, 49, 61, 1);
     border-left-width: var(--ifm-alert-border-left-width);
 }
 
 [data-theme='dark'] .theme-admonition-note code {
-    background-color: rgb(246 247 248 / 30%)
+    background-color: rgba(209, 208, 251, 0.30);
 }
 
 [data-theme='dark'] .theme-admonition-caution {
-    background-color: rgba(247, 227, 109, 0.20);
-    border: var(--ifm-alert-border-width) solid rgba(247, 227, 109, 1);
+    background-color: rgba(232, 177, 77, .5);
+    border: var(--ifm-alert-border-width) solid rgba(232, 177, 77, 1);
     border-left-width: var(--ifm-alert-border-left-width);
 }
 
 [data-theme='dark'] .theme-admonition-caution code {
-    background-color: rgb(246 247 248 / 30%)
+    background-color: rgba(209, 208, 251, 0.30);
 }
