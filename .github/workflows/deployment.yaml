@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - development
 
 env:
   NODE_VERSION: 18.x
@@ -38,5 +39,8 @@ jobs:
           aws s3 sync ./build s3://${{ secrets.AWS_S3_BUCKET }} --exact-timestamps --delete --region ${{ secrets.AWS_REGION }} $*
       - name: Invalidate cache
         run: |
-          aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CF_DISTRIBUTION_ID }} --paths "/*"
-
+          if [ "${{ secrets.AWS_CF_DISTRIBUTION_ID }}" != '' ]; then
+            aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CF_DISTRIBUTION_ID }} --paths "/*"
+          else
+            echo "AWS_CF_DISTRIBUTION_ID is not set. Skipping cache invalidation."
+          fi
