@@ -20,6 +20,27 @@ keywords:
 
 # Web3 App Development
 
+## Web3 App development steps
+
+### 1. The idea:
+Define what you want to create with the Web3 app and what problems your application will resolve.
+### 2. Choosing the blockchain ecosystem
+### 3. Smart contract development
+In this tutorial, we use [thirdweb](https://thirdweb.com/) to develop and deploy our smart contracts.
+### 4. App frontend development
+Choose the best suitable Web3 framework, such as React or Angular, to build the frontend of your Web3 app.
+We recommend to choose a Web3 development kit on top which provides a convenient framework to deveop Web3 applications.
+
+In this tutorial, we use [thirdweb](https://thirdweb.com/) as web3 development platform.
+
+#### Choosing the right app platform(s)
+
+##### Mobile friendly apps
+The first decision you’ll need to make when developing a mobile-friendly Web3 application is whether you want to design a native application, a [progressive web application](#pwa), or a mobile website.
+
+Each of these options comes with its own set of challenges. 
+
+
 ## PWA
 A Progressive Web App (= PWA) allows users to install your web app to their device.
 They appear as native apps on your desktop or mobile device and offer features like offline support and push notifications.
@@ -42,11 +63,16 @@ Currently, Google Play, Microsoft Store, and Samsung Galaxy Store support PWAs, 
 
 ### Further reading
 [Video tutorial: Build a web3 PWA by thirdweb](https://www.youtube.com/watch?v=VU8i-dn2_GE)
+
 ## Mobile
+
 
 ### Tutorials
 
 [How to build a Web3 mobile app on Lisk with thirdweb](./build-a-web3-pwa.md)
+
+### Further reading
+[](https://medium.com/dash-community/building-a-mobile-dapp-with-flutter-be945c80315a)
 
 ## Browser
 
