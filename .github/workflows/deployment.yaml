@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - development
+      - gh-pages
 
 env:
   NODE_VERSION: 18.x
