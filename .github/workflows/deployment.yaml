@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - development
+      - add-stg-setup
 
 env:
   NODE_VERSION: 18.x
