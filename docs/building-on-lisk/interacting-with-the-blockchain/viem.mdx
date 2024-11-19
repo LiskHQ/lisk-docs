@@ -1,0 +1,536 @@
+---
+title: ...with viem
+slug: /building-on-lisk/interacting-with-the-blockchain/viem
+description: Documentation for using Viem, a TypeScript interface for EVM-compatible blockchains. This page covers installation, setup, and various functionalities such as reading and writing blockchain data and interacting with smart contracts on Lisk.
+keywords:
+  [
+    viem,
+    Lisk,
+    Lisk mainnet,
+    Lisk testnet,
+    Ethereum,
+    smart contracts,
+    blockchain,
+    RPC URL,
+    JavaScript,
+    TypeScript,
+  ]
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Interacting with the blockchain with viem
+
+[viem](https://viem.sh/) a TypeScript interface for Ethereum that provides low-level stateless primitives for interacting with Ethereum.
+
+You can use viem to interact with smart contracts deployed on Lisk.
+Viem provides first-class support for chains implemented on the OP stack, see [viem.sh > OP stack](https://viem.sh/op-stack).
+
+## Install
+
+To install viem run the following command:
+
+```bash
+npm install --save viem
+```
+
+## Setup
+
+Before you can start using viem, you need to setup a [Client](https://viem.sh/op-stack/client) with a desired [Transport](https://viem.sh/docs/clients/intro.html#transports) and [Chain](https://viem.sh/docs/chains/introduction).
+
+### Public Client
+
+In order to read data from Lisk, you need to create a **Public client**.
+
+By extending the public client with `publicActionsL2` or `publicActionsL1`, you have access to additional methods for Lisk and other chains built on top of the OP stack.
+See [Layer 2 extensions](https://viem.sh/op-stack/client#layer-2-extensions) for more information.
+
+<Tabs>
+  <TabItem value="mainnet" label="Lisk" >
+    ```javascript title="public-client.js"
+    import { createPublicClient, http } from 'viem'
+    import { lisk, ethereum } from 'viem/chains'
+    import { publicActionsL2, publicActionsL1 } from 'viem/op-stack'
+    
+    export const publicClientL2 = createPublicClient({
+      chain: lisk,
+      transport: http()
+    }).extend(publicActionsL2()) 
+
+    export const publicClientL1 = createPublicClient({
+      chain: ethereum,
+      transport: http()
+    }).extend(publicActionsL1()) 
+    ```
+  </TabItem>
+  <TabItem value="testnet" label="Lisk Sepolia" default>
+    ```javascript title="public-client.js"
+    import { createPublicClient, http } from 'viem'
+    import { liskSepolia, sepolia } from 'viem/chains'
+    import { publicActionsL2, publicActionsL1 } from 'viem/op-stack'
+    
+    export const publicClientL2 = createPublicClient({
+      chain: liskSepolia,
+      transport: http()
+    }).extend(publicActionsL2()) 
+
+    export const publicClientL1 = createPublicClient({
+      chain: sepolia,
+      transport: http()
+    }).extend(publicActionsL1()) 
+    ```
+  </TabItem>
+</Tabs>
+
+### Wallet Client
+
+In order to write data to Lisk, you need to create a Wallet client (`createWalletClient`) and specify an [`Account`](https://ethereum.org/en/developers/docs/accounts/) to use.
+
+By extending the wallet client with `walletActionsL1` or `walletActionsL2`, you have access to additional methods for Lisk and other chains built on top of the OP stack.
+See [Layer 2 extensions](https://viem.sh/op-stack/client#layer-2-extensions) for more information.
+
+<Tabs>
+<TabItem value="jsonrpc" label="JSON-RPC Account">
+
+
+<Tabs>
+  <TabItem value="mainnet" label="Lisk" >
+    ```js title="wallet-client.js"
+    import { createWalletClient, custom } from 'viem'
+    import { ethereum, lisk } from 'viem/chains'
+    import { walletActionsL1, walletActionsL2 } from 'viem/op-stack'
+    
+    // Retrieve Account from an EIP-1193 Provider.
+    const [account] = await window.ethereum.request({ 
+      method: 'eth_requestAccounts'
+    }) 
+    
+    export const walletClientL1 = createWalletClient({
+      account, 
+      chain: ethereum,
+      transport: custom(window.ethereum)
+    }).extend(walletActionsL1());
+
+    export const walletClientL2 = createWalletClient({
+      account, 
+      chain: lisk,
+      transport: custom(window.ethereum)
+    }).extend(walletActionsL2());
+    ```
+  </TabItem>
+  <TabItem value="testnet" label="Lisk Sepolia" default>
+    ```js title="wallet-client.js"
+    import { createWalletClient, custom } from 'viem'
+    import { sepolia, liskSepolia } from 'viem/chains'
+    import { walletActionsL1, walletActionsL2 } from 'viem/op-stack'
+    
+    // Retrieve Account from an EIP-1193 Provider.
+    const [account] = await window.ethereum.request({ 
+      method: 'eth_requestAccounts'
+    }) 
+    
+    export const walletClientL1 = createWalletClient({
+      account, 
+      chain: sepolia,
+      transport: custom(window.ethereum)
+    }).extend(walletActionsL1());
+
+    export const walletClientL2 = createWalletClient({
+      account, 
+      chain: liskSepolia,
+      transport: custom(window.ethereum)
+    }).extend(walletActionsL2());
+    ```
+  </TabItem>
+</Tabs>
+
+
+
+</TabItem>
+<TabItem value="local" label="Local Account">
+
+Replace `<PRIVATE_KEY>` with the private key of the account you want to use.
+The `0x` prefix indicates that the following string is a hexadecimal number.
+
+<Tabs>
+  <TabItem value="mainnet" label="Lisk" >
+    ```js title="wallet-client.js"
+    import { createWalletClient, http } from 'viem'
+    import { privateKeyToAccount } from 'viem/accounts'
+    import { ethereum, lisk } from 'viem/chains'
+    import { walletActionsL1, walletActionsL2 } from 'viem/op-stack'
+
+    // Wallet client for Ethereum
+    export const walletClientL1 = createWalletClient({
+      account: privateKeyToAccount('0x<PRIVATE_KEY>'), 
+      chain: ethereum,
+      transport: http()
+    }).extend(walletActionsL1());
+
+    // Wallet client for Lisk
+    export const walletClientL2 = createWalletClient({
+      account: privateKeyToAccount('0x<PRIVATE_KEY>'), 
+      chain: lisk,
+      transport: http()
+    }).extend(walletActionsL2());
+    ```
+  </TabItem>
+  <TabItem value="testnet" label="Lisk Sepolia" default>
+    ```js title="wallet-client.js"
+    import { createWalletClient, http } from 'viem'
+    import { privateKeyToAccount } from 'viem/accounts'
+    import { sepolia, liskSepolia } from 'viem/chains'
+    import { walletActionsL1, walletActionsL2 } from 'viem/op-stack'
+
+    // Wallet client for Ethereum
+    export const walletClientL1 = createWalletClient({
+      account: privateKeyToAccount('0x<PRIVATE_KEY>'), 
+      chain: sepolia,
+      transport: http()
+    }).extend(walletActionsL1());
+
+    // Wallet client for Lisk
+    export const walletClientL2 = createWalletClient({
+      account: privateKeyToAccount('0x<PRIVATE_KEY>'), 
+      chain: liskSepolia,
+      transport: http()
+    }).extend(walletActionsL2());
+    ```
+  </TabItem>
+</Tabs>
+
+
+
+</TabItem>
+</Tabs>
+
+:::info
+In addition to making a JSON-RPC request (`eth_requestAccounts`) to get an Account, viem provides various helper methods for creating an `Account`, including: [`privateKeyToAccount`](https://viem.sh/docs/accounts/privateKey.html), [`mnemonicToAccount`](https://viem.sh/docs/accounts/mnemonic.html), and [`hdKeyToAccount`](https://viem.sh/docs/accounts/hd.html).
+ 
+{ /* To use Lisk Sepolia (testnet), replace `lisk` with `liskSepolia`.
+ */}
+:::
+
+## Reading data from the blockchain
+
+Create a [public client](#public-client) and use it to read and access data from Lisk using [Public Actions](https://viem.sh/docs/actions/public/introduction) and [OP stack public actions](https://viem.sh/op-stack/client#layer-2-extensions).
+
+Public Actions are client methods that map one-to-one with a "public" Ethereum RPC method (`eth_blockNumber`, `eth_getBalance`, etc.).
+
+For example, you can use the `getBlockNumber` action to get the latest block:
+
+```javascript title="read-example.js"
+import { parseEther } from 'viem'
+import { publicClientL2 } from './public-client.js'
+
+const blockNumber = await publicClientL2.getBlockNumber();
+
+export const l1Gas = await publicClientL2.estimateL1Gas({ 
+  account: '0x3C46A11471f285E36EE8d089473ce98269D1b081', 
+  to: '0x70997970c51812dc3a010c7d01b50e0d17dc79c8', 
+  value: parseEther('0.1') 
+}) 
+
+console.log(blockNumber);
+console.log(l1Gas);
+```
+
+
+## Writing data to the blockchain
+
+Create a [wallet client](#wallet-client) and use it to read and access data from Lisk using [Wallet Actions](https://viem.sh/docs/actions/wallet/introduction) and [OP stack wallet actions](https://viem.sh/op-stack/client#layer-2-extensions).
+
+Wallet Actions are actions that map one-to-one with a "wallet" or "signable" Ethereum RPC method (`eth_requestAccounts`, `eth_sendTransaction`, etc). 
+
+For example, you can use the `sendTransaction` action to post a transaction:
+
+```javascript title="write-example.js"
+import { walletClientL2 } from './wallet-client.js'
+
+const hash = await walletClientL2.sendTransaction({ 
+  to: '0x...',
+  value: 1000000000000000000n
+})
+
+console.log(hash);
+```
+
+## Interacting with smart contracts
+
+You can use viem to interact with a smart contract on Lisk by creating a `Contract` instance using [`getContract`](https://viem.sh/docs/contract/getContract.html) and passing it the contract ABI, contract address, and and [Public](https://viem.sh/docs/clients/public.html) and/or [Wallet](https://viem.sh/docs/clients/wallet.html) Client:
+
+<Tabs>
+<TabItem value="example" label="contract-example.js">
+
+```js title="contract-example.js"
+import { getContract } from 'viem'
+import { wagmiAbi } from './abi.js'
+import { publicClient, walletClient } from './client.js'
+ 
+// 1. Create contract instance
+const contract = getContract({
+  address: 'CONTRACT_ADDRESS',
+  abi: wagmiAbi,
+  // 1a. Insert a single client
+  //client: publicClient,
+  // 1b. Or public and/or wallet clients
+  client: { public: publicClient, wallet: walletClient }
+})
+ 
+// 2. Call contract methods, fetch events, listen to events, etc.
+const result = await contract.read.totalSupply()
+const logs = await contract.getEvents.Transfer()
+const unwatch = contract.watchEvent.Transfer(
+  { from: '0xA0Cf798816D4b9b9866b5330EEa46a18382f251e' },
+  { onLogs(logs) { console.log(logs) } }
+)
+```
+
+</TabItem>
+<TabItem value="client" label="client.js">
+
+<Tabs>
+  <TabItem value="mainnet" label="Lisk" >
+    ```js title="client.js"
+    import { createPublicClient, createWalletClient, http, custom } from 'viem'
+    import { lisk } from 'viem/chains'
+    import { EthereumProvider } from '@walletconnect/ethereum-provider'
+    import { publicActionsL2 } from 'viem/op-stack'
+    
+    export const publicClient = createPublicClient({
+      chain: lisk,
+      transport: http(),
+    }).extend(publicActionsL2());
+    
+    // eg: Metamask
+    export const walletClient = createWalletClient({
+      chain: lisk,
+      transport: custom(window.ethereum),
+    })
+    
+    // eg: WalletConnect
+    const provider = await EthereumProvider.init({
+      projectId: "abcd1234",
+      showQrModal: true,
+      chains: [1],
+    })
+    
+    export const walletClientWC = createWalletClient({
+      chain: lisk,
+      transport: custom(provider),
+    })
+    ```
+  </TabItem>
+  <TabItem value="testnet" label="Lisk Sepolia" default>
+    ```js title="client.js"
+    import { createPublicClient, createWalletClient, http, custom } from 'viem'
+    import { liskSepolia } from 'viem/chains'
+    import { EthereumProvider } from '@walletconnect/ethereum-provider'
+    import { publicActionsL2 } from 'viem/op-stack'
+    
+    export const publicClient = createPublicClient({
+      chain: liskSepolia,
+      transport: http(),
+    }).extend(publicActionsL2());
+    
+    // eg: Metamask
+    export const walletClient = createWalletClient({
+      chain: liskSepolia,
+      transport: custom(window.ethereum),
+    })
+    
+    // eg: WalletConnect
+    const provider = await EthereumProvider.init({
+      projectId: "abcd1234",
+      showQrModal: true,
+      chains: [1],
+    })
+    
+    export const walletClientWC = createWalletClient({
+      chain: liskSepolia,
+      transport: custom(provider),
+    })
+    ```
+  </TabItem>
+</Tabs>
+
+
+
+</TabItem>
+<TabItem value="abi" label="abi.js">
+
+:::tip
+The ABI of a contract can be found on the respective contract page in [BlockScout](https://sepolia-blockscout.lisk.com/).
+:::
+
+```js title="abi.js"
+export const wagmiAbi = [
+  [
+    {
+        "inputs": [],
+        "stateMutability": "nonpayable",
+        "type": "constructor"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "sender",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "string",
+                "name": "message",
+                "type": "string"
+            }
+        ],
+        "name": "NewHello",
+        "type": "event"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "name": "blacklist",
+        "outputs": [
+            {
+                "internalType": "string",
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "counter",
+        "outputs": [
+            {
+                "internalType": "uint32",
+                "name": "",
+                "type": "uint32"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "_message",
+                "type": "string"
+            }
+        ],
+        "name": "createHello",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "maxLength",
+        "outputs": [
+            {
+                "internalType": "uint32",
+                "name": "",
+                "type": "uint32"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "name": "message",
+        "outputs": [
+            {
+                "internalType": "string",
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "minLength",
+        "outputs": [
+            {
+                "internalType": "uint32",
+                "name": "",
+                "type": "uint32"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "owner",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "string[]",
+                "name": "_newBlackList",
+                "type": "string[]"
+            }
+        ],
+        "name": "setBlacklist",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint32",
+                "name": "_newMin",
+                "type": "uint32"
+            },
+            {
+                "internalType": "uint32",
+                "name": "_newMax",
+                "type": "uint32"
+            }
+        ],
+        "name": "setMinMaxMessageLength",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    }
+  ]
+];
+```
+</TabItem>
+</Tabs>
+
+:::info
+`CONTRACT_ADDRESS` is the address of the deployed contract.
+:::

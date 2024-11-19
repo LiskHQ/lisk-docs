@@ -1,0 +1,235 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+
+@import url('./fonts.css');
+@import url('./footer.css');
+@import url('./admonitions.css');
+@import url('./sidebar.css');
+@import url('./navbar.css');
+@import url('./edit_page.css');
+@import url('./images.css');
+@import url('./typography.css');
+
+:root {
+  --ifm-color-primary: #000000;
+  --ifm-color-primary-dark: #000000;
+  --ifm-color-primary-darker: #000000;
+  --ifm-color-primary-darkest: #000000;
+  --ifm-color-primary-light: #000000;
+  --ifm-color-primary-lighter: #000000;
+  --ifm-color-primary-lightest: #000000;
+  --ifm-color-secondary: rgba(230, 230, 230, .5);
+  --ifm-font-family-base: 'InstrumentSans';
+  --ifm-heading-font-family: 'InstrumentSans-SemiBold';
+  --ifm-color-gray-900: #000000;
+  --ifm-navbar-link-color: var(var(--ifm-color-primary));
+  --ifm-breadcrumb-item-background-active: rgba(230, 230, 230, .5);
+  --ifm-tabs-color-active-border: rgba(97, 63, 255, 1);
+  --ifm-code-background: rgba(40, 49, 61, 1);
+  --ifm-alert-border-color: rgba(97, 63, 255, 1);
+  --ifm-code-font-size: 90%;
+  --docusaurus-highlighted-code-line-bg: rgb(00 00 00 / 10%);
+  --ifm-font-color-base: #000000;
+  --ifm-menu-color: #000000;
+  --ifm-toc-link-color: #000000;
+  --ifm-link-color: rgba(97, 63, 255, 1);
+  --ifm-button-color: #000000;
+}
+
+.hero--primary {
+  --ifm-hero-background-color: #FFFFFF;
+  --ifm-hero-text-color: #000000;
+  margin-bottom: -2.5%;
+}
+
+.theme-code-block>[class^='codeBlockTitle'] {
+  font-weight: 600;
+  font-size: large;
+  background-color: rgba(230, 230, 230, .25);
+}
+
+html[data-theme='dark'] .theme-code-block>[class^='codeBlockTitle'] {
+  font-weight: 600;
+  font-size: large;
+  background-color: rgba(40, 49, 61, 1);
+}
+
+code {
+  background-color: rgba(230, 230, 230, .25);
+}
+
+html[data-theme='dark'] code {
+  background-color: rgba(40, 49, 61, 1);
+}
+
+.codeBlockLines_node_modules-\@docusaurus-theme-classic-lib-theme-CodeBlock-Content-styles-module {
+  background-color: rgba(230, 230, 230, .25);
+}
+
+html[data-theme='dark'] .codeBlockLines_node_modules-\@docusaurus-theme-classic-lib-theme-CodeBlock-Content-styles-module {
+  background-color: rgba(40, 49, 61, 1);
+}
+
+.theme-doc-markdown details {
+  border: var(--ifm-alert-border-width) solid var(--ifm-alert-border-color);
+  border-left-width: var(--ifm-alert-border-left-width);
+}
+
+summary {
+  font-size: large;
+  font-weight: 600;
+}
+
+.alert {
+  --ifm-link-color: var(--ifm-color-primary);
+  --ifm-link-hover-color: var(--ifm-color-primary);
+  --ifm-link-decoration: none;
+  color: #000000;
+}
+
+.alert--info {
+  --ifm-alert-background-color: inherit;
+  --ifm-alert-background-color-highlight: #f6f7f8;
+  --ifm-alert-border-color: inherit;
+}
+
+html[data-theme='dark'] .alert--info {
+  --ifm-alert-background-color-highlight: rgb(255 255 255 / 10%);
+}
+
+a {
+  display: inline-block;
+  scroll-margin-top: var(--ifm-navbar-height);
+  text-decoration-color: var(--ifm-color-primary);
+}
+
+.alert a {
+  text-decoration-color: rgba(91, 91, 91, 1);
+}
+
+html[data-theme='dark'] .alert a {
+  text-decoration-color: var(--ifm-color-primary);
+}
+
+figure {
+  padding: 4px;
+  margin: auto;
+}
+
+figure>img {
+  display: block;
+}
+
+figcaption {
+  background-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary-contrast-background);
+  font-style: italic;
+  padding: 2px;
+  text-align: center;
+}
+
+article img,
+article iframe {
+  display: inline;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}
+
+.menu {
+  overflow-y: auto;
+}
+
+.padding-bottom--lg {
+  margin-bottom: 3%;
+}
+
+.pagination-nav {
+  margin-top: 6%;
+}
+
+.btn-custom {
+  width: 100%;
+  border: solid #000000;
+  background-color: #FFFFFF;
+  border-radius: 0%;
+  margin-top: 5%;
+}
+
+[data-theme='dark'] .btn-custom {
+  width: 100%;
+  border: solid #FFFFFF;
+  background-color: #000000;
+  color: #FFFFFF;
+  border-radius: 0%;
+  margin-top: 5%;
+}
+
+.btn-custom:hover {
+  background-color: rgba(0, 0, 0, .05);
+}
+
+[data-theme='dark'] .btn-custom:hover {
+  background-color: rgba(255, 255, 255, .1);
+}
+
+/* .overview-span {
+  display: grid;
+  align-items: center;
+  column-gap: 5px;
+  background-color: #4070f41a;
+  border-radius: 1em;
+  padding: 5%;
+  margin-bottom: 2%;
+} */
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #FFFFFF;
+  --ifm-color-primary-dark: #FFFFFF;
+  --ifm-color-primary-darker: #FFFFFF;
+  --ifm-color-primary-darkest: #FFFFFF;
+  --ifm-color-primary-light: #FFFFFF;
+  --ifm-color-primary-lighter: #FFFFFF;
+  --ifm-color-primary-lightest: #FFFFFF;
+  --ifm-color-secondary: rgba(230, 230, 230, 1);
+  --ifm-code-font-size: 90%;
+  --ifm-code-background: rgba(230, 230, 230, 1, .25);
+  --ifm-breadcrumb-item-background-active: rgba(230, 230, 230, .2);
+  --ifm-alert-border-color: rgba(97, 63, 255, 1);
+  --ifm-font-color-base: #FFFFFF;
+  --ifm-toc-link-color: #FFFFFF;
+  --ifm-menu-color: #FFFFFF;
+  --ifm-link-color: rgba(0, 170, 98, 1);
+  --ifm-tabs-color-active-border: rgba(0, 170, 98, 1);
+  --ifm-alert-border-color: rgba(0, 170, 98, 1);
+}
+
+html[data-theme='dark'] {
+  --ifm-background-color: #000000;
+  --ifm-background-surface-color: #000000;
+  --docusaurus-highlighted-code-line-bg: #000000;
+  --ifm-footer-background-color: #000000;
+}
+
+html[data-theme='dark'] .alert {
+  color: rgba(255, 255, 255, 1);
+}
+
+html[data-theme='dark'] .hero--primary {
+  --ifm-hero-background-color: #000000;
+  --ifm-hero-text-color: #FFFFFF;
+}
+
+html[data-theme='dark'] .DocSearch-Hit-Container {
+  background-color: #000000;
+}
+
+html[data-theme='dark'] .DocSearch-Hit[aria-selected=true] a {
+  background-color: #000000;
+}

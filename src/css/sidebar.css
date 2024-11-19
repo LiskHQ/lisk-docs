@@ -1,0 +1,19 @@
+/* Sidebar https://docusaurus.io/docs/next/styling-layout#theme-class-names */
+
+.theme-doc-sidebar-item-category-level-1>.menu__list-item-collapsible>.menu__link {
+  font-family: 'InstrumentSans-SemiBold';
+  font-size: 18px;
+  line-height: 2.5;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+}
+
+.menu {
+  overflow-x: unset;
+  padding: 0 !important;
+  font-family: "InstrumentSans";
+}
+
+.menu__list {
+  padding-left: .5em;
+}

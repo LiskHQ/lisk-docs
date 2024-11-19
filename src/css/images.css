@@ -1,0 +1,53 @@
+.lsk-light {
+    margin-top: -.35em;
+    width: 5em;
+    padding: .5%;
+}
+
+.lsk-dark {
+    margin-top: -.35em;
+    width: 5em;
+    padding: .5%;
+}
+
+.navbar__logo img {
+    height: 80%;
+}
+
+html[data-theme='light'] .lsk-dark {
+    display: none;
+}
+
+html[data-theme='dark'] .lsk-light {
+    display: none;
+}
+
+.lisk-smp {
+    height: 80px;
+    width: 80px;
+    margin-top: 6.5%;
+}
+
+html[data-theme='dark'] .superchain-black {
+    display: none;
+}
+
+.superchain-black {
+    height: 150px;
+    width: 150px;
+}
+
+html[data-theme='light'] .superchain-white {
+    display: none;
+}
+
+.superchain-white {
+    height: 150px;
+    width: 150px;
+}
+
+/* .overview-img {
+    display: block;
+    margin-left: auto;
+    margin-right: -3em;
+} */

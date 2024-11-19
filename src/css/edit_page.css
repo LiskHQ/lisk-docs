@@ -1,0 +1,29 @@
+.theme-edit-this-page {
+    border: 1px solid var(--ifm-color-emphasis-300);
+    padding: .9em;
+    border-radius: var(--ifm-pagination-nav-border-radius);
+    transition: border-color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+    text-decoration: none;
+}
+
+.theme-edit-this-page:hover {
+    text-decoration: none;
+    border-color: var(--ifm-color-primary);
+}
+
+html[data-theme='dark'] .theme-edit-this-page {
+    border: 1px solid var(--ifm-color-emphasis-300);
+    padding: .9em;
+    border-radius: var(--ifm-pagination-nav-border-radius);
+    transition: border-color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+    text-decoration: none;
+}
+
+.theme-edit-this-page svg path {
+    fill: var(--ifm-menu-color);
+}
+
+html[data-theme='dark'] .theme-edit-this-page:hover {
+    text-decoration: none;
+    border-color: var(--ifm-color-primary);
+}
