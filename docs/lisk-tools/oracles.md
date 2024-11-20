@@ -11,7 +11,6 @@ keywords:
     Lisk Testnet,
     Lisk network,
     Redstone,
-    Tellor,
     price feeds,
     data feeds,
   ]
@@ -41,26 +40,3 @@ Interested in integration? [Get in contact](https://discord.com/invite/PVxBZKFr4
 
 - Lisk
 - Lisk Sepolia
-
-### Guides
-
-- [Accessing oracle data with Redstone (Pull)](../building-on-lisk/using-oracle-data/redstone-pull.md)
-
-## Tellor
-
-Tellor is an immutable decentralized oracle protocol where parties can request the value of an offchain data point (e.g. ETH/USD) and reporters compete to add this value to an onchain databank.
-The inputs to this databank are secured by a network of staked reporters.
-
-Tellor utilizes crypto-economic incentive mechanisms, rewarding honest data submissions by reporters and punishing bad actors through the issuance of Tellor’s token, Tributes (TRB) and a dispute mechanism.
-
-This incentivizes an open, permissionless network of data reporting and data validation, ensuring that data can be provided by anyone and checked by everyone.
-
-[A list of all the Tellor contracts deployed on Lisk is available on their documentation](https://docs.tellor.io/tellor/the-basics/contracts-reference#lisk)
-
-#### Supported Networks
-
-- Lisk
-- Lisk Sepolia
-
-### Guides
-- [Accessing oracle data with Tellor](../building-on-lisk/using-oracle-data/tellor.md)
