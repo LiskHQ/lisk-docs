@@ -23,9 +23,9 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'LiskHQ', // Usually your GitHub org/user name.
+  /* organizationName: 'LiskHQ', // Usually your GitHub org/user name.
   projectName: 'lisk-documentation', // Usually your repo name.
-  trailingSlash: false,
+  trailingSlash: false, */
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
@@ -35,7 +35,12 @@ const config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'ind'],
+    localeConfigs: {
+      ind: {
+        label: 'Indonesian',
+      },
+    },
   },
 
   scripts: [
@@ -94,6 +99,12 @@ const config = {
           srcDark: '/img/lisk-docs-dark.svg',
         },
         items: [
+          /*{
+            TODO: Uncomment when all localozed pages are translated
+          /* {
+            type: 'localeDropdown',
+            position: 'right',
+          }, */
           {
             type: 'doc',
             position: 'left',
