@@ -55,7 +55,7 @@ Tellor utilizes crypto-economic incentive mechanisms, rewarding honest data subm
 
 This incentivizes an open, permissionless network of data reporting and data validation, ensuring that data can be provided by anyone and checked by everyone.
 
-[List of current token & oracle contracts available in the Tellor Documentation](https://docs.tellor.io/tellor/the-basics/contracts-reference#lisk)
+[A list of all the Tellor contracts deployed on Lisk is available on their documentation](https://docs.tellor.io/tellor/the-basics/contracts-reference#lisk)
 
 #### Supported Networks
 

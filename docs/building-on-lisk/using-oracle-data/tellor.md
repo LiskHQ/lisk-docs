@@ -21,7 +21,7 @@ keywords: [
 ---
 
 # Using oracle data with Tellor
-[Tellor](https://tellor.io/) is an immutable decentralized oracle protocol where parties can request the value of an off-chain data point (e.g. ETH/USD, LSK/USD) and reporters compete to add this value to an on-chain data-bank.
+[Tellor](https://tellor.io/) is an immutable decentralized oracle protocol where parties can request the value of an offchain data point (e.g. ETH/USD, LSK/USD) and reporters compete to add this value to an onchain databank.
 The inputs to this data-bank are secured by a network of staked reporters.
 
 Tellor utilizes crypto-economic incentive mechanisms, rewarding honest data submissions by reporters and punishing bad actors through the issuance of Tellor’s token, Tributes (TRB) and a dispute mechanism.
@@ -36,9 +36,9 @@ To install [usingtellor](https://github.com/tellor-io/usingtellor), run one the 
 - Hardhat: `npm install usingtellor`
 - Foundry: `forge install tellor-io/usingtellor`
 
-Once installed this will allow your contracts to inherit the functions from the contract 'UsingTellor'.
+Once installed, this will allow your contracts to inherit the functions from the 'UsingTellor' contract.
 
-Great! Now that you've got the tools ready, let's go through a simple exercise where we retrieve the eth/usd and lsk/usd prices from Tellor.
+Great! Now that you've got the tools ready, let's go through a simple exercise where we retrieve the `eth/usd` and `lsk/usd` prices from Tellor.
 
 ## Import
 
@@ -68,8 +68,8 @@ For the Lisk Mainnet, the Tellor Oracle address is: [0x896419Ed2E0dC848a1f7d2814
 
 In the example below, we add two functions:
 
-- `getETHPrice()` that reads the ETH/USD price feed and another function 
-- `getLSKPrice()` that reads the LSK/USD price feed from the Oracle
+- `getETHSpotPrice()` that reads the ETH/USD price feed and another function 
+- `getLSKSpotPrice()` that reads the LSK/USD price feed from the Oracle
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -110,7 +110,7 @@ contract MyContract is UsingTellor {
      * @return _value the ETH spot price from Tellor, with 18 decimal places
      * @return timestamp the value's timestamp
      */
-    function getETHPrice()
+    function getETHSpotPrice()
         public
         returns (
             uint256 _value,
@@ -153,7 +153,7 @@ contract MyContract is UsingTellor {
      * @return _value the LSK spot price from Tellor, with 18 decimal places
      * @return timestamp the value's timestamp
      */
-    function getLSKPrice()
+    function getLSKSpotPrice()
         public
         returns (
             uint256 _value,
@@ -185,7 +185,7 @@ You can adapt this contract to your needs.
 The example utilizes some best practices[^1] for using Tellor by implementing a dispute time buffer and a data staleness check.
 In addition, it also seeks to mitigate back-in-time dispute attacks by caching the most recent value and timestamp.
 
-[^1]: Based on  examples in [Tellors best practices repository](https://github.com/tellor-io/best-practices-user/tree/main)
+[^1]: Based on examples in [Tellor's best practices repository](https://github.com/tellor-io/best-practices-user/tree/main)
 
 :::tip
 For a general overview of best practices using Tellor, go to the [User checklists](https://docs.tellor.io/tellor/getting-data/user-checklists) in the Tellor docs.
