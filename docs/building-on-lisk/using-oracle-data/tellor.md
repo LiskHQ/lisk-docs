@@ -119,7 +119,7 @@ contract MyContract is UsingTellor {
     {
         // retrieve the most recent 20+ minute old ETH price. 
         // the buffer allows time for a bad value to be disputed
-        (bytes memory _data, uint256 _timestamp) = getDataBefore(ethQueryId, block.timestamp - DISPUTE_BUFFER);
+        (bytes memory _data, uint256 _timestamp) = _getDataBefore(ethQueryId, block.timestamp - DISPUTE_BUFFER);
 
         // check whether any value was retrieved
         if (_timestamp == 0 || _data.length == 0) revert NoValueRetrieved(_timestamp);
@@ -160,7 +160,7 @@ contract MyContract is UsingTellor {
             uint256 timestamp
         )
     {
-        (bytes memory _data, uint256 _timestamp) = getDataBefore(lskQueryId, block.timestamp - DISPUTE_BUFFER);
+        (bytes memory _data, uint256 _timestamp) = _getDataBefore(lskQueryId, block.timestamp - DISPUTE_BUFFER);
 
         if (_timestamp == 0 || _data.length == 0) revert NoValueRetrieved(_timestamp);
 
