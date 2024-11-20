@@ -1,0 +1,782 @@
+---
+title: Lisk L1->L2 migration guide
+slug: /building-on-lisk/migration-guide
+description: "A migration guide, explaining how to smoothly migrate any Lisk L1 app to Lisk L2."
+keywords: [
+    "Lisk",
+    "Lisk migration",
+    "Lisk L1",
+    "Lisk L2",
+    "Lisk testnet",
+    "Lisk SDK",
+    "Solidity",
+    "smart contract development",
+    "build on lisk",
+    ]
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+:::warning
+These docs are referring to the previous Lisk chain on L1, which stopped when Lisk migrated to L2 on May 2024. 
+If you wish to develop on the current Lisk L2 chain, please refer to the developer documentation under the [Building on Lisk](../category/building-on-lisk) category
+:::
+
+# Lisk L1->L2 migration guide
+
+How to smoothly migrate any Lisk L1 app to Lisk L2.
+
+## Requirements
+
+You need:
+
+- A Lisk L1 application built on [Lisk SDK](https://github.com/LiskHQ/lisk-sdk) version 6.0.0 or later.
+- A basic understanding of [Solidity](https://soliditylang.org/).
+- The smart contract development framework of your choice. 
+In this guide, we will use the [Foundry](https://book.getfoundry.sh/) framework.
+
+## Project setup
+
+To illustrate the migration process, we will use the [Hello module](https://github.com/LiskHQ/lisk-sdk-examples/tree/development/tutorials/hello/hello_client/src/app/modules/hello) from Lisk L1, and migrate it to Lisk L2. 
+
+To start with the project migration, first create a new project with Foundry like this:
+
+```bash
+forge init hello_liskl2
+```
+
+This will create a new folder `hello_liskl2`, which will contain the smart contracts we are going to implement.
+
+```bash
+cd hello_liskl2
+```
+
+## Module migration
+
+:::info
+**Modules in Lisk L1** are re-implemented as **smart contracts in Lisk L2.**
+:::
+
+To create a new smart contract, create a new file `Hello.sol` under `src/` and add the following content: 
+
+```solidity title="hello_liskl2/src/Hello.sol"
+// SPDX-License-Identifier: MIT
+// compiler version must be greater than or equal to 0.8.20 and less than 0.9.0
+pragma solidity ^0.8.20;
+
+contract Hello {
+
+}
+```
+
+Inside the new contract, we will put all the logic that was residing in the Lisk L1 `Hello` module before.
+
+### Table: Lisk L1/L2 comparison
+| Description          | Lisk L1                      | Lisk L2                       |
+| :------------------- | :----------------------------| :---------------------------- |
+| Onchain business logic| Module                      |[Smart contract](https://solidity-by-example.org/first-app/) |
+| Onchain data storage | Stores (onchain)             |[State variables](https://solidity-by-example.org/variables/)|
+| Logging to the blockchain| Blockchain Events        |[Events](https://solidity-by-example.org/events/)|
+| State-transition logic triggered by a transaction| Commands|[Functions](https://solidity-by-example.org/function/)|
+| API                  | Endpoints                    |[View functions](https://solidity-by-example.org/view-and-pure-functions/)|
+| Internal API         | Methods                      |[Functions (+ modifiers)](https://solidity-by-example.org/function-modifier/)|
+| Logic triggered per block| Lifecycle Hooks          |X[^1]                              |
+
+[^1]: No direct equivalent in solidity.
+Please investigate for custom solutions to migrate logic residing in the lifecycle hooks.
+
+### Storage
+
+Migrate the onchain stores of a module by implementing corresponding state variables in the contract as shown below.
+
+<Tabs>
+  <TabItem value="liskl1" label="Lisk L1">
+  <Tabs>
+      <TabItem value="message" label="Message Store" default>
+        ```typescript title="hello_client/src/app/modules/hello/stores/message.ts"
+        import { BaseStore } from 'lisk-sdk';
+
+        export interface MessageStoreData {
+            message: string;
+        }
+
+        export const messageStoreSchema = {
+            $id: '/hello/message',
+            type: 'object',
+            required: ['message'],
+            properties: {
+                message: {
+                    dataType: 'string',
+                    fieldNumber: 1,
+                },
+            },
+        };
+
+        export class MessageStore extends BaseStore<MessageStoreData> {
+            public schema = messageStoreSchema;
+        }
+        ```
+      </TabItem>
+      <TabItem value="counter" label="Counter Store">
+        ```typescript title="hello_client/src/app/modules/hello/stores/counter.ts"
+        import { BaseStore } from 'lisk-sdk';
+
+        export interface CounterStoreData {
+          counter: number;
+        }
+
+        export const counterKey = Buffer.alloc(0);
+
+        export const counterStoreSchema = {
+          $id: '/hello/counter',
+          type: 'object',
+          required: ['counter'],
+          properties: {
+            counter: {
+              dataType: 'uint32',
+              fieldNumber: 1,
+            },
+          },
+        };
+
+        export class CounterStore extends BaseStore<CounterStoreData> {
+          public schema = counterStoreSchema;
+        }
+        ```
+      </TabItem>
+    </Tabs>
+  </TabItem>
+  <TabItem value="liskl2" label="Lisk L2" default>
+    ```solidity title="hello_liskl2/src/Hello.sol"
+    // SPDX-License-Identifier: MIT
+    // compiler version must be greater than or equal to 0.8.20 and less than 0.9.0
+    pragma solidity ^0.8.20;
+
+    contract Hello {
+      /** State variables */
+      // State variable for the Hello messages
+      mapping(address => string) public message;
+      // State variable for the message counter
+      uint32 public counter = 0;
+    }
+    ```
+  </TabItem>
+</Tabs>
+
+### Events
+
+Migrate the blockchain events of a module by implementing corresponding events in the contract as shown below.
+
+<Tabs>
+  <TabItem value="liskl1" label="Lisk L1">
+    
+      ```typescript title="hello_client/src/app/modules/hello/events/new_hello.ts"
+      import { BaseEvent } from 'lisk-sdk';
+
+      export const newHelloEventSchema = {
+        $id: '/hello/events/new_hello',
+        type: 'object',
+        required: ['senderAddress', 'message'],
+        properties: {
+          senderAddress: {
+            dataType: 'bytes',
+            fieldNumber: 1,
+          },
+          message: {
+            dataType: 'string',
+            fieldNumber: 2,
+          },
+        },
+      };
+
+      export interface NewHelloEventData {
+        senderAddress: Buffer;
+        message: string;
+      }
+
+      export class NewHelloEvent extends BaseEvent<NewHelloEventData> {
+        public schema = newHelloEventSchema;
+      }
+      ```
+  </TabItem>
+  <TabItem value="liskl2" label="Lisk L2" default>
+    ```solidity title="hello_liskl2/src/Hello.sol"
+    // SPDX-License-Identifier: MIT
+    // compiler version must be greater than or equal to 0.8.20 and less than 0.9.0
+    pragma solidity ^0.8.20;
+
+    contract Hello {
+      /** State variables */
+      // State variable for the Hello messages
+      mapping(address => string) public message;
+      // State variable for the message counter
+      uint32 public counter = 0;
+
+      /** Events */
+      // Event for new Hello messages
+      event NewHello(address indexed sender, string message);
+    }
+    ```
+  </TabItem>
+</Tabs>
+
+### State transition logic
+
+<details>
+<summary>Configuration migration</summary>
+#### Configuration
+The module-specific configurations, which resided in the `config.json` on Lisk L1, are now part of the smart contract itself and are defined as state variables.
+
+```solidity title="hello_liskl2/src/Hello.sol"
+// Blacklist of words that are not allowed in the Hello message
+string[] public blacklist = ["word1","word2"];
+// Maximum length of the Hello message
+uint32 public maxLength = 200;
+// Minimum length of the Hello message
+uint32 public minLength = 3;
+```
+
+To edit the configuration options of the Hello module, we implement the following functions in the Hello contract:
+
+- `setBlacklist()` to configure the blacklist of words that are not allowed in the Hello message.
+- `setMinMaxMessageLength()` to configure the minimum and maximum length of the Hello message.
+
+```solidity title="hello_liskl2/src/Hello.sol"
+// Function to configure the blacklist
+function setBlacklist(string[] memory _newBlackList) public onlyOwner {
+    blacklist = _newBlackList;
+} 
+// Function to configure min/max message length
+function setMinMaxMessageLength(uint32 _newMinLength,uint32 _newMaxLength) public onlyOwner {
+    minLength = _newMinLength;
+    maxLength = _newMaxLength;
+}
+```
+
+As seen in the above code snippet, we add the following modifiers to the functions:
+
+- `public` to make the function callable from outside the contract. 
+This is a default visibility modifier for functions in Solidity.
+- `onlyOwner` to check that the caller is the owner of the contract.
+This is a custom modifier that we need to implement in the contract manually, as shown in the example below.
+ 
+To set the owner of the contract, we add a new state variable `owner`, and a constructor which sets the `owner` variable to the account address that deploys the contract.
+
+:::tip
+To update the smart contract owner, you can implement a corresponding function `setOwner()`, and use the `onlyOwner` modifier to ensure that only the current owner can call this function.
+:::
+
+Finally, we can check for the message sender being the owner of the contract in the `onlyOwner` modifier which is used for the `setBlacklist()` and `setMinMaxMessageLength()` functions.
+
+```solidity title="hello_liskl2/src/Hello.sol"
+// Address of the contract owner
+address public immutable owner;
+
+constructor() {
+    // Set the transaction sender as the owner of the contract.
+    owner = msg.sender;
+}
+
+/** Modifiers */
+// Modifier to check that the caller is the owner of the contract.
+modifier onlyOwner() {
+    require(msg.sender == owner, "Not owner");
+    _;
+}
+```
+</details>
+
+<details>
+<summary>Verification migration</summary>
+#### Verification
+
+To verify the Hello message, we implement custom modifiers in the contract.
+
+Inside the modifiers, we check the length of the message and if it contains any blacklisted words like it was done in the `verify()` method of the Lisk L1 Hello module.
+
+Conveniently check the length of Hello messages in the `validLength` modifier like this:
+
+```solidity title="hello_liskl2/src/Hello.sol"
+// Validate message length
+modifier validLength(string memory _message) {
+    require(bytes(_message).length >= minLength, "Message too short");
+    require(bytes(_message).length <= maxLength, "Message too long");
+    _;
+}
+```
+
+To check if the message contains any blacklisted words, we implement the `validWords` modifier in the contract.
+
+```solidity title="hello_liskl2/src/Hello.sol"
+// Validate message content
+modifier validWords(string memory _message) {
+    bytes memory whereBytes = bytes (_message);
+
+    for (uint h = 0; h < blacklist.length; h++) {
+        bool found = false;
+        bytes memory whatBytes = bytes (blacklist[h]);
+        for (uint i = 0; i <= whereBytes.length - whatBytes.length; i++) {
+            bool flag = true;
+            for (uint j = 0; j < whatBytes.length; j++)
+                if (whereBytes [i + j] != whatBytes [j]) {
+                    flag = false;
+                    break;
+                }
+            if (flag) {
+                found = true;
+                break;
+            }
+        }
+        require (!found, "Message contains blacklisted word");
+    }
+    _;
+}
+```
+</details>
+
+<details>
+<summary>Execution migration</summary>
+#### Execution
+
+To migrate the createHello command execution, we implement the `createHello()` function in the contract.
+
+Inside this function, we save the message of the sender in the `message` mapping under the sender address.
+
+:::tip
+The sender address is a [global variable](https://solidity-by-example.org/variables/) in Solidity and can be accessed with `msg.sender`.
+:::
+
+Additionally, we increment the Hello message counter by `1` and emit the `NewHello` event, like it was done in the `execute()` method of the Lisk L1 Hello module previously.
+
+The `validMessage()` modifier that we defined above in the [Verification migration](/building-on-lisk/migration-guide#state-transition-logic) section is used to check if the message is valid before the `createHello()` function is executed.
+
+```solidity title="hello_liskl2/src/Hello.sol"
+// Function to create a new Hello message
+function createHello(string calldata _message) public validLength(_message) validWords(_message) {
+    message[msg.sender] = _message;
+    counter+=1;
+    emit NewHello(msg.sender, _message);
+}
+```
+
+</details>
+<Tabs>
+  <TabItem value="liskl1" label="Lisk L1">
+    ```typescript title="hello_client/src/app/modules/hello/commands/create_hello_command.ts"
+    /* eslint-disable class-methods-use-this */
+
+    import {
+      BaseCommand,
+      CommandVerifyContext,
+      CommandExecuteContext,
+      VerificationResult,
+      VerifyStatus,
+    } from 'lisk-sdk';
+    import { createHelloSchema } from '../schema';
+    import { MessageStore } from '../stores/message';
+    import { counterKey, CounterStore, CounterStoreData } from '../stores/counter';
+    import { ModuleConfig } from '../types';
+    import { NewHelloEvent } from '../events/new_hello';
+
+    interface Params {
+      message: string;
+    }
+
+    export class CreateHelloCommand extends BaseCommand {
+      public schema = createHelloSchema;
+      private _blacklist!: string[];
+
+      // eslint-disable-next-line @typescript-eslint/require-await
+      public async init(config: ModuleConfig): Promise<void> {
+        // Set _blacklist to the value of the blacklist defined in the module config
+        this._blacklist = config.blacklist;
+        // Set the max message length to the value defined in the module config
+        this.schema.properties.message.maxLength = config.maxMessageLength;
+        // Set the min message length to the value defined in the module config
+        this.schema.properties.message.minLength = config.minMessageLength;
+      }
+
+      // eslint-disable-next-line @typescript-eslint/require-await
+      public async verify(context: CommandVerifyContext<Params>): Promise<VerificationResult> {
+        let validation: VerificationResult;
+        const wordList = context.params.message.split(" ");
+        const found = this._blacklist.filter(value => wordList.includes(value));
+        if (found.length > 0) {
+          context.logger.info("==== FOUND: Message contains a blacklisted word ====");
+          throw new Error(
+              `Illegal word in hello message: ${  found.toString()}`
+            );
+        } else {
+          context.logger.info("==== NOT FOUND: Message contains no blacklisted words ====");
+          validation = {
+            status: VerifyStatus.OK
+          };
+        }
+        return validation;
+      }
+
+      public async execute(context: CommandExecuteContext<Params>): Promise<void> {
+        // 1. Get account data of the sender of the Hello transaction.
+        const { senderAddress } = context.transaction;
+        // 2. Get message and counter stores.
+        const messageSubstore = this.stores.get(MessageStore);
+        const counterSubstore = this.stores.get(CounterStore);
+
+        // 3. Save the Hello message to the message store, using the senderAddress as key, and the message as value.
+        await messageSubstore.set(context, senderAddress, {
+          message: context.params.message,
+        });
+
+        // 3. Get the Hello counter from the counter store.
+        let helloCounter: CounterStoreData;
+        try {
+          helloCounter = await counterSubstore.get(context, counterKey);
+        } catch (error) {
+          helloCounter = {
+            counter: 0,
+          }
+        }
+        // 5. Increment the Hello counter +1.
+        helloCounter.counter+=1;
+
+        // 6. Save the Hello counter to the counter store.
+        await counterSubstore.set(context, counterKey, helloCounter);
+
+        // 7. Emit a "New Hello" event
+        const newHelloEvent = this.events.get(NewHelloEvent);
+        newHelloEvent.add(context, {
+          senderAddress: context.transaction.senderAddress,
+          message: context.params.message
+        },[context.transaction.senderAddress]);
+      }
+    }
+    ```
+  </TabItem>
+  <TabItem value="liskl2" label="Lisk L2" default>
+   
+
+    ```solidity title="hello_liskl2/src/Hello.sol"
+    // SPDX-License-Identifier: MIT
+    // compiler version must be greater than or equal to 0.8.20 and less than 0.9.0
+    pragma solidity ^0.8.20;
+
+    contract Hello {
+        /** State variables */
+        // State variable for the Hello messages
+        mapping(address => string) public message;
+        // State variable for the message counter
+        uint32 public counter = 0;
+        // Address of the contract owner
+        address public immutable owner;
+        // Blacklist of words that are not allowed in the Hello message
+        string[] public blacklist = ["word1","word2"];
+        // Maximum length of the Hello message
+        uint32 public maxLength = 200;
+        // Minimum length of the Hello message
+        uint32 public minLength = 3;
+
+        constructor() {
+            // Set the transaction sender as the owner of the contract.
+            owner = msg.sender;
+        }
+
+        /** Modifiers */
+        // Modifier to check that the caller is the owner of the contract.
+        modifier onlyOwner() {
+            require(msg.sender == owner, "Not owner");
+            _;
+        }
+        // Validate message length
+        modifier validLength(string memory _message) {
+            require(bytes(_message).length >= minLength, "Message too short");
+            require(bytes(_message).length <= maxLength, "Message too long");
+            _;
+        }
+        // Validate message content
+        modifier validWords(string memory _message) {
+            bytes memory whereBytes = bytes (_message);
+
+            for (uint h = 0; h < blacklist.length; h++) {
+                bool found = false;
+                bytes memory whatBytes = bytes (blacklist[h]);
+                for (uint i = 0; i <= whereBytes.length - whatBytes.length; i++) {
+                    bool flag = true;
+                    for (uint j = 0; j < whatBytes.length; j++)
+                        if (whereBytes [i + j] != whatBytes [j]) {
+                            flag = false;
+                            break;
+                        }
+                    if (flag) {
+                        found = true;
+                        break;
+                    }
+                }
+                require (!found, "Message contains blacklisted word");
+            }
+            _;
+        }
+
+        /** Events */
+        // Event for new Hello messages
+        event NewHello(address indexed sender, string message);
+
+        /** Functions */
+        // Function to configure the blacklist
+        function setBlacklist(string[] memory _newBlackList) public onlyOwner {
+            blacklist = _newBlackList;
+        } 
+        // Function to configure min/max message length
+        function setMinMaxMessageLength(uint32 _newMinLength,uint32 _newMaxLength) public onlyOwner {
+            minLength = _newMinLength;
+            maxLength = _newMaxLength;
+        }
+        // Function to create a new Hello message
+        function createHello(string calldata _message) public validLength(_message) validWords(_message) {
+            message[msg.sender] = _message;
+            counter+=1;
+            emit NewHello(msg.sender, _message);
+        }
+    }
+    ```
+  </TabItem>
+</Tabs>
+
+### Endpoints
+
+Migrate the module endpoints by implementing corresponding [view functions](https://solidity-by-example.org/view-and-pure-functions/) in the contract as shown below.
+
+<Tabs>
+  <TabItem value="liskl1" label="Lisk L1">
+  ```typescript title="hello_client/src/app/modules/hello/endpoint.ts"
+  export class HelloEndpoint extends BaseEndpoint {
+    public async getHelloCounter(ctx: ModuleEndpointContext): Promise<CounterStoreData> {
+      const counterSubStore = this.stores.get(CounterStore);
+
+      const helloCounter = await counterSubStore.get(
+        ctx,
+        counterKey,
+      );
+
+      return helloCounter;
+    }
+
+    public async getHello(ctx: ModuleEndpointContext): Promise<MessageStoreData> {
+      const messageSubStore = this.stores.get(MessageStore);
+
+      const { address } = ctx.params;
+      if (typeof address !== 'string') {
+        throw new Error('Parameter address must be a string.');
+      }
+      cryptography.address.validateLisk32Address(address);
+      const helloMessage = await messageSubStore.get(
+        ctx,
+        cryptography.address.getAddressFromLisk32Address(address),
+      );
+      return helloMessage;
+    }
+  }
+  ```
+  </TabItem>
+  <TabItem value="liskl2" label="Lisk L2" default>
+  For simple getters, it is sufficient to add the `public` [visibility modifier](https://solidity-by-example.org/visibility/) to the state variables (see [storage](#storage)).
+
+  Public state variables can be accessed directly from external parties, without implementing the corresponding view function.
+  </TabItem>
+</Tabs>
+
+## Next steps
+
+Now that we re-implemented the Hello module from Lisk L1 as a smart contract in Lisk L2, it is possible to directly deploy the Hello contract to Lisk L2 and interact with it.
+
+Before deploying the smart contract to Lisk, it is recommended to [test it locally](#testing-the-smart-contract) by writing corresponding tests for the newly created smart contract.
+Once the smart contract is [deployed](#smart-contract-deployment) to Lisk, you can interact with it by calling its public functions.
+
+Finally, you can migrate the plugins and UI of the Lisk L1 Hello app to be compatible with the new API, to complete the migration process of your Lisk application.
+
+### Testing the smart contract
+
+By testing the smart contract, you can verify that the smart contract behaves as expected and that it is free of bugs, before deploying it to Lisk.
+
+Foundry provides a testing framework to support you in writing tests for smart contracts.
+See [Tests - Foundry Book](https://book.getfoundry.sh/forge/tests) for examples and references regarding the testing framework.
+
+To test the Hello smart contract, create a new file `Hello.t.sol` under `test/`, and add the following content:
+
+<details>
+<summary>Hello.t.sol</summary>
+```solidity title="hello_liskl2/test/Hello.t.sol"
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.20;
+
+import {Test, console} from "forge-std/Test.sol";
+import {Hello} from "../src/Hello.sol";
+
+contract HelloTest is Test {
+    Hello public hello;
+    address alice = makeAddr("alice");
+    event NewHello(address indexed sender, string message);
+
+    function setUp() public {
+        hello = new Hello();
+    }
+
+    function test_CreateHello() public {
+        string memory message = "Hello World";
+        // Expect NewHello event
+        vm.expectEmit(true,false,false,false);
+        emit NewHello(address(alice), message);
+        // Create a new Hello message
+        hoax(alice, 100 ether);
+        hello.createHello(message);
+        // Check the message
+        assertEq(hello.message(alice),message);
+        // Check if counter = 1
+        assertEq(hello.counter(),1);
+    }
+
+    function test_MinLength() public {
+        vm.expectRevert("Message too short");
+        hello.createHello("Hi");
+    }
+
+    function test_MaxLength() public {
+        vm.expectRevert("Message too long");
+        hello.createHello("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean porta neque eget elit tristique pharetra. Pellentesque tempus sollicitudin tortor, ut tempus diam. Nulla facilisi. Donec at neque sapien.");
+    }
+
+    function test_Blacklist() public {
+        vm.expectRevert("Message contains blacklisted word");
+        hello.createHello("Hello word1");
+    }
+
+    function test_SetBlacklist() public {
+        // Create a temporary dynamic array of strings
+        string[] memory bl = new string[](3);
+        bl[0] = "word1";
+        bl[1] = "word3";
+        bl[2] = "word4";
+        hello.setBlacklist(bl);
+        string[] memory getBL = new string[](2);
+        getBL[0] = hello.blacklist(0);
+        getBL[1] = hello.blacklist(1);
+        assertEq(getBL[0], bl[0]);
+        assertEq(getBL[1], bl[1]);
+    }
+
+    function test_SetBlacklistNotOwner() public {
+        string[] memory bl = new string[](3);
+        bl[0] = "word1";
+        bl[1] = "word3";
+        bl[2] = "word4";
+        vm.expectRevert("Not owner");
+        hoax(alice, 100 ether);
+        hello.setBlacklist(bl);
+    }
+
+    function test_SetMinMaxMessageLength() public {
+        uint32 newMin = 1;
+        uint32 newMax = 500;
+        hello.setMinMaxMessageLength(newMin,newMax);
+        assertEq(hello.minLength(), newMin);
+        assertEq(hello.maxLength(), newMax);
+    }
+
+    function test_SetMinMaxMessageLengthNotOwner() public {
+        uint32 newMin = 1;
+        uint32 newMax = 500;
+        hoax(alice, 100 ether);
+        vm.expectRevert();
+        hello.setMinMaxMessageLength(newMin,newMax);
+    }
+}
+```
+</details>
+
+To run the tests, execute the following command:
+
+```bash
+forge test
+``` 
+
+The output should look like this:
+
+```text
+Running 8 tests for test/Hello.t.sol:HelloTest
+[PASS] test_Blacklist() (gas: 23772)
+[PASS] test_CreateHello() (gas: 66179)
+[PASS] test_MaxLength() (gas: 14179)
+[PASS] test_MinLength() (gas: 13929)
+[PASS] test_SetBlacklist() (gas: 885276)
+[PASS] test_SetBlacklistNotOwner() (gas: 16978)
+[PASS] test_SetMinMaxMessageLength() (gas: 853243)
+[PASS] test_SetMinMaxMessageLengthNotOwner() (gas: 10889)
+Test result: ok. 8 passed; 0 failed; 0 skipped; finished in 3.35ms
+```
+
+### Smart contract deployment
+
+You can now deploy the smart contract to Lisk.
+For this example, we will use the Lisk Sepolia network to deploy the Hello contract.
+However, the steps are the same for Lisk network as well.
+
+Add the `--verify` flag to the `forge create` command to directly verify the smart contract on BlockScout.
+
+<Tabs>
+  <TabItem value="mainnet" label="Lisk" >
+    ```bash
+    forge create --rpc-url https://rpc.api.lisk.com \
+    --etherscan-api-key 123 \
+    --verify \
+    --verifier blockscout \
+    --verifier-url https://blockscout.lisk.com/api \
+    --private-key <your-private-key> \
+    src/Hello.sol:Hello
+    ```
+  </TabItem>
+  <TabItem value="testnet" label="Lisk Sepolia" default>
+  ```bash
+  forge create --rpc-url https://rpc.sepolia-api.lisk.com \
+  --etherscan-api-key 123 \
+  --verify \
+  --verifier blockscout \
+  --verifier-url https://sepolia-blockscout.lisk.com/api \
+  --private-key <your-private-key> \
+  src/Hello.sol:Hello
+  ```
+  </TabItem>
+</Tabs>
+
+
+
+If the deployment went successfully, the output should look like this:
+
+```text
+[⠢] Compiling...
+No files changed, compilation skipped
+Deployer: 0x3C46A11471f285E36EE8d089473ce98269D1b081
+Deployed to: 0x0a5A1C81F278cAe80d340a4A97E2D7B1c3Ec511a
+Transaction hash: 0x52bb6aab8ceeecef674253ecc0ccfe35baeac7db3cc8e889a9da1f7cf1ce0593
+Starting contract verification...
+Waiting for blockscout to detect contract deployment...
+Start verifying contract `0x0a5A1C81F278cAe80d340a4A97E2D7B1c3Ec511a` deployed on 4202
+
+Submitting verification for [src/Hello.sol:Hello] 0x0a5A1C81F278cAe80d340a4A97E2D7B1c3Ec511a.
+Submitted contract for verification:
+	Response: `OK`
+	GUID: `0a5a1c81f278cae80d340a4a97e2d7b1c3ec511a65cf6f72`
+	URL: https://sepolia-blockscout.lisk.com/address/0x0a5a1c81f278cae80d340a4a97e2d7b1c3ec511a
+Contract verification status:
+Response: `OK`
+Details: `Pending in queue`
+Contract verification status:
+Response: `OK`
+Details: `Pass - Verified`
+Contract successfully verified
+```
+
+After the smart contract is deployed, you can interact with it by calling its public functions.
+
+From here, you can migrate the plugins and UI of the Lisk L1 app to be compatible with the new API, to complete the migration process of your Lisk application.
+
+In case you need further assistance, feel free to reach out to the Lisk community at [Lisk.chat](https://lisk.chat).
