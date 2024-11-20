@@ -195,8 +195,8 @@ For a general overview of best practices using Tellor, go to the [User checklist
 
 To deploy the smart contract on Lisk Sepolia or Lisk Mainnet, follow the guides 
 
-- [Deploying a smart contract with Hardhat](../deploying-smart-contract/with-Hardhat.md), or
-- [Deploying a smart contract with Foundry](../deploying-smart-contract/with-Foundry.md)
+- [Deploying a smart contract with Hardhat](../deploying-smart-contract/with-Hardhat), or
+- [Deploying a smart contract with Foundry](../deploying-smart-contract/with-Foundry)
 
 ## Further resources
 
