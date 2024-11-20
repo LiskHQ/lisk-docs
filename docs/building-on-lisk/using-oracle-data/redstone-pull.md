@@ -1,6 +1,6 @@
 ---
-title: Accessing real-world data with Oracles
-slug: /building-on-lisk/use-oracle-data
+title: ...with Redstone (Pull)
+slug: /building-on-lisk/use-oracle-data/redstone-pull
 description: A guide on using Redstone Data Feeds to access real-world data such as asset prices, directly from your smart contracts on the Lisk testnet.
 keywords: [
     Oracle
@@ -22,7 +22,7 @@ keywords: [
 
 # Accessing real-world data using the Redstone Oracle
 
-This page will explain how you can access real world / off-chain data using Oracles such as Redstone.
+This page will explain how you can access oracle data using Redstone.
 
 RedStone is a data ecosystem that delivers frequently updated, reliable, and diverse data for your dApp and smart contracts deployed on Lisk.
 
@@ -32,7 +32,7 @@ To create a smart contract that directly fetches the latest data from the Redsto
 
 This guide uses the [Redstone Pull model](https://docs.redstone.finance/docs/get-started/models/redstone-pull) to fetch the data.
 
-For an overview of the different modules that Redstone offers to receive oracle data, go to [Oracles > Redstone](../lisk-tools/oracles#redstone).
+For an overview of the different modules that Redstone offers to receive oracle data, go to [Oracles > Redstone](../../lisk-tools/oracles#redstone).
 
 [Hardhat](https://hardhat.org/) is used in this guide to create the smart contract.
 In case you want to use Foundry, check out the [Redstone docs](https://docs.redstone.finance/docs/get-started/models/redstone-pull#foundry) for instructions.
@@ -158,5 +158,5 @@ Latest ETH price:
 
 To deploy the smart contract on Lisk Sepolia or Lisk Mainnet, follow the guides 
 
-- [Deploying a smart contract with Hardhat](deploying-smart-contract/with-Hardhat.md), or
-- [Deploying a smart contract with Foundry](deploying-smart-contract/with-Foundry.md)
+- [Deploying a smart contract with Hardhat](../deploying-smart-contract/with-Hardhat.md), or
+- [Deploying a smart contract with Foundry](../deploying-smart-contract/with-Foundry.md)

@@ -101,11 +101,10 @@ const config = {
         items: [
           /*{
             TODO: Uncomment when all localozed pages are translated
-          */
-          {
+          /* {
             type: 'localeDropdown',
             position: 'right',
-          },
+          }, */
           {
             type: 'doc',
             position: 'left',
