@@ -1,0 +1,221 @@
+---
+title: Overview
+sidebar_position: 1
+slug: /governance/overview
+description: Documentation about the governance of the Lisk project.
+keywords:
+  [
+    Lisk governance,
+    Lisk DAO,
+    Lisk Grants,
+    Funding,
+    Delegation,
+    Voting,
+    Voting Power,
+    Proposals,
+  ]
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Governance overview
+The Lisk project is governed by the [Lisk DAO](#lisk-dao) and [Onchain Foundation](https://onchain.org/foundation/).
+The Onchain Foundation defines the vision and strategy for the project together with the Lisk team, funds its development and is a stakeholder in the Lisk DAO via the Lisk Team delegate.
+The Lisk DAO allows any LSK token holder that stakes their tokens to participate in onchain governance for the Lisk project.
+The Lisk DAO decides how to spend funds in its significant treasury and can pass general proposals about protocol parameters or the project direction.
+
+:::info
+Every LSK token holder who participates in the DAO is rewarded with [staking rewards](../user/staking/overview#staking-rewards), to incentivize participation in the Lisk governance.
+:::
+
+## Lisk Admin Addresses
+
+Details of **Admin account** addresses on 🟢 **Ethereum Mainnet** and 🟡 **Sepolia Testnet** are as follows.
+
+:::note
+The Gelato-controlled accounts will be transferred to the [OP security council](https://gov.optimism.io/t/intro-to-optimisms-security-council/6885) in the near future.
+:::
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Admin Role</th>
+      <th scope="col">Controlled/Owned by</th>
+      <th scope="col" colSpan="2">Address</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row" rowSpan="2">L1 Proxy Admin</th>
+      <th scope="row" rowSpan="2">Gelato</th>
+      <td>[0xeC432c4F1d0E12737f3a42a459B84848Af979b2d](https://etherscan.io/address/0xeC432c4F1d0E12737f3a42a459B84848Af979b2d)</td>
+      <td>🟢</td>
+    </tr>
+    <tr>
+    <td>[0x5Db9F05921d8d5a6a157F6f49c411cc0e46c6330](https://sepolia.etherscan.io/address/0x5Db9F05921d8d5a6a157F6f49c411cc0e46c6330)</td>
+    <td>🟡</td>
+    </tr>
+    <tr>
+      <th scope="row" rowSpan="2">SystemConfig</th>
+      <th scope="row" rowSpan="2">Gelato</th>
+      <td>[0x05f23282FFDCA8286E4738C1aF79079f3d843750](https://etherscan.io/address/0x05f23282FFDCA8286E4738C1aF79079f3d843750)</td>
+      <td>🟢</td>
+    </tr>
+    <tr>
+    <td>[0xF54791059df4a12BA461b881B4080Ae81a1d0AC0](https://sepolia.etherscan.io/address/0xF54791059df4a12BA461b881B4080Ae81a1d0AC0)</td>
+    <td>🟡</td>
+    </tr>
+    <tr>
+      <th scope="row" rowSpan="2">Batcher</th>
+      <th scope="row" rowSpan="2">Gelato</th>
+      <td>[0xa6Ea2f3299b63c53143c993d2d5E60A69Cd6Fe24](https://etherscan.io/address/0xa6Ea2f3299b63c53143c993d2d5E60A69Cd6Fe24)</td>
+      <td>🟢</td>
+    </tr>
+    <tr>
+    <td>[0x246E119a5BcC2875161b23E4e602e25cEcE96E37](https://sepolia.etherscan.io/address/0x246E119a5BcC2875161b23E4e602e25cEcE96E37)</td>
+    <td>🟡</td>
+    </tr>
+    <tr>
+      <th scope="row" rowSpan="2">Proposer</th>
+      <th scope="row" rowSpan="2">Gelato</th>
+      <td>[0x0AbD6da1cE10D1cD6c7C9C14b905786D20f3EB23](https://etherscan.io/address/0x0AbD6da1cE10D1cD6c7C9C14b905786D20f3EB23)</td>
+      <td>🟢</td>
+    </tr>
+    <tr>
+    <td>[0xBbD3a1D90B0Ef416581ACdC6a72046b38D3af9AD](https://sepolia.etherscan.io/address/0xBbD3a1D90B0Ef416581ACdC6a72046b38D3af9AD)</td>
+    <td>🟡</td>
+    </tr>
+  </tbody>
+  <tfoot>
+  </tfoot>
+</table>
+
+## Lisk Security Council
+
+The Lisk security council is a 3-of-5 multi-signature wallet with key members of Lisk team and Onchain Foundation.
+
+The purpose of the security council is to be responsible for smart contract upgrades in case a security vulnerability is discovered.
+
+The security council controls the following contracts:
+
+- Claims contract
+- Governance contracts
+- Staking and Rewards contracts
+- All Vesting contracts
+- Airdrop contract
+
+The ERC-20 token contract cannot be upgraded by the security council, but the security council has the special power to add accounts that can burn LSK tokens.
+This is only planned to be used in case the community decides to burn the 100M LSK allocated to the Lisk DAO.
+
+## Lisk DAO
+The Lisk DAO provides the opportunity for LSK token holders to participate in the overall governance of the Lisk project, including allocation of funds, protocol updates, or strategic directions.
+Decisions are made via [proposals](#proposals).
+
+### Tools
+The following are the main tools to participate in the Lisk DAO:
+
+<Tabs>
+  <TabItem value="tally" label="Tally">
+  Tally is the platform used to create and vote for proposals of the Lisk DAO.
+
+  The [Lisk DAO Tally instance](https://www.tally.xyz/gov/lisk) is the place where users can vote on proposals or delegate their voting power.
+  </TabItem>
+  <TabItem value="forum" label="Forum">
+  The [Lisk Governance Forum](https://forum.lisk.com/) is the place for the community to discuss the Lisk governance and draft proposals, before they are submitted on Tally.
+  </TabItem>
+  <TabItem value="discord" label="Discord">
+  The `#lisk-dao` channel in the [Lisk Chat](https://lisk.chat) Discord server is a community chat dedicated to discuss topics all around the Lisk DAO, share news and updates, or share ideas for new proposals.
+  </TabItem>
+</Tabs>
+
+### Treasury
+The Lisk DAO has an associated treasury, which resides in the [Timelock contract](https://blockscout.lisk.com/address/0x2294A7f24187B84995A2A28112f82f07BE1BceAD?tab=contract).
+The current balance of the treasury can be checked on the [Lisk BlockScout Explorer](https://blockscout.lisk.com/address/0x2294A7f24187B84995A2A28112f82f07BE1BceAD?tab=tokens).
+
+The treasury is NOT managed by the Onchain Foundation.
+Instead, the funds from the treasury can only be transferred via successful [funding proposals](#proposal-types).
+
+Tokens for the Lisk DAO fund are minted.
+They are added to the treasury according to the following vesting plan:
+
+| Year | Amount (LSK) | Description |
+|------|--------------|-------------|
+| 2024 | 15,000,000 | 6,250,000 LSK liquid at migration, 8,750,000 LSK are linearly released in 2024, starting from the migration. |
+| 2025 | 15,000,000 | LSK are linearly released over the year. |
+| 2026 | 15,000,000 | LSK are linearly released over the year. |
+
+:::note
+The DAO fund may be increased further in the future by an additional 100,000,000 LSK over the following 7 years (2027-2033) if the DAO members approve the corresponding proposals.
+:::
+
+### Voting power
+Every account holding **LSK** is able to **stake/lock** a specific amount of LSK tokens to get some voting power and [staking rewards](../user/staking/overview#staking-rewards).
+
+This works as follows:
+
+- Stake tokens for a specific locking duration (between 2 weeks and 2 years) on the [Lisk Portal](https://portal.lisk.com).
+- Receive voting power and staking rewards proportional to the amount of locked tokens.
+- [Delegate](#delegation) the voting power on Tally to yourself or another delegate in order to use it.
+- After the locking duration ends, the users can unlock their staked tokens.
+
+
+#### Voting power calculation
+Locked tokens provide a voting power proportional to the amount of locked tokens.
+Concretely, 1 locked LSK provides one unit of voting power (= 1 vpLSK).
+
+##### Boosting the voting power
+Users have the option to pause the countdown of the locking period.
+This means that the counting towards the end of the locking period is paused until the user decides to resume it.
+In the case of pausing, the user receives a boost of the voting power.
+It is set to `lockedAmount * (1 + remainingLockingDurationInDays/365)`.
+Hence, the voting power can be increased by up to 200%, which is achieved at the maximum locking duration of 2 years
+
+:::info
+The voting power for each proposal is counted from a snapshot on the [creation of the proposal](proposal-lifecycle#2-proposal-creation).
+Therefore, pausing the locking duration after a proposal is created does not increase the voting power for this proposal, but for the future ones.
+:::
+
+### Delegation
+The Governor framework requires **delegating the voting power** in order to use it.
+The voting power can be delegated to other users or to yourself.
+Self-delegation is a requirement if you want to vote on your own.
+
+Delegation happens on [Tally](#tools).
+
+:::info
+Please go to the [Delegation](delegation) page to find out more about the delegation process, including guides how to delegate and how to become a delegate.
+:::
+
+### Proposals
+Proposals are created on [Tally](#tools).
+For spam protection, the following requirement must be fulfilled in order to create a proposal:
+
+- **Proposal threshold**: For creating a proposal, the voting power of the proposer must be at least 300,000 vpLSK, i.e., the value corresponding to 100,000 LSK locked for 2 years where the countdown is paused.
+
+#### Proposal types
+
+| Type        | Description   | Binding?      |
+| :---------- |:------------- |:------------- |
+| **Funding** | A proposal for receiving a certain amount of funds to an address. If approved, the recipient receives the amount given in the proposal. | Yes|
+| **General** |  General proposals about protocol parameters or the project direction in general that may be followed by the Onchain Foundation or not, depending also on feasibility and cost.  | No  |
+
+#### Proposal evaluation
+The following requirements must be fulfilled for a proposal to approve:
+
+- **Quorum**: For a proposal to pass, the “yes” and “abstain” votes must sum up at least to 24,000,000 vpLSK, i.e., the value that corresponds to 8,000,000 LSK locked for 2 years where the countdown is paused.
+- There must be strictly more “yes” than “no” votes.
+
+#### Implementation of funding proposals
+The transfer from the [Lisk DAO treasury](#treasury) can be executed by anyone, once a funding proposal is approved.
+Funding proposals are **binding**, which means that no one, not even the Onchain Foundation, can prevent the transfer if the proposal passes.
+#### Implementation of general proposals
+For approved general proposals, the Onchain Foundation will determine whether the proposal is safe, secure, consistent with the scope of Lisk governance, and capable of being implemented in a legally compliant manner.
+If it is, the Foundation will act diligently and in a commercially reasonable manner to cause the proposal to be implemented.
+
+### Administrative role of the Onchain Foundation
+The foundation will have an administrative role and will take care of the following:
+
+1. Removal of draft proposals that reasonably appear to be fraudulent, spam-oriented, defamatory, hateful, or otherwise inappropriate.
+2. Management of mutually contradictory proposals that are submitted simultaneously or in close proximity to one another.
+3. Administration of network maintenance, such as emergency bug fixes or release rollbacks (with or without a governance vote).
