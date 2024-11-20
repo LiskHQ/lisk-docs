@@ -1,6 +1,6 @@
 ---
 title: ...with Tellor
-slug: /building-on-lisk/use-oracle-data/tellor
+slug: /building-on-lisk/using-oracle-data/tellor
 description: A guide on using Redstone Data Feeds to access real-world data such as asset prices, directly from your smart contracts on the Lisk testnet.
 keywords: [
     Oracle
@@ -197,6 +197,7 @@ To deploy the smart contract on Lisk Sepolia or Lisk Mainnet, follow the guides
 
 - [Deploying a smart contract with Hardhat](../deploying-smart-contract/with-Hardhat.md), or
 - [Deploying a smart contract with Foundry](../deploying-smart-contract/with-Foundry.md)
+- [Deploying a smart contract with Foundry](../deploying-smart-contract/with-Hardhat.md)
 
 ## Further resources
 

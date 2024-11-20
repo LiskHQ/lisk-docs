@@ -1,6 +1,6 @@
 ---
 title: ...with Redstone (Pull)
-slug: /building-on-lisk/use-oracle-data/redstone-pull
+slug: /building-on-lisk/using-oracle-data/redstone-pull
 description: A guide on using Redstone Data Feeds to access real-world data such as asset prices, directly from your smart contracts on the Lisk testnet.
 keywords: [
     Oracle
