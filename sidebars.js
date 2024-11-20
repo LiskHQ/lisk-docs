@@ -114,8 +114,8 @@ const sidebars = {
           collapsible: true,
           collapsed: true,
           items: [
-            'building-on-lisk/using-oracle-data/redstone-pull',
             'building-on-lisk/using-oracle-data/tellor',
+            'building-on-lisk/using-oracle-data/redstone-pull',
           ],
         }
       ],
