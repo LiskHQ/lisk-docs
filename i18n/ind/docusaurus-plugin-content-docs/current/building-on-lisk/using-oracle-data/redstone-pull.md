@@ -1,7 +1,7 @@
 ---
 title: ...with Redstone (Pull)
 slug: /building-on-lisk/using-oracle-data/redstone-pull
-description: A guide on using Redstone Pull to access real-world data such as asset prices, directly from your smart contracts on the Lisk testnet.
+description: A guide on using Redstone Pull to access real-world data such as asset prices, directly from your smart contracts on the Lisk blockchain.
 keywords: [
     Oracle
     Oracles,
@@ -23,7 +23,7 @@ keywords: [
 
 # Accessing real-world data using the Redstone Oracle (Pull)
 
-This page will explain how you can access oracle data using Redstone.
+This page will explain how you can access oracle data using [Redstone Pull](https://docs.redstone.finance/docs/get-started/models/redstone-pull/).
 
 RedStone is a data ecosystem that delivers frequently updated, reliable, and diverse data for your dApp and smart contracts deployed on Lisk.
 
