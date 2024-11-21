@@ -1,7 +1,7 @@
 ---
 title: ...with Tellor
 slug: /building-on-lisk/using-oracle-data/tellor
-description: A guide on using Redstone Data Feeds to access real-world data such as asset prices, directly from your smart contracts on the Lisk testnet.
+description: A guide on using Tellor Data Feeds to access real-world data such as asset prices, directly from your smart contracts on the Lisk blockchain.
 keywords: [
     Oracle
     Oracles,
@@ -19,6 +19,9 @@ keywords: [
     build on Lisk,
   ]
 ---
+
+# Using oracle data with Tellor
+This page will explain how you can access oracle data using Tellor.
 
 # Using oracle data with Tellor
 [Tellor](https://tellor.io/) is an immutable decentralized oracle protocol where parties can request the value of an offchain data point (e.g. ETH/USD, LSK/USD) and reporters compete to add this value to an onchain databank.
