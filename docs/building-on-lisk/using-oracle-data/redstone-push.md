@@ -48,7 +48,13 @@ The following Aggregators are available on Lisk Mainnet for Redstone Push:
 - [USDT/USD L2PriceFeedWithoutRounds](https://blockscout.lisk.com/address/0xd2176Dd57D1e200c0A8ec9e575A129b511DBD3AD)
   - address: `0xd2176Dd57D1e200c0A8ec9e575A129b511DBD3AD`
 
-In this guide, we will develop a Consumer contract, that will request the latest spot prices from all the above data feeds.
+In this guide, we will develop a Consumer contract that will request the latest spot prices from all the above data feeds.
+
+:::note
+RedStone Push is only fully available on Lisk Mainnet, so please make sure to deploy your Consumer contract on Lisk Mainnet as well.
+
+In case you wish to deploy on Lisk Sepolia Testnet, check the [Redstone Pull](./redstone-pull.md) and [Tellor](./tellor.md) guides.
+:::
 
 ## Import
 
@@ -136,26 +142,11 @@ pragma solidity ^0.8.28;
 
 import {AggregatorV3Interface} from "@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol";
 
-contract DataConsumerV3 {
+contract RedStoneDataConsumer {
   AggregatorV3Interface internal priceFeedETH;
   AggregatorV3Interface internal priceFeedLSK;
   AggregatorV3Interface internal priceFeedUSDT;
 
-  /**
-    * Network: Lisk
-    * Aggregator: ETH/USD
-    * Address: 0x6b7AB4213c77A671Fc7AEe8eB23C9961fDdaB3b2
-    */
-    /**
-    * Network: Lisk
-    * Aggregator: LSK/USD
-    * Address: 0xa1EbA9E63ed7BA328fE0778cFD67699F05378a96
-    */
-    /**
-    * Network: Lisk
-    * Aggregator: USDT/USD
-    * Address: 0xd2176Dd57D1e200c0A8ec9e575A129b511DBD3AD
-    */
   constructor() {
       priceFeedETH = AggregatorV3Interface(
           0x6b7AB4213c77A671Fc7AEe8eB23C9961fDdaB3b2
@@ -216,3 +207,9 @@ To deploy the smart contract on Lisk, follow the guides
 
 - [Deploying a smart contract with Hardhat](../deploying-smart-contract/with-Hardhat), or
 - [Deploying a smart contract with Foundry](../deploying-smart-contract/with-Foundry)
+
+:::note
+RedStone Push is only available on Lisk Mainnet, so please make sure to deploy your Consumer contract on Lisk Mainnet as well.
+
+In case you wish to deploy on Lisk Sepolia Testnet, check the [Redstone Pull](./redstone-pull.md) and [Tellor](./tellor.md) guides.
+:::
