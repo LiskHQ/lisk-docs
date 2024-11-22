@@ -40,11 +40,11 @@ Interested in integration? [Get in contact](https://discord.com/invite/PVxBZKFr4
 #### Supported Networks
 
 - Lisk
-- Lisk Sepolia
 
 ### Guides
 
 - [Accessing oracle data with Redstone (Pull)](../building-on-lisk/using-oracle-data/redstone-pull.md)
+- [Accessing oracle data with Redstone (Push)](../building-on-lisk/using-oracle-data/redstone-push.md)
 
 ## Tellor
 
