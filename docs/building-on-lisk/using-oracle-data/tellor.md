@@ -21,9 +21,8 @@ keywords: [
 ---
 
 # Using oracle data with Tellor
-This page will explain how you can access oracle data using Tellor.
+This page will explain how your application can access oracle data using Tellor.
 
-# Using oracle data with Tellor
 [Tellor](https://tellor.io/) is an immutable decentralized oracle protocol where parties can request the value of an offchain data point (e.g. ETH/USD, LSK/USD) and reporters compete to add this value to an onchain databank.
 The inputs to this databank are secured by a network of staked reporters.
 
