@@ -1,11 +1,11 @@
 ---
-title: ...with Redstone (Push)
+title: ...with RedStone (Push)
 slug: /building-on-lisk/using-oracle-data/redstone-push
-description: A guide on using Redstone Push to access real-world data such as asset prices, directly from your smart contracts on the Lisk blockchain.
+description: A guide on using RedStone Push to access real-world data such as asset prices, directly from your smart contracts on the Lisk blockchain.
 keywords: [
     Oracle
     Oracles,
-    Redstone,
+    RedStone,
     price feeds,
     data feeds,
     smart contract,
@@ -17,17 +17,17 @@ keywords: [
     dapp development,
     build a dapp on Lisk,
     build on Lisk,
-    Redstone Push,
+    RedStone Push,
   ]
 ---
 
-# Accessing real-world data using the Redstone Oracle (Push)
+# Accessing real-world data using the RedStone Oracle (Push)
 
-This page will explain how you can access oracle data using [Redstone Push](https://docs.redstone.finance/docs/get-started/models/redstone-push).
+This page will explain how you can access oracle data using [RedStone Push](https://docs.redstone.finance/docs/get-started/models/redstone-push).
 
 RedStone is a data ecosystem that delivers frequently updated, reliable, and diverse data for your dApp and smart contracts deployed on Lisk.
 
-RedStone data feeds are compatible with Chainlinks [AggregatorV3Interface](https://docs.chain.link/data-feeds/using-data-feeds#solidity) and include the following components:
+RedStone data feeds are compatible with Chainlink's [AggregatorV3Interface](https://docs.chain.link/data-feeds/using-data-feeds#solidity) and include the following components:
 
 - **Aggregator contract**: An aggregator is a contract that receives periodic data updates from the oracle network.
 Aggregators store aggregated data onchain so that consumers can retrieve it and act upon it within the same transaction.
@@ -39,7 +39,7 @@ Consumer contracts use the `AggregatorV3Interface` to call functions on the prox
 Using proxies enables the underlying aggregator to be upgraded without any service interruption to consuming contracts.
 
 ## Data feeds on Lisk
-The following Aggregators are available on Lisk Mainnet for Redstone Push:
+The following Aggregators are available on Lisk Mainnet for RedStone Push:
 
 - [ETH/USD L2PriceFeedWithoutRounds](https://blockscout.lisk.com/address/0x6b7AB4213c77A671Fc7AEe8eB23C9961fDdaB3b2)
   - address: `0x6b7AB4213c77A671Fc7AEe8eB23C9961fDdaB3b2`
@@ -47,8 +47,12 @@ The following Aggregators are available on Lisk Mainnet for Redstone Push:
   - address: `0xa1EbA9E63ed7BA328fE0778cFD67699F05378a96`
 - [USDT/USD L2PriceFeedWithoutRounds](https://blockscout.lisk.com/address/0xd2176Dd57D1e200c0A8ec9e575A129b511DBD3AD)
   - address: `0xd2176Dd57D1e200c0A8ec9e575A129b511DBD3AD`
+- [USDC/USD L2PriceFeedWithoutRounds](https://blockscout.lisk.com/address/0xb4e6A7861067674AC398a26DD73A3c524C602184)
+  - address: `0xb4e6A7861067674AC398a26DD73A3c524C602184`
+- [WBTC/USD L2PriceFeedWithoutRounds](https://blockscout.lisk.com/address/0x13da43eA89fB692bdB6666F053FeE70aC61A53cd)
+  - address: `0x13da43eA89fB692bdB6666F053FeE70aC61A53cd`
 
-In this guide, we will develop a Consumer contract that will request the latest spot prices from all the above data feeds.
+In this guide, we will develop a Consumer contract that will request the latest spot prices from the ETH, LSK and USDT data feeds.
 
 :::note
 RedStone Push is only fully available on Lisk Mainnet, so please make sure to deploy your Consumer contract on Lisk Mainnet as well.
@@ -117,8 +121,7 @@ Inside of the functions, call the [latestRoundData](https://docs.chain.link/data
 The `latestRoundData()` function returns the following values:
 
 - `roundId`(uint80): The round ID.
-The "round" the answer was created in.
-Every time a price feed is updated, it adds +1 to the round ID.
+For all [data feeds](#data-feeds-on-lisk), the round is always `1`, because the contracts are without rounds, as the name suggests.
 - `answer`(int256): The data that this specific feed provides.
 Depending on the feed you selected, this answer provides asset prices, reserves, and other types of data.
 - `startedAt`(uint256): Timestamp of when the round started.
