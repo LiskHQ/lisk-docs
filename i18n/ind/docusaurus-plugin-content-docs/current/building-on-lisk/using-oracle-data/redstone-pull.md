@@ -1,11 +1,11 @@
 ---
-title: ...with Redstone (Pull)
+title: ...with RedStone (Pull)
 slug: /building-on-lisk/using-oracle-data/redstone-pull
-description: A guide on using Redstone Pull to access real-world data such as asset prices, directly from your smart contracts on the Lisk blockchain.
+description: A guide on using RedStone Pull to access real-world data such as asset prices, directly from your smart contracts on the Lisk blockchain.
 keywords: [
     Oracle
     Oracles,
-    Redstone,
+    RedStone,
     price feeds,
     data feeds,
     smart contract,
@@ -17,26 +17,26 @@ keywords: [
     dapp development,
     build a dapp on Lisk,
     build on Lisk,
-    Redstone Pull,
+    RedStone Pull,
   ]
 ---
 
-# Accessing real-world data using the Redstone Oracle (Pull)
+# Accessing real-world data using the RedStone Oracle (Pull)
 
-This page will explain how you can access oracle data using [Redstone Pull](https://docs.redstone.finance/docs/get-started/models/redstone-pull/).
+This page will explain how you can access oracle data using [RedStone Pull](https://docs.redstone.finance/docs/get-started/models/redstone-pull/).
 
 RedStone is a data ecosystem that delivers frequently updated, reliable, and diverse data for your dApp and smart contracts deployed on Lisk.
 
-## How to pull oracle data from Redstone
+## How to pull oracle data from RedStone
 
-To create a smart contract that directly fetches the latest data from the Redstone oracle, follow this guide.
+To create a smart contract that directly fetches the latest data from the RedStone oracle, follow this guide.
 
-This guide uses the [Redstone Pull model](https://docs.redstone.finance/docs/get-started/models/redstone-pull) to fetch the data.
+This guide uses the [RedStone Pull model](https://docs.redstone.finance/docs/get-started/models/redstone-pull) to fetch the data.
 
-For an overview of the different modules that Redstone offers to receive oracle data, go to [Oracles > Redstone](../../lisk-tools/oracles#redstone).
+For an overview of the different modules that RedStone offers to receive oracle data, go to [Oracles > RedStone](../../lisk-tools/oracles#redstone).
 
 [Hardhat](https://hardhat.org/) is used in this guide to create the smart contract.
-In case you want to use Foundry, check out the [Redstone docs](https://docs.redstone.finance/docs/get-started/models/redstone-pull#foundry) for instructions.
+In case you want to use Foundry, check out the [RedStone docs](https://docs.redstone.finance/docs/get-started/models/redstone-pull#foundry) for instructions.
 
 ### Dependencies
 
@@ -125,7 +125,7 @@ import { ethers } from "hardhat";
 import { WrapperBuilder } from "@redstone-finance/evm-connector";
 
 describe("YourContract", function () {
-    describe("Redstone", function () {
+    describe("RedStone", function () {
         it("Get ETH price securely", async function () {
         const YourContract = await ethers.getContractFactory("YourContract");
         const contract = await YourContract.deploy();
