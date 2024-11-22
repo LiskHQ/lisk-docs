@@ -63,7 +63,7 @@ To use the RedStone data inside your contract, import the [AggregatorV3Interface
 For every data feed you like to store, create a new constant with type `AggregatorV3Interface`.
 
 In the constructor, set the above defined constants to point to the respective data feeds:
-Use the `AggregatorV3Interface()` function and pass the adress of the respective data feed contract as parameter.
+Use the `AggregatorV3Interface()` function and pass the address of the respective data feed contract as parameter.
 
 ```solidity
 // SPDX-License-Identifier: MIT

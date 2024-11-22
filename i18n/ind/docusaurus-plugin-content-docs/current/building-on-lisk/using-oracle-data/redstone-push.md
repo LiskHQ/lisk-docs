@@ -27,7 +27,7 @@ This page will explain how you can access oracle data using [Redstone Push](http
 
 RedStone is a data ecosystem that delivers frequently updated, reliable, and diverse data for your dApp and smart contracts deployed on Lisk.
 
-RedStone data feeds are compatible with Chainlinks [AggregatorV3Interface](https://docs.chain.link/data-feeds/using-data-feeds#solidity) and include the following components:
+RedStone data feeds are compatible with Chainlink's [AggregatorV3Interface](https://docs.chain.link/data-feeds/using-data-feeds#solidity) and include the following components:
 
 - **Aggregator contract**: An aggregator is a contract that receives periodic data updates from the oracle network.
 Aggregators store aggregated data onchain so that consumers can retrieve it and act upon it within the same transaction.
