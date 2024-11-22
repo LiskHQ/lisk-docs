@@ -27,10 +27,38 @@ This page will explain how you can access oracle data using [Redstone Push](http
 
 RedStone is a data ecosystem that delivers frequently updated, reliable, and diverse data for your dApp and smart contracts deployed on Lisk.
 
+RedStone data feeds are compatible with Chainlinks [AggregatorV3Interface](https://docs.chain.link/data-feeds/using-data-feeds#solidity) and include the following components:
+
+- **Aggregator contract**: An aggregator is a contract that receives periodic data updates from the oracle network.
+Aggregators store aggregated data onchain so that consumers can retrieve it and act upon it within the same transaction.
+These contracts are already deployed on the Lisk network and can be directly used by Consumers.
+- **Consumer**: A consumer is an onchain or offchain application that uses Data Feeds.
+Consumer contracts use the `AggregatorV3Interface` to call functions on the proxy contract[^1] of the Aggregator to retrieve oracle data.
+
+[^1]: Proxy contracts are onchain proxies that point to the aggregator for a particular data feed.
+Using proxies enables the underlying aggregator to be upgraded without any service interruption to consuming contracts.
+
+## Data feeds on Lisk
+The following Aggregators are available on Lisk Mainnet for Redstone Push:
+
+- [ETH/USD L2PriceFeedWithoutRounds](https://blockscout.lisk.com/address/0x6b7AB4213c77A671Fc7AEe8eB23C9961fDdaB3b2)
+  - address: `0x6b7AB4213c77A671Fc7AEe8eB23C9961fDdaB3b2`
+- [LSK/USD L2PriceFeedWithoutRounds](https://blockscout.lisk.com/address/0xa1EbA9E63ed7BA328fE0778cFD67699F05378a96)
+  - address: `0xa1EbA9E63ed7BA328fE0778cFD67699F05378a96`
+- [USDT/USD L2PriceFeedWithoutRounds](https://blockscout.lisk.com/address/0xd2176Dd57D1e200c0A8ec9e575A129b511DBD3AD)
+  - address: `0xd2176Dd57D1e200c0A8ec9e575A129b511DBD3AD`
+
+In this guide, we will develop a Consumer contract that will request the latest spot prices from all the above data feeds.
+
+:::note
+RedStone Push is only fully available on Lisk Mainnet, so please make sure to deploy your Consumer contract on Lisk Mainnet as well.
+
+In case you wish to deploy on Lisk Sepolia Testnet, check the [Tellor](./tellor.md) guide, which is available for both networks.
+:::
 
 ## Import
 
-To use the RedStone data in your contract, import the [AggregatorV3Interface](https://docs.chain.link/data-feeds/using-data-feeds#solidity) from Chainlink.
+To use the RedStone data inside your contract, import the [AggregatorV3Interface](https://docs.chain.link/data-feeds/using-data-feeds#solidity) from Chainlink like shown in the example contract below.
 
 For every data feed you like to store, create a new constant with type `AggregatorV3Interface`.
 
@@ -84,7 +112,7 @@ To read the data of the price feeds, we define the following functions in the co
 - `getRedStoneLSKDataFeedLatestAnswer()`
 - `getRedStoneUSDTDataFeedLatestAnswer()`
 
-Inside of the functions, call the [latestRoundData](https://docs.chain.link/data-feeds/api-reference#latestrounddata) on the respective price feeds to receive the latest price feeds for the respective token.
+Inside of the functions, call the [latestRoundData](https://docs.chain.link/data-feeds/api-reference#latestrounddata) on the respective data feeds to receive the latest spot prices for the respective token.
 
 The `latestRoundData()` function returns the following values:
 
@@ -114,26 +142,11 @@ pragma solidity ^0.8.28;
 
 import {AggregatorV3Interface} from "@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol";
 
-contract DataConsumerV3 {
+contract RedStoneDataConsumer {
   AggregatorV3Interface internal priceFeedETH;
   AggregatorV3Interface internal priceFeedLSK;
   AggregatorV3Interface internal priceFeedUSDT;
 
-  /**
-    * Network: Lisk
-    * Aggregator: ETH/USD
-    * Address: 0x6b7AB4213c77A671Fc7AEe8eB23C9961fDdaB3b2
-    */
-    /**
-    * Network: Lisk
-    * Aggregator: LSK/USD
-    * Address: 0xa1EbA9E63ed7BA328fE0778cFD67699F05378a96
-    */
-    /**
-    * Network: Lisk
-    * Aggregator: USDT/USD
-    * Address: 0xd2176Dd57D1e200c0A8ec9e575A129b511DBD3AD
-    */
   constructor() {
       priceFeedETH = AggregatorV3Interface(
           0x6b7AB4213c77A671Fc7AEe8eB23C9961fDdaB3b2
@@ -187,3 +200,16 @@ contract DataConsumerV3 {
   }
 }
 ```
+
+## Deploying on Lisk
+
+To deploy the smart contract on Lisk, follow the guides 
+
+- [Deploying a smart contract with Hardhat](../deploying-smart-contract/with-Hardhat), or
+- [Deploying a smart contract with Foundry](../deploying-smart-contract/with-Foundry)
+
+:::note
+RedStone Push is only available on Lisk Mainnet, so please make sure to deploy your Consumer contract on Lisk Mainnet as well.
+
+In case you wish to deploy on Lisk Sepolia Testnet, check the [Tellor](./tellor.md) guide, which is available for both networks.
+:::
