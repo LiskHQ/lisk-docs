@@ -27,13 +27,13 @@ LiskAdresses.forEach(token => {
   // For Lisk Mainnet, add Ethereum Mainnet address
   if (token.chainId === chainIds[0]) {
     result = tokens.find(function(tkn) {
-        return tkn.symbol === token.symbol && tkn.chainId === 1;
+        return ((tkn.symbol === token.symbol) || (tkn.symbol + ".e" === token.symbol)) && tkn.chainId === 1;
     });
     ethAddress = result? result : {address: "Not Found"};
   // For Lisk Sepolia, add Ethereum Sepolia address
   } else if (token.chainId === chainIds[1]) {
     result = tokens.find(function(tkn) {
-      return tkn.symbol === token.symbol && tkn.chainId === 11155111;
+      return ((tkn.symbol === token.symbol) || (tkn.symbol + ".e" === token.symbol)) && tkn.chainId === 11155111;
     });
     ethAddress = result? result : {address: "Not Found"};
   } else {
