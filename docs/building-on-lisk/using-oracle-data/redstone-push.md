@@ -133,8 +133,8 @@ The `updatedAt` value should be used to make sure that the `answer` is recent en
 You can compare `updatedAt` to the latest block time (`uint256 currentTime = block.timestamp;`) to ensure you are only using the latest oracle data in your application.
 
 :::caution
-THIS IS AN EXAMPLE CONTRACT THAT USES UN-AUDITED CODE.
-DO NOT USE THIS CODE IN PRODUCTION.
+This is an example contract that uses un-audited code.
+Do not use this code in production.
 :::
 
 ```solidity title="Reading data feeds"
