@@ -69,7 +69,7 @@ Create a new constant with the type `AggregatorV3Interface` for every data feed 
 In the constructor, set the above-defined constants to point to the respective data feeds.
 Use the `AggregatorV3Interface()` function and pass the address of the respective data feed contract as a parameter.
 
-```solidity
+```solidity title="Importing the AggregatorV3Interface"
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.28;
 
@@ -132,16 +132,14 @@ In this example, we will only use `answer` and `updatedAt`.
 The `updatedAt` value should be used to make sure that the `answer` is recent enough for your application to use it.
 You can compare `updatedAt` to the latest block time (`uint256 currentTime = block.timestamp;`) to ensure you are only using the latest oracle data in your application.
 
-```solidity
+:::caution
+THIS IS AN EXAMPLE CONTRACT THAT USES UN-AUDITED CODE.
+DO NOT USE THIS CODE IN PRODUCTION.
+:::
+
+```solidity title="Reading data feeds"
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.28;
-
-/**
- * THIS IS AN EXAMPLE CONTRACT THAT USES HARDCODED
- * VALUES FOR CLARITY.
- * THIS IS AN EXAMPLE CONTRACT THAT USES UN-AUDITED CODE.
- * DO NOT USE THIS CODE IN PRODUCTION.
- */
 
 import {AggregatorV3Interface} from "@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol";
 
