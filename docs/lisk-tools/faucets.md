@@ -44,11 +44,11 @@ There are two different options to acquire free Testnet ETH:
 ## thirdweb Faucet
 Grants Testnet **ETH** on Lisk Sepolia.
 
-The thirdweb faucet is avialable under https://thirdweb.com/lisk-sepolia-testnet
+The thirdweb faucet is available under https://thirdweb.com/lisk-sepolia-testnet
 
 You will be able to claim 0.1 ETH once every 24 hours.
 
-[How to Get Free ETH Token (ETH) From the Lisk Sepolia Testnet Faucet](https://blog.thirdweb.com/faucet-guides/how-to-get-free-eth-token-from-the-lisk-sepolia-faucet/)
+For more information, see: [How to get free ETH token (ETH) from the Lisk Sepolia Testnet Faucet](https://blog.thirdweb.com/faucet-guides/how-to-get-free-eth-token-from-the-lisk-sepolia-faucet/)
 
 ## dRPC Faucet
 
