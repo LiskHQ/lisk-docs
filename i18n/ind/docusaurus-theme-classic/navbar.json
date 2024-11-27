@@ -1,0 +1,14 @@
+{
+  "logo.alt": {
+    "message": "Lisk Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Building with Lisk": {
+    "message": "Membangun dengan Lisk",
+    "description": "Navbar item with label Building with Lisk"
+  },
+  "item.label.Using Lisk": {
+    "message": "Menggunakan Lisk",
+    "description": "Navbar item with label Using Lisk"
+  }
+}

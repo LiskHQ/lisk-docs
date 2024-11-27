@@ -53,19 +53,11 @@ Lisk (LSK) is available for trading on various <!-- decentralized and centralize
 | **Zonda**                | 🟡 Ethereum        | [LSK/USDT](https://zondacrypto.com/en/exchange-rate/lisk-price-usdt)<br />[LSK/EUR](https://zondacrypto.com/en/exchange-rate/lisk-price-eur)<br />[LSK/BTC](https://zondacrypto.com/en/exchange-rate/lisk-price-btc)<br />[LSK/PLN](https://zondacrypto.com/en/exchange-rate/lisk-price-pln) |
 
 
-## Decentralized Exchanges (DEX)
-
-| Name                          | Supported network[^1]                       |
-| :---------------------------- | :------------------------------------------ |
-| [Oku.Trade](https://oku.trade/app/lisk/trade/0xac485391eb2d7d88253a7f1ef18c37f4242d1a24) | 🟢 Lisk |
-| [Velodrome](https://velodrome.finance/swap?from=0xac485391eb2d7d88253a7f1ef18c37f4242d1a24&to=0x05d032ac25d322df992303dca074ee7392c117b9&chain0=1135&chain1=1135) | 🟢 Lisk |
-| [Uniswap](https://app.uniswap.org/explore/tokens/ethereum/0x6033f7f88332b8db6ad452b7c6d5bb643990ae3f) | 🟡 Ethereum |
-
 [^1]: The LSK token is supported on both the Ethereum L1 and the Lisk L2 blockchains.
 The "supported network" field indicates the blockchain being used by the exchange for deposits & withdrawals of LSK. 
 Please note that using the wrong network/blockchain when depositing funds to an exchange could result in lost funds.
 
-## Coming soon
+### Coming soon
 
 | Name                     | Supported network |
 | :----------------------- |:----------------- |
@@ -74,4 +66,18 @@ Please note that using the wrong network/blockchain when depositing funds to an 
 | **Coincheck** (Japan)    | Ethereum          |
 | **OkCoin** (OKX Japan)   | Lisk              |
 | **YellowCard** (Africa)  | Lisk              |
+
+## Decentralized Exchanges (DEX)
+
+| Name                          | Supported network[^1]                       |
+| :---------------------------- | :------------------------------------------ |
+| [Oku.Trade](https://oku.trade/app/lisk/trade/0xac485391eb2d7d88253a7f1ef18c37f4242d1a24) | 🟢 Lisk |
+| [Uniswap](https://app.uniswap.org/explore/tokens/ethereum/0x6033f7f88332b8db6ad452b7c6d5bb643990ae3f) | 🟡 Ethereum |
+
+### Coming soon
+
+| Name                          | 
+| :---------------------------- |
+| **Velodrome**                 | 
+
 

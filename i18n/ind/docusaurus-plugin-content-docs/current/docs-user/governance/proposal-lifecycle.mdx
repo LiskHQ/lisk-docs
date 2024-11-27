@@ -1,0 +1,86 @@
+---
+title: Proposal Lifecycle
+sidebar_position: 3
+slug: /governance/proposal-lifecycle
+description: Summarizes the lifecycle of a proposal for the Lisk DAO.
+keywords:
+  [
+    Lisk governance,
+    Lisk DAO,
+    Delegation,
+    Voting,
+    Proposals,
+    Draft proposals,
+    Proposal creation,
+    Proposal lifecycle,
+    Lisk Delegates,
+    Delegates,
+    Voting Power
+  ]
+---
+
+# Lifecycle of a proposal
+
+The lifecycle of a proposal consists of the following steps:
+
+1. [Discussion & draft](#1-discussion--draft)
+2. [Proposal creation](#2-proposal-creation)
+3. [Voting & results](#3-voting--results)
+
+## 1. Discussion & draft 
+Ideas for proposals can be discussed in the `#lisk-dao` channel on [Lisk Chat](https://lisk.chat) or on a new discussion thread on the [Governance Forum](https://forum.lisk.com).
+Once an idea results in a concrete proposal, create a new **draft proposal** thread in the forum:
+
+- For funding proposals under the [Proposals|Funding](https://forum.lisk.com/c/proposals/funding) category 
+- For general proposals under the [Proposals|General](https://forum.lisk.com/c/proposals/general) category 
+
+Please fill out the provided **template** when you open a new thread in the above categories.
+You can add additional fields if required.
+
+The discussion should be kept open for at least **2 weeks** before moving to a proposal on Tally.
+When the author wants to incorporate feedback from the discussion, the original draft proposal (typically the first message of the discussion thread) should be modified, instead of adding an updated proposal in a new message.
+The updated proposal should contain a “change log” or “updates” section at the top where the updates are documented.
+
+## 2. Proposal creation
+
+### Requirements
+
+- **Proposal threshold**: Your delegated voting power must be at least 300,000 vpLSK.
+
+:::note
+If you don't have enough voting power, you can still create the proposal as a draft on Tally and ask a delegate to submit it.
+To get an overview about the existing delegates and their voting power, you can check the [Delegates page](https://www.tally.xyz/gov/lisk/delegates) on the Lisk DAO Tally instance.
+
+Alternatively, you can ask in the draft proposal thread on the forum if a delegate is willing to submit the proposal for you.
+:::
+
+### Creating the proposal on Tally
+Anyone who considers the proposal mature enough and who fulfills the requirements from above, can create a proposal on Tally:
+
+1. Choose the same title for the proposal as the corresponding draft proposal on the forum.
+2. Include the full proposal text in the description.
+    1. [Optional]: To prevent frontrunning[^1]: At the bottom, add the following line to the proposal:
+    `#proposer=0x???` where `???` is the proposer address.
+    Example:
+        ```
+        My proposal text
+        #proposer=0x???
+        ```
+    2. [Optional]: If the proposal includes an action, for example a token transfer of a funding proposal, click on the “Add Action” button and fill out the required fields.
+3. If a corresponding draft proposal exists in the forum, post the link to the proposal on Tally in the respective thread.
+
+[^1]: This is used for frontrunning protection.
+By adding this pattern at the end of their proposal, one can ensure that no other address can submit the same proposal.
+An attacker would have to either remove or change that part, which would result in a different proposal id.
+See OpenZeppelin's [Governor docs](https://docs.openzeppelin.com/contracts/4.x/api/governance) for more information.
+
+## 3. Voting & results
+Once a new proposal is created, the community has exactly **1 week** time to vote on the proposal on Tally.
+Delegates should use the time to read and consider the proposal carefully, and place their vote according to their conclusion.
+
+The following requirements must be fulfilled for a proposal to pass:
+
+- **Quorum**: For a proposal to pass, the “yes” and “abstain” votes must sum up to at least  **24,000,000 vpLSK**.
+- **Majority**: There must be strictly **more “yes” than “no”** votes.
+
+See also [Implementation of proposals](overview#implementation-of-funding-proposals).

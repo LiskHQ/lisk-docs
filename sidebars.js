@@ -126,7 +126,17 @@ const sidebars = {
             keywords: ['guides','apps','dapps','app development','web3 app','web3 apps','pwa','mobile app'],
           },
         },
-        'building-on-lisk/use-oracle-data',
+        {
+          type: 'category',
+          label: 'Using oracle data',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            'building-on-lisk/using-oracle-data/tellor',
+            'building-on-lisk/using-oracle-data/redstone-pull',
+            'building-on-lisk/using-oracle-data/redstone-push',
+          ],
+        }
       ],
       link: {
         type: 'generated-index',
