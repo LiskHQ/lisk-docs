@@ -37,7 +37,6 @@
   --ifm-font-color-base: #000000;
   --ifm-menu-color: #000000;
   --ifm-toc-link-color: #000000;
-  --ifm-link-color: rgba(97, 63, 255, 1);
   --ifm-button-color: #000000;
 }
 
@@ -105,7 +104,14 @@ html[data-theme='dark'] .alert--info {
 a {
   display: inline-block;
   scroll-margin-top: var(--ifm-navbar-height);
-  text-decoration-color: var(--ifm-color-primary);
+}
+
+.markdown a {
+  text-decoration: underline;
+}
+
+.markdown a:hover {
+  font-weight: bold;
 }
 
 .alert a {
@@ -205,7 +211,6 @@ article iframe {
   --ifm-font-color-base: #FFFFFF;
   --ifm-toc-link-color: #FFFFFF;
   --ifm-menu-color: #FFFFFF;
-  --ifm-link-color: rgba(0, 170, 98, 1);
   --ifm-tabs-color-active-border: rgba(0, 170, 98, 1);
   --ifm-alert-border-color: rgba(0, 170, 98, 1);
 }
