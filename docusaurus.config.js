@@ -23,9 +23,9 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'LiskHQ', // Usually your GitHub org/user name.
-  projectName: 'lisk-documentation', // Usually your repo name. /**/
-  trailingSlash: false,
+  /* organizationName: 'LiskHQ', // Usually your GitHub org/user name.
+  projectName: 'lisk-documentation', // Usually your repo name. 
+  trailingSlash: false, */
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
@@ -37,6 +37,13 @@ const config = {
     defaultLocale: 'en',
     locales: ['en', 'ind'],
     localeConfigs: {
+      en: {
+        label: 'English',
+        direction: 'ltr',
+        htmlLang: 'en-US',
+        calendar: 'gregory',
+        path: 'en',
+      },
       ind: {
         label: 'Indonesian',
       },
