@@ -37,13 +37,13 @@ const config = {
     defaultLocale: 'en',
     locales: ['en', 'ind'],
     localeConfigs: {
-      // en: {
-      //   label: 'English',
-      //   direction: 'ltr',
-      //   htmlLang: 'en-US',
-      //   calendar: 'gregory',
-      //   path: 'en',
-      // },
+      en: {
+        label: 'English',
+        direction: 'ltr',
+        htmlLang: 'en-US',
+        calendar: 'gregory',
+        path: 'en',
+      },
       ind: {
         label: 'Indonesian',
       },
@@ -107,11 +107,11 @@ const config = {
         },
         items: [
           /*
-            TODO: Uncomment when all localozed pages are translated*/
+            TODO: Uncomment when all localozed pages are translated
           {
             type: 'localeDropdown',
             position: 'right',
-          },
+          }, */
           {
             type: 'doc',
             position: 'left',
