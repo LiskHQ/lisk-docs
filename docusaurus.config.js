@@ -24,7 +24,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   /* organizationName: 'LiskHQ', // Usually your GitHub org/user name.
-  projectName: 'lisk-documentation', // Usually your repo name. 
+  projectName: 'lisk-documentation', // Usually your repo name.
   trailingSlash: false, */
 
   onBrokenLinks: 'throw',
@@ -107,11 +107,11 @@ const config = {
         },
         items: [
           /*
-            TODO: Uncomment when all localozed pages are translated*/
+            TODO: Uncomment when all localozed pages are translated
           {
             type: 'localeDropdown',
             position: 'right',
-          },
+          }, */
           {
             type: 'doc',
             position: 'left',
