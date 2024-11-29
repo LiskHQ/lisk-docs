@@ -25,7 +25,7 @@ const config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'LiskHQ', // Usually your GitHub org/user name.
   projectName: 'lisk-documentation', // Usually your repo name. /**/
-  trailingSlash: false,
+  trailingSlash: true,
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
