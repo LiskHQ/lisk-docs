@@ -17,3 +17,11 @@
 .menu__list {
   padding-left: .5em;
 }
+
+.table-of-contents__link {
+  opacity: 70%;
+}
+
+.table-of-contents__link:hover {
+  opacity: 100%;
+}

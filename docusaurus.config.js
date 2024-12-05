@@ -37,6 +37,13 @@ const config = {
     defaultLocale: 'en',
     locales: ['en', 'ind'],
     localeConfigs: {
+      en: {
+        label: 'English',
+        direction: 'ltr',
+        htmlLang: 'en-US',
+        calendar: 'gregory',
+        path: 'en',
+      },
       ind: {
         label: 'Indonesian',
       },
@@ -99,9 +106,9 @@ const config = {
           srcDark: '/img/lisk-docs-dark.svg',
         },
         items: [
-          /*{
+          /*
             TODO: Uncomment when all localozed pages are translated
-          /* {
+          {
             type: 'localeDropdown',
             position: 'right',
           }, */
