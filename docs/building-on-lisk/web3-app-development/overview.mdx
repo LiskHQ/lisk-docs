@@ -82,7 +82,7 @@ To describe important steps in this innovation, websites and apps are generally 
     Other new types of Web3 apps include:
     
     - DeFi (Decentralized Finance)
-      - [DEXs](../../docs-user/exchanges.md##decentralized-exchanges-dex) (Decentralized Exchanges)
+      - [DEXs](../../docs-user/exchanges.md#decentralized-exchanges-dex) (Decentralized Exchanges)
       - GameFi (Gaming Finance)
     - DAOs (Decentralized Autonomous Organizations)
     - [DeSoc](https://onchain.org/magazine/decentralized-social-media-business-opportunities-are-they-real/) (Decentralized Social Media)
@@ -91,49 +91,66 @@ To describe important steps in this innovation, websites and apps are generally 
   
     Web3 is a promise to bring back the original vision of the internet, where users are in control of their data and privacy, and where the internet is a place for free speech and innovation.
     However, how blockchain technology is implemented and used in apps can vary greatly, and not all Web3 apps are equally decentralized and trustless.
-    For example, a web app could support paying with cryptocurrency, but still be very centralized in other areas.    
-    Apart from technical aspects, other aspects like governance also contribute to how decentralized a Web3 app really is.
   </TabItem>
 </Tabs>
 
+### Web2 vs Web3 app development
+#### Languages
+Regarding languages used to build Web2 and Web3 apps, there aren't many differences.
+All languages that are typically used for Web2 app development can also be used for Web3 app development.
+
+In the end, Web3 apps can even look and feel exactly like Web2 apps for users, because their frontend is built with the same technologies.
+However, the backend of Web3 apps is different, as it interacts with the blockchain through smart contracts.
+Smart contracts are written in [Solidity](https://soliditylang.org/), therefore Web3 developers need to know Solidity to build the smart contracts they require for their app.
+However, for many use cases, there are already audited smart contracts available(see [OpenZeppelin](https://www.openzeppelin.com/solidity-contracts) or [thirdweb](https://thirdweb.com/explore)) that can be used, so developers don't always need to write their own smart contracts from scratch.
+
+#### Tech stack
+As mentioned above, the Web2 and Web3 app frontend development is very similar.
+Theoretically, you could build a Web3 app with nearly the same tech stack as a Web2 app, like Next.js, Vite, etc.
+The only thing you need to add is a way for your application to interact with the blockchain.
+For this, there are serveral libraries and frameworks available, like [viem](https://viem.sh/), [web3.js](https://web3js.readthedocs.io) or [ethers.js](https://docs.ethers.io).
+
+However, many blockcain platforms offer their own SDKs and tools to interact with their blockchain, which can make development easier and more efficient.
+There are also SDKs for Web3 app development that provide a complete tech stack, like [thirdweb](https://thirdweb.com/), which take away most of the complexity of blockchain development and provide a smooth developer experience.
+
+#### Data storage
+In Web2 apps, data is typically stored in a centralized database.
+In Web3 apps, some data is stored on the blockchain, which is a decentralized database.
+However, not all data can be stored on the blockchain, as it is quite expensive and slow to store large amounts of data on the blockchain.
+
+#### Data access
+In Web2 apps, data is accessed through APIs.
+In Web3 apps, blockchain data is accessed through smart contracts.
+
+| Category | Web2 app development | Web3 app development |
+| Tech stack | | |
+| Languages | | |
+| Philosophy | | |
+
 ## Getting started with Web3 app development
 
-Before starting with the actual development of a Web3 app, you need to be clear about the following:
+Before starting with the actual development of a Web3 app, you need to be clear about the the right app **platform(s)** to build your Web3 app on.
+Depending on your use case and target audience, you may want to serve it through one ore multiple platforms that are most accessible and/or desired by your users.
+The following sections will give you an overview of the different platforms you can choose from to build your Web3 app on, including further resources and guides to get you started with the app development.
 
-1. A clear idea of what you want to create with the Web3 app and what problems your application will resolve.
-2. The blockchain ecosystem you want to build your Web3 app on.
-The Lisk blockchain is an excellent choice for building Web3 apps, as it is fully EVM-equivalent while providing very low fees for transactions.
-Additionally, Lisk is part of the superchain ecosystem, which makes it interoperabile with all other blockchains in the superchain, creating a stable and growing ecosystem for your app to live in.
-3. The right app platform(s) to build your Web3 app on.
-Depending on your use case and target audience, you may want to serve it through a platform that is most accessible or desired by your users.
-The following sections will give you an overview of the different platforms you can choose from to build your Web3 app on.
+### Web3 Mobile Apps
+Mobile applications are generally a great way to reach a large audience, as most people have a smartphone and use it to access the internet.
+Mobile apps can use the integrated features of handheld devices and are typically faster and more user-friendly than websites.
+This can provide a more immersive experience for users.
 
-{/* <!-- ### 1. The idea:
-Define what you want to create with the Web3 app and what problems your application will resolve.
-### 2. Choosing the blockchain ecosystem
-### 3. Smart contract development
-In this tutorial, we use [thirdweb](https://thirdweb.com/) to develop and deploy our smart contracts.
-### 4. App frontend development
-Choose the best suitable Web3 framework, such as React or Angular, to build the frontend of your Web3 app.
-We recommend to choose a Web3 development kit on top which provides a convenient framework to deveop Web3 applications.
-
-In this tutorial, we use [thirdweb](https://thirdweb.com/) as web3 development platform.
-
-#### Choosing the right app platform(s) --> */}
-
-### Mobile
-The first decision you'll need to make when developing a mobile-friendly Web3 application is whether you want to design a native application, a [progressive web application](#pwa), or a mobile website.
-
-Each of these options comes with its own set of challenges. 
-
-#### Tutorials
-
-[How to build a Web3 mobile app on Lisk with thirdweb](./build-a-web3-mobile-app.md)
-
-#### Further reading
+#### Development resources
+[Build Web3 Mobile Apps with React Native on Lisk with thirdweb](https://blog.thirdweb.com/web3-mobile-apps/build-web3-mobile-apps-with-reactive-native-on-lisk/)
 [Building a mobile dApp with Flutter](https://medium.com/dash-community/building-a-mobile-dapp-with-flutter-be945c80315a)
 
-### PWA
+### Web3 Web Apps
+The main advantage of web applications is that they are platform-independent and can be accessed from any device with a web browser.
+Additionally, they don't need to be installed by the user, and can be used directly.
+
+#### Development resources
+{/* - Next.js
+- Vite */}
+
+### Web3 PWAs
 A Progressive Web App (= PWA) allows users to install your web app to their device.
 They appear as native apps on your desktop or mobile device and offer features like offline support and push notifications.
 This way, PWA allow to develop an application that can be used via browser[^1], mobile, or desktop application alike.
@@ -153,10 +170,9 @@ Currently, Google Play, Microsoft Store, and Samsung Galaxy Store support PWAs, 
 
 [How to build a Web3 PWA on Lisk with thirdweb](./build-a-web3-pwa.md)
 
-#### Further reading
+#### Development resources
 [Video tutorial: Build a web3 PWA by thirdweb](https://www.youtube.com/watch?v=VU8i-dn2_GE)
 
-### Browser
 
 ### Desktop
 
