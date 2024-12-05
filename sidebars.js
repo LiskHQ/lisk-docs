@@ -30,7 +30,6 @@ const sidebars = {
         'about-lisk/fees'
       ],
     },
-
     {
       type: 'category',
       label: 'Building on Lisk',
@@ -108,6 +107,7 @@ const sidebars = {
             keywords: ['guides','smart contracts','token development','token standards','erc-20','erc-721','erc-1155'],
           },
         },
+        'building-on-lisk/web3-app-development',
         {
           type: 'category',
           label: 'Using oracle data',
