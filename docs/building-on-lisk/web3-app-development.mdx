@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: Web3 App Development
 slug: /web3-app-development
 description: 'An introduction into Web3 application development on Lisk.'
 keywords:
@@ -7,6 +7,7 @@ keywords:
     'Lisk',
     'Web3 apps',
     'Web3 app',
+    'Web3 application',
     'Web3 app development',
     'Web3 mobile app',
     'Web3 PWA',
@@ -22,7 +23,7 @@ import TabItem from '@theme/TabItem';
 
 # Web3 App Development
 
-On this page, you will learn what Web3 applications are, 
+On this page, you will learn about Web3 applications, and how to get started with Web3 app development.
 
 ## What are Web3 applications?
 
@@ -63,7 +64,7 @@ To describe important steps in this innovation, websites and apps are generally 
     - Limited interoperability
   </TabItem>
   <TabItem value="web3" label="Web3" default>
-    Web3 (also known as Web 3.0) is the next step in the evolution of the Web, aiming to address the [limitations of Web 2.0](overview.mdx?web-version=web2#web2-limitations).
+    Web3 (also known as Web 3.0) is the next step in the evolution of the Web, aiming to address the [limitations of Web 2.0](web3-app-development.mdx?web-version=web2#web2-limitations).
     Web3 is the idea of a decentralized internet, where users are in control over their data.
 
     :::info
@@ -82,7 +83,7 @@ To describe important steps in this innovation, websites and apps are generally 
     Other new types of Web3 apps include:
     
     - DeFi (Decentralized Finance)
-      - [DEXs](../../docs-user/exchanges.md#decentralized-exchanges-dex) (Decentralized Exchanges)
+      - [DEXs](../docs-user/exchanges.md#decentralized-exchanges-dex) (Decentralized Exchanges)
       - GameFi (Gaming Finance)
     - DAOs (Decentralized Autonomous Organizations)
     - [DeSoc](https://onchain.org/magazine/decentralized-social-media-business-opportunities-are-they-real/) (Decentralized Social Media)
@@ -118,16 +119,12 @@ thirdweb supports [Lisk](https://thirdweb.com/lisk) and many other EVM-compatibl
 In Web2 apps, data is typically stored in a centralized database.
 In Web3 apps, some data is stored on the blockchain, which is a decentralized database.
 However, not all data can be stored on the blockchain, as it is quite expensive and slow to store large amounts of data on the blockchain.
+Therefore, Web3 apps often use a combination of blockchain storage and off-chain storage.
 
 #### Data access
-In Web2 apps, data is accessed through APIs.
+In Web2 apps, data from the database is accessed through APIs.
 In Web3 apps, blockchain data is accessed through smart contracts.
-
-| Category | Web2 app development | Web3 app development |
-| :------- |:-------------------- |:-------------------- |
-| Tech stack | a|b |
-| Languages | c| d|
-| Philosophy |e |f|
+They usually expose public functions that can be called by the app frontend to read and/or write data from/to the blockchain, similar to a classical API.
 
 ## Getting started with Web3 app development
 
@@ -142,15 +139,16 @@ This can provide a more immersive experience for users.
 Last but not least, mobile apps allow users to access your app on the go, which can be a big advantage for many use cases.
 
 #### Development resources
-[Build Web3 Mobile Apps with React Native on Lisk with thirdweb](https://blog.thirdweb.com/web3-mobile-apps/build-web3-mobile-apps-with-reactive-native-on-lisk/)
-[Building a mobile dApp with Flutter](https://medium.com/dash-community/building-a-mobile-dapp-with-flutter-be945c80315a)
+- [Build Web3 Mobile Apps with React Native on Lisk with thirdweb](https://blog.thirdweb.com/web3-mobile-apps/build-web3-mobile-apps-with-reactive-native-on-lisk/)
+- [Building a mobile dApp with Flutter](https://medium.com/dash-community/building-a-mobile-dapp-with-flutter-be945c80315a)
 
 ### Web3 Web Apps
 The main advantage of web applications is that they are platform-independent and can be accessed from any device with a web browser.
 Additionally, they don't need to be installed by the user, and can be used directly.
 
 #### Development resources
-[How to Build an NFT Minting dApp](https://blog.thirdweb.com/guides/build-nft-minting-dapp-with-thirdweb-guide/) by thirdweb
+- [How to Build an NFT Minting dApp](https://blog.thirdweb.com/guides/build-nft-minting-dapp-with-thirdweb-guide/) by thirdweb
+
 {/* - Next.js
 - Vite */}
 
@@ -171,8 +169,8 @@ Currently, Google Play, Microsoft Store, and Samsung Galaxy Store support PWAs, 
 [^1]: Only supported in PWA-compatible browsers (most Chromium based browsers should work).
 
 #### Development resources
-[How to Create a Web3 PWA](https://blog.thirdweb.com/guides/how-to-create-a-web3-pwa/) by thirdweb
-[Video tutorial: Build a web3 PWA](https://www.youtube.com/watch?v=VU8i-dn2_GE) by thirdweb
+- [How to Create a Web3 PWA](https://blog.thirdweb.com/guides/how-to-create-a-web3-pwa/) by thirdweb
+- [Video tutorial: Build a web3 PWA](https://www.youtube.com/watch?v=VU8i-dn2_GE) by thirdweb
 
 ### Desktop apps
 Desktop apps are native applications that are installed on a user's computer.
