@@ -1,53 +1,52 @@
 ---
-title: Overview
-sidebar_position: 1
-slug: /governance/overview
-description: Documentation about the governance of the Lisk project.
-keywords:
+
+**Judul:** Gambaran Umum  
+**Posisi sidebar:** 1  
+**Slug:** /governance/overview  
+**Deskripsi:** Dokumentasi tentang tata kelola proyek Lisk.  
+**Kata kunci:**  
   [
-    Lisk governance,
+    Tata kelola Lisk,
     Lisk DAO,
     Lisk Grants,
-    Funding,
-    Delegation,
-    Voting,
-    Voting Power,
-    Proposals,
+    Pendanaan,
+    Delegasi,
+    Pemungutan suara,
+    Kekuatan suara,
+    Proposal,
   ]
+
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+**Tata Kelola - Gambaran Umum**  
+Proyek Lisk dikelola oleh [Lisk DAO](#lisk-dao) dan [Onchain Foundation](https://onchain.org/foundation/).  
+Onchain Foundation mendefinisikan visi dan strategi proyek bersama tim Lisk, mendanai pengembangannya, dan menjadi pemangku kepentingan di Lisk DAO melalui delegasi Tim Lisk.  
+Lisk DAO memungkinkan setiap pemegang token LSK yang mengunci token mereka untuk berpartisipasi dalam tata kelola onchain untuk proyek Lisk.  
+Lisk DAO memutuskan bagaimana menghabiskan dana di dalam kasnya yang signifikan dan dapat mengajukan proposal umum tentang parameter protokol atau arah proyek.
 
-# Governance overview
-The Lisk project is governed by the [Lisk DAO](#lisk-dao) and [Onchain Foundation](https://onchain.org/foundation/).
-The Onchain Foundation defines the vision and strategy for the project together with the Lisk team, funds its development and is a stakeholder in the Lisk DAO via the Lisk Team delegate.
-The Lisk DAO allows any LSK token holder that stakes their tokens to participate in onchain governance for the Lisk project.
-The Lisk DAO decides how to spend funds in its significant treasury and can pass general proposals about protocol parameters or the project direction.
-
-:::info
-Every LSK token holder who participates in the DAO is rewarded with [staking rewards](../user/staking/overview#staking-rewards), to incentivize participation in the Lisk governance.
+:::info  
+Setiap pemegang token LSK yang berpartisipasi dalam DAO diberi hadiah [staking rewards](../user/staking/overview#staking-rewards) untuk mendorong partisipasi dalam tata kelola Lisk.  
 :::
 
-## Lisk Admin Addresses
+## Alamat Admin Lisk
 
-Details of **Admin account** addresses on 🟢 **Ethereum Mainnet** and 🟡 **Sepolia Testnet** are as follows.
+Rincian alamat **akun Admin** di 🟢 **Ethereum Mainnet** dan 🟡 **Sepolia Testnet** adalah sebagai berikut.
 
-:::note
-The Gelato-controlled accounts will be transferred to the [OP security council](https://gov.optimism.io/t/intro-to-optimisms-security-council/6885) in the near future.
+:::note  
+Akun yang dikelola oleh Gelato akan dipindahkan ke [Dewan Keamanan OP](https://gov.optimism.io/t/intro-to-optimisms-security-council/6885) dalam waktu dekat.  
 :::
 
 <table>
   <thead>
     <tr>
-      <th scope="col">Admin Role</th>
-      <th scope="col">Controlled/Owned by</th>
-      <th scope="col" colSpan="2">Address</th>
+      <th scope="col">Peran Admin</th>
+      <th scope="col">Dikelola/Dimiliki oleh</th>
+      <th scope="col" colSpan="2">Alamat</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row" rowSpan="2">L1 Proxy Admin</th>
+      <th scope="row" rowSpan="2">Admin Proxy L1</th>
       <th scope="row" rowSpan="2">Gelato</th>
       <td>[0xeC432c4F1d0E12737f3a42a459B84848Af979b2d](https://etherscan.io/address/0xeC432c4F1d0E12737f3a42a459B84848Af979b2d)</td>
       <td>🟢</td>
@@ -87,135 +86,137 @@ The Gelato-controlled accounts will be transferred to the [OP security council](
     <td>🟡</td>
     </tr>
   </tbody>
-  <tfoot>
-  </tfoot>
 </table>
 
-## Lisk Security Council
+## Dewan Keamanan Lisk
 
-The Lisk security council is a 3-of-5 multi-signature wallet with key members of Lisk team and Onchain Foundation.
+Dewan Keamanan Lisk adalah dompet multi-tanda tangan 3 dari 5 yang terdiri dari anggota utama tim Lisk dan Onchain Foundation.  
 
-The purpose of the security council is to be responsible for smart contract upgrades in case a security vulnerability is discovered.
+Tujuan dari dewan keamanan adalah untuk bertanggung jawab atas pembaruan kontrak pintar jika ditemukan kerentanannya.  
 
-The security council controls the following contracts:
+Dewan keamanan mengontrol kontrak-kontrak berikut:
 
-- Claims contract
-- Governance contracts
-- Staking and Rewards contracts
-- All Vesting contracts
-- Airdrop contract
+- Kontrak klaim  
+- Kontrak tata kelola  
+- Kontrak staking dan hadiah  
+- Semua kontrak vesting  
+- Kontrak airdrop  
 
-The ERC-20 token contract cannot be upgraded by the security council, but the security council has the special power to add accounts that can burn LSK tokens.
-This is only planned to be used in case the community decides to burn the 100M LSK allocated to the Lisk DAO.
+Kontrak token ERC-20 tidak dapat diperbarui oleh dewan keamanan, tetapi dewan keamanan memiliki kekuatan khusus untuk menambah akun yang dapat membakar token LSK.  
+Ini hanya direncanakan digunakan jika komunitas memutuskan untuk membakar 100 juta LSK yang dialokasikan untuk Lisk DAO.
 
-## Lisk DAO
-The Lisk DAO provides the opportunity for LSK token holders to participate in the overall governance of the Lisk project, including allocation of funds, protocol updates, or strategic directions.
-Decisions are made via [proposals](#proposals).
+## Lisk DAO  
+Lisk DAO memberikan kesempatan bagi pemegang token LSK untuk berpartisipasi dalam tata kelola keseluruhan proyek Lisk, termasuk alokasi dana, pembaruan protokol, atau arah strategis.  
+Keputusan dibuat melalui [proposal](#proposals).
 
-### Tools
-The following are the main tools to participate in the Lisk DAO:
+### Alat  
+Berikut adalah alat utama untuk berpartisipasi dalam Lisk DAO:
 
 <Tabs>
   <TabItem value="tally" label="Tally">
-  Tally is the platform used to create and vote for proposals of the Lisk DAO.
+  Tally adalah platform yang digunakan untuk membuat dan memberi suara pada proposal di Lisk DAO.
 
-  The [Lisk DAO Tally instance](https://www.tally.xyz/gov/lisk) is the place where users can vote on proposals or delegate their voting power.
+  [Lisk DAO Tally instance](https://www.tally.xyz/gov/lisk) adalah tempat bagi pengguna untuk memberi suara pada proposal atau mendelegasikan kekuatan suara mereka.
   </TabItem>
   <TabItem value="forum" label="Forum">
-  The [Lisk Governance Forum](https://forum.lisk.com/) is the place for the community to discuss the Lisk governance and draft proposals, before they are submitted on Tally.
+  [Lisk Governance Forum](https://forum.lisk.com/) adalah tempat bagi komunitas untuk mendiskusikan tata kelola Lisk dan draf proposal, sebelum diajukan ke Tally.
   </TabItem>
   <TabItem value="discord" label="Discord">
-  The `#lisk-dao` channel in the [Lisk Chat](https://lisk.chat) Discord server is a community chat dedicated to discuss topics all around the Lisk DAO, share news and updates, or share ideas for new proposals.
+  Saluran `#lisk-dao` di server [Lisk Chat](https://lisk.chat) adalah ruang obrolan komunitas yang didedikasikan untuk membahas topik seputar Lisk DAO, berbagi berita dan pembaruan, atau berbagi ide untuk proposal baru.
   </TabItem>
 </Tabs>
 
-### Treasury
-The Lisk DAO has an associated treasury, which resides in the [Timelock contract](https://blockscout.lisk.com/address/0x2294A7f24187B84995A2A28112f82f07BE1BceAD?tab=contract).
-The current balance of the treasury can be checked on the [Lisk BlockScout Explorer](https://blockscout.lisk.com/address/0x2294A7f24187B84995A2A28112f82f07BE1BceAD?tab=tokens).
+### Kas  
+Lisk DAO memiliki kas terkait yang terletak di [kontrak Timelock](https://blockscout.lisk.com/address/0x2294A7f24187B84995A2A28112f82f07BE1BceAD?tab=contract).  
+Saldo kas saat ini dapat diperiksa di [Lisk BlockScout Explorer](https://blockscout.lisk.com/address/0x2294A7f24187B84995A2A28112f82f07BE1BceAD?tab=tokens).
 
-The treasury is NOT managed by the Onchain Foundation.
-Instead, the funds from the treasury can only be transferred via successful [funding proposals](#proposal-types).
+Kas TIDAK dikelola oleh Onchain Foundation.  
+Sebaliknya, dana dari kas hanya dapat dipindahkan melalui proposal [pendanaan](#proposal-types) yang berhasil.
 
-Tokens for the Lisk DAO fund are minted.
-They are added to the treasury according to the following vesting plan:
+Token untuk dana Lisk DAO dicetak.  
+Mereka ditambahkan ke kas sesuai dengan rencana vesting berikut:
 
-| Year | Amount (LSK) | Description |
-|------|--------------|-------------|
-| 2024 | 15,000,000 | 6,250,000 LSK liquid at migration, 8,750,000 LSK are linearly released in 2024, starting from the migration. |
-| 2025 | 15,000,000 | LSK are linearly released over the year. |
-| 2026 | 15,000,000 | LSK are linearly released over the year. |
+| Tahun | Jumlah (LSK) | Deskripsi |
+|-------|--------------|-----------|
+| 2024  | 15,000,000   | 6,250,000 LSK cair pada migrasi, 8,750,000 LSK dilepaskan secara linier pada 2024, mulai dari migrasi. |
+| 2025  | 15,000,000   | LSK dile
 
-:::note
-The DAO fund may be increased further in the future by an additional 100,000,000 LSK over the following 7 years (2027-2033) if the DAO members approve the corresponding proposals.
+paskan linier selama tahun 2025. |
+| 2026  | 15,000,000   | LSK dilepaskan linier selama tahun 2026. |
+
+Itulah gambaran umum tentang tata kelola di Lisk DAO.
+
+:::catatan
+Dana DAO dapat ditingkatkan lebih lanjut di masa depan dengan tambahan 100.000.000 LSK selama 7 tahun berikutnya (2027-2033) jika anggota DAO menyetujui proposal yang sesuai.
 :::
 
-### Voting power
-Every account holding **LSK** is able to **stake/lock** a specific amount of LSK tokens to get some voting power and [staking rewards](../user/staking/overview#staking-rewards).
+### Kekuatan Voting
+Setiap akun yang memegang **LSK** dapat **staking/lock** sejumlah token LSK tertentu untuk mendapatkan kekuatan voting dan [staking rewards](../user/staking/overview#staking-rewards).
 
-This works as follows:
+Cara kerjanya adalah sebagai berikut:
 
-- Stake tokens for a specific locking duration (between 2 weeks and 2 years) on the [Lisk Portal](https://portal.lisk.com).
-- Receive voting power and staking rewards proportional to the amount of locked tokens.
-- [Delegate](#delegation) the voting power on Tally to yourself or another delegate in order to use it.
-- After the locking duration ends, the users can unlock their staked tokens.
+- Stake token untuk durasi penguncian tertentu (antara 2 minggu hingga 2 tahun) di [Lisk Portal](https://portal.lisk.com).
+- Menerima kekuatan voting dan staking rewards yang sebanding dengan jumlah token yang terkunci.
+- [Delegasikan](#delegation) kekuatan voting di Tally kepada diri Anda sendiri atau delegate lainnya untuk menggunakannya.
+- Setelah durasi penguncian berakhir, pengguna dapat membuka kunci token yang di-stake.
 
+#### Perhitungan Kekuatan Voting
+Token yang terkunci memberikan kekuatan voting yang sebanding dengan jumlah token yang terkunci. 
+Secara konkrit, 1 LSK terkunci memberikan satu unit kekuatan voting (= 1 vpLSK).
 
-#### Voting power calculation
-Locked tokens provide a voting power proportional to the amount of locked tokens.
-Concretely, 1 locked LSK provides one unit of voting power (= 1 vpLSK).
-
-##### Boosting the voting power
-Users have the option to pause the countdown of the locking period.
-This means that the counting towards the end of the locking period is paused until the user decides to resume it.
-In the case of pausing, the user receives a boost of the voting power.
-It is set to `lockedAmount * (1 + remainingLockingDurationInDays/365)`.
-Hence, the voting power can be increased by up to 200%, which is achieved at the maximum locking duration of 2 years
+##### Meningkatkan Kekuatan Voting
+Pengguna memiliki opsi untuk menjeda hitungan durasi penguncian.
+Ini berarti bahwa hitungan menuju akhir durasi penguncian dijeda hingga pengguna memutuskan untuk melanjutkannya.
+Dalam kasus menjeda, pengguna menerima peningkatan kekuatan voting.
+Peningkatan ini diatur ke `lockedAmount * (1 + remainingLockingDurationInDays/365)`.
+Dengan demikian, kekuatan voting dapat meningkat hingga 200%, yang tercapai pada durasi penguncian maksimum 2 tahun.
 
 :::info
-The voting power for each proposal is counted from a snapshot on the [creation of the proposal](proposal-lifecycle#2-proposal-creation).
-Therefore, pausing the locking duration after a proposal is created does not increase the voting power for this proposal, but for the future ones.
+Kekuatan voting untuk setiap proposal dihitung dari snapshot pada [pembuatan proposal](proposal-lifecycle#2-proposal-creation).
+Oleh karena itu, menjeda durasi penguncian setelah proposal dibuat tidak meningkatkan kekuatan voting untuk proposal ini, tetapi untuk proposal-proposal yang akan datang.
 :::
 
-### Delegation
-The Governor framework requires **delegating the voting power** in order to use it.
-The voting power can be delegated to other users or to yourself.
-Self-delegation is a requirement if you want to vote on your own.
+### Delegasi
+Kerangka kerja Governor mengharuskan **delegasi kekuatan voting** untuk menggunakannya.
+Kekuatan voting dapat didelegasikan ke pengguna lain atau ke diri Anda sendiri.
+Self-delegation adalah persyaratan jika Anda ingin memberi suara untuk diri sendiri.
 
-Delegation happens on [Tally](#tools).
+Delegasi dilakukan di [Tally](#tools).
 
 :::info
-Please go to the [Delegation](delegation) page to find out more about the delegation process, including guides how to delegate and how to become a delegate.
+Silakan kunjungi halaman [Delegation](delegation) untuk mengetahui lebih lanjut tentang proses delegasi, termasuk panduan tentang cara mendelegasikan dan bagaimana menjadi seorang delegate.
 :::
 
-### Proposals
-Proposals are created on [Tally](#tools).
-For spam protection, the following requirement must be fulfilled in order to create a proposal:
+### Proposal
+Proposal dibuat di [Tally](#tools).
+Untuk perlindungan terhadap spam, persyaratan berikut harus dipenuhi untuk membuat proposal:
 
-- **Proposal threshold**: For creating a proposal, the voting power of the proposer must be at least 300,000 vpLSK, i.e., the value corresponding to 100,000 LSK locked for 2 years where the countdown is paused.
+- **Ambang proposal**: Untuk membuat proposal, kekuatan voting dari pembuat proposal harus minimal 300.000 vpLSK, yaitu nilai yang setara dengan 100.000 LSK yang terkunci selama 2 tahun dengan hitungan waktu yang dijeda.
 
-#### Proposal types
+#### Jenis Proposal
 
-| Type        | Description   | Binding?      |
+| Jenis       | Deskripsi   | Mengikat?      |
 | :---------- |:------------- |:------------- |
-| **Funding** | A proposal for receiving a certain amount of funds to an address. If approved, the recipient receives the amount given in the proposal. | Yes|
-| **General** |  General proposals about protocol parameters or the project direction in general that may be followed by the Onchain Foundation or not, depending also on feasibility and cost.  | No  |
+| **Pendanaan** | Proposal untuk menerima sejumlah dana ke alamat tertentu. Jika disetujui, penerima akan menerima jumlah yang disebutkan dalam proposal. | Ya |
+| **Umum** | Proposal umum tentang parameter protokol atau arah proyek secara umum yang mungkin diikuti oleh Onchain Foundation atau tidak, tergantung juga pada kelayakan dan biaya. | Tidak  |
 
-#### Proposal evaluation
-The following requirements must be fulfilled for a proposal to approve:
+#### Evaluasi Proposal
+Persyaratan berikut harus dipenuhi agar proposal dapat disetujui:
 
-- **Quorum**: For a proposal to pass, the “yes” and “abstain” votes must sum up at least to 24,000,000 vpLSK, i.e., the value that corresponds to 8,000,000 LSK locked for 2 years where the countdown is paused.
-- There must be strictly more “yes” than “no” votes.
+- **Kuorum**: Agar proposal diterima, suara “ya” dan “abstain” harus menjumlahkan setidaknya 24.000.000 vpLSK, yaitu nilai yang setara dengan 8.000.000 LSK yang terkunci selama 2 tahun dengan hitungan waktu yang dijeda.
+- Harus ada suara “ya” yang lebih banyak daripada suara “tidak”.
 
-#### Implementation of funding proposals
-The transfer from the [Lisk DAO treasury](#treasury) can be executed by anyone, once a funding proposal is approved.
-Funding proposals are **binding**, which means that no one, not even the Onchain Foundation, can prevent the transfer if the proposal passes.
-#### Implementation of general proposals
-For approved general proposals, the Onchain Foundation will determine whether the proposal is safe, secure, consistent with the scope of Lisk governance, and capable of being implemented in a legally compliant manner.
-If it is, the Foundation will act diligently and in a commercially reasonable manner to cause the proposal to be implemented.
+#### Implementasi Proposal Pendanaan
+Transfer dari [perbendaharaan Lisk DAO](#treasury) dapat dilakukan oleh siapa saja, setelah proposal pendanaan disetujui.
+Proposal pendanaan adalah **mengikat**, yang berarti tidak ada yang dapat mencegah transfer tersebut, bahkan Onchain Foundation sekalipun, jika proposal disetujui.
 
-### Administrative role of the Onchain Foundation
-The foundation will have an administrative role and will take care of the following:
+#### Implementasi Proposal Umum
+Untuk proposal umum yang disetujui, Onchain Foundation akan menentukan apakah proposal tersebut aman, terjamin, konsisten dengan ruang lingkup tata kelola Lisk, dan dapat diimplementasikan dengan cara yang mematuhi hukum.
+Jika ya, Foundation akan bertindak dengan hati-hati dan dengan cara yang wajar secara komersial untuk mewujudkan implementasi proposal tersebut.
 
-1. Removal of draft proposals that reasonably appear to be fraudulent, spam-oriented, defamatory, hateful, or otherwise inappropriate.
-2. Management of mutually contradictory proposals that are submitted simultaneously or in close proximity to one another.
-3. Administration of network maintenance, such as emergency bug fixes or release rollbacks (with or without a governance vote).
+### Peran Administratif Onchain Foundation
+Foundation akan memiliki peran administratif dan akan menangani hal-hal berikut:
+
+1. Penghapusan proposal draft yang tampaknya secara wajar bersifat curang, berorientasi spam, memfitnah, penuh kebencian, atau tidak pantas lainnya.
+2. Pengelolaan proposal yang saling bertentangan yang diajukan secara bersamaan atau dalam waktu dekat satu sama lain.
+3. Administrasi pemeliharaan jaringan, seperti perbaikan bug darurat atau rollback rilis (dengan atau tanpa pemungutan suara tata kelola).
