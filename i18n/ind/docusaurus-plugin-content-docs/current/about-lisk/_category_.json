@@ -1,8 +1,8 @@
 {
-  "label": "About Lisk",
+  "label": "Tentang Lisk",
   "position": 2,
   "link": {
     "type": "generated-index",
-    "description": "A short introduction to Lisk."
+    "description": "Sebuah pengenalan singkat tentang Lisk."
   }
 }
