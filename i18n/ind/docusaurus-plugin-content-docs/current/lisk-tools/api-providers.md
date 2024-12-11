@@ -1,70 +1,63 @@
 ---
-title: API Providers
-slug: /lisk-tools/api-providers
-description: Documentation for Node Providers for the Lisk network. Including details on their services, supported networks, and pricing plans.
-keywords:
+title: Penyedia API  
+slug: /lisk-tools/api-providers  
+description: Dokumentasi untuk Penyedia Node untuk jaringan Lisk. Termasuk rincian tentang layanan mereka, jaringan yang didukung, dan rencana harga.  
+keywords:  
   [
-    Node Providers,
+    Penyedia Node,
     Lisk,
-    Lisk network,
-    Lisk node,
-    hosted nodes,
-    archival nodes,
+    jaringan Lisk,
+    node Lisk,
+    node yang dihosting,
+    node arsip,
     RPC,
-    RPC node,
-    RPC URL,
-    RPC endpoints,
-    blockchain services,
-    blockchain infrastructure,
-    developer tools,
+    node RPC,
+    URL RPC,
+    endpoint RPC,
+    layanan blockchain,
+    infrastruktur blockchain,
+    alat pengembang,
     API,
-    Web3 infrastructure,
+    infrastruktur Web3,
     dRPC,
     Sepolia,
-  ]
+  ]  
+
 ---
 
-# API Providers
+# Penyedia API
 
-Lisk nodes expose an RPC API that allows other parties to interact with the blockchain by invoking requests.
+Node Lisk mengungkapkan API RPC yang memungkinkan pihak lain berinteraksi dengan blockchain dengan mengirimkan permintaan.
 
-If you're just getting started and need an RPC URL, you can use our [free endpoints](#lisk-rpc).
-If you're looking to strengthen your app and avoid rate-limiting for your users, please check out our available RPC node providers like [dRPC](#drpc).
+Jika Anda baru memulai dan membutuhkan URL RPC, Anda dapat menggunakan [endpoint gratis kami](#lisk-rpc).  
+Jika Anda ingin memperkuat aplikasi Anda dan menghindari pembatasan laju untuk pengguna Anda, silakan lihat penyedia node RPC yang tersedia seperti [dRPC](#drpc).
 
-## API reference
+## Referensi API
 
-The available endpoints for Lisk nodes include all [Geth RPC endpoints](https://geth.ethereum.org/docs/interacting-with-geth/rpc), which also include all standard [JSON-RPC API endpoints](https://ethereum.github.io/execution-apis/api-documentation/) of Ethereum. 
-
+Endpoint yang tersedia untuk node Lisk mencakup semua [endpoint RPC Geth](https://geth.ethereum.org/docs/interacting-with-geth/rpc), yang juga mencakup semua [endpoint API JSON-RPC standar](https://ethereum.github.io/execution-apis/api-documentation/) dari Ethereum.
 
 ## Lisk RPC
 
-Free, rate limited RPC endpoints for the Lisk networks.
-
-
-<!-- |               | Lisk Sepolia Testnet              | 
-| :------       | :------                           | 
-|**HTTP RPC**   | https://rpc.sepolia-api.lisk.com  | 
-|**WS RPC**     | `wss://ws.sepolia-api.lisk.com`   |  -->
+Endpoint RPC gratis dengan pembatasan laju untuk jaringan Lisk.
 
 |               | Lisk Sepolia Testnet              | Lisk                      |
 | :------       | :------                           | :-----------------------  |
 |**HTTP RPC**   | https://rpc.sepolia-api.lisk.com  | https://rpc.api.lisk.com  |
 |**WS RPC**     | `wss://ws.sepolia-api.lisk.com`   | `wss://ws.api.lisk.com`   |
 
-
 ## dRPC
 
-[dRPC](https://drpc.org/) is a decentralized Web3 infrastructure provider with a focus on resilience and latency.
-dRPC offers access to a distributed network of public nodes for Lisk.
-They provide a free tier that allows for an unlimited amount of requests over public nodes, or a paid tier that provides access to all providers, as well as other additional features.
+[dRPC](https://drpc.org/) adalah penyedia infrastruktur Web3 terdesentralisasi yang berfokus pada ketahanan dan latensi.  
+dRPC menyediakan akses ke jaringan terdistribusi dari node publik untuk Lisk.  
+Mereka menawarkan tier gratis yang memungkinkan jumlah permintaan yang tidak terbatas melalui node publik, atau tier berbayar yang menyediakan akses ke semua penyedia, serta fitur tambahan lainnya.
 
 |               | Lisk Sepolia Testnet              | Lisk                      |
 | :------       | :------                           | :-----------------------  |
 |**HTTP RPC**   | https://lisk-sepolia.drpc.org  | https://lisk.drpc.org  |
 |**WS RPC**     | `wss://lisk-sepolia.drpc.org`   | `wss://lisk.drpc.org`   |
 
-You can also check the available endpoints for Lisk directly under [https://drpc.org/public-endpoints/lisk](https://drpc.org/public-endpoints/lisk).
+Anda juga dapat memeriksa endpoint yang tersedia untuk Lisk langsung di [https://drpc.org/public-endpoints/lisk](https://drpc.org/public-endpoints/lisk).
 
-:::note[How to create API keys for dRPC]
-In order to use the provided endpoints, you need to [get the corresponding API keys](https://docs.drpc.org/gettingstarted/createaccount).
+:::note[Cara membuat kunci API untuk dRPC]  
+Untuk menggunakan endpoint yang disediakan, Anda perlu [mendapatkan kunci API yang sesuai](https://docs.drpc.org/gettingstarted/createaccount).  
 :::
