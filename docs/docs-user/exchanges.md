@@ -35,7 +35,8 @@ Lisk (LSK) is available for trading on various <!-- decentralized and centralize
 | **Upbit** (Korea)        | 🟢 Lisk            | [LSK/KRW](https://upbit.com/exchange?code=CRIX.UPBIT.KRW-LSK) |
 | **XT.com**               | 🟢 Lisk            | [LSK/USDT](https://www.xt.com/en/trade/lsk_usdt)<br />[LSK/BTC](https://www.xt.com/en/trade/lsk_btc) |
 | **HTX** (formerly Houbi) | 🟣 Ethereum <br/>(Lisk support coming soon) | [LSK/USDT](https://www.htx.com.jm/trade/lsk_usdt/)            |
-| **Binance**              | 🟡 Ethereum        | [LSK/USDT](https://www.binance.com/en/trade/LSK_USDT?type=spot)<br />[LSK/BTC](https://www.binance.com/en/trade/LSK_BTC?type=spot)<br />[LSK/ETH](https://www.binance.com/en/trade/LSK_ETH?type=spot) |
+| **Binance**              | 🟡 Ethereum        | [LSK/USDT](https://www.binance.com/en/trade/LSK_USDT?type=spot)<br />[LSK/BTC](https://www.binance.com/en/trade/LSK_BTC?type=spot) |
+| **Binance.Japan**        | 🟡 Ethereum        | [LSK/USDT](https://www.binance.com/en-JP/trade/LSK_USDT?type=spot)<br />[LSK/BTC](https://www.binance.com/en-JP/trade/LSK_BTC?type=spot) |
 | **BinanceUS**            | 🟡 Ethereum        | [LSK/USDT](https://www.binance.us/spot-trade/lsk_usdt)        |
 | **Bitflyer**             | 🟡 Ethereum        | [LSK/EUR](https://bitflyer.com/fr-eu/lisk-chart)              |
 | **Bitget**               | 🟡 Ethereum        | [LSK/USDT](https://www.bitget.com/futures/usdt/LSKUSDT)          |
@@ -69,8 +70,6 @@ Please note that using the wrong network/blockchain when depositing funds to an 
 
 | Name                     | Supported network |
 | :----------------------- |:----------------- |
-| **Binance.Japan**        | Ethereum          |
-| **BitTrade** (HTX Japan) | Ethereum          |
 | **Coincheck** (Japan)    | Ethereum          |
 | **OkCoin** (OKX Japan)   | Lisk              |
 | **YellowCard** (Africa)  | Lisk              |
