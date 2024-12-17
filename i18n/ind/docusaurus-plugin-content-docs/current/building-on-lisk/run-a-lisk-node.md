@@ -1,7 +1,7 @@
 ---
-title: Running a Lisk Node
+title: Menjalankan Node Lisk
 slug: /building-on-lisk/run-a-lisk-node
-description: A tutorial that teaches how to set up and run a Lisk Node.
+description: Tutorial yang mengajarkan cara mengatur dan menjalankan Node Lisk.
 keywords:
   [
     Lisk Node setup,
@@ -17,58 +17,59 @@ keywords:
     node deployment,
     Ethereum node,
   ]
-tags: ['nodes']
+tags: ["nodes"]
 difficulty: beginner
 ---
 
-This tutorial will walk you through setting up your own [Lisk Node].
+**Menjalankan Node Lisk**
 
-## Objectives
+Tutorial ini akan memandu Anda untuk mengatur dan menjalankan [Node Lisk] Anda sendiri.
 
-By the end of this tutorial you should be able to:
+## Tujuan
 
-- Deploy and sync a Lisk node
+Pada akhir tutorial ini, Anda akan dapat:
 
-## Prerequisites
+- Mendeploy dan menyinkronkan node Lisk
+
+## Prasyarat
 
 :::caution
 
-Running a node is time consuming, resource expensive, and potentially costly. If you don't already know why you want to run your own node, you probably don't need to.
+Menjalankan node membutuhkan waktu, sumber daya, dan biaya yang signifikan. Jika Anda belum mengetahui alasan untuk menjalankan node Anda sendiri, kemungkinan besar Anda tidak membutuhkannya.
 
-If you're just getting started and need an RPC URL, you can use our free endpoints:
+Jika Anda baru memulai dan memerlukan URL RPC, Anda dapat menggunakan endpoint gratis kami:
 
 - **Mainnet**: `https://rpc.api.lisk.com`
 - **Testnet (Sepolia)**: `https://rpc.sepolia-api.lisk.com`
 
-**Note:** Our RPCs are rate-limited, they are not suitable for production apps.
+**Catatan:** RPC kami memiliki batasan tingkat (rate-limited), sehingga tidak cocok untuk aplikasi produksi.
 
-If you're looking to harden your app and avoid rate-limiting for your users, please check out one of our [partners].
+Jika Anda ingin memperkuat aplikasi Anda dan menghindari pembatasan tingkat untuk pengguna Anda, silakan cek salah satu [mitra kami].
 
 :::
 
-## System requirements
+## Persyaratan Sistem
 
-The following system requirements are recommended to run a Lisk L2 node.
+Persyaratan sistem berikut direkomendasikan untuk menjalankan node Lisk L2.
 
-### Memory
+### Memori
 
-- Modern multi-core CPU with good single-core performance.
-- Machines with a minimum of 16 GB RAM (32 GB recommended).
+- CPU _multi-core_ modern dengan kinerja _core_ tunggal yang baik.
+- Mesin dengan minimal 16 GB RAM (32 GB disarankan).
 
-### Storage
+### Penyimpanan
 
-- Machines with a high performance SSD drive with at least 750GB (full node) or 4.5TB (archive node) free.
+- Mesin dengan SSD berkinerja tinggi dengan ruang kosong setidaknya 750GB (untuk node penuh) atau 4.5TB (untuk node arsip).
 
-## Usage
+## Penggunaan
 
 :::note
-It is currently not possible to run the nodes with the `--op-network` flag until the configs for Lisk have been merged into the [superchain-registry](https://github.com/ethereum-optimism/superchain-registry).
+Saat ini belum memungkinkan untuk menjalankan node dengan _flag_ `--op-network` hingga konfigurasi untuk Lisk digabungkan ke dalam [superchain-registry](https://github.com/ethereum-optimism/superchain-registry).
 
-There is currently an [open PR](https://github.com/ethereum-optimism/superchain-registry/pull/234) to add the Lisk Mainnet config.
-The Lisk Sepolia Testnet will be supported soon as well.
+Saat ini ada [PR terbuka](https://github.com/ethereum-optimism/superchain-registry/pull/234) untuk menambahkan konfigurasi Lisk Mainnet. Dukungan untuk Lisk Sepolia Testnet akan segera ditambahkan.
 :::
 
-### Clone the Repository
+### Mengkloning Repository
 
 ```sh
 git clone https://github.com/LiskHQ/lisk-node.git
@@ -80,30 +81,31 @@ cd lisk-node
 
 ### Docker
 
-1. Ensure you have an Ethereum L1 full node RPC available (not Lisk), and set the `OP_NODE_L1_ETH_RPC` and the `OP_NODE_L1_BEACON` variables (within the `.env.*` files, if using docker-compose).
-    If running your own L1 node, it needs to be synced before the Lisk node will be able to fully sync.
-2. Please ensure that the environment file relevant to your network (`.env.sepolia`, or `.env.mainnet`) is set for the `env_file` properties within `docker-compose.yml`.
-    By default, it is set to `.env.mainnet`.
-    :::info
-    We currently support running either the `op-geth` or the `op-reth` nodes alongside the `op-node`. By default, we run the `op-geth` node. If you would like to run the `op-reth` node instead, please set the `CLIENT` environment variable to `reth` before starting the node.
-    :::
-3. Run:
+1. Pastikan Anda memiliki RPC node penuh Ethereum L1 (bukan Lisk), dan atur variabel `OP_NODE_L1_ETH_RPC` dan `OP_NODE_L1_BEACON` (dalam file `.env.*`, jika menggunakan docker-compose).
+   Jika Anda menjalankan node L1 sendiri, node tersebut harus disinkronkan sebelum node Lisk dapat sepenuhnya sinkron.
+2. Pastikan file _environment_ yang relevan dengan jaringan Anda (`.env.sepolia`, atau `.env.mainnet`) diatur untuk properti `env_file` dalam `docker-compose.yml`. Secara default, diatur ke `.env.mainnet`.
 
-    ```
-    docker compose up --build --detach
-    ```
+   :::info
+   Kami saat ini mendukung menjalankan node `op-geth` atau `op-reth` bersama dengan `op-node`. Secara default, kami menjalankan node `op-geth`. Jika Anda ingin menjalankan node `op-reth`, silakan atur variabel _environment_ `CLIENT` ke `reth` sebelum memulai node.
+   :::
 
-4. You should now be able to `curl` your Lisk node:
-    ```
-    curl -s -d '{"id":0,"jsonrpc":"2.0","method":"eth_getBlockByNumber","params":["latest",false]}' \
-      -H "Content-Type: application/json" http://localhost:8545
-    ```
+3. Jalankan:
 
-### Syncing
+   ```
+   docker compose up --build --detach
+   ```
 
-Sync speed depends on your L1 node, as the majority of the chain is derived from data submitted to the L1.
-You can check your syncing status using the `optimism_syncStatus` RPC on the `op-node` container.
-Example:
+4. Anda sekarang seharusnya dapat melakukan `curl` ke node Lisk Anda:
+   ```
+   curl -s -d '{"id":0,"jsonrpc":"2.0","method":"eth_getBlockByNumber","params":["latest",false]}' \
+     -H "Content-Type: application/json" http://localhost:8545
+   ```
+
+### Sinkronisasi
+
+Kecepatan sinkronisasi tergantung pada node L1 Anda, karena sebagian besar chain berasal dari data yang dikirimkan ke L1.
+Anda dapat memeriksa status sinkronisasi Anda menggunakan RPC `optimism_syncStatus` pada container `op-node`.
+Contoh:
 
 ```
 command -v jq  &> /dev/null || { echo "jq is not installed" 1>&2 ; }
@@ -113,6 +115,5 @@ $( curl -s -d '{"id":0,"jsonrpc":"2.0","method":"optimism_syncStatus"}' -H "Cont
    jq -r .result.unsafe_l2.timestamp))/60)) minutes
 ```
 
-
-[partners]: /lisk-tools/api-providers
-[lisk node]: https://github.com/LiskHQ/lisk-node
+[mitra kami]: /lisk-tools/api-providers
+[node lisk]: https://github.com/LiskHQ/lisk-node
