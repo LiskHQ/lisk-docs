@@ -1,7 +1,7 @@
 ---
-title: Legacy Chain Service
+title: Layanan Rantai Legacy
 slug: /lisk-l1/legacy-chain-service
-description: How to access data from the Lisk L1 legacy chain.
+description: Cara mengakses data dari rantai legacy Lisk L1.
 keywords:
   [
     Lisk L1,
@@ -12,31 +12,31 @@ keywords:
     chain history,
     account history
   ]
-difficulty: beginner
+difficulty: pemula
 ---
 :::warning
-These docs are referring to the previous Lisk chain on L1, which stopped when Lisk migrated to L2 on May 2024. 
-If you wish to develop on the current Lisk L2 chain, please refer to the developer documentation under the [Building on Lisk](../category/building-on-lisk) category
+Dokumentasi ini merujuk pada rantai Lisk sebelumnya di L1, yang berhenti saat Lisk bermigrasi ke L2 pada Mei 2024.
+Jika Anda ingin mengembangkan di rantai Lisk L2 saat ini, silakan merujuk ke dokumentasi pengembang di bawah kategori [Building on Lisk](../category/building-on-lisk).
 :::
 
-# Legacy Chain Service
+# Layanan Rantai Legacy
 
-To access data from the Legacy Lisk L1 chain, please use the legacy chain service available under https://legacy.lisk.com.
+Untuk mengakses data dari rantai Legacy Lisk L1, silakan gunakan layanan rantai legacy yang tersedia di https://legacy.lisk.com.
 
 
-## Usage 
-How to use the legacy chain service:
+## Penggunaan
+Cara menggunakan layanan rantai legacy:
 
-- Get a **block by height** `https://legacy.lisk.com/blocks/<BLOCK_HEIGHT>.json`
-- Get a **transaction by id** `https://legacy.lisk.com/transactions/<TRANSACTION_ID>.json`
-- Get an **account by address** `https://legacy.lisk.com/accounts/<LEGACY_ACCOUNT_ADDRESS>.json`
-- Get **histories by address** `https://legacy.lisk.com/histories/<LEGACY_ACCOUNT_ADDRESS>.csv`
+- Dapatkan **blok berdasarkan tinggi** `https://legacy.lisk.com/blocks/<BLOCK_HEIGHT>.json`
+- Dapatkan **transaksi berdasarkan id** `https://legacy.lisk.com/transactions/<TRANSACTION_ID>.json`
+- Dapatkan **akun berdasarkan alamat** `https://legacy.lisk.com/accounts/<LEGACY_ACCOUNT_ADDRESS>.json`
+- Dapatkan **riwayat berdasarkan alamat** `https://legacy.lisk.com/histories/<LEGACY_ACCOUNT_ADDRESS>.csv`
 
-  where `<LEGACY_ACCOUNT_ADDRESS>` is the Lisk L1 address of the format:`lsk**************************************` or `*******************L` (for uninitialized accounts).
+  dimana `<LEGACY_ACCOUNT_ADDRESS>` adalah alamat Lisk L1 dengan format: `lsk**************************************` atau `*******************L` (untuk akun yang belum diinisialisasi).
  
-  If a Lisk L1 legacy account (`*******************L` address) was initialized, the entire history including that of the `*******************L` legacy address will be consolidated under the corresponding `lsk` address. The `*******************L` address's history won't be available separately.
+  Jika sebuah akun legacy Lisk L1 (`*******************L` alamat) telah diinisialisasi, seluruh riwayat termasuk riwayat dari alamat legacy `*******************L` akan digabungkan di bawah alamat `lsk` yang sesuai. Riwayat alamat `*******************L` tidak akan tersedia secara terpisah.
 
 
-:::info[INFO: When is a Lisk L1 account initialized?]
-A Lisk L1 legacy account is considered initialized, if it either has an outgoing transaction on Lisk Core v2, or had performed a [legacy reclaim transaction](https://github.com/LiskArchive/lisk-core/blob/development/src/application/modules/legacy/commands/reclaim.ts) on Lisk Core v3/v4, prior to the Lisk L2 migration, which happened end of May 2024, at block height 24,823,618.
+:::info[INFO: Kapan akun Lisk L1 diinisialisasi?]
+Akun legacy Lisk L1 dianggap diinisialisasi, jika akun tersebut memiliki transaksi keluar di Lisk Core v2, atau telah melakukan [transaksi reclaim legacy](https://github.com/LiskArchive/lisk-core/blob/development/src/application/modules/legacy/commands/reclaim.ts) di Lisk Core v3/v4, sebelum migrasi Lisk L2, yang terjadi pada akhir Mei 2024, di tinggi blok 24.823.618.
 :::

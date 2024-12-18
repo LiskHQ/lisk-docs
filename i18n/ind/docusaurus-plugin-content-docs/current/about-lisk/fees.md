@@ -1,161 +1,158 @@
 ---
-title: Fees
+title: Biaya
 sidebar_position: 1
-slug: /fees
-description: Documentation about network fees on Lisk. This page covers details of the two-component cost system involving L2 execution fees and L1 data fees, and offers insights on fee variations and cost-saving strategies.
+slug: /biaya
+description: Dokumentasi tentang biaya jaringan di Lisk. Halaman ini membahas detail sistem biaya dua komponen yang melibatkan biaya eksekusi L2 dan biaya data L1, serta memberikan wawasan tentang variasi biaya dan strategi penghematan biaya.
 keywords:
   [
-    Lisk fees,
-    transaction fees,
-    network fees,
-    Lisk network fees,
-    L2 execution fee,
-    L1 security fee,
-    L1 data fee,
-    transaction costs,
-    gas fees,
-    fee calculation,
-    cost-saving,
-    transaction timing,
-    fee variations,
-    Lisk platform,
+    biaya Lisk,
+    biaya transaksi,
+    biaya jaringan,
+    biaya jaringan Lisk,
+    biaya eksekusi L2,
+    biaya keamanan L1,
+    biaya data L1,
+    biaya transaksi,
+    biaya gas,
+    perhitungan biaya,
+    penghematan biaya,
+    waktu transaksi,
+    variasi biaya,
+    platform Lisk,
   ]
 ---
 
-# Fees
+# Biaya
 
-Fees on Lisk Mainnet are, for the most part, significantly lower than on the L1 Ethereum network.
-The low transaction fees can be provided because Lisk is a [Layer 2 optimistic rollup](https://ethereum.org/en/developers/docs/scaling/optimistic-rollups) network.
+Biaya di Lisk Mainnet, sebagian besar, jauh lebih rendah dibandingkan dengan jaringan Ethereum L1.
+Biaya transaksi yang rendah dapat diberikan karena Lisk adalah jaringan [Layer 2 optimistic rollup](https://ethereum.org/en/developers/docs/scaling/optimistic-rollups).
 
-## Gas tracker
+## Pelacak Gas
 
-To track the current and past gas fees on Lisk, check the gas tracker for the respective network on Blockscout:
+Untuk melacak biaya gas saat ini dan yang lalu di Lisk, periksa pelacak gas untuk jaringan masing-masing di Blockscout:
 
 - Lisk Mainnet: https://blockscout.lisk.com/gas-tracker
-- Lisk Sepolia Testnet: https://sepolia-blockscout.lisk.com/gas-tracker 
+- Lisk Sepolia Testnet: https://sepolia-blockscout.lisk.com/gas-tracker
 
+## Bagaimana biaya dihitung di Lisk?
 
-## How are fees on Lisk calculated?
-
-Every Lisk Mainnet transaction has two costs: An **L2 execution fee** and an **L1 data fee**.
-At a high level, the L2 fee is the cost to execute your transaction on L2 and the L1 fee is the estimated cost to publish your transaction on L1 (in a rollup batch).
+Setiap transaksi Lisk Mainnet memiliki dua biaya: **Biaya eksekusi L2** dan **Biaya data L1**.
+Secara umum, biaya L2 adalah biaya untuk mengeksekusi transaksi Anda di L2 dan biaya L1 adalah perkiraan biaya untuk mempublikasikan transaksi Anda di L1 (dalam batch rollup).
 
 ```text
 transaction_fee = l2_execution_fee + l1_data_fee
 ```
 
 :::note
-Lisk's fee calculation is based on the fee system of OP Mainnet, using the latest **Fjord** upgrade.
-Check the [Fees page](https://docs.optimism.io/stack/transactions/fees#fjord) in the Optmism documentation, to learn more about how the fee system works in detail.
+Perhitungan biaya Lisk didasarkan pada sistem biaya OP Mainnet, menggunakan pembaruan **Fjord** terbaru.
+Periksa [halaman Biaya](https://docs.optimism.io/stack/transactions/fees#fjord) dalam dokumentasi Optimism, untuk mempelajari lebih lanjut tentang cara kerja sistem biaya secara rinci.
 :::
 
-### L2 Execution Fee 
-The [L2 Execution Fee](https://docs.optimism.io/stack/transactions/fees#execution-gas-fee) is equal to the amount of gas used by the transaction multiplied by the gas price attached to the transaction.
+### Biaya Eksekusi L2
+[Biaya Eksekusi L2](https://docs.optimism.io/stack/transactions/fees#execution-gas-fee) sama dengan jumlah gas yang digunakan oleh transaksi dikalikan dengan harga gas yang terlampir pada transaksi tersebut.
 
 ```
 l2_execution_fee = transaction_gas_price * l2_gas_used
 ```
 
-Because Lisk Mainnet is EVM equivalent, the **gas used** by a transaction on Lisk Mainnet is **exactly the same** as the gas used by the same transaction on Ethereum.
-If a transaction costs 100,000 gas units on Ethereum, it will cost 100,000 gas units on Lisk Mainnet.
-**The only difference is that the gas price on Lisk Mainnet is much lower** than the gas price on Ethereum so you'll end up paying much less in ETH.
-This also means that the total cost of the L2 Execution Fee of a transaction can be estimated using the same tools you would use to estimate the cost of a transaction on Ethereum.
+Karena Lisk Mainnet setara dengan EVM, **gas yang digunakan** oleh transaksi di Lisk Mainnet **persis sama** dengan gas yang digunakan oleh transaksi yang sama di Ethereum.
+Jika suatu transaksi membutuhkan 100.000 unit gas di Ethereum, transaksi yang sama akan membutuhkan 100.000 unit gas di Lisk Mainnet.
+**Satu-satunya perbedaan adalah harga gas di Lisk Mainnet jauh lebih rendah** dibandingkan harga gas di Ethereum, sehingga Anda akan membayar jauh lebih sedikit dalam ETH.
+Ini juga berarti bahwa total biaya Biaya Eksekusi L2 untuk suatu transaksi dapat diperkirakan menggunakan alat yang sama yang Anda gunakan untuk memperkirakan biaya transaksi di Ethereum.
 
-
-#### L2 Execution Fee calculation
-The transaction gas price is the sum of the [Base Fee](https://ethereum.org/en/developers/docs/gas/#base-fee) and the optional additional [Priority Fee](https://ethereum.org/en/developers/docs/gas/#priority-fee).
+#### Perhitungan Biaya Eksekusi L2
+Harga gas transaksi adalah jumlah dari [Base Fee](https://ethereum.org/en/developers/docs/gas/#base-fee) dan biaya tambahan opsional [Priority Fee](https://ethereum.org/en/developers/docs/gas/#priority-fee).
 
 ```
 transaction_gas_price = l2_base_fee + l2_priority_fee
 ```
 
-Like Ethereum, Lisk Mainnet uses the [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) mechanism to set the Base Fee for transactions (although with [different parameter values](#eip-1559-parameters) compared to Ethereum).
+Seperti Ethereum, Lisk Mainnet menggunakan mekanisme [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) untuk menetapkan Base Fee untuk transaksi (meskipun dengan [nilai parameter yang berbeda](#eip-1559-parameters) dibandingkan dengan Ethereum).
 
-You can read more about how Ethereum's gas fees work over on [Ethereum.org](https://ethereum.org/en/developers/docs/gas/).
+Anda dapat membaca lebih lanjut tentang cara kerja biaya gas di Ethereum di [Ethereum.org](https://ethereum.org/en/developers/docs/gas/).
 
-### L1 Data Fee
-The [L1 Data Fee](https://docs.optimism.io/stack/transactions/fees#l1-data-fee) is the only part of the Lisk Mainnet transaction fee that differs from the Ethereum transaction fee.
-This fee arises from the fact that the transaction data for all Lisk Mainnet transactions is published to Ethereum.
-This guarantees that the transaction data is available for nodes to download and execute.
+### Biaya Data L1
+[Biaya Data L1](https://docs.optimism.io/stack/transactions/fees#l1-data-fee) adalah satu-satunya bagian dari biaya transaksi Lisk Mainnet yang berbeda dari biaya transaksi Ethereum.
+Biaya ini muncul karena data transaksi untuk semua transaksi Lisk Mainnet dipublikasikan ke Ethereum.
+Ini menjamin bahwa data transaksi tersedia untuk node untuk diunduh dan dieksekusi.
 
-The L1 Data Fee is automatically charged for any transaction that is included in a Lisk Mainnet block.
-It is deducted directly from the address that sent the transaction.
+Biaya Data L1 dikenakan secara otomatis untuk setiap transaksi yang dimasukkan dalam blok Lisk Mainnet.
+Biaya ini dipotong langsung dari alamat yang mengirimkan transaksi.
 
-The L1 Data Fee is most heavily influenced by the Ethereum base fee that is continuously and trustlessly relayed from Ethereum to Lisk Mainnet.
+Biaya Data L1 dipengaruhi secara signifikan oleh base fee Ethereum yang diteruskan terus-menerus dan tanpa kepercayaan dari Ethereum ke Lisk Mainnet.
 
-The actual amount of this fee depends on the following input values:
+Jumlah sebenarnya dari biaya ini bergantung pada nilai input berikut:
 
-1. The **signed transaction**, serialized according to the standard Ethereum transaction RLP encoding.
-2. The **current Ethereum base fee** and/or blob base fee (trustlessly relayed from Ethereum).
-3. Two **scalar parameters** that independently scale the base fee and blob base fee.
+1. **Transaksi yang ditandatangani**, yang diserialisasi sesuai dengan pengkodean RLP transaksi Ethereum standar.
+2. **Base fee Ethereum saat ini** dan/atau blob base fee (dikirim tanpa kepercayaan dari Ethereum).
+3. Dua **parameter skalar** yang secara independen mengukur base fee dan blob base fee.
 
-#### L1 Data Fee calculation
-The L1 data fee is calculated according to the following formula:
+#### Perhitungan Biaya Data L1
+Biaya data L1 dihitung berdasarkan rumus berikut:
 
 ```
 l1_data_fee = estimatedSize * weighted_gas_price
 ```
 
-Here `estimatedSize` is an estimation of the size that the transaction will occupy when posted in Ethereum L1 blobs.
-It’s calculated based on the size of the serialized transaction, using a linear regression model based on historical OP Mainnet data, assuming that it’s compressed with Brotli compression. 
-For more details see the [OP documentation](https://docs.optimism.io/stack/transactions/fees#fjord) or the [smart contract code](https://github.com/ethereum-optimism/optimism/blob/e00f23ad0208f2e35aef5435d8a3d2e369144419/packages/contracts-bedrock/src/L2/GasPriceOracle.sol#L203). 
+Di sini `estimatedSize` adalah perkiraan ukuran yang akan ditempati transaksi saat diposting di blob L1 Ethereum.
+Ini dihitung berdasarkan ukuran transaksi yang diserialisasi, menggunakan model regresi linier berdasarkan data OP Mainnet historis, dengan asumsi bahwa itu dikompresi dengan kompresi Brotli.
+Untuk rincian lebih lanjut, lihat [dokumentasi OP](https://docs.optimism.io/stack/transactions/fees#fjord) atau [kode kontrak pintar](https://github.com/ethereum-optimism/optimism/blob/e00f23ad0208f2e35aef5435d8a3d2e369144419/packages/contracts-bedrock/src/L2/GasPriceOracle.sol#L203).
 
-Next, the two scalars are applied to the base fee and blob base fee parameters to compute a weighted gas price multiplier.
+Selanjutnya, dua parameter skalar diterapkan pada base fee dan blob base fee untuk menghitung pengali harga gas berbobot.
 
 ```
 weighted_gas_price = 16*base_fee_scalar*base_fee + blob_base_fee_scalar*blob_base_fee
 ```
 
-The current values for the scalars are:
+Nilai saat ini untuk parameter skalar adalah:
 
   - `base_fee_scalar` = 0.020698
   - `blob_base_fee_scalar` = 1.364961
 
-They can be adjusted depending on network conditions, to mitigate spikes in the transaction fees. 
+Parameter ini dapat disesuaikan tergantung pada kondisi jaringan, untuk mengurangi lonjakan biaya transaksi.
 
 :::note
 
-It is currently **not** possible to limit the maximum L1 Data Fee that a transaction is willing to pay.
+Saat ini **tidak** mungkin untuk membatasi biaya Data L1 maksimum yang bersedia dibayar oleh transaksi.
 
-For further information about transaction fees, please check the [Optimism Developer Docs > Transaction Fees](https://docs.optimism.io/stack/transactions/fees)
+Untuk informasi lebih lanjut tentang biaya transaksi, periksa [Dokumentasi Pengembang Optimism > Biaya Transaksi](https://docs.optimism.io/stack/transactions/fees)
 
 :::
 
-## EIP-1559 Parameters
+## Parameter EIP-1559
 
-The [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) parameters used by the Lisk Mainnet differ from those used by Ethereum as follows:
+Parameter [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) yang digunakan oleh Lisk Mainnet berbeda dari yang digunakan oleh Ethereum sebagai berikut:
 
-| Parameter                             | Lisk Mainnet value | Ethereum value (for reference) |
-| ------------------------------------- | ---------------: | -----------------------------: |
-| Block gas limit                       |   30,000,000 gas |                 30,000,000 gas |
-| Block gas target                      |    1,500,000 gas |                 15,000,000 gas |
-| EIP-1559 elasticity multiplier        |               20 |                              2 |
-| EIP-1559 denominator                  |            1,000 |                              8 |
-| Maximum base fee increase (per block) |             1.9% |                          12.5% |
-| Maximum base fee decrease (per block) |             0.1% |                          12.5% |
-| Block time in seconds                 |                2 |                             12 |
+| Parameter                             | Nilai Lisk Mainnet | Nilai Ethereum (sebagai referensi) |
+| ------------------------------------- | -----------------: | ----------------------------------: |
+| Batas gas blok                        |   30.000.000 gas   |                 30.000.000 gas     |
+| Target gas blok                       |    1.500.000 gas   |                 15.000.000 gas     |
+| Pengali elastisitas EIP-1559          |               20    |                              2     |
+| Penyebut EIP-1559                     |            1.000   |                              8     |
+| Peningkatan maksimum base fee (per blok) |             1,9%  |                          12,5%    |
+| Penurunan maksimum base fee (per blok) |             0,1%  |                          12,5%    |
+| Waktu blok dalam detik                |                2   |                             12     |
 
+## Bagaimana fluktuasi harga gas di Ethereum (L1) memengaruhi biaya transaksi di Lisk (L2)?
 
-## How do fluctuations in gas price on Ethereum (L1) affect transaction costs on Lisk (L2)?
+Meskipun Biaya Data L1 akan selalu lebih murah dibandingkan dengan memposting transaksi langsung ke mainnet Ethereum (karena pengkodean yang efisien dalam batching transaksi), nilainya akan bervariasi tergantung pada jumlah transaksi di L1.
+Jika waktu transaksi Anda fleksibel, Anda dapat menghemat biaya dengan mengirimkan transaksi selama periode ketika harga gas di L1 lebih rendah dari biasanya, misalnya, pada akhir pekan.
 
-While the L1 Data Fee will be always cheaper compared to posting the transaction directly to the Ethereum mainnet (due to the efficient encoding in batching transactions), its value will vary depending on the amount of transactions on the L1.
-If the timing of your transaction is flexible, you can save cost by submitting transactions during periods when gas prices on L1 are lower than usual for example, over the weekend.
+Perubahan setelah transaksi diproses di sequencer tidak memengaruhi biaya yang dibayar pengguna.
 
-Changes after the transaction is processed on the sequencer do not affect the cost the user pays.
+Untuk transaksi L2, proses normalnya adalah:
 
-For an L2 transaction, the normal process is:
+1. Dompet memperkirakan biaya transaksi dan menunjukkan kepada pengguna.
+2. Pengguna kemudian mengirimkan transaksi.
+3. Sequencer memproses transaksi dalam dua fase.
+    - Pertama, ia memproses transaksi.
+    - Kemudian, ia mengurangi biaya gas, berdasarkan harga gas L1 dan L2 pada saat itu.
+4. Setelah itu, transaksi ditulis ke L1.
 
-1. The wallet estimates the cost of the transaction and shows it to the user.
-2. The user then submits the transaction.
-3. The sequencer processes the transaction in two phases.
-    - First, it processes the transaction.
-    - Then, it deducts the gas cost, based on the L1 and L2 gas prices at that time.
-4. After that, the transaction is written to L1.
+Secara prinsip, antara langkah 1 dan 3, harga gas mungkin berubah.
+Namun, harga gas tidak dapat meningkat lebih dari 12,5%, oleh karena itu perbedaan antara harga yang ditunjukkan kepada pengguna pada langkah 1 dan yang sebenarnya dibatasi oleh 12,5%.
+Setelah langkah 3, finalitas transaksi menjadi tanggung jawab Lisk.
+Jika harga gas L1 melonjak, Lisk membayar biaya baru tersebut.
 
-In principle, between steps 1 and 3 the gas price might change.
-However, it can not increase by more than 12.5%, therefore the difference between the price shown to the user in step 1 and the actual one is bounded by 12.5%. 
-After step 3, the finality of the transaction is Lisk's responsibility.
-If the L1 gas price spikes, Lisk pays the new cost.
-
-In conclusion, the user will pay at most 12.5% more than expected.
-See the [Optimism Docs > Transaction Fees](https://docs.optimism.io/stack/transactions/fees#mechanism) for more information about transaction fees.
+Kesimpulannya, pengguna akan membayar paling banyak 12,5% lebih dari yang diperkirakan.
+Lihat [Dokumentasi Optimism > Biaya Transaksi](https://docs.optimism.io/stack/transactions/fees#mechanism) untuk informasi lebih lanjut tentang biaya transaksi.
