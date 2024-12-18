@@ -1,7 +1,7 @@
 ---
-title: ...with viem
+title: ...menggunakan viem
 slug: /building-on-lisk/interacting-with-blockchain/viem
-description: Documentation for using Viem, a TypeScript interface for EVM-compatible blockchains. This page covers installation, setup, and various functionalities such as reading and writing blockchain data and interacting with smart contracts on Lisk.
+description: Dokumentasi untuk menggunakan Viem, sebuah interface TypeScript untuk blockchain yang kompatibel dengan EVM. Halaman ini mencakup instalasi, pengaturan, serta berbagai fungsi seperti membaca dan menulis data blockchain, dan berinteraksi dengan smart contract di Lisk.
 keywords:
   [
     viem,
@@ -20,16 +20,16 @@ keywords:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Interacting with the blockchain with viem
+# Berinteraksi dengan Blockchain menggunakan Viem
 
-[viem](https://viem.sh/) a TypeScript interface for Ethereum that provides low-level stateless primitives for interacting with Ethereum.
+[viem](https://viem.sh/) adalah sebuah _interface_ TypeScript untuk Ethereum yang menyediakan _low-level stateless primitives_ untuk berinteraksi dengan Ethereum.
 
-You can use viem to interact with smart contracts deployed on Lisk.
-Viem provides first-class support for chains implemented on the OP stack, see [viem.sh > OP stack](https://viem.sh/op-stack).
+Anda dapat menggunakan viem untuk berinteraksi dengan _smart contract_ yang dideploy di Lisk.  
+Viem menyediakan dukungan penuh untuk _chain_ yang diimplementasikan pada OP stack, lihat [viem.sh > OP stack](https://viem.sh/op-stack).
 
-## Install
+## Instalasi
 
-To install viem run the following command:
+Untuk menginstal viem, jalankan perintah berikut:
 
 ```bash
 npm install --save viem
@@ -37,14 +37,14 @@ npm install --save viem
 
 ## Setup
 
-Before you can start using viem, you need to setup a [Client](https://viem.sh/op-stack/client) with a desired [Transport](https://viem.sh/docs/clients/intro.html#transports) and [Chain](https://viem.sh/docs/chains/introduction).
+Sebelum mulai menggunakan viem, Anda perlu mengatur [Client](https://viem.sh/op-stack/client) dengan [Transport](https://viem.sh/docs/clients/intro.html#transports) dan [Chain](https://viem.sh/docs/chains/introduction) yang diinginkan.
 
 ### Public Client
 
-In order to read data from Lisk, you need to create a **Public client**.
+Untuk membaca data dari Lisk, Anda perlu membuat **Public client**.  
 
-By extending the public client with `publicActionsL2` or `publicActionsL1`, you have access to additional methods for Lisk and other chains built on top of the OP stack.
-See [Layer 2 extensions](https://viem.sh/op-stack/client#layer-2-extensions) for more information.
+Dengan meng-_extend_ public client menggunakan `publicActionsL2` atau `publicActionsL1`, Anda akan mendapatkan akses ke metode tambahan untuk Lisk dan _chain_ lain yang dibangun di atas OP stack.
+Lihat [Layer 2 extensions](https://viem.sh/op-stack/client#layer-2-extensions) untuk informasi lebih lanjut.
 
 <Tabs>
   <TabItem value="mainnet" label="Lisk" >
@@ -85,13 +85,13 @@ See [Layer 2 extensions](https://viem.sh/op-stack/client#layer-2-extensions) for
 
 ### Wallet Client
 
-In order to write data to Lisk, you need to create a Wallet client (`createWalletClient`) and specify an [`Account`](https://ethereum.org/en/developers/docs/accounts/) to use.
+Untuk menulis data ke Lisk, Anda perlu membuat Wallet client (`createWalletClient`) dan menentukan [`Account`](https://ethereum.org/en/developers/docs/accounts/) yang akan digunakan.
 
-By extending the wallet client with `walletActionsL1` or `walletActionsL2`, you have access to additional methods for Lisk and other chains built on top of the OP stack.
-See [Layer 2 extensions](https://viem.sh/op-stack/client#layer-2-extensions) for more information.
+Dengan meng-_extend_ wallet client menggunakan `walletActionsL1` atau `walletActionsL2`, Anda akan mendapatkan akses ke metode tambahan untuk Lisk dan _chain_ lain yang dibangun di atas OP stack.  
+Lihat [Layer 2 extensions](https://viem.sh/op-stack/client#layer-2-extensions) untuk informasi lebih lanjut.  
 
 <Tabs>
-<TabItem value="jsonrpc" label="JSON-RPC Account">
+<TabItem value="jsonrpc" label="Akun JSON-RPC">
 
 
 <Tabs>
@@ -148,10 +148,10 @@ See [Layer 2 extensions](https://viem.sh/op-stack/client#layer-2-extensions) for
 
 
 </TabItem>
-<TabItem value="local" label="Local Account">
+<TabItem value="local" label="Akun Lokal">
 
-Replace `<PRIVATE_KEY>` with the private key of the account you want to use.
-The `0x` prefix indicates that the following string is a hexadecimal number.
+Ganti `<PRIVATE_KEY>` dengan private key dari akun yang ingin Anda gunakan.  
+Prefiks `0x` menunjukkan bahwa string berikutnya adalah angka dalam format heksadesimal.  
 
 <Tabs>
   <TabItem value="mainnet" label="Lisk" >
@@ -161,14 +161,14 @@ The `0x` prefix indicates that the following string is a hexadecimal number.
     import { ethereum, lisk } from 'viem/chains'
     import { walletActionsL1, walletActionsL2 } from 'viem/op-stack'
 
-    // Wallet client for Ethereum
+    // Wallet client untuk Ethereum
     export const walletClientL1 = createWalletClient({
       account: privateKeyToAccount('0x<PRIVATE_KEY>'), 
       chain: ethereum,
       transport: http()
     }).extend(walletActionsL1());
 
-    // Wallet client for Lisk
+    // Wallet client untuk Lisk
     export const walletClientL2 = createWalletClient({
       account: privateKeyToAccount('0x<PRIVATE_KEY>'), 
       chain: lisk,
@@ -183,14 +183,14 @@ The `0x` prefix indicates that the following string is a hexadecimal number.
     import { sepolia, liskSepolia } from 'viem/chains'
     import { walletActionsL1, walletActionsL2 } from 'viem/op-stack'
 
-    // Wallet client for Ethereum
+    // Wallet client untuk Ethereum
     export const walletClientL1 = createWalletClient({
       account: privateKeyToAccount('0x<PRIVATE_KEY>'), 
       chain: sepolia,
       transport: http()
     }).extend(walletActionsL1());
 
-    // Wallet client for Lisk
+    // Wallet client untuk Lisk
     export const walletClientL2 = createWalletClient({
       account: privateKeyToAccount('0x<PRIVATE_KEY>'), 
       chain: liskSepolia,
@@ -206,19 +206,19 @@ The `0x` prefix indicates that the following string is a hexadecimal number.
 </Tabs>
 
 :::info
-In addition to making a JSON-RPC request (`eth_requestAccounts`) to get an Account, viem provides various helper methods for creating an `Account`, including: [`privateKeyToAccount`](https://viem.sh/docs/accounts/privateKey.html), [`mnemonicToAccount`](https://viem.sh/docs/accounts/mnemonic.html), and [`hdKeyToAccount`](https://viem.sh/docs/accounts/hd.html).
- 
-{ /* To use Lisk Sepolia (testnet), replace `lisk` with `liskSepolia`.
+Selain membuat permintaan JSON-RPC (`eth_requestAccounts`) untuk mendapatkan sebuah Akun, viem menyediakan berbagai metode bantu untuk membuat sebuah `Account`, termasuk: [`privateKeyToAccount`](https://viem.sh/docs/accounts/privateKey.html), [`mnemonicToAccount`](https://viem.sh/docs/accounts/mnemonic.html), dan [`hdKeyToAccount`](https://viem.sh/docs/accounts/hd.html).  
+
+{ /* Untuk menggunakan Lisk Sepolia (testnet), ganti `lisk` dengan `liskSepolia`.
  */}
 :::
 
-## Reading data from the blockchain
+## Membaca Data dari Blockchain
 
-Create a [public client](#public-client) and use it to read and access data from Lisk using [Public Actions](https://viem.sh/docs/actions/public/introduction) and [OP stack public actions](https://viem.sh/op-stack/client#layer-2-extensions).
+Buat sebuah [public client](#public-client) dan gunakan untuk membaca serta mengakses data dari Lisk menggunakan [Public Actions](https://viem.sh/docs/actions/public/introduction) dan [OP stack public actions](https://viem.sh/op-stack/client#layer-2-extensions).
 
-Public Actions are client methods that map one-to-one with a "public" Ethereum RPC method (`eth_blockNumber`, `eth_getBalance`, etc.).
+Public Actions adalah metode client yang memiliki pemetaan _one-on-one_ dengan metode "public" Ethereum RPC (`eth_blockNumber`, `eth_getBalance`, dll.).
 
-For example, you can use the `getBlockNumber` action to get the latest block:
+Sebagai contoh, Anda dapat menggunakan aksi `getBlockNumber` untuk mendapatkan blok terbaru:  
 
 ```javascript title="read-example.js"
 import { parseEther } from 'viem'
@@ -237,13 +237,13 @@ console.log(l1Gas);
 ```
 
 
-## Writing data to the blockchain
+## Menulis Data ke Blockchain
 
-Create a [wallet client](#wallet-client) and use it to read and access data from Lisk using [Wallet Actions](https://viem.sh/docs/actions/wallet/introduction) and [OP stack wallet actions](https://viem.sh/op-stack/client#layer-2-extensions).
+Buat sebuah [wallet client](#wallet-client) dan gunakan untuk membaca serta mengakses data dari Lisk menggunakan [Wallet Actions](https://viem.sh/docs/actions/wallet/introduction) dan [OP stack wallet actions](https://viem.sh/op-stack/client#layer-2-extensions).
 
-Wallet Actions are actions that map one-to-one with a "wallet" or "signable" Ethereum RPC method (`eth_requestAccounts`, `eth_sendTransaction`, etc). 
+Wallet Actions adalah aksi yang memiliki pemetaan _one-on-one_ dengan metode "wallet" atau "signable" Ethereum RPC (`eth_requestAccounts`, `eth_sendTransaction`, dll.).
 
-For example, you can use the `sendTransaction` action to post a transaction:
+Sebagai contoh, Anda dapat menggunakan aksi `sendTransaction` untuk memposting transaksi:  
 
 ```javascript title="write-example.js"
 import { walletClientL2 } from './wallet-client.js'
@@ -256,9 +256,9 @@ const hash = await walletClientL2.sendTransaction({
 console.log(hash);
 ```
 
-## Interacting with smart contracts
+## Berinteraksi dengan Smart Contract
 
-You can use viem to interact with a smart contract on Lisk by creating a `Contract` instance using [`getContract`](https://viem.sh/docs/contract/getContract.html) and passing it the contract ABI, contract address, and and [Public](https://viem.sh/docs/clients/public.html) and/or [Wallet](https://viem.sh/docs/clients/wallet.html) Client:
+Anda dapat menggunakan viem untuk berinteraksi dengan _smart contract_ di Lisk dengan membuat instance `Contract` menggunakan [`getContract`](https://viem.sh/docs/contract/getContract.html) dan memberikan ABI kontrak, alamat kontrak, serta [Public](https://viem.sh/docs/clients/public.html) dan/atau [Wallet](https://viem.sh/docs/clients/wallet.html) Client:  
 
 <Tabs>
 <TabItem value="example" label="contract-example.js">
@@ -268,17 +268,17 @@ import { getContract } from 'viem'
 import { wagmiAbi } from './abi.js'
 import { publicClient, walletClient } from './client.js'
  
-// 1. Create contract instance
+// 1. Buat instance kontrak
 const contract = getContract({
   address: 'CONTRACT_ADDRESS',
   abi: wagmiAbi,
-  // 1a. Insert a single client
+  // 1a. Masukkan satu client
   //client: publicClient,
-  // 1b. Or public and/or wallet clients
+  // 1b. Atau public dan/atau wallet clients
   client: { public: publicClient, wallet: walletClient }
 })
  
-// 2. Call contract methods, fetch events, listen to events, etc.
+// 2. Panggil metode kontrak, ambil *events*, dengarkan *events*, dan lain-lain.
 const result = await contract.read.totalSupply()
 const logs = await contract.getEvents.Transfer()
 const unwatch = contract.watchEvent.Transfer(
@@ -361,7 +361,7 @@ const unwatch = contract.watchEvent.Transfer(
 <TabItem value="abi" label="abi.js">
 
 :::tip
-The ABI of a contract can be found on the respective contract page in [BlockScout](https://sepolia-blockscout.lisk.com/).
+ABI dari sebuah kontrak dapat ditemukan di halaman kontrak terkait di [BlockScout](https://sepolia-blockscout.lisk.com/).
 :::
 
 ```js title="abi.js"
@@ -532,5 +532,5 @@ export const wagmiAbi = [
 </Tabs>
 
 :::info
-`CONTRACT_ADDRESS` is the address of the deployed contract.
+`CONTRACT_ADDRESS` adalah alamat dari kontrak yang telah dideploy.
 :::
