@@ -1,36 +1,28 @@
 ---
-title: 'Deploying a new ERC-721 token on Lisk'
-description: 'A guide on how to deploy a new ERC-721 token on Lisk.'
+title: "Mendeploy Token ERC-721 Baru di Lisk"
+description: "Panduan Cara Mendeploy Token ERC-721 Baru di Lisk."
 keywords:
-  [
-    'Lisk',
-    'Token development',
-    'Deploy token',
-    'ERC',
-    'EIP',
-    'ERC-721',
-    'NFT',
-  ]
+  ["Lisk", "Token development", "Deploy token", "ERC", "EIP", "ERC-721", "NFT"]
 ---
 
-# How to deploy a new ERC-721 token on Lisk
+# Cara Mendeploy Token ERC-721 Baru di Lisk
 
 :::note
-We will use Remix IDE for smart contract development in this guide, but feel free to choose a [smart contract development framework](/category/building-on-lisk/deploying-smart-contract) of your choice to implement your token contract.
+Panduan ini menggunakan Remix IDE untuk pengembangan _smart contract_, tetapi Anda bebas memilih [framework pengembangan smart contract](/category/building-on-lisk/deploying-smart-contract) lain sesuai preferensi Anda untuk mengimplementasikan kontrak token Anda.
 :::
 
-## 1. Open Remix
+## 1. Buka Remix
 
-Navigate to [Remix](https://remix.ethereum.org) in your browser.
+Akses [Remix](https://remix.ethereum.org) di browser Anda.
 
-## 2. Create a new file
+## 2. Buat File Baru
 
-Inside the `contracts` folder, click the 📄 ("Create new file") button to create a new empty Solidity file.
-You can name this file whatever you'd like, e.g., `MyNFT.sol`.
+Di dalam folder `contracts`, klik tombol 📄 ("Buat file baru") untuk membuat file Solidity kosong baru.
+Anda dapat memberikan nama file sesuai keinginan, misalnya, `MyNFT.sol`.
 
-## 3. Copy the example contract
+## 3. Salin Contoh Kontrak
 
-Copy the following example contract into your new file:
+Salin contoh kontrak berikut ke dalam file baru Anda:
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -51,40 +43,40 @@ contract MyNFT is ERC721 {
 }
 ```
 
-## 4. Compile the contract
+## 4. Kompilasi Kontrak
 
-Please double-check that the compiler version of the Remix IDE is matching  with the compiler version mentioned in the smart contract: `pragma solidity ^0.8.28;`.
+Pastikan bahwa versi compiler di Remix IDE sesuai dengan versi compiler yang disebutkan di _smart contract_: `pragma solidity ^0.8.28;`.
 
-Press the green play button at the top to compile the contract.
+Tekan tombol hijau play di bagian atas untuk mengompilasi kontrak.
 
-## 5. Deploy the contract
+## 5. Deploy Kontrak
 
-Open the `Deploy & run transactions` tab (this looks like an Ethereum logo with an arrow pointing right).
-Make sure that your environment is set to "Injected Provider", your wallet is connected to Lisk or Lisk Sepolia network, and Remix has access to your wallet.
-Then, select the `MyNFT` contract from the deployment dropdown and click the orange `Deploy` button to deploy the contract and confirm the contract deployment in your connected wallet.
+Buka tab `Deploy & run transactions` (ikon ini terlihat seperti logo Ethereum dengan panah mengarah ke kanan). Pastikan bahwa _environment_ Anda diatur ke "Injected Provider", _wallet_ Anda terhubung ke jaringan Lisk atau Lisk Sepolia, dan Remix memiliki akses ke _wallet_ Anda.
+Kemudian, pilih kontrak `MyNFT` dari dropdown deployment dan klik tombol oranye `Deploy` untuk mendepoy kontrak, lalu konfirmasikan proses deployment kontrak di _wallet_ Anda yang terhubung.
 
-Check the Remix log messages; they should include the contract address.
-Paste this address in BlockScout, to see the contract in the Lisk blockchain explorer: https://sepolia-blockscout.lisk.com/address/0x73e7a94dD5760d862F6FD9f8ea5D4245Bb143446
+Periksa pesan log Remix; pesan tersebut akan mencantumkan alamat kontrak.
+_Paste_ alamat ini di BlockScout untuk melihat kontrak di _explorer_ blockchain Lisk:  
+https://sepolia-blockscout.lisk.com/address/0x73e7a94dD5760d862F6FD9f8ea5D4245Bb143446
 
-In case you chose to deploy on the Lisk Mainnet, you need to paste the address on https://blockscout.lisk.com instead.
+Jika Anda memilih untuk mendepoy di Lisk Mainnet, _paste_-kan alamat tersebut di https://blockscout.lisk.com
 
-## 6. Verify the contract
+## 6. Verifikasi Kontrak
 
-If you want to interact with your contract on the block explorer, you, or someone else needs to verify it first.
-The above contract has already been verified, so you should be able to view your version on a block explorer already.
-For the remainder of this guide, we'll walk through how to verify your contract with Remix on the Lisk Sepolia Testnet.
+Jika Anda ingin berinteraksi dengan kontrak Anda di penjelajah blockchain, Anda, atau orang lain, harus memverifikasinya terlebih dahulu.
+Kontrak di atas sudah diverifikasi, sehingga Anda seharusnya dapat melihat versi Anda di penjelajah blockchain.
+Selebihnya dari panduan ini, kami akan menjelaskan cara memverifikasi kontrak Anda dengan Remix di Lisk Sepolia Testnet.
 
-You can apply the same steps for verifying a contract on Lisk Mainnet, in case you deployed it there in the previous step, just use https://blockscout.lisk.com instead of https://sepolia-blockscout.lisk.com in step 2.
+Anda dapat menerapkan langkah yang sama untuk memverifikasi kontrak di Lisk Mainnet, jika jaringan itu yang Anda gunakan pada proses diatas, cukup gunakan https://blockscout.lisk.com untuk menggantikan https://sepolia-blockscout.lisk.com pada langkah 2 dibawah ini.
 
-  - In Remix, rightlick on the contract you wish to verify and select `Flatten`.
-  This will create a new file `MyNFT_flattened.sol`.
-  - Now, switch to your [newly deployed contract](https://sepolia-blockscout.lisk.com/address/0x73e7a94dD5760d862F6FD9f8ea5D4245Bb143446) on https://sepolia-blockscout.lisk.com/
-  - Go to the contract tab and click on the blue `Verify and Publish` button.
-    - (Optional) Set a license for your contract.
-    - Choose `Solidity (Single file)` as the verification method.
-    - Choose the fitting compiler version for your contract.
-    - Disable code optimization.
-    - Copy the flattened source code from Remix and paste it into the `Enter the Solidity Contract Code` field.
-  - Check that all info is correct and click the `Verify and Publish` button, to verify your contract.
-  
-  Once verified, the code tab will include the ✅ icon, and the source code will be viewable.
+- Di Remix, klik kanan pada kontrak yang ingin Anda verifikasi dan pilih `Flatten`.  
+   Ini akan membuat file baru bernama `MyNFT_flattened.sol`.
+- Sekarang, buka [kontrak yang baru saja Anda deploy](https://sepolia-blockscout.lisk.com/address/0x73e7a94dD5760d862F6FD9f8ea5D4245Bb143446) di https://sepolia-blockscout.lisk.com.
+- Buka tab kontrak dan klik tombol biru `Verify and Publish`.
+  - (Opsional) Atur lisensi untuk kontrak Anda.
+  - Pilih `Solidity (Single file)` sebagai metode verifikasi.
+  - Pilih versi compiler yang sesuai untuk kontrak Anda.
+  - Nonaktifkan _code optimization_.
+  - Salin _source code_ yang telah diflatkan dari Remix dan tempelkan di bidang `Enter the Solidity Contract Code`.
+- Periksa bahwa semua informasi sudah benar, lalu klik tombol `Verify and Publish` untuk memverifikasi kontrak Anda.
+
+Setelah diverifikasi, tab kode akan menyertakan ikon ✅, dan _source code_ akan dapat dilihat.

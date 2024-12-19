@@ -1,36 +1,37 @@
 ---
-title: 'Deploying a new ERC-1155 token on Lisk'
-description: 'A guide on how to deploy a new ERC-1155 token on Lisk.'
+title: "Mendeploy Token ERC-1155 Baru di Lisk"
+description: "Panduan tentang Cara Mendeploy Token ERC-1155 Baru di Lisk"
 keywords:
   [
-    'Lisk',
-    'Token development',
-    'Deploy token',
-    'ERC',
-    'EIP',
-    'ERC-1155',
-    'Hybrid token',
-    'Multi token',
+    "Lisk",
+    "Token development",
+    "Deploy token",
+    "ERC",
+    "EIP",
+    "ERC-1155",
+    "Hybrid token",
+    "Multi token",
   ]
 ---
 
-# How to deploy a new ERC-1155 token on Lisk
+# Cara Mendeploy Token ERC-721 Baru di Lisk
 
 :::note
-We will use Remix IDE for smart contract development in this guide, but feel free to choose a [smart contract development framework](/category/building-on-lisk/deploying-smart-contract) of your choice to implement your token contract.
+Panduan ini menggunakan Remix IDE untuk pengembangan _smart contract_, tetapi Anda bebas memilih [framework pengembangan smart contract](/category/building-on-lisk/deploying-smart-contract) lain sesuai preferensi Anda untuk mengimplementasikan kontrak token Anda.
 :::
 
-## 1. Open Remix
+## 1. Buka Remix
 
-Navigate to [Remix](https://remix.ethereum.org) in your browser.
+Akses [Remix](https://remix.ethereum.org) di browser Anda.
 
-## 2. Create a new file
-Inside the `contracts` folder, click the 📄 ("Create new file") button to create a new empty Solidity file.
-You can name this file whatever you'd like, e.g., `MyItems.sol`.
+## 2. Buat File Baru
 
-## 3. Copy the example contract
+Di dalam folder `contracts`, klik tombol 📄 ("Buat file baru") untuk membuat file Solidity kosong baru.
+Anda dapat memberikan nama file sesuai keinginan, misalnya, `MyItems.sol`.
 
-Copy the following example contract into your new file:
+## 3. Salin Contoh Kontrak
+
+Salin contoh kontrak berikut ke dalam file baru Anda:
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -56,65 +57,63 @@ contract MyItems is ERC1155 {
 ```
 
 :::note
-Gold, Silver,Sword and shield are fungible tokens whilst Thor’s Hammer is a non-fungible token as we minted only one.
+Pada contoh diatas, _Gold_, _Silver_, _Sword_, dan _Shield_ adalah token yang dapat dipertukarkan (fungible tokens), sedangkan _Thor’s Hammer_ adalah token yang tidak dapat dipertukarkan (non-fungible token) karena kami hanya mencetak satu unit.
 :::
 
-An URI pointing to the JSON metadata of the different items/ tokens needs to be specified in the constructor, see [ERC-1155 contract API](https://docs.openzeppelin.com/contracts/3.x/api/token/erc1155#ERC1155).
+Sebuah URI yang menunjuk ke metadata JSON dari item/token yang berbeda harus ditentukan dalam konstruktor, lihat [API kontrak ERC-1155](https://docs.openzeppelin.com/contracts/3.x/api/token/erc1155#ERC1155).
 
-The URI can include the string `{id}`, which clients must replace with the actual token ID, in lowercase hexadecimal (with no 0x prefix) and leading zero-padded to 64 hex characters.
-The URI MUST point to a JSON file that conforms to the [ERC-1155 Metadata URI JSON Schema](https://eips.ethereum.org/EIPS/eip-1155).
+URI tersebut dapat menyertakan string `{id}`, yang harus diganti oleh klien dengan ID token sebenarnya dalam format heksadesimal huruf kecil (tanpa awalan `0x`) dan disertakan nol di depan hingga mencapai 64 karakter heksadesimal.  
+URI **HARUS** menunjuk ke file JSON yang sesuai dengan [Skema JSON Metadata URI ERC-1155](https://eips.ethereum.org/EIPS/eip-1155).
 
+Untuk token ID 2 dan URI `https://game.example/api/item/{id}.json`, klien akan mengganti `{id}` dengan `0000000000000000000000000000000000000000000000000000000000000002` untuk mengambil JSON di `https://game.example/api/item/0000000000000000000000000000000000000000000000000000000000000002.json`.
 
-For token ID 2 and uri `https://game.example/api/item/{id}.json` clients would replace `{id}` with `0000000000000000000000000000000000000000000000000000000000000002` to retrieve JSON at `https://game.example/api/item/0000000000000000000000000000000000000000000000000000000000000002.json`.
-
-The JSON document for token ID 2 might look something like:
+Dokumen JSON untuk token ID 2 mungkin akan terlihat seperti ini:
 
 ```json
 {
-    "name": "Thor's hammer",
-    "description": "Mjölnir, the legendary hammer of the Norse god of thunder.",
-    "image": "https://game.example/item-id-8u5h2m.png",
-    "strength": 20
+  "name": "Thor's hammer",
+  "description": "Mjölnir, the legendary hammer of the Norse god of thunder.",
+  "image": "https://game.example/item-id-8u5h2m.png",
+  "strength": 20
 }
 ```
 
-For more information about the metadata JSON Schema, check out the [ERC-1155 Metadata URI JSON Schema](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1155.md#erc-1155-metadata-uri-json-schema).
+Untuk informasi lebih lanjut tentang Skema JSON Metadata, silakan lihat [Skema JSON Metadata URI ERC-1155](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1155.md#erc-1155-metadata-uri-json-schema).
 
-## 4. Compile the contract
+## 4. Kompilasi Kontrak
 
-Please double-check that the compiler version of the Remix IDE is matching  with the compiler version mentioned in the smart contract: `pragma solidity ^0.8.28;`.
+Pastikan bahwa versi compiler di Remix IDE sesuai dengan versi compiler yang disebutkan di _smart contract_: `pragma solidity ^0.8.28;`.
 
-Press the green play button at the top to compile the contract.
+Tekan tombol hijau play di bagian atas untuk mengompilasi kontrak.
 
-## 5. Deploy the contract
+## 5. Deploy Kontrak
 
-Open the `Deploy & run transactions` tab (this looks like an Ethereum logo with an arrow pointing right).
-Make sure that your environment is set to "Injected Provider", your wallet is connected to Lisk or Lisk Sepolia network, and Remix has access to your wallet.
-Then, select the `MyItems` contract from the deployment dropdown and click the orange `Deploy` button to deploy the contract.
-Finally, confirm the contract deployment in your connected wallet.
+Buka tab `Deploy & run transactions` (ikon ini terlihat seperti logo Ethereum dengan panah mengarah ke kanan). Pastikan bahwa _environment_ Anda diatur ke "Injected Provider", _wallet_ Anda terhubung ke jaringan Lisk atau Lisk Sepolia, dan Remix memiliki akses ke _wallet_ Anda.
+Kemudian, pilih kontrak `MyItems` dari dropdown deployment dan klik tombol oranye `Deploy` untuk mendepoy kontrak.
+Akhirnya, konfirmasi deployment kontrak di _wallet_ Anda yang terhubung.
 
-Check the Remix log messages; they should include the contract address.
-Paste this address in BlockScout, to see the contract in the Lisk blockchain explorer: https://sepolia-blockscout.lisk.com/address/0x8b2f45e810F539647e70fBCd6441B73d332Ef1A0
+Periksa pesan log Remix; pesan tersebut akan mencantumkan alamat kontrak.
+_Paste_ alamat ini di BlockScout untuk melihat kontrak di _explorer_ blockchain Lisk: https://sepolia-blockscout.lisk.com/address/0x8b2f45e810F539647e70fBCd6441B73d332Ef1A0
 
-In case you chose to deploy on the Lisk Mainnet, you need to paste the address on https://blockscout.lisk.com instead.
+Jika Anda memilih untuk mendepoy di Lisk Mainnet, _paste_-kan alamat tersebut di https://blockscout.lisk.com
 
-## 6. Verify the contract
+## 6. Verifikasi Kontrak
 
-If you want to interact with your contract on the block explorer, you, or someone else needs to verify it first.
-The above contract has already been verified, so you should be able to view your version on a block explorer already.
-For the remainder of this guide, we'll walk you through how to verify your contract with Remix on the Lisk Sepolia Testnet.
+Jika Anda ingin berinteraksi dengan kontrak Anda di penjelajah blockchain, Anda, atau orang lain, harus memverifikasinya terlebih dahulu.
+Kontrak di atas sudah diverifikasi, sehingga Anda seharusnya dapat melihat versi Anda di penjelajah blockchain.
+Selebihnya dari panduan ini, kami akan menjelaskan cara memverifikasi kontrak Anda dengan Remix di Lisk Sepolia Testnet.
 
-You can apply the same steps for verifying a contract on Lisk Mainnet, in case you deployed it there in the previous step, just use https://blockscout.lisk.com instead of https://sepolia-blockscout.lisk.com in step 2.
+Anda dapat menerapkan langkah yang sama untuk memverifikasi kontrak di Lisk Mainnet, jika jaringan itu yang Anda gunakan pada proses diatas, cukup gunakan https://blockscout.lisk.com untuk menggantikan https://sepolia-blockscout.lisk.com pada langkah 2 dibawah ini.
 
-1. In Remix, rightlick on the contract you wish to verify and select `Flatten`.
-This will create a new file `MyItems_flattened.sol`.
-2.  Now, switch to your [newly deployed contract](https://sepolia-blockscout.lisk.com/address/0x8b2f45e810F539647e70fBCd6441B73d332Ef1A0) on https://sepolia-blockscout.lisk.com/
-3. Go to the `Contract` tab and click on the blue `Verify and Publish` button.
-    - (Optional) Set a license for your contract.
-    - Choose `Solidity (Single file)` as the verification method.
-    - Choose the fitting compiler version for your contract.
-    - Disable code optimization.
-    - Copy the flattened source code from Remix and paste it into the `Enter the Solidity Contract Code` field.
-- Check that all info is correct and click the `Verify and Publish` button, to verify your contract.
-  
-  Once verified, the code tab will include the ✅ icon, and the source code will be viewable.
+1. Di Remix, klik kanan pada kontrak yang ingin Anda verifikasi dan pilih `Flatten`.  
+   Ini akan membuat file baru bernama `MyItems_flattened.sol`.
+2. Sekarang, buka [kontrak yang baru saja Anda deploy](https://sepolia-blockscout.lisk.com/address/0x8b2f45e810F539647e70fBCd6441B73d332Ef1A0) di https://sepolia-blockscout.lisk.com.
+3. Buka tab kontrak dan klik tombol biru `Verify and Publish`.
+   - (Opsional) Atur lisensi untuk kontrak Anda.
+   - Pilih `Solidity (Single file)` sebagai metode verifikasi.
+   - Pilih versi compiler yang sesuai untuk kontrak Anda.
+   - Nonaktifkan _code optimization_.
+   - Salin _source code_ yang telah diflatkan dari Remix dan tempelkan di bidang `Enter the Solidity Contract Code`.
+4. Periksa bahwa semua informasi sudah benar, lalu klik tombol `Verify and Publish` untuk memverifikasi kontrak Anda.
+
+Setelah diverifikasi, tab kode akan menyertakan ikon ✅, dan _source code_ akan dapat dilihat.
