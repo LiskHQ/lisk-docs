@@ -1,7 +1,7 @@
 ---
-title: ...with RedStone (Push)
+title: ...menggunakan RedStone (Push)
 slug: /building-on-lisk/using-oracle-data/redstone-push
-description: A guide on using RedStone Push to access real-world data such as asset prices, directly from your smart contracts on the Lisk blockchain.
+description: Panduan menggunakan RedStone Push untuk mengakses data dunia nyata seperti harga aset, langsung dari smart contract Anda di blockchain Lisk.
 keywords: [
     Oracle
     Oracles,
@@ -21,53 +21,55 @@ keywords: [
   ]
 ---
 
-# Accessing real-world data using the RedStone Oracle (Push)
+# Mengakses Data Dunia Nyata menggunakan RedStone Oracle (Push)
 
-This page will explain how you can access oracle data using [RedStone Push](https://docs.redstone.finance/docs/get-started/models/redstone-push).
+Halaman ini akan menjelaskan bagaimana Anda dapat mengakses data oracle menggunakan [RedStone Push](https://docs.redstone.finance/docs/get-started/models/redstone-push).
 
-RedStone is a data ecosystem that delivers frequently updated, reliable, and diverse data for your dApp and smart contracts deployed on Lisk.
+RedStone adalah ekosistem data yang menyediakan data yang sering diperbarui, dapat diandalkan, dan beragam untuk dApp dan _smart contract_ Anda yang dideploy di Lisk.
 
-RedStone data feeds are compatible with Chainlink's [AggregatorV3Interface](https://docs.chain.link/data-feeds/using-data-feeds#solidity) and include the following components:
+Data feed RedStone kompatibel dengan [AggregatorV3Interface](https://docs.chain.link/data-feeds/using-data-feeds#solidity) dari Chainlink dan mencakup komponen berikut:
 
-- **Aggregator contract**: An aggregator is a contract that receives periodic data updates from the oracle network.
-Aggregators store aggregated data onchain so that consumers can retrieve it and act upon it within the same transaction.
-These contracts are already deployed on the Lisk network and can be directly used by Consumers.
-- **Consumer**: A consumer is an onchain or offchain application that uses Data Feeds.
-Consumer contracts use the `AggregatorV3Interface` to call functions on the proxy contract[^1] of the Aggregator to retrieve oracle data.
+- **Kontrak Aggregator**: Aggregator adalah kontrak yang menerima pembaruan data berkala dari jaringan oracle.
+  Aggregator menyimpan data yang telah digabungkan di onchain sehingga _konsumen_ dapat mengambilnya dan menggunakannya dalam transaksi yang sama.
+  Kontrak-kontrak ini sudah dideploy di jaringan Lisk dan dapat langsung digunakan oleh _konsumen_.
+- **Konsumen (Consumer)**: _Konsumen_ adalah aplikasi onchain atau offchain yang menggunakan data _feed_.
+  Kontrak _konsumen_ menggunakan `AggregatorV3Interface` untuk memanggil fungsi pada kontrak proxy[^1] dari Aggregator untuk mengambil data oracle.
 
-[^1]: Proxy contracts are onchain proxies that point to the aggregator for a particular data feed.
-Using proxies enables the underlying aggregator to be upgraded without any service interruption to consuming contracts.
+[^1]:
+    Kontrak proxy adalah proxy onchain yang menunjuk ke aggregator untuk data feed tertentu.
+    Penggunaan proxy memungkinkan aggregator dasar untuk ditingkatkan tanpa mengganggu layanan bagi kontrak yang mengonsumsinya.
 
-## Data feeds on Lisk
-The following Aggregators are available on Lisk Mainnet for RedStone Push:
+## Data Feed di Lisk
+
+Aggregator berikut tersedia di Lisk Mainnet untuk RedStone Push:
 
 - [ETH/USD L2PriceFeedWithoutRounds](https://blockscout.lisk.com/address/0x6b7AB4213c77A671Fc7AEe8eB23C9961fDdaB3b2)
-  - address: `0x6b7AB4213c77A671Fc7AEe8eB23C9961fDdaB3b2`
+  - alamat: `0x6b7AB4213c77A671Fc7AEe8eB23C9961fDdaB3b2`
 - [LSK/USD L2PriceFeedWithoutRounds](https://blockscout.lisk.com/address/0xa1EbA9E63ed7BA328fE0778cFD67699F05378a96)
-  - address: `0xa1EbA9E63ed7BA328fE0778cFD67699F05378a96`
+  - alamat: `0xa1EbA9E63ed7BA328fE0778cFD67699F05378a96`
 - [USDT/USD L2PriceFeedWithoutRounds](https://blockscout.lisk.com/address/0xd2176Dd57D1e200c0A8ec9e575A129b511DBD3AD)
-  - address: `0xd2176Dd57D1e200c0A8ec9e575A129b511DBD3AD`
+  - alamat: `0xd2176Dd57D1e200c0A8ec9e575A129b511DBD3AD`
 - [USDC/USD L2PriceFeedWithoutRounds](https://blockscout.lisk.com/address/0xb4e6A7861067674AC398a26DD73A3c524C602184)
-  - address: `0xb4e6A7861067674AC398a26DD73A3c524C602184`
+  - alamat: `0xb4e6A7861067674AC398a26DD73A3c524C602184`
 - [WBTC/USD L2PriceFeedWithoutRounds](https://blockscout.lisk.com/address/0x13da43eA89fB692bdB6666F053FeE70aC61A53cd)
-  - address: `0x13da43eA89fB692bdB6666F053FeE70aC61A53cd`
+  - alamat: `0x13da43eA89fB692bdB6666F053FeE70aC61A53cd`
 
-In this guide, we will develop a Consumer contract that will request the latest spot prices from the ETH, LSK and USDT data feeds.
+Dalam panduan ini, kita akan mengembangkan kontrak _Consumer_ yang akan meminta harga spot terbaru dari data feed ETH, LSK, dan USDT.
 
 :::note
-RedStone Push is only fully available on Lisk Mainnet, so please make sure to deploy your Consumer contract on Lisk Mainnet as well.
+RedStone Push hanya sepenuhnya tersedia di Lisk Mainnet, jadi pastikan untuk mendeploy kontrak _Consumer_ Anda di Lisk Mainnet juga.
 
-In case you wish to deploy on Lisk Sepolia Testnet, check the [Tellor](./tellor.md) guide, which is available for both networks.
+Jika Anda ingin mendeploy di Lisk Sepolia Testnet, periksa panduan [Tellor](./tellor.md), yang tersedia untuk kedua jaringan.
 :::
 
-## Import
+## Mengimpor
 
-To use the RedStone data inside your contract, import the [AggregatorV3Interface](https://docs.chain.link/data-feeds/using-data-feeds#solidity) from Chainlink like shown in the example contract below.
+Untuk menggunakan data RedStone di dalam kontrak Anda, impor [AggregatorV3Interface](https://docs.chain.link/data-feeds/using-data-feeds#solidity) dari Chainlink seperti yang ditunjukkan dalam contoh kontrak di bawah ini.
 
-For every data feed you like to store, create a new constant with type `AggregatorV3Interface`.
+Untuk setiap data _feed_ yang ingin Anda simpan, buat konstanta baru dengan tipe `AggregatorV3Interface`.
 
-In the constructor, set the above defined constants to point to the respective data feeds:
-Use the `AggregatorV3Interface()` function and pass the address of the respective data feed contract as parameter.
+Dalam konstruktor, tetapkan konstanta yang telah didefinisikan di atas untuk menunjuk ke data _feed_ masing-masing:
+Gunakan fungsi `AggregatorV3Interface()` dan masukkan alamat kontrak data _feed_ yang sesuai sebagai parameter.
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -109,38 +111,39 @@ contract RedStoneDataConsumer {
 }
 ```
 
-## Reading data
-To read the data of the price feeds, we define the following functions in the contract:
+## Membaca Data
+
+Untuk membaca data dari _feeds_ harga, kita mendefinisikan fungsi-fungsi berikut dalam kontrak:
 
 - `getRedStoneETHDataFeedLatestAnswer()`
 - `getRedStoneLSKDataFeedLatestAnswer()`
 - `getRedStoneUSDTDataFeedLatestAnswer()`
 
-Inside of the functions, call the [latestRoundData](https://docs.chain.link/data-feeds/api-reference#latestrounddata) on the respective data feeds to receive the latest spot prices for the respective token.
+Di dalam fungsi-fungsi tersebut, panggil [latestRoundData](https://docs.chain.link/data-feeds/api-reference#latestrounddata) pada masing-masing data feed untuk menerima harga spot terbaru untuk token yang bersangkutan.
 
-The `latestRoundData()` function returns the following values:
+Fungsi `latestRoundData()` me-_return_ nilai-nilai berikut:
 
-- `roundId`(uint80): The round ID.
-For all [data feeds](#data-feeds-on-lisk), the round is always `1`, because the contracts are without rounds, as the name suggests.
-- `answer`(int256): The data that this specific feed provides.
-Depending on the feed you selected, this answer provides asset prices, reserves, and other types of data.
-- `startedAt`(uint256): Timestamp of when the round started.
-- `updatedAt`(uint256): Timestamp of when the round was updated.
-- `answeredInRound`(uint80):  Deprecated - Previously used when answers could take multiple rounds to be computed.
+- `roundId`(uint80): ID dari ronde.  
+  Untuk semua [data feed](#data-feeds-on-lisk), ronde selalu bernilai `1`, karena kontrak ini tidak menggunakan ronde, sesuai dengan namanya.
+- `answer`(int256): Data yang disediakan oleh feed ini.  
+  Tergantung pada feed yang dipilih, `answer` menyediakan harga aset, cadangan, dan jenis data lainnya.
+- `startedAt`(uint256): Timestamp ketika ronde dimulai.
+- `updatedAt`(uint256): Timestamp ketika ronde diperbarui.
+- `answeredInRound`(uint80): _Deprecated_ - Sebelumnya digunakan ketika jawaban membutuhkan beberapa ronde untuk dihitung.
 
-In this example, we will only use `answer` and `updatedAt`.
-The `updatedAt` value should be used to make sure that the `answer` is recent enough for your application to use it.
-You can compare `updatedAt` to the latest block time (`uint256 currentTime = block.timestamp;`) to ensure you are only using the latest oracle data in your application.
+Dalam contoh ini, kita hanya akan menggunakan `answer` dan `updatedAt`.  
+Nilai `updatedAt` harus digunakan untuk memastikan bahwa `answer` cukup baru untuk digunakan oleh aplikasi Anda.  
+Anda dapat membandingkan `updatedAt` dengan waktu blok terbaru (`uint256 currentTime = block.timestamp;`) untuk memastikan hanya menggunakan data oracle terbaru dalam aplikasi Anda.
 
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.28;
 
 /**
- * THIS IS AN EXAMPLE CONTRACT THAT USES HARDCODED
- * VALUES FOR CLARITY.
- * THIS IS AN EXAMPLE CONTRACT THAT USES UN-AUDITED CODE.
- * DO NOT USE THIS CODE IN PRODUCTION.
+ * INI ADALAH KONTRAK CONTOH YANG MENGGUNAKAN NILAI-NILAI
+ * YANG DITETAPKAN LANGSUNG UNTUK KEJELASAN.
+ * INI ADALAH KONTRAK CONTOH YANG MENGGUNAKAN KODE YANG BELUM DIAUDIT.
+ * JANGAN GUNAKAN KODE INI DALAM PRODUKSI.
  */
 
 import {AggregatorV3Interface} from "@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol";
@@ -163,7 +166,7 @@ contract RedStoneDataConsumer {
   }
 
   /**
-    * Returns the latest ETH price, and when it was updated.
+    * Me-return harga ETH terbaru, serta waktu terakhir kali diperbarui.
     */
   function getRedStoneETHDataFeedLatestAnswer() public view returns (int, uint) {
       (
@@ -176,7 +179,7 @@ contract RedStoneDataConsumer {
       return (answer, updatedAt);
   }
   /**
-    * Returns the latest LSK price, and when it was updated.
+    * Me-return harga LSK terbaru, serta waktu terakhir kali diperbarui.
     */
   function getRedStoneLSKDataFeedLatestAnswer() public view returns (int, uint) {
       (
@@ -189,7 +192,7 @@ contract RedStoneDataConsumer {
       return (answer, updatedAt);
   }
   /**
-    * Returns the latest USDT price, and when it was updated.
+    * Me-return harga USDT terbaru, serta waktu terakhir kali diperbarui.
     */
   function getRedStoneUSDTDataFeedLatestAnswer() public view returns (int, uint) {
       (
@@ -204,15 +207,15 @@ contract RedStoneDataConsumer {
 }
 ```
 
-## Deploying on Lisk
+## Mendeploy di Lisk
 
-To deploy the smart contract on Lisk, follow the guides 
+Untuk mendeploy smart contract di Lisk, ikuti panduan berikut:
 
-- [Deploying a smart contract with Hardhat](../deploying-smart-contract/with-Hardhat), or
-- [Deploying a smart contract with Foundry](../deploying-smart-contract/with-Foundry)
+- [Mendeploy smart contract dengan Hardhat](../deploying-smart-contract/with-Hardhat), atau
+- [Mendeploy smart contract dengan Foundry](../deploying-smart-contract/with-Foundry)
 
 :::note
-RedStone Push is only available on Lisk Mainnet, so please make sure to deploy your Consumer contract on Lisk Mainnet as well.
+RedStone Push hanya tersedia di Lisk Mainnet, jadi pastikan Anda mendeploy kontrak _Consumer_ di Lisk Mainnet.
 
-In case you wish to deploy on Lisk Sepolia Testnet, check the [Tellor](./tellor.md) guide, which is available for both networks.
+Jika Anda ingin mendeploy di Lisk Sepolia Testnet, silakan cek panduan [Tellor](./tellor.md), yang tersedia untuk kedua jaringan.
 :::
