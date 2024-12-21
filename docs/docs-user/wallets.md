@@ -120,7 +120,7 @@ DeFi apps can be accessed and user funds can be put to work from inside the Safe
 Main features:
 - **Non-custodial**
 - **EVM wallet**
-- **Multisig**: Mutisignature for individuals and teams of any size.
+- **Multisig**: Multisignature for individuals and teams of any size.
 - **Web and Mobile versions**
 - **Token Support**: ETH, ERC 20 (including LSK), and ERC 721/1155 (NFTs) support.
 
