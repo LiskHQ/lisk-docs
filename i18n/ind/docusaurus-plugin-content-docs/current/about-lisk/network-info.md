@@ -46,6 +46,6 @@ Lisk L2 tersedia pada jaringan berikut:
 | **Simbol Mata Uang**                                    | ETH                                                                         |  
 | **Penjelajah Blok**                                     | https://sepolia-blockscout.lisk.com                                         |  
 | **API Penjelajah Blok**                                 | https://sepolia-blockscout.lisk.com/api                                     |  
-| **Lisk Testnet Bridge**                                | https://sepolia-bridge.lisk.com                                             |  
+| **Bridge Lisk Testnet**                                | https://sepolia-bridge.lisk.com                                             |  
 | **Lisk Testnet Faucet** (Memberikan LSK)               | https://sepolia-faucet.lisk.com/                                            |  
 | **Superchain Testnet Faucet** (Memberikan ETH)         | https://app.optimism.io/faucet                                              |
