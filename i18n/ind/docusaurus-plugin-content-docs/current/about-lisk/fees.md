@@ -79,12 +79,12 @@ Ini menjamin bahwa data transaksi tersedia untuk node untuk diunduh dan diekseku
 Biaya Data L1 dikenakan secara otomatis untuk setiap transaksi yang dimasukkan ke dalam blok Lisk Mainnet.
 Biaya ini dipotong langsung dari alamat yang mengirimkan transaksi.
 
-Biaya Data L1 dipengaruhi secara signifikan oleh base fee Ethereum yang diteruskan terus-menerus dan tanpa kepercayaan dari Ethereum ke Lisk Mainnet.
+Biaya Data L1 dipengaruhi secara signifikan oleh base fee Ethereum yang diteruskan secara terus-menerus dan tanpa kepercayaan dari Ethereum ke Lisk Mainnet.
 
 Jumlah sebenarnya dari biaya ini bergantung pada nilai input berikut:
 
 1. **Transaksi yang ditandatangani**, yang diserialisasi sesuai dengan pengkodean RLP transaksi Ethereum standar.
-2. **Base fee Ethereum saat ini** dan/atau blob base fee (dikirim tanpa kepercayaan dari Ethereum).
+2. **Base fee Ethereum saat ini** dan/atau blob base fee (dikirim secara trustless dari Ethereum).
 3. Dua **parameter skalar** yang secara independen mengukur base fee dan blob base fee.
 
 #### Perhitungan Biaya Data L1
@@ -95,16 +95,16 @@ l1_data_fee = estimatedSize * weighted_gas_price
 ```
 
 Di sini `estimatedSize` adalah perkiraan ukuran yang akan ditempati transaksi saat diposting di blob L1 Ethereum.
-Ini dihitung berdasarkan ukuran transaksi yang diserialisasi, menggunakan model regresi linier berdasarkan data OP Mainnet historis, dengan asumsi bahwa itu dikompresi dengan kompresi Brotli.
+Ini dihitung berdasarkan ukuran transaksi yang diserialisasi, menggunakan model regresi linier berdasarkan data historis OP Mainnet, dengan asumsi bahwa itu dikompresi dengan kompresi Brotli.
 Untuk rincian lebih lanjut, lihat [dokumentasi OP](https://docs.optimism.io/stack/transactions/fees#fjord) atau [kode kontrak pintar](https://github.com/ethereum-optimism/optimism/blob/e00f23ad0208f2e35aef5435d8a3d2e369144419/packages/contracts-bedrock/src/L2/GasPriceOracle.sol#L203).
 
-Selanjutnya, dua parameter skalar diterapkan pada base fee dan blob base fee untuk menghitung pengali harga gas berbobot.
+Selanjutnya, dua skalar diterapkan pada parameter base fee dan blob base fee untuk menghitung pengali harga gas berbobot.
 
 ```
 weighted_gas_price = 16*base_fee_scalar*base_fee + blob_base_fee_scalar*blob_base_fee
 ```
 
-Nilai saat ini untuk parameter skalar adalah:
+Nilai saat ini untuk skalar adalah:
 
   - `base_fee_scalar` = 0.020698
   - `blob_base_fee_scalar` = 1.364961
@@ -113,7 +113,7 @@ Parameter ini dapat disesuaikan tergantung pada kondisi jaringan, untuk menguran
 
 :::note
 
-Saat ini **tidak** mungkin untuk membatasi biaya Data L1 maksimum yang bersedia dibayar oleh transaksi.
+Saat ini **tidak** memungkinkan untuk membatasi maksimum Biaya Data L1 yang bersedia dibayar oleh sebuah transaksi.
 
 Untuk informasi lebih lanjut tentang biaya transaksi, periksa [Dokumentasi Pengembang Optimism > Biaya Transaksi](https://docs.optimism.io/stack/transactions/fees)
 
@@ -142,7 +142,7 @@ Perubahan setelah transaksi diproses di sequencer tidak memengaruhi biaya yang d
 
 Untuk transaksi L2, proses normalnya adalah:
 
-1. Dompet memperkirakan biaya transaksi dan menunjukkan kepada pengguna.
+1. Dompet memperkirakan biaya transaksi dan menunjukkannya kepada pengguna.
 2. Pengguna kemudian mengirimkan transaksi.
 3. Sequencer memproses transaksi dalam dua fase.
     - Pertama, ia memproses transaksi.
