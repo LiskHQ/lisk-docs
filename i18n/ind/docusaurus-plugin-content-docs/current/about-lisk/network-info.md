@@ -1,5 +1,4 @@
 ---
-
 id: network-info  
 title: Informasi Jaringan, Penjelajah Resmi & Faucet  
 sidebar_position: 1  
@@ -48,4 +47,4 @@ Lisk L2 tersedia pada jaringan berikut:
 | **API Penjelajah Blok**                                 | https://sepolia-blockscout.lisk.com/api                                     |  
 | **Bridge Lisk Testnet**                                | https://sepolia-bridge.lisk.com                                             |  
 | **Lisk Testnet Faucet** (Memberikan LSK)               | https://sepolia-faucet.lisk.com/                                            |  
-| **Superchain Testnet Faucet** (Memberikan ETH)         | https://app.optimism.io/faucet                                              |
+| **Faucet Superchain Testnet** (Memberikan ETH)         | https://app.optimism.io/faucet                                              |
