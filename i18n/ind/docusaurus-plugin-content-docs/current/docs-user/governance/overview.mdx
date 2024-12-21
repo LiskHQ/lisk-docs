@@ -22,7 +22,7 @@ import TabItem from '@theme/TabItem';
 # Gambaran Umum Tata Kelola
 Proyek Lisk dikelola oleh [Lisk DAO](#lisk-dao) dan [Onchain Foundation](https://onchain.org/foundation/).
 Onchain Foundation mendefinisikan visi dan strategi untuk proyek ini bersama dengan tim Lisk, membiayai pengembangannya, dan merupakan pemangku kepentingan di Lisk DAO melalui delegasi Tim Lisk.
-Lisk DAO memungkinkan setiap pemegang token LSK yang mempertaruhkan token mereka untuk berpartisipasi dalam tata kelola onchain untuk proyek Lisk.
+Lisk DAO memungkinkan setiap pemegang token LSK yang staking token mereka untuk berpartisipasi dalam tata kelola onchain untuk proyek Lisk.
 Lisk DAO memutuskan bagaimana menghabiskan dana di kas besar dan dapat mengeluarkan proposal umum mengenai parameter protokol atau arah proyek.
 
 :::info
@@ -141,7 +141,7 @@ Mereka ditambahkan ke kas sesuai dengan rencana vesting berikut:
 
 | Tahun | Jumlah (LSK) | Deskripsi |
 |------|--------------|-------------|
-| 2024 | 15.000.000 | 6.250.000 LSK cair pada migrasi, 8.750.000 LSK dirilis secara linier pada 2024, dimulai dari migrasi. |
+| 2024 | 15.000.000 | 6.250.000 LSK cair saat migrasi, 8.750.000 LSK dirilis secara linier pada 2024, dimulai sejak migrasi. |
 | 2025 | 15.000.000 | LSK dirilis secara linier sepanjang tahun. |
 | 2026 | 15.000.000 | LSK dirilis secara linier sepanjang tahun. |
 
@@ -154,7 +154,7 @@ Setiap akun yang memegang **LSK** dapat **staking/mengunci** sejumlah token LSK 
 
 Prosesnya adalah sebagai berikut:
 
-- Staking token untuk durasi penguncian tertentu (antara 2 minggu dan 2 tahun) di [Lisk Portal](https://portal.lisk.com).
+- Staking token untuk durasi penguncian tertentu (antara 2 minggu hingga 2 tahun) di [Lisk Portal](https://portal.lisk.com).
 - Menerima kekuatan voting dan hadiah staking yang sebanding dengan jumlah token yang dikunci.
 - [Delegasikan](#delegation) kekuatan voting ke diri Anda sendiri atau delegasi lain untuk menggunakannya.
 - Setelah durasi penguncian berakhir, pengguna dapat membuka kunci token yang telah di-stake.
@@ -166,7 +166,7 @@ Secara konkret, 1 LSK yang dikunci memberikan satu unit kekuatan voting (= 1 vpL
 ##### Meningkatkan Kekuatan Voting
 Pengguna memiliki opsi untuk menjeda hitungan durasi penguncian.
 Artinya, hitungan menuju akhir durasi penguncian dihentikan hingga pengguna memutuskan untuk melanjutkannya.
-Dalam kasus menjeda, pengguna mendapatkan peningkatan kekuatan voting.
+Dalam kasus jeda, pengguna mendapatkan peningkatan kekuatan voting.
 Ini dihitung dengan rumus `lockedAmount * (1 + remainingLockingDurationInDays/365)`.
 Dengan demikian, kekuatan voting dapat meningkat hingga 200%, yang tercapai pada durasi penguncian maksimal 2 tahun.
 
@@ -176,7 +176,7 @@ Oleh karena itu, menjeda durasi penguncian setelah proposal dibuat tidak akan me
 :::
 
 ### Delegasi
-Kerangka Governor mengharuskan **delegasi kekuatan voting** untuk menggunakannya.
+Kerangka Governor mengharuskan **pendelegasian kekuatan suara** agar dapat digunakan.
 Kekuatan voting dapat didelegasikan ke pengguna lain atau ke diri Anda sendiri.
 Delegasi mandiri adalah persyaratan jika Anda ingin memberikan suara sendiri.
 
@@ -190,7 +190,7 @@ Silakan pergi ke halaman [Delegasi](delegation) untuk mengetahui lebih lanjut te
 Proposal dibuat di [Tally](#tools).
 Untuk perlindungan dari spam, persyaratan berikut harus dipenuhi untuk membuat proposal:
 
-- **Ambang Proposal**: Untuk membuat proposal, kekuatan voting dari pembuat proposal harus minimal 300.000 vpLSK, yaitu nilai yang setara dengan 100.000 LSK yang dikunci selama 2 tahun dengan hitungan yang dijeda.
+- **Ambang Proposal**: Untuk membuat proposal, kekuatan suara dari pembuat proposal harus minimal 300.000 vpLSK, yaitu nilai yang setara dengan 100.000 LSK yang dikunci selama 2 tahun dengan jeda hitungan waktu.
 
 #### Jenis Proposal
 
@@ -202,11 +202,11 @@ Untuk perlindungan dari spam, persyaratan berikut harus dipenuhi untuk membuat p
 #### Evaluasi Proposal
 Persyaratan berikut harus dipenuhi agar proposal disetujui:
 
-- **Kuorum**: Untuk proposal diterima, jumlah suara "ya" dan "abstain" harus mencapai minimal 24.000.000 vpLSK, yaitu nilai yang setara dengan 8.000.000 LSK yang dikunci selama 2 tahun dengan hitungan yang dijeda.
+- **Kuorum**: Untuk proposal diterima, jumlah suara "ya" dan "abstain" harus mencapai minimal 24.000.000 vpLSK, yaitu nilai yang setara dengan 8.000.000 LSK yang dikunci selama 2 tahun dengan jeda hitungan waktu.
 - Harus ada suara "ya" yang lebih banyak daripada suara "tidak".
 
 #### Implementasi Proposal Pendanaan
-Transfer dari [harta DAO Lisk](#treasury) dapat dilakukan oleh siapa saja, setelah proposal pendanaan disetujui.
+Transfer dari [kas DAO Lisk](#treasury) dapat dilakukan oleh siapa saja, setelah proposal pendanaan disetujui.
 Proposal pendanaan bersifat **mengikat**, yang berarti tidak ada yang bisa mencegah transfer jika proposal diterima, bahkan Onchain Foundation.
 
 #### Implementasi Proposal Umum
@@ -216,6 +216,6 @@ Jika ya, Foundation akan bertindak dengan cermat dan cara yang wajar secara kome
 ### Peran Administratif Onchain Foundation
 Foundation akan memiliki peran administratif dan akan menangani hal-hal berikut:
 
-1. Penghapusan proposal draf yang dianggap wajar sebagai penipuan, spam, fitnah, kebencian, atau tidak pantas lainnya.
+1. Penghapusan proposal draf yang secara wajar dianggap sebagai penipuan, spam, fitnah, kebencian, atau hal lain yang tidak pantas.
 2. Pengelolaan proposal yang saling bertentangan yang diajukan secara bersamaan atau dalam waktu dekat.
 3. Administrasi pemeliharaan jaringan, seperti perbaikan bug darurat atau rollback rilis (dengan atau tanpa suara tata kelola).
