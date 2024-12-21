@@ -34,7 +34,7 @@ Lisk (LSK) tersedia untuk diperdagangkan di berbagai <!-- bursa terpusat dan ter
 | **OKX**                  | 🟢 Lisk            | [LSK/USDT](https://www.okx.com/fr/trade-spot/lsk-usdt)           |
 | **Upbit** (Korea)        | 🟢 Lisk            | [LSK/KRW](https://upbit.com/exchange?code=CRIX.UPBIT.KRW-LSK)    |
 | **XT.com**               | 🟢 Lisk            | [LSK/USDT](https://www.xt.com/en/trade/lsk_usdt)<br />[LSK/BTC](https://www.xt.com/en/trade/lsk_btc) |
-| **HTX** (dulu Houbi)    | 🟣 Ethereum <br/>(Dukungan Lisk segera hadir) | [LSK/USDT](https://www.htx.com.jm/trade/lsk_usdt/)             |
+| **HTX** (sebelumnya Huobi)    | 🟣 Ethereum <br/>(Dukungan Lisk segera hadir) | [LSK/USDT](https://www.htx.com.jm/trade/lsk_usdt/)             |
 | **Binance**              | 🟡 Ethereum        | [LSK/USDT](https://www.binance.com/en/trade/LSK_USDT?type=spot)<br />[LSK/BTC](https://www.binance.com/en/trade/LSK_BTC?type=spot)<br />[LSK/ETH](https://www.binance.com/en/trade/LSK_ETH?type=spot) |
 | **BinanceUS**            | 🟡 Ethereum        | [LSK/USDT](https://www.binance.us/spot-trade/lsk_usdt)           |
 | **Bitflyer**             | 🟡 Ethereum        | [LSK/EUR](https://bitflyer.com/fr-eu/lisk-chart)                 |
@@ -53,7 +53,7 @@ Lisk (LSK) tersedia untuk diperdagangkan di berbagai <!-- bursa terpusat dan ter
 | **Zonda**                | 🟡 Ethereum        | [LSK/USDT](https://zondacrypto.com/en/exchange-rate/lisk-price-usdt)<br />[LSK/EUR](https://zondacrypto.com/en/exchange-rate/lisk-price-eur)<br />[LSK/BTC](https://zondacrypto.com/en/exchange-rate/lisk-price-btc)<br />[LSK/PLN](https://zondacrypto.com/en/exchange-rate/lisk-price-pln) |
 
 [^1]: Token LSK didukung pada blockchain Ethereum L1 dan Lisk L2.
-Bidang "jaringan yang didukung" menunjukkan blockchain yang digunakan oleh bursa untuk setoran & penarikan LSK. 
+Kolom "jaringan yang didukung" menunjukkan blockchain yang digunakan oleh bursa untuk setoran & penarikan LSK. 
 Harap diperhatikan bahwa menggunakan jaringan/blockchain yang salah saat menyetor dana ke bursa dapat mengakibatkan kehilangan dana.
 
 ### Segera Hadir
