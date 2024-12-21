@@ -1,136 +1,133 @@
 ---
-title: Overview
+title: Ikhtisar
 sidebar_position: 1
 slug: /user/staking/overview
-description: 'How to stake LSK tokens to receive staking rewards.'
+description: 'Cara untuk staking token LSK untuk menerima hadiah staking.'
 keywords:
   [
     'Lisk',
-    'Lisk staking',
+    'staking Lisk',
     'staking LSK',
-    'staking rewards',
-    'Lisk rewards',
-    'earn LSK',
-    'earn Lisk',
+    'hadiah staking',
+    'hadiah Lisk',
+    'dapatkan LSK',
+    'dapatkan Lisk',
   ]
 ---
 
-# Staking LSK tokens
+# Staking Token LSK
 
-LSK staking is necessary to participate in the [Lisk DAO](https://www.tally.xyz/gov/lisk), enabling active involvement in the project's decision-making. Our staking system rewards LSK stakers for their participation with [staking rewards](#staking-rewards) based on their commitment duration.
+Staking LSK diperlukan untuk berpartisipasi dalam [Lisk DAO](https://www.tally.xyz/gov/lisk), memungkinkan keterlibatan aktif dalam pengambilan keputusan proyek. Sistem staking kami memberikan hadiah kepada staker LSK atas partisipasi mereka dengan [hadiah staking](#staking-rewards) berdasarkan durasi komitmen mereka.
 
-## Staking Guides
+## Panduan Staking
 
-- [How to stake, claim, and unstake](stake-unstake.mdx)
-- [How to pause a locking position](pause-position.mdx)
-- [How to increase the stake](../staking/increase-stake.mdx)
-- [How to extend the duration of a stake](extend-duration.mdx)
-- [How to unstake early](early-unlock.mdx)
+- [Cara staking, klaim, dan unstake](stake-unstake.mdx)
+- [Cara menghentikan posisi kunci](pause-position.mdx)
+- [Cara menambah stake](../staking/increase-stake.mdx)
+- [Cara memperpanjang durasi stake](extend-duration.mdx)
+- [Cara unstake lebih awal](early-unlock.mdx)
 
-## Locking positions
+## Posisi Kunci
 
-Every time you [stake](stake-unstake.mdx#how-to-stake-your-lsk-tokens) a certain amount of LSK for a specific locking duration, a new **locking position** will be created.
+Setiap kali Anda [stake](stake-unstake.mdx#how-to-stake-your-lsk-tokens) sejumlah LSK untuk durasi kunci tertentu, posisi **kunci** baru akan dibuat.
 
 :::tip
-The **minimum locking duration** for staking is **two weeks**.
+**Durasi kunci minimum** untuk staking adalah **dua minggu**.
 
-The **maximum locking duration** for staking is **two years**.
+**Durasi kunci maksimum** untuk staking adalah **dua tahun**.
 :::
 
-Locking positions are represented as **NFTs** using the ERC-721 standard, similar to Uniswap v3 liquidity positions.
-This enhances composability into DeFi and potential future uses.
+Posisi kunci diwakili sebagai **NFT** menggunakan standar ERC-721, mirip dengan posisi likuiditas Uniswap v3.
+Ini meningkatkan komposabilitas ke dalam DeFi dan penggunaan potensial di masa depan.
 
-## Staking rewards
+## Hadiah Staking
 
-Staking rewards incentivize users to participate in governance, making the decision-making more decentralized and community-driven.  
-In short, users get [voting power](docs-user/governance/overview.mdx#voting-power) and rewards for staking tokens for a specific time period.
+Hadiah staking memberikan insentif bagi pengguna untuk berpartisipasi dalam tata kelola, menjadikan pengambilan keputusan lebih terdesentralisasi dan didorong oleh komunitas.  
+Secara singkat, pengguna mendapatkan [kekuatan voting](docs-user/governance/overview.mdx#voting-power) dan hadiah untuk staking token selama periode waktu tertentu.
 
-Lisk applies a **time-weight boosting** on rewards:
-The further the end of the locking duration is in the future, the more rewards you get.
-This also implies that the rewards decrease every day.
-This way, we reward token holders for committing long-term to the Lisk project so we attract them as long-term advocates for Lisk while reducing short-term speculation and volatility. 
+Lisk menerapkan **peningkatan bobot berdasarkan waktu** pada hadiah:
+Semakin jauh akhir durasi kunci di masa depan, semakin banyak hadiah yang Anda dapatkan.
+Ini juga berarti bahwa hadiah akan berkurang setiap hari.
+Dengan cara ini, kami memberi penghargaan kepada pemegang token yang berkomitmen jangka panjang pada proyek Lisk sehingga kami menarik mereka sebagai pendukung jangka panjang Lisk sambil mengurangi spekulasi jangka pendek dan volatilitas.
 
-- Users can [claim](stake-unstake.mdx#how-to-claim-staking-rewards) their rewards at any time.   
-- Users can modify their locking positions (increase amount, extend locking duration) at any time they want.
-- Users have the option to **pause** their locking period countdown.
-That means, the remaining locking duration remains fixed until the user decides to resume it.
-Note that this results in **higher staking rewards**, since the weight remains fixed, as opposed to a weight daily decreasing when the countdown is active. 
+- Pengguna dapat [mengklaim](stake-unstake.mdx#how-to-claim-staking-rewards) hadiah mereka kapan saja.   
+- Pengguna dapat memodifikasi posisi kunci mereka (menambah jumlah, memperpanjang durasi kunci) kapan saja.
+- Pengguna memiliki opsi untuk **menghentikan** hitungan mundur durasi kunci mereka.
+Ini berarti, durasi kunci yang tersisa tetap tetap sampai pengguna memutuskan untuk melanjutkannya.
+Perhatikan bahwa ini menghasilkan **hadiah staking yang lebih tinggi**, karena bobot tetap tetap, dibandingkan dengan bobot yang menurun setiap hari saat hitungan mundur aktif.
 
-### Staking rewards distribution
-A total of 24 million LSK tokens will be used over the course of 3 years for the LSK staking rewards program (8 million LSK per year).
-This amount is provided to the [Rewards contract](https://blockscout.lisk.com/address/0xD35ca9577a9DADa7624a35EC10C2F55031f0Ab1f).
+### Distribusi Hadiah Staking
+Sebanyak 24 juta token LSK akan digunakan selama 3 tahun untuk program hadiah staking LSK (8 juta LSK per tahun).
+Jumlah ini diberikan ke dalam [kontrak Rewards](https://blockscout.lisk.com/address/0xD35ca9577a9DADa7624a35EC10C2F55031f0Ab1f).
 
-**Daily Reward Calculation:** Rewards are taken from the balance of the Rewards contract and calculated daily, based on the amount locked and the remaining locking duration.
-Concretely, the weight for a locked amount is given by:
-
-```
-weight = lockedAmount * (remainingLockingDurationInDays + 150)
-```
-
-The total daily amount of staking rewards, 8,000,000 / 365 LSK, is then shared by all users proportional to their weight.
-
-That means, the daily rewards for a locking position are calculated as: 
+**Perhitungan Hadiah Harian:** Hadiah diambil dari saldo kontrak Rewards dan dihitung setiap hari, berdasarkan jumlah yang dikunci dan durasi kunci yang tersisa.
+Secara konkret, bobot untuk jumlah yang dikunci diberikan oleh:
 
 ```
-dailyRewards = weight/totalWeight * TotalDailyRewards
+bobot = jumlahDikunci * (durasiKunciTersisaDalamHari + 150)
 ```
 
-The current value of `totalWeight` can be checked in the [Rewards contract](https://blockscout.lisk.com/address/0xD35ca9577a9DADa7624a35EC10C2F55031f0Ab1f?tab=read_proxy).
-`totalDailyRewards` can be calculated by taking the yearly available rewards and dividing it by 365:  `8,000,000 / 365 = 21917`
+Jumlah total hadiah staking harian, 8.000.000 / 365 LSK, kemudian dibagikan kepada semua pengguna secara proporsional dengan bobot mereka.
 
-### Example: Reward calculation for 1 vs 2 years
-For example, if someone stakes 100LSK for *1 year*, this would result in the following reward for that day, assuming `totalWeight` is `12462098705` for this example:
+Artinya, hadiah harian untuk posisi kunci dihitung sebagai:
 
 ```
-weight = 100 * (365 + 150) = 51500
+hadiahHarian = bobot/totalBobot * TotalHadiahHarian
 ```
 
-```
-dailyRewards = 51500 / 12462098705 * 21917 = 0.0905726657 LSK 
-```
+Nilai saat ini dari `totalBobot` dapat dicek di [kontrak Rewards](https://blockscout.lisk.com/address/0xD35ca9577a9DADa7624a35EC10C2F55031f0Ab1f?tab=read_proxy).
+`TotalHadiahHarian` dapat dihitung dengan membagi hadiah tahunan yang tersedia dengan 365:  `8.000.000 / 365 = 21917`
 
-If the 100 staked LSK expire in *two years*, this would result in the following reward on that day:
+### Contoh: Perhitungan Hadiah untuk 1 vs 2 Tahun
+Misalnya, jika seseorang melakukan staking 100LSK selama *1 tahun*, ini akan menghasilkan hadiah berikut pada hari itu, dengan asumsi `totalBobot` adalah `12462098705` untuk contoh ini:
 
 ```
-weight  = 100 * (730 + 150) = 88000
+bobot = 100 * (365 + 150) = 51500
 ```
 
 ```
-dailyRewards = 88000 / 12462098705 * 21917 = 0.15476494334 LSK 
+hadiahHarian = 51500 / 12462098705 * 21917 = 0.0905726657 LSK 
 ```
 
-After the end of this 3-year span, we expect that developments in the Optimism Superchain Ecosystem (shared, decentralized sequencers) will lead us to a new staking mechanism.
+Jika 100 LSK yang di-stake habis dalam *dua tahun*, ini akan menghasilkan hadiah berikut pada hari itu:
+
+```
+bobot  = 100 * (730 + 150) = 88000
+```
+
+```
+hadiahHarian = 88000 / 12462098705 * 21917 = 0.15476494334 LSK 
+```
+
+Setelah akhir periode 3 tahun ini, kami mengharapkan bahwa perkembangan dalam Ekosistem Optimism Superchain (sequencer terdesentralisasi bersama) akan membawa kami ke mekanisme staking baru.
 
 ## Unstaking
 
-Once the locking period of a [locking position](#locking-positions) has expired, it is possible to unlock the staked tokens again, by [unstaking](stake-unstake.mdx#how-to-unstake-your-lsk-tokens) them.
+Setelah periode kunci dari sebuah [posisi kunci](#locking-positions) berakhir, Anda dapat membuka kembali token yang di-stake dengan cara [unstake](stake-unstake.mdx#how-to-unstake-your-lsk-tokens).
 
 :::tip
-In case you need to unlock your tokens earlier than the defined locking period, it is possible to unstake your tokens before the locking period expires by using the [early unlock](#early-unlock) option.
+Jika Anda perlu membuka token Anda lebih awal dari periode kunci yang ditentukan, Anda dapat melakukan unstake token Anda sebelum periode kunci berakhir dengan menggunakan opsi [early unlock](#early-unlock).
 
-Using fast unlock will involve a penalty to be paid.
+Menggunakan unlock cepat akan melibatkan penalti yang harus dibayar.
 :::
 
-Once they are unstaked, the LSK tokens can be used as before for any other purpose.
+Setelah di-unstake, token LSK dapat digunakan seperti sebelumnya untuk tujuan lainnya.
 
-### Early Unlock
-Early unlock allows you to unstake your LSK tokens before their locking period has expired.
-It involves paying a penalty and waiting for a 3-day emergency unlocking period.
-The penalty is proportional to the remaining days in the staking period that will be skipped.
-
-The penalty is calculated using the formula:
+### Unlock Cepat
+Unlock cepat memungkinkan Anda untuk melakukan unstake token LSK sebelum periode kunci mereka berakhir.
+Ini melibatkan pembayaran penalti dan menunggu periode unlock darurat selama 3 hari.
+Penalti dihitung berdasarkan formula:
 
 ```
-Penalty = 0.5 * Staked Amount * (Remaining Days / 730)
+Penalti = 0.5 * Jumlah yang di-stake * (Hari Tersisa / 730)
 ```
 
-Please note that the maximum value for the remaining days is 730.
+Harap dicatat bahwa nilai maksimum untuk hari yang tersisa adalah 730.
 
-For example, if a user wants to fast unlock a position with 100 LSK and a remaining locking duration of 150 days, then the penalty is calculated as follows:
+Misalnya, jika seorang pengguna ingin melakukan unlock cepat posisi dengan 100 LSK dan durasi kunci yang tersisa 150 hari, maka penalti dihitung sebagai berikut:
 
 ```
-Penalty = 0.5 x 100 x (147 / 730) = 10.068 LSK
+Penalti = 0.5 x 100 x (147 / 730) = 10.068 LSK
 ```
 
-Note that we multiply by 147 and not 150, since the user will still have to wait for 3 days, so the locking duration decreased by 147 overall. 
-
+Perhatikan bahwa kami mengalikan dengan 147 dan bukan 150, karena pengguna masih harus menunggu selama 3 hari, jadi durasi kunci secara keseluruhan berkurang sebanyak 147.
