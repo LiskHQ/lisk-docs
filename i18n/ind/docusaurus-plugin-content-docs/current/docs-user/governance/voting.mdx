@@ -65,7 +65,7 @@ async function main() {
         fromBlock: 568778, // blok saat kontrak Governor dideploy
         toBlock: 'latest',
         address: "0x58a61b1807a7bDA541855DaAEAEe89b1DDA48568", // L2Governor Proxy
-        topics:['0x7d84a6263ae0d98d3329bd7b46bb4e8d6f98cd35a7adb45c274c8b7fd5ebd5e0'] // tanda tangan acara `ProposalCreated`
+        topics:['0x7d84a6263ae0d98d3329bd7b46bb4e8d6f98cd35a7adb45c274c8b7fd5ebd5e0'] // tanda tangan event `ProposalCreated`
     });
     console.log(logs);
 }
@@ -87,7 +87,7 @@ Nilai yang dikembalikan adalah array log, di mana setiap log berhubungan dengan 
 ]
 ```
 Hash transaksi ini kemudian dapat dipaste ke [Blockscout](https://blockscout.lisk.com/) untuk melihat detail lebih lanjut dari proposal.
-Untuk memastikan proposal yang Anda cari, klik tab `Logs` dan cari acara `ProposalCreated`. Jika nilai-nilai, terutama untuk `description`, `voteStart`, dan `voteEnd`, cocok dengan proposal yang ingin Anda beri suara, maka itu adalah proposal yang benar. Untuk mendapatkan ID proposal, salin nilai dari kolom `proposalId`.
+Untuk memastikan proposal yang Anda cari, klik tab `Logs` dan cari event `ProposalCreated`. Jika nilai-nilai, terutama untuk `description`, `voteStart`, dan `voteEnd`, cocok dengan proposal yang ingin Anda beri suara, maka itu adalah proposal yang benar. Untuk mendapatkan ID proposal, salin nilai dari kolom `proposalId`.
 <img src={proposalId}/>
 
 ### Langkah-langkah
