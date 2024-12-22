@@ -28,7 +28,7 @@ Ringkasan berbagai layanan yang tersedia untuk membangun di Lisk.
 Safe membawa kepemilikan digital akun kepada semua orang dengan membangun standar kontrak universal dan terbuka untuk penyimpanan aset digital, data, dan identitas.  
 Untuk membuat akun Safe dengan Lisk, sambungkan dompet Anda ke jaringan [Lisk](https://safe.optimism.io/welcome?chain=lisk) atau [Lisk Sepolia](https://safe.optimism.io/welcome?chain=lisksep) melalui portal Superchain-Safe.
 
-Gelato mengembangkan contoh kecil [aplikasi react](https://gelato-raas-aa.web.app/) dengan integrasi safe-web3auth.  
+Gelato meluncurkan sebuah contoh [aplikasi react](https://gelato-raas-aa.web.app/) sederhana dengan integrasi safe-web3auth.  
 Kode untuk integrasi ini dapat ditemukan di repositori [gelato-raas-aa-ui](https://github.com/gelatodigital/gelato-raas-aa-ui).
 
 ### 1Balance
@@ -38,7 +38,7 @@ Kode untuk integrasi ini dapat ditemukan di repositori [gelato-raas-aa-ui](https
 
 Di repositori [gelato-raas-aa](https://github.com/gelatodigital/gelato-raas-aa), Anda dapat menemukan implementasi demo untuk mensponsori biaya dengan 1Balance atau membayar biaya dengan saldo Safe.
 
-## Automasi
+## Otomasi
 
 ### Web3 Functions
 
@@ -65,4 +65,4 @@ Buat permainan, NFT, lotere, dan aplikasi onchain lainnya yang transparan dan ad
 ### Gelato Relay
 
 Gunakan [Gelato Relay](https://www.gelato.network/relay) untuk meneruskan transaksi pengguna Anda di blockchain, memungkinkan transaksi gasless yang aman untuk pengalaman pengguna yang sangat lancar untuk aplikasi Anda.  
-Ini memungkinkan berbagai pengalaman Web3 baru, karena pengguna sekarang dapat membayar hanya dengan menandatangani pesan, atau biaya transaksi mereka dapat disponsori oleh pengembang.
+Ini memungkinkan berbagai pengalaman Web3 baru, karena pengguna hanya perlu menandatangani pesan dan biaya transaksi mereka dapat disponsori oleh pengembang.
