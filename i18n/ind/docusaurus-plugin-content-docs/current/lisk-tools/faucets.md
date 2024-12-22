@@ -2,11 +2,11 @@
 
 title: Faucet  
 slug: /lisk-tools/faucets  
-description: Ringkasan faucet ETH dan LSK yang tersedia di Lisk Sepolia Testnet. Dapatkan token testnet gratis di Lisk Sepolia.  
+description: Ringkasan faucet ETH dan LSK yang tersedia di Testnet Lisk Sepolia. Dapatkan token testnet gratis di Lisk Sepolia.  
 keywords:  
   [
     Lisk Sepolia,
-    Lisk Sepolia Testnet,
+     Testnet Lisk Sepolia,
     faucet Lisk,
     faucet LSK,
     faucet ETH,
