@@ -1,9 +1,9 @@
 ---
 
-title: Pengindeks Data  
+judul: Pengindeks Data  
 slug: /lisk-tools/indexers  
 description: "Pengantar singkat untuk semua pengindeks yang terhubung dengan Lisk L2."  
-keywords: [  
+kata kunci: [  
     "pengindeks",  
     "pengindeks data",  
     "Lisk",  
