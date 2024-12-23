@@ -22,22 +22,22 @@ Staking LSK diperlukan untuk berpartisipasi dalam [Lisk DAO](https://www.tally.x
 ## Panduan Staking
 
 - [Cara staking, klaim, dan unstake](stake-unstake.mdx)
-- [Cara menghentikan posisi kunci](pause-position.mdx)
+- [Cara menghentikan posisi penguncian](pause-position.mdx)
 - [Cara menambah stake](../staking/increase-stake.mdx)
 - [Cara memperpanjang durasi stake](extend-duration.mdx)
 - [Cara unstake lebih awal](early-unlock.mdx)
 
-## Posisi Kunci
+## Posisi Penguncian
 
-Setiap kali Anda [stake](stake-unstake.mdx#how-to-stake-your-lsk-tokens) sejumlah LSK untuk durasi kunci tertentu, posisi **kunci** baru akan dibuat.
+Setiap kali Anda [stake](stake-unstake.mdx#how-to-stake-your-lsk-tokens) sejumlah LSK untuk durasi penguncian tertentu, posisi **penguncian** baru akan dibuat.
 
 :::tip
-**Durasi kunci minimum** untuk staking adalah **dua minggu**.
+**Durasi penguncian minimum** untuk staking adalah **dua minggu**.
 
-**Durasi kunci maksimum** untuk staking adalah **dua tahun**.
+**Durasi penguncian maksimum** untuk staking adalah **dua tahun**.
 :::
 
-Posisi kunci diwakili sebagai **NFT** menggunakan standar ERC-721, mirip dengan posisi likuiditas Uniswap v3.
+Posisi penguncian diwakili sebagai **NFT** menggunakan standar ERC-721, mirip dengan posisi likuiditas Uniswap v3.
 Ini meningkatkan komposabilitas ke dalam DeFi dan penggunaan potensial di masa depan.
 
 ## Hadiah Staking
@@ -46,30 +46,30 @@ Hadiah staking memberikan insentif bagi pengguna untuk berpartisipasi dalam tata
 Secara singkat, pengguna mendapatkan [kekuatan voting](docs-user/governance/overview.mdx#voting-power) dan hadiah untuk staking token selama periode waktu tertentu.
 
 Lisk menerapkan **peningkatan bobot berdasarkan waktu** pada hadiah:
-Semakin jauh akhir durasi kunci di masa depan, semakin banyak hadiah yang Anda dapatkan.
+Semakin jauh akhir durasi penguncian di masa depan, semakin banyak hadiah yang Anda dapatkan.
 Ini juga berarti bahwa hadiah akan berkurang setiap hari.
 Dengan cara ini, kami memberi penghargaan kepada pemegang token yang berkomitmen jangka panjang pada proyek Lisk sehingga kami menarik mereka sebagai pendukung jangka panjang Lisk sambil mengurangi spekulasi jangka pendek dan volatilitas.
 
 - Pengguna dapat [mengklaim](stake-unstake.mdx#how-to-claim-staking-rewards) hadiah mereka kapan saja.   
-- Pengguna dapat memodifikasi posisi kunci mereka (menambah jumlah, memperpanjang durasi kunci) kapan saja.
-- Pengguna memiliki opsi untuk **menghentikan** hitungan mundur durasi kunci mereka.
-Ini berarti, durasi kunci yang tersisa tetap tetap sampai pengguna memutuskan untuk melanjutkannya.
+- Pengguna dapat memodifikasi posisi penguncian mereka (menambah jumlah, memperpanjang durasi penguncian) kapan saja.
+- Pengguna memiliki opsi untuk **menghentikan** hitungan mundur durasi penguncian mereka.
+Ini berarti, durasi penguncian yang tersisa tetap tetap sampai pengguna memutuskan untuk melanjutkannya.
 Perhatikan bahwa ini menghasilkan **hadiah staking yang lebih tinggi**, karena bobot tetap tetap, dibandingkan dengan bobot yang menurun setiap hari saat hitungan mundur aktif.
 
 ### Distribusi Hadiah Staking
 Sebanyak 24 juta token LSK akan digunakan selama 3 tahun untuk program hadiah staking LSK (8 juta LSK per tahun).
 Jumlah ini diberikan ke dalam [kontrak Rewards](https://blockscout.lisk.com/address/0xD35ca9577a9DADa7624a35EC10C2F55031f0Ab1f).
 
-**Perhitungan Hadiah Harian:** Hadiah diambil dari saldo kontrak Rewards dan dihitung setiap hari, berdasarkan jumlah yang dikunci dan durasi kunci yang tersisa.
+**Perhitungan Hadiah Harian:** Hadiah diambil dari saldo kontrak Rewards dan dihitung setiap hari, berdasarkan jumlah yang dikunci dan durasi penguncian yang tersisa.
 Secara konkret, bobot untuk jumlah yang dikunci diberikan oleh:
 
 ```
-bobot = jumlahDikunci * (durasiKunciTersisaDalamHari + 150)
+bobot = jumlahDikunci * (durasiPenguncianTersisaDalamHari + 150)
 ```
 
 Jumlah total hadiah staking harian, 8.000.000 / 365 LSK, kemudian dibagikan kepada semua pengguna secara proporsional dengan bobot mereka.
 
-Artinya, hadiah harian untuk posisi kunci dihitung sebagai:
+Artinya, hadiah harian untuk posisi penguncian dihitung sebagai:
 
 ```
 hadiahHarian = bobot/totalBobot * TotalHadiahHarian
@@ -103,10 +103,10 @@ Setelah akhir periode 3 tahun ini, kami mengharapkan bahwa perkembangan dalam Ek
 
 ## Unstaking
 
-Setelah periode kunci dari sebuah [posisi kunci](#locking-positions) berakhir, Anda dapat membuka kembali token yang di-stake dengan cara [unstake](stake-unstake.mdx#how-to-unstake-your-lsk-tokens).
+Setelah periode penguncian dari sebuah [posisi penguncian](#locking-positions) berakhir, Anda dapat membuka kembali token yang di-stake dengan cara [unstake](stake-unstake.mdx#how-to-unstake-your-lsk-tokens).
 
 :::tip
-Jika Anda perlu membuka token Anda lebih awal dari periode kunci yang ditentukan, Anda dapat melakukan unstake token Anda sebelum periode kunci berakhir dengan menggunakan opsi [early unlock](#early-unlock).
+Jika Anda perlu membuka token Anda lebih awal dari periode penguncian yang ditentukan, Anda dapat melakukan unstake token Anda sebelum periode penguncian berakhir dengan menggunakan opsi [early unlock](#early-unlock).
 
 Menggunakan unlock cepat akan melibatkan penalti yang harus dibayar.
 :::
@@ -114,7 +114,7 @@ Menggunakan unlock cepat akan melibatkan penalti yang harus dibayar.
 Setelah di-unstake, token LSK dapat digunakan seperti sebelumnya untuk tujuan lainnya.
 
 ### Unlock Cepat
-Unlock cepat memungkinkan Anda untuk melakukan unstake token LSK sebelum periode kunci mereka berakhir.
+Unlock cepat memungkinkan Anda untuk melakukan unstake token LSK sebelum periode penguncian mereka berakhir.
 Ini melibatkan pembayaran penalti dan menunggu periode unlock darurat selama 3 hari.
 Penalti dihitung berdasarkan formula:
 
@@ -124,7 +124,7 @@ Penalti = 0.5 * Jumlah yang di-stake * (Hari Tersisa / 730)
 
 Harap dicatat bahwa nilai maksimum untuk hari yang tersisa adalah 730.
 
-Misalnya, jika seorang pengguna ingin melakukan unlock cepat posisi dengan 100 LSK dan durasi kunci yang tersisa 150 hari, maka penalti dihitung sebagai berikut:
+Misalnya, jika seorang pengguna ingin melakukan unlock cepat posisi dengan 100 LSK dan durasi penguncian yang tersisa 150 hari, maka penalti dihitung sebagai berikut:
 
 ```
 Penalti = 0.5 x 100 x (147 / 730) = 10.068 LSK
