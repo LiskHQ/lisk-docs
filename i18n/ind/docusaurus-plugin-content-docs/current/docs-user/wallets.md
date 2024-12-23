@@ -46,10 +46,10 @@ Fitur utama:
 - **Dompet EVM**
 - **Ekstensi browser** dan **Versi mobile**
 - **Kompatibel dengan Ledger dan Trezor**
-- **Dukungan Token**: ETH, ERC 20 (termasuk LSK), dan ERC 721/1155 (NFT) didukung.
+- **Dukungan Token**: ETH, ERC 20 (termasuk LSK), dan dukungan ERC 721/1155 (NFT).
 
 ### MetaMask
-Tersedia sebagai ekstensi browser dan aplikasi mobile, [MetaMask](https://metamask.io/) memberikan Anda vault kunci, login aman, dompet token, dan banyak lagi — semua yang Anda butuhkan untuk mengelola aset digital Anda.
+Tersedia sebagai ekstensi browser dan aplikasi mobile, [MetaMask](https://metamask.io/) memberikan Anda brankas kunci, login yang aman, dompet token, dan masih banyak lagi — semua yang Anda butuhkan untuk mengelola aset digital Anda.
 MetaMask adalah salah satu pilihan paling populer di kalangan dompet panas.
 
 :::tip
@@ -60,7 +60,7 @@ Fitur utama:
 - **Non-kustodial**
 - **Dompet multi-rantai** melalui [Snaps](https://support.metamask.io/metamask-snaps/what-are-interoperability-snaps/).
 - **Ekstensi browser** dan **Versi mobile**
-- **Dukungan Token**: ETH, ERC 20 (termasuk LSK), dan ERC 721 (NFT) didukung.
+- **Dukungan Token**: ETH, ERC 20 (termasuk LSK), dan dukungan ERC 721 (NFT).
 
 ### Zerion
 [Zerion](https://zerion.io/) adalah dompet kripto untuk segala hal yang terkait dengan blockchain.
@@ -72,18 +72,18 @@ Fitur utama:
 - **Dompet EVM**
 - **Kompatibel dengan Ledger**
 - **Ekstensi browser** dan **Versi mobile**
-- **Dukungan Token**: ETH, ERC 20 (termasuk LSK), dan ERC 721 (NFT) didukung.
+- **Dukungan Token**: ETH, ERC 20 (termasuk LSK), dan dukungan ERC 721 (NFT).
 
 ### Xellar
 
-[Xellar](https://xellar.co/) menawarkan dompet mobile dan devkit untuk dompet yang disematkan yang dapat diintegrasikan ke dalam aplikasi dan situs web.
+[Xellar](https://xellar.co/) menawarkan dompet mobile dan devkit untuk dompet yang tertanam yang dapat diintegrasikan ke dalam aplikasi dan situs web.
 Memungkinkan pengguna untuk membuat dompet dengan Login Sosial yang terintegrasi langsung ke dalam aplikasi.
 
 Fitur utama:
 - **Integrasi native jaringan Lisk**
 - **Non-kustodial**
 - **Multi-rantai**: Kompatibel dengan rantai EVM mana pun, BTC, Solana, dan TRON.
-- **Penyedia dompet tersemat**
+- **Penyedia dompet yang tertanam**
 - **On- dan off-ramp token**
 - **Pemulihan dompet melalui login sosial**
 
@@ -96,12 +96,12 @@ Fitur utama:
 - **Non-kustodial**
 - **Dompet EVM**
 - **Terintegrasi dengan browser Brave**
-- **Dukungan Token**: ETH, ERC 20 (termasuk LSK), dan ERC 721 (NFT) didukung.
+- **Dukungan Token**: ETH, ERC 20 (termasuk LSK), dan dukungan ERC 721 (NFT)
 
 Lihat [daftar fitur lengkap](https://support.brave.com/hc/en-us/articles/14380262951053-What-features-are-available-in-Brave-Wallet).
 
 ### Rabby
-[Rabby](https://rabby.io/) adalah dompet kripto open source untuk Ethereum dan rantai EVM.
+[Rabby](https://rabby.io/) adalah dompet kripto open source untuk Ethereum dan rantai-rantai EVM lainnya.
 Dirancang untuk pengguna DeFi dengan pengalaman multi-rantai yang mulus.
 Melindungi aset Anda dengan pemindaian potensi risiko sebelum transaksi dan menampilkan perubahan saldo yang akan datang sebelum Anda menandatangani transaksi.
 
