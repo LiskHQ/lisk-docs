@@ -707,7 +707,7 @@ contract HelloTest is Test {
     }
 
     function test_SetBlacklistNotOwner() public {
-        string ;
+        string[] memory bl = new string[](3) ;
         bl[0] = "word1";
    bl[2] = "word4";
         vm.expectRevert("Not owner");
