@@ -1,10 +1,10 @@
 ---
 title: Menjalankan Node Lisk
 slug: /building-on-lisk/run-a-lisk-node
-description: Tutorial yang mengajarkan cara mengatur dan menjalankan Node Lisk.
+description: Tutorial yang mengajarkan cara memasang dan menjalankan Node Lisk.
 keywords:
   [
-    Lisk Node setup,
+    pemasangan node Lisk,
     running a node,
     Lisk node,
     run a Lisk node,
@@ -14,10 +14,10 @@ keywords:
     Lisk chain,
     Lisk blockchain,
     Lisk network,
-    node deployment,
+    peluncuran node,
     Ethereum node,
   ]
-tags: ["nodes"]
+tags: ["node"]
 difficulty: beginner
 ---
 
@@ -29,7 +29,7 @@ Tutorial ini akan memandu Anda untuk mengatur dan menjalankan [Node Lisk] Anda s
 
 Pada akhir tutorial ini, Anda akan dapat:
 
-- Mendeploy dan menyinkronkan node Lisk
+- Meluncurkan dan menyinkronkan node Lisk
 
 ## Prasyarat
 
@@ -42,9 +42,9 @@ Jika Anda baru memulai dan memerlukan URL RPC, Anda dapat menggunakan endpoint g
 - **Mainnet**: `https://rpc.api.lisk.com`
 - **Testnet (Sepolia)**: `https://rpc.sepolia-api.lisk.com`
 
-**Catatan:** RPC kami memiliki batasan tingkat (rate-limited), sehingga tidak cocok untuk aplikasi produksi.
+**Catatan:** RPC kami memiliki _rate limit_, sehingga tidak cocok untuk aplikasi produksi.
 
-Jika Anda ingin memperkuat aplikasi Anda dan menghindari pembatasan tingkat untuk pengguna Anda, silakan cek salah satu [mitra kami].
+Jika Anda ingin memperkuat aplikasi Anda dan menghindari _rate limit_ untuk pengguna Anda, silakan cek salah satu [mitra kami].
 
 :::
 

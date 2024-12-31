@@ -1,7 +1,7 @@
 ---
 title: ...menggunakan viem
 slug: /building-on-lisk/interacting-with-blockchain/viem
-description: Dokumentasi untuk menggunakan Viem, sebuah interface TypeScript untuk blockchain yang kompatibel dengan EVM. Halaman ini mencakup instalasi, pengaturan, serta berbagai fungsi seperti membaca dan menulis data blockchain, dan berinteraksi dengan smart contract di Lisk.
+description: Dokumentasi untuk menggunakan Viem, sebuah interface TypeScript untuk blockchain yang kompatibel dengan EVM. Halaman ini mencakup instalasi, pengaturan, serta berbagai fungsi seperti membaca dan menulis data blockchain, dan berinteraksi dengan kontrak pintar di Lisk.
 keywords:
   [
     viem,
@@ -24,8 +24,8 @@ import TabItem from '@theme/TabItem';
 
 [viem](https://viem.sh/) adalah sebuah _interface_ TypeScript untuk Ethereum yang menyediakan _low-level stateless primitives_ untuk berinteraksi dengan Ethereum.
 
-Anda dapat menggunakan viem untuk berinteraksi dengan _smart contract_ yang dideploy di Lisk.  
-Viem menyediakan dukungan penuh untuk _chain_ yang diimplementasikan pada OP stack, lihat [viem.sh > OP stack](https://viem.sh/op-stack).
+Anda dapat menggunakan viem untuk berinteraksi dengan kontrak pintar yang diluncurkan di Lisk.  
+Viem menyediakan dukungan penuh untuk rantai yang diimplementasikan pada OP stack, lihat [viem.sh > OP stack](https://viem.sh/op-stack).
 
 ## Instalasi
 
@@ -37,13 +37,13 @@ npm install --save viem
 
 ## Setup
 
-Sebelum mulai menggunakan viem, Anda perlu mengatur [Client](https://viem.sh/op-stack/client) dengan [Transport](https://viem.sh/docs/clients/intro.html#transports) dan [Chain](https://viem.sh/docs/chains/introduction) yang diinginkan.
+Sebelum mulai menggunakan viem, Anda perlu mengatur [Client](https://viem.sh/op-stack/client) dengan [Transport](https://viem.sh/docs/clients/intro.html#transports) dan [Rantai](https://viem.sh/docs/chains/introduction) yang diinginkan.
 
 ### Public Client
 
 Untuk membaca data dari Lisk, Anda perlu membuat **Public client**.  
 
-Dengan meng-_extend_ public client menggunakan `publicActionsL2` atau `publicActionsL1`, Anda akan mendapatkan akses ke metode tambahan untuk Lisk dan _chain_ lain yang dibangun di atas OP stack.
+Dengan meng-_extend_ public client menggunakan `publicActionsL2` atau `publicActionsL1`, Anda akan mendapatkan akses ke metode tambahan untuk Lisk dan rantai lain yang dibangun di atas OP stack.
 Lihat [Layer 2 extensions](https://viem.sh/op-stack/client#layer-2-extensions) untuk informasi lebih lanjut.
 
 <Tabs>
@@ -87,8 +87,8 @@ Lihat [Layer 2 extensions](https://viem.sh/op-stack/client#layer-2-extensions) u
 
 Untuk menulis data ke Lisk, Anda perlu membuat Wallet client (`createWalletClient`) dan menentukan [`Account`](https://ethereum.org/en/developers/docs/accounts/) yang akan digunakan.
 
-Dengan meng-_extend_ wallet client menggunakan `walletActionsL1` atau `walletActionsL2`, Anda akan mendapatkan akses ke metode tambahan untuk Lisk dan _chain_ lain yang dibangun di atas OP stack.  
-Lihat [Layer 2 extensions](https://viem.sh/op-stack/client#layer-2-extensions) untuk informasi lebih lanjut.  
+Dengan meng-_extend_ wallet client menggunakan `walletActionsL1` atau `walletActionsL2`, Anda akan mendapatkan akses ke metode tambahan untuk Lisk dan rantai lain yang dibangun di atas OP stack.  
+Lihat [Ekstensi Layer 2](https://viem.sh/op-stack/client#layer-2-extensions) untuk informasi lebih lanjut.  
 
 <Tabs>
 <TabItem value="jsonrpc" label="Akun JSON-RPC">
@@ -206,7 +206,7 @@ Prefiks `0x` menunjukkan bahwa string berikutnya adalah angka dalam format heksa
 </Tabs>
 
 :::info
-Selain membuat permintaan JSON-RPC (`eth_requestAccounts`) untuk mendapatkan sebuah Akun, viem menyediakan berbagai metode bantu untuk membuat sebuah `Account`, termasuk: [`privateKeyToAccount`](https://viem.sh/docs/accounts/privateKey.html), [`mnemonicToAccount`](https://viem.sh/docs/accounts/mnemonic.html), dan [`hdKeyToAccount`](https://viem.sh/docs/accounts/hd.html).  
+Selain membuat permintaan JSON-RPC (`eth_requestAccounts`) untuk mendapatkan sebuah Akun, viem menyediakan berbagai metode pembantu untuk membuat sebuah `Account`, termasuk: [`privateKeyToAccount`](https://viem.sh/docs/accounts/privateKey.html), [`mnemonicToAccount`](https://viem.sh/docs/accounts/mnemonic.html), dan [`hdKeyToAccount`](https://viem.sh/docs/accounts/hd.html).  
 
 { /* Untuk menggunakan Lisk Sepolia (testnet), ganti `lisk` dengan `liskSepolia`.
  */}
@@ -256,9 +256,9 @@ const hash = await walletClientL2.sendTransaction({
 console.log(hash);
 ```
 
-## Berinteraksi dengan Smart Contract
+## Berinteraksi dengan Kontrak Pintar
 
-Anda dapat menggunakan viem untuk berinteraksi dengan _smart contract_ di Lisk dengan membuat instance `Contract` menggunakan [`getContract`](https://viem.sh/docs/contract/getContract.html) dan memberikan ABI kontrak, alamat kontrak, serta [Public](https://viem.sh/docs/clients/public.html) dan/atau [Wallet](https://viem.sh/docs/clients/wallet.html) Client:  
+Anda dapat menggunakan viem untuk berinteraksi dengan kontrak pintar di Lisk dengan membuat instance `Contract` menggunakan [`getContract`](https://viem.sh/docs/contract/getContract.html) dan memberikan ABI kontrak, alamat kontrak, serta [Public](https://viem.sh/docs/clients/public.html) dan/atau [Wallet](https://viem.sh/docs/clients/wallet.html) Client:  
 
 <Tabs>
 <TabItem value="example" label="contract-example.js">
@@ -278,7 +278,7 @@ const contract = getContract({
   client: { public: publicClient, wallet: walletClient }
 })
  
-// 2. Panggil metode kontrak, ambil *events*, dengarkan *events*, dan lain-lain.
+// 2. Panggil metode kontrak, ambil *event*, dengarkan *event*, dan lain-lain.
 const result = await contract.read.totalSupply()
 const logs = await contract.getEvents.Transfer()
 const unwatch = contract.watchEvent.Transfer(
@@ -532,5 +532,5 @@ export const wagmiAbi = [
 </Tabs>
 
 :::info
-`CONTRACT_ADDRESS` adalah alamat dari kontrak yang telah dideploy.
+`CONTRACT_ADDRESS` adalah alamat dari kontrak yang telah diluncurkan.
 :::

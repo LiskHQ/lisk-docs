@@ -1,7 +1,7 @@
 ---
 title: ...menggunakan ethers.js
 slug: /building-on-lisk/interacting-with-the-blockchain/ethers
-description: Dokumentasi untuk menggunakan ethers.js, sebuah library JavaScript untuk interaksi dengan blockchain yang kompatibel dengan EVM. Halaman ini mencakup instalasi, pengaturan, koneksi ke jaringan Lisk, membaca dan menulis data blockchain, serta berinteraksi dengan smart contract.
+description: Dokumentasi untuk menggunakan ethers.js, sebuah library JavaScript untuk interaksi dengan blockchain yang kompatibel dengan EVM. Halaman ini mencakup instalasi, pengaturan, koneksi ke jaringan Lisk, membaca dan menulis data blockchain, serta berinteraksi dengan kontrak pintar.
 keywords:
   [
     ethers.js,
@@ -26,7 +26,7 @@ import TabItem from '@theme/TabItem';
 
 [ethers.js](https://docs.ethers.org/) adalah sebuah library JavaScript yang memungkinkan developer untuk berinteraksi dengan jaringan blockchain yang kompatibel dengan EVM.
 
-Anda dapat menggunakan ethers.js untuk berinteraksi dengan _smart contract_ yang telah dideploy di jaringan Lisk.
+Anda dapat menggunakan ethers.js untuk berinteraksi dengan kontrak pintar yang telah diluncurkan di jaringan Lisk.
 
 ## Instalasi
 
@@ -48,7 +48,7 @@ const ethers = require("ethers");
 
 ## Hubungkan ke Lisk
 
-Anda dapat terhubung ke Lisk dengan menginisialisasi objek `JsonRpcProvider` baru dari ethers.js menggunakan URL RPC dari jaringan Lisk:
+Anda dapat terhubung ke Lisk dengan menginisialisasi objek `JsonRpcProvider` baru dari ethers.js menggunakan URL RPC jaringan Lisk:
 
 <Tabs>
   <TabItem value="mainnet" label="Lisk" >
@@ -110,7 +110,7 @@ async function getLatestBlock() {
 
 getLatestBlock();
 
-````
+```
 </details>
 
 ## Menulis data ke blockchain
@@ -127,7 +127,7 @@ Anda dapat membuat sebuah `Signer` dengan menginisialisasi objek `Wallet` baru d
 const privateKey = 'PRIVATE_KEY';
 const signer = new ethers.Wallet(privateKey, provider);
 const receiver = '0x5e1A92F84cA1CE280B3Cb29d79C3368f45b41EBB';
-// Kirim 0.01 ether ke alamat yang diberikan.
+// Kirim 0,01 ether ke alamat yang diberikan.
 async function sendTx(to) {
     const tx =  await signer.sendTransaction({
         to: to,
@@ -138,13 +138,13 @@ async function sendTx(to) {
 }
 
 //sendTx(receiver);
-````
+```
 
 :::info
 `PRIVATE_KEY` adalah private key dari akun yang akan digunakan saat membuat objek `signer`.
 :::
 
-Saldo akun penerima akan bertambah sebanyak `0.01` ETH setelah eksekusi transaksi berhasil.
+Saldo akun penerima akan bertambah sebanyak `0,01` ETH setelah eksekusi transaksi berhasil.
 
 <details>
 <summary>Contoh kode lengkap:</summary>
@@ -162,7 +162,7 @@ const provider = new ethers.JsonRpcProvider(url);
 const privateKey = 'PRIVATE_KEY';
 const signer = new ethers.Wallet(privateKey, provider);
 const receiver = '0x5e1A92F84cA1CE280B3Cb29d79C3368f45b41EBB';
-// Kirim 0.01 ether ke alamat yang diberikan.
+// Kirim 0,01 ether ke alamat yang diberikan.
 async function sendTx(to) {
     const tx =  await signer.sendTransaction({
         to: to,
@@ -174,17 +174,17 @@ async function sendTx(to) {
 
 sendTx(receiver);
 
-````
+```
 </details>
 
-## Berinteraksi dengan smart contract
+## Berinteraksi dengan kontrak pintar
 
-Anda dapat menggunakan ethers.js untuk berinteraksi dengan _smart contract_ di Lisk dengan menginisialisasi objek `Contract` menggunakan ABI dan alamat dari kontrak yang telah dideploy:
+Anda dapat menggunakan ethers.js untuk berinteraksi dengan kontrak pintar di Lisk dengan menginisialisasi objek `Contract` menggunakan ABI dan alamat dari kontrak yang telah diluncurkan:
 
 :::tip
 ABI dari sebuah kontrak dapat ditemukan di halaman kontrak terkait di [BlockScout](https://sepolia-blockscout.lisk.com/).
 
-Sebagai contoh, Anda dapat menggunakan ABI untuk [Hello contract](https://sepolia-blockscout.lisk.com/address/0xb18eb752813c2fbedfdf2be6e5e842a85a3b8539?tab=contact_code). Cukup _scroll_ ke bagian `Contract ABI` dan salin ABI dari kontrak yang telah dideploy.
+Sebagai contoh, Anda dapat menggunakan ABI untuk [Kontrak Hello](https://sepolia-blockscout.lisk.com/address/0xb18eb752813c2fbedfdf2be6e5e842a85a3b8539?tab=contact_code). Cukup _scroll_ ke bagian `Contract ABI` dan salin ABI dari kontrak yang telah diluncurkan.
 :::
 
 ```javascript title="Membaca dari kontrak"
@@ -193,7 +193,7 @@ const contractAddress = "CONTRACT_ADDRESS"
 // read-only
 const contract = new ethers.Contract(contractAddress, abi, provider);
 const abi = [
-… // ABI dari kontrak yang telah dideploy.
+… // ABI dari kontrak yang telah diluncurkan.
 ];
 
 async function getHello() {
@@ -202,10 +202,10 @@ async function getHello() {
 }
 
 getHello();
-````
+```
 
 :::info
-`CONTRACT_ADDRESS` adalah alamat dari kontrak yang telah dideploy.
+`CONTRACT_ADDRESS` adalah alamat dari kontrak yang telah diluncurkan.
 :::
 
 :::note
@@ -219,7 +219,7 @@ Untuk membaca dan menulis kontrak, gunakan objek `Signer` untuk menggantikan obj
 const contract = new ethers.Contract(contractAddress, abi, signer);
 ```
 
-Setelah Anda membuat objek `Contract`, Anda dapat menggunakannya untuk memanggil metode yang diinginkan pada _smart contract_:
+Setelah Anda membuat objek `Contract`, Anda dapat menggunakannya untuk memanggil metode yang diinginkan pada kontrak pintar:
 
 ```javascript
 async function createHello(message) {

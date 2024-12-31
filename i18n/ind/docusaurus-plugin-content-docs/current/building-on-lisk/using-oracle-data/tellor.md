@@ -1,7 +1,7 @@
 ---
 title: ...menggunakan Tellor
 slug: /building-on-lisk/using-oracle-data/tellor
-description: Panduan tentang menggunakan Tellor Data Feeds untuk mengakses data dunia nyata seperti harga aset, langsung dari smart contract Anda di blockchain Lisk.
+description: Panduan tentang menggunakan Data Feed Tellor untuk mengakses data dunia nyata seperti harga aset, langsung dari kontrak pintar Anda di blockchain Lisk.
 keywords: [
     Oracle
     Oracles,
@@ -24,7 +24,8 @@ keywords: [
 
 Halaman ini akan menjelaskan bagaimana aplikasi Anda dapat mengakses data oracle menggunakan Tellor.
 
-[Tellor](https://tellor.io/) adalah protokol oracle terdesentralisasi yang _immutable_, di mana pihak-pihak dapat meminta nilai data dari luar blockchain (misalnya, ETH/USD, LSK/USD), dan _reporters_ bersaing untuk menambahkan nilai ini ke dalam bank data onchain. Input ke dalam bank data ini dijamin oleh jaringan _reporters_ yang mempertaruhkan token mereka.
+[Tellor](https://tellor.io/) adalah protokol oracle terdesentralisasi yang _immutable_, di mana pihak-pihak dapat meminta nilai data dari luar blockchain (misalnya ETH/USD, LSK/USD), dan _reporters_ bersaing untuk menambahkan nilai ini ke dalam bank data onchain.
+Input ke dalam bank data ini dijamin oleh jaringan _reporters_ yang melakukan staking terhadap token mereka.
 
 Tellor memanfaatkan mekanisme insentif kripto-ekonomi, memberikan hadiah kepada _reporters_ yang memberikan data jujur dan menghukum pelaku buruk melalui penerbitan token Tellor, Tributes (TRB), serta mekanisme sengketa.
 
@@ -186,23 +187,23 @@ contract MyContract is UsingTellor {
 
 Anda dapat menyesuaikan kontrak ini sesuai kebutuhan Anda.
 Contoh ini menerapkan beberapa _best-practice_[^1] untuk menggunakan Tellor dengan mengimplementasikan buffer waktu sengketa dan pemeriksaan _staleness_ data.
-Selain itu, contoh ini juga berusaha mengurangi serangan _back-in-time dispute attacks_ dengan menyimpan nilai dan timestamp terbaru dalam cache.
+Selain itu, contoh ini juga berusaha mengurangi serangan disput _back-in-time_ dengan menyimpan nilai dan timestamp terbaru dalam cache.
 
 [^1]: Berdasarkan contoh dalam [repositori best-practice Tellor](https://github.com/tellor-io/best-practices-user/tree/main)
 
 :::tip
-Untuk gambaran umum _best-practice_ menggunakan Tellor, kunjungi [Checklists Pengguna](https://docs.tellor.io/tellor/getting-data/user-checklists) dalam dokumentasi Tellor.
+Untuk gambaran umum _best-practice_ menggunakan Tellor, kunjungi [Checklist Pengguna](https://docs.tellor.io/tellor/getting-data/user-checklists) dalam dokumentasi Tellor.
 :::
 
-## Mendeploy di Lisk
+## Meluncurkan di Lisk
 
-Untuk mendeploy _smart contract_ di Lisk Sepolia atau Lisk Mainnet, ikuti panduan berikut:
+Untuk meluncurkan kontrak pintar di Lisk Sepolia atau Lisk Mainnet, ikuti panduan berikut:
 
-- [Mendeploy smart contract dengan Hardhat](../deploying-smart-contract/with-Hardhat), atau
-- [Mendeploy smart contract dengan Foundry](../deploying-smart-contract/with-Foundry)
+- [Meluncurkan kontrak pintar dengan Hardhat](../deploying-smart-contract/with-Hardhat), atau
+- [Meluncurkan kontrak pintar dengan Foundry](../deploying-smart-contract/with-Foundry)
 
 ## Sumber daya tambahan
 
-- Untuk implementasi yang lebih kuat dari oracle Tellor, lihat daftar lengkap fungsi yang tersedia [di sini](https://github.com/tellor-io/usingtellor/blob/master/README.md).
+- Untuk implementasi yang lebih andal dari oracle Tellor, lihat daftar lengkap fungsi yang tersedia [di sini](https://github.com/tellor-io/usingtellor/blob/master/README.md).
 - Apakah Anda memiliki permintaan Data Feed tertentu? [Isi formulir ini](https://github.com/tellor-io/dataSpecs/issues/new?assignees=&labels=&template=new_query_type.yaml&title=%5BNew+Data+Request+Form%5D%3A+).
 - Apakah Anda masih memiliki pertanyaan? Hubungi tim Tellor di Discord [di sini](https://discord.gg/tellor).

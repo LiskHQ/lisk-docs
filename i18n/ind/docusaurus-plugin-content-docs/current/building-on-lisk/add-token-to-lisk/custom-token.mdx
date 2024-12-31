@@ -1,5 +1,5 @@
 ---
-title: Mendeploy Token Sendiri
+title: Meluncurkan Token Sendiri
 slug: /building-on-lisk/add-token-to-lisk/custom-token
 description: 'Pelajari cara memindahkan token ERC-20 Anda sendiri ke Lisk menggunakan bridge standar.'
 keywords:
@@ -16,7 +16,7 @@ keywords:
   ]
 ---
 
-# Mendeploy Token ERC-20 Anda Sendiri ke Lisk
+# Meluncurkan Token ERC-20 Anda Sendiri ke Lisk
 
 {/* :::info
 **Tutorial ini ditujukan untuk developer yang ingin memindahkan token ERC-20 baru mereka sendiri ke Lisk Mainnet menggunakan bridge.**
@@ -28,16 +28,16 @@ Dengan menggunakan [Sistem Bridge Standar](https://docs.optimism.io/builders/dap
 
 Pelajari langkah demi langkah cara membuat token kustom yang sesuai dengan interface [`IOptimismMintableERC20`](https://github.com/ethereum-optimism/optimism/blob/v1.1.4/packages/contracts-bedrock/src/universal/IOptimismMintableERC20.sol) sehingga dapat digunakan dengan Sistem Bridge Standar.
 Token kustom memungkinkan Anda melakukan hal-hal seperti men-_trigger_ logika tambahan setiap kali token dideposit.
-Jika Anda tidak memerlukan fungsionalitas tambahan ini, pertimbangkan untuk mengikuti tutorial [Mendeploy Token ERC-20 Standar ke Lisk](./standard-token).
+Jika Anda tidak memerlukan fungsionalitas tambahan ini, pertimbangkan untuk mengikuti tutorial [Meluncurkan Token ERC-20 Standar ke Lisk](./standard-token).
 
 ## Prasyarat
 
 :::note
-Anda dapat mendeploy **Token ERC-20 Anda Sendiri** di Lisk Mainnet dengan menggunakan proses yang sama.
-Untuk mendeploy ke mainnet, pastikan dompet (_wallet_) Anda memiliki ETH yang cukup.
+Anda dapat meluncurkan **Token ERC-20 Anda Sendiri** di Lisk Mainnet dengan menggunakan proses yang sama.
+Untuk meluncurkan ke mainnet, pastikan dompet (_wallet_) Anda memiliki ETH yang cukup.
 
 Teks berikut mencakup perintah untuk Lisk dan Lisk Sepolia demi kemudahan Anda.
-Untuk informasi lebih lanjut, lihat [jaringan Lisk yang tersedia](/network-info) dan [cara menghubungkan _wallet_ ke jaringan tersebut](/user/connecting-to-a-wallet).
+Untuk informasi lebih lanjut, lihat [jaringan Lisk yang tersedia](/network-info) dan [cara menghubungkan dompet ke jaringan tersebut](/user/connecting-to-a-wallet).
 :::
 
 ### Mendapatkan ETH di Sepolia dan Lisk Sepolia
@@ -49,23 +49,23 @@ Anda dapat menggunakan [ETH Sepolia Faucet](https://sepoliafaucet.com/) untuk me
 Anda dapat menggunakan [Superchain Faucet](https://app.optimism.io/faucet?utm_source=docs) untuk mendapatkan ETH di Lisk Sepolia.
 :::
 
-### Menambahkan Lisk Sepolia ke _Wallet_ Anda
+### Menambahkan Lisk Sepolia ke Dompet Anda
 
-Tutorial ini menggunakan [Remix](https://remix.ethereum.org) untuk mendeploy kontrak.
-Anda perlu menambahkan jaringan Lisk atau Lisk Sepolia ke _wallet_ Anda untuk mengikuti tutorial ini.
-Silakan ikuti panduan [Cara Menghubungkan Lisk ke _Wallet_](/user/connecting-to-a-wallet) untuk menghubungkan _wallet_ Anda ke jaringan Lisk atau Lisk Sepolia.
+Tutorial ini menggunakan [Remix](https://remix.ethereum.org) untuk meluncurkan kontrak.
+Anda perlu menambahkan jaringan Lisk atau Lisk Sepolia ke dompet Anda untuk mengikuti tutorial ini.
+Silakan ikuti panduan [Cara Menghubungkan Lisk ke Dompet](/user/connecting-to-a-wallet) untuk menghubungkan dompet Anda ke jaringan Lisk atau Lisk Sepolia.
 
 ### Mendapatkan Alamat Token ERC-20 L1
 
 Anda memerlukan token ERC-20 L1 untuk tutorial ini.
-Jika Anda sudah memiliki token ERC-20 L1 yang dideploy di Ethereum Mainnet atau Sepolia, Anda dapat melewati langkah ini.
+Jika Anda sudah memiliki token ERC-20 L1 yang diluncurkan di Ethereum Mainnet atau Sepolia, Anda dapat melewati langkah ini.
 Untuk Sepolia, Anda dapat menggunakan token uji coba yang terletak di [`0x5589BB8228C07c4e15558875fAf2B859f678d129`](https://sepolia.etherscan.io/address/0x5589BB8228C07c4e15558875fAf2B859f678d129) yang menyertakan fungsi `faucet()` untuk me-_mint_ token.
 
 ## Membuat Token ERC-20 L2
 
 Setelah Anda memiliki token ERC-20 L1, Anda dapat membuat token ERC-20 L2 yang sesuai di jaringan Lisk atau Lisk Sepolia.
-Tutorial ini menggunakan [Remix](https://remix.ethereum.org), sehingga Anda dapat dengan mudah mendeploy token tanpa _framework_ seperti [Hardhat](https://hardhat.org) atau [Foundry](https://getfoundry.sh).
-Jika Anda lebih suka, Anda dapat mengikuti proses umum yang sama dalam _framework_ pilihan Anda.
+Tutorial ini menggunakan [Remix](https://remix.ethereum.org), sehingga Anda dapat dengan mudah meluncurkan token tanpa _framework_ seperti [Hardhat](https://hardhat.org) atau [Foundry](https://getfoundry.sh).
+Anda juga dapat mengikuti proses umum yang sama dalam _framework_ pilihan Anda jika Anda mau.
 
 Dalam bagian ini, Anda akan membuat token ERC-20 yang dapat di-_deposit_ tetapi tidak dapat di-_withdraw_.
 Ini hanyalah salah satu contoh dari banyak cara untuk menyesuaikan token L2 Anda.
@@ -211,16 +211,16 @@ function burn(
 }
 ```
 
-### 5. Meng-_compile_ Kontrak
+### 5. Mengompilasi Kontrak
 
 Simpan file untuk secara otomatis mengompilasi kontrak.
 Jika Anda telah menonaktifkan fitur kompilasi otomatis, Anda perlu mengompilasi kontrak secara manual dengan mengklik tab "Solidity Compiler" (ikon berbentuk huruf "S") dan menekan tombol biru "Compile".
 
-### 6. Mendeploy Kontrak
+### 6. Meluncurkan Kontrak
 
 Buka tab deployment (ikon berbentuk logo Ethereum dengan panah mengarah ke kanan).
-Pastikan bahwa _environment_ Anda diatur ke "Injected Provider", _wallet_ Anda terhubung ke jaringan Lisk atau Lisk Sepolia, dan Remix memiliki akses ke _wallet_ Anda.
-Kemudian, pilih kontrak `MyCustomL2Token` dari dropdown deployment dan deploy dengan parameter berikut:
+Pastikan bahwa _environment_ Anda diatur ke "Injected Provider", dompet Anda terhubung ke jaringan Lisk atau Lisk Sepolia, dan Remix memiliki akses ke dompet Anda.
+Kemudian, pilih kontrak `MyCustomL2Token` dari dropdown deployment dan luncurkan dengan parameter berikut:
 
 ```text
 _BRIDGE:      "0x4200000000000000000000000000000000000007"

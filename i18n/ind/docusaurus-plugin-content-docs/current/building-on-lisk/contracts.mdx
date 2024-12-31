@@ -3,7 +3,7 @@ id: contracts
 title: Kontrak
 sidebar_position: 1
 slug: /contracts
-description: '**Halaman referensi yang mencantumkan semua kontrak yang dideploy terkait Lisk.**'
+description: '**Halaman referensi yang mencantumkan semua kontrak yang diluncurkan terkait Lisk.**'
 keywords:
   [
     'Lisk',
@@ -17,11 +17,11 @@ keywords:
 ---
 
 # Kontrak
-Halaman referensi yang mencakup informasi tentang semua kontrak yang dideploy pada berbagai jaringan.
+Halaman referensi yang mencakup informasi tentang semua kontrak yang diluncurkan pada berbagai jaringan.
 
 ## Jaringan Ethereum (L1)
 
-Detail smart contract yang dideploy di 🟢 **Ethereum Mainnet** dan 🟡 **Sepolia Testnet** adalah sebagai berikut.
+Detail kontrak pintar yang diluncurkan di 🟢 **Ethereum Mainnet** dan 🟡 **Sepolia Testnet** adalah sebagai berikut.
 <table >
   <thead>
     <tr>
@@ -77,7 +77,7 @@ Detail smart contract yang dideploy di 🟢 **Ethereum Mainnet** dan 🟡 **Sepo
 
     <tr>
       <th scope="row" rowSpan="2">L2OutputOracle</th>
-      <td scope="row" rowSpan="2">Berisi daftar root _state_ yang diusulkan oleh Proposers yang mereka klaim sebagai hasil dari eksekusi blok.</td>
+      <td scope="row" rowSpan="2">Berisi daftar root _state_ yang diusulkan oleh Proposer yang mereka klaim sebagai hasil dari eksekusi blok.</td>
       <td>[0x113cB99283AF242Da0A0C54347667edF531Aa7d6](https://etherscan.io/address/0x113cB99283AF242Da0A0C54347667edF531Aa7d6)</td>
       <td>🟢</td>
     </tr>
@@ -88,7 +88,7 @@ Detail smart contract yang dideploy di 🟢 **Ethereum Mainnet** dan 🟡 **Sepo
 
     <tr>
       <th scope="row" rowSpan="2">OptimismPortal</th>
-      <td scope="row" rowSpan="2">Ini adalah _entry point_ utama untuk menyetor dana dari L1 ke L2. Selain itu, kontrak ini memungkinkan pembuktian dan penyelesaian _withdrawals_.</td>
+      <td scope="row" rowSpan="2">Ini adalah titik masuk utama untuk menyetor dana dari L1 ke L2. Selain itu, kontrak ini memungkinkan pembuktian dan penyelesaian penarikan.</td>
       <td>[0x26dB93F8b8b4f7016240af62F7730979d353f9A7](https://etherscan.io/address/0x26dB93F8b8b4f7016240af62F7730979d353f9A7)</td>
       <td>🟢</td>
     </tr>
@@ -99,7 +99,7 @@ Detail smart contract yang dideploy di 🟢 **Ethereum Mainnet** dan 🟡 **Sepo
 
     <tr>
       <th scope="row" rowSpan="2">L1StandardBridge</th>
-      <td scope="row" rowSpan="2">Ini adalah _entry point_ utama untuk menyetor token ERC20 dari L1 ke L2. Kontrak ini dapat menyimpan token apa pun.</td>
+      <td scope="row" rowSpan="2">Ini adalah titik masuk utama untuk menyetor token ERC20 dari L1 ke L2. Kontrak ini dapat menyimpan token apa pun.</td>
       <td>[0x2658723Bf70c7667De6B25F99fcce13A16D25d08](https://etherscan.io/address/0x2658723Bf70c7667De6B25F99fcce13A16D25d08)</td>
       <td>🟢</td>
     </tr>
@@ -170,13 +170,13 @@ Detail smart contract yang dideploy di 🟢 **Ethereum Mainnet** dan 🟡 **Sepo
 ## Jaringan Lisk (L2)
 
 
-### Predeploys pada Lisk
+### Pra-Peluncuran pada Lisk
 
-Kontrak predeployed disertakan dalam _state_ genesis L2, dan ada sejak awal blockchain.
+Kontrak prapeluncuran disertakan dalam _state_ genesis L2, dan ada sejak awal blockchain.
 Di jaringan Lisk, kontrak ini terletak di alamat tertentu yang telah ditentukan sebelumnya dan merupakan bagian dari _state_ genesis.
-Untuk informasi lebih lanjut tentang _Predeploys_, lihat [README Predeploys](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md).
+Untuk informasi lebih lanjut tentang Prapeluncuran, lihat [README Prapeluncuran](https://github.com/ethereum-optimism/specs/blob/main/specs/protocol/predeploys.md).
 
-Detail kontrak **_predeployed_** yang dideploy pada 🔵 **Lisk Mainnet** dan 🟣 **Lisk Sepolia Testnet** adalah sebagai berikut.
+Detail kontrak **prapeluncuran** yang diluncurkan pada 🔵 **Lisk Mainnet** dan 🟣 **Lisk Sepolia Testnet** adalah sebagai berikut.
 <table >
   <thead>
     <tr>
@@ -364,9 +364,9 @@ Detail kontrak **_predeployed_** yang dideploy pada 🔵 **Lisk Mainnet** dan �
   </tfoot>
 </table>
 
-### Kontrak _features-specific_ Lisk
+### Kontrak di Lisk yang _features-specific_
 
-Detail kontrak **_features-specific_ Lisk** yang dideploy pada 🔵 **Lisk Mainnet** dan 🟣 **Lisk Sepolia Testnet** adalah sebagai berikut.
+Detail kontrak Lisk yang **_features-specific_ Lisk** yang diluncurkan pada 🔵 **Lisk Mainnet** dan 🟣 **Lisk Sepolia Testnet** adalah sebagai berikut.
 
 <table>
   <thead>
@@ -390,7 +390,7 @@ Detail kontrak **_features-specific_ Lisk** yang dideploy pada 🔵 **Lisk Mainn
 
     <tr>
       <th scope="row" rowSpan="2">L2Claim <br/>(Proxy)</th>
-       <td scope="row" rowSpan="2">Kontrak proxy untuk mengklaim token LSK dari _chain_ Lisk _legacy_ dan menerima jumlah yang sesuai di Lisk L2.</td>
+       <td scope="row" rowSpan="2">Kontrak proxy untuk mengklaim token LSK dari rantai legacy Lisk dan menerima jumlah yang sesuai di Lisk L2.</td>
       <td>[0xC7315f4FaaB2F700fc6b4704BB801c46ff6327AC](https://blockscout.lisk.com/address/0xC7315f4FaaB2F700fc6b4704BB801c46ff6327AC)</td>
       <td>🔵</td>
     </tr>
@@ -401,7 +401,7 @@ Detail kontrak **_features-specific_ Lisk** yang dideploy pada 🔵 **Lisk Mainn
 
     <tr>
       <th scope="row" rowSpan="2">L2Claim (Implementation)</th>
-       <td scope="row" rowSpan="2">Memungkinkan pengguna untuk mengklaim token LSK mereka dari _chain_ Lisk _legacy_ dan menerima jumlah yang sesuai di Lisk L2 menggunakan bukti _Merkle_, dengan dukungan untuk akun reguler maupun _multisig_.</td>
+       <td scope="row" rowSpan="2">Memungkinkan pengguna untuk mengklaim token LSK mereka dari rantai legacy Lisk dan menerima jumlah yang sesuai di Lisk L2 menggunakan bukti _Merkle_, dengan dukungan untuk akun reguler maupun _multisig_.</td>
       <td>[0x60790Dc2d45BaA8B36282889569BbB301F4D0c41](https://blockscout.lisk.com/address/0x60790Dc2d45BaA8B36282889569BbB301F4D0c41)</td>
       <td>🔵</td>
     </tr>
@@ -412,7 +412,7 @@ Detail kontrak **_features-specific_ Lisk** yang dideploy pada 🔵 **Lisk Mainn
 
     <tr>
       <th scope="row" rowSpan="2">L2Governor <br/>(Proxy)</th>
-       <td scope="row" rowSpan="2">Kontrak proxy untuk operasi terkait _governance_ di Lisk L2.</td>
+       <td scope="row" rowSpan="2">Kontrak proxy untuk operasi terkait tata kelola di Lisk L2.</td>
       <td>[0x58a61b1807a7bDA541855DaAEAEe89b1DDA48568](https://blockscout.lisk.com/address/0x58a61b1807a7bDA541855DaAEAEe89b1DDA48568)</td>
       <td>🔵</td>
     </tr>
@@ -423,7 +423,7 @@ Detail kontrak **_features-specific_ Lisk** yang dideploy pada 🔵 **Lisk Mainn
 
     <tr>
       <th scope="row" rowSpan="2">L2Governor (Implementation)</th>
-       <td scope="row" rowSpan="2">Mengelola operasi yang terkait dengan governance di Lisk L2.</td>
+       <td scope="row" rowSpan="2">Mengelola operasi yang terkait dengan tata kelola di Lisk L2.</td>
       <td>[0x18a0b8c653c291D69F21A6Ef9a1000335F71618e](https://blockscout.lisk.com/address/0x18a0b8c653c291D69F21A6Ef9a1000335F71618e)</td>
       <td>🔵</td>
     </tr>
@@ -456,7 +456,7 @@ Detail kontrak **_features-specific_ Lisk** yang dideploy pada 🔵 **Lisk Mainn
 
     <tr>
       <th scope="row" rowSpan="2">L2LockingPosition (Implementation)</th>
-       <td scope="row" rowSpan="2">Kontrak untuk mengunci posisi. Kontrak ini memungkinkan pembuatan, modifikasi, dan penghapusan posisi yang terkunci.</td>
+       <td scope="row" rowSpan="2">Kontrak untuk mengunci posisi. Kontrak ini memungkinkan pembuatan, modifikasi, dan penghapusan posisi penguncian.</td>
       <td>[0x6Ad85C3309C976B394ddecCD202D659719403671](https://blockscout.lisk.com/address/0x6Ad85C3309C976B394ddecCD202D659719403671)</td>
       <td>🔵</td>
     </tr>
@@ -513,7 +513,7 @@ Detail kontrak **_features-specific_ Lisk** yang dideploy pada 🔵 **Lisk Mainn
 
     <tr>
       <th scope="row" rowSpan="2">L2TimelockController</th>
-       <td scope="row" rowSpan="2">Modul kontrak ini berfungsi sebagai pengontrol dengan penguncian waktu (time-locked controller).</td>
+       <td scope="row" rowSpan="2">Modul kontrak ini berfungsi sebagai pengontrol penguncian waktu (time-locked controller).</td>
       <td>[0x2294A7f24187B84995A2A28112f82f07BE1BceAD](https://blockscout.lisk.com/address/0x2294A7f24187B84995A2A28112f82f07BE1BceAD)</td>
       <td>🔵</td>
     </tr>
@@ -546,7 +546,7 @@ Detail kontrak **_features-specific_ Lisk** yang dideploy pada 🔵 **Lisk Mainn
 
     <tr>
       <th scope="row" rowSpan="2">L2VotingPower (Implementation)</th>
-       <td scope="row" rowSpan="2">Kontrak untuk menangani hak suara (_voting powers_), penguncian posisi, dan fungsi lainnya dari _staker_ di jaringan Lisk L2.</td>
+       <td scope="row" rowSpan="2">Kontrak untuk menangani hak suara (_voting powers_), penguncian posisi, dan fungsi lainnya oleh _staker_ di jaringan Lisk L2.</td>
       <td>[0x99137F8880fB38e770EB7eF3d68038bC673D58EF](https://blockscout.lisk.com/address/0x99137F8880fB38e770EB7eF3d68038bC673D58EF)</td>
       <td>🔵</td>
     </tr>

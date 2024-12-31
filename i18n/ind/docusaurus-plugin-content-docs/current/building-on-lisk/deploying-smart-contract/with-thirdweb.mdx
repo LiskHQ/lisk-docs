@@ -1,10 +1,10 @@
 ---
 title: ... menggunakan thirdweb
 slug: /building-on-lisk/deploying-smart-contract/with-thirdweb
-description: "Panduan untuk mendeploy smart contract di jaringan test Lisk menggunakan thirdweb. Termasuk instruksi untuk mengatur environment, mengompilasi, dan mendeploy smart contract."
+description: "Panduan untuk meluncurkan kontrak pintar di jaringan test Lisk menggunakan thirdweb. Termasuk instruksi untuk mengatur environment, mengompilasi, dan meluncurkan kontrak pintar."
 keywords: [
     "thirdweb",
-    "smart contract",
+    "kontrak pintar",
     "ERC-721", "Lisk",
     "Lisk test network",
     "Lisk testnet",
@@ -23,41 +23,41 @@ toc_max_heading_level: 4
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Mendeploy Smart Contract dengan thirdweb
+# Meluncurkan Kontrak Pintar dengan thirdweb
 
-[thirdweb](https://thirdweb.com/) adalah _framework_ end-to-end untuk pengembangan dan deployment _smart contract_.
+[thirdweb](https://thirdweb.com/) adalah _framework_ end-to-end untuk pengembangan dan peluncuran kontrak pintar.
 
-Kerangka ini memungkinkan developer untuk mendeploy kontrak standar seperti ERC-20, ERC-721, atau ERC-1155, tanpa menulis satu baris kode pun.  
+Kerangka ini memungkinkan developer untuk meluncurkan kontrak standar seperti ERC-20, ERC-721, atau ERC-1155, tanpa menulis satu baris kode pun.  
 Lebih banyak informasi tentang ini dapat ditemukan di bagian [thirdweb Explore](#mendeploy-kontrak-bawaan-melalui-thirdweb-explore).
 
-Selain itu, developer yang ingin mengembangkan dan mendeploy _smart contract_ kustom dapat menggunakan [Solidity SDK](https://portal.thirdweb.com/contracts/build/overview) yang disediakan oleh thirdweb, serta opsi lainnya seperti [TypeScript SDK](https://portal.thirdweb.com/typescript/v5) dan [Unity SDK](https://portal.thirdweb.com/unity).  
+Selain itu, developer yang ingin mengembangkan dan meluncurkan kontrak pintar kustom dapat menggunakan [Solidity SDK](https://portal.thirdweb.com/contracts/build/overview) yang disediakan oleh thirdweb, serta opsi lainnya seperti [TypeScript SDK](https://portal.thirdweb.com/typescript/v5) dan [Unity SDK](https://portal.thirdweb.com/unity).  
 Namun, dalam panduan ini, kami akan lebih fokus pada [thirdweb Explore](https://thirdweb.com/explore) dan [Solidity SDK](https://portal.thirdweb.com/contracts/build/overview).
 
 **Fitur:**
 
-- [Explore](https://portal.thirdweb.com/contracts/explore/overview): Mendeploy kontrak bawaan siap pakai.
-- [Build (Solidity SDK)](https://portal.thirdweb.com/contracts/build/overview): Menulis _smart contract_ kustom.
-- [Deploy](https://portal.thirdweb.com/contracts/deploy/overview): Mendukung deployment kontrak untuk berbagai kasus penggunaan.
+- [Explore](https://portal.thirdweb.com/contracts/explore/overview): Meluncurkan kontrak bawaan siap pakai.
+- [Build (Solidity SDK)](https://portal.thirdweb.com/contracts/build/overview): Menulis kontrak pintar kustom.
+- [Deploy](https://portal.thirdweb.com/contracts/deploy/overview): Mendukung peluncuran kontrak untuk berbagai kasus penggunaan.
 - [Publish](https://portal.thirdweb.com/contracts/publish/overview): Mempublikasikan kontrak Anda secara on-chain.
-- [Interact](https://portal.thirdweb.com/contracts/interact/overview): Berinteraksi dengan _smart contract_ dan mengintegrasikannya langsung ke dalam aplikasi Anda.
+- [Interact](https://portal.thirdweb.com/contracts/interact/overview): Berinteraksi dengan kontrak pintar dan mengintegrasikannya langsung ke dalam aplikasi Anda.
 
-## Mendeploy Kontrak Bawaan melalui thirdweb Explore
+## Meluncurkan Kontrak Bawaan melalui thirdweb Explore
 
-Jika Anda ingin mendeploy kontrak bawaan tanpa kustomisasi, thirdweb menyediakan cara yang mudah untuk melakukannya menggunakan **Explore**.  
+Jika Anda ingin meluncurkan kontrak bawaan tanpa kustomisasi, thirdweb menyediakan cara yang mudah untuk melakukannya menggunakan **Explore**.  
 Tonton video berikut untuk pengenalan singkat tentang Explore:
 
 - [Apa itu thirdweb **Explore**?](https://youtu.be/jYEqoIeAoBg?t=5300)
 
 :::note
-Sebelum mencoba panduan berikut, pastikan bahwa [wallet Anda terhubung ke Jaringan Lisk](/user/connecting-to-a-wallet) dan memiliki dana yang cukup.  
-Untuk informasi lebih lanjut, lihat bagian [Dana Wallet](/building-on-lisk/deploying-smart-contract/with-Foundry#dana-wallet).
+Sebelum mencoba panduan berikut, pastikan bahwa [dompet Anda terhubung ke Jaringan Lisk](/user/connecting-to-a-wallet) dan memiliki dana yang cukup.  
+Untuk informasi lebih lanjut, lihat bagian [Dana Dompet](/building-on-lisk/deploying-smart-contract/with-Foundry#dana-dompet).
 :::
 
-Video-video berikut menjelaskan langkah-langkah untuk mendeploy berbagai token dengan kontrak bawaan di Lisk:
+Video-video berikut menjelaskan langkah-langkah untuk meluncurkan berbagai token dengan kontrak bawaan di Lisk:
 
-- [Cara mendeploy kontrak bawaan **ERC-20** melalui Explore?](https://youtu.be/jYEqoIeAoBg?t=5776)
-- [Cara mendeploy kontrak bawaan **ERC-721** melalui Explore?](https://youtu.be/jYEqoIeAoBg?t=6040)
-- [Cara mendeploy kontrak bawaan **ERC-1155** melalui Explore?](https://youtu.be/jYEqoIeAoBg?t=6396)
+- [Bagaimana cara meluncurkan kontrak bawaan **ERC-20** melalui Explore?](https://youtu.be/jYEqoIeAoBg?t=5776)
+- [Bagaimana cara meluncurkan kontrak bawaan **ERC-721** melalui Explore?](https://youtu.be/jYEqoIeAoBg?t=6040)
+- [Bagaimana cara meluncurkan kontrak bawaan **ERC-1155** melalui Explore?](https://youtu.be/jYEqoIeAoBg?t=6396)
 
 ## Menggunakan Solidity SDK
 
@@ -70,7 +70,7 @@ Jika Anda menggunakan `nvm` untuk mengelola versi Node.js Anda, cukup jalankan p
 
 #### Menginstal dan Mengonfigurasi thirdweb
 
-Untuk mengembangkan kontrak kustom, Anda perlu mengunduh dan mengonfigurasi thirdweb.  
+Untuk mengembangkan kontrak kustom, Anda perlu men_download_ dan mengonfigurasi thirdweb.  
 
 1. Untuk menginstal thirdweb, jalankan perintah berikut:
     <Tabs>
@@ -117,10 +117,10 @@ Untuk mengembangkan kontrak kustom, Anda perlu mengunduh dan mengonfigurasi thir
 
 ### Membuat Proyek
 
-Langkah pertama untuk mendeploy _smart contract_ ke Lisk adalah menyiapkan _environment_ pengembangan Anda dengan membuat sebuah proyek.  
-thirdweb mendukung dua framework pengembangan _smart contract_ paling populer, yaitu [Foundry](https://book.getfoundry.sh/) dan [Hardhat](https://hardhat.org).
+Langkah pertama untuk meluncurkan kontrak pintar ke Lisk adalah menyiapkan _environment_ pengembangan Anda dengan membuat sebuah proyek.  
+thirdweb mendukung dua framework pengembangan kontrak pintar paling populer, yaitu [Foundry](https://book.getfoundry.sh/) dan [Hardhat](https://hardhat.org).
 
-Dalam panduan ini, kami menggunakan Foundry untuk pengembangan _smart contract_.  
+Dalam panduan ini, kami menggunakan Foundry untuk pengembangan kontrak pintar.  
 Namun, Anda dapat menggunakan Hardhat jika Anda lebih nyaman dengan itu.  
 Langkah-langkah pembuatan proyek serupa untuk Foundry maupun Hardhat.  
 
@@ -138,7 +138,7 @@ Langkah-langkah pembuatan proyek serupa untuk Foundry maupun Hardhat.
     ✔ What type of project do you want to create? › Contract
     ✔ What is your project named? … thirdweb-contracts
     ``` 
-4. Selanjutnya, pilih `Forge` sebagai framework, `NFT` sebagai nama kontrak, `ERC721` sebagai jenis _smart contract_, dan `None` untuk opsi ekstensi.
+4. Selanjutnya, pilih `Forge` sebagai framework, `NFT` sebagai nama kontrak, `ERC721` sebagai jenis kontrak pintar, dan `None` untuk opsi ekstensi.
     :::info
     Jika Anda ingin menggunakan _framework_ Hardhat, pilih `Hardhat` sebagai pengganti `Forge` dalam dialog berikutnya.
     :::
@@ -208,7 +208,7 @@ Langkah-langkah pembuatan proyek serupa untuk Foundry maupun Hardhat.
     └── README.md
     ``` 
 
-#### **Membuat** smart contract
+#### **Membuat** Kontrak Pintar
 
 Untuk kemudahan dan keamanan, thirdweb sudah menyediakan kontrak dasar yang dapat dengan mudah dikustomisasi dengan kode.  
 Karena sebelumnya kita memilih untuk membuat token `ERC721`, file `NFT.sol` akan tersedia di folder `src/`.  
@@ -240,16 +240,16 @@ contract NFT is ERC721Base {
 
 ```
 
-#### **Mem-build** smart contract
+#### **Membangun** Kontrak Pintar
 
-Setelah kode _smart contract_ siap, kontrak tersebut harus di-_build_ menggunakan thirdweb.
+Setelah kode kontrak pintar siap, kontrak tersebut harus di-_build_ menggunakan thirdweb.
 
 1. Untuk melakukannya, cukup jalankan perintah berikut:  
     ```bash
     npx thirdweb build
     ```
 
-2. Jika _smart contract_ tidak memiliki error, Anda akan melihat output berikut di terminal:  
+2. Jika kontrak pintar tidak memiliki error, Anda akan melihat output berikut di terminal:  
     ```text
     .......
 
@@ -294,14 +294,14 @@ Setelah kode _smart contract_ siap, kontrak tersebut harus di-_build_ menggunaka
      yarn deploy
     ```
 
-#### **Mendeploy** smart contract
-Semua pemeriksaan berhasil dilewati, yang berarti _smart contract_ siap untuk dideploy menggunakan thirdweb.
+#### **Meluncurkan** Kontrak Pintar
+Semua pemeriksaan berhasil dilewati, yang berarti kontrak pintar siap untuk diluncurkan menggunakan thirdweb.
 
 1. Untuk melakukannya, cukup jalankan perintah berikut:
     ```bash
     npx thirdweb deploy
     ```
-2. Jika _smart contract_ tidak memiliki error, Anda akan melihat output berikut di terminal:
+2. Jika kontrak pintar tidak memiliki error, Anda akan melihat output berikut di terminal:
     ```text
     .......
 
@@ -317,18 +317,18 @@ Semua pemeriksaan berhasil dilewati, yang berarti _smart contract_ siap untuk di
 
 3. Terminal juga akan membuka aplikasi browser yang mengarah ke URL khusus, seperti yang ter-_highlight_ diatas.  
 4. Isi formulir sesuai dengan petunjuk di bagian [Fill Parameter](https://portal.thirdweb.com/contracts/deploy/deploy-contract#Fill%20parameter).  
-5. Setelah Anda mengisi detail _smart contract_ ERC721, klik tombol `Deploy Now` dan kontrak tersebut akan dideploy ke jaringan yang dipilih dari _wallet_ Anda.  
+5. Setelah Anda mengisi detail kontrak pintar ERC721, klik tombol `Deploy Now` dan kontrak tersebut akan dideploy ke jaringan yang dipilih dari dompet Anda.  
 
 :::info
-Jika Anda ingin mengetes kontrak berbasis Foundry Anda, ikuti langkah-langkah yang disebutkan dalam panduan [Testing the Smart Contract](/building-on-lisk/deploying-smart-contract/with-Foundry#menge-test-smart-contract).
+Jika Anda ingin menguji kontrak berbasis Foundry Anda, ikuti langkah-langkah yang disebutkan dalam panduan [Menguji Kontrak Pintar](/building-on-lisk/deploying-smart-contract/with-Foundry#menguji-kontrak-pintar).
 :::
 
 
-## Berinteraksi dengan Smart Contract
+## Berinteraksi dengan Kontrak Pintar
 
-Setelah kontrak dideploy, Anda dapat berinteraksi dengan kontrak tersebut melalui Explore.  
+Setelah kontrak diluncurkan, Anda dapat berinteraksi dengan kontrak tersebut melalui Explore.  
 Video berikut menjelaskan langkah demi langkah bagaimana berinteraksi dengan bermacam-macam kontrak token di Lisk.
 
-- [Bagaimana cara berinteraksi dengan kontrak **ERC-20** yang telah dideploy melalui Explore?](https://youtu.be/jYEqoIeAoBg?t=6823)
-- [Bagaimana cara berinteraksi dengan kontrak **ERC-721** yang telah dideploy melalui Explore?](https://youtu.be/jYEqoIeAoBg?t=7581)
-- [Bagaimana cara berinteraksi dengan kontrak **ERC-1155** yang telah dideploy melalui Explore?](https://youtu.be/jYEqoIeAoBg?t=8355)
+- [Bagaimana cara berinteraksi dengan kontrak **ERC-20** yang telah diluncurkan melalui Explore?](https://youtu.be/jYEqoIeAoBg?t=6823)
+- [Bagaimana cara berinteraksi dengan kontrak **ERC-721** yang telah diluncurkan melalui Explore?](https://youtu.be/jYEqoIeAoBg?t=7581)
+- [Bagaimana cara berinteraksi dengan kontrak **ERC-1155** yang telah diluncurkan melalui Explore?](https://youtu.be/jYEqoIeAoBg?t=8355)

@@ -1,11 +1,11 @@
 ---
 title: ... menggunakan Foundry
 slug: /building-on-lisk/deploying-smart-contract/with-Foundry
-description: "Panduan untuk mendeploy smart contract di jaringan test Lisk menggunakan Foundry. Termasuk instruksi untuk mengatur environment, mengompilasi, dan mendeploy smart contract."
+description: "Panduan untuk meluncurkan kontrak pintar di jaringan test Lisk menggunakan Foundry. Termasuk instruksi untuk mengatur environment, mengompilasi, dan meluncurkan kontrak pintar."
 keywords:
   [
     "Foundry",
-    "smart contract",
+    "kontrak pintar",
     "ERC-20",
     "Lisk",
     "Lisk test network",
@@ -15,10 +15,10 @@ keywords:
     "Solidity",
     "smart contract deployment",
     "deploy a smart contract",
-    "deploying smart contracts",
-    "build on lisk",
-    "write smart contract",
-    "smart contract development",
+    "meluncurkan kontrak pintar",
+    "membangun di lisk",
+    "menulis ke kontrak pintar",
+    "pengembangan kontrak pintar",
   ]
 toc_max_heading_level: 4
 ---
@@ -26,24 +26,24 @@ toc_max_heading_level: 4
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Mendeploy Smart Contract dengan Foundry
+# Meluncurkan kontrak pintar dengan Foundry
 
-Panduan ini membahas dasar-dasar _toolchain_ [Foundry](https://book.getfoundry.sh/) dan menjelaskan cara membuat serta mendeploy _smart contract_ dengan Foundry ke testnet **Lisk Sepolia**.
+Panduan ini membahas dasar-dasar _toolchain_ pengembangan [Foundry](https://book.getfoundry.sh/) dan menjelaskan cara membuat serta meluncurkan kontrak pintar dengan Foundry ke testnet **Lisk Sepolia**.
 
 :::note
-Anda dapat mendeploy kontrak di mainnet **Lisk** dengan menggunakan proses yang sama.  
-Untuk mendeploy ke mainnet, pastikan _wallet_ Anda memiliki cukup ETH.
+Anda dapat meluncurkan kontrak di mainnet **Lisk** dengan menggunakan proses yang sama.  
+Untuk meluncurkan ke mainnet, pastikan dompet Anda memiliki ETH yang cukup.
 
 Teks berikut mencakup perintah untuk Lisk dan Lisk Sepolia demi kemudahan Anda.  
-Untuk informasi lebih lanjut, lihat [jaringan Lisk yang tersedia](/network-info) dan [cara menghubungkan wallet ke jaringan tersebut](/user/connecting-to-a-wallet).
+Untuk informasi lebih lanjut, lihat [jaringan Lisk yang tersedia](/network-info) dan [cara menghubungkan dompet ke jaringan tersebut](/user/connecting-to-a-wallet).
 :::
 
-Foundry adalah rangkaian _tools_ yang mumpuni untuk mengembangkan, menguji, dan men-_debug_ _smart contract_ Anda.  
+Foundry adalah rangkaian _tools_ yang mumpuni untuk mengembangkan, menguji, dan men-_debug_ kontrak pintar Anda.  
 Foundry terdiri dari beberapa _tools_ individu seperti:
 
-- [`forge`](https://book.getfoundry.sh/forge/): _tools_ berbasis _command-line_ yang disertakan dengan Foundry. _Forge_ digunakan untuk menguji, membangun, dan mendeploy _smart contract_ Anda.
+- [`forge`](https://book.getfoundry.sh/forge/): _tools_ berbasis _command-line_ yang disertakan dengan Foundry. _Forge_ digunakan untuk menguji, membangun, dan meluncurkan kontrak pintar Anda.
 - [`cast`](https://book.getfoundry.sh/cast/): _tools_ berbasis _command-line_ untuk melakukan panggilan RPC, seperti berinteraksi dengan kontrak, mengirim transaksi, dan mendapatkan data on-chain.
-- [`anvil`](https://book.getfoundry.sh/anvil/): node testnet lokal, dirancang untuk menguji perilaku kontrak dari antarmuka depan atau melalui RPC dalam _environment_ pengembangan lokal.
+- [`anvil`](https://book.getfoundry.sh/anvil/): node testnet lokal, dirancang untuk menguji perilaku kontrak dari frontend atau melalui RPC dalam _environment_ pengembangan lokal.
 - [`chisel`](https://book.getfoundry.sh/chisel/): REPL Solidity ([Read–Eval–Print Loop](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop)) untuk mencoba potongan kode Solidity pada jaringan lokal atau jaringan yang di-_fork_.
 
 ## Prasyarat
@@ -63,21 +63,21 @@ Untuk membangun dengan Foundry, Anda memerlukan:
     ```
 - Untuk informasi lebih lanjut, lihat [Panduan Instalasi](https://book.getfoundry.sh/getting-started/installation) di Foundry Book.
 
-### Dana _Wallet_
+### Dana Dompet
 
-**Mendeploy kontrak** ke blockchain memerlukan **biaya gas**.  
-Oleh karena itu, Anda perlu mendanai _wallet_ Anda dengan ETH untuk menutupi biaya gas tersebut.
+**Meluncurkan kontrak** ke blockchain memerlukan **biaya gas**.  
+Oleh karena itu, Anda perlu mendanai dompet Anda dengan ETH untuk menutupi biaya gas tersebut.
 
-Dalam panduan ini, Anda akan mendeploy kontrak ke Lisk Sepolia Testnet.
+Dalam panduan ini, Anda akan meluncurkan kontrak ke Lisk Sepolia Testnet.
 
 Anda dapat men-_deposit_ token yang diperlukan menggunakan [Lisk Sepolia Bridge](https://sepolia-bridge.lisk.com/bridge/lisk-sepolia-testnet).
 
-Jika dompet Anda tidak memiliki cukup `SepoliaETH`, gunakan salah satu faucet yang tersedia untuk Ethereum Sepolia Testnet seperti [https://sepoliafaucet.com](https://sepoliafaucet.com/) untuk menerima ETH Testnet secara gratis.  
+Jika dompet Anda tidak memiliki `SepoliaETH` yang cukup, gunakan salah satu faucet yang tersedia untuk Ethereum Sepolia Testnet seperti [https://sepoliafaucet.com](https://sepoliafaucet.com/) untuk menerima ETH Testnet secara gratis.  
 Kemudian, gunakan Lisk Bridge yang disebutkan sebelumnya untuk mengirim token dari **Ethereum Sepolia Testnet** ke **Lisk Sepolia Testnet**.
 
 ## Membuat Proyek
 
-Langkah pertama dalam mendeploy _smart contract_ ke Lisk adalah menyiapkan _environment_ pengembangan Anda dengan membuat proyek Foundry.
+Langkah pertama dalam meluncurkan kontrak pintar ke Lisk adalah menyiapkan _environment_ pengembangan Anda dengan membuat proyek Foundry.
 
 Anda dapat membuat direktori baru secara terpisah lalu menginisialisasi (_initialize_) proyek Foundry, atau Anda dapat membiarkan Foundry membuat direktori dan menginisialisasi proyek Foundry dengan menjalankan perintah berikut:
 
@@ -132,9 +132,9 @@ Secara default, setiap aplikasi yang dibuat dengan Foundry akan memiliki struktu
 
 Untuk saat ini, hapus file yang ada di `script/Counter.s.sol`, `src/Counter.sol`, dan `test/Counter.t.sol`, karena kita akan membuat kontrak dan kode pengujian sendiri dalam panduan berikutnya.
 
-### **Membuat** Smart Contract
+### **Membuat** Kontrak Pintar
 
-Untuk kemudahan dan keamanan, kita akan menggunakan kontrak `ERC721` yang disediakan oleh [OpenZeppelin Contracts library](https://docs.openzeppelin.com/contracts/5.x/erc721) untuk membuat _smart contract_ ERC-721 sederhana.  
+Untuk kemudahan dan keamanan, kita akan menggunakan kontrak `ERC721` yang disediakan oleh [OpenZeppelin Contracts library](https://docs.openzeppelin.com/contracts/5.x/erc721) untuk membuat kontrak pintar ERC-721 sederhana.  
 Dengan OpenZeppelin, kita tidak perlu menulis keseluruhan kontrak ERC-721.  
 Sebaliknya, kita dapat mengimpor kontrak dari library dan langsung menggunakan fungsinya.
 
@@ -144,7 +144,7 @@ Untuk menginstal OpenZeppelin Contracts library ke proyek Anda, jalankan perinta
 forge install openzeppelin/openzeppelin-contracts
 ```
 
-Di dalam folder `src`, buat sebuah smart contract bernama `NFT.sol` dan tambahkan kode berikut ke dalam file yang baru dibuat.
+Di dalam folder `src`, buat sebuah kontrak pintar bernama `NFT.sol` dan tambahkan kode berikut ke dalam file yang baru dibuat.
 
 ```sol title="src/NFT.sol"
 // SPDX-License-Identifier: MIT
@@ -167,16 +167,16 @@ contract NFT is ERC721 {
 }
 ```
 
-### **Meng-_compile_** Smart Contract
+### Mengompilasi Kontrak Pintar
 
-Setelah kode _smart contract_ siap, Anda harus mengompilasinya menggunakan Foundry.  
+Setelah kode kontrak pintar siap, Anda harus mengompilasinya menggunakan Foundry.  
 Untuk melakukannya, cukup jalankan perintah berikut:
 
 ```bash
 forge build
 ```
 
-Jika _smart contract_ tidak memiliki _error_, Anda akan melihat output berikut di terminal:
+Jika kontrak pintar tidak memiliki eror, Anda akan melihat output berikut di terminal:
 
 ```text
 [⠢] Compiling...
@@ -185,14 +185,14 @@ Jika _smart contract_ tidak memiliki _error_, Anda akan melihat output berikut d
 Compiler run successful!
 ```
 
-### **Menge-_test_** Smart Contract
+### **Menguji** Kontrak Pintar
 
-Dengan melakukan _testing_ pada _smart contract_, Anda dapat memastikan bahwa _smart contract_ berperilaku sesuai harapan dan tidak ada _bug_ sebelum mendeploy-nya ke Lisk.
+Dengan menguji kontrak pintar, Anda dapat memastikan bahwa kontrak pintar berperilaku sesuai harapan dan tidak ada _bug_ sebelum meluncurkannya ke Lisk.
 
-Foundry menyediakan banyak _framework testing_ untuk mendukung Anda dalam menulis _tests_ untuk _smart contract_.  
+Foundry menyediakan banyak _framework testing_ untuk mendukung Anda dalam menulis _test_ untuk kontrak pintar.  
 Lihat [Tests - Foundry Book](https://book.getfoundry.sh/forge/tests) untuk contoh dan referensi terkait _framework testing_.
 
-Untuk melakukan _testing_ pada _smart contract_ `NFT`, buat file baru bernama `NFT.t.sol` di dalam direktori `test/`, dan tambahkan konten berikut:
+Untuk melakukan _testing_ pada kontrak pintar `NFT`, buat file baru bernama `NFT.t.sol` di dalam direktori `test/`, dan tambahkan konten berikut:
 
 ```solidity title="foundry_app/test/NFT.t.sol"
 // SPDX-License-Identifier: UNLICENSED
@@ -266,12 +266,12 @@ Kita memberikan alamat penerima ke fungsi `mint()` sebagaimana yang diminta, seh
 _Test_ kedua: `testMintFail` gagal karena kita mengasumsikan bahwa alamat `alice` dan `bob` adalah sama.  
 _Log output_ yang disorot diatas menjelaskan mengapa asumsi tersebut salah.
 
-### **Mendeploy** Smart Contract
+### Meluncurkan Smart Contract
 
-Setelah berhasil membangun _smart contract_, Anda sekarang dapat mendeploy-nya ke jaringan Lisk.  
-Untuk contoh ini, kita akan menggunakan jaringan Lisk Sepolia untuk mendeploy kontrak `NFT`.
+Setelah berhasil membangun kontrak pintar, Anda sekarang dapat meluncurkannya ke jaringan Lisk.  
+Untuk contoh ini, kita akan menggunakan jaringan Lisk Sepolia untuk meluncurkan kontrak `NFT`.
 
-Tambahkan flag `--verify`, `--verifier`, `--verifier-url`, dan `--private-key` dari akun pengirim ke perintah `forge create` untuk langsung memverifikasi _smart contract_ di BlockScout.
+Tambahkan flag `--verify`, `--verifier`, `--verifier-url`, dan `--private-key` dari akun pengirim ke perintah `forge create` untuk langsung memverifikasi kontrak pintar di BlockScout.
 
 <Tabs>
   <TabItem value="mainnet" label="Lisk" >
@@ -298,10 +298,10 @@ Tambahkan flag `--verify`, `--verifier`, `--verifier-url`, dan `--private-key` d
   </TabItem>
 </Tabs>
 
-Jika deployment berhasil, outputnya akan terlihat seperti berikut:
+Jika peluncuran berhasil, outputnya akan terlihat seperti berikut:
 
 ```text
-# Perintah yang disebutkan di atas akan terlebih dahulu mendeploy kontrak dan menampilkan output berikut:
+# Perintah yang disebutkan di atas akan terlebih dahulu meluncurkan kontrak dan menampilkan output berikut:
 
 // highlight-start
 [⠒] Compiling...
@@ -311,7 +311,7 @@ Deployed to: 0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5
 Transaction hash: 0xf465528f43e5cbc9b5206e46048feba0b920179813c3eb8c3bdbccbfd13d731e
 // highlight-end
 
-# Setelah kontrak berhasil dideploy, perintah yang disebutkan di atas akan langsung memverifikasi kontrak tersebut!
+# Setelah kontrak berhasil diluncurkan, perintah yang disebutkan di atas akan langsung memverifikasi kontrak tersebut!
 
 // highlight-start
 Starting contract verification...
@@ -333,15 +333,15 @@ Contract successfully verified
 // highlight-end
 ```
 
-Setelah _smart contract_ berhasil dideploy dan diverifikasi, Anda dapat berinteraksi dengan memanggil fungsi-fungsi publiknya.
+Setelah kontrak pintar berhasil diluncurkan dan diverifikasi, Anda dapat berinteraksi dengan memanggil fungsi-fungsi publiknya.
 
-### **Memverifikasi** Smart Contract
+### **Memverifikasi** Kontrak Pintar
 
-Setiap kontrak yang dideploy harus diverifikasi agar pengguna dan developer lainnya dapat memeriksa _source code_-nya dan memastikan bahwa _source code_ tersebut sesuai dengan _bytecode_ yang dideploy di blockchain.
+Setiap kontrak yang diluncurkan harus diverifikasi agar pengguna dan developer lainnya dapat memeriksa _source code_-nya dan memastikan bahwa _source code_ tersebut sesuai dengan _bytecode_ yang diluncurkan di blockchain.
 
-Selain itu, jika Anda ingin orang lain dapat berinteraksi dengan kontrak Anda melalui _block explorer_ seperti _interface_ [Read Contract](https://sepolia-blockscout.lisk.com/address/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=read_contract) dan [Write Contract](https://sepolia-blockscout.lisk.com/address/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=write_contract) di Blockscout, kontrak tersebut harus diverifikasi terlebih dahulu.
+Selain itu, jika Anda ingin orang lain dapat berinteraksi dengan kontrak Anda melalui penjelajah blockchain seperti _interface_ [Read Contract](https://sepolia-blockscout.lisk.com/address/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=read_contract) dan [Write Contract](https://sepolia-blockscout.lisk.com/address/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=write_contract) di Blockscout, kontrak tersebut harus diverifikasi terlebih dahulu.
 
-Kontrak di atas **sudah diverifikasi**, sehingga Anda seharusnya dapat melihat versi Anda di _block explorer_, tetapi kami tetap akan menjelaskan langkah-langkah untuk memverifikasi kontrak di Lisk Sepolia testnet.
+Kontrak di atas **sudah diverifikasi**, sehingga Anda seharusnya dapat melihat versi Anda di penjelajah blockchain, tetapi kami tetap akan menjelaskan langkah-langkah untuk memverifikasi kontrak di Lisk Sepolia testnet.
 
 :::info
 Anda tidak dapat memverifikasi ulang kontrak yang identik dengan yang sudah diverifikasi. Jika Anda mencoba melakukannya, seperti memverifikasi kontrak di atas, Anda akan mendapatkan pesan error seperti:
@@ -354,7 +354,7 @@ Contract [src/NFT.sol:NFT] "0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5" is alrea
 
 :::
 
-Jika _smart contract_ Anda belum diverifikasi, ambil alamat kontrak yang sudah dideploy dan jalankan:
+Jika kontrak pintar Anda belum diverifikasi, ambil alamat kontrak yang sudah diluncurkan dan jalankan:
 
 <Tabs>
   <TabItem value="mainnet" label="Lisk" >
@@ -402,17 +402,17 @@ Contract successfully verified
 
 Gunakan alamat kontrak, misalnya `0xcCaA1C3eb8FEb5b09a5Eac1359BC4c70E18e29d9`, untuk mencari kontrak Anda di [Blockscout](https://sepolia-blockscout.lisk.com/) dan memastikan bahwa kontrak tersebut telah diverifikasi.
 
-## Berinteraksi dengan Smart Contract
+## Berinteraksi dengan Kontrak Pintar
 
-Seperti yang disebutkan sebelumnya, jika Anda telah memverifikasi _smart contract_ di Blockscout, Anda dapat menggunakan bagian `Read contract` dan `Write contract` di bawah tab `Contract` untuk berinteraksi dengan kontrak yang telah dideploy.
+Seperti yang disebutkan sebelumnya, jika Anda telah memverifikasi kontrak pintar di Blockscout, Anda dapat menggunakan bagian `Read contract` dan `Write contract` di bawah tab `Contract` untuk berinteraksi dengan kontrak yang telah diluncurkan.
 
-Tab `Read contract` dapat digunakan tanpa menghubungkan _wallet_, namun, untuk menggunakan tab `Write contract`, Anda harus terlebih dahulu menghubungkan _wallet_ Anda.  
+Tab `Read contract` dapat digunakan tanpa menghubungkan dompet, namun, untuk menggunakan tab `Write contract`, Anda harus terlebih dahulu menghubungkan dompet Anda.  
 Anda dapat melakukannya dengan mengklik tombol `Connect wallet`.
 
 ### Menggunakan **cast** untuk Berinteraksi
 
-Dengan _tool_ command-line dari Foundry: [`cast`](https://book.getfoundry.sh/cast/), Anda dapat berinteraksi dengan kontrak yang telah dideploy, baik untuk membaca maupun menulis data di blockchain.  
-Mari kita lakukan panggilan tanpa mempublikasikan transaksi (_read_), lalu menandatangani (_sign_) dan mempublikasikan transaksi (_write_) ke kontrak yang telah dideploy.
+Dengan _tool_ command-line dari Foundry: [`cast`](https://book.getfoundry.sh/cast/), Anda dapat berinteraksi dengan kontrak yang telah diluncurkan, baik untuk membaca maupun menulis data di blockchain.  
+Mari kita lakukan panggilan tanpa mempublikasikan transaksi (_read_), lalu menandatangani (_sign_) dan mempublikasikan transaksi (_write_) ke kontrak yang telah diluncurkan.
 
 #### Melakukan Panggilan (_call_)
 
@@ -435,11 +435,11 @@ Isi `<PLACEHOLDERS>` berikut, lalu jalankan perintah:
 </Tabs>
 
 Anda akan menerima respons berupa `0x0000000000000000000000000000000000000000000000000000000000000000`, yang setara dengan `0` dalam format heksadesimal.  
-Hal ini masuk akal karena Anda baru saja mendeploy kontrak NFT, namun belum ada NFT yang dicetak (_minted_), sehingga saldo akun Anda adalah nol.
+Hal ini masuk akal karena Anda baru saja meluncurkan kontrak NFT, namun belum ada NFT yang dicetak (_minted_), sehingga saldo akun Anda adalah nol.
 
 #### Menandatangani (_signing_) dan Mengirim Transaksi
 
-Sekarang, mari kita tandatangani dan kirim transaksi dengan memanggil fungsi `mint(address)` pada kontrak `NFT` yang baru saja kita deploy.
+Sekarang, mari kita tandatangani dan kirim transaksi dengan memanggil fungsi `mint(address)` pada kontrak `NFT` yang baru saja kita luncurkan.
 
 Isi `<PLACEHOLDERS>` berikut, lalu jalankan perintah:
 
@@ -461,7 +461,7 @@ Isi `<PLACEHOLDERS>` berikut, lalu jalankan perintah:
 Karena perintah `cast send` menulis data ke blockchain, maka diperlukan _private key_ akun pengirim yang harus diberikan ke flag `--private-key`.  
 Transaksi akan berhasil dikirim jika akun pengirim memiliki dana yang cukup.
 
-Hal ini tidak diperlukan untuk perintah `cast call`, karena perintah tersebut hanya mengambil data yang sudah dipublikasikan dari _smart contract_.
+Hal ini tidak diperlukan untuk perintah `cast call`, karena perintah tersebut hanya mengambil data yang sudah dipublikasikan dari kontrak pintar.
 
 :::
 
@@ -507,7 +507,7 @@ Anda seharusnya melihat saldo Anda meningkat dari `0` menjadi `1`.
   </TabItem>
 </Tabs>
 
-Dan responsnya: `0x0000000000000000000000000000000000000000000000000000000000000001` (`1` dalam format heksadesimal) — selamat, Anda berhasil mendeploy kontrak dan mencetak NFT dengan Foundry!
+Dan responsnya: `0x0000000000000000000000000000000000000000000000000000000000000001` (`1` dalam format heksadesimal) — selamat, Anda berhasil meluncurkan kontrak dan mencetak NFT dengan Foundry!
 
 Lihat token yang telah dicetak dalam panduan ini di [Blockscout explorer](https://sepolia-blockscout.lisk.com/token/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5).
 
