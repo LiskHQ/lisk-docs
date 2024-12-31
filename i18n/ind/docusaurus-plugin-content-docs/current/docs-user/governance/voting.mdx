@@ -62,7 +62,7 @@ async function main() {
     const { ethers } = require("ethers"); 
     const provider = new ethers.JsonRpcProvider("https://rpc.api.lisk.com"); 
     const logs = await provider.getLogs({
-        fromBlock: 568778, // blok saat kontrak Governor dideploy
+        fromBlock: 568778, // blok saat kontrak Governor diluncurkan
         toBlock: 'latest',
         address: "0x58a61b1807a7bDA541855DaAEAEe89b1DDA48568", // L2Governor Proxy
         topics:['0x7d84a6263ae0d98d3329bd7b46bb4e8d6f98cd35a7adb45c274c8b7fd5ebd5e0'] // tanda tangan event `ProposalCreated`
