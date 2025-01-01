@@ -79,7 +79,7 @@ Ini menjamin bahwa data transaksi tersedia untuk node untuk diunduh dan diekseku
 Biaya Data L1 dikenakan secara otomatis untuk setiap transaksi yang dimasukkan ke dalam blok Lisk Mainnet.
 Biaya ini dipotong langsung dari alamat yang mengirimkan transaksi.
 
-Biaya Data L1 dipengaruhi secara signifikan oleh base fee Ethereum yang diteruskan secara terus-menerus dan tanpa kepercayaan dari Ethereum ke Lisk Mainnet.
+Biaya Data L1 dipengaruhi secara signifikan oleh base fee Ethereum yang diteruskan secara terus-menerus dan tanpa kepercayaan (trustless) dari Ethereum ke Lisk Mainnet.
 
 Jumlah sebenarnya dari biaya ini bergantung pada nilai input berikut:
 
