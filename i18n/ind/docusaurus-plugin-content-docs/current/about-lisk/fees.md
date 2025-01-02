@@ -24,19 +24,19 @@ keywords:
 
 # Biaya
 
-Biaya di Lisk Mainnet, sebagian besar, jauh lebih rendah dibandingkan dengan jaringan Ethereum L1.
+Biaya di Mainnet Lisk, sebagian besar, jauh lebih rendah dibandingkan dengan jaringan Ethereum L1.
 Biaya transaksi yang rendah dapat diberikan karena Lisk adalah jaringan [Layer 2 optimistic rollup](https://ethereum.org/en/developers/docs/scaling/optimistic-rollups).
 
 ## Pelacak Gas
 
 Untuk melacak biaya gas saat ini dan yang lalu di Lisk, periksa pelacak gas untuk jaringan masing-masing di Blockscout:
 
-- Lisk Mainnet: https://blockscout.lisk.com/gas-tracker
-- Lisk Sepolia Testnet: https://sepolia-blockscout.lisk.com/gas-tracker
+- Mainnet Lisk: https://blockscout.lisk.com/gas-tracker
+- Testnet Lisk Sepolia: https://sepolia-blockscout.lisk.com/gas-tracker
 
 ## Bagaimana biaya dihitung di Lisk?
 
-Setiap transaksi Lisk Mainnet memiliki dua biaya: **Biaya eksekusi L2** dan **Biaya data L1**.
+Setiap transaksi Mainnet Lisk memiliki dua biaya: **Biaya eksekusi L2** dan **Biaya data L1**.
 Secara umum, biaya L2 adalah biaya untuk mengeksekusi transaksi Anda di L2 dan biaya L1 adalah perkiraan biaya untuk mempublikasikan transaksi Anda di L1 (dalam batch rollup).
 
 ```text
@@ -55,9 +55,9 @@ Periksa [halaman Biaya](https://docs.optimism.io/stack/transactions/fees#fjord) 
 l2_execution_fee = transaction_gas_price * l2_gas_used
 ```
 
-Karena Lisk Mainnet setara dengan EVM, **gas yang digunakan** oleh transaksi di Lisk Mainnet **persis sama** dengan gas yang digunakan oleh transaksi yang sama di Ethereum.
-Jika suatu transaksi membutuhkan 100.000 unit gas di Ethereum, transaksi yang sama akan membutuhkan 100.000 unit gas di Lisk Mainnet.
-**Satu-satunya perbedaan adalah harga gas di Lisk Mainnet jauh lebih rendah** dibandingkan harga gas di Ethereum, sehingga Anda akan membayar jauh lebih sedikit dalam ETH.
+Karena Mainnet Lisk setara dengan EVM, **gas yang digunakan** oleh transaksi di Mainnet Lisk **persis sama** dengan gas yang digunakan oleh transaksi yang sama di Ethereum.
+Jika suatu transaksi membutuhkan 100.000 unit gas di Ethereum, transaksi yang sama akan membutuhkan 100.000 unit gas di Mainnet Lisk.
+**Satu-satunya perbedaan adalah harga gas di Mainnet Lisk jauh lebih rendah** dibandingkan harga gas di Ethereum, sehingga Anda akan membayar jauh lebih sedikit dalam ETH.
 Ini juga berarti bahwa total biaya Biaya Eksekusi L2 untuk suatu transaksi dapat diperkirakan menggunakan alat yang sama yang Anda gunakan untuk memperkirakan biaya transaksi di Ethereum.
 
 #### Perhitungan Biaya Eksekusi L2
@@ -67,19 +67,19 @@ Harga gas transaksi adalah jumlah dari [Base Fee](https://ethereum.org/en/develo
 transaction_gas_price = l2_base_fee + l2_priority_fee
 ```
 
-Seperti Ethereum, Lisk Mainnet menggunakan mekanisme [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) untuk menetapkan Base Fee untuk transaksi (meskipun dengan [nilai parameter yang berbeda](#eip-1559-parameters) dibandingkan dengan Ethereum).
+Seperti Ethereum, Mainnet Lisk menggunakan mekanisme [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) untuk menetapkan Base Fee untuk transaksi (meskipun dengan [nilai parameter yang berbeda](#eip-1559-parameters) dibandingkan dengan Ethereum).
 
 Anda dapat membaca lebih lanjut tentang cara kerja biaya gas Ethereum di [Ethereum.org](https://ethereum.org/en/developers/docs/gas/).
 
 ### Biaya Data L1
-[Biaya Data L1](https://docs.optimism.io/stack/transactions/fees#l1-data-fee) adalah satu-satunya bagian dari biaya transaksi Lisk Mainnet yang berbeda dari biaya transaksi Ethereum.
-Biaya ini muncul karena data transaksi untuk semua transaksi Lisk Mainnet dipublikasikan ke Ethereum.
+[Biaya Data L1](https://docs.optimism.io/stack/transactions/fees#l1-data-fee) adalah satu-satunya bagian dari biaya transaksi Mainnet Lisk yang berbeda dari biaya transaksi Ethereum.
+Biaya ini muncul karena data transaksi untuk semua transaksi Mainnet Lisk dipublikasikan ke Ethereum.
 Ini menjamin bahwa data transaksi tersedia untuk node untuk diunduh dan dieksekusi.
 
-Biaya Data L1 dikenakan secara otomatis untuk setiap transaksi yang dimasukkan ke dalam blok Lisk Mainnet.
+Biaya Data L1 dikenakan secara otomatis untuk setiap transaksi yang dimasukkan ke dalam blok Mainnet Lisk.
 Biaya ini dipotong langsung dari alamat yang mengirimkan transaksi.
 
-Biaya Data L1 dipengaruhi secara signifikan oleh base fee Ethereum yang diteruskan secara terus-menerus dan trustless dari Ethereum ke Lisk Mainnet.
+Biaya Data L1 dipengaruhi secara signifikan oleh base fee Ethereum yang diteruskan secara terus-menerus dan trustless dari Ethereum ke Mainnet Lisk.
 
 Jumlah sebenarnya dari biaya ini bergantung pada nilai input berikut:
 
@@ -121,9 +121,9 @@ Untuk informasi lebih lanjut tentang biaya transaksi, periksa [Dokumentasi Penge
 
 ## Parameter EIP-1559
 
-Parameter [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) yang digunakan oleh Lisk Mainnet berbeda dari yang digunakan oleh Ethereum sebagai berikut:
+Parameter [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) yang digunakan oleh Mainnet Lisk berbeda dari yang digunakan oleh Ethereum sebagai berikut:
 
-| Parameter                             | Nilai Lisk Mainnet | Nilai Ethereum (sebagai referensi) |
+| Parameter                             | Nilai Mainnet Lisk | Nilai Ethereum (sebagai referensi) |
 | ------------------------------------- | -----------------: | ----------------------------------: |
 | Batas gas blok                        |   30.000.000 gas   |                 30.000.000 gas     |
 | Target gas blok                       |    1.500.000 gas   |                 15.000.000 gas     |

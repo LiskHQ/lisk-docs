@@ -9,8 +9,8 @@ keywords:
     Lisk legacy chain,
     legacy chain service,
     Lisk legacy account,
-    chain history,
-    account history
+    riwayat rantai,
+    riwayat akun
   ]
 difficulty: pemula
 ---

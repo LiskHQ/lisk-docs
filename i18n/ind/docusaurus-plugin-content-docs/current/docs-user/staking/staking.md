@@ -1,5 +1,5 @@
 ---
-title: Ikhtisar
+title: Gambaran Umum
 sidebar_position: 1
 slug: /user/staking/overview
 description: 'Cara untuk staking token LSK untuk menerima hadiah staking.'
@@ -21,15 +21,15 @@ Staking LSK diperlukan untuk berpartisipasi dalam [Lisk DAO](https://www.tally.x
 
 ## Panduan Staking
 
-- [Cara staking, klaim, dan unstake](stake-unstake.mdx)
+- [Cara staking, klaim, dan buka staking](stake-unstake.mdx)
 - [Cara menghentikan posisi penguncian](pause-position.mdx)
-- [Cara menambah stake](../staking/increase-stake.mdx)
+- [Cara menambah staking](../staking/increase-stake.mdx)
 - [Cara memperpanjang durasi stake](extend-duration.mdx)
-- [Cara unstake lebih awal](early-unlock.mdx)
+- [Cara membuka staking lebih awal](early-unlock.mdx)
 
 ## Posisi Penguncian
 
-Setiap kali Anda [stake](stake-unstake.mdx#how-to-stake-your-lsk-tokens) sejumlah LSK untuk durasi penguncian tertentu, posisi **penguncian** baru akan dibuat.
+Setiap kali Anda melakukan [Staking](stake-unstake.mdx#how-to-stake-your-lsk-tokens) sejumlah LSK untuk durasi penguncian tertentu, posisi **penguncian** baru akan dibuat.
 
 :::tip
 **Durasi penguncian minimum** untuk staking adalah **dua minggu**.
@@ -37,13 +37,13 @@ Setiap kali Anda [stake](stake-unstake.mdx#how-to-stake-your-lsk-tokens) sejumla
 **Durasi penguncian maksimum** untuk staking adalah **dua tahun**.
 :::
 
-Posisi penguncian diwakili sebagai **NFT** menggunakan standar ERC-721, mirip dengan posisi likuiditas Uniswap v3.
+Posisi penguncian diwakili dengan **NFT** menggunakan standar ERC-721, mirip dengan posisi likuiditas Uniswap v3.
 Ini meningkatkan komposabilitas ke dalam DeFi dan penggunaan potensial di masa depan.
 
 ## Hadiah Staking
 
 Hadiah staking memberikan insentif bagi pengguna untuk berpartisipasi dalam tata kelola, menjadikan pengambilan keputusan lebih terdesentralisasi dan didorong oleh komunitas.  
-Secara singkat, pengguna mendapatkan [kekuatan voting](docs-user/governance/overview.mdx#voting-power) dan hadiah untuk staking token selama periode waktu tertentu.
+Secara singkat, pengguna mendapatkan [kekuatan suara](docs-user/governance/overview.mdx#voting-power) dan hadiah untuk staking token selama periode waktu tertentu.
 
 Lisk menerapkan **peningkatan bobot berdasarkan waktu** pada hadiah:
 Semakin jauh akhir durasi penguncian di masa depan, semakin banyak hadiah yang Anda dapatkan.
@@ -53,14 +53,14 @@ Dengan cara ini, kami memberi penghargaan kepada pemegang token yang berkomitmen
 - Pengguna dapat [mengklaim](stake-unstake.mdx#how-to-claim-staking-rewards) hadiah mereka kapan saja.   
 - Pengguna dapat memodifikasi posisi penguncian mereka (menambah jumlah, memperpanjang durasi penguncian) kapan saja.
 - Pengguna memiliki opsi untuk **menghentikan** hitungan mundur durasi penguncian mereka.
-Ini berarti, durasi penguncian yang tersisa tetap tetap sampai pengguna memutuskan untuk melanjutkannya.
-Perhatikan bahwa ini menghasilkan **hadiah staking yang lebih tinggi**, karena bobot tetap tetap, dibandingkan dengan bobot yang menurun setiap hari saat hitungan mundur aktif.
+Ini berarti, durasi penguncian yang tersisa tetap sama sampai pengguna memutuskan untuk melanjutkannya.
+Perhatikan bahwa ini menghasilkan **hadiah staking yang lebih tinggi**, karena bobot tetap sama, dibandingkan dengan bobot yang menurun setiap hari saat hitungan mundur aktif.
 
 ### Distribusi Hadiah Staking
 Sebanyak 24 juta token LSK akan digunakan selama 3 tahun untuk program hadiah staking LSK (8 juta LSK per tahun).
-Jumlah ini diberikan ke dalam [kontrak Rewards](https://blockscout.lisk.com/address/0xD35ca9577a9DADa7624a35EC10C2F55031f0Ab1f).
+Jumlah ini diberikan kepada [kontrak Hadiah](https://blockscout.lisk.com/address/0xD35ca9577a9DADa7624a35EC10C2F55031f0Ab1f).
 
-**Perhitungan Hadiah Harian:** Hadiah diambil dari saldo kontrak Rewards dan dihitung setiap hari, berdasarkan jumlah yang dikunci dan durasi penguncian yang tersisa.
+**Perhitungan Hadiah Harian:** Hadiah diambil dari saldo kontrak Hadiah dan dihitung setiap hari, berdasarkan jumlah yang dikunci dan durasi penguncian yang tersisa.
 Secara konkret, bobot untuk jumlah yang dikunci diberikan oleh:
 
 ```
@@ -75,11 +75,11 @@ Artinya, hadiah harian untuk posisi penguncian dihitung sebagai:
 hadiahHarian = bobot/totalBobot * TotalHadiahHarian
 ```
 
-Nilai saat ini dari `totalBobot` dapat dicek di [kontrak Rewards](https://blockscout.lisk.com/address/0xD35ca9577a9DADa7624a35EC10C2F55031f0Ab1f?tab=read_proxy).
+Nilai saat ini dari `totalBobot` dapat dicek di [kontrak Hadiah](https://blockscout.lisk.com/address/0xD35ca9577a9DADa7624a35EC10C2F55031f0Ab1f?tab=read_proxy).
 `TotalHadiahHarian` dapat dihitung dengan membagi hadiah tahunan yang tersedia dengan 365:  `8.000.000 / 365 = 21917`
 
 ### Contoh: Perhitungan Hadiah untuk 1 vs 2 Tahun
-Misalnya, jika seseorang melakukan staking 100LSK selama *1 tahun*, ini akan menghasilkan hadiah berikut pada hari itu, dengan asumsi `totalBobot` adalah `12462098705` untuk contoh ini:
+Misalnya, jika seseorang melakukan staking 100 LSK selama *1 tahun*, ini akan menghasilkan hadiah berikut pada hari itu, dengan asumsi `totalBobot` adalah `12462098705` untuk contoh ini:
 
 ```
 bobot = 100 * (365 + 150) = 51500
@@ -89,7 +89,7 @@ bobot = 100 * (365 + 150) = 51500
 hadiahHarian = 51500 / 12462098705 * 21917 = 0.0905726657 LSK 
 ```
 
-Jika 100 LSK yang di-stake habis dalam *dua tahun*, ini akan menghasilkan hadiah berikut pada hari itu:
+Jika 100 LSK yang di-staking habis dalam *dua tahun*, ini akan menghasilkan hadiah berikut pada hari itu:
 
 ```
 bobot  = 100 * (730 + 150) = 88000
@@ -103,23 +103,23 @@ Setelah akhir periode 3 tahun ini, kami mengharapkan bahwa perkembangan dalam Ek
 
 ## Unstaking
 
-Setelah periode penguncian dari sebuah [posisi penguncian](#locking-positions) berakhir, Anda dapat membuka kembali token yang di-stake dengan cara [unstake](stake-unstake.mdx#how-to-unstake-your-lsk-tokens).
+Setelah periode penguncian dari sebuah [posisi penguncian](#locking-positions) berakhir, Anda dapat membuka kembali token yang di-stake dengan cara [membuka staking](stake-unstake.mdx#how-to-unstake-your-lsk-tokens).
 
 :::tip
-Jika Anda perlu membuka token Anda lebih awal dari periode penguncian yang ditentukan, Anda dapat melakukan unstake token Anda sebelum periode penguncian berakhir dengan menggunakan opsi [early unlock](#early-unlock).
+Jika Anda perlu membuka token Anda lebih awal dari periode penguncian yang ditentukan, Anda dapat membuka staking token Anda sebelum periode penguncian berakhir dengan menggunakan opsi [early unlock](#early-unlock).
 
-Menggunakan unlock cepat akan melibatkan penalti yang harus dibayar.
+Membuka kunci lebih cepat akan melibatkan penalti yang harus dibayar.
 :::
 
-Setelah di-unstake, token LSK dapat digunakan seperti sebelumnya untuk tujuan lainnya.
+Setelah membuka staking, token LSK dapat digunakan seperti sebelumnya untuk tujuan lainnya.
 
 ### Unlock Cepat
-Unlock cepat memungkinkan Anda untuk melakukan unstake token LSK sebelum periode penguncian mereka berakhir.
+Unlock cepat memungkinkan Anda untuk membuka staking token LSK sebelum periode penguncian mereka berakhir.
 Ini melibatkan pembayaran penalti dan menunggu periode unlock darurat selama 3 hari.
 Penalti dihitung berdasarkan formula:
 
 ```
-Penalti = 0.5 * Jumlah yang di-stake * (Hari Tersisa / 730)
+Penalti = 0.5 * Jumlah yang di-staking * (Hari Tersisa / 730)
 ```
 
 Harap dicatat bahwa nilai maksimum untuk hari yang tersisa adalah 730.
@@ -130,4 +130,4 @@ Misalnya, jika seorang pengguna ingin melakukan unlock cepat posisi dengan 100 L
 Penalti = 0.5 x 100 x (147 / 730) = 10.068 LSK
 ```
 
-Perhatikan bahwa kami mengalikan dengan 147 dan bukan 150, karena pengguna masih harus menunggu selama 3 hari, jadi durasi kunci secara keseluruhan berkurang sebanyak 147.
+Perhatikan bahwa kami mengalikan dengan 147 dan bukan 150, karena pengguna masih harus menunggu selama 3 hari, jadi durasi penguncian secara keseluruhan berkurang sebanyak 147.

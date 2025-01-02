@@ -23,7 +23,7 @@ keywords:
 Faucet memungkinkan Anda untuk mendapatkan token testnet gratis di Lisk Sepolia.  
 Temukan daftar faucet untuk testnet Lisk Sepolia di bawah ini.
 
-## Lisk Sepolia Faucet  
+## Faucet Lisk Sepolia  
 Memberikan **LSK** testnet di Lisk Sepolia.
 
 Faucet Lisk Sepolia tersedia di sini: https://sepolia-faucet.lisk.com/:  

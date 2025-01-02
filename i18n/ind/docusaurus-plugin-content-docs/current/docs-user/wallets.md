@@ -64,7 +64,7 @@ Fitur utama:
 
 ### Zerion
 [Zerion](https://zerion.io/) adalah dompet kripto untuk segala hal yang terkait dengan blockchain.
-Ini memungkinkan Anda mengelola semua investasi, koleksi, posisi yang dipertaruhkan, dan airdrop Anda di 14 rantai dalam satu tempat.
+Ini memungkinkan Anda mengelola semua investasi, koleksi, posisi staking, dan airdrop Anda di 14 rantai dalam satu tempat.
 
 Fitur utama:
 - **Integrasi native jaringan Lisk**
@@ -114,13 +114,13 @@ Fitur utama:
 
 ### Safe
 
-[Safe](https://safe.optimism.io/welcome/accounts?chain=lisk) adalah dompet multisig yang dapat disesuaikan dan platform untuk menyimpan aset digital di Ethereum dan rantai EVM populer seperti Lisk untuk pengguna, perusahaan, dana, pengembang, DAO, dan investor.
+[Safe](https://safe.optimism.io/welcome/accounts?chain=lisk) adalah dompet multisig yang dapat disesuaikan dan platform untuk menyimpan aset digital di Ethereum dan rantai-rantai EVM populer seperti Lisk untuk pengguna, perusahaan, dana, pengembang, DAO, dan investor.
 Aplikasi DeFi dapat diakses dan dana pengguna dapat digunakan dari dalam antarmuka Safe.
 
 Fitur utama:
 - **Non-kustodial**
 - **Dompet EVM**
-- **Multisig**: Tanda tangan ganda untuk individu dan tim dari berbagai ukuran.
+- **Multisig**: Tanda tangan ganda untuk individu dan tim berbagai ukuran.
 - **Versi Web dan Mobile**
 - **Dukungan Token**: ETH, ERC 20 (termasuk LSK), dan ERC 721/1155 (NFT) didukung.
 

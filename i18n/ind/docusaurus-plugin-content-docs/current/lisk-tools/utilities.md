@@ -42,7 +42,7 @@ Di repositori [gelato-raas-aa](https://github.com/gelatodigital/gelato-raas-aa),
 
 ### Web3 Functions
 
-[Web3 Functions](https://www.gelato.network/web3-functions) dari Gelato adalah sistem automasi yang kuat yang dirancang untuk menyederhanakan dan meningkatkan operasi Web3.  
+[Web3 Functions](https://www.gelato.network/web3-functions) dari Gelato adalah sistem otomasi yang kuat yang dirancang untuk menyederhanakan dan meningkatkan operasi Web3.  
 Web3 Functions berfungsi sebagai alat komprehensif, memungkinkan pengembang untuk dengan mudah mengatur, mengelola, dan mengotomatisasi tugas kontrak pintar mereka.
 
 ## Interoperabilitas

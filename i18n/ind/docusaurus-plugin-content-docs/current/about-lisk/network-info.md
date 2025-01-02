@@ -7,7 +7,7 @@ description: 'Informasi jaringan, penjelajah resmi, dan faucet yang tersedia unt
 keywords:  
   [  
     'informasi jaringan',  
-    'Lisk Testnet',  
+    'Testnet Lisk',  
     'Sepolia',  
     'faucet',  
     'penjelajah blok',  
@@ -21,7 +21,7 @@ Halaman referensi yang berisi informasi tentang semua jaringan yang didukung ole
 ## Informasi Jaringan  
 Lisk L2 tersedia pada jaringan berikut:
 
-### Lisk Mainnet
+### Mainnet Lisk
 
 | Nama                    | Nilai                                                                        |  
 | :----------------------  | :-------------------------------------------------------------------------- |  
@@ -32,19 +32,19 @@ Lisk L2 tersedia pada jaringan berikut:
 | **Simbol Mata Uang**     | ETH                                                                         |  
 | **Penjelajah Blok**      | https://blockscout.lisk.com                                                 |  
 | **API Penjelajah Blok**  | https://blockscout.lisk.com/api                                             |  
-| **Lisk Bridge**          | https://bridge.lisk.com                                                     |
+| **Bridge Lisk**          | https://bridge.lisk.com                                                     |
 
-### Lisk Sepolia Testnet
+### Testnet Lisk Sepolia
 
 | Nama                                                   | Nilai                                                                       |  
 | :-------------------                                     | :-------------------------------------------------------------------------- |  
-| **Nama Jaringan**                                       | Lisk Sepolia Testnet                                                        |  
+| **Nama Jaringan**                                       | Testnet Lisk Sepolia                                                        |  
 | **Endpoint HTTP RPC**                                  | [https://rpc.sepolia-api.lisk.com](https://rpc.sepolia-api.lisk.com)        |  
 | **Endpoint WS RPC**                                    | [wss://ws.sepolia-api.lisk.com](wss://ws.sepolia-api.lisk.com)              |  
 | **Chain ID**                                           | 4202                                                                        |  
 | **Simbol Mata Uang**                                    | ETH                                                                         |  
 | **Penjelajah Blok**                                     | https://sepolia-blockscout.lisk.com                                         |  
 | **API Penjelajah Blok**                                 | https://sepolia-blockscout.lisk.com/api                                     |  
-| **Bridge Lisk Testnet**                                | https://sepolia-bridge.lisk.com                                             |  
-| **Lisk Testnet Faucet** (Memberikan LSK)               | https://sepolia-faucet.lisk.com/                                            |  
+| **Bridge Testnet Lisk**                                | https://sepolia-bridge.lisk.com                                             |  
+| **Faucet Testnet Lisk** (Memberikan LSK)               | https://sepolia-faucet.lisk.com/                                            |  
 | **Faucet Superchain Testnet** (Memberikan ETH)         | https://app.optimism.io/faucet                                              |
