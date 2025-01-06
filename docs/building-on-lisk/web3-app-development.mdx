@@ -23,11 +23,12 @@ import TabItem from '@theme/TabItem';
 
 # Web3 App Development
 
-On this page, you will learn about Web3 applications, and how to get started with Web3 app development.
+On this page, you will learn what Web3 applications are, how they differ from Web 2.0 apps, and how to get started with Web3 app development on Lisk.
 
 ## What are Web3 applications?
 
 ### Evolution of the Web
+
 Since the internet was born, there has been constant innovation in how people use the internet to communicate and interact with each other.
 To describe important steps in this innovation, websites and apps are generally categorized into different Web "versions":
 
@@ -76,8 +77,7 @@ To describe important steps in this innovation, websites and apps are generally 
     This puts users in control of their data and privacy, removing the need to trust a central authority.
 
     Web3 apps are built on top of blockchain technology, which allows users greater ownership and control over their data.
-    This provides new features and services that are not possible in the Web2 world.
-    The [Brave](https://brave.com/) browser for example allows users to earn cryptocurrency for viewing ads.
+    This provides new features and allows services that are not feasible in the Web2 world.
     Often, Web3 apps combine other cutting edge technologies like AI to provide unique new user experiences.
 
     New types of Web3 apps include:
@@ -86,6 +86,7 @@ To describe important steps in this innovation, websites and apps are generally 
       - DEXs (Decentralized Exchanges)
       - GameFi (Gaming Finance)
       - Staking and yield farming platforms
+      - Decentralized crowdfunding and -investing platforms
       - Decentralized lending and borrowing
       - Prediction markets
       - Asset / RWA tokenization platforms
@@ -101,19 +102,18 @@ To describe important steps in this innovation, websites and apps are generally 
 
 ### Web2 vs Web3 app development
 #### Languages
-Regarding languages used to build Web2 and Web3 apps, there aren't many differences regarding the frontend.
+Concerning frontend app development, there aren't many differences between Web2 and Web3 apps, when it comes to programming languages.
 All languages that are typically used for Web2 app development can also be used for Web3 app development.
 In the end, Web3 apps can even look and feel exactly like Web2 apps for users, because their frontend is built with the same technologies.
 
-However, the backend of Web3 apps is different, as it interacts with the blockchain through smart contracts.
+However, the backend of Web3 apps is quite different, as it interacts with the blockchain through smart contracts.
 Smart contracts are written in [Solidity](https://soliditylang.org/), therefore Web3 developers need to know Solidity to build the smart contracts they require for their app.
-Luckily, for many use cases, there are already audited smart contracts available(see [OpenZeppelin](https://www.openzeppelin.com/solidity-contracts) or [thirdweb](https://thirdweb.com/explore)) that can be used, so developers don't need to write their smart contracts from scratch.
+Luckily, for many use cases, there are already audited smart contracts available(see [OpenZeppelin](https://www.openzeppelin.com/solidity-contracts) or [thirdweb](https://thirdweb.com/explore)) that can be used, so developers don't need to write all of their smart contracts from scratch.
 
 #### Tech stack
 As mentioned above, the Web2 and Web3 app frontend development is very similar.
 Theoretically, you could build a Web3 app with nearly the same tech stack as a Web2 app, like Next.js, Vite, etc.
-The only thing you need to add is a way for your application to interact with the blockchain.
-For this, there are serveral libraries and frameworks available, like [viem](https://viem.sh/), [web3.js](https://web3js.readthedocs.io) or [ethers.js](https://docs.ethers.io).
+The only thing you need to add is a way for your application to interact with the blockchain, see [Data access](#data-access).
 
 To support developers, many blockcain platforms offer their own SDKs and tools to interact with their blockchain, which can make development easier and more efficient.
 There are also SDKs for Web3 app development that provide a complete tech stack, like [thirdweb](https://thirdweb.com/) or [Alchemy](https://www.alchemy.com/), which take away most of the complexity of blockchain development and provide a smooth developer experience.
@@ -121,20 +121,23 @@ thirdweb supports [Lisk](https://thirdweb.com/lisk) and many other EVM-compatibl
 
 #### Data storage
 In Web2 apps, data is typically stored in a centralized database.
-In Web3 apps, some data is stored on the blockchain, which is a decentralized database.
+In Web3 apps, some data is stored on the blockchain, i.e. a decentralized database.
 How the data is stored is defined inside of smart cotracts.
-However, not all data can be stored on the blockchain, as it is quite expensive and slow to store large amounts of data on the blockchain.
-Therefore, Web3 apps often use a combination of onchain storage and offchain storage.
+However, not all data should always be stored on the blockchain, as it is quite expensive and slow to store large amounts of data onchain.
+Therefore, Web3 apps sometimes use a combination of onchain storage and offchain storage.
 
 #### Data access
 In Web2 apps, data from the database is accessed through APIs.
 In Web3 apps, blockchain data is accessed through smart contracts.
 They usually expose public functions that can be called by the app frontend to read and/or write data from/to the blockchain, similar to a classical API.
+To interact with the blockchain, there are various libraries and frameworks available, like [viem](https://viem.sh/), [web3.js](https://web3js.readthedocs.io) or [ethers.js](https://docs.ethers.io).
+
+### Further regarding
+- [Introduction to Web3](https://ethereum.org/en/web3/) *by Ethereum*
 
 ## Getting started with Web3 app development
 
-Before starting with the actual development of a Web3 app, you need to be clear about the the right app **platform(s)** to build your Web3 app on.
-Depending on your use case and target audience, you may want to serve it through one ore multiple platforms that are most accessible and/or desired by your users.
+To get started with the actual development of a Web3 app, you need to be clear about the the right app **platform(s)** to build your Web3 app on.
 The following sections will give you an overview of the different platforms you can choose from to build your Web3 app on, including further resources and guides to get you started with the app development.
 
 ### Web3 Mobile Apps
@@ -145,11 +148,13 @@ Last but not least, mobile apps allow users to access your app on the go, which 
 
 #### Development resources
 - [Build Web3 Mobile Apps with React Native on Lisk with thirdweb](https://blog.thirdweb.com/web3-mobile-apps/build-web3-mobile-apps-with-reactive-native-on-lisk/)
+- [Video tutorial: How to Build a Web3 Mobile App](https://www.youtube.com/watch?v=PRAsc_ocVtk) *by thirdweb*
 - [Building a mobile dApp with Flutter](https://medium.com/dash-community/building-a-mobile-dapp-with-flutter-be945c80315a)
+- [How to pay gas fees with LSK](https://blog.thirdweb.com/changelog/ts-tokenpaymasters-pay-for-gas-with-lisk-lsk-base-usdc-or-celo-cusd/) *by thirdweb*
 
 ### Web3 Web Apps
 The main advantage of web applications is that they are platform-independent and can be accessed from any device with a web browser.
-Additionally, they don't need to be installed by the user, and can be used directly.
+Additionally, they don't need to be installed by the user, and can be used directly in the browser.
 
 #### Development resources
 - [How to Build an NFT Minting dApp](https://blog.thirdweb.com/guides/build-nft-minting-dapp-with-thirdweb-guide/) *by thirdweb*
@@ -157,16 +162,12 @@ Additionally, they don't need to be installed by the user, and can be used direc
 ### Web3 PWAs
 A Progressive Web App (= PWA) allows users to install your web app to their device.
 They appear as native apps on your desktop or mobile device and offer features like offline support and push notifications.
-This way, PWA allow to develop an application that can be used via browser[^1], mobile, or desktop application alike.
-
+This way, PWAs allow to develop an application that can be used via browser[^1], mobile, or desktop application alike.
 Therefore, PWAs are a great choice to reach users on different platforms simultaneously.
 
 Additionally, PWAs allow a user to directly install the app through your web app, without need to visit an app store.
-This allows you to serve the app directly to the users, without bothering about high restrictions of app stores on what is allowed for blockchain applications.
+This allows you to serve the app directly to the users, without bothering about restrictions of app stores on what is allowed for blockchain applications.
 In-app purchase fees can also be avoided because users no longer need to go through the app store.
-
-The major app stores support the publication of PWAs to varying to degrees.
-Currently, Google Play, Microsoft Store, and Samsung Galaxy Store support PWAs, but Apple App Store does not.
 
 [^1]: Only supported in PWA-compatible browsers (most Chromium based browsers should work).
 
@@ -174,11 +175,10 @@ Currently, Google Play, Microsoft Store, and Samsung Galaxy Store support PWAs, 
 - [How to Create a Web3 PWA](https://blog.thirdweb.com/guides/how-to-create-a-web3-pwa/) *by thirdweb*
 - [Video tutorial: Build a web3 PWA](https://www.youtube.com/watch?v=VU8i-dn2_GE) *by thirdweb*
 
-### Web3 Desktop apps
+{/* ### Web3 Desktop apps
 Desktop apps are native applications that are installed on a user's computer.
 Similar to mobile apps, they are platform dependent.
-Additionally, desktop apps make it difficult for users to access them on the go, as you need a computer to use them.
+Desktop apps make it difficult for users to access them on the go, as you need a computer to use them.
 On the other side, desktop apps shine with their performance and the ability to use the full power of the computer they are running on, and they are typically build for larger screens allowing more complex user interfaces.
-So if you application requires a lot of computing power, or a very complex UI that might not be fitting for a mobile screen, a desktop app can be the right choice.
-
-#### Development resources
+So if you application requires a lot of computing power, and/or a very complex UI that might not be fitting for a mobile screen, a desktop app can be the right choice.
+ */}
