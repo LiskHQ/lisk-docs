@@ -41,10 +41,6 @@ Then, use the aforementioned Lisk Bridge to send tokens from the **Ethereum Sepo
 :::note
 You can deploy a contract on Lisk Mainnet by adopting the same process.
 For deploying to Mainnet, ensure that your wallet has enough ETH.
-
-The subsequent text contains commands for both Lisk and Lisk Sepolia for your ease.
-For more information, see the [available Lisk networks](/network-info) and [how to connect a wallet with them](/user/connecting-to-a-wallet).
-
 :::
 
 ## 1. Open Remix
