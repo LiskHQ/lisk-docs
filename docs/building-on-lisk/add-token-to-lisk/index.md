@@ -99,5 +99,5 @@ Reviews are regularly conducted by the Lisk team and you should receive a reply 
 To add your token to the [Gelato Bridge](https://bridge.lisk.com/), reach out to the Lisk team on [Lisk Discord](lisk.chat) with the details of the token:
 
 - go to the `#lisk-dev` channel
-- tag a moderator, ask them to add your token to the Gelato Bridge, and share a link to your PR from [step 2: token details](#step-2-submit-details-of-your-token)
+- tag a moderator, ask them to add your token to the Gelato Bridge, and share the link to your PR from [step 2: token details](#step-2-submit-details-of-your-token)
 - the Lisk team will then coordinate with Gelato to get the token added to Gelato Bridge
