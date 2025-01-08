@@ -376,10 +376,10 @@ https://sepolia-blockscout.lisk.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe
 :::
 
 Lihat kontrak Anda di BlockScout dengan mengikuti [link ke kontrak yang telah diluncurkan](https://sepolia-blockscout.lisk.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D?tab=contract) yang ditampilkan dalam pesan output langkah sebelumnya.  
-Penjelajah Blockchain akan mengonfirmasi bahwa kontrak tersebut telah diverifikasi dan memungkinkan Anda untuk [berinteraksi](#berinteraksi-dengan-smart-contract) dengannya.
+Penjelajah Blockchain akan mengonfirmasi bahwa kontrak tersebut telah diverifikasi dan memungkinkan Anda untuk [berinteraksi](#berinteraksi-dengan-kontrak-pintar) dengannya.
 
 ## Berinteraksi dengan Kontrak Pintar
 
-Setelah [kontrak diverifikasi](#verifying-the-smart-contract), Anda dapat menggunakan tab `Read Contract` dan `Write Contract` untuk berinteraksi dengan kontrak yang telah diluncurkan melalui [BlockScout](https://sepolia-blockscout.lisk.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D?tab=contract).  
+Setelah [kontrak diverifikasi](#memverifikasi-kontrak-pintar), Anda dapat menggunakan tab `Read Contract` dan `Write Contract` untuk berinteraksi dengan kontrak yang telah diluncurkan melalui [BlockScout](https://sepolia-blockscout.lisk.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D?tab=contract).  
 Jangan lupa untuk memperbarui alamat kontrak di URL BlockScout.  
 Anda juga perlu menghubungkan dompet Anda terlebih dahulu dengan mengklik tombol `Connect Wallet`.

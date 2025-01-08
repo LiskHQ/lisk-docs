@@ -124,7 +124,7 @@ Di dalam fungsi-fungsi tersebut, panggil [latestRoundData](https://docs.chain.li
 Fungsi `latestRoundData()` me-return nilai-nilai berikut:
 
 - `roundId`(uint80): ID dari ronde.  
-  Untuk semua [data feed](#data-feeds-on-lisk), ronde selalu bernilai `1`, karena kontrak ini tidak menggunakan ronde, sesuai dengan namanya.
+  Untuk semua [data feed](#data-feed-di-lisk), ronde selalu bernilai `1`, karena kontrak ini tidak menggunakan ronde, sesuai dengan namanya.
 - `answer`(int256): Data yang disediakan oleh feed ini.  
   Tergantung pada feed yang dipilih, `answer` menyediakan harga aset, cadangan, dan jenis data lainnya.
 - `startedAt`(uint256): Timestamp ketika ronde dimulai.

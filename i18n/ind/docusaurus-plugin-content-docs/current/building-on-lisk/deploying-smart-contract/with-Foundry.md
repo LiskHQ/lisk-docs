@@ -491,7 +491,7 @@ l1GasPrice             "0x6d49929"
 l1GasUsed             "0x8a4"
 ```
 
-Terakhir, Anda dapat mengonfirmasi proses minting dengan [melakukan panggilan](#melakukan-panggilan-call) lagi.  
+Terakhir, Anda dapat mengonfirmasi proses minting dengan [melakukan panggilan](#melakukan-panggilan) lagi.  
 Anda seharusnya melihat saldo Anda meningkat dari `0` menjadi `1`.
 
 <Tabs>
