@@ -84,7 +84,7 @@ For step-by-step instructions on how to deploy ERC-20 tokens on Lisk, check the 
 
 ### Step 2: Submit details of your token
 Follow the instructions in the [GitHub repository](https://github.com/ethereum-optimism/ethereum-optimism.github.io) and submit a PR containing the required details for your token.
-Especially, follow the Lisk-specific instructions detailed in the section [Speciying chains](https://github.com/ethereum-optimism/ethereum-optimism.github.io?tab=readme-ov-file#specifying-chains).
+Especially, follow the Lisk-specific instructions detailed in the section [Specifying chains](https://github.com/ethereum-optimism/ethereum-optimism.github.io?tab=readme-ov-file#specifying-chains).
 
 **Important:** You must specify in your token's `data.json` file a section for `lisk-sepolia` and/or `lisk`.
 
@@ -96,8 +96,8 @@ For example, [this PR](https://github.com/ethereum-optimism/ethereum-optimism.gi
 Reviews are regularly conducted by the Lisk team and you should receive a reply within 24-72 hours (depending on if the PR is opened on a weekday, weekend or holiday).
 
 ## Step 4 : Add token to Gelato Bridge
-To add your token to the [Gelato Bridge](https://bridge.lisk.com/), reach out to the Lisk team on [Lisk Discord](lisk.chat) with the details of the token:
+To add your token to the [Gelato Bridge](https://bridge.lisk.com/), reach out to the Lisk team on [Lisk Discord](https://lisk.chat) with the details of the token:
 
-- go to the `#lisk-dev` channel
-- tag a moderator, ask them to add your token to the Gelato Bridge, and share the link to your PR from [step 2: token details](#step-2-submit-details-of-your-token)
-- the Lisk team will then coordinate with Gelato to get the token added to Gelato Bridge
+- Go to the `#lisk-dev` channel.
+- Tag a moderator, ask them to add your token to the Gelato Bridge, and share the link to your PR from [step 2: token details](#step-2-submit-details-of-your-token).
+- The Lisk team will then coordinate with Gelato to get the token added to the Gelato Bridge.
