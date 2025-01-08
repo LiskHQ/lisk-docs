@@ -79,13 +79,13 @@ Kemudian, gunakan Lisk Bridge yang disebutkan sebelumnya untuk mengirim token da
 
 Langkah pertama dalam meluncurkan kontrak pintar ke Lisk adalah menyiapkan environment pengembangan Anda dengan membuat proyek Foundry.
 
-Anda dapat membuat direktori baru secara terpisah lalu menginisialisasi (initialize) proyek Foundry, atau Anda dapat membiarkan Foundry membuat direktori dan menginisialisasi proyek Foundry dengan menjalankan perintah berikut:
+Anda dapat membuat direktori baru secara terpisah lalu menginisialisasi proyek Foundry, atau Anda dapat membiarkan Foundry membuat direktori dan menginisialisasi proyek Foundry dengan menjalankan perintah berikut:
 
 ```bash
 forge init foundry_app && cd foundry_app
 ```
 
-Perintah ini akan membuat folder bernama `foundry_app` dan sekaligus mengubah direktori kerja (working directory) terminal ke folder tersebut.
+Perintah ini akan membuat folder bernama `foundry_app` dan sekaligus mengubah direktori kerja terminal ke folder tersebut.
 
 <details>
 <summary>Log Eksekusi Perintah `forge init`</summary>
@@ -412,9 +412,9 @@ Anda dapat melakukannya dengan mengklik tombol `Connect wallet`.
 ### Menggunakan **cast** untuk Berinteraksi
 
 Dengan tool command-line dari Foundry: [`cast`](https://book.getfoundry.sh/cast/), Anda dapat berinteraksi dengan kontrak yang telah diluncurkan, baik untuk membaca maupun menulis data di blockchain.  
-Mari kita lakukan panggilan tanpa mempublikasikan transaksi (read), lalu menandatangani (sign) dan mempublikasikan transaksi (write) ke kontrak yang telah diluncurkan.
+Mari kita lakukan panggilan tanpa mempublikasikan transaksi (read), lalu menandatangani dan mempublikasikan transaksi (write) ke kontrak yang telah diluncurkan.
 
-#### Melakukan Panggilan (call)
+#### Melakukan Panggilan
 
 Sebagai salah satu komponen utama dari toolkit Foundry, `cast` memungkinkan kita untuk berinteraksi dengan kontrak, mengirim transaksi, dan mendapatkan data on-chain menggunakan panggilan RPC Ethereum.  
 Pertama, kita akan melakukan panggilan dari sebuah akun tanpa mempublikasikan transaksi.
@@ -435,9 +435,9 @@ Isi `<PLACEHOLDERS>` berikut, lalu jalankan perintah:
 </Tabs>
 
 Anda akan menerima respons berupa `0x0000000000000000000000000000000000000000000000000000000000000000`, yang setara dengan `0` dalam format heksadesimal.  
-Hal ini masuk akal karena Anda baru saja meluncurkan kontrak NFT, namun belum ada NFT yang dicetak (minted), sehingga saldo akun Anda adalah nol.
+Hal ini masuk akal karena Anda baru saja meluncurkan kontrak NFT, namun belum ada NFT yang dicetak, sehingga saldo akun Anda adalah nol.
 
-#### Menandatangani (signing) dan Mengirim Transaksi
+#### Menandatangani dan Mengirim Transaksi
 
 Sekarang, mari kita tandatangani dan kirim transaksi dengan memanggil fungsi `mint(address)` pada kontrak `NFT` yang baru saja kita luncurkan.
 

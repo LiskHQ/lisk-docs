@@ -34,7 +34,7 @@ Jika Anda tidak memerlukan fungsionalitas tambahan ini, pertimbangkan untuk meng
 
 :::note
 Anda dapat meluncurkan **Token ERC-20 Anda Sendiri** di Lisk Mainnet dengan menggunakan proses yang sama.
-Untuk meluncurkan ke mainnet, pastikan dompet (wallet) Anda memiliki ETH yang cukup.
+Untuk meluncurkan ke mainnet, pastikan dompet Anda memiliki ETH yang cukup.
 
 Teks berikut mencakup perintah untuk Lisk dan Lisk Sepolia demi kemudahan Anda.
 Untuk informasi lebih lanjut, lihat [jaringan Lisk yang tersedia](/network-info) dan [cara menghubungkan dompet ke jaringan tersebut](/user/connecting-to-a-wallet).
@@ -189,9 +189,9 @@ contract MyCustomL2Token is IOptimismMintableERC20, ERC20 {
 ### 4. Tinjau kontrak contoh
 
 Luangkan waktu untuk meninjau kontrak contoh.
-Kontrak ini hampir sama dengan kontrak standar [`OptimismMintableERC20`](https://github.com/ethereum-optimism/optimism/blob/v1.1.4/packages/contracts-bedrock/src/universal/OptimismMintableERC20.sol), kecuali fungsi `_burn` telah dimodifikasi agar selalu gagal (revert).
+Kontrak ini hampir sama dengan kontrak standar [`OptimismMintableERC20`](https://github.com/ethereum-optimism/optimism/blob/v1.1.4/packages/contracts-bedrock/src/universal/OptimismMintableERC20.sol), kecuali fungsi `_burn` telah dimodifikasi agar selalu gagal.
 
-Kontrak untuk token kustom ini mewarisi (inherits) dari interface [`IOptimismMintableERC20`](https://github.com/ethereum-optimism/optimism/blob/v1.1.4/packages/contracts-bedrock/src/universal/IOptimismMintableERC20.sol) dan kontrak `ERC20`.
+Kontrak untuk token kustom ini mewarisi dari interface [`IOptimismMintableERC20`](https://github.com/ethereum-optimism/optimism/blob/v1.1.4/packages/contracts-bedrock/src/universal/IOptimismMintableERC20.sol) dan kontrak `ERC20`.
 Konstruktor menerima alamat dari L2 standard bridge, alamat token L1 yang sesuai, nama token ERC20, dan simbol token ERC20.
 Fungsi `mint` memungkinkan bridge me-mint token untuk pengguna.
 Karena bridge perlu mem-burn token ketika pengguna ingin me-withdraw-nya kembali ke L1, ini berarti pengguna tidak akan dapat me-withdraw token dari kontrak ini, sesuai dengan tujuan contoh ini.

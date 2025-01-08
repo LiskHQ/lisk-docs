@@ -15,7 +15,7 @@ keywords:
 
 # Cara Meluncurkan Token ERC-20 Baru di Lisk
 
-Panduan ini menjelaskan cara meluncurkan token ERC-20 baru ke Lisk. Jika Anda ingin menjembatani (bridge) token yang sudah ada dari Ethereum, silakan merujuk ke panduan [Menjembatani Token L1 ke Lisk](../add-token-to-lisk).
+Panduan ini menjelaskan cara meluncurkan token ERC-20 baru ke Lisk. Jika Anda ingin menjembatani token yang sudah ada dari Ethereum, silakan merujuk ke panduan [Menjembatani Token L1 ke Lisk](../add-token-to-lisk).
 
 :::note
 Dalam panduan ini, kita akan menggunakan Remix IDE untuk pengembangan kontrak pintar, tetapi Anda bebas memilih [framework pengembangan kontrak pintar](/category/building-on-lisk/deploying-smart-contract) lainnya untuk mengimplementasikan kontrak token Anda.

@@ -22,7 +22,7 @@ keywords:
 
 Halaman ini ditujukan untuk penerbit token yang ingin membuat kontrak ERC-20 baru di Lisk.
 Halaman ini mencakup penjelasan tentang ERC, ringkasan standar token terpenting, dan contoh cara meluncurkan token tersebut di Lisk.
-Jika Anda sudah memiliki token yang diluncurkan di jaringan Ethereum dan ingin memindahkan (bridge) token tersebut ke Lisk, silakan merujuk ke panduan [Memindahkan Token L1 ke Lisk](../add-token-to-lisk/index.md).
+Jika Anda sudah memiliki token yang diluncurkan di jaringan Ethereum dan ingin memindahkan token tersebut ke Lisk, silakan merujuk ke panduan [Memindahkan Token L1 ke Lisk](../add-token-to-lisk/index.md).
 
 ## Standar Token ERC
 
@@ -42,13 +42,13 @@ Berikut adalah daftar lengkap [proposal ERC](https://eips.ethereum.org/erc).
 
 Ringkasan beberapa standar token ERC yang menarik dapat ditemukan di bawah ini:
 
-- [ERC-20](#erc-20): standar token yang paling digunakan untuk token yang dapat dipertukarkan (fungible), meskipun agak terbatas karena kesederhanaannya.
-- [ERC-721](#erc-721): standar token paling populer untuk token yang tidak dapat dipertukarkan (non-fungible), sering digunakan untuk koleksi dan permainan.
+- [ERC-20](#erc-20): standar token yang paling digunakan untuk token yang dapat dipertukarkan, meskipun agak terbatas karena kesederhanaannya.
+- [ERC-721](#erc-721): standar token paling populer untuk token yang tidak dapat dipertukarkan, sering digunakan untuk koleksi dan permainan.
 - [ERC-1155](#erc-1155): standar untuk multi-token, memungkinkan satu kontrak merepresentasikan banyak token yang dapat dipertukarkan maupun tidak, serta mendukung operasi batch untuk efisiensi gas yang lebih baik.
 
 ## ERC-20
 
-Standar token yang paling digunakan untuk token yang dapat dipertukarkan (fungible).  
+Standar token yang paling digunakan untuk token yang dapat dipertukarkan.  
 Setiap token memiliki nilai yang sama dengan token lainnya; tidak ada token yang memiliki hak atau perilaku khusus.  
 Hal ini membuat [ERC-20](https://eips.ethereum.org/EIPS/eip-20) berguna untuk berbagai hal seperti mata uang, media pertukaran, hak suara, staking, dan lainnya.
 
@@ -70,8 +70,8 @@ Hal ini membuat [ERC-20](https://eips.ethereum.org/EIPS/eip-20) berguna untuk be
 
 ## ERC-721
 
-[ERC-721](https://eips.ethereum.org/EIPS/eip-721) adalah standar untuk merepresentasikan kepemilikan token yang tidak dapat dipertukarkan (non-fungible).  
-Non-fungible token (NFTs) digunakan untuk merepresentasikan objek unik seperti real estate atau barang koleksi (collectibles), di mana beberapa item memiliki nilai lebih tinggi dibandingkan lainnya karena kegunaan, kelangkaan, atau karakteristik individu lainnya.
+[ERC-721](https://eips.ethereum.org/EIPS/eip-721) adalah standar untuk merepresentasikan kepemilikan token yang tidak dapat dipertukarkan.  
+Non-fungible token (NFTs) digunakan untuk merepresentasikan objek unik seperti real estate atau barang koleksi, di mana beberapa item memiliki nilai lebih tinggi dibandingkan lainnya karena kegunaan, kelangkaan, atau karakteristik individu lainnya.
 
 Untuk merepresentasikan fitur unik ini secara onchain, ERC-721 menyertakan properti metadata yang menyediakan informasi tentang fitur spesifik token, seperti judul, pencipta, dan pratinjau gambar.
 

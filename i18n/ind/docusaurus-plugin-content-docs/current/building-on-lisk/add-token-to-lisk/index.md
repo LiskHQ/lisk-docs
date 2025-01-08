@@ -15,14 +15,14 @@ keywords:
   ]
 ---
 
-# Memindahkan (Bridging) Token L1 ke Lisk
+# Memindahkan Token L1 ke Lisk
 
-Halaman ini ditujukan untuk penerbit token yang sudah memiliki kontrak ERC-20 yang diluncurkan di Ethereum dan ingin men-submit token mereka untuk dipindahkan (bridging) antara Ethereum dan Lisk.
+Halaman ini ditujukan untuk penerbit token yang sudah memiliki kontrak ERC-20 yang diluncurkan di Ethereum dan ingin men-submit token mereka untuk dipindahkan antara Ethereum dan Lisk.
 Lisk menggunakan Superchain Token List sebagai referensi untuk token-token yang telah diluncurkan di Lisk.
 
 ## Superchain Token List
 
-[Superchain Token List](https://github.com/ethereum-optimism/ethereum-optimism.github.io) bertujuan membantu pengguna menemukan alamat yang benar untuk token yang dipindahkan melalui bridge (bridged token) pada setiap token native tertentu.
+[Superchain Token List](https://github.com/ethereum-optimism/ethereum-optimism.github.io) bertujuan membantu pengguna menemukan alamat yang benar untuk token yang dipindahkan melalui bridge pada setiap token native tertentu.
 
 Pastikan untuk memeriksa daftar ini agar Anda tidak menggunakan representasi token yang salah ketika memindahkan token native melalui bridge.
 
@@ -62,7 +62,7 @@ Pada protokol terdiri dari dua kontrak penting:
 Kedua kontrak ini berinteraksi satu sama lain melalui sistem `CrossDomainMessenger` untuk mengirim pesan antara Ethereum dan Lisk.
 
 [^1]:
-    Interface `IOptimismMintableERC20` adalah kumpulan (superset) dari [interface ERC-20 standar](https://eips.ethereum.org/EIPS/eip-20) dan mencakup fungsi-fungsi yang memungkinkan bridge untuk memverifikasi deposit/withdrawals serta mencetak (mint) atau membakar (burn) token sesuai kebutuhan.  
+    Interface `IOptimismMintableERC20` adalah kumpulan dari [interface ERC-20 standar](https://eips.ethereum.org/EIPS/eip-20) dan mencakup fungsi-fungsi yang memungkinkan bridge untuk memverifikasi deposit/withdrawals serta mencetak/membakar token sesuai kebutuhan.  
     Semua versi token yang dipindahkan melalui bridge harus mengimplementasikan interface ini agar dapat dipindahkan menggunakan sistem [Bridge Standar](#bridge-standar).  
     Token native tidak perlu mengimplementasikan interface ini.
 

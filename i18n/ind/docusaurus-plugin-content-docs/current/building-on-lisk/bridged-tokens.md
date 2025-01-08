@@ -1,13 +1,13 @@
 ---
 id: bridged-tokens
-title: Alamat Token yang Dipindahkan melalui Bridge (Bridged Token)
+title: Alamat Token yang Dipindahkan melalui Bridge
 sidebar_position: 2
 slug: /bridged-tokens
-description: "Halaman referensi yang mencantumkan semua token yang dipindahkan melalui bridge (bridged token) ke Lisk."
-keywords: ["Lisk", "token yang dipindahkan melalui bridge (bridged token)"]
+description: "Halaman referensi yang mencantumkan semua token yang dipindahkan melalui bridge ke Lisk."
+keywords: ["Lisk", "token yang dipindahkan melalui bridge"]
 ---
 
-# Token yang Dipindahkan melalui Bridge (Bridged Tokens)
+# Token yang Dipindahkan melalui Bridge
 
 Halaman ini merangkum token-token yang telah ditinjau secara resmi dan diluncurkan di Lisk, beserta alamat L1 yang sesuai.
 

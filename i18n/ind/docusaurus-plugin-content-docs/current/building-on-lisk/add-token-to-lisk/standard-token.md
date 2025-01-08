@@ -129,7 +129,7 @@ Namun, kelemahannya adalah Anda tidak memiliki kendali atas source code dari kon
 Selain itu, verifikasi kontrak tersebut di Blockscout tidak begitu mudah dilakukan, karena source code kontrak diperlukan untuk proses verifikasi.
 :::
 
-<!-- ## Memindahkan (Bridge) Beberapa Token
+<!-- ## Memindahkan Beberapa Token
 
 Sekarang setelah Anda memiliki token ERC-20 L2, Anda dapat memindahkan beberapa token dari L1 ke L2.
 Lihat tutorial [Memindahkan Token ERC-20 dengan Optimism SDK](https://docs.optimism.io/builders/app-developers/tutorials/cross-dom-bridge-erc20) untuk mempelajari cara memindahkan token ERC-20 L1 ke L2 dan sebaliknya menggunakan Optimism SDK. -->
