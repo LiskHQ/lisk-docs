@@ -5,17 +5,17 @@ description: Dokumentasi untuk menggunakan ethers.js, sebuah library JavaScript 
 keywords:
   [
     ethers.js,
-    JavaScript library,
-    Lisk network,
+    library JavaScript,
+    jaringan Lisk,
     Lisk mainnet,
     Lisk testnet,
-    smart contracts,
+    kontrak pintar,
     EVM-compatible,
     blockchain,
     JsonRpcProvider,
     Signer,
     ABI,
-    interacting with smart contract,
+    berinteraksi dengan kontrak pintar,
   ]
 ---
 

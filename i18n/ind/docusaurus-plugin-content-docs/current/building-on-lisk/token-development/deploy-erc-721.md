@@ -4,7 +4,7 @@ description: "Panduan Cara Meluncurkan Token ERC-721 Baru di Lisk."
 keywords:
   [
     "Lisk",
-    "Token development",
+    "Pengembangan Token",
     "Meluncurkan token",
     "ERC",
     "EIP",

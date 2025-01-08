@@ -10,7 +10,7 @@ keywords:
     "Sepolia",
     "Ethereum",
     "Lisk Sepolia",
-    "Daftar Token Optimism Superchain",
+    "daftar token Optimism Superchain",
   ]
 ---
 

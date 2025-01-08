@@ -6,17 +6,17 @@ keywords: [
     Oracle
     Oracles,
     Redstone,
-    price feeds,
-    data feeds,
-    smart contract,
+    feeds harga,
+    feeds data,
+    kontrak pintar,
     Lisk blockchain,
-    Lisk network,
+    jaringan Lisk,
     Lisk testnet,
-    Lisk test network,
-    app development,
-    dapp development,
-    build a dapp on Lisk,
-    build on Lisk,
+    jaringan uji Lisk,
+    pengembangan app,
+    pengembangan dapp,
+    membangun dapp di Lisk,
+    membangun di Lisk,
   ]
 ---
 

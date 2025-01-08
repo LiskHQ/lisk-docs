@@ -5,15 +5,15 @@ description: Tutorial yang mengajarkan cara memasang dan menjalankan Node Lisk.
 keywords:
   [
     pemasangan node Lisk,
-    running a node,
-    Lisk node,
-    run a Lisk node,
-    hardware requirements,
-    node synchronization,
-    node snapshots,
+    menjalankan node,
+    node Lisk,
+    jalankan node Lisk,
+    persyaratan perangkat keras,
+    sinkronisasi node,
+    snapshots node,
     Lisk chain,
     Lisk blockchain,
-    Lisk network,
+    jaringan Lisk,
     peluncuran node,
     Ethereum node,
   ]
