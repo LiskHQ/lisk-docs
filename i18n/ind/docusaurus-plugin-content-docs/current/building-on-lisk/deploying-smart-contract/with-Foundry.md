@@ -28,7 +28,7 @@ import TabItem from '@theme/TabItem';
 
 # Meluncurkan kontrak pintar dengan Foundry
 
-Panduan ini membahas dasar-dasar _toolchain_ pengembangan [Foundry](https://book.getfoundry.sh/) dan menjelaskan cara membuat serta meluncurkan kontrak pintar dengan Foundry ke testnet **Lisk Sepolia**.
+Panduan ini membahas dasar-dasar toolchain pengembangan [Foundry](https://book.getfoundry.sh/) dan menjelaskan cara membuat serta meluncurkan kontrak pintar dengan Foundry ke testnet **Lisk Sepolia**.
 
 :::note
 Anda dapat meluncurkan kontrak di mainnet **Lisk** dengan menggunakan proses yang sama.  
@@ -38,13 +38,13 @@ Teks berikut mencakup perintah untuk Lisk dan Lisk Sepolia demi kemudahan Anda.
 Untuk informasi lebih lanjut, lihat [jaringan Lisk yang tersedia](/network-info) dan [cara menghubungkan dompet ke jaringan tersebut](/user/connecting-to-a-wallet).
 :::
 
-Foundry adalah rangkaian _tools_ yang mumpuni untuk mengembangkan, menguji, dan men-_debug_ kontrak pintar Anda.  
-Foundry terdiri dari beberapa _tools_ individu seperti:
+Foundry adalah rangkaian tools yang mumpuni untuk mengembangkan, menguji, dan men-debug kontrak pintar Anda.  
+Foundry terdiri dari beberapa tools individu seperti:
 
-- [`forge`](https://book.getfoundry.sh/forge/): _tools_ berbasis _command-line_ yang disertakan dengan Foundry. _Forge_ digunakan untuk menguji, membangun, dan meluncurkan kontrak pintar Anda.
-- [`cast`](https://book.getfoundry.sh/cast/): _tools_ berbasis _command-line_ untuk melakukan panggilan RPC, seperti berinteraksi dengan kontrak, mengirim transaksi, dan mendapatkan data on-chain.
-- [`anvil`](https://book.getfoundry.sh/anvil/): node testnet lokal, dirancang untuk menguji perilaku kontrak dari frontend atau melalui RPC dalam _environment_ pengembangan lokal.
-- [`chisel`](https://book.getfoundry.sh/chisel/): REPL Solidity ([Read–Eval–Print Loop](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop)) untuk mencoba potongan kode Solidity pada jaringan lokal atau jaringan yang di-_fork_.
+- [`forge`](https://book.getfoundry.sh/forge/): tools berbasis command-line yang disertakan dengan Foundry. Forge digunakan untuk menguji, membangun, dan meluncurkan kontrak pintar Anda.
+- [`cast`](https://book.getfoundry.sh/cast/): tools berbasis command-line untuk melakukan panggilan RPC, seperti berinteraksi dengan kontrak, mengirim transaksi, dan mendapatkan data on-chain.
+- [`anvil`](https://book.getfoundry.sh/anvil/): node testnet lokal, dirancang untuk menguji perilaku kontrak dari frontend atau melalui RPC dalam environment pengembangan lokal.
+- [`chisel`](https://book.getfoundry.sh/chisel/): REPL Solidity ([Read–Eval–Print Loop](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop)) untuk mencoba potongan kode Solidity pada jaringan lokal atau jaringan yang di-fork.
 
 ## Prasyarat
 
@@ -70,22 +70,22 @@ Oleh karena itu, Anda perlu mendanai dompet Anda dengan ETH untuk menutupi biaya
 
 Dalam panduan ini, Anda akan meluncurkan kontrak ke Lisk Sepolia Testnet.
 
-Anda dapat men-_deposit_ token yang diperlukan menggunakan [Lisk Sepolia Bridge](https://sepolia-bridge.lisk.com/bridge/lisk-sepolia-testnet).
+Anda dapat men-deposit token yang diperlukan menggunakan [Lisk Sepolia Bridge](https://sepolia-bridge.lisk.com/bridge/lisk-sepolia-testnet).
 
 Jika dompet Anda tidak memiliki `SepoliaETH` yang cukup, gunakan salah satu faucet yang tersedia untuk Ethereum Sepolia Testnet seperti [https://sepoliafaucet.com](https://sepoliafaucet.com/) untuk menerima ETH Testnet secara gratis.  
 Kemudian, gunakan Lisk Bridge yang disebutkan sebelumnya untuk mengirim token dari **Ethereum Sepolia Testnet** ke **Lisk Sepolia Testnet**.
 
 ## Membuat Proyek
 
-Langkah pertama dalam meluncurkan kontrak pintar ke Lisk adalah menyiapkan _environment_ pengembangan Anda dengan membuat proyek Foundry.
+Langkah pertama dalam meluncurkan kontrak pintar ke Lisk adalah menyiapkan environment pengembangan Anda dengan membuat proyek Foundry.
 
-Anda dapat membuat direktori baru secara terpisah lalu menginisialisasi (_initialize_) proyek Foundry, atau Anda dapat membiarkan Foundry membuat direktori dan menginisialisasi proyek Foundry dengan menjalankan perintah berikut:
+Anda dapat membuat direktori baru secara terpisah lalu menginisialisasi (initialize) proyek Foundry, atau Anda dapat membiarkan Foundry membuat direktori dan menginisialisasi proyek Foundry dengan menjalankan perintah berikut:
 
 ```bash
 forge init foundry_app && cd foundry_app
 ```
 
-Perintah ini akan membuat folder bernama `foundry_app` dan sekaligus mengubah direktori kerja (_working directory_) terminal ke folder tersebut.
+Perintah ini akan membuat folder bernama `foundry_app` dan sekaligus mengubah direktori kerja (working directory) terminal ke folder tersebut.
 
 <details>
 <summary>Log Eksekusi Perintah `forge init`</summary>
@@ -187,12 +187,12 @@ Compiler run successful!
 
 ### **Menguji** Kontrak Pintar
 
-Dengan menguji kontrak pintar, Anda dapat memastikan bahwa kontrak pintar berperilaku sesuai harapan dan tidak ada _bug_ sebelum meluncurkannya ke Lisk.
+Dengan menguji kontrak pintar, Anda dapat memastikan bahwa kontrak pintar berperilaku sesuai harapan dan tidak ada bug sebelum meluncurkannya ke Lisk.
 
-Foundry menyediakan banyak _framework testing_ untuk mendukung Anda dalam menulis _test_ untuk kontrak pintar.  
-Lihat [Tests - Foundry Book](https://book.getfoundry.sh/forge/tests) untuk contoh dan referensi terkait _framework testing_.
+Foundry menyediakan banyak framework testing untuk mendukung Anda dalam menulis test untuk kontrak pintar.  
+Lihat [Tests - Foundry Book](https://book.getfoundry.sh/forge/tests) untuk contoh dan referensi terkait framework testing.
 
-Untuk melakukan _testing_ pada kontrak pintar `NFT`, buat file baru bernama `NFT.t.sol` di dalam direktori `test/`, dan tambahkan konten berikut:
+Untuk melakukan testing pada kontrak pintar `NFT`, buat file baru bernama `NFT.t.sol` di dalam direktori `test/`, dan tambahkan konten berikut:
 
 ```solidity title="foundry_app/test/NFT.t.sol"
 // SPDX-License-Identifier: UNLICENSED
@@ -227,7 +227,7 @@ contract NFTTest is Test {
 }
 ```
 
-Untuk menjalankan _test_, eksekusi perintah berikut. _Flag_ `-vv` akan menghasilkan informasi detail tentang _test_ yang dijalankan menggunakan perintah berikut:
+Untuk menjalankan test, eksekusi perintah berikut. Flag `-vv` akan menghasilkan informasi detail tentang test yang dijalankan menggunakan perintah berikut:
 
 ```bash
 forge test -vv
@@ -260,11 +260,11 @@ Encountered 1 failing test in test/NFT.t.sol:NFTTest
 Encountered a total of 1 failing tests, 1 tests succeeded
 ```
 
-_Test_ pertama: `testMintPass` berhasil dijalankan karena kriteria untuk fungsi `mint()` terpenuhi.  
-Kita memberikan alamat penerima ke fungsi `mint()` sebagaimana yang diminta, sehingga _test_ berhasil.
+Test pertama: `testMintPass` berhasil dijalankan karena kriteria untuk fungsi `mint()` terpenuhi.  
+Kita memberikan alamat penerima ke fungsi `mint()` sebagaimana yang diminta, sehingga test berhasil.
 
-_Test_ kedua: `testMintFail` gagal karena kita mengasumsikan bahwa alamat `alice` dan `bob` adalah sama.  
-_Log output_ yang disorot diatas menjelaskan mengapa asumsi tersebut salah.
+Test kedua: `testMintFail` gagal karena kita mengasumsikan bahwa alamat `alice` dan `bob` adalah sama.  
+Log output yang disorot diatas menjelaskan mengapa asumsi tersebut salah.
 
 ### Meluncurkan Smart Contract
 
@@ -337,9 +337,9 @@ Setelah kontrak pintar berhasil diluncurkan dan diverifikasi, Anda dapat berinte
 
 ### **Memverifikasi** Kontrak Pintar
 
-Setiap kontrak yang diluncurkan harus diverifikasi agar pengguna dan developer lainnya dapat memeriksa _source code_-nya dan memastikan bahwa _source code_ tersebut sesuai dengan _bytecode_ yang diluncurkan di blockchain.
+Setiap kontrak yang diluncurkan harus diverifikasi agar pengguna dan developer lainnya dapat memeriksa source code-nya dan memastikan bahwa source code tersebut sesuai dengan bytecode yang diluncurkan di blockchain.
 
-Selain itu, jika Anda ingin orang lain dapat berinteraksi dengan kontrak Anda melalui penjelajah blockchain seperti _interface_ [Read Contract](https://sepolia-blockscout.lisk.com/address/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=read_contract) dan [Write Contract](https://sepolia-blockscout.lisk.com/address/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=write_contract) di Blockscout, kontrak tersebut harus diverifikasi terlebih dahulu.
+Selain itu, jika Anda ingin orang lain dapat berinteraksi dengan kontrak Anda melalui penjelajah blockchain seperti interface [Read Contract](https://sepolia-blockscout.lisk.com/address/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=read_contract) dan [Write Contract](https://sepolia-blockscout.lisk.com/address/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=write_contract) di Blockscout, kontrak tersebut harus diverifikasi terlebih dahulu.
 
 Kontrak di atas **sudah diverifikasi**, sehingga Anda seharusnya dapat melihat versi Anda di penjelajah blockchain, tetapi kami tetap akan menjelaskan langkah-langkah untuk memverifikasi kontrak di Lisk Sepolia testnet.
 
@@ -411,10 +411,10 @@ Anda dapat melakukannya dengan mengklik tombol `Connect wallet`.
 
 ### Menggunakan **cast** untuk Berinteraksi
 
-Dengan _tool_ command-line dari Foundry: [`cast`](https://book.getfoundry.sh/cast/), Anda dapat berinteraksi dengan kontrak yang telah diluncurkan, baik untuk membaca maupun menulis data di blockchain.  
-Mari kita lakukan panggilan tanpa mempublikasikan transaksi (_read_), lalu menandatangani (_sign_) dan mempublikasikan transaksi (_write_) ke kontrak yang telah diluncurkan.
+Dengan tool command-line dari Foundry: [`cast`](https://book.getfoundry.sh/cast/), Anda dapat berinteraksi dengan kontrak yang telah diluncurkan, baik untuk membaca maupun menulis data di blockchain.  
+Mari kita lakukan panggilan tanpa mempublikasikan transaksi (read), lalu menandatangani (sign) dan mempublikasikan transaksi (write) ke kontrak yang telah diluncurkan.
 
-#### Melakukan Panggilan (_call_)
+#### Melakukan Panggilan (call)
 
 Sebagai salah satu komponen utama dari toolkit Foundry, `cast` memungkinkan kita untuk berinteraksi dengan kontrak, mengirim transaksi, dan mendapatkan data on-chain menggunakan panggilan RPC Ethereum.  
 Pertama, kita akan melakukan panggilan dari sebuah akun tanpa mempublikasikan transaksi.
@@ -435,9 +435,9 @@ Isi `<PLACEHOLDERS>` berikut, lalu jalankan perintah:
 </Tabs>
 
 Anda akan menerima respons berupa `0x0000000000000000000000000000000000000000000000000000000000000000`, yang setara dengan `0` dalam format heksadesimal.  
-Hal ini masuk akal karena Anda baru saja meluncurkan kontrak NFT, namun belum ada NFT yang dicetak (_minted_), sehingga saldo akun Anda adalah nol.
+Hal ini masuk akal karena Anda baru saja meluncurkan kontrak NFT, namun belum ada NFT yang dicetak (minted), sehingga saldo akun Anda adalah nol.
 
-#### Menandatangani (_signing_) dan Mengirim Transaksi
+#### Menandatangani (signing) dan Mengirim Transaksi
 
 Sekarang, mari kita tandatangani dan kirim transaksi dengan memanggil fungsi `mint(address)` pada kontrak `NFT` yang baru saja kita luncurkan.
 
@@ -458,7 +458,7 @@ Isi `<PLACEHOLDERS>` berikut, lalu jalankan perintah:
 
 :::info
 
-Karena perintah `cast send` menulis data ke blockchain, maka diperlukan _private key_ akun pengirim yang harus diberikan ke flag `--private-key`.  
+Karena perintah `cast send` menulis data ke blockchain, maka diperlukan private key akun pengirim yang harus diberikan ke flag `--private-key`.  
 Transaksi akan berhasil dikirim jika akun pengirim memiliki dana yang cukup.
 
 Hal ini tidak diperlukan untuk perintah `cast call`, karena perintah tersebut hanya mengambil data yang sudah dipublikasikan dari kontrak pintar.

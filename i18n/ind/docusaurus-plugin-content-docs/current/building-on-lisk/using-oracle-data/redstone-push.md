@@ -32,7 +32,7 @@ Data feed RedStone kompatibel dengan [AggregatorV3Interface](https://docs.chain.
 - **Kontrak Agregator**: Agregator adalah kontrak yang menerima pembaruan data berkala dari jaringan oracle.
   Agregator menyimpan data yang telah digabungkan di onchain sehingga konsumen dapat mengambilnya dan menggunakannya dalam transaksi yang sama.
   Kontrak-kontrak ini sudah diluncurkan di jaringan Lisk dan dapat langsung digunakan oleh konsumen.
-- **Konsumen (Consumer)**: Konsumen adalah aplikasi onchain atau offchain yang menggunakan data _feed_.
+- **Konsumen (Consumer)**: Konsumen adalah aplikasi onchain atau offchain yang menggunakan data feed.
   Kontrak konsumen menggunakan `AggregatorV3Interface` untuk memanggil fungsi pada kontrak proxy[^1] dari Agregator untuk mengambil data oracle.
 
 [^1]:
@@ -66,10 +66,10 @@ Jika Anda ingin meluncurkan di Lisk Sepolia Testnet, periksa panduan [Tellor](./
 
 Untuk menggunakan data RedStone di dalam kontrak Anda, impor [AggregatorV3Interface](https://docs.chain.link/data-feeds/using-data-feeds#solidity) dari Chainlink seperti yang ditunjukkan dalam contoh kontrak di bawah ini.
 
-Untuk setiap data _feed_ yang ingin Anda simpan, buat konstanta baru dengan tipe `AggregatorV3Interface`.
+Untuk setiap data feed yang ingin Anda simpan, buat konstanta baru dengan tipe `AggregatorV3Interface`.
 
-Dalam konstruktor, tetapkan konstanta yang telah didefinisikan di atas untuk menunjuk ke data _feed_ masing-masing:
-Gunakan fungsi `AggregatorV3Interface()` dan masukkan alamat kontrak data _feed_ yang sesuai sebagai parameter.
+Dalam konstruktor, tetapkan konstanta yang telah didefinisikan di atas untuk menunjuk ke data feed masing-masing:
+Gunakan fungsi `AggregatorV3Interface()` dan masukkan alamat kontrak data feed yang sesuai sebagai parameter.
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -113,7 +113,7 @@ contract RedStoneDataConsumer {
 
 ## Membaca Data
 
-Untuk membaca data dari _feeds_ harga, kita mendefinisikan fungsi-fungsi berikut dalam kontrak:
+Untuk membaca data dari feeds harga, kita mendefinisikan fungsi-fungsi berikut dalam kontrak:
 
 - `getRedStoneETHDataFeedLatestAnswer()`
 - `getRedStoneLSKDataFeedLatestAnswer()`
@@ -121,7 +121,7 @@ Untuk membaca data dari _feeds_ harga, kita mendefinisikan fungsi-fungsi berikut
 
 Di dalam fungsi-fungsi tersebut, panggil [latestRoundData](https://docs.chain.link/data-feeds/api-reference#latestrounddata) pada masing-masing data feed untuk menerima harga spot terbaru untuk token yang bersangkutan.
 
-Fungsi `latestRoundData()` me-_return_ nilai-nilai berikut:
+Fungsi `latestRoundData()` me-return nilai-nilai berikut:
 
 - `roundId`(uint80): ID dari ronde.  
   Untuk semua [data feed](#data-feeds-on-lisk), ronde selalu bernilai `1`, karena kontrak ini tidak menggunakan ronde, sesuai dengan namanya.
@@ -129,7 +129,7 @@ Fungsi `latestRoundData()` me-_return_ nilai-nilai berikut:
   Tergantung pada feed yang dipilih, `answer` menyediakan harga aset, cadangan, dan jenis data lainnya.
 - `startedAt`(uint256): Timestamp ketika ronde dimulai.
 - `updatedAt`(uint256): Timestamp ketika ronde diperbarui.
-- `answeredInRound`(uint80): _Deprecated_ - Sebelumnya digunakan ketika jawaban membutuhkan beberapa ronde untuk dihitung.
+- `answeredInRound`(uint80): Deprecated - Sebelumnya digunakan ketika jawaban membutuhkan beberapa ronde untuk dihitung.
 
 Dalam contoh ini, kita hanya akan menggunakan `answer` dan `updatedAt`.  
 Nilai `updatedAt` harus digunakan untuk memastikan bahwa `answer` cukup baru untuk digunakan oleh aplikasi Anda.  

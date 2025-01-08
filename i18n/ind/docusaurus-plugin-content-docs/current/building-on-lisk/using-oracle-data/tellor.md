@@ -24,25 +24,25 @@ keywords: [
 
 Halaman ini akan menjelaskan bagaimana aplikasi Anda dapat mengakses data oracle menggunakan Tellor.
 
-[Tellor](https://tellor.io/) adalah protokol oracle terdesentralisasi yang _immutable_, di mana pihak-pihak dapat meminta nilai data dari luar blockchain (misalnya ETH/USD, LSK/USD), dan _reporters_ bersaing untuk menambahkan nilai ini ke dalam bank data onchain.
-Input ke dalam bank data ini dijamin oleh jaringan _reporters_ yang melakukan staking terhadap token mereka.
+[Tellor](https://tellor.io/) adalah protokol oracle terdesentralisasi yang immutable, di mana pihak-pihak dapat meminta nilai data dari luar blockchain (misalnya ETH/USD, LSK/USD), dan reporters bersaing untuk menambahkan nilai ini ke dalam bank data onchain.
+Input ke dalam bank data ini dijamin oleh jaringan reporters yang melakukan staking terhadap token mereka.
 
-Tellor memanfaatkan mekanisme insentif kripto-ekonomi, memberikan hadiah kepada _reporters_ yang memberikan data jujur dan menghukum pelaku buruk melalui penerbitan token Tellor, Tributes (TRB), serta mekanisme sengketa.
+Tellor memanfaatkan mekanisme insentif kripto-ekonomi, memberikan hadiah kepada reporters yang memberikan data jujur dan menghukum pelaku buruk melalui penerbitan token Tellor, Tributes (TRB), serta mekanisme sengketa.
 
-Hal ini mendorong jaringan pelaporan data dan validasi data yang terbuka serta _permissionless_, memastikan bahwa data dapat disediakan oleh siapa saja dan diverifikasi oleh semua orang.
+Hal ini mendorong jaringan pelaporan data dan validasi data yang terbuka serta permissionless, memastikan bahwa data dapat disediakan oleh siapa saja dan diverifikasi oleh semua orang.
 
 ## Instalasi
 
-Langkah pertama yang perlu dilakukan adalah menginstal _tools_ dasar yang diperlukan untuk menggunakan Tellor sebagai oracle Anda.
+Langkah pertama yang perlu dilakukan adalah menginstal tools dasar yang diperlukan untuk menggunakan Tellor sebagai oracle Anda.
 
 Untuk menginstal [usingtellor](https://github.com/tellor-io/usingtellor), jalankan salah satu perintah berikut:
 
 - Hardhat: `npm install usingtellor`
 - Foundry: `forge install tellor-io/usingtellor`
 
-Setelah diinstal, ini memungkinkan kontrak Anda untuk _inherit_ fungsi dari kontrak 'UsingTellor'.
+Setelah diinstal, ini memungkinkan kontrak Anda untuk inherit fungsi dari kontrak 'UsingTellor'.
 
-Bagus! Sekarang _tools_ Anda siap, mari kita lakukan latihan sederhana untuk mengambil harga `eth/usd` dan `lsk/usd` dari Tellor.
+Bagus! Sekarang tools Anda siap, mari kita lakukan latihan sederhana untuk mengambil harga `eth/usd` dan `lsk/usd` dari Tellor.
 
 ## Mengimpor
 
@@ -186,13 +186,13 @@ contract MyContract is UsingTellor {
 ```
 
 Anda dapat menyesuaikan kontrak ini sesuai kebutuhan Anda.
-Contoh ini menerapkan beberapa _best-practice_[^1] untuk menggunakan Tellor dengan mengimplementasikan buffer waktu sengketa dan pemeriksaan _staleness_ data.
-Selain itu, contoh ini juga berusaha mengurangi serangan disput _back-in-time_ dengan menyimpan nilai dan timestamp terbaru dalam cache.
+Contoh ini menerapkan beberapa best-practice[^1] untuk menggunakan Tellor dengan mengimplementasikan buffer waktu sengketa dan pemeriksaan staleness data.
+Selain itu, contoh ini juga berusaha mengurangi serangan disput back-in-time dengan menyimpan nilai dan timestamp terbaru dalam cache.
 
 [^1]: Berdasarkan contoh dalam [repositori best-practice Tellor](https://github.com/tellor-io/best-practices-user/tree/main)
 
 :::tip
-Untuk gambaran umum _best-practice_ menggunakan Tellor, kunjungi [Checklist Pengguna](https://docs.tellor.io/tellor/getting-data/user-checklists) dalam dokumentasi Tellor.
+Untuk gambaran umum best-practice menggunakan Tellor, kunjungi [Checklist Pengguna](https://docs.tellor.io/tellor/getting-data/user-checklists) dalam dokumentasi Tellor.
 :::
 
 ## Meluncurkan di Lisk

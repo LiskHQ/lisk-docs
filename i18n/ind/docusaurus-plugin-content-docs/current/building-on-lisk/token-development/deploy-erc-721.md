@@ -55,15 +55,15 @@ contract MyNFT is ERC721 {
 
 Pastikan bahwa versi compiler di Remix IDE sesuai dengan versi compiler yang disebutkan di kontrak pintar: `pragma solidity ^0.8.28;`.
 
-Tekan tombol _play_ berwarna hijau di bagian atas untuk mengompilasi kontrak.
+Tekan tombol play berwarna hijau di bagian atas untuk mengompilasi kontrak.
 
 ## 5. Meluncurkan Kontrak
 
-Buka tab `Deploy & run transactions` (ikon ini terlihat seperti logo Ethereum dengan panah mengarah ke kanan). Pastikan bahwa _environment_ Anda diatur ke "Injected Provider", dompet Anda terhubung ke jaringan Lisk atau Lisk Sepolia, dan Remix memiliki akses ke dompet Anda.
+Buka tab `Deploy & run transactions` (ikon ini terlihat seperti logo Ethereum dengan panah mengarah ke kanan). Pastikan bahwa environment Anda diatur ke "Injected Provider", dompet Anda terhubung ke jaringan Lisk atau Lisk Sepolia, dan Remix memiliki akses ke dompet Anda.
 Kemudian, pilih kontrak `MyNFT` dari dropdown deployment dan klik tombol `Deploy` berwarna oranye untuk meluncurkan kontrak, lalu konfirmasikan proses peluncuran kontrak di dompet Anda yang terhubung.
 
 Periksa pesan log Remix; pesan tersebut akan mencantumkan alamat kontrak.
-Tempel alamat ini di BlockScout untuk melihat kontrak di _explorer_ blockchain Lisk:  
+Tempel alamat ini di BlockScout untuk melihat kontrak di explorer blockchain Lisk:  
 https://sepolia-blockscout.lisk.com/address/0x73e7a94dD5760d862F6FD9f8ea5D4245Bb143446
 
 Jika Anda memilih untuk meluncurkan di Lisk Mainnet, tempelkan alamat tersebut di https://blockscout.lisk.com
@@ -83,8 +83,8 @@ Anda dapat menerapkan langkah yang sama untuk memverifikasi kontrak di Lisk Main
   - (Opsional) Atur lisensi untuk kontrak Anda.
   - Pilih `Solidity (Single file)` sebagai metode verifikasi.
   - Pilih versi compiler yang sesuai untuk kontrak Anda.
-  - Nonaktifkan _code optimization_.
-  - Salin _source code_ yang telah diflatkan dari Remix dan tempelkan di bidang `Enter the Solidity Contract Code`.
+  - Nonaktifkan code optimization.
+  - Salin source code yang telah diflatkan dari Remix dan tempelkan di bidang `Enter the Solidity Contract Code`.
 - Periksa bahwa semua informasi sudah benar, lalu klik tombol `Verify and Publish` untuk memverifikasi kontrak Anda.
 
-Setelah diverifikasi, tab kode akan menyertakan ikon ✅, dan _source code_ akan dapat dilihat.
+Setelah diverifikasi, tab kode akan menyertakan ikon ✅, dan source code akan dapat dilihat.

@@ -22,7 +22,7 @@ import TabItem from '@theme/TabItem';
 
 # Berinteraksi dengan Blockchain menggunakan Viem
 
-[viem](https://viem.sh/) adalah sebuah _interface_ TypeScript untuk Ethereum yang menyediakan _low-level stateless primitives_ untuk berinteraksi dengan Ethereum.
+[viem](https://viem.sh/) adalah sebuah interface TypeScript untuk Ethereum yang menyediakan low-level stateless primitives untuk berinteraksi dengan Ethereum.
 
 Anda dapat menggunakan viem untuk berinteraksi dengan kontrak pintar yang diluncurkan di Lisk.  
 Viem menyediakan dukungan penuh untuk rantai yang diimplementasikan pada OP stack, lihat [viem.sh > OP stack](https://viem.sh/op-stack).
@@ -43,7 +43,7 @@ Sebelum mulai menggunakan viem, Anda perlu mengatur [Client](https://viem.sh/op-
 
 Untuk membaca data dari Lisk, Anda perlu membuat **Public client**.  
 
-Dengan meng-_extend_ public client menggunakan `publicActionsL2` atau `publicActionsL1`, Anda akan mendapatkan akses ke metode tambahan untuk Lisk dan rantai lain yang dibangun di atas OP stack.
+Dengan meng-extend public client menggunakan `publicActionsL2` atau `publicActionsL1`, Anda akan mendapatkan akses ke metode tambahan untuk Lisk dan rantai lain yang dibangun di atas OP stack.
 Lihat [Layer 2 extensions](https://viem.sh/op-stack/client#layer-2-extensions) untuk informasi lebih lanjut.
 
 <Tabs>
@@ -87,7 +87,7 @@ Lihat [Layer 2 extensions](https://viem.sh/op-stack/client#layer-2-extensions) u
 
 Untuk menulis data ke Lisk, Anda perlu membuat Wallet client (`createWalletClient`) dan menentukan [`Account`](https://ethereum.org/en/developers/docs/accounts/) yang akan digunakan.
 
-Dengan meng-_extend_ wallet client menggunakan `walletActionsL1` atau `walletActionsL2`, Anda akan mendapatkan akses ke metode tambahan untuk Lisk dan rantai lain yang dibangun di atas OP stack.  
+Dengan meng-extend wallet client menggunakan `walletActionsL1` atau `walletActionsL2`, Anda akan mendapatkan akses ke metode tambahan untuk Lisk dan rantai lain yang dibangun di atas OP stack.  
 Lihat [Ekstensi Layer 2](https://viem.sh/op-stack/client#layer-2-extensions) untuk informasi lebih lanjut.  
 
 <Tabs>
@@ -216,7 +216,7 @@ Selain membuat permintaan JSON-RPC (`eth_requestAccounts`) untuk mendapatkan seb
 
 Buat sebuah [public client](#public-client) dan gunakan untuk membaca serta mengakses data dari Lisk menggunakan [Public Actions](https://viem.sh/docs/actions/public/introduction) dan [OP stack public actions](https://viem.sh/op-stack/client#layer-2-extensions).
 
-Public Actions adalah metode client yang memiliki pemetaan _one-on-one_ dengan metode "public" Ethereum RPC (`eth_blockNumber`, `eth_getBalance`, dll.).
+Public Actions adalah metode client yang memiliki pemetaan one-on-one dengan metode "public" Ethereum RPC (`eth_blockNumber`, `eth_getBalance`, dll.).
 
 Sebagai contoh, Anda dapat menggunakan aksi `getBlockNumber` untuk mendapatkan blok terbaru:  
 
@@ -241,7 +241,7 @@ console.log(l1Gas);
 
 Buat sebuah [wallet client](#wallet-client) dan gunakan untuk membaca serta mengakses data dari Lisk menggunakan [Wallet Actions](https://viem.sh/docs/actions/wallet/introduction) dan [OP stack wallet actions](https://viem.sh/op-stack/client#layer-2-extensions).
 
-Wallet Actions adalah aksi yang memiliki pemetaan _one-on-one_ dengan metode "wallet" atau "signable" Ethereum RPC (`eth_requestAccounts`, `eth_sendTransaction`, dll.).
+Wallet Actions adalah aksi yang memiliki pemetaan one-on-one dengan metode "wallet" atau "signable" Ethereum RPC (`eth_requestAccounts`, `eth_sendTransaction`, dll.).
 
 Sebagai contoh, Anda dapat menggunakan aksi `sendTransaction` untuk memposting transaksi:  
 

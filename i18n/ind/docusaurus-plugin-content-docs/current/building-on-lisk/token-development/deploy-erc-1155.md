@@ -57,7 +57,7 @@ contract MyItems is ERC1155 {
 ```
 
 :::note
-Pada contoh diatas, _Gold_, _Silver_, _Sword_, dan _Shield_ adalah token yang dapat dipertukarkan (fungible token), sedangkan _Thor’s Hammer_ adalah token yang tidak dapat dipertukarkan (non-fungible token) karena kami hanya mencetak satu unit.
+Pada contoh diatas, Gold, Silver, Sword, dan Shield adalah token yang dapat dipertukarkan (fungible token), sedangkan Thor’s Hammer adalah token yang tidak dapat dipertukarkan (non-fungible token) karena kami hanya mencetak satu unit.
 :::
 
 Sebuah URI yang menunjuk ke metadata JSON dari item/token yang berbeda harus ditentukan dalam konstruktor, lihat [API kontrak ERC-1155](https://docs.openzeppelin.com/contracts/3.x/api/token/erc1155#ERC1155).
@@ -88,7 +88,7 @@ Tekan tombol play berwarna hijau di bagian atas untuk mengompilasi kontrak.
 
 ## 5. Luncurkan Kontrak
 
-Buka tab `Deploy & run transactions` (ikon ini terlihat seperti logo Ethereum dengan panah mengarah ke kanan). Pastikan bahwa _environment_ Anda diatur ke "Injected Provider", dompet Anda terhubung ke jaringan Lisk atau Lisk Sepolia, dan Remix memiliki akses ke dompet Anda.
+Buka tab `Deploy & run transactions` (ikon ini terlihat seperti logo Ethereum dengan panah mengarah ke kanan). Pastikan bahwa environment Anda diatur ke "Injected Provider", dompet Anda terhubung ke jaringan Lisk atau Lisk Sepolia, dan Remix memiliki akses ke dompet Anda.
 Kemudian, pilih kontrak `MyItems` dari dropdown deployment dan klik tombol `Deploy` berwarna oranye untuk meluncurkan kontrak.
 Akhirnya, konfirmasi deployment kontrak di dompet Anda yang terhubung.
 
@@ -112,8 +112,8 @@ Anda dapat menerapkan langkah yang sama untuk memverifikasi kontrak di Lisk Main
    - (Opsional) Atur lisensi untuk kontrak Anda.
    - Pilih `Solidity (Single file)` sebagai metode verifikasi.
    - Pilih versi compiler yang sesuai untuk kontrak Anda.
-   - Nonaktifkan _code optimization_.
-   - Salin _source code_ yang telah diflatkan dari Remix dan tempelkan di kolom `Enter the Solidity Contract Code`.
+   - Nonaktifkan code optimization.
+   - Salin source code yang telah diflatkan dari Remix dan tempelkan di kolom `Enter the Solidity Contract Code`.
 4. Periksa bahwa semua informasi sudah benar, lalu klik tombol `Verify and Publish` untuk memverifikasi kontrak Anda.
 
-Setelah diverifikasi, tab kode akan menyertakan ikon ✅, dan _source code_ akan dapat dilihat.
+Setelah diverifikasi, tab kode akan menyertakan ikon ✅, dan source code akan dapat dilihat.

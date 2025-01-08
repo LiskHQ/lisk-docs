@@ -36,7 +36,7 @@ Untuk menginstal ethers.js, jalankan perintah berikut:
 npm install --save ethers
 ```
 
-## _Setup_
+## Setup
 
 Sebelum Anda dapat mulai menggunakan ethers.js, Anda perlu mengimpornya ke dalam proyek Anda.
 
@@ -72,12 +72,12 @@ Anda dapat terhubung ke Lisk dengan menginisialisasi objek `JsonRpcProvider` bar
 </Tabs>
 
 :::note
-**Provider** (dalam ethers.js) adalah sebuah kelas yang menyediakan abstraksi untuk koneksi ke Jaringan Ethereum. Provider memberikan akses _read-only_ ke Blockchain dan statusnya.
+**Provider** (dalam ethers.js) adalah sebuah kelas yang menyediakan abstraksi untuk koneksi ke Jaringan Ethereum. Provider memberikan akses read-only ke Blockchain dan statusnya.
 :::
 
 ## Membaca data dari blockchain
 
-Setelah Anda membuat _provider_, Anda dapat menggunakannya untuk membaca data dari jaringan Lisk.
+Setelah Anda membuat provider, Anda dapat menggunakannya untuk membaca data dari jaringan Lisk.
 
 Sebagai contoh, Anda dapat menggunakan metode `getBlockNumber` untuk mendapatkan block terbaru:
 
@@ -184,7 +184,7 @@ Anda dapat menggunakan ethers.js untuk berinteraksi dengan kontrak pintar di Lis
 :::tip
 ABI dari sebuah kontrak dapat ditemukan di halaman kontrak terkait di [BlockScout](https://sepolia-blockscout.lisk.com/).
 
-Sebagai contoh, Anda dapat menggunakan ABI untuk [Kontrak Hello](https://sepolia-blockscout.lisk.com/address/0xb18eb752813c2fbedfdf2be6e5e842a85a3b8539?tab=contact_code). Cukup _scroll_ ke bagian `Contract ABI` dan salin ABI dari kontrak yang telah diluncurkan.
+Sebagai contoh, Anda dapat menggunakan ABI untuk [Kontrak Hello](https://sepolia-blockscout.lisk.com/address/0xb18eb752813c2fbedfdf2be6e5e842a85a3b8539?tab=contact_code). Cukup scroll ke bagian `Contract ABI` dan salin ABI dari kontrak yang telah diluncurkan.
 :::
 
 ```javascript title="Membaca dari kontrak"

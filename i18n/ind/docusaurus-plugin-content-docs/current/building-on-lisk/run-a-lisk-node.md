@@ -42,9 +42,9 @@ Jika Anda baru memulai dan memerlukan URL RPC, Anda dapat menggunakan endpoint g
 - **Mainnet**: `https://rpc.api.lisk.com`
 - **Testnet (Sepolia)**: `https://rpc.sepolia-api.lisk.com`
 
-**Catatan:** RPC kami memiliki _rate limit_, sehingga tidak cocok untuk aplikasi produksi.
+**Catatan:** RPC kami memiliki rate limit, sehingga tidak cocok untuk aplikasi produksi.
 
-Jika Anda ingin memperkuat aplikasi Anda dan menghindari _rate limit_ untuk pengguna Anda, silakan cek salah satu [mitra kami].
+Jika Anda ingin memperkuat aplikasi Anda dan menghindari rate limit untuk pengguna Anda, silakan cek salah satu [mitra kami].
 
 :::
 
@@ -54,7 +54,7 @@ Persyaratan sistem berikut direkomendasikan untuk menjalankan node Lisk L2.
 
 ### Memori
 
-- CPU _multi-core_ modern dengan kinerja _core_ tunggal yang baik.
+- CPU multi-core modern dengan kinerja core tunggal yang baik.
 - Mesin dengan minimal 16 GB RAM (32 GB disarankan).
 
 ### Penyimpanan
@@ -64,7 +64,7 @@ Persyaratan sistem berikut direkomendasikan untuk menjalankan node Lisk L2.
 ## Penggunaan
 
 :::note
-Saat ini belum memungkinkan untuk menjalankan node dengan _flag_ `--op-network` hingga konfigurasi untuk Lisk digabungkan ke dalam [superchain-registry](https://github.com/ethereum-optimism/superchain-registry).
+Saat ini belum memungkinkan untuk menjalankan node dengan flag `--op-network` hingga konfigurasi untuk Lisk digabungkan ke dalam [superchain-registry](https://github.com/ethereum-optimism/superchain-registry).
 
 Saat ini ada [PR terbuka](https://github.com/ethereum-optimism/superchain-registry/pull/234) untuk menambahkan konfigurasi Lisk Mainnet. Dukungan untuk Lisk Sepolia Testnet akan segera ditambahkan.
 :::
@@ -83,10 +83,10 @@ cd lisk-node
 
 1. Pastikan Anda memiliki RPC node penuh Ethereum L1 (bukan Lisk), dan atur variabel `OP_NODE_L1_ETH_RPC` dan `OP_NODE_L1_BEACON` (dalam file `.env.*`, jika menggunakan docker-compose).
    Jika Anda menjalankan node L1 sendiri, node tersebut harus disinkronkan sebelum node Lisk dapat sepenuhnya sinkron.
-2. Pastikan file _environment_ yang relevan dengan jaringan Anda (`.env.sepolia`, atau `.env.mainnet`) diatur untuk properti `env_file` dalam `docker-compose.yml`. Secara default, diatur ke `.env.mainnet`.
+2. Pastikan file environment yang relevan dengan jaringan Anda (`.env.sepolia`, atau `.env.mainnet`) diatur untuk properti `env_file` dalam `docker-compose.yml`. Secara default, diatur ke `.env.mainnet`.
 
    :::info
-   Kami saat ini mendukung menjalankan node `op-geth` atau `op-reth` bersama dengan `op-node`. Secara default, kami menjalankan node `op-geth`. Jika Anda ingin menjalankan node `op-reth`, silakan atur variabel _environment_ `CLIENT` ke `reth` sebelum memulai node.
+   Kami saat ini mendukung menjalankan node `op-geth` atau `op-reth` bersama dengan `op-node`. Secara default, kami menjalankan node `op-geth`. Jika Anda ingin menjalankan node `op-reth`, silakan atur variabel environment `CLIENT` ke `reth` sebelum memulai node.
    :::
 
 3. Jalankan:

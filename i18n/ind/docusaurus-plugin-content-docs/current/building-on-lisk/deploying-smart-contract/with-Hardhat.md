@@ -32,7 +32,7 @@ import TabItem from '@theme/TabItem';
 
 Panduan ini memerlukan Node versi 18+ yang sudah terinstal.
 
-- _Download_ [Node v18+](https://nodejs.org/en/download/)
+- Download [Node v18+](https://nodejs.org/en/download/)
 
 Jika Anda menggunakan `nvm` untuk mengelola versi Node Anda, cukup jalankan perintah: `nvm install 18`.
 
@@ -43,7 +43,7 @@ Oleh karena itu, Anda perlu mendanai dompet Anda dengan ETH untuk menutupi biaya
 
 Dalam panduan ini, Anda akan meluncurkan kontrak ke Lisk Sepolia Testnet.
 
-Anda dapat men-_deposit_ token yang diperlukan menggunakan [Lisk Bridge](https://sepolia-bridge.lisk.com/bridge/lisk-sepolia-testnet).
+Anda dapat men-deposit token yang diperlukan menggunakan [Lisk Bridge](https://sepolia-bridge.lisk.com/bridge/lisk-sepolia-testnet).
 
 Jika dompet Anda tidak memiliki `SepoliaETH` yang cukup, gunakan salah satu faucet yang tersedia untuk **Ethereum Sepolia** Testnet, seperti [https://sepoliafaucet.com](https://sepoliafaucet.com/) untuk menerima ETH Testnet secara gratis.  
 Kemudian, gunakan Lisk Bridge yang disebutkan sebelumnya untuk mengirim token dari **Ethereum Sepolia Testnet** ke **Lisk Sepolia Testnet**.
@@ -59,7 +59,7 @@ Untuk informasi lebih lanjut, lihat [jaringan Lisk yang tersedia](/network-info)
 
 ## Membuat Proyek
 
-Sebelum Anda dapat mulai meluncurkan kontrak pintar ke Lisk, Anda perlu menyiapkan _environment_ pengembangan dengan membuat proyek Node.js.
+Sebelum Anda dapat mulai meluncurkan kontrak pintar ke Lisk, Anda perlu menyiapkan environment pengembangan dengan membuat proyek Node.js.
 
 Untuk membuat proyek Node.js baru, jalankan perintah berikut:
 
@@ -81,7 +81,7 @@ Untuk membuat proyek Hardhat baru, jalankan perintah berikut:
 npx hardhat
 ```
 
-Pilih `Create a TypeScript project`, lalu tekan _Enter_ untuk mengonfirmasi direktori proyek.
+Pilih `Create a TypeScript project`, lalu tekan Enter untuk mengonfirmasi direktori proyek.
 
 Pilih `y` untuk menambahkan file `.gitignore` dan memuat proyek contoh.  
 Secara opsional, Anda dapat memutuskan untuk membagikan laporan crash dan data penggunaan dengan Hardhat.
@@ -101,7 +101,7 @@ Proses penyiapan proyek akan memakan waktu beberapa saat hingga selesai.
 Untuk meluncurkan kontrak pintar ke jaringan Lisk, Anda perlu mengonfigurasi proyek Hardhat Anda dan menambahkan jaringan Lisk.
 
 Contoh ini menggunakan [dotenv](https://www.npmjs.com/package/dotenv) untuk memuat variabel environment `WALLET_KEY` dari file `.env` ke `process.env.WALLET_KEY`.  
-Anda sebaiknya menggunakan metode serupa untuk menghindari menuliskan _private key_ secara langsung di dalam _source code_ Anda.
+Anda sebaiknya menggunakan metode serupa untuk menghindari menuliskan private key secara langsung di dalam source code Anda.
 
 ```bash
 npm install --save-dev dotenv
@@ -113,14 +113,14 @@ Setelah Anda menginstal `dotenv`, buat file `.env` dengan konten berikut:
 WALLET_KEY=<YOUR_PRIVATE_KEY>
 ```
 
-Ganti `<YOUR_PRIVATE_KEY>` dengan _private key_ dompet Anda.
+Ganti `<YOUR_PRIVATE_KEY>` dengan private key dompet Anda.
 
 :::caution
 
-`WALLET_KEY` adalah _private key_ dari dompet yang akan digunakan saat meluncurkan kontrak.  
-Ikuti instruksi dari dompet Anda untuk mendapatkan _private key_.  
+`WALLET_KEY` adalah private key dari dompet yang akan digunakan saat meluncurkan kontrak.  
+Ikuti instruksi dari dompet Anda untuk mendapatkan private key.  
 Misalnya, untuk **MetaMask**, silakan ikuti [instruksi ini](https://support.metamask.io/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key).  
-**Sangat penting untuk memastikan bahwa Anda TIDAK meng-upload _private key_ ini ke repositori publik.**
+**Sangat penting untuk memastikan bahwa Anda TIDAK meng-upload private key ini ke repositori publik.**
 
 :::
 
@@ -177,8 +177,8 @@ Untuk mengonfigurasi Hardhat agar menggunakan Lisk, tambahkan Lisk sebagai jarin
 
 ## Membuat Kontrak
 
-Untuk kemudahan dan keamanan, kita akan menggunakan _interface_ `ERC721` yang disediakan oleh [OpenZeppelin Contracts library](https://docs.openzeppelin.com/contracts/5.x/) untuk membuat kontrak pintar NFT.  
-Dengan OpenZeppelin, kita tidak perlu menulis keseluruhan _interface_ ERC-721. Sebaliknya, kita dapat mengimpor kontrak dari library dan menggunakan fungsinya.
+Untuk kemudahan dan keamanan, kita akan menggunakan interface `ERC721` yang disediakan oleh [OpenZeppelin Contracts library](https://docs.openzeppelin.com/contracts/5.x/) untuk membuat kontrak pintar NFT.  
+Dengan OpenZeppelin, kita tidak perlu menulis keseluruhan interface ERC-721. Sebaliknya, kita dapat mengimpor kontrak dari library dan menggunakan fungsinya.
 
 Untuk menambahkan libarry OpenZeppelin Contracts ke proyek Anda, jalankan perintah berikut:
 
@@ -187,7 +187,7 @@ npm install --save @openzeppelin/contracts
 ```
 
 Di proyek Anda, hapus kontrak `contracts/Lock.sol` yang dihasilkan saat proyek dibuat.  
-(Anda juga dapat menghapus file _test_ `test/Lock.ts`, tetapi Anda sebaiknya segera menambahkan _test_ Anda sendiri!).
+(Anda juga dapat menghapus file test `test/Lock.ts`, tetapi Anda sebaiknya segera menambahkan test Anda sendiri!).
 
 Tambahkan kode berikut ke file baru bernama `contracts/NFT.sol`.
 
@@ -227,14 +227,14 @@ Setelah kontrak Anda berhasil dikompilasi, Anda dapat meluncurkan kontrak ke jar
 Untuk meluncurkan kontrak ke jaringan test Lisk Sepolia, Anda perlu memodifikasi file `scripts/deploy.ts` di proyek Anda:
 
 ```ts title="scripts/deploy.ts"
-import { ethers } from 'hardhat';
+import { ethers } from "hardhat";
 
 async function main() {
-  const nft = await ethers.deployContract('NFT');
+  const nft = await ethers.deployContract("NFT");
 
   await nft.waitForDeployment();
 
-  console.log('NFT Contract Deployed at ' + nft.target);
+  console.log("NFT Contract Deployed at " + nft.target);
 }
 
 // Kami merekomendasikan pattern ini agar dapat menggunakan async/await di seluruh bagian kode.

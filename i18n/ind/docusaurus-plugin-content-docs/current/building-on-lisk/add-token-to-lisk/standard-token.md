@@ -59,28 +59,28 @@ Anda dapat menggunakan [Superchain Faucet](https://app.optimism.io/faucet?utm_so
 
 Anda memerlukan token ERC-20 L1 untuk tutorial ini.  
 Jika Anda sudah memiliki token ERC-20 L1 yang diluncurkan di Ethereum Mainnet atau Sepolia, Anda dapat melewati langkah ini.  
-Untuk Sepolia, Anda dapat menggunakan token uji coba yang berada di alamat [`0x5589BB8228C07c4e15558875fAf2B859f678d129`](https://sepolia.etherscan.io/address/0x5589BB8228C07c4e15558875fAf2B859f678d129), yang memiliki fungsi `faucet()` untuk me-_mint_ token.
+Untuk Sepolia, Anda dapat menggunakan token uji coba yang berada di alamat [`0x5589BB8228C07c4e15558875fAf2B859f678d129`](https://sepolia.etherscan.io/address/0x5589BB8228C07c4e15558875fAf2B859f678d129), yang memiliki fungsi `faucet()` untuk me-mint token.
 
 ## Membuat Token ERC-20 L2
 
 Setelah Anda memiliki token ERC-20 L1, Anda dapat menggunakan [`OptimismMintableERC20Factory`](https://github.com/ethereum-optimism/optimism/blob/186e46a47647a51a658e699e9ff047d39444c2de/packages/contracts-bedrock/contracts/universal/OptimismMintableERC20Factory.sol) untuk membuat token ERC-20 L2 yang sesuai di jaringan Lisk atau Lisk Sepolia.  
-Semua token yang dibuat oleh factory ini mengimplementasikan _interface_ `IOptimismMintableERC20` dan kompatibel dengan sistem _Bridge Standar_.  
+Semua token yang dibuat oleh factory ini mengimplementasikan interface `IOptimismMintableERC20` dan kompatibel dengan sistem Bridge Standar.  
 Untuk membuat token ERC-20 L2, lakukan langkah-langkah berikut:
 
-### 1. Tambahkan _private key_ ke _environment_ Anda
+### 1. Tambahkan private key ke environment Anda
 
-Anda memerlukan _private key_ untuk menandatangani transaksi.  
-Atur _private key_ Anda sebagai variabel _environment_ menggunakan perintah `export`.  
-Pastikan _private key_ ini sesuai dengan alamat yang memiliki ETH di jaringan Lisk atau Lisk Sepolia.
+Anda memerlukan private key untuk menandatangani transaksi.  
+Atur private key Anda sebagai variabel environment menggunakan perintah `export`.  
+Pastikan private key ini sesuai dengan alamat yang memiliki ETH di jaringan Lisk atau Lisk Sepolia.
 
 ```bash
 export TUTORIAL_PRIVATE_KEY=0x...
 ```
 
-### 2. Tambahkan URL RPC Lisk ke _environment_ Anda
+### 2. Tambahkan URL RPC Lisk ke environment Anda
 
 Anda memerlukan URL RPC untuk terhubung ke jaringan Lisk atau Lisk Sepolia.  
-Atur URL RPC Anda sebagai variabel _environment_ menggunakan perintah `export`.
+Atur URL RPC Anda sebagai variabel environment menggunakan perintah `export`.
 
 <Tabs>
   <TabItem value="mainnet" label="Lisk" >
@@ -95,10 +95,10 @@ Atur URL RPC Anda sebagai variabel _environment_ menggunakan perintah `export`.
   </TabItem>
 </Tabs>
 
-### 3. Tambahkan alamat token ERC-20 L1 Anda ke _environment_
+### 3. Tambahkan alamat token ERC-20 L1 Anda ke environment
 
 Anda perlu mengetahui alamat token ERC-20 L1 Anda untuk membuat representasi token tersebut di jaringan Lisk atau Lisk Sepolia.  
-Atur alamat token ERC-20 L1 Anda sebagai variabel _environment_ menggunakan perintah `export`.
+Atur alamat token ERC-20 L1 Anda sebagai variabel environment menggunakan perintah `export`.
 
 ```bash
 # Replace this with your L1 ERC-20 token if not using the testing token!
@@ -109,7 +109,7 @@ export TUTORIAL_L1_ERC20_ADDRESS=0x5589BB8228C07c4e15558875fAf2B859f678d129
 
 Anda sekarang dapat meluncurkan token ERC-20 L2 Anda menggunakan [`OptimismMintableERC20Factory`](https://github.com/ethereum-optimism/optimism/blob/186e46a47647a51a658e699e9ff047d39444c2de/packages/contracts-bedrock/contracts/universal/OptimismMintableERC20Factory.sol).  
 Gunakan perintah `cast` untuk memicu fungsi peluncuran pada kontrak factory.  
-Contoh perintah berikut akan membuat token dengan nama _"My Standard Demo Token"_ dan simbol _"L2TKN"_.  
+Contoh perintah berikut akan membuat token dengan nama "My Standard Demo Token" dan simbol "L2TKN".  
 Alamat token ERC-20 L2 yang dihasilkan akan dicetak di konsol.
 
 ```bash
@@ -122,11 +122,11 @@ Jika semua berjalan dengan lancar, Anda akan menerima respons berisi alamat kont
 0x891C582b83F69B7c2d3107cd73A3e491CB33962F
 ```
 
-:::note[Menggunakan _factory_ **tidak** direkomendasikan untuk _production_]
-_Factory_ memudahkan proses peluncuran kontrak secara instan.  
-Namun, kelemahannya adalah Anda tidak memiliki kendali atas _source code_ dari kontrak yang akan diluncurkan karena proses ini dilakukan oleh _factory_.
+:::note[Menggunakan factory **tidak** direkomendasikan untuk production]
+Factory memudahkan proses peluncuran kontrak secara instan.  
+Namun, kelemahannya adalah Anda tidak memiliki kendali atas source code dari kontrak yang akan diluncurkan karena proses ini dilakukan oleh factory.
 
-Selain itu, verifikasi kontrak tersebut di Blockscout tidak begitu mudah dilakukan, karena _source code_ kontrak diperlukan untuk proses verifikasi.
+Selain itu, verifikasi kontrak tersebut di Blockscout tidak begitu mudah dilakukan, karena source code kontrak diperlukan untuk proses verifikasi.
 :::
 
 <!-- ## Memindahkan (Bridge) Beberapa Token

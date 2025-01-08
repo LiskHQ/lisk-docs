@@ -27,14 +27,14 @@ Dalam tutorial ini, Anda akan belajar cara memindahkan token ERC-20 kustom dari 
 Dengan menggunakan [Sistem Bridge Standar](https://docs.optimism.io/builders/dapp-developers/bridging/standard-bridge), tutorial ini ditujukan untuk developer yang sudah memiliki token ERC-20 di Ethereum dan ingin membuat representasi token tersebut di Lisk.
 
 Pelajari langkah demi langkah cara membuat token kustom yang sesuai dengan interface [`IOptimismMintableERC20`](https://github.com/ethereum-optimism/optimism/blob/v1.1.4/packages/contracts-bedrock/src/universal/IOptimismMintableERC20.sol) sehingga dapat digunakan dengan Sistem Bridge Standar.
-Token kustom memungkinkan Anda melakukan hal-hal seperti men-_trigger_ logika tambahan setiap kali token dideposit.
+Token kustom memungkinkan Anda melakukan hal-hal seperti men-trigger logika tambahan setiap kali token dideposit.
 Jika Anda tidak memerlukan fungsionalitas tambahan ini, pertimbangkan untuk mengikuti tutorial [Meluncurkan Token ERC-20 Standar ke Lisk](./standard-token).
 
 ## Prasyarat
 
 :::note
 Anda dapat meluncurkan **Token ERC-20 Anda Sendiri** di Lisk Mainnet dengan menggunakan proses yang sama.
-Untuk meluncurkan ke mainnet, pastikan dompet (_wallet_) Anda memiliki ETH yang cukup.
+Untuk meluncurkan ke mainnet, pastikan dompet (wallet) Anda memiliki ETH yang cukup.
 
 Teks berikut mencakup perintah untuk Lisk dan Lisk Sepolia demi kemudahan Anda.
 Untuk informasi lebih lanjut, lihat [jaringan Lisk yang tersedia](/network-info) dan [cara menghubungkan dompet ke jaringan tersebut](/user/connecting-to-a-wallet).
@@ -59,15 +59,15 @@ Silakan ikuti panduan [Cara Menghubungkan Lisk ke Dompet](/user/connecting-to-a-
 
 Anda memerlukan token ERC-20 L1 untuk tutorial ini.
 Jika Anda sudah memiliki token ERC-20 L1 yang diluncurkan di Ethereum Mainnet atau Sepolia, Anda dapat melewati langkah ini.
-Untuk Sepolia, Anda dapat menggunakan token uji coba yang terletak di [`0x5589BB8228C07c4e15558875fAf2B859f678d129`](https://sepolia.etherscan.io/address/0x5589BB8228C07c4e15558875fAf2B859f678d129) yang menyertakan fungsi `faucet()` untuk me-_mint_ token.
+Untuk Sepolia, Anda dapat menggunakan token uji coba yang terletak di [`0x5589BB8228C07c4e15558875fAf2B859f678d129`](https://sepolia.etherscan.io/address/0x5589BB8228C07c4e15558875fAf2B859f678d129) yang menyertakan fungsi `faucet()` untuk me-mint token.
 
 ## Membuat Token ERC-20 L2
 
 Setelah Anda memiliki token ERC-20 L1, Anda dapat membuat token ERC-20 L2 yang sesuai di jaringan Lisk atau Lisk Sepolia.
-Tutorial ini menggunakan [Remix](https://remix.ethereum.org), sehingga Anda dapat dengan mudah meluncurkan token tanpa _framework_ seperti [Hardhat](https://hardhat.org) atau [Foundry](https://getfoundry.sh).
-Anda juga dapat mengikuti proses umum yang sama dalam _framework_ pilihan Anda jika Anda mau.
+Tutorial ini menggunakan [Remix](https://remix.ethereum.org), sehingga Anda dapat dengan mudah meluncurkan token tanpa framework seperti [Hardhat](https://hardhat.org) atau [Foundry](https://getfoundry.sh).
+Anda juga dapat mengikuti proses umum yang sama dalam framework pilihan Anda jika Anda mau.
 
-Dalam bagian ini, Anda akan membuat token ERC-20 yang dapat di-_deposit_ tetapi tidak dapat di-_withdraw_.
+Dalam bagian ini, Anda akan membuat token ERC-20 yang dapat di-deposit tetapi tidak dapat di-withdraw.
 Ini hanyalah salah satu contoh dari banyak cara untuk menyesuaikan token L2 Anda.
 
 ### 1. Buka Remix
@@ -191,10 +191,10 @@ contract MyCustomL2Token is IOptimismMintableERC20, ERC20 {
 Luangkan waktu untuk meninjau kontrak contoh.
 Kontrak ini hampir sama dengan kontrak standar [`OptimismMintableERC20`](https://github.com/ethereum-optimism/optimism/blob/v1.1.4/packages/contracts-bedrock/src/universal/OptimismMintableERC20.sol), kecuali fungsi `_burn` telah dimodifikasi agar selalu gagal (revert).
 
-Kontrak untuk token kustom ini mewarisi (_inherits_) dari interface [`IOptimismMintableERC20`](https://github.com/ethereum-optimism/optimism/blob/v1.1.4/packages/contracts-bedrock/src/universal/IOptimismMintableERC20.sol) dan kontrak `ERC20`.
+Kontrak untuk token kustom ini mewarisi (inherits) dari interface [`IOptimismMintableERC20`](https://github.com/ethereum-optimism/optimism/blob/v1.1.4/packages/contracts-bedrock/src/universal/IOptimismMintableERC20.sol) dan kontrak `ERC20`.
 Konstruktor menerima alamat dari L2 standard bridge, alamat token L1 yang sesuai, nama token ERC20, dan simbol token ERC20.
-Fungsi `mint` memungkinkan bridge me-_mint_ token untuk pengguna.
-Karena bridge perlu mem-_burn_ token ketika pengguna ingin me-_withdraw_-nya kembali ke L1, ini berarti pengguna tidak akan dapat me-_withdraw_ token dari kontrak ini, sesuai dengan tujuan contoh ini.
+Fungsi `mint` memungkinkan bridge me-mint token untuk pengguna.
+Karena bridge perlu mem-burn token ketika pengguna ingin me-withdraw-nya kembali ke L1, ini berarti pengguna tidak akan dapat me-withdraw token dari kontrak ini, sesuai dengan tujuan contoh ini.
 
 ```solidity
 /// @notice Prevents tokens from being withdrawn to L1.
@@ -219,7 +219,7 @@ Jika Anda telah menonaktifkan fitur kompilasi otomatis, Anda perlu mengompilasi 
 ### 6. Meluncurkan Kontrak
 
 Buka tab deployment (ikon berbentuk logo Ethereum dengan panah mengarah ke kanan).
-Pastikan bahwa _environment_ Anda diatur ke "Injected Provider", dompet Anda terhubung ke jaringan Lisk atau Lisk Sepolia, dan Remix memiliki akses ke dompet Anda.
+Pastikan bahwa environment Anda diatur ke "Injected Provider", dompet Anda terhubung ke jaringan Lisk atau Lisk Sepolia, dan Remix memiliki akses ke dompet Anda.
 Kemudian, pilih kontrak `MyCustomL2Token` dari dropdown deployment dan luncurkan dengan parameter berikut:
 
 ```text
@@ -237,5 +237,5 @@ Jika Anda menggunakan token uji coba yang dijelaskan pada langkah [Mendapatkan A
 
 Sekarang setelah Anda memiliki token ERC-20 L2, Anda dapat memindahkan beberapa token dari L1 ke L2.
 Lihat tutorial [Memindahkan Token ERC-20 dengan Optimism SDK](https://docs.optimism.io/builders/app-developers/tutorials/cross-dom-bridge-erc20) untuk mempelajari cara memindahkan token ERC-20 L1 Anda ke Lisk menggunakan Optimism SDK.
-Ingat bahwa langkah _withdrawal_ *tidak akan* berfungsi untuk token yang baru saja Anda buat!
+Ingat bahwa langkah withdrawal *tidak akan* berfungsi untuk token yang baru saja Anda buat!
 Hal ini sesuai dengan tujuan yang ingin ditunjukkan oleh tutorial ini. */}

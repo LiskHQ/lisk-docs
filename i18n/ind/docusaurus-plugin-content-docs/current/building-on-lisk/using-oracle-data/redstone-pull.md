@@ -23,7 +23,7 @@ keywords: [
 
 # Mengakses data dunia nyata menggunakan RedStone Oracle (Pull)
 
-Halaman ini akan menjelaskan cara Anda dapat mengakses data _oracle_ menggunakan [RedStone Pull](https://docs.redstone.finance/docs/get-started/models/redstone-pull/).
+Halaman ini akan menjelaskan cara Anda dapat mengakses data oracle menggunakan [RedStone Pull](https://docs.redstone.finance/docs/get-started/models/redstone-pull/).
 
 RedStone adalah ekosistem data yang menyediakan data yang sering diperbarui, dapat diandalkan, dan beragam untuk dApp dan kontrak pintar Anda yang diluncurkan di Lisk.
 
@@ -75,7 +75,7 @@ Dapatkan data oracle menggunakan fungsi-fungsi yang disediakan oleh EVM connecto
 
 #### Mendapatkan Satu Nilai
 
-Untuk mendapatkan satu data _feed_ harga, gunakan fungsi `getOracleNumericValueFromTxMsg()` dan berikan ID data _feed_ sebagai parameter.
+Untuk mendapatkan satu data feed harga, gunakan fungsi `getOracleNumericValueFromTxMsg()` dan berikan ID data feed sebagai parameter.
 
 ```solidity
 // SPDX-License-Identifier: UNLICENSED
@@ -104,7 +104,7 @@ contract YourContract is RapidDemoConsumerBase {
 
 #### Mendapatkan Beberapa Nilai
 
-Untuk mendapatkan data dari beberapa _feed_ harga, gunakan fungsi `getOracleNumericValuesFromTxMsg()` dan berikan array ID data _feed_ sebagai parameter.
+Untuk mendapatkan data dari beberapa feed harga, gunakan fungsi `getOracleNumericValuesFromTxMsg()` dan berikan array ID data feed sebagai parameter.
 
 ```solidity
 /**
@@ -121,7 +121,7 @@ function getLatestEthBtcPrices() public view returns (uint256[] memory) {
 
 ### Testing
 
-Untuk mengetes fungsi-fungsi yang terkait dengan EVM connector dalam kontrak Anda, maka Anda perlu me-_wrap_ kontrak menggunakan `WrapperBuilder` yang disediakan oleh paket `@redstone-finance/evm-connector`.
+Untuk mengetes fungsi-fungsi yang terkait dengan EVM connector dalam kontrak Anda, maka Anda perlu me-wrap kontrak menggunakan `WrapperBuilder` yang disediakan oleh paket `@redstone-finance/evm-connector`.
 
 ```typescript title="test/YourContract.ts"
 import { expect } from "chai";

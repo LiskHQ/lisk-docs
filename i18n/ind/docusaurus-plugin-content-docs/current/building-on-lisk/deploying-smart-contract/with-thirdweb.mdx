@@ -25,7 +25,7 @@ import TabItem from '@theme/TabItem';
 
 # Meluncurkan Kontrak Pintar dengan thirdweb
 
-[thirdweb](https://thirdweb.com/) adalah _framework_ end-to-end untuk pengembangan dan peluncuran kontrak pintar.
+[thirdweb](https://thirdweb.com/) adalah framework end-to-end untuk pengembangan dan peluncuran kontrak pintar.
 
 Kerangka ini memungkinkan developer untuk meluncurkan kontrak standar seperti ERC-20, ERC-721, atau ERC-1155, tanpa menulis satu baris kode pun.  
 Lebih banyak informasi tentang ini dapat ditemukan di bagian [thirdweb Explore](#mendeploy-kontrak-bawaan-melalui-thirdweb-explore).
@@ -64,13 +64,13 @@ Video-video berikut menjelaskan langkah-langkah untuk meluncurkan berbagai token
 ### Prasyarat
 #### Node.js v18+
 
-_Download_ dan instal [Node v18+](https://nodejs.org/en/download/).  
+Download dan instal [Node v18+](https://nodejs.org/en/download/).  
 
 Jika Anda menggunakan `nvm` untuk mengelola versi Node.js Anda, cukup jalankan perintah: `nvm install 18`.
 
 #### Menginstal dan Mengonfigurasi thirdweb
 
-Untuk mengembangkan kontrak kustom, Anda perlu men_download_ dan mengonfigurasi thirdweb.  
+Untuk mengembangkan kontrak kustom, Anda perlu men-download dan mengonfigurasi thirdweb.  
 
 1. Untuk menginstal thirdweb, jalankan perintah berikut:
     <Tabs>
@@ -87,9 +87,9 @@ Untuk mengembangkan kontrak kustom, Anda perlu men_download_ dan mengonfigurasi 
     </Tabs>
 2. [Atur API key thirdweb Anda](https://youtu.be/jYEqoIeAoBg?t=9467).
 
-#### _Login_ menggunakan API key Anda.  
+#### Login menggunakan API key Anda.  
 
-1. Langkah berikutnya adalah _login_ ke thirdweb melalui CLI. Untuk melakukannya, ketik perintah berikut:  
+1. Langkah berikutnya adalah login ke thirdweb melalui CLI. Untuk melakukannya, ketik perintah berikut:  
     ```bash
     thirdweb login
     ```
@@ -117,7 +117,7 @@ Untuk mengembangkan kontrak kustom, Anda perlu men_download_ dan mengonfigurasi 
 
 ### Membuat Proyek
 
-Langkah pertama untuk meluncurkan kontrak pintar ke Lisk adalah menyiapkan _environment_ pengembangan Anda dengan membuat sebuah proyek.  
+Langkah pertama untuk meluncurkan kontrak pintar ke Lisk adalah menyiapkan environment pengembangan Anda dengan membuat sebuah proyek.  
 thirdweb mendukung dua framework pengembangan kontrak pintar paling populer, yaitu [Foundry](https://book.getfoundry.sh/) dan [Hardhat](https://hardhat.org).
 
 Dalam panduan ini, kami menggunakan Foundry untuk pengembangan kontrak pintar.  
@@ -140,7 +140,7 @@ Langkah-langkah pembuatan proyek serupa untuk Foundry maupun Hardhat.
     ``` 
 4. Selanjutnya, pilih `Forge` sebagai framework, `NFT` sebagai nama kontrak, `ERC721` sebagai jenis kontrak pintar, dan `None` untuk opsi ekstensi.
     :::info
-    Jika Anda ingin menggunakan _framework_ Hardhat, pilih `Hardhat` sebagai pengganti `Forge` dalam dialog berikutnya.
+    Jika Anda ingin menggunakan framework Hardhat, pilih `Hardhat` sebagai pengganti `Forge` dalam dialog berikutnya.
     :::
 
     ```text
@@ -242,7 +242,7 @@ contract NFT is ERC721Base {
 
 #### **Membangun** Kontrak Pintar
 
-Setelah kode kontrak pintar siap, kontrak tersebut harus di-_build_ menggunakan thirdweb.
+Setelah kode kontrak pintar siap, kontrak tersebut harus di-build menggunakan thirdweb.
 
 1. Untuk melakukannya, cukup jalankan perintah berikut:  
     ```bash
@@ -315,7 +315,7 @@ Semua pemeriksaan berhasil dilewati, yang berarti kontrak pintar siap untuk dilu
     ✔ Open this link to deploy your contracts: https://thirdweb.com/contracts/deploy/QmSJExQJfPYFuaRZuDu9XRR2jUu9yp3kaFX3Sdc1KRWxiP
     ```
 
-3. Terminal juga akan membuka aplikasi browser yang mengarah ke URL khusus, seperti yang ter-_highlight_ diatas.  
+3. Terminal juga akan membuka aplikasi browser yang mengarah ke URL khusus, seperti yang ter-highlight diatas.  
 4. Isi formulir sesuai dengan petunjuk di bagian [Fill Parameter](https://portal.thirdweb.com/contracts/deploy/deploy-contract#Fill%20parameter).  
 5. Setelah Anda mengisi detail kontrak pintar ERC721, klik tombol `Deploy Now` dan kontrak tersebut akan dideploy ke jaringan yang dipilih dari dompet Anda.  
 
