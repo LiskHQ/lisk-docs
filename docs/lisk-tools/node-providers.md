@@ -64,15 +64,6 @@ dRPC also provides a [faucet for Lisk Sepolia](faucets.md#drpc-faucet).
 In order to use the provided endpoints, you need to [get the corresponding API keys](https://docs.drpc.org/gettingstarted/createaccount).
 :::
 
-## Tenderly
-
-[Tenderly](https://tenderly.co/) is a Web3 Development Platform which offers its tools and infrastructure across 79+ networks. Some networks, like Lisk, additionally have Node RPC support.
-
-- [Lisk Mainnet nodes by Tenderly](https://docs.tenderly.co/node/rpc-reference/lisk)
-- [Lisk Sepolia Testnet nodes by Tenderly](https://docs.tenderly.co/node/rpc-reference/lisk-sepolia)
-
-Tenderly provides a [free trier](https://tenderly.co/pricing) to user their RPC nodes.
-
 ## Moralis
 
 [Moralis](https://developers.moralis.com/chains/lisk/) APIs elevate your dapps with unmatched speed, security, and scalability across EVM-compatible chains.
@@ -94,3 +85,11 @@ To use the Moralis RPC Nodes, follow these steps:
 2. **Set up your node:** Visit the [Setting Up RPC Nodes](https://docs.moralis.com/get-your-node-api-key) guide to create and configure your RPC node.
 3. **Make your first RPC call:** Once you have your node set up, follow the [tutorial](https://docs.moralis.com/make-your-first-rpc-call) to make your first JSON-RPC call using ethers.js.
 
+## Tenderly
+
+[Tenderly](https://tenderly.co/) is a Web3 Development Platform which offers its tools and infrastructure across 79+ networks. Some networks, like Lisk, additionally have Node RPC support.
+
+- [Lisk Mainnet nodes by Tenderly](https://docs.tenderly.co/node/rpc-reference/lisk)
+- [Lisk Sepolia Testnet nodes by Tenderly](https://docs.tenderly.co/node/rpc-reference/lisk-sepolia)
+
+Tenderly provides a [free trier](https://tenderly.co/pricing) to user their RPC nodes.
