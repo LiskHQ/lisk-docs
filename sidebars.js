@@ -134,7 +134,7 @@ const sidebars = {
       collapsible: true,
       collapsed: false,
       items: [
-        'lisk-tools/api-providers',
+        'lisk-tools/node-providers',
         'lisk-tools/faucets',
         { type: 'ref', id: 'docs-user/bridges' },
         { type: 'ref', id: 'docs-user/wallets' },
