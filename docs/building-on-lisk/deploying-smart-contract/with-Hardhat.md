@@ -23,6 +23,9 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # Deploying a smart contract with Hardhat
+
+On this page, you will learn how to create, deploy and verify a smart contract with HardHat to the **Lisk Sepolia** testnet.
+
 ## Prerequisites
 
 ### Node v18+

@@ -21,6 +21,8 @@ keywords: [
 
 # Deploying a smart contract with Remix
 
+On this page, you will learn how to create, deploy and verify a smart contract with the Remix IDE to the **Lisk Sepolia** testnet.
+
 Remix Online IDE is a powerful toolset for developing, deploying, debugging, and testing Ethereum and EVM-compatible smart contracts.
 It requires no setup and can be accessed directly through the browser under https://remix.ethereum.org/.
 
@@ -54,7 +56,7 @@ You can name this file whatever you'd like, e.g., `MyNFT.sol`.
 
 ## 3. Copy the example contract
 
-Copy the following example contract into your new file:
+Copy the following example contract into your new file to deploy a simple NFT contract, or replace it with your own contract you wish to deploy:
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -115,6 +117,6 @@ You can apply the same steps for verifying a contract on Lisk Mainnet, in case y
 
 ## Interacting with the Smart Contract
 
-After [the contract is verified](#verifying-the-smart-contract), you can use the `Read Contract` and `Write Contract` tabs to interact with the deployed contract via [BlockScout](https://sepolia-blockscout.lisk.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D?tab=contract).
+After [the contract is verified](#verifying-the-smart-contract), you can use the `Read Contract` and `Write Contract` tabs to interact with the deployed contract via BlockScout: https://sepolia-blockscout.lisk.com/address/0x73e7a94dD5760d862F6FD9f8ea5D4245Bb143446?tab=contract.
 Don't forget to update the contract address in the Blockscout URL.
 You'll also need to connect your wallet first, by clicking the `Connect Wallet` button.
