@@ -132,10 +132,19 @@ In Web3 apps, blockchain data is accessed through smart contracts.
 They usually expose public functions that can be called by the app frontend to read and/or write data from/to the blockchain, similar to a classical API.
 To interact with the blockchain, there are various libraries and frameworks available, like [viem](https://viem.sh/), [web3.js](https://web3js.readthedocs.io), or [ethers.js](https://docs.ethers.io).
 
+### Testing and Deployment
+
+- local development env
+- testnets
+- continuous integration
+- monitoring
+
 ### Further regarding
 - [Introduction to Web3](https://ethereum.org/en/web3/) *by Ethereum*
 
 ## Getting started with Web3 app development
+
+### Platforms
 
 To get started with the actual development of a Web3 app, you need to be clear about the right **platform(s)** to build your Web3 app on.
 The following sections will give you an overview of the different platforms you can choose from to build your Web3 app on, including further resources and guides to get you started with the app development.
@@ -150,7 +159,6 @@ Last but not least, mobile apps allow users to access your app on the go, which 
 - [Build Web3 Mobile Apps with React Native on Lisk with thirdweb](https://blog.thirdweb.com/web3-mobile-apps/build-web3-mobile-apps-with-reactive-native-on-lisk/)
 - [Video tutorial: How to Build a Web3 Mobile App](https://www.youtube.com/watch?v=PRAsc_ocVtk) *by thirdweb*
 - [Building a mobile dApp with Flutter](https://medium.com/dash-community/building-a-mobile-dapp-with-flutter-be945c80315a)
-- [How to pay gas fees with LSK](https://blog.thirdweb.com/changelog/ts-tokenpaymasters-pay-for-gas-with-lisk-lsk-base-usdc-or-celo-cusd/) *by thirdweb*
 
 ### Web3 Web Apps
 The main advantage of web applications is that they are platform-independent and can be accessed from any device with a web browser.
@@ -182,3 +190,39 @@ Desktop apps make it difficult for users to access them on the go, as you need a
 On the other side, desktop apps shine with their performance and the ability to use the full power of the computer they are running on, and they are typically build for larger screens allowing more complex user interfaces.
 So if you application requires a lot of computing power, and/or a very complex UI that might not be fitting for a mobile screen, a desktop app can be the right choice.
  */}
+
+### Security considerations
+
+- smart contract audits
+- secure key management
+- handling user data
+- bug bounties
+
+### Onboarding Web2 users to Web3
+
+A major challenge of Web3 applications is to provide a seamless user experience for users, similar to what they are used to from Web2 applications.
+
+To onboard Web2 users to Web3, apps need to simplify the way how users interact with the app, in a way that feels natural and intuitive to them, while still providing the benefits of Web3 in a secure way.
+To aim for a smooth user experience, there are several strategies and design patterns that can be utilized:
+
+#### Account abstraction and smart accounts
+Account abstraction introduces an additional layer over the blockchain, which delegates most of the complexity of interacting with the blockchain to smart contracts.
+
+This unlocks a range of features that significantly enhance user experience:
+
+- **Signature Abstraction**: Users no longer need to manually sign transactions with private keys. Instead, smart contracts handle the signing logic, eliminating the risk of user error and phishing attacks.
+- **Fee Abstraction**: Transaction fees can be dynamically managed through smart contracts, enabling features like fee delegation and gasless transactions for specific use cases.
+- **Enhanced Security**: Multi-signature wallets, social recovery mechanisms, and custom access controls can be implemented within the smart contract, mitigating single points of failure and theft risks.
+- **Customizable Transactions**: Smart contracts can be programmed to include spending limits, time-locked transactions, and dApp-specific controls, tailoring the user experience to specific needs.
+
+##### Further reading
+- [Account abstraction: A complete overview](https://blaize.tech/blog/account-abstraction-guide/) *by Blaize*
+- [What is Account Abstraction? ERC-4337 Explained](https://blog.thirdweb.com/account-abstraction-erc4337/) *by thirdweb*
+
+#### Gasless transactions and fee management
+
+##### Further reading
+- [How to pay gas fees with LSK](https://blog.thirdweb.com/changelog/ts-tokenpaymasters-pay-for-gas-with-lisk-lsk-base-usdc-or-celo-cusd/) *by thirdweb*
+
+#### Support and community
+
