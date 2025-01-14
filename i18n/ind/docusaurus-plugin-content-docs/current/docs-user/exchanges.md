@@ -35,7 +35,7 @@ Lisk (LSK) tersedia untuk diperdagangkan di berbagai <!-- bursa terpusat dan ter
 | **Upbit** (Korea)        | 🟢 Lisk            | [LSK/KRW](https://upbit.com/exchange?code=CRIX.UPBIT.KRW-LSK)    |
 | **XT.com**               | 🟢 Lisk            | [LSK/USDT](https://www.xt.com/en/trade/lsk_usdt)<br />[LSK/BTC](https://www.xt.com/en/trade/lsk_btc) |
 | **HTX** (sebelumnya Huobi)    | 🟣 Ethereum <br/>(Dukungan Lisk segera hadir) | [LSK/USDT](https://www.htx.com.jm/trade/lsk_usdt/)             |
-| **Binance**              | 🟡 Ethereum        | [LSK/USDT](https://www.binance.com/en/trade/LSK_USDT?type=spot)<br />[LSK/BTC](https://www.binance.com/en/trade/LSK_BTC?type=spot)<br />[LSK/ETH](https://www.binance.com/en/trade/LSK_ETH?type=spot) |
+| **Binance**              | 🟡 Ethereum        | [LSK/USDT](https://www.binance.com/en/trade/LSK_USDT?type=spot)<br />[LSK/BTC](https://www.binance.com/en/trade/LSK_BTC?type=spot) |
 | **BinanceUS**            | 🟡 Ethereum        | [LSK/USDT](https://www.binance.us/spot-trade/lsk_usdt)           |
 | **Bitflyer**             | 🟡 Ethereum        | [LSK/EUR](https://bitflyer.com/fr-eu/lisk-chart)                 |
 | **Bitget**               | 🟡 Ethereum        | [LSK/USDT](https://www.bitget.com/futures/usdt/LSKUSDT)             |
