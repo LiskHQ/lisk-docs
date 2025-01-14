@@ -33,9 +33,10 @@ Lisk (LSK) tersedia untuk diperdagangkan di berbagai <!-- bursa terpusat dan ter
 | **Crypto.com**           | 🟢 Lisk            | [LSK/USD](https://crypto.com/exchange/trade/LSK_USD)             |
 | **OKX**                  | 🟢 Lisk            | [LSK/USDT](https://www.okx.com/fr/trade-spot/lsk-usdt)           |
 | **Upbit** (Korea)        | 🟢 Lisk            | [LSK/KRW](https://upbit.com/exchange?code=CRIX.UPBIT.KRW-LSK)    |
-| **XT.com**               | 🟢 Lisk            | [LSK/USDT](https://www.xt.com/en/trade/lsk_usdt)<br />[LSK/BTC](https://www.xt.com/en/trade/lsk_btc) |
+| **XT.com**               | 🟢 Lisk            | [LSK/USDT](https://www.xt.com/en/trade/lsk_usdt) |
 | **HTX** (sebelumnya Huobi)    | 🟣 Ethereum <br/>(Dukungan Lisk segera hadir) | [LSK/USDT](https://www.htx.com.jm/trade/lsk_usdt/)             |
 | **Binance**              | 🟡 Ethereum        | [LSK/USDT](https://www.binance.com/en/trade/LSK_USDT?type=spot)<br />[LSK/BTC](https://www.binance.com/en/trade/LSK_BTC?type=spot) |
+| **Binance.Japan**        | 🟡 Ethereum        | [LSK/USDT](https://www.binance.com/en-JP/trade/LSK_USDT?type=spot)<br />[LSK/BTC](https://www.binance.com/en-JP/trade/LSK_BTC?type=spot) |
 | **BinanceUS**            | 🟡 Ethereum        | [LSK/USDT](https://www.binance.us/spot-trade/lsk_usdt)           |
 | **Bitflyer**             | 🟡 Ethereum        | [LSK/EUR](https://bitflyer.com/fr-eu/lisk-chart)                 |
 | **Bitget**               | 🟡 Ethereum        | [LSK/USDT](https://www.bitget.com/futures/usdt/LSKUSDT)             |
@@ -52,6 +53,14 @@ Lisk (LSK) tersedia untuk diperdagangkan di berbagai <!-- bursa terpusat dan ter
 | **TokoCrypto** (Indo)    | 🟡 Ethereum        | [LSK/USDT](https://www.tokocrypto.com/en/trade/LSK_USDT)<br />[LSK/BTC](https://www.tokocrypto.com/en/trade/LSK_BTC)  |
 | **Zonda**                | 🟡 Ethereum        | [LSK/USDT](https://zondacrypto.com/en/exchange-rate/lisk-price-usdt)<br />[LSK/EUR](https://zondacrypto.com/en/exchange-rate/lisk-price-eur)<br />[LSK/BTC](https://zondacrypto.com/en/exchange-rate/lisk-price-btc)<br />[LSK/PLN](https://zondacrypto.com/en/exchange-rate/lisk-price-pln) |
 
+## Bursa Terdesentralisasi (DEX)
+
+| Nama                          | Jaringan yang Didukung[^1]                       |
+| :---------------------------- | :------------------------------------------ |
+| [Oku.Trade](https://oku.trade/app/lisk/trade/0xac485391eb2d7d88253a7f1ef18c37f4242d1a24) | 🟢 Lisk |
+| [Velodrome](https://velodrome.finance/swap?from=0xac485391eb2d7d88253a7f1ef18c37f4242d1a24&to=0x05d032ac25d322df992303dca074ee7392c117b9&chain0=1135&chain1=1135) | 🟢 Lisk |
+| [Uniswap](https://app.uniswap.org/explore/tokens/ethereum/0x6033f7f88332b8db6ad452b7c6d5bb643990ae3f) | 🟡 Ethereum |
+
 [^1]: Token LSK didukung pada blockchain Ethereum L1 dan Lisk L2.
 Kolom "jaringan yang didukung" menunjukkan blockchain yang digunakan oleh bursa untuk setoran & penarikan LSK. 
 Harap diperhatikan bahwa menggunakan jaringan/blockchain yang salah saat menyetor dana ke bursa dapat mengakibatkan kehilangan dana.
@@ -60,22 +69,7 @@ Harap diperhatikan bahwa menggunakan jaringan/blockchain yang salah saat menyeto
 
 | Nama                     | Jaringan yang Didukung |
 | :----------------------- |:----------------- |
-| **Binance.Japan**        | Ethereum          |
-| **BitTrade** (HTX Japan) | Ethereum          |
 | **Coincheck** (Japan)    | Ethereum          |
 | **OkCoin** (OKX Japan)   | Lisk              |
-| **YellowCard** (Afrika)  | Lisk              |
-
-## Bursa Terdesentralisasi (DEX)
-
-| Nama                          | Jaringan yang Didukung[^1]                       |
-| :---------------------------- | :------------------------------------------ |
-| [Oku.Trade](https://oku.trade/app/lisk/trade/0xac485391eb2d7d88253a7f1ef18c37f4242d1a24) | 🟢 Lisk |
-| [Uniswap](https://app.uniswap.org/explore/tokens/ethereum/0x6033f7f88332b8db6ad452b7c6d5bb643990ae3f) | 🟡 Ethereum |
-
-### Segera Hadir
-
-| Nama                          | 
-| :---------------------------- |
-| **Velodrome**                 | 
+| **YellowCard** (Africa)  | Lisk              |
 
