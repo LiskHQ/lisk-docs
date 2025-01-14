@@ -1,7 +1,7 @@
 ---
 title: Biaya
 sidebar_position: 1
-slug: /biaya
+slug: /fees
 description: Dokumentasi tentang biaya jaringan di Lisk. Halaman ini membahas detail sistem biaya dua komponen yang melibatkan biaya eksekusi L2 dan biaya data L1, serta memberikan wawasan tentang variasi biaya dan strategi penghematan biaya.
 keywords:
   [

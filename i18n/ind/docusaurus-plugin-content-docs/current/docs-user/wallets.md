@@ -1,7 +1,7 @@
 ---
 title: Dompet
 sidebar_position: 1
-slug: /user/dompet
+slug: /user/wallets
 description: 'Ringkasan tentang dompet yang paling penting yang mendukung token LSK.'
 keywords:
   [
