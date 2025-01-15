@@ -449,23 +449,32 @@
   "Lisk offers a highly efficient, lightning-fast, and easily scalable Layer 2 (L2) network built on Optimism (OP) and secured by Ethereum.": {
     "message": "Lisk menawarkan jaringan Layer 2 (L2) yang sangat efisien, sangat cepat, dan mudah diskalakan yang dibangun di atas Optimism (OP) dan diamankan oleh Ethereum."
   },
-  "EXPLORE": {
-    "message": "MENGEKSPLORASI"
+  "Explore": {
+    "message": "Jelajahi"
   },
   "Lisk offers low-cost transactions, EVM compatibility, and support for all major developer frameworks, making it the top choice for developers. Join Lisk to access essential technical materials for your development journey.": {
-    "message": "Lisk menawarkan transaksi berbiaya rendah, kompatibilitas EVM, dan dukungan untuk semua kerangka kerja pengembang utama, menjadikannya pilihan utama bagi para pengembang. Bergabunglah dengan Lisk untuk mengakses materi teknis penting bagi perjalanan pengembangan Anda."
+    "message": "Lisk menawarkan transaksi berbiaya rendah, kompatibilitas EVM, dan dukungan untuk semua framework pengembang utama, menjadikannya pilihan utama bagi para pengembang. Bergabunglah dengan Lisk untuk mengakses materi teknis penting bagi perjalanan pengembangan Anda."
   },
-  "GET STARTED": {
-    "message": "MEMULAI"
+  "Get started": {
+    "message": "Mulai"
   },
   "to support the development of products and advocate for the principles of a decentralized world and inclusivity.": {
-    "message": "untuk mendukung pengembangan produk dan mengadvokasi prinsip-prinsip dunia yang terdesentralisasi dan inklusivitas."
+    "message": "untuk mendukung pengembangan produk dan mengadvokasi prinsip-prinsip dunia yang terdesentralisasi dan inklusiv."
   },
-  "LEARN MORE": {
-    "message": "PELAJARI LEBIH LANJUT"
+  "Learn more": {
+    "message": "Pelajari lebih lanjut"
   },
   "Lisk embraces the superchain framework, offering decentralized governance and an interoperable ecosystem. We provide": {
-    "message": "Lisk menggunakan kerangka kerja superchain, menawarkan tata kelola yang terdesentralisasi dan ekosistem yang dapat dioperasikan bersama. Kami menyediakan"
+    "message": "Lisk menggunakan framework superchain, menawarkan tata kelola yang terdesentralisasi dan ekosistem yang dapat dioperasikan bersama. Kami menyediakan"
+  },
+  "Lisk embraces the superchain framework, offering decentralized ": {
+    "message": "Lisk menggunakan framework superchain, menawarkan "
+  },
+  "governance": {
+    "message": "tata kelola"
+  },
+  "and an interoperable ecosystem. We provide ": {
+    "message": "yang terdesentralisasi dan ekosistem yang dapat dioperasikan bersama. Kami menyediakan"
   },
   "grant programs": {
     "message": "program hibah"
