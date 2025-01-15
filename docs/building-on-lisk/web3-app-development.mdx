@@ -206,23 +206,43 @@ To onboard Web2 users to Web3, apps need to simplify the way how users interact 
 To aim for a smooth user experience, there are several strategies and design patterns that can be utilized:
 
 #### Account abstraction and smart accounts
-Account abstraction introduces an additional layer over the blockchain, which delegates most of the complexity of interacting with the blockchain to smart contracts.
+
+Account abstraction is a concept that introduces an additional layer over the blockchain, which delegates most of the complexity of interacting with the blockchain away from the user to smart contracts.
+It has the potential to significantly enhance the user experience of Web3 applications, as it allows users to interact with the app in a more user-friendly and secure way.
+Account abstraction is also sometimes referred to as "smart accounts" or "smart wallets", because it puts most of the logic of handling transactions and user interactions into smart contracts.
 
 This unlocks a range of features that significantly enhance user experience:
 
-- **Signature Abstraction**: Users no longer need to manually sign transactions with private keys. Instead, smart contracts handle the signing logic, eliminating the risk of user error and phishing attacks.
-- **Fee Abstraction**: Transaction fees can be dynamically managed through smart contracts, enabling features like fee delegation and gasless transactions for specific use cases.
+- **Signature Abstraction**: Users no longer need to manually sign transactions with private keys.
+Instead, smart contracts handle the signing logic, eliminating the risk of user error and phishing attacks.
 - **Enhanced Security**: Multi-signature wallets, social recovery mechanisms, and custom access controls can be implemented within the smart contract, mitigating single points of failure and theft risks.
-- **Customizable Transactions**: Smart contracts can be programmed to include spending limits, time-locked transactions, and dApp-specific controls, tailoring the user experience to specific needs.
+- **Customizable Transactions**: Smart contracts can be programmed to include spending limits, time-locked transactions, and dApp-specific controls.
+This allows to automate transactions and tailoring the user experience to specific needs.
+- **Fee Abstraction**: Transaction fees can be dynamically managed through smart contracts, enabling features like custom gas tokens and gasless transactions for specific use cases, see [Gasless transactions and fee management](#gasless-transactions-and-fee-management).
+
+On the technical side, account abstraction is implemented by the [ERC-4337 standard](https://eips.ethereum.org/EIPS/eip-4337), which defines a set of interfaces and functions that smart contracts can use to interact with the blockchain on behalf of users.
+
+It comprises the following fundamental components:
+
+- **UserOperation**: a structure that describes a transaction to be sent on behalf of a user.
+To avoid confusion, it is not named “transaction”.
+Like a transaction, it contains “sender”, “to”, “calldata”, “maxFeePerGas”, “maxPriorityFee”, “signature”, “nonce”.
+Unlike a transaction the “signature” field usage is not defined by the protocol, but by each account implementation.
+Also, it contains several other fields, described in detail in ERC-4337.
+- **Account Contract**: the user's smart account sending a user operation.
+- **EntryPoint**: a singleton contract to execute bundles of UserOperations.
+It manages the verification and execution logic for UserOperations, ensuring they are processed correctly.
+- **Bundler**: Bundlers are contracts that package UserOperations from a mempool and send them to the EntryPoint.
+Bundling is the process where a node/bundler collects multiple UserOperations and creates a single transaction to submit onchain.
+- **Account Factory**: When using a wallet for the first time, this contract specifies the creation of the smart contract wallet.
+- **Paymaster**(optional): a helper contract that agrees to pay for the transaction, instead of the sender itself.
+Paymasters can cover gas costs for users, sponsor specific transactions, or implement custom fee models, opening doors for novel use cases.
 
 ##### Further reading
 - [Account abstraction: A complete overview](https://blaize.tech/blog/account-abstraction-guide/) *by Blaize*
 - [What is Account Abstraction? ERC-4337 Explained](https://blog.thirdweb.com/account-abstraction-erc4337/) *by thirdweb*
-
-#### Gasless transactions and fee management
-
-##### Further reading
 - [How to pay gas fees with LSK](https://blog.thirdweb.com/changelog/ts-tokenpaymasters-pay-for-gas-with-lisk-lsk-base-usdc-or-celo-cusd/) *by thirdweb*
+- [How to create a Web3 mobile app with gasless transactions on Lisk](https://blog.thirdweb.com/web3-mobile-apps/build-web3-mobile-apps-with-reactive-native-on-lisk/) *by thirdweb*
 
 #### Support and community
 
