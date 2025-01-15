@@ -67,7 +67,7 @@ Harga gas transaksi adalah jumlah dari [Base Fee](https://ethereum.org/en/develo
 transaction_gas_price = l2_base_fee + l2_priority_fee
 ```
 
-Seperti Ethereum, Mainnet Lisk menggunakan mekanisme [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) untuk menetapkan Base Fee untuk transaksi (meskipun dengan [nilai parameter yang berbeda](#eip-1559-parameters) dibandingkan dengan Ethereum).
+Seperti Ethereum, Mainnet Lisk menggunakan mekanisme [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) untuk menetapkan Base Fee untuk transaksi (meskipun dengan [nilai parameter yang berbeda](/fees#parameter-eip-1559) dibandingkan dengan Ethereum).
 
 Anda dapat membaca lebih lanjut tentang cara kerja biaya gas Ethereum di [Ethereum.org](https://ethereum.org/en/developers/docs/gas/).
 

@@ -350,7 +350,7 @@ Alamat pengirim adalah [variabel global](https://solidity-by-example.org/variabl
 
 Selain itu, kita meningkatkan penghitung pesan Hello sebanyak `1` dan memancarkan event `NewHello`, seperti yang dilakukan dalam metode `execute()` pada modul Lisk L1 Hello sebelumnya.
 
-Modifier `validMessage()` yang kita definisikan di atas dalam bagian [Migrasi Verifikasi](/building-on-lisk/migration-guide#state-transition-logic) digunakan untuk memeriksa apakah pesan valid sebelum fungsi `createHello()` dijalankan.
+Modifier `validMessage()` yang kita definisikan di atas dalam bagian [Migrasi Verifikasi](/building-on-lisk/migration-guide#logika-transisi-status) digunakan untuk memeriksa apakah pesan valid sebelum fungsi `createHello()` dijalankan.
 
 ```solidity title="hello_liskl2/src/Hello.sol"
 // Fungsi untuk membuat pesan Hello baru
@@ -580,7 +580,7 @@ Migrasikan endpoint modul dengan mengimplementasikan fungsi [view] yang sesuai d
   ```
   </TabItem>
   <TabItem value="liskl2" label="Lisk L2" default>
-  Untuk getter sederhana, cukup tambahkan modifier visibilitas `public` pada variabel state (lihat [storage](#storage)).
+  Untuk getter sederhana, cukup tambahkan modifier visibilitas `public` pada variabel state (lihat [penyimpanan](#penyimpanan)).
 
   Variabel state publik dapat diakses langsung oleh pihak eksternal, tanpa perlu mengimplementasikan fungsi view yang sesuai.
   </TabItem>
@@ -622,7 +622,7 @@ Migrasikan endpoint modul dengan mengimplementasikan [fungsi view](https://solid
   ```
   </TabItem>
   <TabItem value="liskl2" label="Lisk L2" default>
-  Untuk getter sederhana, cukup tambahkan [visibility modifier](https://solidity-by-example.org/visibility/) `public` pada variabel state (lihat [storage](#storage)).
+  Untuk getter sederhana, cukup tambahkan [visibility modifier](https://solidity-by-example.org/visibility/) `public` pada variabel state (lihat [penyimpanan](#penyimpanan)).
 
   Variabel state publik dapat diakses langsung oleh pihak eksternal, tanpa perlu mengimplementasikan view function yang sesuai.
   </TabItem>
@@ -632,8 +632,8 @@ Migrasikan endpoint modul dengan mengimplementasikan [fungsi view](https://solid
 
 Sekarang kita telah mengimplementasikan kembali modul Hello dari Lisk L1 sebagai kontrak pintar di Lisk L2, maka kita bisa langsung meluncurkan kontrak Hello ke Lisk L2 dan berinteraksi dengannya.
 
-Sebelum meluncurkan kontrak pintar ke Lisk, disarankan untuk [menguji secara lokal](#testing-the-smart-contract) dengan menulis uji yang sesuai untuk kontrak pintar yang baru dibuat.
-Setelah kontrak pintar [diluncurkan](#smart-contract-deployment) ke Lisk, Anda dapat berinteraksi dengannya dengan memanggil fungsi publiknya.
+Sebelum meluncurkan kontrak pintar ke Lisk, disarankan untuk [menguji secara lokal](#menguji-kontrak-pintar) dengan menulis uji yang sesuai untuk kontrak pintar yang baru dibuat.
+Setelah kontrak pintar [diluncurkan](#peluncuran-kontrak-pintar) ke Lisk, Anda dapat berinteraksi dengannya dengan memanggil fungsi publiknya.
 
 Terakhir, Anda dapat memigrasikan plugin dan UI dari aplikasi Hello Lisk L1 agar kompatibel dengan API baru, untuk menyelesaikan proses migrasi aplikasi Lisk Anda.
 

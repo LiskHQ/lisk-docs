@@ -26,7 +26,7 @@ Lisk DAO memungkinkan setiap pemegang token LSK yang staking token mereka untuk 
 Lisk DAO memutuskan bagaimana menghabiskan dana di kas besar dan dapat mengeluarkan proposal umum mengenai parameter protokol atau arah proyek.
 
 :::info
-Setiap pemegang token LSK yang berpartisipasi dalam DAO akan diberi imbalan dengan [hadiah staking](../user/staking/overview#staking-rewards), untuk mendorong partisipasi dalam tata kelola Lisk.
+Setiap pemegang token LSK yang berpartisipasi dalam DAO akan diberi imbalan dengan [hadiah staking](../user/staking/overview#hadiah-staking), untuk mendorong partisipasi dalam tata kelola Lisk.
 :::
 
 ## Alamat Admin Lisk
@@ -110,7 +110,7 @@ Ini hanya direncanakan untuk digunakan jika komunitas memutuskan untuk membakar 
 
 ## Lisk DAO
 Lisk DAO memberikan kesempatan bagi pemegang token LSK untuk berpartisipasi dalam tata kelola keseluruhan proyek Lisk, termasuk alokasi dana, pembaruan protokol, atau arah strategis.
-Keputusan dibuat melalui [proposal](#proposals).
+Keputusan dibuat melalui [proposal](#proposal).
 
 ### Alat
 Berikut adalah alat utama untuk berpartisipasi dalam Lisk DAO:
@@ -134,7 +134,7 @@ Lisk DAO memiliki kas terkait yang terletak di kontrak [Timelock](https://blocks
 Saldo saat ini dari kas dapat diperiksa di [Lisk BlockScout Explorer](https://blockscout.lisk.com/address/0x2294A7f24187B84995A2A28112f82f07BE1BceAD?tab=tokens).
 
 Kas TIDAK dikelola oleh Onchain Foundation.
-Sebaliknya, dana dari kas hanya dapat dipindahkan melalui [proposal pendanaan](#proposal-types) yang berhasil.
+Sebaliknya, dana dari kas hanya dapat dipindahkan melalui [proposal pendanaan](#jenis-proposal) yang berhasil.
 
 Token untuk dana Lisk DAO dicetak.
 Mereka ditambahkan ke kas sesuai dengan rencana vesting berikut:
@@ -150,13 +150,13 @@ Dana DAO dapat ditingkatkan lebih lanjut di masa depan dengan tambahan 100.000.0
 :::
 
 ### Kekuatan Suara
-Setiap akun yang memegang **LSK** dapat **staking/mengunci** sejumlah token LSK untuk mendapatkan kekuatan suara dan [hadiah staking](../user/staking/overview#staking-rewards).
+Setiap akun yang memegang **LSK** dapat **staking/mengunci** sejumlah token LSK untuk mendapatkan kekuatan suara dan [hadiah staking](../user/staking/overview#hadiah-staking).
 
 Prosesnya adalah sebagai berikut:
 
 - Staking token untuk durasi penguncian tertentu (antara 2 minggu hingga 2 tahun) di [Lisk Portal](https://portal.lisk.com).
 - Menerima kekuatan suara dan hadiah staking yang sebanding dengan jumlah token yang dikunci.
-- [Delegasikan](#delegation) kekuatan suara ke diri Anda sendiri atau delegasi lain untuk menggunakannya.
+- [Delegasikan](#delegasi) kekuatan suara ke diri Anda sendiri atau delegasi lain untuk menggunakannya.
 - Setelah durasi penguncian berakhir, pengguna dapat membuka kunci token yang telah di-stake.
 
 #### Perhitungan Kekuatan suara
@@ -171,7 +171,7 @@ Ini dihitung dengan rumus `lockedAmount * (1 + remainingLockingDurationInDays/36
 Dengan demikian, kekuatan suara dapat meningkat hingga 200%, yang tercapai pada durasi penguncian maksimal 2 tahun.
 
 :::info
-Kekuatan suara untuk setiap proposal dihitung dari snapshot saat [pembuatan proposal](proposal-lifecycle#2-proposal-creation).
+Kekuatan suara untuk setiap proposal dihitung dari snapshot saat [pembuatan proposal](proposal-lifecycle#2-pembuatan-proposal).
 Oleh karena itu, menjeda durasi penguncian setelah proposal dibuat tidak akan meningkatkan kekuatan suara untuk proposal ini, tetapi untuk proposal yang akan datang.
 :::
 
@@ -180,14 +180,14 @@ Kerangka Governor mengharuskan **pendelegasian kekuatan suara** agar dapat digun
 Kekuatan suara dapat didelegasikan ke pengguna lain atau ke diri Anda sendiri.
 Delegasi mandiri adalah persyaratan jika Anda ingin memberikan suara sendiri.
 
-Delegasi dilakukan di [Tally](#tools).
+Delegasi dilakukan di [Tally](#alat).
 
 :::info
 Silakan pergi ke halaman [Delegasi](delegation) untuk mengetahui lebih lanjut tentang proses delegasi, termasuk panduan cara mendelgasikan dan bagaimana menjadi delegasi.
 :::
 
 ### Proposal
-Proposal dibuat di [Tally](#tools).
+Proposal dibuat di [Tally](#alat).
 Untuk perlindungan dari spam, persyaratan berikut harus dipenuhi untuk membuat proposal:
 
 - **Ambang Proposal**: Untuk membuat proposal, kekuatan suara dari pembuat proposal harus minimal 300.000 vpLSK, yaitu nilai yang setara dengan 100.000 LSK yang dikunci selama 2 tahun dengan jeda hitungan waktu.
@@ -206,7 +206,7 @@ Persyaratan berikut harus dipenuhi agar proposal disetujui:
 - Harus ada suara "ya" yang lebih banyak daripada suara "tidak".
 
 #### Implementasi Proposal Pendanaan
-Transfer dari [kas DAO Lisk](#treasury) dapat dilakukan oleh siapa saja, setelah proposal pendanaan disetujui.
+Transfer dari [kas DAO Lisk](#kas) dapat dilakukan oleh siapa saja, setelah proposal pendanaan disetujui.
 Proposal pendanaan bersifat **mengikat**, yang berarti tidak ada yang bisa mencegah transfer jika proposal diterima, bahkan Onchain Foundation.
 
 #### Implementasi Proposal Umum
