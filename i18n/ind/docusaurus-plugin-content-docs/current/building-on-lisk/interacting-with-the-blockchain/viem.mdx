@@ -25,7 +25,7 @@ import TabItem from '@theme/TabItem';
 [viem](https://viem.sh/) adalah sebuah interface TypeScript untuk Ethereum yang menyediakan low-level stateless primitives untuk berinteraksi dengan Ethereum.
 
 Anda dapat menggunakan viem untuk berinteraksi dengan kontrak pintar yang diluncurkan di Lisk.  
-Viem menyediakan dukungan penuh untuk rantai yang diimplementasikan pada OP stack, lihat [viem.sh > OP stack](https://viem.sh/op-stack).
+Viem menyediakan dukungan penuh untuk chain yang diimplementasikan pada OP stack, lihat [viem.sh > OP stack](https://viem.sh/op-stack).
 
 ## Instalasi
 
@@ -37,13 +37,13 @@ npm install --save viem
 
 ## Setup
 
-Sebelum mulai menggunakan viem, Anda perlu mengatur [Client](https://viem.sh/op-stack/client) dengan [Transport](https://viem.sh/docs/clients/intro.html#transports) dan [Rantai](https://viem.sh/docs/chains/introduction) yang diinginkan.
+Sebelum mulai menggunakan viem, Anda perlu mengatur [Client](https://viem.sh/op-stack/client) dengan [Transport](https://viem.sh/docs/clients/intro.html#transports) dan [Chain](https://viem.sh/docs/chains/introduction) yang diinginkan.
 
 ### Public Client
 
 Untuk membaca data dari Lisk, Anda perlu membuat **Public client**.  
 
-Dengan meng-extend public client menggunakan `publicActionsL2` atau `publicActionsL1`, Anda akan mendapatkan akses ke metode tambahan untuk Lisk dan rantai lain yang dibangun di atas OP stack.
+Dengan meng-extend public client menggunakan `publicActionsL2` atau `publicActionsL1`, Anda akan mendapatkan akses ke metode tambahan untuk Lisk dan chain lain yang dibangun di atas OP stack.
 Lihat [Layer 2 extensions](https://viem.sh/op-stack/client#layer-2-extensions) untuk informasi lebih lanjut.
 
 <Tabs>
@@ -87,7 +87,7 @@ Lihat [Layer 2 extensions](https://viem.sh/op-stack/client#layer-2-extensions) u
 
 Untuk menulis data ke Lisk, Anda perlu membuat Wallet client (`createWalletClient`) dan menentukan [`Account`](https://ethereum.org/en/developers/docs/accounts/) yang akan digunakan.
 
-Dengan meng-extend wallet client menggunakan `walletActionsL1` atau `walletActionsL2`, Anda akan mendapatkan akses ke metode tambahan untuk Lisk dan rantai lain yang dibangun di atas OP stack.  
+Dengan meng-extend wallet client menggunakan `walletActionsL1` atau `walletActionsL2`, Anda akan mendapatkan akses ke metode tambahan untuk Lisk dan chain lain yang dibangun di atas OP stack.  
 Lihat [Ekstensi Layer 2](https://viem.sh/op-stack/client#layer-2-extensions) untuk informasi lebih lanjut.  
 
 <Tabs>
