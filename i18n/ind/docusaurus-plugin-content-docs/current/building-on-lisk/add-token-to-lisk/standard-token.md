@@ -52,7 +52,7 @@ Anda perlu mendapatkan sejumlah ETH di kedua testnet ini.
 
 :::info
 Anda dapat menggunakan [ETH Sepolia Faucet](https://sepoliafaucet.com/) untuk mendapatkan ETH di Sepolia.  
-Anda dapat menggunakan [Superchain Faucet](https://app.optimism.io/faucet?utm_source=docs) untuk mendapatkan ETH di Lisk Sepolia.
+Anda dapat menggunakan [Superchain Faucet](https://app.optimism.io/faucet) untuk mendapatkan ETH di Lisk Sepolia.
 :::
 
 ### Dapatkan Alamat Token ERC-20 L1
