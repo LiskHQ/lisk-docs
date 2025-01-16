@@ -1,7 +1,7 @@
 ---
 title: Meluncurkan Token Sendiri
 slug: /building-on-lisk/add-token-to-lisk/custom-token
-description: 'Pelajari cara memindahkan token ERC-20 Anda sendiri ke Lisk menggunakan bridge standar.'
+description: 'Pelajari cara bridge token ERC-20 Anda sendiri ke Lisk menggunakan bridge standar.'
 keywords:
   [
     'kontrak ERC-20',
@@ -19,11 +19,11 @@ keywords:
 # Meluncurkan Token ERC-20 Anda Sendiri ke Lisk
 
 {/* :::info
-**Tutorial ini ditujukan untuk developer yang ingin memindahkan token ERC-20 baru mereka sendiri ke Lisk Mainnet menggunakan bridge.**
-Jika Anda ingin memindahkan token yang sudah ada, Anda dapat mengikuti tutorial [Memindahkan Token ERC-20 dengan Optimism SDK](https://docs.optimism.io/builders/app-developers/tutorials/cross-dom-bridge-erc20).
+**Tutorial ini ditujukan untuk developer yang ingin bridge token ERC-20 baru mereka sendiri ke Lisk Mainnet menggunakan bridge.**
+Jika Anda ingin bridge token yang sudah ada, Anda dapat mengikuti tutorial [Bridge Token ERC-20 dengan Optimism SDK](https://docs.optimism.io/builders/app-developers/tutorials/cross-dom-bridge-erc20).
 ::: */}
 
-Dalam tutorial ini, Anda akan belajar cara memindahkan token ERC-20 kustom dari Ethereum atau Sepolia ke jaringan Lisk atau Lisk Sepolia.
+Dalam tutorial ini, Anda akan belajar cara bridge token ERC-20 kustom dari Ethereum atau Sepolia ke jaringan Lisk atau Lisk Sepolia.
 Dengan menggunakan [Sistem Bridge Standar](https://docs.optimism.io/builders/dapp-developers/bridging/standard-bridge), tutorial ini ditujukan untuk developer yang sudah memiliki token ERC-20 di Ethereum dan ingin membuat representasi token tersebut di Lisk.
 
 Pelajari langkah demi langkah cara membuat token kustom yang sesuai dengan interface [`IOptimismMintableERC20`](https://github.com/ethereum-optimism/optimism/blob/v1.1.4/packages/contracts-bedrock/src/universal/IOptimismMintableERC20.sol) sehingga dapat digunakan dengan Sistem Bridge Standar.
@@ -235,7 +235,7 @@ Jika Anda menggunakan token uji coba yang dijelaskan pada langkah [Mendapatkan A
 
 {/* ## Bridge Beberapa Token
 
-Sekarang setelah Anda memiliki token ERC-20 L2, Anda dapat memindahkan beberapa token dari L1 ke L2.
-Lihat tutorial [Memindahkan Token ERC-20 dengan Optimism SDK](https://docs.optimism.io/builders/app-developers/tutorials/cross-dom-bridge-erc20) untuk mempelajari cara memindahkan token ERC-20 L1 Anda ke Lisk menggunakan Optimism SDK.
+Sekarang setelah Anda memiliki token ERC-20 L2, Anda dapat bridge beberapa token dari L1 ke L2.
+Lihat tutorial [Bridge Token ERC-20 dengan Optimism SDK](https://docs.optimism.io/builders/app-developers/tutorials/cross-dom-bridge-erc20) untuk mempelajari cara bridge token ERC-20 L1 Anda ke Lisk menggunakan Optimism SDK.
 Ingat bahwa langkah withdrawal *tidak akan* berfungsi untuk token yang baru saja Anda buat!
 Hal ini sesuai dengan tujuan yang ingin ditunjukkan oleh tutorial ini. */}

@@ -1,20 +1,20 @@
 ---
 id: bridged-tokens
-title: Alamat Token yang Dipindahkan melalui Bridge
+title: Alamat Token yang di-bridge
 sidebar_position: 2
 slug: /bridged-tokens
-description: "Halaman referensi yang mencantumkan semua token yang dipindahkan melalui bridge ke Lisk."
-keywords: ["Lisk", "token yang dipindahkan melalui bridge"]
+description: "Halaman referensi yang mencantumkan semua token yang di-bridge ke Lisk."
+keywords: ["Lisk", "token yang di-bridge"]
 ---
 
-# Token yang Dipindahkan melalui Bridge
+# Token yang di-bridge
 
 Halaman ini merangkum token-token yang telah ditinjau secara resmi dan diluncurkan di Lisk, beserta alamat L1 yang sesuai.
 
 Daftar ini berdasarkan [Daftar Token Superchain](https://github.com/ethereum-optimism/ethereum-optimism.github.io).
 
 :::tip
-Jika Anda ingin menambahkan token ke daftar ini, silakan lihat panduan [Memindahkan Token L1 ke Lisk](add-token-to-lisk/index.md).
+Jika Anda ingin menambahkan token ke daftar ini, silakan lihat panduan [Bridge Token L1 ke Lisk](add-token-to-lisk/index.md).
 :::
 
 ## Lisk Mainnet

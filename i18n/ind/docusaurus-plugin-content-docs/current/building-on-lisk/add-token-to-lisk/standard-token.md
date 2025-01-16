@@ -20,16 +20,16 @@ import TabItem from '@theme/TabItem';
 # Meluncurkan Token ERC-20 Standar Anda ke Lisk
 
 <!-- :::info
-**Tutorial ini ditujukan untuk developer yang ingin memindahkan token ERC-20 Standar baru ke Lisk Sepolia.**
-Jika Anda ingin memindahkan token yang sudah ada, silakan ikuti tutorial [Memindahkan Token ERC-20 dengan Optimism SDK](https://docs.optimism.io/builders/app-developers/tutorials/cross-dom-bridge-erc20).
+**Tutorial ini ditujukan untuk developer yang ingin bridge token ERC-20 Standar baru ke Lisk Sepolia.**
+Jika Anda ingin bridge token yang sudah ada, silakan ikuti tutorial [Bridge Token ERC-20 dengan Optimism SDK](https://docs.optimism.io/builders/app-developers/tutorials/cross-dom-bridge-erc20).
 ::: -->
 
-Dalam tutorial ini, Anda akan belajar cara memindahkan token ERC-20 standar dari Ethereum ke Lisk menggunakan [Sistem Bridge Standar](https://docs.optimism.io/builders/dapp-developers/bridging/standard-bridge).  
+Dalam tutorial ini, Anda akan belajar cara bridge token ERC-20 standar dari Ethereum ke Lisk menggunakan [Sistem Bridge Standar](https://docs.optimism.io/builders/dapp-developers/bridging/standard-bridge).  
 Tutorial ini ditujukan untuk developer yang sudah memiliki token ERC-20 di Ethereum dan ingin membuat representasi token tersebut di Lisk.
 
 Tutorial ini menjelaskan cara menggunakan [`OptimismMintableERC20Factory`](https://github.com/ethereum-optimism/optimism/blob/186e46a47647a51a658e699e9ff047d39444c2de/packages/contracts-bedrock/contracts/universal/OptimismMintableERC20Factory.sol) untuk meluncurkan token ERC-20 standar di jaringan Lisk atau Lisk Sepolia.  
 Token yang dibuat oleh kontrak factory ini kompatibel dengan sistem Bridge Standar dan mencakup logika dasar untuk deposit, transfer, dan withdrawals.  
-Jika Anda ingin menyertakan logika khusus di dalam token L2 Anda, lihat tutorial [Memindahkan Token ERC-20 Kustom Anda ke Lisk](./custom-token).
+Jika Anda ingin menyertakan logika khusus di dalam token L2 Anda, lihat tutorial [Bridge Token ERC-20 Kustom Anda ke Lisk](./custom-token).
 
 ## Dependensi
 
@@ -47,7 +47,7 @@ Untuk informasi lebih lanjut, lihat [jaringan Lisk yang tersedia](/network-info)
 
 ### Dapatkan ETH di Sepolia dan Lisk Sepolia
 
-Tutorial ini menjelaskan cara membuat token ERC-20 yang dipindahkan melalui bridge di Lisk Sepolia.  
+Tutorial ini menjelaskan cara membuat token ERC-20 yang di-bridge di Lisk Sepolia.  
 Anda perlu mendapatkan sejumlah ETH di kedua testnet ini.
 
 :::info
@@ -129,10 +129,10 @@ Namun, kelemahannya adalah Anda tidak memiliki kendali atas source code dari kon
 Selain itu, verifikasi kontrak tersebut di Blockscout tidak begitu mudah dilakukan, karena source code kontrak diperlukan untuk proses verifikasi.
 :::
 
-<!-- ## Memindahkan Beberapa Token
+<!-- ## Bridge Beberapa Token
 
-Sekarang setelah Anda memiliki token ERC-20 L2, Anda dapat memindahkan beberapa token dari L1 ke L2.
-Lihat tutorial [Memindahkan Token ERC-20 dengan Optimism SDK](https://docs.optimism.io/builders/app-developers/tutorials/cross-dom-bridge-erc20) untuk mempelajari cara memindahkan token ERC-20 L1 ke L2 dan sebaliknya menggunakan Optimism SDK. -->
+Sekarang setelah Anda memiliki token ERC-20 L2, Anda dapat bridge beberapa token dari L1 ke L2.
+Lihat tutorial [Bridge Token ERC-20 dengan Optimism SDK](https://docs.optimism.io/builders/app-developers/tutorials/cross-dom-bridge-erc20) untuk mempelajari cara bridge token ERC-20 L1 ke L2 dan sebaliknya menggunakan Optimism SDK. -->
 
 <!-- ## Tambahkan ke Superchain Token List
 

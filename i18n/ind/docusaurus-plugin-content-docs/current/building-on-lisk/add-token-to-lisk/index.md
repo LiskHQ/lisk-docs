@@ -15,24 +15,24 @@ keywords:
   ]
 ---
 
-# Memindahkan Token L1 ke Lisk
+# Bridge Token L1 ke Lisk
 
-Halaman ini ditujukan untuk penerbit token yang sudah memiliki kontrak ERC-20 yang diluncurkan di Ethereum dan ingin men-submit token mereka untuk dipindahkan antara Ethereum dan Lisk.
+Halaman ini ditujukan untuk penerbit token yang sudah memiliki kontrak ERC-20 yang diluncurkan di Ethereum dan ingin men-submit token mereka untuk bridge antara Ethereum dan Lisk.
 Lisk menggunakan Superchain Token List sebagai referensi untuk token-token yang telah diluncurkan di Lisk.
 
 ## Superchain Token List
 
-[Superchain Token List](https://github.com/ethereum-optimism/ethereum-optimism.github.io) bertujuan membantu pengguna menemukan alamat yang benar untuk token yang dipindahkan melalui bridge pada setiap token native tertentu.
+[Superchain Token List](https://github.com/ethereum-optimism/ethereum-optimism.github.io) bertujuan membantu pengguna menemukan alamat yang benar untuk setiap token native yang di-bridge.
 
-Pastikan untuk memeriksa daftar ini agar Anda tidak menggunakan representasi token yang salah ketika memindahkan token native melalui bridge.
+Pastikan untuk memeriksa daftar ini agar Anda tidak menggunakan representasi token yang salah ketika bridge suatu token native.
 
-<!-- TODO: Tambahkan referensi ke halaman alamat token yang dipindahkan melalui bridge setelah halaman tersebut dibuat untuk Lisk.: https://docs.optimism.io/builders/app-developers/bridging/standard-bridge#searching-the-token-list -->
+<!-- TODO: Tambahkan referensi ke halaman alamat token yang di-bridge setelah halaman tersebut dibuat untuk Lisk.: https://docs.optimism.io/builders/app-developers/bridging/standard-bridge#searching-the-token-list -->
 
 :::warning
 Lisk tidak meng-endorse token apa pun yang tercantum dalam repositori [**ethereum-optimism.github.io**](https://github.com/ethereum-optimism/ethereum-optimism.github.io), dan bergantung pada pemeriksaan awal yang telah ditetapkan serta dicantumkan di repositori tersebut.
 :::
 
-Developer yang membuat token mereka sendiri yang dipindahkan melalui bridge sebaiknya mempertimbangkan untuk [menambahkan token mereka ke dalam list](#menambahkan-token-anda-ke-superchain-token-list).
+Developer yang membuat token yang di-bridge mereka sendiri sebaiknya mempertimbangkan untuk [menambahkan token mereka ke dalam list](#menambahkan-token-anda-ke-superchain-token-list).
 
 Token yang ada di Superchain Token List akan otomatis muncul di beberapa tool seperti [Superchain Bridges UI](https://app.optimism.io/bridge).  
 Namun, token tidak secara otomatis tercantum di [Lisk Bridge UI](https://bridge.lisk.com/bridge/lisk); pencantuman tersebut tidak dijamin dan tidak bersifat otomatis.  
@@ -40,16 +40,16 @@ Peninjauan untuk Lisk Bridge dilakukan secara manual oleh tim Lisk.
 
 ## Bridge Standar
 
-Sebelum token yang berasal dari satu chain dapat dipindahkan ke chain lainnya, representasi token yang dipindahkan melalui bridge harus dibuat di sisi penerima.  
+Sebelum token yang berasal dari satu chain dapat di-bridge ke chain lainnya, representasi token yang di-bridge harus dibuat di sisi penerima.  
 [Bridge Standar](https://docs.optimism.io/builders/app-developers/bridging/standard-bridge) memungkinkan pengguna untuk mengonversi token yang berasal dari satu chain (seperti Ethereum) menjadi representasi token tersebut di chain lain (seperti Lisk).  
-Pengguna kemudian dapat mengonversi representasi token yang dipindahkan ini kembali ke token native aslinya kapan saja.
+Pengguna kemudian dapat mengonversi representasi token yang di-bridge ini kembali ke token native aslinya kapan saja.
 
 :::tip
-Mekanisme bridging ini berfungsi secara identik di kedua arah — token yang berasal dari Lisk dapat dipindahkan ke Ethereum, sama seperti token yang berasal dari Ethereum dapat dipindahkan ke Lisk.
+Mekanisme bridging ini berfungsi secara identik di kedua arah — token yang berasal dari Lisk dapat di-bridge ke Ethereum, sama seperti token yang berasal dari Ethereum dapat di-bridge ke Lisk.
 :::
 
-Representasi token yang dipindahkan melalui bridge adalah token ERC-20 yang mengimplementasikan interface `IOptimismMintableERC20`[^1].  
-Token native dapat memiliki lebih dari satu representasi yang dipindahkan melalui bridge dalam waktu yang bersamaan.  
+Representasi token yang di-bridge adalah token ERC-20 yang mengimplementasikan interface `IOptimismMintableERC20`[^1].  
+Token native dapat memiliki lebih dari satu representasi yang di-bridge dalam waktu yang bersamaan.  
 Pengguna harus selalu menentukan token yang ingin mereka gunakan saat menggunakan bridge; lihat [Superchain Token List](#superchain-token-list). Representasi token yang berbeda untuk token native yang sama dianggap sebagai token yang sepenuhnya independen.
 
 Bridge Standar adalah kontrak pintar sederhana dengan fungsionalitas untuk memindahkan token ERC-20 antara Lisk dan Ethereum.
@@ -63,7 +63,7 @@ Kedua kontrak ini berinteraksi satu sama lain melalui sistem `CrossDomainMesseng
 
 [^1]:
     Interface `IOptimismMintableERC20` adalah kumpulan dari [interface ERC-20 standar](https://eips.ethereum.org/EIPS/eip-20) dan mencakup fungsi-fungsi yang memungkinkan bridge untuk memverifikasi deposit/withdrawals serta mencetak/membakar token sesuai kebutuhan.  
-    Semua versi token yang dipindahkan melalui bridge harus mengimplementasikan interface ini agar dapat dipindahkan menggunakan sistem [Bridge Standar](#bridge-standar).  
+    Semua versi token yang di-bridge harus mengimplementasikan interface ini agar dapat di-bridge menggunakan sistem [Bridge Standar](#bridge-standar).  
     Token native tidak perlu mengimplementasikan interface ini.
 
 ## Menambahkan Token Anda ke Superchain Token List

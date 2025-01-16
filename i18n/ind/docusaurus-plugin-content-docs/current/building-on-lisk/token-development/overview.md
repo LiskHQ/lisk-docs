@@ -22,7 +22,7 @@ keywords:
 
 Halaman ini ditujukan untuk penerbit token yang ingin membuat kontrak ERC-20 baru di Lisk.
 Halaman ini mencakup penjelasan tentang ERC, ringkasan standar token terpenting, dan contoh cara meluncurkan token tersebut di Lisk.
-Jika Anda sudah memiliki token yang diluncurkan di jaringan Ethereum dan ingin memindahkan token tersebut ke Lisk, silakan merujuk ke panduan [Memindahkan Token L1 ke Lisk](../add-token-to-lisk/index.md).
+Jika Anda sudah memiliki token yang diluncurkan di jaringan Ethereum dan ingin bridge token tersebut ke Lisk, silakan merujuk ke panduan [Bridge Token L1 ke Lisk](../add-token-to-lisk/index.md).
 
 ## Standar Token ERC
 
