@@ -33,9 +33,10 @@ Lisk (LSK) is available for trading on various <!-- decentralized and centralize
 | **Crypto.com**           | 🟢 Lisk            | [LSK/USD](https://crypto.com/exchange/trade/LSK_USD)          |
 | **OKX**                  | 🟢 Lisk            | [LSK/USDT](https://www.okx.com/fr/trade-spot/lsk-usdt)        |
 | **Upbit** (Korea)        | 🟢 Lisk            | [LSK/KRW](https://upbit.com/exchange?code=CRIX.UPBIT.KRW-LSK) |
-| **XT.com**               | 🟢 Lisk            | [LSK/USDT](https://www.xt.com/en/trade/lsk_usdt)<br />[LSK/BTC](https://www.xt.com/en/trade/lsk_btc) |
-| **HTX** (formerly Houbi) | 🟣 Ethereum <br/>(Lisk support coming soon) | [LSK/USDT](https://www.htx.com.jm/trade/lsk_usdt/)            |
-| **Binance**              | 🟡 Ethereum        | [LSK/USDT](https://www.binance.com/en/trade/LSK_USDT?type=spot)<br />[LSK/BTC](https://www.binance.com/en/trade/LSK_BTC?type=spot)<br />[LSK/ETH](https://www.binance.com/en/trade/LSK_ETH?type=spot) |
+| **XT.com**               | 🟢 Lisk            | [LSK/USDT](https://www.xt.com/en/trade/lsk_usdt) |
+| **HTX** (formerly Huobi) | 🟣 Ethereum <br/>(Lisk support coming soon) | [LSK/USDT](https://www.htx.com.jm/trade/lsk_usdt/)            |
+| **Binance**              | 🟡 Ethereum        | [LSK/USDT](https://www.binance.com/en/trade/LSK_USDT?type=spot)<br />[LSK/BTC](https://www.binance.com/en/trade/LSK_BTC?type=spot) |
+| **Binance.Japan**        | 🟡 Ethereum        | [LSK/USDT](https://www.binance.com/en-JP/trade/LSK_USDT?type=spot)<br />[LSK/BTC](https://www.binance.com/en-JP/trade/LSK_BTC?type=spot) |
 | **BinanceUS**            | 🟡 Ethereum        | [LSK/USDT](https://www.binance.us/spot-trade/lsk_usdt)        |
 | **Bitflyer**             | 🟡 Ethereum        | [LSK/EUR](https://bitflyer.com/fr-eu/lisk-chart)              |
 | **Bitget**               | 🟡 Ethereum        | [LSK/USDT](https://www.bitget.com/futures/usdt/LSKUSDT)          |
@@ -53,31 +54,23 @@ Lisk (LSK) is available for trading on various <!-- decentralized and centralize
 | **Zonda**                | 🟡 Ethereum        | [LSK/USDT](https://zondacrypto.com/en/exchange-rate/lisk-price-usdt)<br />[LSK/EUR](https://zondacrypto.com/en/exchange-rate/lisk-price-eur)<br />[LSK/BTC](https://zondacrypto.com/en/exchange-rate/lisk-price-btc)<br />[LSK/PLN](https://zondacrypto.com/en/exchange-rate/lisk-price-pln) |
 
 
-[^1]: The LSK token is supported on both the Ethereum L1 and the Lisk L2 blockchains.
-The "supported network" field indicates the blockchain being used by the exchange for deposits & withdrawals of LSK. 
-Please note that using the wrong network/blockchain when depositing funds to an exchange could result in lost funds.
-
-### Coming soon
-
-| Name                     | Supported network |
-| :----------------------- |:----------------- |
-| **Binance.Japan**        | Ethereum          |
-| **BitTrade** (HTX Japan) | Ethereum          |
-| **Coincheck** (Japan)    | Ethereum          |
-| **OkCoin** (OKX Japan)   | Lisk              |
-| **YellowCard** (Africa)  | Lisk              |
-
 ## Decentralized Exchanges (DEX)
 
 | Name                          | Supported network[^1]                       |
 | :---------------------------- | :------------------------------------------ |
 | [Oku.Trade](https://oku.trade/app/lisk/trade/0xac485391eb2d7d88253a7f1ef18c37f4242d1a24) | 🟢 Lisk |
+| [Velodrome](https://velodrome.finance/swap?from=0xac485391eb2d7d88253a7f1ef18c37f4242d1a24&to=0x05d032ac25d322df992303dca074ee7392c117b9&chain0=1135&chain1=1135) | 🟢 Lisk |
 | [Uniswap](https://app.uniswap.org/explore/tokens/ethereum/0x6033f7f88332b8db6ad452b7c6d5bb643990ae3f) | 🟡 Ethereum |
 
-### Coming soon
+[^1]: The LSK token is supported on both the Ethereum L1 and the Lisk L2 blockchains.
+The "supported network" field indicates the blockchain being used by the exchange for deposits & withdrawals of LSK. 
+Please note that using the wrong network/blockchain when depositing funds to an exchange could result in lost funds.
 
-| Name                          | 
-| :---------------------------- |
-| **Velodrome**                 | 
+## Coming soon
 
+| Name                     | Supported network |
+| :----------------------- |:----------------- |
+| **Coincheck** (Japan)    | Ethereum          |
+| **OkCoin** (OKX Japan)   | Lisk              |
+| **YellowCard** (Africa)  | Lisk              |
 
