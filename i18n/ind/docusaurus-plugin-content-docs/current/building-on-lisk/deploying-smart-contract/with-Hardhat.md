@@ -119,7 +119,7 @@ Ganti `<YOUR_PRIVATE_KEY>` dengan private key dompet Anda.
 
 `WALLET_KEY` adalah private key dari dompet yang akan digunakan saat meluncurkan kontrak.  
 Ikuti instruksi dari dompet Anda untuk mendapatkan private key.  
-Misalnya, untuk **MetaMask**, silakan ikuti [instruksi ini](https://support.metamask.io/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key).  
+Misalnya, untuk **MetaMask**, silakan ikuti [instruksi ini](https://support.metamask.io/configure/accounts/how-to-export-an-accounts-private-key/).  
 **Sangat penting untuk memastikan bahwa Anda TIDAK meng-upload private key ini ke repositori publik.**
 
 :::
