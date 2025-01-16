@@ -72,7 +72,7 @@ To add your token to the list, perform the following steps.
 
 ### Step 1: Deploy your token on Lisk
 Select your preferred bridging framework and use it to deploy an ERC-20 for your token on Lisk.
-We recommend you use the framework provided by Lisk's [standard bridge](#the-standard-bridge) contracts and, furthermore, deploy your token using the [OptimismMintableERC20Factory](https://docs.lisk.com/contracts#lisk-network-l2). 
+We recommend you use the framework provided by Lisk's [standard bridge](#the-standard-bridge) contracts and, furthermore, deploy your token using the [OptimismMintableERC20Factory](../contracts.mdx#lisk-network-l2). 
 Deploying your token on Lisk in this manner provides us with guarantees that will smooth the approval process.
 If you choose a different bridging framework, its interface must be compatible with that of the standard bridge.
 Otherwise, it may be difficult for us to support them.
