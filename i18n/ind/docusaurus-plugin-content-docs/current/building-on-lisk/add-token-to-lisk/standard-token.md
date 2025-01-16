@@ -39,10 +39,10 @@ Jika Anda ingin menyertakan logika khusus di dalam token L2 Anda, lihat tutorial
 
 :::note
 Anda dapat meluncurkan **token ERC-20 Standar** Anda di Lisk Mainnet dengan menggunakan proses yang sama.  
-Untuk meluncurkan ke mainnet, pastikan dompet Anda memiliki ETH yang cukup.
+Untuk meluncurkan ke mainnet, pastikan wallet Anda memiliki ETH yang cukup.
 
 Teks berikut mencakup perintah untuk Lisk dan Lisk Sepolia demi kemudahan Anda.  
-Untuk informasi lebih lanjut, lihat [jaringan Lisk yang tersedia](/network-info) dan [cara menghubungkan dompet ke jaringan tersebut](/user/connecting-to-a-wallet).
+Untuk informasi lebih lanjut, lihat [jaringan Lisk yang tersedia](/network-info) dan [cara menghubungkan wallet ke jaringan tersebut](/user/connecting-to-a-wallet).
 :::
 
 ### Dapatkan ETH di Sepolia dan Lisk Sepolia

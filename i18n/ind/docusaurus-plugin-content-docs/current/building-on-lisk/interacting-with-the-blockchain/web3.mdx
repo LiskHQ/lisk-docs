@@ -13,7 +13,7 @@ keywords:
     EVM-compatible,
     blockchain,
     Web3,
-    Dompet,
+    Wallet,
     ABI,
     eth,
     berinteraksi dengan kontrak pintar,
@@ -137,18 +137,18 @@ Web3 menyediakan berbagai [metode Web3Eth](https://docs.web3js.org/guides/web3_e
 
 ### Menulis Data ke Blockchain
 
-Untuk menulis data ke jaringan Lisk, Anda perlu membuat sebuah [`Dompet`](https://docs.web3js.org/guides/wallet/).
+Untuk menulis data ke jaringan Lisk, Anda perlu membuat sebuah [`Wallet`](https://docs.web3js.org/guides/wallet/).
 
 :::note
-`Dompet` pada web3.js adalah titik masuk utama Anda jika ingin menggunakan private key untuk melakukan operasi blockchain, seperti mengirim transaksi, dan lainnya.  
+`Wallet` pada web3.js adalah titik masuk utama Anda jika ingin menggunakan private key untuk melakukan operasi blockchain, seperti mengirim transaksi, dan lainnya.  
 Ini juga disebut sebagai `Signer` di library lain.
 :::
 
-Anda dapat membuat sebuah `Dompet` dengan menginstansikan objek `Wallet` baru dari Web3 dan menambahkan private key ke dalamnya.  
+Anda dapat membuat sebuah `Wallet` dengan menginstansikan objek `Wallet` baru dari Web3 dan menambahkan private key ke dalamnya.  
 Private key tersebut nantinya dapat digunakan untuk mengirim transaksi di blockchain.
 
 ```javascript
-// Menambahkan akun ke dompet
+// Menambahkan akun ke wallet
 const privateKey = '0x<SENDER_PRIVATE_KEY>';
 const account = web3.eth.accounts.wallet.add(privateKey);
 
@@ -184,7 +184,7 @@ Saldo akun penerima akan bertambah sebesar `0.0001` ETH setelah transaksi berhas
     // Instansikan objek web3 dengan memberikan URL RPC dari Lisk.
     // const web3 = new Web3('https://rpc.api.lisk.com');
 
-    // Tambahkan sebuah akun ke dompet.
+    // Tambahkan sebuah akun ke wallet.
     const privateKey = '0x<SENDER_PRIVATE_KEY>';
     const account = web3.eth.accounts.wallet.add(privateKey);
 

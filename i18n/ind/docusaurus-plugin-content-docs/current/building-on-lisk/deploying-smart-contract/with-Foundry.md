@@ -32,10 +32,10 @@ Panduan ini membahas dasar-dasar toolchain pengembangan [Foundry](https://book.g
 
 :::note
 Anda dapat meluncurkan kontrak di mainnet **Lisk** dengan menggunakan proses yang sama.  
-Untuk meluncurkan ke mainnet, pastikan dompet Anda memiliki ETH yang cukup.
+Untuk meluncurkan ke mainnet, pastikan wallet Anda memiliki ETH yang cukup.
 
 Teks berikut mencakup perintah untuk Lisk dan Lisk Sepolia demi kemudahan Anda.  
-Untuk informasi lebih lanjut, lihat [jaringan Lisk yang tersedia](/network-info) dan [cara menghubungkan dompet ke jaringan tersebut](/user/connecting-to-a-wallet).
+Untuk informasi lebih lanjut, lihat [jaringan Lisk yang tersedia](/network-info) dan [cara menghubungkan wallet ke jaringan tersebut](/user/connecting-to-a-wallet).
 :::
 
 Foundry adalah rangkaian tools yang mumpuni untuk mengembangkan, menguji, dan men-debug kontrak pintar Anda.  
@@ -63,16 +63,16 @@ Untuk membangun dengan Foundry, Anda memerlukan:
     ```
 - Untuk informasi lebih lanjut, lihat [Panduan Instalasi](https://book.getfoundry.sh/getting-started/installation) di Foundry Book.
 
-### Dana Dompet
+### Dana Wallet
 
 **Meluncurkan kontrak** ke blockchain memerlukan **biaya gas**.  
-Oleh karena itu, Anda perlu mendanai dompet Anda dengan ETH untuk menutupi biaya gas tersebut.
+Oleh karena itu, Anda perlu mendanai wallet Anda dengan ETH untuk menutupi biaya gas tersebut.
 
 Dalam panduan ini, Anda akan meluncurkan kontrak ke Lisk Sepolia Testnet.
 
 Anda dapat men-deposit token yang diperlukan menggunakan [Lisk Sepolia Bridge](https://sepolia-bridge.lisk.com/bridge/lisk-sepolia-testnet).
 
-Jika dompet Anda tidak memiliki `SepoliaETH` yang cukup, gunakan salah satu faucet yang tersedia untuk Ethereum Sepolia Testnet seperti [https://sepoliafaucet.com](https://sepoliafaucet.com/) untuk menerima ETH Testnet secara gratis.  
+Jika wallet Anda tidak memiliki `SepoliaETH` yang cukup, gunakan salah satu faucet yang tersedia untuk Ethereum Sepolia Testnet seperti [https://sepoliafaucet.com](https://sepoliafaucet.com/) untuk menerima ETH Testnet secara gratis.  
 Kemudian, gunakan Lisk Bridge yang disebutkan sebelumnya untuk mengirim token dari **Ethereum Sepolia Testnet** ke **Lisk Sepolia Testnet**.
 
 ## Membuat Proyek
@@ -406,7 +406,7 @@ Gunakan alamat kontrak, misalnya `0xcCaA1C3eb8FEb5b09a5Eac1359BC4c70E18e29d9`, u
 
 Seperti yang disebutkan sebelumnya, jika Anda telah memverifikasi kontrak pintar di Blockscout, Anda dapat menggunakan bagian `Read contract` dan `Write contract` di bawah tab `Contract` untuk berinteraksi dengan kontrak yang telah diluncurkan.
 
-Tab `Read contract` dapat digunakan tanpa menghubungkan dompet, namun, untuk menggunakan tab `Write contract`, Anda harus terlebih dahulu menghubungkan dompet Anda.  
+Tab `Read contract` dapat digunakan tanpa menghubungkan wallet, namun, untuk menggunakan tab `Write contract`, Anda harus terlebih dahulu menghubungkan wallet Anda.  
 Anda dapat melakukannya dengan mengklik tombol `Connect wallet`.
 
 ### Menggunakan **cast** untuk Berinteraksi

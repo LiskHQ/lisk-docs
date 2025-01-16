@@ -88,9 +88,9 @@ Tekan tombol play berwarna hijau di bagian atas untuk mengompilasi kontrak.
 
 ## 5. Luncurkan Kontrak
 
-Buka tab `Deploy & run transactions` (ikon ini terlihat seperti logo Ethereum dengan panah mengarah ke kanan). Pastikan bahwa environment Anda diatur ke "Injected Provider", dompet Anda terhubung ke jaringan Lisk atau Lisk Sepolia, dan Remix memiliki akses ke dompet Anda.
+Buka tab `Deploy & run transactions` (ikon ini terlihat seperti logo Ethereum dengan panah mengarah ke kanan). Pastikan bahwa environment Anda diatur ke "Injected Provider", wallet Anda terhubung ke jaringan Lisk atau Lisk Sepolia, dan Remix memiliki akses ke wallet Anda.
 Kemudian, pilih kontrak `MyItems` dari dropdown deployment dan klik tombol `Deploy` berwarna oranye untuk meluncurkan kontrak.
-Akhirnya, konfirmasi deployment kontrak di dompet Anda yang terhubung.
+Akhirnya, konfirmasi deployment kontrak di wallet Anda yang terhubung.
 
 Periksa pesan log Remix; pesan tersebut akan mencantumkan alamat kontrak.
 Tempelkan alamat ini di BlockScout untuk melihat kontrak di penjelajah blockchain Lisk: https://sepolia-blockscout.lisk.com/address/0x8b2f45e810F539647e70fBCd6441B73d332Ef1A0

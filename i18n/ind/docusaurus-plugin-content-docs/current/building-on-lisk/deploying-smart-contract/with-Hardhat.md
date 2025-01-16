@@ -36,24 +36,24 @@ Panduan ini memerlukan Node versi 18+ yang sudah terinstal.
 
 Jika Anda menggunakan `nvm` untuk mengelola versi Node Anda, cukup jalankan perintah: `nvm install 18`.
 
-### Dana Dompet
+### Dana Wallet
 
 **Meluncurkan kontrak** ke blockchain memerlukan **biaya gas**.  
-Oleh karena itu, Anda perlu mendanai dompet Anda dengan ETH untuk menutupi biaya gas tersebut.
+Oleh karena itu, Anda perlu mendanai wallet Anda dengan ETH untuk menutupi biaya gas tersebut.
 
 Dalam panduan ini, Anda akan meluncurkan kontrak ke Lisk Sepolia Testnet.
 
 Anda dapat men-deposit token yang diperlukan menggunakan [Lisk Bridge](https://sepolia-bridge.lisk.com/bridge/lisk-sepolia-testnet).
 
-Jika dompet Anda tidak memiliki `SepoliaETH` yang cukup, gunakan salah satu faucet yang tersedia untuk **Ethereum Sepolia** Testnet, seperti [https://sepoliafaucet.com](https://sepoliafaucet.com/) untuk menerima ETH Testnet secara gratis.  
+Jika wallet Anda tidak memiliki `SepoliaETH` yang cukup, gunakan salah satu faucet yang tersedia untuk **Ethereum Sepolia** Testnet, seperti [https://sepoliafaucet.com](https://sepoliafaucet.com/) untuk menerima ETH Testnet secara gratis.  
 Kemudian, gunakan Lisk Bridge yang disebutkan sebelumnya untuk mengirim token dari **Ethereum Sepolia Testnet** ke **Lisk Sepolia Testnet**.
 
 :::note
 Anda dapat meluncurkan kontrak di Lisk Mainnet dengan menggunakan proses yang sama.  
-Untuk meluncurkan ke mainnet, pastikan dompet Anda memiliki cukup ETH.
+Untuk meluncurkan ke mainnet, pastikan wallet Anda memiliki cukup ETH.
 
 Teks berikut mencakup perintah untuk Lisk dan Lisk Sepolia demi kemudahan Anda.  
-Untuk informasi lebih lanjut, lihat [jaringan Lisk yang tersedia](/network-info) dan [cara menghubungkan dompet ke jaringan tersebut](/user/connecting-to-a-wallet).
+Untuk informasi lebih lanjut, lihat [jaringan Lisk yang tersedia](/network-info) dan [cara menghubungkan wallet ke jaringan tersebut](/user/connecting-to-a-wallet).
 
 :::
 
@@ -113,12 +113,12 @@ Setelah Anda menginstal `dotenv`, buat file `.env` dengan konten berikut:
 WALLET_KEY=<YOUR_PRIVATE_KEY>
 ```
 
-Ganti `<YOUR_PRIVATE_KEY>` dengan private key dompet Anda.
+Ganti `<YOUR_PRIVATE_KEY>` dengan private key wallet Anda.
 
 :::caution
 
-`WALLET_KEY` adalah private key dari dompet yang akan digunakan saat meluncurkan kontrak.  
-Ikuti instruksi dari dompet Anda untuk mendapatkan private key.  
+`WALLET_KEY` adalah private key dari wallet yang akan digunakan saat meluncurkan kontrak.  
+Ikuti instruksi dari wallet Anda untuk mendapatkan private key.  
 Misalnya, untuk **MetaMask**, silakan ikuti [instruksi ini](https://support.metamask.io/configure/accounts/how-to-export-an-accounts-private-key/).  
 **Sangat penting untuk memastikan bahwa Anda TIDAK meng-upload private key ini ke repositori publik.**
 
@@ -245,7 +245,7 @@ main().catch((error) => {
 });
 ```
 
-Anda juga memerlukan ETH Testnet di dompet Anda.  
+Anda juga memerlukan ETH Testnet di wallet Anda.  
 Lihat bagian [Prasyarat](#prasyarat) jika Anda belum melakukannya. Jika tidak, upaya peluncuran akan gagal.
 
 Terakhir, jalankan perintah berikut:
@@ -382,4 +382,4 @@ Penjelajah Blockchain akan mengonfirmasi bahwa kontrak tersebut telah diverifika
 
 Setelah [kontrak diverifikasi](#memverifikasi-kontrak-pintar), Anda dapat menggunakan tab `Read Contract` dan `Write Contract` untuk berinteraksi dengan kontrak yang telah diluncurkan melalui [BlockScout](https://sepolia-blockscout.lisk.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D?tab=contract).  
 Jangan lupa untuk memperbarui alamat kontrak di URL BlockScout.  
-Anda juga perlu menghubungkan dompet Anda terlebih dahulu dengan mengklik tombol `Connect Wallet`.
+Anda juga perlu menghubungkan wallet Anda terlebih dahulu dengan mengklik tombol `Connect Wallet`.

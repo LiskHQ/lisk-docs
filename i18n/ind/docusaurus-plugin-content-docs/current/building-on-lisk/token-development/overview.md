@@ -26,13 +26,13 @@ Jika Anda sudah memiliki token yang diluncurkan di jaringan Ethereum dan ingin m
 
 ## Standar Token ERC
 
-Interface standar memungkinkan token apa pun di Ethereum untuk digunakan kembali oleh aplikasi lain: mulai dari dompet hingga decentralized exchange.
-**ERCs** (Ethereum Request for Comments) adalah serangkaian standar dan konvensi di tingkat aplikasi, termasuk standar kontrak seperti standar token (ERC-20), registri nama (ERC-137), skema URI, format library/package, dan format dompet untuk blockchain Ethereum.
+Interface standar memungkinkan token apa pun di Ethereum untuk digunakan kembali oleh aplikasi lain: mulai dari wallet hingga decentralized exchange.
+**ERCs** (Ethereum Request for Comments) adalah serangkaian standar dan konvensi di tingkat aplikasi, termasuk standar kontrak seperti standar token (ERC-20), registri nama (ERC-137), skema URI, format library/package, dan format wallet untuk blockchain Ethereum.
 
 Mengikuti standar token ERC yang paling populer saat membuat token baru memiliki beberapa manfaat:
 
 - **Keamanan meningkat:** Biarkan kontrak Anda mewarisi implementasi standar yang telah diaudit dan ditinjau secara menyeluruh, sehingga kemungkinan bug berkurang secara signifikan.
-- **Kompatibilitas aplikasi tinggi:** Sebagian besar aplikasi hanya mendukung standar token ERC yang paling populer. Dengan mengikuti standar ini, Anda memastikan token Anda akan kompatibel dengan sebagian besar aplikasi eksternal seperti dompet atau decentralized exchange.
+- **Kompatibilitas aplikasi tinggi:** Sebagian besar aplikasi hanya mendukung standar token ERC yang paling populer. Dengan mengikuti standar ini, Anda memastikan token Anda akan kompatibel dengan sebagian besar aplikasi eksternal seperti wallet atau decentralized exchange.
 - **Dokumentasi yang baik:** Manfaatkan banyak tutorial dan panduan yang tersedia untuk mengembangkan token yang sesuai dengan ERC.
 
 ERC adalah subkategori dari **EIPs** (Ethereum Improvement Proposals).

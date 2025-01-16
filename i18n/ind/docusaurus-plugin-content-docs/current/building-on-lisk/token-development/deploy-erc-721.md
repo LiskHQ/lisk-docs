@@ -59,8 +59,8 @@ Tekan tombol play berwarna hijau di bagian atas untuk mengompilasi kontrak.
 
 ## 5. Meluncurkan Kontrak
 
-Buka tab `Deploy & run transactions` (ikon ini terlihat seperti logo Ethereum dengan panah mengarah ke kanan). Pastikan bahwa environment Anda diatur ke "Injected Provider", dompet Anda terhubung ke jaringan Lisk atau Lisk Sepolia, dan Remix memiliki akses ke dompet Anda.
-Kemudian, pilih kontrak `MyNFT` dari dropdown deployment dan klik tombol `Deploy` berwarna oranye untuk meluncurkan kontrak, lalu konfirmasikan proses peluncuran kontrak di dompet Anda yang terhubung.
+Buka tab `Deploy & run transactions` (ikon ini terlihat seperti logo Ethereum dengan panah mengarah ke kanan). Pastikan bahwa environment Anda diatur ke "Injected Provider", wallet Anda terhubung ke jaringan Lisk atau Lisk Sepolia, dan Remix memiliki akses ke wallet Anda.
+Kemudian, pilih kontrak `MyNFT` dari dropdown deployment dan klik tombol `Deploy` berwarna oranye untuk meluncurkan kontrak, lalu konfirmasikan proses peluncuran kontrak di wallet Anda yang terhubung.
 
 Periksa pesan log Remix; pesan tersebut akan mencantumkan alamat kontrak.
 Tempel alamat ini di BlockScout untuk melihat kontrak di explorer blockchain Lisk:  
