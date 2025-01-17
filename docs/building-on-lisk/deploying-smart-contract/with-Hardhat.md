@@ -119,7 +119,7 @@ Substitute `<YOUR_PRIVATE_KEY>` with the private key for your wallet.
 
 `WALLET_KEY` is the private key of the wallet to use when deploying a contract.
 Follow the instructions of your wallet on how to get your private key.
-E.g. for **MetaMask**, please follow [these instructions](https://support.metamask.io/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key).
+E.g. for **MetaMask**, please follow [these instructions](https://support.metamask.io/configure/accounts/how-to-export-an-accounts-private-key/).
 **It is critical that you do NOT commit this to a public repo**
 
 :::
