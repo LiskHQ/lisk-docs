@@ -53,7 +53,7 @@ You will need to get some ETH on both of these testnets.
 
 :::info
 You can use [ETH Sepolia Faucet](https://sepoliafaucet.com/) to get ETH on Sepolia.
-You can use the [Superchain Faucet](https://app.optimism.io/faucet?utm_source=docs) to get ETH on Lisk Sepolia.
+You can use the [Superchain Faucet](https://console.optimism.io/faucet) to get ETH on Lisk Sepolia.
 :::
 
 ### Get an L1 ERC-20 Token Address
