@@ -1,6 +1,6 @@
 ---
 title: ... with Remix
-slug: /building-on-lisk/deploying-smart-contract/with-Hardhat
+slug: /building-on-lisk/deploying-smart-contract/with-Remix
 description: "A guide on deploying a smart contract on the Lisk network using Remix. Includes instructions for setting up the environment, compiling, deploying and verifying the smart contract."
 keywords: [
     "Remix",
@@ -26,7 +26,7 @@ On this page, you will learn how to create, deploy and verify a smart contract w
 Remix Online IDE is a powerful toolset for developing, deploying, debugging, and testing Ethereum and EVM-compatible smart contracts.
 It requires no setup and can be accessed directly through the browser under https://remix.ethereum.org/.
 
-## Prerequites
+## Prerequisites
 
 ### Wallet funds
 
@@ -42,7 +42,7 @@ Then, use the aforementioned Lisk Bridge to send tokens from the **Ethereum Sepo
 
 :::note
 You can deploy a contract on Lisk Mainnet by adopting the same process.
-For deploying to Mainnet, ensure that your wallet has enough ETH.
+Before deploying to Mainnet, ensure that your wallet has enough ETH.
 :::
 
 ## 1. Open Remix
@@ -79,7 +79,7 @@ contract MyNFT is ERC721 {
 
 ## 4. Compile the contract
 
-Please double-check that the compiler version of the Remix IDE is matching with the compiler version mentioned in the smart contract: `pragma solidity ^0.8.28;`.
+Please double-check that the compiler version of the Remix IDE matches the compiler version mentioned in the smart contract: `pragma solidity ^0.8.28;`.
 
 Press the green play button at the top to compile the contract.
 
@@ -90,7 +90,7 @@ Make sure that your environment is set to "Injected Provider", your wallet is co
 Then, select the `MyNFT` contract from the deployment dropdown and click the orange `Deploy` button to deploy the contract and confirm the contract deployment in your connected wallet.
 
 Check the Remix log messages; they should include the contract address.
-Paste this address in BlockScout, to see the contract in the Lisk blockchain explorer: https://sepolia-blockscout.lisk.com/address/0x73e7a94dD5760d862F6FD9f8ea5D4245Bb143446
+Paste this address in Blockscout, to see the contract in the Lisk blockchain explorer: https://sepolia-blockscout.lisk.com/address/0x73e7a94dD5760d862F6FD9f8ea5D4245Bb143446.
 
 In case you chose to deploy on the Lisk Mainnet, you need to paste the address on https://blockscout.lisk.com instead.
 
@@ -102,13 +102,13 @@ For the remainder of this guide, we'll walk through how to verify your contract 
 
 You can apply the same steps for verifying a contract on Lisk Mainnet, in case you deployed it there in the previous step, just use https://blockscout.lisk.com instead of https://sepolia-blockscout.lisk.com in step 2.
 
-  - In Remix, rightlick on the contract you wish to verify and select `Flatten`.
+  - In Remix, right-click on the contract you wish to verify and select `Flatten`.
   This will create a new file `MyNFT_flattened.sol`.
   - Now, switch to your [newly deployed contract](https://sepolia-blockscout.lisk.com/address/0x73e7a94dD5760d862F6FD9f8ea5D4245Bb143446) on https://sepolia-blockscout.lisk.com/
   - Go to the contract tab and click on the blue `Verify and Publish` button.
     - (Optional) Set a license for your contract.
     - Choose `Solidity (Single file)` as the verification method.
-    - Choose the fitting compiler version for your contract.
+    - Choose the compiler version that fits your contract.
     - Disable code optimization.
     - Copy the flattened source code from Remix and paste it into the `Enter the Solidity Contract Code` field.
   - Check that all info is correct and click the `Verify and Publish` button, to verify your contract.
@@ -117,6 +117,6 @@ You can apply the same steps for verifying a contract on Lisk Mainnet, in case y
 
 ## Interacting with the Smart Contract
 
-After [the contract is verified](#verifying-the-smart-contract), you can use the `Read Contract` and `Write Contract` tabs to interact with the deployed contract via BlockScout: https://sepolia-blockscout.lisk.com/address/0x73e7a94dD5760d862F6FD9f8ea5D4245Bb143446?tab=contract.
+After [the contract is verified](#6-verify-the-contract), you can use the `Read Contract` and `Write Contract` tabs to interact with the deployed contract via Blockscout: https://sepolia-blockscout.lisk.com/address/0x73e7a94dD5760d862F6FD9f8ea5D4245Bb143446?tab=contract.
 Don't forget to update the contract address in the Blockscout URL.
 You'll also need to connect your wallet first, by clicking the `Connect Wallet` button.
