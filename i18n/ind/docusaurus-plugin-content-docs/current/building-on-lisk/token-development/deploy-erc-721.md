@@ -1,11 +1,11 @@
 ---
-title: 'Meluncurkan Token ERC-721 Baru di Lisk'
-description: 'Panduan Cara Meluncurkan Token ERC-721 Baru di Lisk.'
+title: 'Deploy Token ERC-721 Baru di Lisk'
+description: 'Panduan Cara Deploy Token ERC-721 Baru di Lisk.'
 keywords:
   [
     'Lisk',
     'Pengembangan Token',
-    'Meluncurkan token',
+    'Deploy token',
     'ERC',
     'EIP',
     'ERC-721',
@@ -13,7 +13,7 @@ keywords:
   ]
 ---
 
-# Cara Meluncurkan Token ERC-721 Baru di Lisk
+# Cara Deploy Token ERC-721 Baru di Lisk
 
 :::note
 Panduan ini menggunakan Remix IDE untuk pengembangan smart contract, tetapi Anda bebas memilih [framework pengembangan smart contract](/category/building-on-lisk/deploying-smart-contract) lain sesuai preferensi Anda untuk mengimplementasikan kontrak token Anda.
@@ -57,16 +57,16 @@ Pastikan bahwa versi compiler di Remix IDE sesuai dengan versi compiler yang dis
 
 Tekan tombol play berwarna hijau di bagian atas untuk mengompilasi kontrak.
 
-## 5. Meluncurkan Kontrak
+## 5. Deploy Kontrak
 
 Buka tab `Deploy & run transactions` (ikon ini terlihat seperti logo Ethereum dengan panah mengarah ke kanan). Pastikan bahwa environment Anda diatur ke "Injected Provider", wallet Anda terhubung ke jaringan Lisk atau Lisk Sepolia, dan Remix memiliki akses ke wallet Anda.
-Kemudian, pilih kontrak `MyNFT` dari dropdown deployment dan klik tombol `Deploy` berwarna oranye untuk meluncurkan kontrak, lalu konfirmasikan proses peluncuran kontrak di wallet Anda yang terhubung.
+Kemudian, pilih kontrak `MyNFT` dari dropdown deployment dan klik tombol `Deploy` berwarna oranye untuk deploy kontrak, lalu konfirmasikan proses deployment kontrak di wallet Anda yang terhubung.
 
 Periksa pesan log Remix; pesan tersebut akan mencantumkan alamat kontrak.
 Tempel alamat ini di BlockScout untuk melihat kontrak di explorer blockchain Lisk:  
 https://sepolia-blockscout.lisk.com/address/0x73e7a94dD5760d862F6FD9f8ea5D4245Bb143446
 
-Jika Anda memilih untuk meluncurkan di Lisk Mainnet, tempelkan alamat tersebut di https://blockscout.lisk.com
+Jika Anda memilih untuk deploy di Lisk Mainnet, tempelkan alamat tersebut di https://blockscout.lisk.com
 
 ## 6. Verifikasi Kontrak
 
@@ -74,11 +74,11 @@ Jika Anda ingin berinteraksi dengan kontrak Anda di penjelajah blockchain, Anda,
 Kontrak di atas sudah diverifikasi, sehingga Anda seharusnya dapat melihat versi Anda di penjelajah blockchain.
 Selebihnya dari panduan ini, kami akan menjelaskan cara memverifikasi kontrak Anda dengan Remix di Lisk Sepolia Testnet.
 
-Anda dapat menerapkan langkah yang sama untuk memverifikasi kontrak di Lisk Mainnet, jika kamu meluncurkannya di jaringan itu di langkah sebelumnya, cukup gunakan https://blockscout.lisk.com dari pada https://sepolia-blockscout.lisk.com pada langkah 2 dibawah ini.
+Anda dapat menerapkan langkah yang sama untuk memverifikasi kontrak di Lisk Mainnet, jika kamu deploy di jaringan itu di langkah sebelumnya, cukup gunakan https://blockscout.lisk.com dari pada https://sepolia-blockscout.lisk.com pada langkah 2 dibawah ini.
 
 - Di Remix, klik kanan pada kontrak yang ingin Anda verifikasi dan pilih `Flatten`.  
    Ini akan membuat file baru bernama `MyNFT_flattened.sol`.
-- Sekarang, buka [kontrak yang baru saja Anda luncurkan](https://sepolia-blockscout.lisk.com/address/0x73e7a94dD5760d862F6FD9f8ea5D4245Bb143446) di https://sepolia-blockscout.lisk.com.
+- Sekarang, buka [kontrak yang baru saja Anda deploy](https://sepolia-blockscout.lisk.com/address/0x73e7a94dD5760d862F6FD9f8ea5D4245Bb143446) di https://sepolia-blockscout.lisk.com.
 - Buka tab kontrak dan klik tombol `Verify and Publish` berwarna biru.
   - (Opsional) Atur lisensi untuk kontrak Anda.
   - Pilih `Solidity (Single file)` sebagai metode verifikasi.

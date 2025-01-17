@@ -1,5 +1,5 @@
 ---
-title: Meluncurkan Token Standar
+title: Deploy Token Standar
 slug: /building-on-lisk/add-token-to-lisk/standard-token
 description: 'Pelajari cara menambahkan token ERC-20 standar Anda ke Lisk menggunakan bridge standar.'
 keywords:
@@ -17,7 +17,7 @@ keywords:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Meluncurkan Token ERC-20 Standar Anda ke Lisk
+# Deploy Token ERC-20 Standar Anda ke Lisk
 
 <!-- :::info
 **Tutorial ini ditujukan untuk developer yang ingin bridge token ERC-20 Standar baru ke Lisk Sepolia.**
@@ -27,7 +27,7 @@ Jika Anda ingin bridge token yang sudah ada, silakan ikuti tutorial [Bridge Toke
 Dalam tutorial ini, Anda akan belajar cara bridge token ERC-20 standar dari Ethereum ke Lisk menggunakan [Sistem Bridge Standar](https://docs.optimism.io/builders/dapp-developers/bridging/standard-bridge).  
 Tutorial ini ditujukan untuk developer yang sudah memiliki token ERC-20 di Ethereum dan ingin membuat representasi token tersebut di Lisk.
 
-Tutorial ini menjelaskan cara menggunakan [`OptimismMintableERC20Factory`](https://github.com/ethereum-optimism/optimism/blob/186e46a47647a51a658e699e9ff047d39444c2de/packages/contracts-bedrock/contracts/universal/OptimismMintableERC20Factory.sol) untuk meluncurkan token ERC-20 standar di jaringan Lisk atau Lisk Sepolia.  
+Tutorial ini menjelaskan cara menggunakan [`OptimismMintableERC20Factory`](https://github.com/ethereum-optimism/optimism/blob/186e46a47647a51a658e699e9ff047d39444c2de/packages/contracts-bedrock/contracts/universal/OptimismMintableERC20Factory.sol) untuk deploy token ERC-20 standar di jaringan Lisk atau Lisk Sepolia.  
 Token yang dibuat oleh kontrak factory ini kompatibel dengan sistem Bridge Standar dan mencakup logika dasar untuk deposit, transfer, dan withdrawals.  
 Jika Anda ingin menyertakan logika khusus di dalam token L2 Anda, lihat tutorial [Bridge Token ERC-20 Kustom Anda ke Lisk](./custom-token).
 
@@ -38,8 +38,8 @@ Jika Anda ingin menyertakan logika khusus di dalam token L2 Anda, lihat tutorial
 ## Prasyarat
 
 :::note
-Anda dapat meluncurkan **token ERC-20 Standar** Anda di Lisk Mainnet dengan menggunakan proses yang sama.  
-Untuk meluncurkan ke mainnet, pastikan wallet Anda memiliki ETH yang cukup.
+Anda dapat deploy **token ERC-20 Standar** Anda di Lisk Mainnet dengan menggunakan proses yang sama.  
+Untuk deploy ke mainnet, pastikan wallet Anda memiliki ETH yang cukup.
 
 Teks berikut mencakup perintah untuk Lisk dan Lisk Sepolia demi kemudahan Anda.  
 Untuk informasi lebih lanjut, lihat [jaringan Lisk yang tersedia](/network-info) dan [cara menghubungkan wallet ke jaringan tersebut](/user/connecting-to-a-wallet).
@@ -58,7 +58,7 @@ Anda dapat menggunakan [Superchain Faucet](https://console.optimism.io/faucet) u
 ### Dapatkan Alamat Token ERC-20 L1
 
 Anda memerlukan token ERC-20 L1 untuk tutorial ini.  
-Jika Anda sudah memiliki token ERC-20 L1 yang diluncurkan di Ethereum Mainnet atau Sepolia, Anda dapat melewati langkah ini.  
+Jika Anda sudah memiliki token ERC-20 L1 yang di-deploy di Ethereum Mainnet atau Sepolia, Anda dapat melewati langkah ini.  
 Untuk Sepolia, Anda dapat menggunakan token uji coba yang berada di alamat [`0x5589BB8228C07c4e15558875fAf2B859f678d129`](https://sepolia.etherscan.io/address/0x5589BB8228C07c4e15558875fAf2B859f678d129), yang memiliki fungsi `faucet()` untuk me-mint token.
 
 ## Membuat Token ERC-20 L2
@@ -105,10 +105,10 @@ Atur alamat token ERC-20 L1 Anda sebagai variabel environment menggunakan perint
 export TUTORIAL_L1_ERC20_ADDRESS=0x5589BB8228C07c4e15558875fAf2B859f678d129
 ```
 
-### 4. Luncurkan token ERC-20 L2 Anda
+### 4. Deploy token ERC-20 L2 Anda
 
-Anda sekarang dapat meluncurkan token ERC-20 L2 Anda menggunakan [`OptimismMintableERC20Factory`](https://github.com/ethereum-optimism/optimism/blob/186e46a47647a51a658e699e9ff047d39444c2de/packages/contracts-bedrock/contracts/universal/OptimismMintableERC20Factory.sol).  
-Gunakan perintah `cast` untuk memicu fungsi peluncuran pada kontrak factory.  
+Anda sekarang dapat deploy token ERC-20 L2 Anda menggunakan [`OptimismMintableERC20Factory`](https://github.com/ethereum-optimism/optimism/blob/186e46a47647a51a658e699e9ff047d39444c2de/packages/contracts-bedrock/contracts/universal/OptimismMintableERC20Factory.sol).  
+Gunakan perintah `cast` untuk memicu fungsi deployment pada kontrak factory.  
 Contoh perintah berikut akan membuat token dengan nama "My Standard Demo Token" dan simbol "L2TKN".  
 Alamat token ERC-20 L2 yang dihasilkan akan dicetak di konsol.
 
@@ -116,15 +116,15 @@ Alamat token ERC-20 L2 yang dihasilkan akan dicetak di konsol.
 cast send 0x4200000000000000000000000000000000000012 "createOptimismMintableERC20(address,string,string)" $TUTORIAL_L1_ERC20_ADDRESS "My Standard Demo Token" "L2TKN" --private-key $TUTORIAL_PRIVATE_KEY --rpc-url $TUTORIAL_RPC_URL --json | jq -r '.logs[0].topics[2]' | cast parse-bytes32-address
 ```
 
-Jika semua berjalan dengan lancar, Anda akan menerima respons berisi alamat kontrak yang baru saja diluncurkan:
+Jika semua berjalan dengan lancar, Anda akan menerima respons berisi alamat kontrak yang baru saja di-deploy:
 
 ```text
 0x891C582b83F69B7c2d3107cd73A3e491CB33962F
 ```
 
 :::note[Menggunakan factory **tidak** direkomendasikan untuk production]
-Factory memudahkan proses peluncuran kontrak secara instan.  
-Namun, kelemahannya adalah Anda tidak memiliki kendali atas source code dari kontrak yang akan diluncurkan karena proses ini dilakukan oleh factory.
+Factory memudahkan proses deployment kontrak secara instan.  
+Namun, kelemahannya adalah Anda tidak memiliki kendali atas source code dari kontrak yang akan di-deploy karena proses ini dilakukan oleh factory.
 
 Selain itu, verifikasi kontrak tersebut di Blockscout tidak begitu mudah dilakukan, karena source code kontrak diperlukan untuk proses verifikasi.
 :::
@@ -136,6 +136,6 @@ Lihat tutorial [Bridge Token ERC-20 dengan Optimism SDK](https://docs.optimism.i
 
 <!-- ## Tambahkan ke Superchain Token List
 
-[Superchain Token List](https://github.com/ethereum-optimism/ethereum-optimism.github.io#readme) adalah daftar umum token yang telah diluncurkan di chain dalam Optimism Superchain.
+[Superchain Token List](https://github.com/ethereum-optimism/ethereum-optimism.github.io#readme) adalah daftar umum token yang telah di-deploy di chain dalam Optimism Superchain.
 Daftar ini digunakan oleh layanan seperti [Optimism Bridge UI](https://app.optimism.io/bridge).
 Jika Anda ingin token OP Mainnet Anda dimasukkan ke dalam daftar ini, silakan lihat [proses peninjauan dan kriteria penggabungan](https://github.com/ethereum-optimism/ethereum-optimism.github.io#review-process-and-merge-criteria). -->

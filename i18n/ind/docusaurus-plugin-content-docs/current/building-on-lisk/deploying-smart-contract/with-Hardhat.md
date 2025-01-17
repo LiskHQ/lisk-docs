@@ -1,7 +1,7 @@
 ---
 title: ... menggunakan Hardhat
 slug: /building-on-lisk/deploying-smart-contract/with-Hardhat
-description: "Panduan untuk meluncurkan smart contract di jaringan test Lisk menggunakan Hardhat. Termasuk instruksi untuk mengatur environment, mengompilasi, dan meluncurkan smart contract."
+description: "Panduan untuk deploy smart contract di jaringan test Lisk menggunakan Hardhat. Termasuk instruksi untuk mengatur environment, mengompilasi, dan deploy smart contract."
 keywords:
   [
     "Hardhat",
@@ -12,9 +12,9 @@ keywords:
     "testnet Lisk",
     "Node.js",
     "Solidity",
-    "peluncuran smart contract",
-    "luncurkan smart contract",
-    "meluncurkan smart contract",
+    "deployment smart contract",
+    "deploy smart contract",
+    "deploy smart contract",
     "membangun di lisk",
     "menulis ke smart contract",
     "pengembangan smart contract",
@@ -24,7 +24,7 @@ keywords:
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Meluncurkan Smart Contract dengan Hardhat
+# Deploy Smart Contract dengan Hardhat
 
 ## Prasyarat
 
@@ -38,10 +38,10 @@ Jika Anda menggunakan `nvm` untuk mengelola versi Node Anda, cukup jalankan peri
 
 ### Dana Wallet
 
-**Meluncurkan kontrak** ke blockchain memerlukan **biaya gas**.  
+**Deploy kontrak** ke blockchain memerlukan **biaya gas**.  
 Oleh karena itu, Anda perlu mendanai wallet Anda dengan ETH untuk menutupi biaya gas tersebut.
 
-Dalam panduan ini, Anda akan meluncurkan kontrak ke Lisk Sepolia Testnet.
+Dalam panduan ini, Anda akan deploy kontrak ke Lisk Sepolia Testnet.
 
 Anda dapat men-deposit token yang diperlukan menggunakan [Lisk Bridge](https://sepolia-bridge.lisk.com/bridge/lisk-sepolia-testnet).
 
@@ -49,8 +49,8 @@ Jika wallet Anda tidak memiliki `SepoliaETH` yang cukup, gunakan salah satu fauc
 Kemudian, gunakan Lisk Bridge yang disebutkan sebelumnya untuk mengirim token dari **Ethereum Sepolia Testnet** ke **Lisk Sepolia Testnet**.
 
 :::note
-Anda dapat meluncurkan kontrak di Lisk Mainnet dengan menggunakan proses yang sama.  
-Untuk meluncurkan ke mainnet, pastikan wallet Anda memiliki cukup ETH.
+Anda dapat deploy kontrak di Lisk Mainnet dengan menggunakan proses yang sama.  
+Untuk deploy ke mainnet, pastikan wallet Anda memiliki cukup ETH.
 
 Teks berikut mencakup perintah untuk Lisk dan Lisk Sepolia demi kemudahan Anda.  
 Untuk informasi lebih lanjut, lihat [jaringan Lisk yang tersedia](/network-info) dan [cara menghubungkan wallet ke jaringan tersebut](/user/connecting-to-a-wallet).
@@ -59,7 +59,7 @@ Untuk informasi lebih lanjut, lihat [jaringan Lisk yang tersedia](/network-info)
 
 ## Membuat Proyek
 
-Sebelum Anda dapat mulai meluncurkan smart contract ke Lisk, Anda perlu menyiapkan environment pengembangan dengan membuat proyek Node.js.
+Sebelum Anda dapat mulai deploy smart contract ke Lisk, Anda perlu menyiapkan environment pengembangan dengan membuat proyek Node.js.
 
 Untuk membuat proyek Node.js baru, jalankan perintah berikut:
 
@@ -98,7 +98,7 @@ Proses penyiapan proyek akan memakan waktu beberapa saat hingga selesai.
 
 ## Mengonfigurasi Hardhat dengan Lisk
 
-Untuk meluncurkan smart contract ke jaringan Lisk, Anda perlu mengonfigurasi proyek Hardhat Anda dan menambahkan jaringan Lisk.
+Untuk deploy smart contract ke jaringan Lisk, Anda perlu mengonfigurasi proyek Hardhat Anda dan menambahkan jaringan Lisk.
 
 Contoh ini menggunakan [dotenv](https://www.npmjs.com/package/dotenv) untuk memuat variabel environment `WALLET_KEY` dari file `.env` ke `process.env.WALLET_KEY`.  
 Anda sebaiknya menggunakan metode serupa untuk menghindari menuliskan private key secara langsung di dalam source code Anda.
@@ -117,7 +117,7 @@ Ganti `<YOUR_PRIVATE_KEY>` dengan private key wallet Anda.
 
 :::caution
 
-`WALLET_KEY` adalah private key dari wallet yang akan digunakan saat meluncurkan kontrak.  
+`WALLET_KEY` adalah private key dari wallet yang akan digunakan saat deploy kontrak.  
 Ikuti instruksi dari wallet Anda untuk mendapatkan private key.  
 Misalnya, untuk **MetaMask**, silakan ikuti [instruksi ini](https://support.metamask.io/configure/accounts/how-to-export-an-accounts-private-key/).  
 **Sangat penting untuk memastikan bahwa Anda TIDAK meng-upload private key ini ke repositori publik.**
@@ -220,11 +220,11 @@ npx hardhat compile
 
 Setelah kompilasi berhasil, Anda akan melihat folder baru bernama `artifacts/`, yang berisi [artefak kompilasi](https://hardhat.org/hardhat-runner/docs/advanced/artifacts).
 
-## Meluncurkan Smart Contract
+## Deploy Smart Contract
 
-Setelah kontrak Anda berhasil dikompilasi, Anda dapat meluncurkan kontrak ke jaringan test Lisk Sepolia.
+Setelah kontrak Anda berhasil dikompilasi, Anda dapat deploy kontrak ke jaringan test Lisk Sepolia.
 
-Untuk meluncurkan kontrak ke jaringan test Lisk Sepolia, Anda perlu memodifikasi file `scripts/deploy.ts` di proyek Anda:
+Untuk deploy kontrak ke jaringan test Lisk Sepolia, Anda perlu memodifikasi file `scripts/deploy.ts` di proyek Anda:
 
 ```ts title="scripts/deploy.ts"
 import { ethers } from 'hardhat';
@@ -246,7 +246,7 @@ main().catch((error) => {
 ```
 
 Anda juga memerlukan ETH Testnet di wallet Anda.  
-Lihat bagian [Prasyarat](#prasyarat) jika Anda belum melakukannya. Jika tidak, upaya peluncuran akan gagal.
+Lihat bagian [Prasyarat](#prasyarat) jika Anda belum melakukannya. Jika tidak, upaya deployment akan gagal.
 
 Terakhir, jalankan perintah berikut:
 
@@ -265,10 +265,10 @@ Terakhir, jalankan perintah berikut:
 
 <!-- TODO: Add link to the block explorer section -->
 
-Kontrak akan diluncurkan di Lisk Sepolia Testnet.  
-Anda dapat melihat status peluncuran dan kontrak dengan menggunakan penjelajah blockchain dan mencari alamat yang dikembalikan oleh skrip peluncuran Anda.
+Kontrak akan di-deploy di Lisk Sepolia Testnet.  
+Anda dapat melihat status deployment dan kontrak dengan menggunakan penjelajah blockchain dan mencari alamat yang dikembalikan oleh skrip deployment Anda.
 
-Jika Anda meluncurkan kontrak baru atau yang dimodifikasi, Anda perlu memverifikasinya terlebih dahulu.
+Jika Anda deploy kontrak baru atau yang dimodifikasi, Anda perlu memverifikasinya terlebih dahulu.
 
 ## Memverifikasi Smart Contract
 
@@ -375,11 +375,11 @@ https://sepolia-blockscout.lisk.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe
 
 :::
 
-Lihat kontrak Anda di BlockScout dengan mengikuti [link ke kontrak yang telah diluncurkan](https://sepolia-blockscout.lisk.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D?tab=contract) yang ditampilkan dalam pesan output langkah sebelumnya.  
+Lihat kontrak Anda di BlockScout dengan mengikuti [link ke kontrak yang telah di-deploy](https://sepolia-blockscout.lisk.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D?tab=contract) yang ditampilkan dalam pesan output langkah sebelumnya.  
 Penjelajah Blockchain akan mengonfirmasi bahwa kontrak tersebut telah diverifikasi dan memungkinkan Anda untuk [berinteraksi](#berinteraksi-dengan-smart-contract) dengannya.
 
 ## Berinteraksi dengan Smart Contract
 
-Setelah [kontrak diverifikasi](#memverifikasi-smart-contract), Anda dapat menggunakan tab `Read Contract` dan `Write Contract` untuk berinteraksi dengan kontrak yang telah diluncurkan melalui [BlockScout](https://sepolia-blockscout.lisk.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D?tab=contract).  
+Setelah [kontrak diverifikasi](#memverifikasi-smart-contract), Anda dapat menggunakan tab `Read Contract` dan `Write Contract` untuk berinteraksi dengan kontrak yang telah di-deploy melalui [BlockScout](https://sepolia-blockscout.lisk.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D?tab=contract).  
 Jangan lupa untuk memperbarui alamat kontrak di URL BlockScout.  
 Anda juga perlu menghubungkan wallet Anda terlebih dahulu dengan mengklik tombol `Connect Wallet`.

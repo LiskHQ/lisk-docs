@@ -9,7 +9,7 @@ keywords: ['Lisk', 'token yang di-bridge']
 
 # Token yang di-bridge
 
-Halaman ini merangkum token-token yang telah ditinjau secara resmi dan diluncurkan di Lisk, beserta alamat L1 yang sesuai.
+Halaman ini merangkum token-token yang telah ditinjau secara resmi dan di-deploy di Lisk, beserta alamat L1 yang sesuai.
 
 Daftar ini berdasarkan [Daftar Token Superchain](https://github.com/ethereum-optimism/ethereum-optimism.github.io).
 

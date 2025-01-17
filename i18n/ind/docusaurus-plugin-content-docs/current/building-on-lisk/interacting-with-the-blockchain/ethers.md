@@ -26,7 +26,7 @@ import TabItem from '@theme/TabItem';
 
 [ethers.js](https://docs.ethers.org/) adalah sebuah library JavaScript yang memungkinkan developer untuk berinteraksi dengan jaringan blockchain yang kompatibel dengan EVM.
 
-Anda dapat menggunakan ethers.js untuk berinteraksi dengan smart contract yang telah diluncurkan di jaringan Lisk.
+Anda dapat menggunakan ethers.js untuk berinteraksi dengan smart contract yang telah di-deploy di jaringan Lisk.
 
 ## Instalasi
 
@@ -179,12 +179,12 @@ sendTx(receiver);
 
 ## Berinteraksi dengan smart contract
 
-Anda dapat menggunakan ethers.js untuk berinteraksi dengan smart contract di Lisk dengan menginisialisasi objek `Contract` menggunakan ABI dan alamat dari kontrak yang telah diluncurkan:
+Anda dapat menggunakan ethers.js untuk berinteraksi dengan smart contract di Lisk dengan menginisialisasi objek `Contract` menggunakan ABI dan alamat dari kontrak yang telah di-deploy:
 
 :::tip
 ABI dari sebuah kontrak dapat ditemukan di halaman kontrak terkait di [BlockScout](https://sepolia-blockscout.lisk.com/).
 
-Sebagai contoh, Anda dapat menggunakan ABI untuk [Kontrak Hello](https://sepolia-blockscout.lisk.com/address/0xb18eb752813c2fbedfdf2be6e5e842a85a3b8539?tab=contact_code). Cukup scroll ke bagian `Contract ABI` dan salin ABI dari kontrak yang telah diluncurkan.
+Sebagai contoh, Anda dapat menggunakan ABI untuk [Kontrak Hello](https://sepolia-blockscout.lisk.com/address/0xb18eb752813c2fbedfdf2be6e5e842a85a3b8539?tab=contact_code). Cukup scroll ke bagian `Contract ABI` dan salin ABI dari kontrak yang telah di-deploy.
 :::
 
 ```javascript title="Membaca dari kontrak"
@@ -193,7 +193,7 @@ const contractAddress = "CONTRACT_ADDRESS"
 // read-only
 const contract = new ethers.Contract(contractAddress, abi, provider);
 const abi = [
-… // ABI dari kontrak yang telah diluncurkan.
+… // ABI dari kontrak yang telah di-deploy.
 ];
 
 async function getHello() {
@@ -205,7 +205,7 @@ getHello();
 ```
 
 :::info
-`CONTRACT_ADDRESS` adalah alamat dari kontrak yang telah diluncurkan.
+`CONTRACT_ADDRESS` adalah alamat dari kontrak yang telah di-deploy.
 :::
 
 :::note

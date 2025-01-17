@@ -25,7 +25,7 @@ keywords: [
 
 Halaman ini akan menjelaskan cara Anda dapat mengakses data oracle menggunakan [RedStone Pull](https://docs.redstone.finance/docs/get-started/models/redstone-pull/).
 
-RedStone adalah ekosistem data yang menyediakan data yang sering diperbarui, dapat diandalkan, dan beragam untuk dApp dan smart contract Anda yang diluncurkan di Lisk.
+RedStone adalah ekosistem data yang menyediakan data yang sering diperbarui, dapat diandalkan, dan beragam untuk dApp dan smart contract Anda yang di-deploy di Lisk.
 
 ## Cara Mengambil Data Oracle dari RedStone
 
@@ -159,9 +159,9 @@ Latest ETH price:
 { ethPriceFromContract: BigNumber { value: "250255087192" } }
 ```
 
-## Meluncurkan smart contract di Lisk
+## Deploy smart contract di Lisk
 
-Untuk meluncurkan smart contract di Lisk Sepolia atau Lisk Mainnet, ikuti panduan berikut:
+Untuk deploy smart contract di Lisk Sepolia atau Lisk Mainnet, ikuti panduan berikut:
 
-- [Meluncurkan smart contract dengan Hardhat](../deploying-smart-contract/with-Hardhat), atau
-- [Meluncurkan smart contract dengan Foundry](../deploying-smart-contract/with-Foundry)
+- [Deploy smart contract dengan Hardhat](../deploying-smart-contract/with-Hardhat), atau
+- [Deploy smart contract dengan Foundry](../deploying-smart-contract/with-Foundry)

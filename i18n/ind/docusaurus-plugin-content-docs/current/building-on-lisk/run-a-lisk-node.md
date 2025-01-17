@@ -14,7 +14,7 @@ keywords:
     Lisk chain,
     Lisk blockchain,
     jaringan Lisk,
-    peluncuran node,
+    deployment node,
     Ethereum node,
   ]
 tags: ['node']
@@ -29,7 +29,7 @@ Tutorial ini akan memandu Anda untuk mengatur dan menjalankan [Node Lisk] Anda s
 
 Pada akhir tutorial ini, Anda akan dapat:
 
-- Meluncurkan dan menyinkronkan node Lisk
+- Deploy dan menyinkronkan node Lisk
 
 ## Prasyarat
 

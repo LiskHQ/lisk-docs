@@ -195,12 +195,12 @@ Selain itu, contoh ini juga berusaha mengurangi serangan disput back-in-time den
 Untuk gambaran umum best-practice menggunakan Tellor, kunjungi [Checklist Pengguna](https://docs.tellor.io/tellor/getting-data/user-checklists) dalam dokumentasi Tellor.
 :::
 
-## Meluncurkan di Lisk
+## Deploy di Lisk
 
-Untuk meluncurkan smart contract di Lisk Sepolia atau Lisk Mainnet, ikuti panduan berikut:
+Untuk deploy smart contract di Lisk Sepolia atau Lisk Mainnet, ikuti panduan berikut:
 
-- [Meluncurkan smart contract dengan Hardhat](../deploying-smart-contract/with-Hardhat), atau
-- [Meluncurkan smart contract dengan Foundry](../deploying-smart-contract/with-Foundry)
+- [Deploy smart contract dengan Hardhat](../deploying-smart-contract/with-Hardhat), atau
+- [Deploy smart contract dengan Foundry](../deploying-smart-contract/with-Foundry)
 
 ## Sumber daya tambahan
 

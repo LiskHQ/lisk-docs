@@ -27,7 +27,7 @@ import TabItem from '@theme/TabItem';
 
 [web3.js](https://web3js.org/) adalah sebuah library JavaScript untuk membangun dan berinteraksi dengan jaringan blockchain yang kompatibel dengan EVM.
 
-Anda juga dapat menggunakan web3.js untuk berinteraksi dengan smart contract yang telah diluncurkan di jaringan Lisk.
+Anda juga dapat menggunakan web3.js untuk berinteraksi dengan smart contract yang telah di-deploy di jaringan Lisk.
 
 ## Instalasi
 
@@ -208,11 +208,11 @@ Saldo akun penerima akan bertambah sebesar `0.0001` ETH setelah transaksi berhas
 
 ## Berinteraksi dengan Smart Contract
 
-Anda dapat menggunakan web3.js untuk berinteraksi dengan sebuah smart contract di Lisk dengan menginstansikan objek `Contract` dan memberikan `ABI` serta `address` dari smart contract yang telah diluncurkan.
+Anda dapat menggunakan web3.js untuk berinteraksi dengan sebuah smart contract di Lisk dengan menginstansikan objek `Contract` dan memberikan `ABI` serta `address` dari smart contract yang telah di-deploy.
 
 Pada bagian berikut, kita akan:
-- Membaca data dari smart contract yang telah diluncurkan, secara spesifik, kita akan mengambil **nama dari kontrak tersebut**.
-- Selain itu, kita juga akan **mint token** melalui smart contract yang sudah diluncurkan.
+- Membaca data dari smart contract yang telah di-deploy, secara spesifik, kita akan mengambil **nama dari kontrak tersebut**.
+- Selain itu, kita juga akan **mint token** melalui smart contract yang sudah di-deploy.
 
 :::tip
 Untuk gambaran umum tentang fungsi publik yang tersedia pada kontrak, silakan periksa tab [Read Contract](https://sepolia-blockscout.lisk.com/token/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=read_contract) dan [Write Contract](https://sepolia-blockscout.lisk.com/token/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=write_contract) untuk kontrak tertentu.
@@ -221,7 +221,7 @@ Untuk gambaran umum tentang fungsi publik yang tersedia pada kontrak, silakan pe
 
 ### Membaca dari Smart Contract
 
-Untuk membaca data dari sebuah smart contract, Anda perlu memberikan `address` dan `abi` dari smart contract yang telah diluncurkan dan diverifikasi.
+Untuk membaca data dari sebuah smart contract, Anda perlu memberikan `address` dan `abi` dari smart contract yang telah di-deploy dan diverifikasi.
 Setelah informasi tersebut diberikan, fungsi read-only dari smart contract dapat dipanggil, seperti yang dijelaskan di bawah ini:
 
 <Tabs>
@@ -274,7 +274,7 @@ Setelah informasi tersebut diberikan, fungsi read-only dari smart contract dapat
 ABI sebuah kontrak dapat ditemukan pada halaman kontrak terkait di [BlockScout](https://sepolia-blockscout.lisk.com/).
 
 Sebagai contoh, Anda dapat menggunakan ABI untuk [kontrak Token NFT Lisk](https://sepolia-blockscout.lisk.com/token/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=contract). 
-Cukup scroll ke bagian `Contract ABI` dan salin ABI kontrak yang telah diluncurkan.
+Cukup scroll ke bagian `Contract ABI` dan salin ABI kontrak yang telah di-deploy.
 :::
 
 
@@ -764,7 +764,7 @@ Untuk menulis data melalui metode kontrak, beberapa hal diperlukan, seperti:
 - private key pengirim
 - ... dan nama metode
 
-Gunakan cuplikan kode berikut untuk berinteraksi dengan fungsi `mint()` dari [kontrak yang telah diluncurkan](https://sepolia-blockscout.lisk.com/address/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=write_contract).
+Gunakan cuplikan kode berikut untuk berinteraksi dengan fungsi `mint()` dari [kontrak yang telah di-deploy](https://sepolia-blockscout.lisk.com/address/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=write_contract).
 
 
 ```javascript title="miniting-token.js"

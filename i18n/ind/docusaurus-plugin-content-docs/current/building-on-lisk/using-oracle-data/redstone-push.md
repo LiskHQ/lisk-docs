@@ -25,13 +25,13 @@ keywords: [
 
 Halaman ini akan menjelaskan bagaimana Anda dapat mengakses data oracle menggunakan [RedStone Push](https://docs.redstone.finance/docs/get-started/models/redstone-push).
 
-RedStone adalah ekosistem data yang menyediakan data yang sering diperbarui, dapat diandalkan, dan beragam untuk dApp dan smart contract Anda yang diluncurkan di Lisk.
+RedStone adalah ekosistem data yang menyediakan data yang sering diperbarui, dapat diandalkan, dan beragam untuk dApp dan smart contract Anda yang di-deploy di Lisk.
 
 Data feed RedStone kompatibel dengan [AggregatorV3Interface](https://docs.chain.link/data-feeds/using-data-feeds#solidity) dari Chainlink dan mencakup komponen berikut:
 
 - **Kontrak Agregator**: Agregator adalah kontrak yang menerima pembaruan data berkala dari jaringan oracle.
   Agregator menyimpan data yang telah digabungkan di onchain sehingga konsumen dapat mengambilnya dan menggunakannya dalam transaksi yang sama.
-  Kontrak-kontrak ini sudah diluncurkan di jaringan Lisk dan dapat langsung digunakan oleh konsumen.
+  Kontrak-kontrak ini sudah di-deploy di jaringan Lisk dan dapat langsung digunakan oleh konsumen.
 - **Konsumen (Consumer)**: Konsumen adalah aplikasi onchain atau offchain yang menggunakan data feed.
   Kontrak konsumen menggunakan `AggregatorV3Interface` untuk memanggil fungsi pada kontrak proxy[^1] dari Agregator untuk mengambil data oracle.
 
@@ -57,9 +57,9 @@ Agregator berikut tersedia di Lisk Mainnet untuk RedStone Push:
 Dalam panduan ini, kita akan mengembangkan kontrak konsumen yang akan meminta harga spot terbaru dari data feed ETH, LSK, dan USDT.
 
 :::note
-RedStone Push hanya sepenuhnya tersedia di Lisk Mainnet, jadi pastikan untuk meluncurkan kontrak konsumen Anda di Lisk Mainnet juga.
+RedStone Push hanya sepenuhnya tersedia di Lisk Mainnet, jadi pastikan untuk deploy kontrak konsumen Anda di Lisk Mainnet juga.
 
-Jika Anda ingin meluncurkan di Lisk Sepolia Testnet, periksa panduan [Tellor](./tellor.md), yang tersedia untuk kedua jaringan.
+Jika Anda ingin deploy di Lisk Sepolia Testnet, periksa panduan [Tellor](./tellor.md), yang tersedia untuk kedua jaringan.
 :::
 
 ## Mengimpor
@@ -205,15 +205,15 @@ contract RedStoneDataConsumer {
 }
 ```
 
-## Meluncurkan di Lisk
+## Deploy di Lisk
 
-Untuk meluncurkan smart contract di Lisk, ikuti panduan berikut:
+Untuk deploy smart contract di Lisk, ikuti panduan berikut:
 
-- [Meluncurkan smart contract dengan Hardhat](../deploying-smart-contract/with-Hardhat), atau
-- [Meluncurkan smart contract dengan Foundry](../deploying-smart-contract/with-Foundry)
+- [Deploy smart contract dengan Hardhat](../deploying-smart-contract/with-Hardhat), atau
+- [Deploy smart contract dengan Foundry](../deploying-smart-contract/with-Foundry)
 
 :::note
-RedStone Push hanya tersedia di Lisk Mainnet, jadi pastikan Anda meluncurkan kontrak konsumen di Lisk Mainnet.
+RedStone Push hanya tersedia di Lisk Mainnet, jadi pastikan Anda deploy kontrak konsumen di Lisk Mainnet.
 
-Jika Anda ingin meluncurkan di Lisk Sepolia Testnet, silakan cek panduan [Tellor](./tellor.md), yang tersedia untuk kedua jaringan.
+Jika Anda ingin deploy di Lisk Sepolia Testnet, silakan cek panduan [Tellor](./tellor.md), yang tersedia untuk kedua jaringan.
 :::

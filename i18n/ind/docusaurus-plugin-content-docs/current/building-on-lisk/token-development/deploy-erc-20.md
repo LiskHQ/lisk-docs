@@ -1,11 +1,11 @@
 ---
-title: 'Meluncurkan Token ERC-20 Baru di Lisk'
-description: 'Panduan untuk meluncurkan Token ERC-20 Baru di Lisk'
+title: 'Deploy Token ERC-20 Baru di Lisk'
+description: 'Panduan untuk deploy Token ERC-20 Baru di Lisk'
 keywords:
   [
     'Lisk',
     'Pengembangan token',
-    'Meluncurkan token',
+    'Deploy token',
     'ERC',
     'EIP',
     'ERC-20',
@@ -13,9 +13,9 @@ keywords:
   ]
 ---
 
-# Cara Meluncurkan Token ERC-20 Baru di Lisk
+# Cara Deploy Token ERC-20 Baru di Lisk
 
-Panduan ini menjelaskan cara meluncurkan token ERC-20 baru ke Lisk. Jika Anda ingin menjembatani token yang sudah ada dari Ethereum, silakan merujuk ke panduan [Menjembatani Token L1 ke Lisk](../add-token-to-lisk).
+Panduan ini menjelaskan cara deploy token ERC-20 baru ke Lisk. Jika Anda ingin menjembatani token yang sudah ada dari Ethereum, silakan merujuk ke panduan [Menjembatani Token L1 ke Lisk](../add-token-to-lisk).
 
 :::note
 Dalam panduan ini, kita akan menggunakan Remix IDE untuk pengembangan smart contract, tetapi Anda bebas memilih [framework pengembangan smart contract](/category/building-on-lisk/deploying-smart-contract) lainnya untuk mengimplementasikan kontrak token Anda.
@@ -54,23 +54,23 @@ Pastikan bahwa versi compiler di Remix IDE sesuai dengan versi compiler yang dis
 
 Tekan tombol play berwarna hijau di bagian atas untuk mengompilasi kontrak.
 
-## 5. Meluncurkan Kontrak
+## 5. Deploy Kontrak
 
 Buka tab `Deploy & run transactions` (ikon ini terlihat seperti logo Ethereum dengan panah mengarah ke kanan). Pastikan bahwa environment Anda diatur ke "Injected Provider", wallet Anda terhubung ke jaringan Lisk atau Lisk Sepolia, dan Remix memiliki akses ke wallet Anda.
-Kemudian, pilih kontrak `MyToken` dari dropdown deployment dan luncurkan dengan parameter pilihan Anda, misalnya:
+Kemudian, pilih kontrak `MyToken` dari dropdown deployment dan deploy dengan parameter pilihan Anda, misalnya:
 
 - Nama: MyToken
 - Simbol: MYT
 - JumlahAwal: 1000000000000000000000
 
-Klik tombol `transact` berwarna oranye untuk meluncurkan kontrak.
-Akhirnya, konfirmasi peluncuran kontrak di wallet Anda yang terhubung.
+Klik tombol `transact` berwarna oranye untuk deploy kontrak.
+Akhirnya, konfirmasi deployment kontrak di wallet Anda yang terhubung.
 
 Periksa pesan log Remix; pesan tersebut akan mencantumkan alamat kontrak.
 Tempel alamat ini di BlockScout untuk melihat kontrak di explorer blockchain Lisk:  
 https://sepolia-blockscout.lisk.com/address/0x6e8fF2E042c1637a2Da9563763c62362a3bbD712
 
-Jika Anda memilih untuk meluncurkan di Lisk Mainnet, tempelkan alamat tersebut di https://blockscout.lisk.com
+Jika Anda memilih untuk deploy di Lisk Mainnet, tempelkan alamat tersebut di https://blockscout.lisk.com
 
 ## 6. Verifikasi Kontrak
 
@@ -82,7 +82,7 @@ Anda dapat menerapkan langkah yang sama untuk memverifikasi kontrak di Lisk Main
 
 1. Di Remix, klik kanan pada kontrak yang ingin Anda verifikasi dan pilih `Flatten`.  
    Ini akan membuat file baru bernama `MyToken_flattened.sol`.
-2. Sekarang, buka [kontrak yang baru saja Anda luncurkan](https://sepolia-blockscout.lisk.com/address/0x6e8fF2E042c1637a2Da9563763c62362a3bbD712) di https://sepolia-blockscout.lisk.com.
+2. Sekarang, buka [kontrak yang baru saja Anda deploy](https://sepolia-blockscout.lisk.com/address/0x6e8fF2E042c1637a2Da9563763c62362a3bbD712) di https://sepolia-blockscout.lisk.com.
 3. Buka tab kontrak dan klik tombol `Verify and Publish` berwarna biru.
    - (Opsional) Atur lisensi untuk kontrak Anda.
    - Pilih `Solidity (Single file)` sebagai metode verifikasi.

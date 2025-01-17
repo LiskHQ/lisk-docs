@@ -2,7 +2,7 @@
 title: Pengenalan
 sidebar_position: 1
 slug: /building-on-lisk/add-token-to-lisk
-description: 'Panduan menambahkan kontrak ERC-20 eksternal yang telah diluncurkan di Ethereum ke jaringan Lisk.'
+description: 'Panduan menambahkan kontrak ERC-20 eksternal yang telah di-deploy di Ethereum ke jaringan Lisk.'
 keywords:
   [
     'Kontrak ERC-20',
@@ -17,8 +17,8 @@ keywords:
 
 # Bridge Token L1 ke Lisk
 
-Halaman ini ditujukan untuk penerbit token yang sudah memiliki kontrak ERC-20 yang diluncurkan di Ethereum dan ingin men-submit token mereka untuk bridge antara Ethereum dan Lisk.
-Lisk menggunakan Superchain Token List sebagai referensi untuk token-token yang telah diluncurkan di Lisk.
+Halaman ini ditujukan untuk penerbit token yang sudah memiliki kontrak ERC-20 yang di-deploy di Ethereum dan ingin men-submit token mereka untuk bridge antara Ethereum dan Lisk.
+Lisk menggunakan Superchain Token List sebagai referensi untuk token-token yang telah di-deploy di Lisk.
 Jika Anda ingin membuat token baru di Lisk, silakan merujuk ke halaman [Pengembangan Token](../token-development/overview.md).
 
 ## Superchain Token List
@@ -57,8 +57,8 @@ Bridge Standar adalah smart contract sederhana dengan fungsionalitas untuk memin
 
 Pada protokol terdiri dari dua kontrak penting:
 
-- Kontrak bridge yang diluncurkan di **Ethereum**, disebut [L1StandardBridge](https://etherscan.io/address/0x2658723Bf70c7667De6B25F99fcce13A16D25d08).
-- Kontrak bridge yang diluncurkan di **Lisk**, disebut [L2StandardBridge](https://blockscout.lisk.com/address/0x4200000000000000000000000000000000000010).
+- Kontrak bridge yang di-deploy di **Ethereum**, disebut [L1StandardBridge](https://etherscan.io/address/0x2658723Bf70c7667De6B25F99fcce13A16D25d08).
+- Kontrak bridge yang di-deploy di **Lisk**, disebut [L2StandardBridge](https://blockscout.lisk.com/address/0x4200000000000000000000000000000000000010).
 
 Kedua kontrak ini berinteraksi satu sama lain melalui sistem `CrossDomainMessenger` untuk mengirim pesan antara Ethereum dan Lisk.
 
@@ -69,21 +69,21 @@ Kedua kontrak ini berinteraksi satu sama lain melalui sistem `CrossDomainMesseng
 
 ## Menambahkan Token Anda ke Superchain Token List
 
-Lisk menggunakan [Superchain Token List](https://github.com/ethereum-optimism/ethereum-optimism.github.io/blob/master/optimism.tokenlist.json) sebagai referensi untuk token-token yang telah diluncurkan di Lisk.
+Lisk menggunakan [Superchain Token List](https://github.com/ethereum-optimism/ethereum-optimism.github.io/blob/master/optimism.tokenlist.json) sebagai referensi untuk token-token yang telah di-deploy di Lisk.
 
 Untuk menambahkan token Anda ke dalam list, lakukan langkah-langkah berikut.
 
-### Langkah 1: Luncurkan Token Anda di Lisk
+### Langkah 1: Deploy Token Anda di Lisk
 
-Pilih framework bridging yang Anda inginkan, dan gunakan untuk meluncurkan ERC-20 token Anda di Lisk.  
-Kami merekomendasikan Anda menggunakan framework yang disediakan oleh kontrak [bridge standar](#bridge-standar) milik Lisk dan meluncurkan token Anda menggunakan [OptimismMintableERC20Factory](contracts#jaringan-lisk-l2).  
-Meluncurkan token Anda di Lisk dengan cara ini memberikan jaminan tambahan yang akan memperlancar proses persetujuan.  
+Pilih framework bridging yang Anda inginkan, dan gunakan untuk deploy ERC-20 token Anda di Lisk.  
+Kami merekomendasikan Anda menggunakan framework yang disediakan oleh kontrak [bridge standar](#bridge-standar) milik Lisk dan deploy token Anda menggunakan [OptimismMintableERC20Factory](contracts#jaringan-lisk-l2).  
+Deploy token Anda di Lisk dengan cara ini memberikan jaminan tambahan yang akan memperlancar proses persetujuan.  
 Jika Anda memilih framework bridging lain, interfacenya harus kompatibel dengan bridge standar. Jika tidak, kami mungkin akan kesulitan untuk mendukungnya.
 
-Untuk instruksi langkah demi langkah tentang cara meluncurkan token ERC-20 di Lisk, silakan lihat panduan berikut:
+Untuk instruksi langkah demi langkah tentang cara deploy token ERC-20 di Lisk, silakan lihat panduan berikut:
 
-- [Meluncurkan Token ERC-20 Standar](./standard-token.md)
-- [Meluncurkan Token ERC-20 Sendiri](./custom-token.mdx)
+- [Deploy Token ERC-20 Standar](./standard-token.md)
+- [Deploy Token ERC-20 Sendiri](./custom-token.mdx)
 
 ### Langkah 2: Ajukan Detail Token Anda
 

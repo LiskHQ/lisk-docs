@@ -6,7 +6,7 @@ keywords:
   [
     'Lisk',
     'Pengembangan Token',
-    'Luncurkan token',
+    'Deploy token',
     'ERC',
     'EIP',
     'ERC-20',
@@ -21,8 +21,8 @@ keywords:
 # Pengembangan Token
 
 Halaman ini ditujukan untuk penerbit token yang ingin membuat kontrak ERC-20 baru di Lisk.
-Halaman ini mencakup penjelasan tentang ERC, ringkasan standar token terpenting, dan contoh cara meluncurkan token tersebut di Lisk.
-Jika Anda sudah memiliki token yang diluncurkan di jaringan Ethereum dan ingin bridge token tersebut ke Lisk, silakan merujuk ke panduan [Bridge Token L1 ke Lisk](../add-token-to-lisk/index.md).
+Halaman ini mencakup penjelasan tentang ERC, ringkasan standar token terpenting, dan contoh cara deploy token tersebut di Lisk.
+Jika Anda sudah memiliki token yang di-deploy di jaringan Ethereum dan ingin bridge token tersebut ke Lisk, silakan merujuk ke panduan [Bridge Token L1 ke Lisk](../add-token-to-lisk/index.md).
 
 ## Standar Token ERC
 
@@ -54,7 +54,7 @@ Hal ini membuat [ERC-20](https://eips.ethereum.org/EIPS/eip-20) berguna untuk be
 
 ### Panduan
 
-[Bagaimana cara meluncurkan token ERC-20 baru di Lisk](deploy-erc-20.md)
+[Bagaimana cara deploy token ERC-20 baru di Lisk](deploy-erc-20.md)
 
 ### Bacaan lebih lanjut
 
@@ -77,7 +77,7 @@ Untuk merepresentasikan fitur unik ini secara onchain, ERC-721 menyertakan prope
 
 ### Panduan
 
-[Bagaimana cara meluncurkan token ERC-721 baru di Lisk](deploy-erc-721.md)
+[Bagaimana cara deploy token ERC-721 baru di Lisk](deploy-erc-721.md)
 
 ### Bacaan lebih lanjut
 
@@ -99,7 +99,7 @@ fungsi ini memiliki argumen tambahan, yaitu `id`, untuk mengidentifikasi token y
 Akun ERC-1155 memiliki saldo yang berbeda untuk setiap token id; token non-fungible diimplementasikan dengan hanya mencetak satu token saja.
 
 Pendekatan ini menghasilkan penghematan gas yang signifikan untuk proyek yang memerlukan banyak token.  
-Alih-alih mendeploy kontrak baru untuk setiap jenis token, satu kontrak token ERC-1155 dapat menyimpan seluruh state sistem, sehingga mengurangi biaya peluncuran dan kompleksitas.
+Alih-alih mendeploy kontrak baru untuk setiap jenis token, satu kontrak token ERC-1155 dapat menyimpan seluruh state sistem, sehingga mengurangi biaya deployment dan kompleksitas.
 
 ### Panduan
 
