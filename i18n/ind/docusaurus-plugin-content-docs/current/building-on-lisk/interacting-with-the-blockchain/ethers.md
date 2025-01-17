@@ -1,7 +1,7 @@
 ---
 title: ...menggunakan ethers.js
 slug: /building-on-lisk/interacting-with-the-blockchain/ethers
-description: Dokumentasi untuk menggunakan ethers.js, sebuah library JavaScript untuk interaksi dengan blockchain yang kompatibel dengan EVM. Halaman ini mencakup instalasi, pengaturan, koneksi ke jaringan Lisk, membaca dan menulis data blockchain, serta berinteraksi dengan kontrak pintar.
+description: Dokumentasi untuk menggunakan ethers.js, sebuah library JavaScript untuk interaksi dengan blockchain yang kompatibel dengan EVM. Halaman ini mencakup instalasi, pengaturan, koneksi ke jaringan Lisk, membaca dan menulis data blockchain, serta berinteraksi dengan smart contract.
 keywords:
   [
     ethers.js,
@@ -9,13 +9,13 @@ keywords:
     jaringan Lisk,
     Lisk mainnet,
     Lisk testnet,
-    kontrak pintar,
+    smart contract,
     EVM-compatible,
     blockchain,
     JsonRpcProvider,
     Signer,
     ABI,
-    berinteraksi dengan kontrak pintar,
+    berinteraksi dengan smart contract,
   ]
 ---
 
@@ -26,7 +26,7 @@ import TabItem from '@theme/TabItem';
 
 [ethers.js](https://docs.ethers.org/) adalah sebuah library JavaScript yang memungkinkan developer untuk berinteraksi dengan jaringan blockchain yang kompatibel dengan EVM.
 
-Anda dapat menggunakan ethers.js untuk berinteraksi dengan kontrak pintar yang telah diluncurkan di jaringan Lisk.
+Anda dapat menggunakan ethers.js untuk berinteraksi dengan smart contract yang telah diluncurkan di jaringan Lisk.
 
 ## Instalasi
 
@@ -177,9 +177,9 @@ sendTx(receiver);
 ```
 </details>
 
-## Berinteraksi dengan kontrak pintar
+## Berinteraksi dengan smart contract
 
-Anda dapat menggunakan ethers.js untuk berinteraksi dengan kontrak pintar di Lisk dengan menginisialisasi objek `Contract` menggunakan ABI dan alamat dari kontrak yang telah diluncurkan:
+Anda dapat menggunakan ethers.js untuk berinteraksi dengan smart contract di Lisk dengan menginisialisasi objek `Contract` menggunakan ABI dan alamat dari kontrak yang telah diluncurkan:
 
 :::tip
 ABI dari sebuah kontrak dapat ditemukan di halaman kontrak terkait di [BlockScout](https://sepolia-blockscout.lisk.com/).
@@ -219,7 +219,7 @@ Untuk membaca dan menulis kontrak, gunakan objek `Signer` untuk menggantikan obj
 const contract = new ethers.Contract(contractAddress, abi, signer);
 ```
 
-Setelah Anda membuat objek `Contract`, Anda dapat menggunakannya untuk memanggil metode yang diinginkan pada kontrak pintar:
+Setelah Anda membuat objek `Contract`, Anda dapat menggunakannya untuk memanggil metode yang diinginkan pada smart contract:
 
 ```javascript
 async function createHello(message) {

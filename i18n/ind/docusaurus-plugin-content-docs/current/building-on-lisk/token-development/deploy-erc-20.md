@@ -18,7 +18,7 @@ keywords:
 Panduan ini menjelaskan cara meluncurkan token ERC-20 baru ke Lisk. Jika Anda ingin menjembatani token yang sudah ada dari Ethereum, silakan merujuk ke panduan [Menjembatani Token L1 ke Lisk](../add-token-to-lisk).
 
 :::note
-Dalam panduan ini, kita akan menggunakan Remix IDE untuk pengembangan kontrak pintar, tetapi Anda bebas memilih [framework pengembangan kontrak pintar](/category/building-on-lisk/deploying-smart-contract) lainnya untuk mengimplementasikan kontrak token Anda.
+Dalam panduan ini, kita akan menggunakan Remix IDE untuk pengembangan smart contract, tetapi Anda bebas memilih [framework pengembangan smart contract](/category/building-on-lisk/deploying-smart-contract) lainnya untuk mengimplementasikan kontrak token Anda.
 :::
 
 ## 1. Buka Remix
@@ -50,7 +50,7 @@ contract MyToken is ERC20 {
 
 ## 4. Kompilasi Kontrak
 
-Pastikan bahwa versi compiler di Remix IDE sesuai dengan versi compiler yang disebutkan di kontrak pintar: `pragma solidity ^0.8.28;`.
+Pastikan bahwa versi compiler di Remix IDE sesuai dengan versi compiler yang disebutkan di smart contract: `pragma solidity ^0.8.28;`.
 
 Tekan tombol play berwarna hijau di bagian atas untuk mengompilasi kontrak.
 

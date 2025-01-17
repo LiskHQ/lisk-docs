@@ -1,14 +1,14 @@
 ---
 title: ...menggunakan RedStone (Push)
 slug: /building-on-lisk/using-oracle-data/redstone-push
-description: Panduan menggunakan RedStone Push untuk mengakses data dunia nyata seperti harga aset, langsung dari kontrak pintar Anda di blockchain Lisk.
+description: Panduan menggunakan RedStone Push untuk mengakses data dunia nyata seperti harga aset, langsung dari smart contract Anda di blockchain Lisk.
 keywords: [
     Oracle
     Oracles,
     RedStone,
     feeds harga,
     feeds data,
-    kontrak pintar,
+    smart contract,
     Lisk blockchain,
     jaringan Lisk,
     Lisk testnet,
@@ -25,7 +25,7 @@ keywords: [
 
 Halaman ini akan menjelaskan bagaimana Anda dapat mengakses data oracle menggunakan [RedStone Push](https://docs.redstone.finance/docs/get-started/models/redstone-push).
 
-RedStone adalah ekosistem data yang menyediakan data yang sering diperbarui, dapat diandalkan, dan beragam untuk dApp dan kontrak pintar Anda yang diluncurkan di Lisk.
+RedStone adalah ekosistem data yang menyediakan data yang sering diperbarui, dapat diandalkan, dan beragam untuk dApp dan smart contract Anda yang diluncurkan di Lisk.
 
 Data feed RedStone kompatibel dengan [AggregatorV3Interface](https://docs.chain.link/data-feeds/using-data-feeds#solidity) dari Chainlink dan mencakup komponen berikut:
 
@@ -207,10 +207,10 @@ contract RedStoneDataConsumer {
 
 ## Meluncurkan di Lisk
 
-Untuk meluncurkan kontrak pintar di Lisk, ikuti panduan berikut:
+Untuk meluncurkan smart contract di Lisk, ikuti panduan berikut:
 
-- [Meluncurkan kontrak pintar dengan Hardhat](../deploying-smart-contract/with-Hardhat), atau
-- [Meluncurkan kontrak pintar dengan Foundry](../deploying-smart-contract/with-Foundry)
+- [Meluncurkan smart contract dengan Hardhat](../deploying-smart-contract/with-Hardhat), atau
+- [Meluncurkan smart contract dengan Foundry](../deploying-smart-contract/with-Foundry)
 
 :::note
 RedStone Push hanya tersedia di Lisk Mainnet, jadi pastikan Anda meluncurkan kontrak konsumen di Lisk Mainnet.

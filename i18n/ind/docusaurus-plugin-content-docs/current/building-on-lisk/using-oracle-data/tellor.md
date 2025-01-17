@@ -1,14 +1,14 @@
 ---
 title: ...menggunakan Tellor
 slug: /building-on-lisk/using-oracle-data/tellor
-description: Panduan tentang menggunakan Data Feed Tellor untuk mengakses data dunia nyata seperti harga aset, langsung dari kontrak pintar Anda di blockchain Lisk.
+description: Panduan tentang menggunakan Data Feed Tellor untuk mengakses data dunia nyata seperti harga aset, langsung dari smart contract Anda di blockchain Lisk.
 keywords: [
     Oracle
     Oracles,
     Redstone,
     feeds harga,
     feeds data,
-    kontrak pintar,
+    smart contract,
     Lisk blockchain,
     jaringan Lisk,
     Lisk testnet,
@@ -197,10 +197,10 @@ Untuk gambaran umum best-practice menggunakan Tellor, kunjungi [Checklist Penggu
 
 ## Meluncurkan di Lisk
 
-Untuk meluncurkan kontrak pintar di Lisk Sepolia atau Lisk Mainnet, ikuti panduan berikut:
+Untuk meluncurkan smart contract di Lisk Sepolia atau Lisk Mainnet, ikuti panduan berikut:
 
-- [Meluncurkan kontrak pintar dengan Hardhat](../deploying-smart-contract/with-Hardhat), atau
-- [Meluncurkan kontrak pintar dengan Foundry](../deploying-smart-contract/with-Foundry)
+- [Meluncurkan smart contract dengan Hardhat](../deploying-smart-contract/with-Hardhat), atau
+- [Meluncurkan smart contract dengan Foundry](../deploying-smart-contract/with-Foundry)
 
 ## Sumber daya tambahan
 

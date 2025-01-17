@@ -58,7 +58,7 @@ Hal ini membuat [ERC-20](https://eips.ethereum.org/EIPS/eip-20) berguna untuk be
 
 ### Bacaan lebih lanjut
 
-- [Memahami smart kontrak pintar ERC-20](https://ethereum.org/en/developers/tutorials/understand-the-erc-20-token-smart-contract/)
+- [Memahami smart smart contract ERC-20](https://ethereum.org/en/developers/tutorials/understand-the-erc-20-token-smart-contract/)
 - [ERC-20 EIP](https://eips.ethereum.org/EIPS/eip-20)
 - [OpenZeppelin: API ERC-20](https://docs.openzeppelin.com/contracts/3.x/api/token/erc20)
 - [OpenZeppelin: Kontrak ERC-20](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol)
@@ -91,7 +91,7 @@ Untuk merepresentasikan fitur unik ini secara onchain, ERC-721 menyertakan prope
 ## ERC-1155
 
 [ERC-1155](https://eips.ethereum.org/EIPS/eip-1155) adalah interface standar untuk kontrak yang mengelola berbagai jenis token.  
-Fitur khas ERC-1155 adalah penggunaan satu kontrak pintar untuk merepresentasikan banyak token sekaligus.  
+Fitur khas ERC-1155 adalah penggunaan satu smart contract untuk merepresentasikan banyak token sekaligus.  
 Satu kontrak yang dideploy dapat mencakup kombinasi token fungible, non-fungible, atau konfigurasi lainnya (misalnya token semi-fungible).
 
 Karena itu, fungsi `balanceOf` pada ERC-1155 berbeda dari ERC-20:  

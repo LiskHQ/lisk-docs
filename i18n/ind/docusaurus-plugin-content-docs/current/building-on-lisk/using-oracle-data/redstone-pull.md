@@ -8,7 +8,7 @@ keywords: [
     RedStone,
     feeds harga,
     feeds data,
-    kontrak pintar,
+    smart contract,
     Lisk blockchain,
     jaringan Lisk,
     Lisk testnet,
@@ -25,17 +25,17 @@ keywords: [
 
 Halaman ini akan menjelaskan cara Anda dapat mengakses data oracle menggunakan [RedStone Pull](https://docs.redstone.finance/docs/get-started/models/redstone-pull/).
 
-RedStone adalah ekosistem data yang menyediakan data yang sering diperbarui, dapat diandalkan, dan beragam untuk dApp dan kontrak pintar Anda yang diluncurkan di Lisk.
+RedStone adalah ekosistem data yang menyediakan data yang sering diperbarui, dapat diandalkan, dan beragam untuk dApp dan smart contract Anda yang diluncurkan di Lisk.
 
 ## Cara Mengambil Data Oracle dari RedStone
 
-Untuk membuat kontrak pintar yang secara langsung mengambil data terbaru dari RedStone oracle, ikuti panduan ini.
+Untuk membuat smart contract yang secara langsung mengambil data terbaru dari RedStone oracle, ikuti panduan ini.
 
 Panduan ini menggunakan model [RedStone Pull](https://docs.redstone.finance/docs/get-started/models/redstone-pull) untuk mengambil data.
 
 Untuk gambaran umum mengenai berbagai modul yang ditawarkan RedStone untuk menerima data oracle, kunjungi [Oracles > RedStone](../../lisk-tools/oracles#redstone).
 
-Panduan ini menggunakan [Hardhat](https://hardhat.org/) untuk membuat kontrak pintar.
+Panduan ini menggunakan [Hardhat](https://hardhat.org/) untuk membuat smart contract.
 Jika Anda ingin menggunakan Foundry, silakan cek [dokumentasi RedStone](https://docs.redstone.finance/docs/get-started/models/redstone-pull#foundry) untuk instruksi.
 
 ### Dependensi
@@ -159,9 +159,9 @@ Latest ETH price:
 { ethPriceFromContract: BigNumber { value: "250255087192" } }
 ```
 
-## Meluncurkan kontrak pintar di Lisk
+## Meluncurkan smart contract di Lisk
 
-Untuk meluncurkan kontrak pintar di Lisk Sepolia atau Lisk Mainnet, ikuti panduan berikut:
+Untuk meluncurkan smart contract di Lisk Sepolia atau Lisk Mainnet, ikuti panduan berikut:
 
-- [Meluncurkan kontrak pintar dengan Hardhat](../deploying-smart-contract/with-Hardhat), atau
-- [Meluncurkan kontrak pintar dengan Foundry](../deploying-smart-contract/with-Foundry)
+- [Meluncurkan smart contract dengan Hardhat](../deploying-smart-contract/with-Hardhat), atau
+- [Meluncurkan smart contract dengan Foundry](../deploying-smart-contract/with-Foundry)

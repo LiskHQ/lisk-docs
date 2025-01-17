@@ -16,7 +16,7 @@ keywords:
 # Cara Meluncurkan Token ERC-721 Baru di Lisk
 
 :::note
-Panduan ini menggunakan Remix IDE untuk pengembangan kontrak pintar, tetapi Anda bebas memilih [framework pengembangan kontrak pintar](/category/building-on-lisk/deploying-smart-contract) lain sesuai preferensi Anda untuk mengimplementasikan kontrak token Anda.
+Panduan ini menggunakan Remix IDE untuk pengembangan smart contract, tetapi Anda bebas memilih [framework pengembangan smart contract](/category/building-on-lisk/deploying-smart-contract) lain sesuai preferensi Anda untuk mengimplementasikan kontrak token Anda.
 :::
 
 ## 1. Buka Remix
@@ -53,7 +53,7 @@ contract MyNFT is ERC721 {
 
 ## 4. Kompilasi Kontrak
 
-Pastikan bahwa versi compiler di Remix IDE sesuai dengan versi compiler yang disebutkan di kontrak pintar: `pragma solidity ^0.8.28;`.
+Pastikan bahwa versi compiler di Remix IDE sesuai dengan versi compiler yang disebutkan di smart contract: `pragma solidity ^0.8.28;`.
 
 Tekan tombol play berwarna hijau di bagian atas untuk mengompilasi kontrak.
 

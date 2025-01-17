@@ -1,30 +1,30 @@
 ---
 title: ... menggunakan Hardhat
 slug: /building-on-lisk/deploying-smart-contract/with-Hardhat
-description: "Panduan untuk meluncurkan kontrak pintar di jaringan test Lisk menggunakan Hardhat. Termasuk instruksi untuk mengatur environment, mengompilasi, dan meluncurkan kontrak pintar."
+description: "Panduan untuk meluncurkan smart contract di jaringan test Lisk menggunakan Hardhat. Termasuk instruksi untuk mengatur environment, mengompilasi, dan meluncurkan smart contract."
 keywords:
   [
     "Hardhat",
-    "kontrak pintar",
+    "smart contract",
     "ERC-721",
     "Lisk",
     "jaringan test Lisk",
     "testnet Lisk",
     "Node.js",
     "Solidity",
-    "peluncuran kontrak pintar",
-    "luncurkan kontrak pintar",
-    "meluncurkan kontrak pintar",
+    "peluncuran smart contract",
+    "luncurkan smart contract",
+    "meluncurkan smart contract",
     "membangun di lisk",
-    "menulis ke kontrak pintar",
-    "pengembangan kontrak pintar",
+    "menulis ke smart contract",
+    "pengembangan smart contract",
   ]
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Meluncurkan Kontrak Pintar dengan Hardhat
+# Meluncurkan Smart Contract dengan Hardhat
 
 ## Prasyarat
 
@@ -59,7 +59,7 @@ Untuk informasi lebih lanjut, lihat [jaringan Lisk yang tersedia](/network-info)
 
 ## Membuat Proyek
 
-Sebelum Anda dapat mulai meluncurkan kontrak pintar ke Lisk, Anda perlu menyiapkan environment pengembangan dengan membuat proyek Node.js.
+Sebelum Anda dapat mulai meluncurkan smart contract ke Lisk, Anda perlu menyiapkan environment pengembangan dengan membuat proyek Node.js.
 
 Untuk membuat proyek Node.js baru, jalankan perintah berikut:
 
@@ -98,7 +98,7 @@ Proses penyiapan proyek akan memakan waktu beberapa saat hingga selesai.
 
 ## Mengonfigurasi Hardhat dengan Lisk
 
-Untuk meluncurkan kontrak pintar ke jaringan Lisk, Anda perlu mengonfigurasi proyek Hardhat Anda dan menambahkan jaringan Lisk.
+Untuk meluncurkan smart contract ke jaringan Lisk, Anda perlu mengonfigurasi proyek Hardhat Anda dan menambahkan jaringan Lisk.
 
 Contoh ini menggunakan [dotenv](https://www.npmjs.com/package/dotenv) untuk memuat variabel environment `WALLET_KEY` dari file `.env` ke `process.env.WALLET_KEY`.  
 Anda sebaiknya menggunakan metode serupa untuk menghindari menuliskan private key secara langsung di dalam source code Anda.
@@ -177,7 +177,7 @@ Untuk mengonfigurasi Hardhat agar menggunakan Lisk, tambahkan Lisk sebagai jarin
 
 ## Membuat Kontrak
 
-Untuk kemudahan dan keamanan, kita akan menggunakan interface `ERC721` yang disediakan oleh [OpenZeppelin Contracts library](https://docs.openzeppelin.com/contracts/5.x/) untuk membuat kontrak pintar NFT.  
+Untuk kemudahan dan keamanan, kita akan menggunakan interface `ERC721` yang disediakan oleh [OpenZeppelin Contracts library](https://docs.openzeppelin.com/contracts/5.x/) untuk membuat smart contract NFT.  
 Dengan OpenZeppelin, kita tidak perlu menulis keseluruhan interface ERC-721. Sebaliknya, kita dapat mengimpor kontrak dari library dan menggunakan fungsinya.
 
 Untuk menambahkan libarry OpenZeppelin Contracts ke proyek Anda, jalankan perintah berikut:
@@ -270,7 +270,7 @@ Anda dapat melihat status peluncuran dan kontrak dengan menggunakan penjelajah b
 
 Jika Anda meluncurkan kontrak baru atau yang dimodifikasi, Anda perlu memverifikasinya terlebih dahulu.
 
-## Memverifikasi Kontrak Pintar
+## Memverifikasi Smart Contract
 
 Jika Anda ingin berinteraksi dengan kontrak Anda di penjelajah blockchain, Anda atau orang lain perlu memverifikasinya terlebih dahulu.  
 Kontrak di atas sudah diverifikasi, sehingga Anda seharusnya dapat melihat versi Anda di penjelajah blockchain.  
@@ -376,10 +376,10 @@ https://sepolia-blockscout.lisk.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe
 :::
 
 Lihat kontrak Anda di BlockScout dengan mengikuti [link ke kontrak yang telah diluncurkan](https://sepolia-blockscout.lisk.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D?tab=contract) yang ditampilkan dalam pesan output langkah sebelumnya.  
-Penjelajah Blockchain akan mengonfirmasi bahwa kontrak tersebut telah diverifikasi dan memungkinkan Anda untuk [berinteraksi](#berinteraksi-dengan-kontrak-pintar) dengannya.
+Penjelajah Blockchain akan mengonfirmasi bahwa kontrak tersebut telah diverifikasi dan memungkinkan Anda untuk [berinteraksi](#berinteraksi-dengan-smart-contract) dengannya.
 
-## Berinteraksi dengan Kontrak Pintar
+## Berinteraksi dengan Smart Contract
 
-Setelah [kontrak diverifikasi](#memverifikasi-kontrak-pintar), Anda dapat menggunakan tab `Read Contract` dan `Write Contract` untuk berinteraksi dengan kontrak yang telah diluncurkan melalui [BlockScout](https://sepolia-blockscout.lisk.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D?tab=contract).  
+Setelah [kontrak diverifikasi](#memverifikasi-smart-contract), Anda dapat menggunakan tab `Read Contract` dan `Write Contract` untuk berinteraksi dengan kontrak yang telah diluncurkan melalui [BlockScout](https://sepolia-blockscout.lisk.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D?tab=contract).  
 Jangan lupa untuk memperbarui alamat kontrak di URL BlockScout.  
 Anda juga perlu menghubungkan wallet Anda terlebih dahulu dengan mengklik tombol `Connect Wallet`.

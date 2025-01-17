@@ -53,7 +53,7 @@ Representasi token yang di-bridge adalah token ERC-20 yang mengimplementasikan i
 Token native dapat memiliki lebih dari satu representasi yang di-bridge dalam waktu yang bersamaan.  
 Pengguna harus selalu menentukan token yang ingin mereka gunakan saat menggunakan bridge; lihat [Superchain Token List](#superchain-token-list). Representasi token yang berbeda untuk token native yang sama dianggap sebagai token yang sepenuhnya independen.
 
-Bridge Standar adalah kontrak pintar sederhana dengan fungsionalitas untuk memindahkan token ERC-20 antara Lisk dan Ethereum.
+Bridge Standar adalah smart contract sederhana dengan fungsionalitas untuk memindahkan token ERC-20 antara Lisk dan Ethereum.
 
 Pada protokol terdiri dari dua kontrak penting:
 

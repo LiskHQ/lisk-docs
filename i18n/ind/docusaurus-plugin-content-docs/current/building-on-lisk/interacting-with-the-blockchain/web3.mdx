@@ -1,7 +1,7 @@
 ---
 title: ...menggunakan web3.js
 slug: /building-on-lisk/interacting-with-the-blockchain/web3
-description: Dokumentasi untuk menggunakan web3.js, sebuah library JavaScript untuk interaksi blockchain yang kompatibel dengan EVM. Halaman ini mencakup instalasi, pengaturan, koneksi ke jaringan Lisk, membaca dan menulis data blockchain, serta berinteraksi dengan kontrak pintar.
+description: Dokumentasi untuk menggunakan web3.js, sebuah library JavaScript untuk interaksi blockchain yang kompatibel dengan EVM. Halaman ini mencakup instalasi, pengaturan, koneksi ke jaringan Lisk, membaca dan menulis data blockchain, serta berinteraksi dengan smart contract.
 keywords:
   [
     web3.js,
@@ -9,14 +9,14 @@ keywords:
     jaringan Lisk,
     Lisk mainnet,
     Lisk testnet,
-    kontrak pintar,
+    smart contract,
     EVM-compatible,
     blockchain,
     Web3,
     Wallet,
     ABI,
     eth,
-    berinteraksi dengan kontrak pintar,
+    berinteraksi dengan smart contract,
   ]
 ---
 
@@ -27,7 +27,7 @@ import TabItem from '@theme/TabItem';
 
 [web3.js](https://web3js.org/) adalah sebuah library JavaScript untuk membangun dan berinteraksi dengan jaringan blockchain yang kompatibel dengan EVM.
 
-Anda juga dapat menggunakan web3.js untuk berinteraksi dengan kontrak pintar yang telah diluncurkan di jaringan Lisk.
+Anda juga dapat menggunakan web3.js untuk berinteraksi dengan smart contract yang telah diluncurkan di jaringan Lisk.
 
 ## Instalasi
 
@@ -206,23 +206,23 @@ Saldo akun penerima akan bertambah sebesar `0.0001` ETH setelah transaksi berhas
 
 
 
-## Berinteraksi dengan Kontrak Pintar
+## Berinteraksi dengan Smart Contract
 
-Anda dapat menggunakan web3.js untuk berinteraksi dengan sebuah kontrak pintar di Lisk dengan menginstansikan objek `Contract` dan memberikan `ABI` serta `address` dari kontrak pintar yang telah diluncurkan.
+Anda dapat menggunakan web3.js untuk berinteraksi dengan sebuah smart contract di Lisk dengan menginstansikan objek `Contract` dan memberikan `ABI` serta `address` dari smart contract yang telah diluncurkan.
 
 Pada bagian berikut, kita akan:
-- Membaca data dari kontrak pintar yang telah diluncurkan, secara spesifik, kita akan mengambil **nama dari kontrak tersebut**.
-- Selain itu, kita juga akan **mint token** melalui kontrak pintar yang sudah diluncurkan.
+- Membaca data dari smart contract yang telah diluncurkan, secara spesifik, kita akan mengambil **nama dari kontrak tersebut**.
+- Selain itu, kita juga akan **mint token** melalui smart contract yang sudah diluncurkan.
 
 :::tip
 Untuk gambaran umum tentang fungsi publik yang tersedia pada kontrak, silakan periksa tab [Read Contract](https://sepolia-blockscout.lisk.com/token/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=read_contract) dan [Write Contract](https://sepolia-blockscout.lisk.com/token/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=write_contract) untuk kontrak tertentu.
 :::
 
 
-### Membaca dari Kontrak Pintar
+### Membaca dari Smart Contract
 
-Untuk membaca data dari sebuah kontrak pintar, Anda perlu memberikan `address` dan `abi` dari kontrak pintar yang telah diluncurkan dan diverifikasi.
-Setelah informasi tersebut diberikan, fungsi read-only dari kontrak pintar dapat dipanggil, seperti yang dijelaskan di bawah ini:
+Untuk membaca data dari sebuah smart contract, Anda perlu memberikan `address` dan `abi` dari smart contract yang telah diluncurkan dan diverifikasi.
+Setelah informasi tersebut diberikan, fungsi read-only dari smart contract dapat dipanggil, seperti yang dijelaskan di bawah ini:
 
 <Tabs>
   <TabItem value="ce" label = "get-contract-name.js" default>
@@ -755,7 +755,7 @@ export const abi = [
   </TabItem>
 </Tabs>
 
-### Menulis ke Kontrak Pintar
+### Menulis ke Smart Contract
 
 Untuk menulis data melalui metode kontrak, beberapa hal diperlukan, seperti:
 

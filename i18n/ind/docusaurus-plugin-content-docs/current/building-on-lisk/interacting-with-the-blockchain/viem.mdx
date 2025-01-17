@@ -1,7 +1,7 @@
 ---
 title: ...menggunakan viem
 slug: /building-on-lisk/interacting-with-blockchain/viem
-description: Dokumentasi untuk menggunakan Viem, sebuah interface TypeScript untuk blockchain yang kompatibel dengan EVM. Halaman ini mencakup instalasi, pengaturan, serta berbagai fungsi seperti membaca dan menulis data blockchain, dan berinteraksi dengan kontrak pintar di Lisk.
+description: Dokumentasi untuk menggunakan Viem, sebuah interface TypeScript untuk blockchain yang kompatibel dengan EVM. Halaman ini mencakup instalasi, pengaturan, serta berbagai fungsi seperti membaca dan menulis data blockchain, dan berinteraksi dengan smart contract di Lisk.
 keywords:
   [
     viem,
@@ -9,7 +9,7 @@ keywords:
     Lisk mainnet,
     Lisk testnet,
     Ethereum,
-    kontrak pintar,
+    smart contract,
     blockchain,
     RPC URL,
     JavaScript,
@@ -24,7 +24,7 @@ import TabItem from '@theme/TabItem';
 
 [viem](https://viem.sh/) adalah sebuah interface TypeScript untuk Ethereum yang menyediakan low-level stateless primitives untuk berinteraksi dengan Ethereum.
 
-Anda dapat menggunakan viem untuk berinteraksi dengan kontrak pintar yang diluncurkan di Lisk.  
+Anda dapat menggunakan viem untuk berinteraksi dengan smart contract yang diluncurkan di Lisk.  
 Viem menyediakan dukungan penuh untuk chain yang diimplementasikan pada OP stack, lihat [viem.sh > OP stack](https://viem.sh/op-stack).
 
 ## Instalasi
@@ -256,9 +256,9 @@ const hash = await walletClientL2.sendTransaction({
 console.log(hash);
 ```
 
-## Berinteraksi dengan Kontrak Pintar
+## Berinteraksi dengan Smart Contract
 
-Anda dapat menggunakan viem untuk berinteraksi dengan kontrak pintar di Lisk dengan membuat instance `Contract` menggunakan [`getContract`](https://viem.sh/docs/contract/getContract.html) dan memberikan ABI kontrak, alamat kontrak, serta [Public](https://viem.sh/docs/clients/public.html) dan/atau [Wallet](https://viem.sh/docs/clients/wallet.html) Client:  
+Anda dapat menggunakan viem untuk berinteraksi dengan smart contract di Lisk dengan membuat instance `Contract` menggunakan [`getContract`](https://viem.sh/docs/contract/getContract.html) dan memberikan ABI kontrak, alamat kontrak, serta [Public](https://viem.sh/docs/clients/public.html) dan/atau [Wallet](https://viem.sh/docs/clients/wallet.html) Client:  
 
 <Tabs>
 <TabItem value="example" label="contract-example.js">
