@@ -9,7 +9,7 @@ keywords:
     'ERC',
     'EIP',
     'ERC-1155',
-    'Token Hybrid',
+    'Hybrid Token',
     'Multi token',
   ]
 ---

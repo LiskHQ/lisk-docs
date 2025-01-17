@@ -6,7 +6,7 @@ keywords:
   [
     'kontrak ERC-20',
     'Token Standar',
-    'Testnet Lisk',
+    'Lisk Testnet',
     'Sepolia',
     'Ethereum',
     'Lisk Sepolia',

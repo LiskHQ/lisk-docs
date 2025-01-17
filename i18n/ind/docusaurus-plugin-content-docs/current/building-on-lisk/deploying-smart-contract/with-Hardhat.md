@@ -9,7 +9,7 @@ keywords:
     "ERC-721",
     "Lisk",
     "jaringan test Lisk",
-    "testnet Lisk",
+    "Lisk testnet",
     "Node.js",
     "Solidity",
     "deployment smart contract",

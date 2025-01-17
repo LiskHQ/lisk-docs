@@ -119,7 +119,7 @@ Untuk membaca data dari feeds harga, kita mendefinisikan fungsi-fungsi berikut d
 - `getRedStoneLSKDataFeedLatestAnswer()`
 - `getRedStoneUSDTDataFeedLatestAnswer()`
 
-Di dalam fungsi-fungsi tersebut, panggil [latestRoundData](https://docs.chain.link/data-feeds/api-reference#latestrounddata) pada masing-masing data feed untuk menerima harga spot terbaru untuk token yang bersangkutan.
+Di dalam fungsi-fungsi tersebut, panggil [latestRoundData](https://docs.chain.link/data-feeds/api-reference#latestrounddata) pada masing-masing data feed untuk menerima harga spot terbaru untuk token yang sesuai.
 
 Fungsi `latestRoundData()` me-return nilai-nilai berikut:
 

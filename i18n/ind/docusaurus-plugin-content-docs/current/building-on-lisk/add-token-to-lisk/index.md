@@ -6,10 +6,10 @@ description: 'Panduan menambahkan kontrak ERC-20 eksternal yang telah di-deploy 
 keywords:
   [
     'Kontrak ERC-20',
-    'Testnet Lisk',
+    'Lisk Testnet',
     'Sepolia',
     'Ethereum',
-    'Mainnet Lisk',
+    'Lisk Mainnet',
     'Lisk',
     'daftar token Optimism Superchain',
   ]

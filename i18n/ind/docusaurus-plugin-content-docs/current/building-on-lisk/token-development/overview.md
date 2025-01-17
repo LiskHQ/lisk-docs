@@ -13,8 +13,8 @@ keywords:
     'ERC-721',
     'ERC-1155',
     'NFT',
-    'token Fungible',
-    'token Hybrid',
+    'Fungible token',
+    'Hybrid token',
   ]
 ---
 
