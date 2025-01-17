@@ -1,20 +1,20 @@
 ---
 title: Gambaran Umum
 slug: /token-development
-description: "Pengantar tentang standar token ERC dan pengembangan token di Lisk."
+description: 'Pengantar tentang standar token ERC dan pengembangan token di Lisk.'
 keywords:
   [
-    "Lisk",
-    "Pengembangan Token",
-    "Luncurkan token",
-    "ERC",
-    "EIP",
-    "ERC-20",
-    "ERC-721",
-    "ERC-1155",
-    "NFT",
-    "token Fungible",
-    "token Hybrid",
+    'Lisk',
+    'Pengembangan Token',
+    'Luncurkan token',
+    'ERC',
+    'EIP',
+    'ERC-20',
+    'ERC-721',
+    'ERC-1155',
+    'NFT',
+    'token Fungible',
+    'token Hybrid',
   ]
 ---
 

@@ -2,16 +2,16 @@
 title: Pengenalan
 sidebar_position: 1
 slug: /building-on-lisk/add-token-to-lisk
-description: "Panduan menambahkan kontrak ERC-20 eksternal yang telah diluncurkan di Ethereum ke jaringan Lisk."
+description: 'Panduan menambahkan kontrak ERC-20 eksternal yang telah diluncurkan di Ethereum ke jaringan Lisk.'
 keywords:
   [
-    "Kontrak ERC-20",
-    "Testnet Lisk",
-    "Sepolia",
-    "Ethereum",
-    "Mainnet Lisk",
-    "Lisk",
-    "daftar token Optimism Superchain",
+    'Kontrak ERC-20',
+    'Testnet Lisk',
+    'Sepolia',
+    'Ethereum',
+    'Mainnet Lisk',
+    'Lisk',
+    'daftar token Optimism Superchain',
   ]
 ---
 

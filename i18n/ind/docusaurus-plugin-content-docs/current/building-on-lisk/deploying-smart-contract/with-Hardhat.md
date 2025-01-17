@@ -227,14 +227,14 @@ Setelah kontrak Anda berhasil dikompilasi, Anda dapat meluncurkan kontrak ke jar
 Untuk meluncurkan kontrak ke jaringan test Lisk Sepolia, Anda perlu memodifikasi file `scripts/deploy.ts` di proyek Anda:
 
 ```ts title="scripts/deploy.ts"
-import { ethers } from "hardhat";
+import { ethers } from 'hardhat';
 
 async function main() {
-  const nft = await ethers.deployContract("NFT");
+  const nft = await ethers.deployContract('NFT');
 
   await nft.waitForDeployment();
 
-  console.log("NFT Contract Deployed at " + nft.target);
+  console.log('NFT Contract Deployed at ' + nft.target);
 }
 
 // Kami merekomendasikan pattern ini agar dapat menggunakan async/await di seluruh bagian kode.

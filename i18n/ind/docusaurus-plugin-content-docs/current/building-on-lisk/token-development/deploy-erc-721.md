@@ -1,15 +1,15 @@
 ---
-title: "Meluncurkan Token ERC-721 Baru di Lisk"
-description: "Panduan Cara Meluncurkan Token ERC-721 Baru di Lisk."
+title: 'Meluncurkan Token ERC-721 Baru di Lisk'
+description: 'Panduan Cara Meluncurkan Token ERC-721 Baru di Lisk.'
 keywords:
   [
-    "Lisk",
-    "Pengembangan Token",
-    "Meluncurkan token",
-    "ERC",
-    "EIP",
-    "ERC-721",
-    "NFT",
+    'Lisk',
+    'Pengembangan Token',
+    'Meluncurkan token',
+    'ERC',
+    'EIP',
+    'ERC-721',
+    'NFT',
   ]
 ---
 

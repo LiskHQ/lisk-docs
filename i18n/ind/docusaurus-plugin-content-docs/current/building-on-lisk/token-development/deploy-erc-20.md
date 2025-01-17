@@ -1,15 +1,15 @@
 ---
-title: "Meluncurkan Token ERC-20 Baru di Lisk"
-description: "Panduan untuk meluncurkan Token ERC-20 Baru di Lisk"
+title: 'Meluncurkan Token ERC-20 Baru di Lisk'
+description: 'Panduan untuk meluncurkan Token ERC-20 Baru di Lisk'
 keywords:
   [
-    "Lisk",
-    "Pengembangan token",
-    "Meluncurkan token",
-    "ERC",
-    "EIP",
-    "ERC-20",
-    "Fungible token",
+    'Lisk',
+    'Pengembangan token',
+    'Meluncurkan token',
+    'ERC',
+    'EIP',
+    'ERC-20',
+    'Fungible token',
   ]
 ---
 

@@ -17,7 +17,7 @@ keywords:
     peluncuran node,
     Ethereum node,
   ]
-tags: ["node"]
+tags: ['node']
 difficulty: beginner
 ---
 

@@ -3,8 +3,8 @@ id: bridged-tokens
 title: Alamat Token yang di-bridge
 sidebar_position: 2
 slug: /bridged-tokens
-description: "Halaman referensi yang mencantumkan semua token yang di-bridge ke Lisk."
-keywords: ["Lisk", "token yang di-bridge"]
+description: 'Halaman referensi yang mencantumkan semua token yang di-bridge ke Lisk.'
+keywords: ['Lisk', 'token yang di-bridge']
 ---
 
 # Token yang di-bridge

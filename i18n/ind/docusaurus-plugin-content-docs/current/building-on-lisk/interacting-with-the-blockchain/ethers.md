@@ -43,7 +43,7 @@ Sebelum Anda dapat mulai menggunakan ethers.js, Anda perlu mengimpornya ke dalam
 Tambahkan baris kode berikut di bagian atas file Anda untuk mengimpor ethers.js:
 
 ```javascript
-const ethers = require("ethers");
+const ethers = require('ethers');
 ```
 
 ## Hubungkan ke Lisk

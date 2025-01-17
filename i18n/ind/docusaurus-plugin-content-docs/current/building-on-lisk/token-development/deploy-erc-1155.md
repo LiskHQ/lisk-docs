@@ -1,16 +1,16 @@
 ---
-title: "Meluncurkan Token ERC-1155 Baru di Lisk"
-description: "Panduan tentang Cara Meluncurkan Token ERC-1155 Baru di Lisk"
+title: 'Meluncurkan Token ERC-1155 Baru di Lisk'
+description: 'Panduan tentang Cara Meluncurkan Token ERC-1155 Baru di Lisk'
 keywords:
   [
-    "Lisk",
-    "Pengembangan Token",
-    "Meluncurkan token",
-    "ERC",
-    "EIP",
-    "ERC-1155",
-    "Token Hybrid",
-    "Multi token",
+    'Lisk',
+    'Pengembangan Token',
+    'Meluncurkan token',
+    'ERC',
+    'EIP',
+    'ERC-1155',
+    'Token Hybrid',
+    'Multi token',
   ]
 ---
 

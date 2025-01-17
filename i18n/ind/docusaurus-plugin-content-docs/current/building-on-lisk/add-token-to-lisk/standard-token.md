@@ -1,16 +1,16 @@
 ---
 title: Meluncurkan Token Standar
 slug: /building-on-lisk/add-token-to-lisk/standard-token
-description: "Pelajari cara menambahkan token ERC-20 standar Anda ke Lisk menggunakan bridge standar."
+description: 'Pelajari cara menambahkan token ERC-20 standar Anda ke Lisk menggunakan bridge standar.'
 keywords:
   [
-    "kontrak ERC-20",
-    "Token Standar",
-    "Testnet Lisk",
-    "Sepolia",
-    "Ethereum",
-    "Lisk Sepolia",
-    "daftar token Optimism Superchain",
+    'kontrak ERC-20',
+    'Token Standar',
+    'Testnet Lisk',
+    'Sepolia',
+    'Ethereum',
+    'Lisk Sepolia',
+    'daftar token Optimism Superchain',
   ]
 ---
 
