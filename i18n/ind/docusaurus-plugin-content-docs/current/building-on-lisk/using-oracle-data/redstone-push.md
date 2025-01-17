@@ -71,7 +71,7 @@ Untuk setiap data feed yang ingin Anda simpan, buat konstanta baru dengan tipe `
 Dalam konstruktor, tetapkan konstanta yang telah didefinisikan di atas untuk menunjuk ke data feed masing-masing:
 Gunakan fungsi `AggregatorV3Interface()` dan masukkan alamat kontrak data feed yang sesuai sebagai parameter.
 
-```solidity
+```solidity title="Importing the AggregatorV3Interface"
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.28;
 
@@ -135,16 +135,14 @@ Dalam contoh ini, kita hanya akan menggunakan `answer` dan `updatedAt`.
 Nilai `updatedAt` harus digunakan untuk memastikan bahwa `answer` cukup baru untuk digunakan oleh aplikasi Anda.  
 Anda dapat membandingkan `updatedAt` dengan waktu blok terbaru (`uint256 currentTime = block.timestamp;`) untuk memastikan hanya menggunakan data oracle terbaru dalam aplikasi Anda.
 
-```solidity
+:::caution
+Ini adalah contoh kontrak yang menggunakan kode yang belum diaudit.
+Jangan gunakan kode ini dalam produksi.
+:::
+
+```solidity title="Reading data feeds"
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.28;
-
-/**
- * INI ADALAH KONTRAK CONTOH YANG MENGGUNAKAN NILAI-NILAI
- * YANG DITETAPKAN LANGSUNG UNTUK KEJELASAN.
- * INI ADALAH KONTRAK CONTOH YANG MENGGUNAKAN KODE YANG BELUM DIAUDIT.
- * JANGAN GUNAKAN KODE INI DALAM PRODUKSI.
- */
 
 import {AggregatorV3Interface} from "@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol";
 

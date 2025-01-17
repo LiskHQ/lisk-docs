@@ -19,6 +19,7 @@ keywords:
 
 Halaman ini ditujukan untuk penerbit token yang sudah memiliki kontrak ERC-20 yang diluncurkan di Ethereum dan ingin men-submit token mereka untuk bridge antara Ethereum dan Lisk.
 Lisk menggunakan Superchain Token List sebagai referensi untuk token-token yang telah diluncurkan di Lisk.
+Jika Anda ingin membuat token baru di Lisk, silakan merujuk ke halaman [Pengembangan Token](../token-development/overview.md).
 
 ## Superchain Token List
 
@@ -87,6 +88,7 @@ Untuk instruksi langkah demi langkah tentang cara meluncurkan token ERC-20 di Li
 ### Langkah 2: Ajukan Detail Token Anda
 
 Ikuti instruksi di [repositori GitHub](https://github.com/ethereum-optimism/ethereum-optimism.github.io) dan ajukan Pull Request (PR) yang berisi detail yang diperlukan untuk token Anda.
+Khususnya, ikuti petunjuk khusus Lisk yang dijelaskan secara rinci di bagian [Menentukan chain](https://github.com/ethereum-optimism/ethereum-optimism.github.io?tab=readme-ov-file#specifying-chains).
 
 **Penting:** Anda harus menentukan bagian `lisk-sepolia` dan/atau `lisk` di file `data.json` token Anda.
 
@@ -95,5 +97,11 @@ Perubahan yang perlu Anda ajukan akan menjadi lebih sederhana jika token Anda su
 Sebagai contoh, [PR ini](https://github.com/ethereum-optimism/ethereum-optimism.github.io/commit/27ab9b2d3388f7feba3a152e0a0748c73d732a68) menunjukkan perubahan yang diperlukan untuk cbETH, yang sudah ada di Superchain Token Registry dan bergantung pada bridge standar Base.
 
 ### Langkah 3: Tunggu Persetujuan Akhir
-
 Peninjauan secara rutin dilakukan oleh tim Lisk, dan Anda akan menerima balasan dalam waktu 24-72 jam (tergantung apakah PR diajukan pada hari kerja, akhir pekan, atau hari libur).
+
+## Langkah 4 : Menambahkan Token ke Gelato Bridge
+Untuk menambahkan token Anda ke [Gelato Bridge](https://bridge.lisk.com/), hubungi tim Lisk di [Discord Lisk](https://lisk.chat) dengan detail token tersebut:
+
+- Masuk ke channel `#lisk-dev`.
+- Tag seorang moderator, minta mereka untuk menambahkan token Anda ke Gelato Bridge, dan bagikan tautan PR Anda dari [langkah 2: detail token](#langkah-2-ajukan-detail-token-anda).
+- The Lisk team will then coordinate with Gelato to get the token added to the Gelato Bridge.
