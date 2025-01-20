@@ -65,7 +65,7 @@ To describe important steps in this innovation, websites, and apps are generally
     - Limited interoperability
   </TabItem>
   <TabItem value="web3" label="Web3" default>
-    Web3 (also known as Web 3.0) is the next step in the evolution of the Web, aiming to address the [limitations of Web 2.0](web3-app-development.mdx?web-version=web2#web2-limitations).
+    Web3 (also known as Web 3.0) is the next step in the evolution of the Web, aiming to address the [limitations of Web 2.0](./web3-app-development.mdx?web-version=web2#web2-limitations).
     Web3 is based on the idea of a decentralized internet, where users are in control over their data.
 
     :::info
@@ -137,8 +137,6 @@ To interact with the blockchain, there are various libraries and frameworks avai
 
 ## Getting started with Web3 app development
 
-### Platforms
-
 To get started with the actual development of a Web3 app, you need to be clear about the right **platform(s)** to build your Web3 app on.
 The following sections will give you an overview of the different platforms you can choose from to build your Web3 app on, including further resources and guides to get you started with the app development.
 
@@ -152,6 +150,7 @@ Last but not least, mobile apps allow users to access your app on the go, which 
 - [Build Web3 Mobile Apps with React Native on Lisk with thirdweb](https://blog.thirdweb.com/web3-mobile-apps/build-web3-mobile-apps-with-reactive-native-on-lisk/)
 - [Video tutorial: How to Build a Web3 Mobile App](https://www.youtube.com/watch?v=PRAsc_ocVtk) *by thirdweb*
 - [Building a mobile dApp with Flutter](https://medium.com/dash-community/building-a-mobile-dapp-with-flutter-be945c80315a)
+- [How to pay gas fees with LSK](https://blog.thirdweb.com/changelog/ts-tokenpaymasters-pay-for-gas-with-lisk-lsk-base-usdc-or-celo-cusd/) *by thirdweb*
 
 ### Web3 Web Apps
 The main advantage of web applications is that they are platform-independent and can be accessed from any device with a web browser.
@@ -183,100 +182,3 @@ Desktop apps make it difficult for users to access them on the go, as you need a
 On the other side, desktop apps shine with their performance and the ability to use the full power of the computer they are running on, and they are typically build for larger screens allowing more complex user interfaces.
 So if you application requires a lot of computing power, and/or a very complex UI that might not be fitting for a mobile screen, a desktop app can be the right choice.
  */}
-
-### Testing and Deployment
-When it comes to testing and deployment of Web3 apps, there are some additional aspects to consider compared to Web2 apps.
-The intrinsic vulnerabilities of smart contracts, the immutability of blockchain data and interacting with a decentralized network call for specific testing and security measures.
-Gladly, there are already many tools available to help developers ensure the security and reliability of their Web3 apps.
-The list below provides a selection of popular tools and services used to test Web3 apps:
-
-#### General test suites
-- Foundry
-- HardHat
-- Remix
-- [Waffle](https://getwaffle.io/)
-
-#### Smart contract analysis
-- Slither
-- [Etheno](https://github.com/crytic/etheno)
-- Securify
-- Mythx
-- Smart contract audits
-
-#### Blockchain simulators / local devnets
-- Ganache
-- MoonBeam
-
-#### Testnets
-##### Public Testnets
-- Lisk Sepolia
-##### Virtual testnets
-- [Tenderly](https://blog.tenderly.co/how-virtual-testnets-replace-public-testnets/)
-
-#### E2E testing
-- [Synpress](https://synpress.io/)
-
-#### Automated Testing and Continuous Integration (CI)
-- k6
-- Artillery
-
-#### Monitoring
-- Prometheus & Grafana
-- Elastic Stack (ELK)
-
-### Best practices
-
-- Proxy contracts: 
-Smart contracts are immutable, meaning that once they are deployed, they cannot be changed.
-However, to fix bugs or add new features to an already deployed smart contract, proxy contracts can be used to upgrade smart contracts without changing the contract address.
-- Gas Optimization:
-- secure key management
-- Bug bounty programs
-- handling user data
-
-### Onboarding Web2 users to Web3
-
-A major challenge of Web3 applications is to provide a seamless user experience for users, similar to what they are used to from Web2 applications.
-
-To onboard Web2 users to Web3, apps need to simplify the way how users interact with the app, in a way that feels natural and intuitive to them, while still providing the benefits of Web3 in a secure way.
-To aim for a smooth user experience, there are several strategies and design patterns that can be utilized:
-
-#### Account abstraction and smart accounts
-
-Account abstraction is a concept that introduces an additional layer over the blockchain, which delegates most of the complexity of interacting with the blockchain away from the user to smart contracts.
-It has the potential to significantly enhance the user experience of Web3 applications, as it allows users to interact with the app in a more user-friendly and secure way.
-Account abstraction is also sometimes referred to as "smart accounts" or "smart wallets", because it puts most of the logic of handling transactions and user interactions into smart contracts.
-
-This unlocks a range of features that significantly enhance user experience:
-
-- **Signature Abstraction**: Users no longer need to manually sign transactions with private keys.
-Instead, smart contracts handle the signing logic, eliminating the risk of user error and phishing attacks.
-- **Enhanced Security**: Multi-signature wallets, social recovery mechanisms, and custom access controls can be implemented within the smart contract, mitigating single points of failure and theft risks.
-- **Customizable Transactions**: Smart contracts can be programmed to include spending limits, time-locked transactions, and dApp-specific controls.
-This allows to automate transactions and tailoring the user experience to specific needs.
-- **Fee Abstraction**: Transaction fees can be dynamically managed through smart contracts, enabling features like custom gas tokens and gasless transactions for specific use cases, see [Gasless transactions and fee management](#gasless-transactions-and-fee-management).
-
-On the technical side, account abstraction is implemented by the [ERC-4337 standard](https://eips.ethereum.org/EIPS/eip-4337), which defines a set of interfaces and functions that smart contracts can use to interact with the blockchain on behalf of users.
-
-It comprises the following fundamental components:
-
-- **UserOperation**: a structure that describes a transaction to be sent on behalf of a user.
-To avoid confusion, it is not named “transaction”.
-Like a transaction, it contains “sender”, “to”, “calldata”, “maxFeePerGas”, “maxPriorityFee”, “signature”, “nonce”.
-Unlike a transaction the “signature” field usage is not defined by the protocol, but by each account implementation.
-Also, it contains several other fields, described in detail in ERC-4337.
-- **Account Contract**: the user's smart account sending a user operation.
-- **EntryPoint**: a singleton contract to execute bundles of UserOperations.
-It manages the verification and execution logic for UserOperations, ensuring they are processed correctly.
-- **Bundler**: Bundlers are contracts that package UserOperations from a mempool and send them to the EntryPoint.
-Bundling is the process where a node/bundler collects multiple UserOperations and creates a single transaction to submit onchain.
-- **Account Factory**: When using a wallet for the first time, this contract specifies the creation of the smart contract wallet.
-- **Paymaster**(optional): a helper contract that agrees to pay for the transaction, instead of the sender itself.
-Paymasters can cover gas costs for users, sponsor specific transactions, or implement custom fee models, opening doors for novel use cases.
-
-##### Further reading
-- [Account abstraction: A complete overview](https://blaize.tech/blog/account-abstraction-guide/) *by Blaize*
-- [What is Account Abstraction? ERC-4337 Explained](https://blog.thirdweb.com/account-abstraction-erc4337/) *by thirdweb*
-- [How to pay gas fees with LSK](https://blog.thirdweb.com/changelog/ts-tokenpaymasters-pay-for-gas-with-lisk-lsk-base-usdc-or-celo-cusd/) *by thirdweb*
-- [How to create a Web3 mobile app with gasless transactions on Lisk](https://blog.thirdweb.com/web3-mobile-apps/build-web3-mobile-apps-with-reactive-native-on-lisk/) *by thirdweb*
-

@@ -32,7 +32,7 @@ Enter your account address or ENS name to receive 1 test LSK per request.
 ## Superchain Faucet
 Grants Testnet **ETH** on Lisk Sepolia.
 
-The Superchain faucet is available here: https://app.optimism.io/faucet
+The Superchain faucet is available here: https://console.optimism.io/faucet
 
 There are two different options to acquire free Testnet ETH:
 

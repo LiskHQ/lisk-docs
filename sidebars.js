@@ -48,6 +48,7 @@ const sidebars = {
           items: [
             'building-on-lisk/deploying-smart-contract/with-Foundry',
             'building-on-lisk/deploying-smart-contract/with-Hardhat',
+            'building-on-lisk/deploying-smart-contract/with-Remix',
             'building-on-lisk/deploying-smart-contract/with-thirdweb',
           ],
           link: {

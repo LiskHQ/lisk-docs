@@ -65,6 +65,30 @@ They provide a free tier that allows for an unlimited amount of requests over pu
 
 You can also check the available endpoints for Lisk directly under [https://drpc.org/public-endpoints/lisk](https://drpc.org/public-endpoints/lisk).
 
+dRPC also provides a [faucet for Lisk Sepolia](faucets.md#drpc-faucet).
+
 :::note[How to create API keys for dRPC]
 In order to use the provided endpoints, you need to [get the corresponding API keys](https://docs.drpc.org/gettingstarted/createaccount).
 :::
+
+## Moralis
+
+[Moralis](https://developers.moralis.com/chains/lisk/) APIs elevate your dapps with unmatched speed, security, and scalability across EVM-compatible chains.
+
+Moralis enforces rate limits at the account level to ensure fair usage across all users.
+Each account has a set number of allowed requests per minute, based on your plan.
+
+[Get Free Lisk RPC Nodes using Moralis](https://developers.moralis.com/chains/lisk/)
+
+The free plan for Moralis includes:
+
+- 40K Compute Units per day
+- Access to RPC nodes
+- Access to all Moralis APIs
+
+To use the Moralis RPC Nodes, follow these steps:
+
+1. **Create a Moralis account:** [Sign up](https://admin.moralis.com/) for free and access your RPC nodes.
+2. **Set up your node:** Visit the [Setting Up RPC Nodes](https://docs.moralis.com/get-your-node-api-key) guide to create and configure your RPC node.
+3. **Make your first RPC call:** Once you have your node set up, follow the [tutorial](https://docs.moralis.com/make-your-first-rpc-call) to make your first JSON-RPC call using ethers.js.
+
