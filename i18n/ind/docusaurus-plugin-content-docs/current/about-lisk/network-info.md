@@ -10,7 +10,7 @@ keywords:
     'Testnet Lisk',  
     'Sepolia',  
     'faucet',  
-    'penjelajah blok',  
+    'block explorer',  
   ]  
 toc_max_heading_level: 4  
 ---  
@@ -30,8 +30,8 @@ Lisk L2 tersedia pada jaringan berikut:
 | **Endpoint WS RPC**      | [wss://ws.api.lisk.com](wss://ws.api.lisk.com)                              |  
 | **Chain ID**             | 1135                                                                        |  
 | **Simbol Mata Uang**     | ETH                                                                         |  
-| **Penjelajah Blok**      | https://blockscout.lisk.com                                                 |  
-| **API Penjelajah Blok**  | https://blockscout.lisk.com/api                                             |  
+| **Block Explorer**      | https://blockscout.lisk.com                                                 |  
+| **API Block Explorer**  | https://blockscout.lisk.com/api                                             |  
 | **Bridge Lisk**          | https://bridge.lisk.com                                                     |
 
 ### Testnet Lisk Sepolia
