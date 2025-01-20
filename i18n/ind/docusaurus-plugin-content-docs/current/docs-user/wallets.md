@@ -58,13 +58,13 @@ Tambahkan jaringan Lisk ke MetaMask dengan sekali klik melalui [ChainList](https
 
 Fitur utama:
 - **Non-kustodial**
-- **Wallet multi-rantai** melalui [Snaps](https://support.metamask.io/metamask-snaps/what-are-interoperability-snaps/).
+- **Wallet multi-chain** melalui [Snaps](https://support.metamask.io/metamask-snaps/what-are-interoperability-snaps/).
 - **Ekstensi browser** dan **Versi mobile**
 - **Dukungan Token**: ETH, ERC 20 (termasuk LSK), dan dukungan ERC 721 (NFT).
 
 ### Zerion
 [Zerion](https://zerion.io/) adalah wallet kripto untuk segala hal yang terkait dengan blockchain.
-Ini memungkinkan Anda mengelola semua investasi, koleksi, posisi staking, dan airdrop Anda di 14 rantai dalam satu tempat.
+Ini memungkinkan Anda mengelola semua investasi, koleksi, posisi staking, dan airdrop Anda di 14 chain dalam satu tempat.
 
 Fitur utama:
 - **Integrasi native jaringan Lisk**
@@ -82,7 +82,7 @@ Memungkinkan pengguna untuk membuat wallet dengan Login Sosial yang terintegrasi
 Fitur utama:
 - **Integrasi native jaringan Lisk**
 - **Non-kustodial**
-- **Multi-rantai**: Kompatibel dengan rantai EVM mana pun, BTC, Solana, dan TRON.
+- **Multi-chain**: Kompatibel dengan chain EVM mana pun, BTC, Solana, dan TRON.
 - **Penyedia wallet yang tertanam**
 - **On- dan off-ramp token**
 - **Pemulihan wallet melalui login sosial**
@@ -101,8 +101,8 @@ Fitur utama:
 Lihat [daftar fitur lengkap](https://support.brave.com/hc/en-us/articles/14380262951053-What-features-are-available-in-Brave-Wallet).
 
 ### Rabby
-[Rabby](https://rabby.io/) adalah wallet kripto open source untuk Ethereum dan rantai-rantai EVM lainnya.
-Dirancang untuk pengguna DeFi dengan pengalaman multi-rantai yang mulus.
+[Rabby](https://rabby.io/) adalah wallet kripto open source untuk Ethereum dan chain-chain EVM lainnya.
+Dirancang untuk pengguna DeFi dengan pengalaman multi-chain yang mulus.
 Melindungi aset Anda dengan pemindaian potensi risiko sebelum transaksi dan menampilkan perubahan saldo yang akan datang sebelum Anda menandatangani transaksi.
 
 Fitur utama:
@@ -114,7 +114,7 @@ Fitur utama:
 
 ### Safe
 
-[Safe](https://safe.optimism.io/welcome/accounts?chain=lisk) adalah wallet multisig yang dapat disesuaikan dan platform untuk menyimpan aset digital di Ethereum dan rantai-rantai EVM populer seperti Lisk untuk pengguna, perusahaan, dana, pengembang, DAO, dan investor.
+[Safe](https://safe.optimism.io/welcome/accounts?chain=lisk) adalah wallet multisig yang dapat disesuaikan dan platform untuk menyimpan aset digital di Ethereum dan chain-chain EVM populer seperti Lisk untuk pengguna, perusahaan, dana, pengembang, DAO, dan investor.
 Aplikasi DeFi dapat diakses dan dana pengguna dapat digunakan dari dalam antarmuka Safe.
 
 Fitur utama:
@@ -133,4 +133,4 @@ Ledger percaya pada penyimpanan pribadi yang aman, dan dengan perangkat Ledger, 
 Fitur utama:
 - **Non-kustodial**
 - **Wallet perangkat keras**
-- **Multi-rantai**: Lihat [daftar token yang didukung](https://www.ledger.com/supported-crypto-assets).
+- **Multi-chain**: Lihat [daftar token yang didukung](https://www.ledger.com/supported-crypto-assets).
