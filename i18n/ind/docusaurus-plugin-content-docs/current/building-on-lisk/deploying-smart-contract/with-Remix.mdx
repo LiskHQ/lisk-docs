@@ -1,0 +1,55 @@
+---
+title: ... with Remix
+slug: /building-on-lisk/deploying-smart-contract/with-Remix
+description: "A guide on deploying a smart contract on the Lisk network using Remix. Includes instructions for setting up the environment, compiling, deploying and verifying the smart contract."
+keywords: [
+    "Remix",
+    "smart contract",
+    "ERC-721", "Lisk",
+    "Lisk test network",
+    "Lisk testnet",
+    "Node.js",
+    "Solidity",
+    "smart contract deployment",
+    "deploy a smart contract",
+    "deploying smart contracts",
+    "build on lisk",
+    "write smart contract",
+    "smart contract development"
+    ]
+---
+import PartialExample from '../../partials/_remix-deploy-example.mdx';
+
+# Deploying a smart contract with Remix
+
+On this page, you will learn how to create, deploy and verify a smart contract with the Remix IDE to the **Lisk Sepolia** testnet.
+
+Remix Online IDE is a powerful toolset for developing, deploying, debugging, and testing Ethereum and EVM-compatible smart contracts.
+It requires no setup and can be accessed directly through the browser under https://remix.ethereum.org/.
+
+## Prerequisites
+
+### Wallet funds
+
+**Deploying contracts** to the blockchain requires a **gas fee**.
+Therefore, you will need to fund your wallet with ETH to cover those gas fees.
+
+For this guide, you will be deploying a contract to the Lisk Sepolia Testnet. 
+
+You can deposit the required tokens by using the [Lisk Bridge](https://sepolia-bridge.lisk.com/bridge/lisk-sepolia-testnet).
+
+In case your wallet doesn't hold enough `SepoliaETH`, use one of the available faucets for the **Ethereum Sepolia** Testnet like [https://sepoliafaucet.com](https://sepoliafaucet.com/) to receive free Testnet ETH.
+Then, use the aforementioned Lisk Bridge to send tokens from the **Ethereum Sepolia Testnet** to the **Lisk Sepolia Testnet**.
+
+:::note
+You can deploy a contract on Lisk Mainnet by adopting the same process.
+Before deploying to Mainnet, ensure that your wallet has enough ETH.
+:::
+
+<PartialExample />
+
+## Interacting with the Smart Contract
+
+After [the contract is verified](#6-verify-the-contract), you can use the `Read Contract` and `Write Contract` tabs to interact with the deployed contract via Blockscout: https://sepolia-blockscout.lisk.com/address/0x73e7a94dD5760d862F6FD9f8ea5D4245Bb143446?tab=contract.
+Don't forget to update the contract address in the Blockscout URL.
+You'll also need to connect your wallet first, by clicking the `Connect Wallet` button.
