@@ -57,7 +57,7 @@ contract MyItems is ERC1155 {
 ```
 
 :::note
-Pada contoh diatas, Gold, Silver, Sword, dan Shield adalah token yang dapat dipertukarkan (fungible token), sedangkan Thor’s Hammer adalah token yang tidak dapat dipertukarkan (non-fungible token) karena kami hanya mencetak satu unit.
+Pada contoh diatas, Gold, Silver, Sword, dan Shield adalah token yang dapat dipertukarkan (fungible token), sedangkan Thor’s Hammer adalah token yang tidak dapat dipertukarkan (non-fungible token) karena kami hanya mint satu unit.
 :::
 
 Sebuah URI yang menunjuk ke metadata JSON dari item/token yang berbeda harus ditentukan dalam konstruktor, lihat [API kontrak ERC-1155](https://docs.openzeppelin.com/contracts/3.x/api/token/erc1155#ERC1155).

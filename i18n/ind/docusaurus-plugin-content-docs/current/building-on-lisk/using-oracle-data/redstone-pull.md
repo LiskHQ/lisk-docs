@@ -100,8 +100,6 @@ contract YourContract is RapidDemoConsumerBase {
 }
 ```
 
-#### Get multiple values
-
 #### Mendapatkan Beberapa Nilai
 
 Untuk mendapatkan data dari beberapa feed harga, gunakan fungsi `getOracleNumericValuesFromTxMsg()` dan berikan array ID data feed sebagai parameter.

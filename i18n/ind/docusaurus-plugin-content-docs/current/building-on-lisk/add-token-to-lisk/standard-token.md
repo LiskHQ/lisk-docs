@@ -110,7 +110,7 @@ export TUTORIAL_L1_ERC20_ADDRESS=0x5589BB8228C07c4e15558875fAf2B859f678d129
 Anda sekarang dapat deploy token ERC-20 L2 Anda menggunakan [`OptimismMintableERC20Factory`](https://github.com/ethereum-optimism/optimism/blob/186e46a47647a51a658e699e9ff047d39444c2de/packages/contracts-bedrock/contracts/universal/OptimismMintableERC20Factory.sol).  
 Gunakan perintah `cast` untuk memicu fungsi deployment pada kontrak factory.  
 Contoh perintah berikut akan membuat token dengan nama "My Standard Demo Token" dan simbol "L2TKN".  
-Alamat token ERC-20 L2 yang dihasilkan akan dicetak di konsol.
+Alamat token ERC-20 L2 yang dihasilkan akan mint di konsol.
 
 ```bash
 cast send 0x4200000000000000000000000000000000000012 "createOptimismMintableERC20(address,string,string)" $TUTORIAL_L1_ERC20_ADDRESS "My Standard Demo Token" "L2TKN" --private-key $TUTORIAL_PRIVATE_KEY --rpc-url $TUTORIAL_RPC_URL --json | jq -r '.logs[0].topics[2]' | cast parse-bytes32-address

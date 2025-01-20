@@ -155,10 +155,10 @@ import "openzeppelin-contracts/contracts/token/ERC721/ERC721.sol";
 contract NFT is ERC721 {
     uint256 public currentTokenId;
 
-    // The following will create an ERC721 Token called Lisk.
+    // Kode berikut ini akan membuat Token ERC721 bernama Lisk.
     constructor() ERC721("Lisk", "LSK") {}
 
-    // For simplicity, we will only implement the mint function of the Lisk token.
+    // Agar lebih simpel, kami hanya akan mengimplementasikan fungsi mint dari token Lisk.
     function mint(address recipient) public payable returns (uint256) {
         uint256 newItemId = ++currentTokenId;
         _safeMint(recipient, newItemId);
@@ -205,22 +205,22 @@ contract NFTTest is Test {
 
     NFT public lsk;
 
-    // Create dummy addresses for alice and bob
+    // Membuat alamat dummy untuk alice dan bob
     address alice = makeAddr("alice");
     address bob = makeAddr("bob");
 
-    // Initialize the NFT contract's object
+    // Menginisialisasi objek kontrak NFT
     function setUp() public{
         lsk = new NFT();
     }
 
-    // Pass the address of alice and bob to see whether the mint function successfully passes
+    // Berikan alamat alice dan bob untuk melihat apakah fungsi mint berhasil berjalan
     function testMintPass() public {
         lsk.mint(alice);
         lsk.mint(bob);
     }
 
-    // To intentionally create a failing test, let's compare the addresses of alice and bob
+    // Untuk dengan sengaja membuat pengujian gagal, bandingkan alamat alice dan bob
     function testMintFail() public {
         assertEq(alice, bob);
     }
@@ -435,7 +435,7 @@ Isi `<PLACEHOLDERS>` berikut, lalu jalankan perintah:
 </Tabs>
 
 Anda akan menerima respons berupa `0x0000000000000000000000000000000000000000000000000000000000000000`, yang setara dengan `0` dalam format heksadesimal.  
-Hal ini masuk akal karena Anda baru saja deploy kontrak NFT, namun belum ada NFT yang dicetak, sehingga saldo akun Anda adalah nol.
+Hal ini masuk akal karena Anda baru saja deploy kontrak NFT, namun belum ada NFT yang di-mint, sehingga saldo akun Anda adalah nol.
 
 #### Menandatangani dan Mengirim Transaksi
 
@@ -507,9 +507,9 @@ Anda seharusnya melihat saldo Anda meningkat dari `0` menjadi `1`.
   </TabItem>
 </Tabs>
 
-Dan responsnya: `0x0000000000000000000000000000000000000000000000000000000000000001` (`1` dalam format heksadesimal) — selamat, Anda berhasil deploy kontrak dan mencetak NFT dengan Foundry!
+Dan responsnya: `0x0000000000000000000000000000000000000000000000000000000000000001` (`1` dalam format heksadesimal) — selamat, Anda berhasil deploy kontrak dan mint NFT dengan Foundry!
 
-Lihat token yang telah dicetak dalam panduan ini di [Blockscout explorer](https://sepolia-blockscout.lisk.com/token/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5).
+Lihat token yang telah di-mint dalam panduan ini di [Blockscout explorer](https://sepolia-blockscout.lisk.com/token/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5).
 
 Itu dia! Meskipun ini hanya permulaan, masih banyak hal yang dapat dipelajari tentang Foundry.  
 Untuk semua hal tentang Foundry, kunjungi [Foundry book](https://book.getfoundry.sh/), atau bergabunglah dengan [dev chat](https://t.me/foundry_rs) atau [support chat](https://t.me/foundry_support) resmi di Telegram.

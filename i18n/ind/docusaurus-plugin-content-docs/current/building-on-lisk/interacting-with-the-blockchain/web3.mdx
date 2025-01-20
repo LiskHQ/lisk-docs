@@ -782,7 +782,7 @@ const account = web3.eth.accounts.wallet.add(privateKey);
 // Instansiasi objek kontrak.
 const contract = new web3.eth.Contract(abi, contractAddress);
 
-// Kirim permintaan ke fungsi `mint()` untuk mencetak token.
+// Kirim permintaan ke fungsi `mint()` untuk mint token.
 const txReceipt = await contract.methods.mint(recipientAddress, amount).send({ from: account[0].address });
 
 console.log('Tx hash:', txReceipt.transactionHash);

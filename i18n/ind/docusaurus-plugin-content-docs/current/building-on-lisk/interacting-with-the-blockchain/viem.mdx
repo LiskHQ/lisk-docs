@@ -101,7 +101,7 @@ Lihat [Ekstensi Layer 2](https://viem.sh/op-stack/client#layer-2-extensions) unt
     import { ethereum, lisk } from 'viem/chains'
     import { walletActionsL1, walletActionsL2 } from 'viem/op-stack'
     
-    // Retrieve Account from an EIP-1193 Provider.
+    // Mengambil akun dari EIP-1193 Provider.
     const [account] = await window.ethereum.request({ 
       method: 'eth_requestAccounts'
     }) 
@@ -125,7 +125,7 @@ Lihat [Ekstensi Layer 2](https://viem.sh/op-stack/client#layer-2-extensions) unt
     import { sepolia, liskSepolia } from 'viem/chains'
     import { walletActionsL1, walletActionsL2 } from 'viem/op-stack'
     
-    // Retrieve Account from an EIP-1193 Provider.
+    // Mengambil akun dari EIP-1193 Provider.
     const [account] = await window.ethereum.request({ 
       method: 'eth_requestAccounts'
     }) 
@@ -274,7 +274,7 @@ const contract = getContract({
   abi: wagmiAbi,
   // 1a. Masukkan satu client
   //client: publicClient,
-  // 1b. Atau public dan/atau wallet clients
+  // 1b. Atau public dan/atau wallet client
   client: { public: publicClient, wallet: walletClient }
 })
  
