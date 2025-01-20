@@ -93,14 +93,14 @@ Kemudian, pilih kontrak `MyItems` dari dropdown deployment dan klik tombol `Depl
 Akhirnya, konfirmasi deployment kontrak di wallet Anda yang terhubung.
 
 Periksa pesan log Remix; pesan tersebut akan mencantumkan alamat kontrak.
-Tempelkan alamat ini di BlockScout untuk melihat kontrak di penjelajah blockchain Lisk: https://sepolia-blockscout.lisk.com/address/0x8b2f45e810F539647e70fBCd6441B73d332Ef1A0
+Tempelkan alamat ini di BlockScout untuk melihat kontrak di block explorer Lisk: https://sepolia-blockscout.lisk.com/address/0x8b2f45e810F539647e70fBCd6441B73d332Ef1A0
 
 Jika Anda memilih untuk deploy di Lisk Mainnet, tempelkan alamat tersebut di https://blockscout.lisk.com
 
 ## 6. Verifikasi Kontrak
 
-Jika Anda ingin berinteraksi dengan kontrak Anda di penjelajah blockchain, Anda, atau orang lain, harus memverifikasinya terlebih dahulu.
-Kontrak di atas sudah diverifikasi, sehingga Anda seharusnya dapat melihat versi Anda di penjelajah blockchain.
+Jika Anda ingin berinteraksi dengan kontrak Anda di block explorer, Anda, atau orang lain, harus memverifikasinya terlebih dahulu.
+Kontrak di atas sudah diverifikasi, sehingga Anda seharusnya dapat melihat versi Anda di block explorer.
 Selebihnya dari panduan ini, kami akan menjelaskan cara memverifikasi kontrak Anda dengan Remix di Lisk Sepolia Testnet.
 
 Anda dapat menerapkan langkah yang sama untuk memverifikasi kontrak di Lisk Mainnet, jika kontrak di-deploy di jaringan tersebut, cukup gunakan https://blockscout.lisk.com untuk menggantikan https://sepolia-blockscout.lisk.com pada langkah 2 dibawah ini.

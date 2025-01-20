@@ -266,14 +266,14 @@ Terakhir, jalankan perintah berikut:
 <!-- TODO: Add link to the block explorer section -->
 
 Kontrak akan di-deploy di Lisk Sepolia Testnet.  
-Anda dapat melihat status deployment dan kontrak dengan menggunakan penjelajah blockchain dan mencari alamat yang dikembalikan oleh skrip deployment Anda.
+Anda dapat melihat status deployment dan kontrak dengan menggunakan block explorer dan mencari alamat yang dikembalikan oleh skrip deployment Anda.
 
 Jika Anda deploy kontrak baru atau yang dimodifikasi, Anda perlu memverifikasinya terlebih dahulu.
 
 ## Memverifikasi Smart Contract
 
-Jika Anda ingin berinteraksi dengan kontrak Anda di penjelajah blockchain, Anda atau orang lain perlu memverifikasinya terlebih dahulu.  
-Kontrak di atas sudah diverifikasi, sehingga Anda seharusnya dapat melihat versi Anda di penjelajah blockchain.  
+Jika Anda ingin berinteraksi dengan kontrak Anda di block explorer, Anda atau orang lain perlu memverifikasinya terlebih dahulu.  
+Kontrak di atas sudah diverifikasi, sehingga Anda seharusnya dapat melihat versi Anda di block explorer.  
 Selebihnya di panduan ini, kami akan menjelaskan langkah-langkah memverifikasi kontrak Anda di Lisk Sepolia Testnet.
 
 Di dalam `hardhat.config.ts`, konfigurasikan Lisk Sepolia sebagai jaringan kustom.  
@@ -376,7 +376,7 @@ https://sepolia-blockscout.lisk.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe
 :::
 
 Lihat kontrak Anda di BlockScout dengan mengikuti [link ke kontrak yang telah di-deploy](https://sepolia-blockscout.lisk.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D?tab=contract) yang ditampilkan dalam pesan output langkah sebelumnya.  
-Penjelajah Blockchain akan mengonfirmasi bahwa kontrak tersebut telah diverifikasi dan memungkinkan Anda untuk [berinteraksi](#berinteraksi-dengan-smart-contract) dengannya.
+Block Explorer akan mengonfirmasi bahwa kontrak tersebut telah diverifikasi dan memungkinkan Anda untuk [berinteraksi](#berinteraksi-dengan-smart-contract) dengannya.
 
 ## Berinteraksi dengan Smart Contract
 

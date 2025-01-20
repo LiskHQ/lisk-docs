@@ -339,9 +339,9 @@ Setelah smart contract berhasil di-deploy dan diverifikasi, Anda dapat berintera
 
 Setiap kontrak yang di-deploy harus diverifikasi agar pengguna dan developer lainnya dapat memeriksa source code-nya dan memastikan bahwa source code tersebut sesuai dengan bytecode yang di-deploy di blockchain.
 
-Selain itu, jika Anda ingin orang lain dapat berinteraksi dengan kontrak Anda melalui penjelajah blockchain seperti interface [Read Contract](https://sepolia-blockscout.lisk.com/address/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=read_contract) dan [Write Contract](https://sepolia-blockscout.lisk.com/address/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=write_contract) di Blockscout, kontrak tersebut harus diverifikasi terlebih dahulu.
+Selain itu, jika Anda ingin orang lain dapat berinteraksi dengan kontrak Anda melalui block explorer seperti interface [Read Contract](https://sepolia-blockscout.lisk.com/address/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=read_contract) dan [Write Contract](https://sepolia-blockscout.lisk.com/address/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=write_contract) di Blockscout, kontrak tersebut harus diverifikasi terlebih dahulu.
 
-Kontrak di atas **sudah diverifikasi**, sehingga Anda seharusnya dapat melihat versi Anda di penjelajah blockchain, tetapi kami tetap akan menjelaskan langkah-langkah untuk memverifikasi kontrak di Lisk Sepolia testnet.
+Kontrak di atas **sudah diverifikasi**, sehingga Anda seharusnya dapat melihat versi Anda di block explorer, tetapi kami tetap akan menjelaskan langkah-langkah untuk memverifikasi kontrak di Lisk Sepolia testnet.
 
 :::info
 Anda tidak dapat memverifikasi ulang kontrak yang identik dengan yang sudah diverifikasi. Jika Anda mencoba melakukannya, seperti memverifikasi kontrak di atas, Anda akan mendapatkan pesan error seperti:
