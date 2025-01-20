@@ -142,7 +142,7 @@ Perubahan setelah transaksi diproses di sequencer tidak memengaruhi biaya yang d
 
 Untuk transaksi L2, proses normalnya adalah:
 
-1. Dompet memperkirakan biaya transaksi dan menunjukkannya kepada pengguna.
+1. Wallet memperkirakan biaya transaksi dan menunjukkannya kepada pengguna.
 2. Pengguna kemudian mengirimkan transaksi.
 3. Sequencer memproses transaksi dalam dua fase.
     - Pertama, ia memproses transaksi.
