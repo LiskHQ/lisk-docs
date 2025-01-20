@@ -100,38 +100,6 @@ To describe important steps in this innovation, websites, and apps are generally
   </TabItem>
 </Tabs>
 
-### Web2 vs Web3 App Development
-#### Languages
-Concerning frontend app development, there aren't many differences between Web2 and Web3 apps when it comes to programming languages.
-All languages that are typically used for Web2 app development can also be used for Web3 app development.
-In the end, Web3 apps can even look and feel exactly like Web2 apps for users, because their frontend is built with the same technologies.
-
-However, the backend of Web3 apps is quite different, as it interacts with the blockchain through smart contracts.
-Smart contracts are written in [Solidity](https://soliditylang.org/), therefore Web3 developers need to know Solidity to build the smart contracts they require for their app.
-Luckily, for many use cases, there are already audited smart contracts available(see [OpenZeppelin](https://www.openzeppelin.com/solidity-contracts) or [thirdweb](https://thirdweb.com/explore)) that can be used, so developers don't need to write all of their smart contracts from scratch.
-
-#### Tech Stack
-As mentioned above, the Web2 and Web3 app frontend development is very similar.
-Theoretically, you could build a Web3 app with nearly the same tech stack as a Web2 app, like Next.js, Vite, etc.
-The only thing you need to add is a way for your application to interact with the blockchain, see [Data access](#data-access).
-
-To support developers, many blockchain platforms offer their own SDKs and tools to interact with their blockchain, which can make development easier and more efficient.
-There are also SDKs for Web3 app development that provide a complete tech stack, like [thirdweb](https://thirdweb.com/) or [Alchemy](https://www.alchemy.com/), which take away most of the complexity of blockchain development and provide a smooth developer experience.
-thirdweb supports [Lisk](https://thirdweb.com/lisk) and many other EVM-compatible blockchains.
-
-#### Data Storage
-In Web2 apps, data is typically stored in a centralized database.
-In Web3 apps, some data is stored on the blockchain, i.e., a decentralized database.
-How the data is stored is defined inside of smart contracts.
-However, not all data should always be stored on the blockchain, as it is quite expensive and slow to store large amounts of data onchain.
-Therefore, Web3 apps sometimes use a combination of onchain storage and offchain storage.
-
-#### Data Access
-In Web2 apps, data from the database is accessed through APIs.
-In Web3 apps, blockchain data is accessed through smart contracts.
-They usually expose public functions that can be called by the app frontend to read and/or write data from/to the blockchain, similar to a classical API.
-To interact with the blockchain, there are various libraries and frameworks available, like [viem](https://viem.sh/), [web3.js](https://web3js.readthedocs.io), or [ethers.js](https://docs.ethers.io).
-
 ### Further Regarding
 - [Introduction to Web3](https://ethereum.org/en/web3/) *by Ethereum*
 
@@ -284,6 +252,7 @@ Paymasters can cover gas costs for users, sponsor specific transactions, or impl
 - [How to pay gas fees with LSK](https://blog.thirdweb.com/changelog/ts-tokenpaymasters-pay-for-gas-with-lisk-lsk-base-usdc-or-celo-cusd/) *by thirdweb*
 - [How to create a Web3 mobile app with gasless transactions on Lisk](https://blog.thirdweb.com/web3-mobile-apps/build-web3-mobile-apps-with-reactive-native-on-lisk/) *by thirdweb*
 
+{/* TODO: Extend with additional topics relevant for web3 devs
 ### Best Practices & other Considerations
 
 - Proxy contracts: 
@@ -292,4 +261,36 @@ However, to fix bugs or add new features to an already deployed smart contract, 
 - Gas Optimization:
 - secure key management
 - Bug bounty programs
-- handling user data
+- handling user data */}
+
+### Web2 vs Web3 App Development
+#### Languages
+Concerning frontend app development, there aren't many differences between Web2 and Web3 apps when it comes to programming languages.
+All languages that are typically used for Web2 app development can also be used for Web3 app development.
+In the end, Web3 apps can even look and feel exactly like Web2 apps for users, because their frontend is built with the same technologies.
+
+However, the backend of Web3 apps is quite different, as it interacts with the blockchain through smart contracts.
+Smart contracts are written in [Solidity](https://soliditylang.org/), therefore Web3 developers need to know Solidity to build the smart contracts they require for their app.
+Luckily, for many use cases, there are already audited smart contracts available(see [OpenZeppelin](https://www.openzeppelin.com/solidity-contracts) or [thirdweb](https://thirdweb.com/explore)) that can be used, so developers don't need to write all of their smart contracts from scratch.
+
+#### Tech Stack
+As mentioned above, the Web2 and Web3 app frontend development is very similar.
+Theoretically, you could build a Web3 app with nearly the same tech stack as a Web2 app, like Next.js, Vite, etc.
+The only thing you need to add is a way for your application to interact with the blockchain, see [Data access](#data-access).
+
+To support developers, many blockchain platforms offer their own SDKs and tools to interact with their blockchain, which can make development easier and more efficient.
+There are also SDKs for Web3 app development that provide a complete tech stack, like [thirdweb](https://thirdweb.com/) or [Alchemy](https://www.alchemy.com/), which take away most of the complexity of blockchain development and provide a smooth developer experience.
+thirdweb supports [Lisk](https://thirdweb.com/lisk) and many other EVM-compatible blockchains.
+
+#### Data Storage
+In Web2 apps, data is typically stored in a centralized database.
+In Web3 apps, some data is stored on the blockchain, i.e., a decentralized database.
+How the data is stored is defined inside of smart contracts.
+However, not all data should always be stored on the blockchain, as it is quite expensive and slow to store large amounts of data onchain.
+Therefore, Web3 apps sometimes use a combination of onchain storage and offchain storage.
+
+#### Data Access
+In Web2 apps, data from the database is accessed through APIs.
+In Web3 apps, blockchain data is accessed through smart contracts.
+They usually expose public functions that can be called by the app frontend to read and/or write data from/to the blockchain, similar to a classical API.
+To interact with the blockchain, there are various libraries and frameworks available, like [viem](https://viem.sh/), [web3.js](https://web3js.readthedocs.io), or [ethers.js](https://docs.ethers.io).
