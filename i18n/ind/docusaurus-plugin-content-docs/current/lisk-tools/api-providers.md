@@ -58,6 +58,29 @@ Mereka menawarkan tier gratis yang memungkinkan jumlah permintaan yang tidak ter
 
 Anda juga dapat memeriksa endpoint yang tersedia untuk Lisk langsung di [https://drpc.org/public-endpoints/lisk](https://drpc.org/public-endpoints/lisk).
 
+dRPC juga menyediakan [faucet for Lisk Sepolia](faucets.md#drpc-faucet).
+
 :::note[Cara membuat kunci API untuk dRPC]  
 Untuk menggunakan endpoint yang disediakan, Anda perlu [mendapatkan kunci API yang sesuai](https://docs.drpc.org/gettingstarted/createaccount).  
 :::
+
+## Moralis
+
+[Moralis](https://developers.moralis.com/chains/lisk/) API meningkatkan dapp Anda dengan kecepatan, keamanan, dan skalabilitas yang tak tertandingi di berbagai chain yang kompatibel dengan EVM.
+
+Moralis memberlakukan rate limit di tingkat akun untuk memastikan penggunaan yang adil di antara semua pengguna.
+Setiap akun memiliki jumlah permintaan yang diizinkan per menit, berdasarkan paket yang Anda pilih.
+
+[Dapatkan Node RPC Lisk Gratis menggunakan Moralis](https://developers.moralis.com/chains/lisk/)
+
+Paket gratis Moralis mencakup:
+
+- 40K Unit Komputasi per hari
+- Akses ke node RPC
+- Akses ke semua API Moralis
+
+Untuk menggunakan Node RPC Moralis, ikuti langkah-langkah berikut:
+
+1. **Buat akun Moralis:** [Daftar](https://admin.moralis.com/) secara gratis dan akses node RPC Anda.
+2. **Siapkan node Anda:** Visit the [Menyiapkan Node RPC](https://docs.moralis.com/get-your-node-api-key) untuk membuat dan mengonfigurasi node RPC Anda.
+3. **Lakukan panggilan RPC pertama Anda:** Setelah node Anda siap, ikuti [tutorial](https://docs.moralis.com/make-your-first-rpc-call) untuk membuat panggilan JSON-RPC pertama Anda menggunakan ethers.js.
