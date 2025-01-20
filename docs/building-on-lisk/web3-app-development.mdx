@@ -186,7 +186,6 @@ So if you application requires a lot of computing power, and/or a very complex U
  */}
 </Tabs>
 
-
 ### Testing and Deployment
 When it comes to testing and deployment of Web3 apps, there are some additional aspects to consider compared to Web2 apps.
 The intrinsic vulnerabilities of smart contracts, the immutability of blockchain data and interacting with a decentralized network call for specific testing and security measures.
@@ -194,21 +193,20 @@ Gladly, there are already many tools available to help developers ensure the sec
 The list below provides a selection of popular tools and services used to test Web3 apps:
 
 #### General Test Suites
-- Foundry
-- HardHat
-- Remix
-- [Waffle](https://getwaffle.io/)
+- [Foundry](https://book.getfoundry.sh/): Foundry is a smart contract development toolchain.
+Foundry provides a robust [testing framework](https://book.getfoundry.sh/forge/tests) that allows developers to create comprehensive test suites for their projects using Solidity.
+- [Hardhat](https://hardhat.org): Hardhat is a development environment that facilitates smart contract development.
+It comes built-in with [Hardhat Network](https://hardhat.org/hardhat-network/docs/overview), a local Ethereum network node designed for development.
+Hardhat allows you to deploy your contracts, [run your tests](https://hardhat.org/tutorial/testing-contracts) and debug your code, all within the confines of your local machine.
+- [Remix](https://remix.ethereum.org/): Remix is an IDE that helps you write Solidity contracts straight from the browser.
+It provides powerful features for testing and debugging smart contracts, like the [Debugger](https://remix-ide.readthedocs.io/en/latest/debugger.html) or the [Unit Testing Plugin](https://remix-ide.readthedocs.io/en/latest/unittesting.html).
+- [Waffle](https://getwaffle.io/): Waffle is a framework specificly for testing smart contracts.
 
 #### Smart Contract Analysis
-- Slither
-- [Etheno](https://github.com/crytic/etheno)
-- Securify
-- Mythx
-- Smart contract audits
-
-#### Blockchain Simulators / Local Devnets
-- Ganache
-- MoonBeam
+- [Slither](https://github.com/crytic/slither): Slither is a Solidity static analysis framework that detects common vulnerabilities in smart contracts.
+- [Etheno](https://github.com/crytic/etheno): Etheno is a tool that helps developers write secure smart contracts by providing a set of rules that can be used to check the security of smart contracts.
+- [Mythril](https://github.com/Consensys/mythril): Mythril is a security analysis tool for Ethereum smart contracts.
+- **Smart contract audits**:
 
 #### Testnets
 ##### Public Testnets
@@ -235,16 +233,6 @@ You can even manipulate the state of your forked chains with custom values, cust
 #### Monitoring
 - Prometheus & Grafana
 - Elastic Stack (ELK)
-
-### Best Practices
-
-- Proxy contracts: 
-Smart contracts are immutable, meaning that once they are deployed, they cannot be changed.
-However, to fix bugs or add new features to an already deployed smart contract, proxy contracts can be used to upgrade smart contracts without changing the contract address.
-- Gas Optimization:
-- secure key management
-- Bug bounty programs
-- handling user data
 
 ### Onboarding Web2 Users to Web3
 
@@ -292,3 +280,12 @@ Paymasters can cover gas costs for users, sponsor specific transactions, or impl
 - [How to pay gas fees with LSK](https://blog.thirdweb.com/changelog/ts-tokenpaymasters-pay-for-gas-with-lisk-lsk-base-usdc-or-celo-cusd/) *by thirdweb*
 - [How to create a Web3 mobile app with gasless transactions on Lisk](https://blog.thirdweb.com/web3-mobile-apps/build-web3-mobile-apps-with-reactive-native-on-lisk/) *by thirdweb*
 
+### Best Practices & other Considerations
+
+- Proxy contracts: 
+Smart contracts are immutable, meaning that once they are deployed, they cannot be changed.
+However, to fix bugs or add new features to an already deployed smart contract, proxy contracts can be used to upgrade smart contracts without changing the contract address.
+- Gas Optimization:
+- secure key management
+- Bug bounty programs
+- handling user data
