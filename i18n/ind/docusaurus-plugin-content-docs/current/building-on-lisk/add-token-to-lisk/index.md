@@ -18,6 +18,7 @@ keywords:
 # Bridging an L1 token to Lisk
 This page is intended for token issuers who already have an ERC-20 contract deployed on Ethereum and would like to submit their token for bridging between Ethereum and Lisk. 
 Lisk uses the Superchain Token List as a reference for tokens that have been deployed on Lisk.
+In case you want to create a new token on Lisk, please refer to the page [Token development](../token-development/overview.md).
 
 ## Superchain Token List
 The [Superchain Token List](https://github.com/ethereum-optimism/ethereum-optimism.github.io) exists to help users discover the correct bridged token addresses for any given native token.
@@ -71,7 +72,7 @@ To add your token to the list, perform the following steps.
 
 ### Step 1: Deploy your token on Lisk
 Select your preferred bridging framework and use it to deploy an ERC-20 for your token on Lisk.
-We recommend you use the framework provided by Lisk's [standard bridge](#the-standard-bridge) contracts and, furthermore, deploy your token using the [OptimismMintableERC20Factory](https://docs.lisk.com/contracts#lisk-network-l2). 
+We recommend you use the framework provided by Lisk's [standard bridge](#the-standard-bridge) contracts and, furthermore, deploy your token using the [OptimismMintableERC20Factory](../contracts.mdx#lisk-network-l2). 
 Deploying your token on Lisk in this manner provides us with guarantees that will smooth the approval process.
 If you choose a different bridging framework, its interface must be compatible with that of the standard bridge.
 Otherwise, it may be difficult for us to support them.
@@ -83,6 +84,7 @@ For step-by-step instructions on how to deploy ERC-20 tokens on Lisk, check the 
 
 ### Step 2: Submit details of your token
 Follow the instructions in the [GitHub repository](https://github.com/ethereum-optimism/ethereum-optimism.github.io) and submit a PR containing the required details for your token.
+Especially, follow the Lisk-specific instructions detailed in the section [Specifying chains](https://github.com/ethereum-optimism/ethereum-optimism.github.io?tab=readme-ov-file#specifying-chains).
 
 **Important:** You must specify in your token's `data.json` file a section for `lisk-sepolia` and/or `lisk`.
 
@@ -92,3 +94,10 @@ For example, [this PR](https://github.com/ethereum-optimism/ethereum-optimism.gi
 
 ### Step 3: Await final approval
 Reviews are regularly conducted by the Lisk team and you should receive a reply within 24-72 hours (depending on if the PR is opened on a weekday, weekend or holiday).
+
+## Step 4 : Add token to Gelato Bridge
+To add your token to the [Gelato Bridge](https://bridge.lisk.com/), reach out to the Lisk team on [Lisk Discord](https://lisk.chat) with the details of the token:
+
+- Go to the `#lisk-dev` channel.
+- Tag a moderator, ask them to add your token to the Gelato Bridge, and share the link to your PR from [step 2: token details](#step-2-submit-details-of-your-token).
+- The Lisk team will then coordinate with Gelato to get the token added to the Gelato Bridge.
