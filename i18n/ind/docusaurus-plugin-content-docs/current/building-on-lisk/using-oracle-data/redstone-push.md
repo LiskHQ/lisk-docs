@@ -31,7 +31,7 @@ RedStone data feeds are compatible with Chainlink's [AggregatorV3Interface](http
 
 - **Aggregator contract**: An aggregator is a contract that receives periodic data updates from the oracle network.
 Aggregators store aggregated data onchain so that consumers can retrieve it and act upon it within the same transaction.
-These contracts are already deployed on the Lisk network and can be directly used by Consumers.
+These contracts have already been deployed on the Lisk network and can be directly used by consumers.
 - **Consumer**: A consumer is an onchain or offchain application that uses Data Feeds.
 Consumer contracts use the `AggregatorV3Interface` to call functions on the proxy contract[^1] of the Aggregator to retrieve oracle data.
 
@@ -52,7 +52,7 @@ The following Aggregators are available on Lisk Mainnet for RedStone Push:
 - [WBTC/USD L2PriceFeedWithoutRounds](https://blockscout.lisk.com/address/0x13da43eA89fB692bdB6666F053FeE70aC61A53cd)
   - address: `0x13da43eA89fB692bdB6666F053FeE70aC61A53cd`
 
-In this guide, we will develop a Consumer contract that will request the latest spot prices from the ETH, LSK and USDT data feeds.
+In this guide, we will develop a Consumer contract that requests the latest spot prices from the ETH, LSK, and USDT data feeds.
 
 :::note
 RedStone Push is only fully available on Lisk Mainnet, so please make sure to deploy your Consumer contract on Lisk Mainnet as well.
@@ -62,14 +62,14 @@ In case you wish to deploy on Lisk Sepolia Testnet, check the [Tellor](./tellor.
 
 ## Import
 
-To use the RedStone data inside your contract, import the [AggregatorV3Interface](https://docs.chain.link/data-feeds/using-data-feeds#solidity) from Chainlink like shown in the example contract below.
+To use the RedStone data inside your contract, import the [AggregatorV3Interface](https://docs.chain.link/data-feeds/using-data-feeds#solidity) from Chainlink, as shown in the example contract below.
 
-For every data feed you like to store, create a new constant with type `AggregatorV3Interface`.
+Create a new constant with the type `AggregatorV3Interface` for every data feed you want to store.
 
-In the constructor, set the above defined constants to point to the respective data feeds:
-Use the `AggregatorV3Interface()` function and pass the address of the respective data feed contract as parameter.
+In the constructor, set the above-defined constants to point to the respective data feeds.
+Use the `AggregatorV3Interface()` function and pass the address of the respective data feed contract as a parameter.
 
-```solidity
+```solidity title="Importing the AggregatorV3Interface"
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.28;
 
@@ -116,7 +116,7 @@ To read the data of the price feeds, we define the following functions in the co
 - `getRedStoneLSKDataFeedLatestAnswer()`
 - `getRedStoneUSDTDataFeedLatestAnswer()`
 
-Inside of the functions, call the [latestRoundData](https://docs.chain.link/data-feeds/api-reference#latestrounddata) on the respective data feeds to receive the latest spot prices for the respective token.
+Inside the functions, call the [latestRoundData](https://docs.chain.link/data-feeds/api-reference#latestrounddata) on the respective data feeds to receive the latest spot prices for the respective token.
 
 The `latestRoundData()` function returns the following values:
 
@@ -132,16 +132,14 @@ In this example, we will only use `answer` and `updatedAt`.
 The `updatedAt` value should be used to make sure that the `answer` is recent enough for your application to use it.
 You can compare `updatedAt` to the latest block time (`uint256 currentTime = block.timestamp;`) to ensure you are only using the latest oracle data in your application.
 
-```solidity
+:::caution
+This is an example contract that uses un-audited code.
+Do not use this code in production.
+:::
+
+```solidity title="Reading data feeds"
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.28;
-
-/**
- * THIS IS AN EXAMPLE CONTRACT THAT USES HARDCODED
- * VALUES FOR CLARITY.
- * THIS IS AN EXAMPLE CONTRACT THAT USES UN-AUDITED CODE.
- * DO NOT USE THIS CODE IN PRODUCTION.
- */
 
 import {AggregatorV3Interface} from "@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol";
 

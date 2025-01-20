@@ -12,8 +12,9 @@ keywords:
     "Testnet Lisk",  
     "jaringan Lisk",  
     "Redstone",  
-    "feed harga",  
-    "feed data",  
+    Tellor,
+    "price feed",  
+    "data feed",  
   ]  
 
 ---
@@ -40,5 +41,28 @@ Tertarik untuk mengintegrasi? [Hubungi](https://discord.com/invite/PVxBZKFr46) t
 
 #### Jaringan yang Didukung
 
+- Lisk
+
+### Panduan
+
+- [Mengakses data oracle dengan Redstone (Pull)](../building-on-lisk/using-oracle-data/redstone-pull.md)
+- [Mengakses data oracle dengan Redstone (Push)](../building-on-lisk/using-oracle-data/redstone-push.md)
+
+## Tellor
+
+Tellor adalah protokol oracle terdesentralisasi yang bersifat immutable, di mana pihak-pihak dapat meminta nilai dari data offchain (misalnya, ETH/USD), dan para reporter bersaing untuk menambahkan nilai tersebut ke dalam databank onchain.
+Input ke databank ini diamankan oleh jaringan reporter yang men-stake token mereka.
+
+Tellor menggunakan mekanisme insentif kripto-ekonomi, dengan memberikan penghargaan atas pengiriman data yang jujur oleh reporter dan menghukum aktor jahat melalui penerbitan token Tellor, Tributes (TRB), dan mekanisme sengketa.
+
+Pendekatan ini mendorong jaringan terbuka dan tanpa izin untuk pelaporan data dan validasi data, memastikan bahwa data dapat disediakan oleh siapa saja dan diverifikasi oleh semua orang.
+
+[A list of all the Tellor contracts deployed on Lisk is available on their documentation](https://docs.tellor.io/tellor/the-basics/contracts-reference#lisk)
+
+#### Jaringan yang Didukung
+
 - Lisk  
 - Lisk Sepolia
+
+### Panduan
+- [Mengakses data oracle dengan Tellor](../building-on-lisk/using-oracle-data/tellor.md)

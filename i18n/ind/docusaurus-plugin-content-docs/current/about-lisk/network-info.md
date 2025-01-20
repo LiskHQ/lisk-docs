@@ -38,13 +38,13 @@ Lisk L2 tersedia pada jaringan berikut:
 
 | Nama                                                   | Nilai                                                                       |  
 | :-------------------                                     | :-------------------------------------------------------------------------- |  
-| **Nama Jaringan**                                       | Testnet Lisk Sepolia                                                        |  
-| **Endpoint HTTP RPC**                                  | [https://rpc.sepolia-api.lisk.com](https://rpc.sepolia-api.lisk.com)        |  
-| **Endpoint WS RPC**                                    | [wss://ws.sepolia-api.lisk.com](wss://ws.sepolia-api.lisk.com)              |  
+| **Nama Jaringan**                                       | Lisk Sepolia                                                        |  
+| **HTTP RPC Endpoint**                                  | [https://rpc.sepolia-api.lisk.com](https://rpc.sepolia-api.lisk.com)        |  
+| **WS RPC Endpoint**                                    | [wss://ws.sepolia-api.lisk.com](wss://ws.sepolia-api.lisk.com)              |  
 | **Chain ID**                                           | 4202                                                                        |  
 | **Simbol Mata Uang**                                    | ETH                                                                         |  
-| **Penjelajah Blok**                                     | https://sepolia-blockscout.lisk.com                                         |  
-| **API Penjelajah Blok**                                 | https://sepolia-blockscout.lisk.com/api                                     |  
-| **Bridge Testnet Lisk**                                | https://sepolia-bridge.lisk.com                                             |  
-| **Faucet Testnet Lisk** (Memberikan LSK)               | https://sepolia-faucet.lisk.com/                                            |  
-| **Faucet Superchain Testnet** (Memberikan ETH)         | https://app.optimism.io/faucet                                              |
+| **Block Explorer**                                     | https://sepolia-blockscout.lisk.com                                         |  
+| **Block Explorer API**                                 | https://sepolia-blockscout.lisk.com/api                                     |  
+| **Lisk Testnet Bridge**                                | https://sepolia-bridge.lisk.com                                             |  
+| **Lisk Testnet Faucet** (Memberikan LSK)               | https://sepolia-faucet.lisk.com/                                            |  
+| **Superchain Testnet Faucet** (Memberikan ETH)         | https://app.optimism.io/faucet                                              |

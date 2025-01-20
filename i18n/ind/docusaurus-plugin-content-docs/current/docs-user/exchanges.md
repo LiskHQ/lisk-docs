@@ -53,7 +53,7 @@ Lisk (LSK) tersedia untuk diperdagangkan di berbagai <!-- bursa terpusat dan ter
 | **TokoCrypto** (Indo)    | 🟡 Ethereum        | [LSK/USDT](https://www.tokocrypto.com/en/trade/LSK_USDT)<br />[LSK/BTC](https://www.tokocrypto.com/en/trade/LSK_BTC)  |
 | **Zonda**                | 🟡 Ethereum        | [LSK/USDT](https://zondacrypto.com/en/exchange-rate/lisk-price-usdt)<br />[LSK/EUR](https://zondacrypto.com/en/exchange-rate/lisk-price-eur)<br />[LSK/BTC](https://zondacrypto.com/en/exchange-rate/lisk-price-btc)<br />[LSK/PLN](https://zondacrypto.com/en/exchange-rate/lisk-price-pln) |
 
-## Bursa Terdesentralisasi (DEX)
+## Decentralized Exchange (DEX)
 
 | Nama                          | Jaringan yang Didukung[^1]                       |
 | :---------------------------- | :------------------------------------------ |
@@ -62,8 +62,8 @@ Lisk (LSK) tersedia untuk diperdagangkan di berbagai <!-- bursa terpusat dan ter
 | [Uniswap](https://app.uniswap.org/explore/tokens/ethereum/0x6033f7f88332b8db6ad452b7c6d5bb643990ae3f) | 🟡 Ethereum |
 
 [^1]: Token LSK didukung pada blockchain Ethereum L1 dan Lisk L2.
-Kolom "jaringan yang didukung" menunjukkan blockchain yang digunakan oleh bursa untuk setoran & penarikan LSK. 
-Harap diperhatikan bahwa menggunakan jaringan/blockchain yang salah saat menyetor dana ke bursa dapat mengakibatkan kehilangan dana.
+Kolom "jaringan yang didukung" menunjukkan blockchain yang digunakan oleh exchange untuk setoran & penarikan LSK. 
+Harap diperhatikan bahwa menggunakan jaringan/blockchain yang salah saat menyetor dana ke exchange dapat mengakibatkan kehilangan dana.
 
 ### Segera Hadir
 

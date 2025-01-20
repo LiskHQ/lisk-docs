@@ -33,7 +33,7 @@ Masukkan alamat akun Anda atau nama ENS untuk menerima 1 LSK testnet per permint
 ## Superchain Faucet  
 Memberikan **ETH** testnet di Lisk Sepolia.
 
-Faucet Superchain tersedia di sini: https://app.optimism.io/faucet
+Superchain Faucet tersedia di sini: https://app.optimism.io/faucet
 
 Ada dua opsi berbeda untuk mendapatkan ETH Testnet gratis:
 
@@ -41,6 +41,15 @@ Ada dua opsi berbeda untuk mendapatkan ETH Testnet gratis:
    Dapatkan hingga 1 ETH testnet/minggu di Lisk Sepolia dengan memverifikasi identitas onchain melalui Optimist NFT, Gitcoin Passport, Verifikasi Coinbase, World ID, atau attestasi.
 2. **Verifikasi melalui GitHub:**  
    Dapatkan hingga 0.05 ETH testnet/minggu di Lisk Sepolia dengan memverifikasi melalui akun GitHub Anda.
+
+## thirdweb Faucet
+Memberikan **ETH** testnet di Lisk Sepolia.
+
+Thirdweb faucet tersedia di https://thirdweb.com/lisk-sepolia-testnet
+
+Anda dapat mengklaim 0,1 ETH sekali setiap 24 jam.
+
+Untuk informasi lebih lanjut, lihat: [Cara Mendapatkan Token ETH (ETH) Gratis dari Faucet Lisk Sepolia Testnet](https://blog.thirdweb.com/faucet-guides/how-to-get-free-eth-token-from-the-lisk-sepolia-faucet/)
 
 ## dRPC Faucet
 

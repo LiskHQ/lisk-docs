@@ -106,8 +106,8 @@ weighted_gas_price = 16*base_fee_scalar*base_fee + blob_base_fee_scalar*blob_bas
 
 Nilai saat ini untuk skalar adalah:
 
-  - `base_fee_scalar` = 0.020698
-  - `blob_base_fee_scalar` = 1.364961
+  - `base_fee_scalar` = 0.024740
+  - `blob_base_fee_scalar` = 0.801328
 
 Parameter ini dapat disesuaikan tergantung pada kondisi jaringan, untuk mengurangi lonjakan biaya transaksi.
 
@@ -125,13 +125,13 @@ Parameter [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) yang digunakan ole
 
 | Parameter                             | Nilai Mainnet Lisk | Nilai Ethereum (sebagai referensi) |
 | ------------------------------------- | -----------------: | ----------------------------------: |
-| Batas gas blok                        |   30.000.000 gas   |                 30.000.000 gas     |
-| Target gas blok                       |    1.500.000 gas   |                 15.000.000 gas     |
-| Pengali elastisitas EIP-1559          |               20    |                              2     |
-| Penyebut EIP-1559                     |            1.000   |                              8     |
+| Block gas limit                        |   30.000.000 gas   |                 30.000.000 gas     |
+| Block gas target                       |    1.500.000 gas   |                 15.000.000 gas     |
+| EIP-1559 elasticity multiplier         |               20    |                              2     |
+| EIP-1559 denominator                     |            1.000   |                              8     |
 | Peningkatan maksimum base fee (per blok) |             1,9%  |                          12,5%    |
 | Penurunan maksimum base fee (per blok) |             0,1%  |                          12,5%    |
-| Waktu blok dalam detik                |                2   |                             12     |
+| Block time dalam detik                |                2   |                             12     |
 
 ## Bagaimana fluktuasi harga gas di Ethereum (L1) memengaruhi biaya transaksi di Lisk (L2)?
 
