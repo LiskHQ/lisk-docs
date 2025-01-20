@@ -75,7 +75,7 @@ Dapatkan data oracle menggunakan fungsi-fungsi yang disediakan oleh EVM connecto
 
 #### Mendapatkan Satu Nilai
 
-Untuk mendapatkan satu data feed harga, gunakan fungsi `getOracleNumericValueFromTxMsg()` dan berikan ID data feed sebagai parameter.
+Untuk mendapatkan satu data price feed, gunakan fungsi `getOracleNumericValueFromTxMsg()` dan berikan ID data feed sebagai parameter.
 
 ```solidity
 // SPDX-License-Identifier: UNLICENSED
@@ -102,7 +102,7 @@ contract YourContract is RapidDemoConsumerBase {
 
 #### Mendapatkan Beberapa Nilai
 
-Untuk mendapatkan data dari beberapa feed harga, gunakan fungsi `getOracleNumericValuesFromTxMsg()` dan berikan array ID data feed sebagai parameter.
+Untuk mendapatkan data dari beberapa price feed, gunakan fungsi `getOracleNumericValuesFromTxMsg()` dan berikan array ID data feed sebagai parameter.
 
 ```solidity
 /**
