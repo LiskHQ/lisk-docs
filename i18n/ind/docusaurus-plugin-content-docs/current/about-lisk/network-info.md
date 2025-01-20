@@ -21,7 +21,7 @@ Halaman referensi yang berisi informasi tentang semua jaringan yang didukung ole
 ## Informasi Jaringan  
 Lisk L2 tersedia pada jaringan berikut:
 
-### Mainnet Lisk
+### Lisk Mainnet
 
 | Nama                    | Nilai                                                                        |  
 | :----------------------  | :-------------------------------------------------------------------------- |  

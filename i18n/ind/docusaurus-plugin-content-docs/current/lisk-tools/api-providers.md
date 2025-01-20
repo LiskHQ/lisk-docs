@@ -58,7 +58,7 @@ Mereka menawarkan tier gratis yang memungkinkan jumlah permintaan yang tidak ter
 
 Anda juga dapat memeriksa endpoint yang tersedia untuk Lisk langsung di [https://drpc.org/public-endpoints/lisk](https://drpc.org/public-endpoints/lisk).
 
-dRPC juga menyediakan [faucet for Lisk Sepolia](faucets.md#drpc-faucet).
+dRPC juga menyediakan [faucet untuk Lisk Sepolia](faucets.md#drpc-faucet).
 
 :::note[Cara membuat kunci API untuk dRPC]  
 Untuk menggunakan endpoint yang disediakan, Anda perlu [mendapatkan kunci API yang sesuai](https://docs.drpc.org/gettingstarted/createaccount).  

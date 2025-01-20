@@ -8,7 +8,7 @@ keywords:
     "Oracle",  
     "Oracle",  
     "Lisk",  
-    "Mainnet Lisk",  
+    "Lisk Mainnet",  
     "Testnet Lisk",  
     "jaringan Lisk",  
     "Redstone",  

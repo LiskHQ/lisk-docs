@@ -7,9 +7,9 @@ keywords:
   [
     Lisk Sepolia,
      Testnet Lisk Sepolia,
-    faucet Lisk,
-    faucet LSK,
-    faucet ETH,
+    Lisk faucet,
+    LSK faucet,
+    ETH faucet,
     Testnet LSK,
     Testnet Lisk,
     Testnet ETH,
@@ -23,10 +23,10 @@ keywords:
 Faucet memungkinkan Anda untuk mendapatkan token testnet gratis di Lisk Sepolia.  
 Temukan daftar faucet untuk testnet Lisk Sepolia di bawah ini.
 
-## Faucet Lisk Sepolia  
+## Lisk Sepolia Faucet  
 Memberikan **LSK** testnet di Lisk Sepolia.
 
-Faucet Lisk Sepolia tersedia di sini: https://sepolia-faucet.lisk.com/:  
+Lisk Sepolia Faucet tersedia di sini: https://sepolia-faucet.lisk.com/:  
 
 Masukkan alamat akun Anda atau nama ENS untuk menerima 1 LSK testnet per permintaan.
 
@@ -49,13 +49,13 @@ Thirdweb faucet tersedia di https://thirdweb.com/lisk-sepolia-testnet
 
 Anda dapat mengklaim 0,1 ETH sekali setiap 24 jam.
 
-Untuk informasi lebih lanjut, lihat: [Cara Mendapatkan Token ETH (ETH) Gratis dari Faucet Lisk Sepolia Testnet](https://blog.thirdweb.com/faucet-guides/how-to-get-free-eth-token-from-the-lisk-sepolia-faucet/)
+Untuk informasi lebih lanjut, lihat: [Cara Mendapatkan Token ETH (ETH) Gratis dari Lisk Sepolia Testnet Faucet](https://blog.thirdweb.com/faucet-guides/how-to-get-free-eth-token-from-the-lisk-sepolia-faucet/)
 
 ## dRPC Faucet
 
 Memberikan hingga 0.1 ETH Testnet per hari di Lisk Sepolia.
 
-Faucet dRPC untuk Lisk Sepolia tersedia di sini: https://drpc.org/faucet/lisk
+dRPC faucet untuk Lisk Sepolia tersedia di sini: https://drpc.org/faucet/lisk
 
 Ada dua opsi berbeda untuk mendapatkan ETH Testnet gratis:
 
