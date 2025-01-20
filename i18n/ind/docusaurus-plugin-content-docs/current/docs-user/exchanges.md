@@ -2,14 +2,14 @@
 title: Bursa yang Mendukung Lisk
 sidebar_position: 1
 slug: /user/exchanges
-description: 'Ringkasan semua bursa tempat Anda bisa membeli LSK'
+description: 'Ringkasan semua exchange tempat Anda bisa membeli LSK'
 keywords:
   [
     'Lisk',
     'LSK',
     'perdagangkan LSK',
     'beli LSK',
-    'bursa',
+    'exchange',
     'DEX',
     'dapatkan LSK',
     'perdagangan LSK',
@@ -24,7 +24,7 @@ keywords:
 
 # Bursa
 
-Lisk (LSK) tersedia untuk diperdagangkan di berbagai <!-- bursa terpusat dan terdesentralisasi --> bursa.
+Lisk (LSK) tersedia untuk diperdagangkan di berbagai <!-- exchange terpusat dan terdesentralisasi --> exchange.
 
 ## Bursa Terpusat
 
