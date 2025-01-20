@@ -25,7 +25,7 @@ import TabItem from '@theme/TabItem';
 
 On this page, you will learn what Web3 applications are, how they differ from Web 2.0 apps, and how to get started with Web3 app development on Lisk.
 
-## What are Web3 applications?
+## What are Web3 Applications?
 
 ### Evolution of the Web
 
@@ -55,7 +55,7 @@ To describe important steps in this innovation, websites, and apps are generally
     Many of these applications and services became important pillars of the internet and people's lives, and even society as a whole.
     However, the more relevant these applications became, the more obvious and relevant their limitations became, as users had to trust the companies behind them with their data and privacy.
 
-    ##### Web2 limitations
+    ##### Web2 Limitations
 
     Though Web 2.0 revolutionized how people positively used the web, a few of its characteristics led to certain disadvantages for users interacting with Web2 applications. For example:
 
@@ -100,7 +100,7 @@ To describe important steps in this innovation, websites, and apps are generally
   </TabItem>
 </Tabs>
 
-### Web2 vs Web3 app development
+### Web2 vs Web3 App Development
 #### Languages
 Concerning frontend app development, there aren't many differences between Web2 and Web3 apps when it comes to programming languages.
 All languages that are typically used for Web2 app development can also be used for Web3 app development.
@@ -110,7 +110,7 @@ However, the backend of Web3 apps is quite different, as it interacts with the b
 Smart contracts are written in [Solidity](https://soliditylang.org/), therefore Web3 developers need to know Solidity to build the smart contracts they require for their app.
 Luckily, for many use cases, there are already audited smart contracts available(see [OpenZeppelin](https://www.openzeppelin.com/solidity-contracts) or [thirdweb](https://thirdweb.com/explore)) that can be used, so developers don't need to write all of their smart contracts from scratch.
 
-#### Tech stack
+#### Tech Stack
 As mentioned above, the Web2 and Web3 app frontend development is very similar.
 Theoretically, you could build a Web3 app with nearly the same tech stack as a Web2 app, like Next.js, Vite, etc.
 The only thing you need to add is a way for your application to interact with the blockchain, see [Data access](#data-access).
@@ -119,48 +119,49 @@ To support developers, many blockchain platforms offer their own SDKs and tools 
 There are also SDKs for Web3 app development that provide a complete tech stack, like [thirdweb](https://thirdweb.com/) or [Alchemy](https://www.alchemy.com/), which take away most of the complexity of blockchain development and provide a smooth developer experience.
 thirdweb supports [Lisk](https://thirdweb.com/lisk) and many other EVM-compatible blockchains.
 
-#### Data storage
+#### Data Storage
 In Web2 apps, data is typically stored in a centralized database.
 In Web3 apps, some data is stored on the blockchain, i.e., a decentralized database.
 How the data is stored is defined inside of smart contracts.
 However, not all data should always be stored on the blockchain, as it is quite expensive and slow to store large amounts of data onchain.
 Therefore, Web3 apps sometimes use a combination of onchain storage and offchain storage.
 
-#### Data access
+#### Data Access
 In Web2 apps, data from the database is accessed through APIs.
 In Web3 apps, blockchain data is accessed through smart contracts.
 They usually expose public functions that can be called by the app frontend to read and/or write data from/to the blockchain, similar to a classical API.
 To interact with the blockchain, there are various libraries and frameworks available, like [viem](https://viem.sh/), [web3.js](https://web3js.readthedocs.io), or [ethers.js](https://docs.ethers.io).
 
-### Further regarding
+### Further Regarding
 - [Introduction to Web3](https://ethereum.org/en/web3/) *by Ethereum*
 
-## Getting started with Web3 app development
+## Getting Started with Web3 App Development
 
 ### Platforms
 
 To get started with the actual development of a Web3 app, you need to be clear about the right **platform(s)** to build your Web3 app on.
 The following sections will give you an overview of the different platforms you can choose from to build your Web3 app on, including further resources and guides to get you started with the app development.
 
-### Web3 Mobile Apps
+<Tabs queryString="platform">
+  <TabItem value="mobile" label="Web3 Mobile Apps">
 Mobile applications are generally a great way to reach a large audience, as most people have a smartphone and use it to access the internet.
 Mobile apps can use the integrated features of handheld devices and are typically faster and more user-friendly than websites.
 This can provide a more immersive experience for users.
 Last but not least, mobile apps allow users to access your app on the go, which can be a big advantage for many use cases.
 
-#### Development resources
+##### Guides
 - [Build Web3 Mobile Apps with React Native on Lisk with thirdweb](https://blog.thirdweb.com/web3-mobile-apps/build-web3-mobile-apps-with-reactive-native-on-lisk/)
 - [Video tutorial: How to Build a Web3 Mobile App](https://www.youtube.com/watch?v=PRAsc_ocVtk) *by thirdweb*
 - [Building a mobile dApp with Flutter](https://medium.com/dash-community/building-a-mobile-dapp-with-flutter-be945c80315a)
-
-### Web3 Web Apps
+</TabItem>
+<TabItem value="web" label="Web3 Web Apps">
 The main advantage of web applications is that they are platform-independent and can be accessed from any device with a web browser.
 Additionally, they don't need to be installed by the user and can be used directly in the browser.
 
-#### Development resources
+##### Guides
 - [How to Build an NFT Minting dApp](https://blog.thirdweb.com/guides/build-nft-minting-dapp-with-thirdweb-guide/) *by thirdweb*
-
-### Web3 PWAs
+</TabItem>
+<TabItem value="pwa" label="Web3 PWAs">
 A Progressive Web App (PWA) allows users to install a web app on their devices.
 They appear as native apps on desktop or mobile devices and offer features like offline support and push notifications.
 This way, PWAs allow the development of an application that can be used via a browser[^1], mobile, or desktop application alike.
@@ -172,10 +173,10 @@ In-app purchase fees can also be avoided because users no longer need to go thro
 
 [^1]: Only supported in PWA-compatible browsers (most Chromium-based browsers should work).
 
-#### Development resources
+##### Guides
 - [How to Create a Web3 PWA](https://blog.thirdweb.com/guides/how-to-create-a-web3-pwa/) *by thirdweb*
 - [Video tutorial: Build a Web3 PWA](https://www.youtube.com/watch?v=VU8i-dn2_GE) *by thirdweb*
-
+</TabItem>
 {/* ### Web3 Desktop apps
 Desktop apps are native applications that are installed on a user's computer.
 Similar to mobile apps, they are platform dependent.
@@ -183,6 +184,8 @@ Desktop apps make it difficult for users to access them on the go, as you need a
 On the other side, desktop apps shine with their performance and the ability to use the full power of the computer they are running on, and they are typically build for larger screens allowing more complex user interfaces.
 So if you application requires a lot of computing power, and/or a very complex UI that might not be fitting for a mobile screen, a desktop app can be the right choice.
  */}
+</Tabs>
+
 
 ### Testing and Deployment
 When it comes to testing and deployment of Web3 apps, there are some additional aspects to consider compared to Web2 apps.
@@ -190,30 +193,39 @@ The intrinsic vulnerabilities of smart contracts, the immutability of blockchain
 Gladly, there are already many tools available to help developers ensure the security and reliability of their Web3 apps.
 The list below provides a selection of popular tools and services used to test Web3 apps:
 
-#### General test suites
+#### General Test Suites
 - Foundry
 - HardHat
 - Remix
 - [Waffle](https://getwaffle.io/)
 
-#### Smart contract analysis
+#### Smart Contract Analysis
 - Slither
 - [Etheno](https://github.com/crytic/etheno)
 - Securify
 - Mythx
 - Smart contract audits
 
-#### Blockchain simulators / local devnets
+#### Blockchain Simulators / Local Devnets
 - Ganache
 - MoonBeam
 
 #### Testnets
 ##### Public Testnets
 - Lisk Sepolia
-##### Virtual testnets
-- [Tenderly](https://blog.tenderly.co/how-virtual-testnets-replace-public-testnets/)
+##### Virtual Testnets
+Collaborate across teams in shared, dynamic environments 
 
-#### E2E testing
+- **Build your dapps with real, up-to-date mainnet data** and test its actual performance under realistic conditions. 
+- **Get an unlimited faucet** and stop begging for test ETH.
+Mint both native and ERC-20 tokens in any amount you need, impersonate accounts, and test complex scenarios uninterruptedly.
+- **Fully customize your development infrastructure** to fit your unique workflows.
+Virtual TestNets are easy to set up and configure, giving you full control and flexibility over your environments.
+You can even manipulate the state of your forked chains with custom values, custom chain IDs, and more, making sure they fit your unique requirements.
+
+- [Tenderly: Virtual Testnets](https://blog.tenderly.co/how-virtual-testnets-replace-public-testnets/)
+
+#### E2E Testing
 - [Synpress](https://synpress.io/)
 
 #### Automated Testing and Continuous Integration (CI)
@@ -224,7 +236,7 @@ The list below provides a selection of popular tools and services used to test W
 - Prometheus & Grafana
 - Elastic Stack (ELK)
 
-### Best practices
+### Best Practices
 
 - Proxy contracts: 
 Smart contracts are immutable, meaning that once they are deployed, they cannot be changed.
@@ -234,14 +246,14 @@ However, to fix bugs or add new features to an already deployed smart contract, 
 - Bug bounty programs
 - handling user data
 
-### Onboarding Web2 users to Web3
+### Onboarding Web2 Users to Web3
 
 A major challenge of Web3 applications is to provide a seamless user experience for users, similar to what they are used to from Web2 applications.
 
 To onboard Web2 users to Web3, apps need to simplify the way how users interact with the app, in a way that feels natural and intuitive to them, while still providing the benefits of Web3 in a secure way.
 To aim for a smooth user experience, there are several strategies and design patterns that can be utilized:
 
-#### Account abstraction and smart accounts
+#### Account Abstraction and Smart Accounts
 
 Account abstraction is a concept that introduces an additional layer over the blockchain, which delegates most of the complexity of interacting with the blockchain away from the user to smart contracts.
 It has the potential to significantly enhance the user experience of Web3 applications, as it allows users to interact with the app in a more user-friendly and secure way.
@@ -274,7 +286,7 @@ Bundling is the process where a node/bundler collects multiple UserOperations an
 - **Paymaster**(optional): a helper contract that agrees to pay for the transaction, instead of the sender itself.
 Paymasters can cover gas costs for users, sponsor specific transactions, or implement custom fee models, opening doors for novel use cases.
 
-##### Further reading
+##### Further Reading
 - [Account abstraction: A complete overview](https://blaize.tech/blog/account-abstraction-guide/) *by Blaize*
 - [What is Account Abstraction? ERC-4337 Explained](https://blog.thirdweb.com/account-abstraction-erc4337/) *by thirdweb*
 - [How to pay gas fees with LSK](https://blog.thirdweb.com/changelog/ts-tokenpaymasters-pay-for-gas-with-lisk-lsk-base-usdc-or-celo-cusd/) *by thirdweb*
