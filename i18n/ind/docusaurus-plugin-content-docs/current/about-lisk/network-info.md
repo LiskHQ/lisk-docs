@@ -1,9 +1,9 @@
 ---
 id: network-info  
-title: Informasi Jaringan, Penjelajah Resmi & Faucet  
+title: Informasi Jaringan, Explorer Resmi & Faucet  
 sidebar_position: 1  
 slug: /network-info  
-description: 'Informasi jaringan, penjelajah resmi, dan faucet yang tersedia untuk jaringan Lisk L2.'  
+description: 'Informasi jaringan, explorer resmi, dan faucet yang tersedia untuk jaringan Lisk L2.'  
 keywords:  
   [  
     'informasi jaringan',  
@@ -15,8 +15,8 @@ keywords:
 toc_max_heading_level: 4  
 ---  
 
-# Informasi Jaringan, Penjelajah Resmi & Faucet  
-Halaman referensi yang berisi informasi tentang semua jaringan yang didukung oleh Lisk L2, penjelajah tempat seseorang dapat melihat semua data blockchain, dan faucet untuk memberi saldo pada akun testnet.
+# Informasi Jaringan, Explorer Resmi & Faucet  
+Halaman referensi yang berisi informasi tentang semua jaringan yang didukung oleh Lisk L2, explorer tempat seseorang dapat melihat semua data blockchain, dan faucet untuk memberi saldo pada akun testnet.
 
 ## Informasi Jaringan  
 Lisk L2 tersedia pada jaringan berikut:
