@@ -9,7 +9,7 @@ keywords:
     "Oracle",  
     "Lisk",  
     "Lisk Mainnet",  
-    "Testnet Lisk",  
+    "Lisk Testnet",  
     "jaringan Lisk",  
     "Redstone",  
     Tellor,

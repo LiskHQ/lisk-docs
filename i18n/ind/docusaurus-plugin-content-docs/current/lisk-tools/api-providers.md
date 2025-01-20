@@ -40,7 +40,7 @@ Endpoint yang tersedia untuk node Lisk mencakup semua [endpoint RPC Geth](https:
 
 Endpoint RPC gratis dengan pembatasan laju untuk jaringan Lisk.
 
-|               | Testnet Lisk Sepolia              | Lisk                      |
+|               | Lisk Sepolia Testnet              | Lisk                      |
 | :------       | :------                           | :-----------------------  |
 |**HTTP RPC**   | https://rpc.sepolia-api.lisk.com  | https://rpc.api.lisk.com  |
 |**WS RPC**     | `wss://ws.sepolia-api.lisk.com`   | `wss://ws.api.lisk.com`   |
@@ -51,7 +51,7 @@ Endpoint RPC gratis dengan pembatasan laju untuk jaringan Lisk.
 dRPC menyediakan akses ke jaringan terdistribusi dari node publik untuk Lisk.  
 Mereka menawarkan tier gratis yang memungkinkan jumlah permintaan yang tidak terbatas melalui node publik, atau tier berbayar yang menyediakan akses ke semua penyedia, serta fitur tambahan lainnya.
 
-|               | Testnet Lisk Sepolia              | Lisk                      |
+|               | Lisk Sepolia Testnet              | Lisk                      |
 | :------       | :------                           | :-----------------------  |
 |**HTTP RPC**   | https://lisk-sepolia.drpc.org  | https://lisk.drpc.org  |
 |**WS RPC**     | `wss://lisk-sepolia.drpc.org`   | `wss://lisk.drpc.org`   |

@@ -32,7 +32,7 @@ Biaya transaksi yang rendah dapat diberikan karena Lisk adalah jaringan [Layer 2
 Untuk melacak biaya gas saat ini dan yang lalu di Lisk, periksa pelacak gas untuk jaringan masing-masing di Blockscout:
 
 - Lisk Mainnet: https://blockscout.lisk.com/gas-tracker
-- Testnet Lisk Sepolia: https://sepolia-blockscout.lisk.com/gas-tracker
+- Lisk Sepolia Testnet: https://sepolia-blockscout.lisk.com/gas-tracker
 
 ## Bagaimana biaya dihitung di Lisk?
 

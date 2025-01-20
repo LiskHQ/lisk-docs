@@ -8,7 +8,7 @@ keywords: [
     "pengindeks data",  
     "Lisk",  
     "jaringan test Lisk",  
-    "testnet Lisk",  
+    "Lisk testnet",  
     "Goldsky",  
     "Solidity",  
     "Mirror",  

@@ -7,7 +7,7 @@ description: 'Informasi jaringan, penjelajah resmi, dan faucet yang tersedia unt
 keywords:  
   [  
     'informasi jaringan',  
-    'Testnet Lisk',  
+    'Lisk Testnet',  
     'Sepolia',  
     'faucet',  
     'block explorer',  
@@ -34,7 +34,7 @@ Lisk L2 tersedia pada jaringan berikut:
 | **API Block Explorer**  | https://blockscout.lisk.com/api                                             |  
 | **Bridge Lisk**          | https://bridge.lisk.com                                                     |
 
-### Testnet Lisk Sepolia
+### Lisk Sepolia Testnet
 
 | Nama                                                   | Nilai                                                                       |  
 | :-------------------                                     | :-------------------------------------------------------------------------- |  
