@@ -132,13 +132,6 @@ In Web3 apps, blockchain data is accessed through smart contracts.
 They usually expose public functions that can be called by the app frontend to read and/or write data from/to the blockchain, similar to a classical API.
 To interact with the blockchain, there are various libraries and frameworks available, like [viem](https://viem.sh/), [web3.js](https://web3js.readthedocs.io), or [ethers.js](https://docs.ethers.io).
 
-### Testing and Deployment
-
-- local development env
-- testnets
-- continuous integration
-- monitoring
-
 ### Further regarding
 - [Introduction to Web3](https://ethereum.org/en/web3/) *by Ethereum*
 
@@ -191,12 +184,55 @@ On the other side, desktop apps shine with their performance and the ability to 
 So if you application requires a lot of computing power, and/or a very complex UI that might not be fitting for a mobile screen, a desktop app can be the right choice.
  */}
 
-### Security considerations
+### Testing and Deployment
+When it comes to testing and deployment of Web3 apps, there are some additional aspects to consider compared to Web2 apps.
+The intrinsic vulnerabilities of smart contracts, the immutability of blockchain data and interacting with a decentralized network call for specific testing and security measures.
+Gladly, there are already many tools available to help developers ensure the security and reliability of their Web3 apps.
+The list below provides a selection of popular tools and services used to test Web3 apps:
 
-- smart contract audits
+#### General test suites
+- Foundry
+- HardHat
+- Remix
+- [Waffle](https://getwaffle.io/)
+
+#### Smart contract analysis
+- Slither
+- [Etheno](https://github.com/crytic/etheno)
+- Securify
+- Mythx
+- Smart contract audits
+
+#### Blockchain simulators / local devnets
+- Ganache
+- MoonBeam
+
+#### Testnets
+##### Public Testnets
+- Lisk Sepolia
+##### Virtual testnets
+- [Tenderly](https://blog.tenderly.co/how-virtual-testnets-replace-public-testnets/)
+
+#### E2E testing
+- [Synpress](https://synpress.io/)
+
+#### Automated Testing and Continuous Integration (CI)
+- k6
+- Artillery
+
+#### Monitoring
+- Prometheus & Grafana
+- Elastic Stack (ELK)
+
+### Best practices
+
+- Proxy contracts: 
+Smart contracts are immutable, meaning that once they are deployed, they cannot be changed.
+However, to fix bugs or add new features to an already deployed smart contract, proxy contracts can be used to upgrade smart contracts without changing the contract address.
+- Gas Optimization:
 - secure key management
+- Bug bounty programs
 - handling user data
-- bug bounties
 
 ### Onboarding Web2 users to Web3
 
@@ -243,6 +279,4 @@ Paymasters can cover gas costs for users, sponsor specific transactions, or impl
 - [What is Account Abstraction? ERC-4337 Explained](https://blog.thirdweb.com/account-abstraction-erc4337/) *by thirdweb*
 - [How to pay gas fees with LSK](https://blog.thirdweb.com/changelog/ts-tokenpaymasters-pay-for-gas-with-lisk-lsk-base-usdc-or-celo-cusd/) *by thirdweb*
 - [How to create a Web3 mobile app with gasless transactions on Lisk](https://blog.thirdweb.com/web3-mobile-apps/build-web3-mobile-apps-with-reactive-native-on-lisk/) *by thirdweb*
-
-#### Support and community
 
