@@ -96,7 +96,7 @@ Satu kontrak yang dideploy dapat mencakup kombinasi token fungible, non-fungible
 
 Karena itu, fungsi `balanceOf` pada ERC-1155 berbeda dari ERC-20:  
 fungsi ini memiliki argumen tambahan, yaitu `id`, untuk mengidentifikasi token yang ingin Anda query saldonya.  
-Akun ERC-1155 memiliki saldo yang berbeda untuk setiap token id; token non-fungible diimplementasikan dengan hanya mencetak satu token saja.
+Akun ERC-1155 memiliki saldo yang berbeda untuk setiap token id; token non-fungible diimplementasikan dengan hanya mint satu token saja.
 
 Pendekatan ini menghasilkan penghematan gas yang signifikan untuk proyek yang memerlukan banyak token.  
 Alih-alih mendeploy kontrak baru untuk setiap jenis token, satu kontrak token ERC-1155 dapat menyimpan seluruh state sistem, sehingga mengurangi biaya deployment dan kompleksitas.
