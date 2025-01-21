@@ -159,7 +159,7 @@ So if you application requires a lot of computing power, and/or a very complex U
 A major challenge of Web3 applications is to provide a seamless user experience for users, similar to what they are used to from Web2 applications.
 
 To onboard Web2 users to Web3, apps need to simplify the way how users interact with the app, in a way that feels natural and intuitive to them, while still providing the benefits of Web3 in a secure way.
-To aim for a smooth user experience, there are several strategies to abstract the complexity of blockchain technology away from the user, which are summarized under the term "account abstraction"(sometimes also referred to as "smart account", "Smart wallets" or "smart contract accounts").
+To aim for a smooth user experience, and to abstract the complexity of blockchain technology away from the user, it is highly recommended to include "account abstraction" (sometimes also referred to as "smart accounts", "smart wallets" or "smart contract accounts") into your Web3 application.
 
 #### Account Abstraction and Smart Accounts
 
@@ -174,7 +174,7 @@ Instead, smart contracts handle the signing logic, eliminating the risk of user 
 - **Enhanced Security**: Multi-signature wallets, social recovery mechanisms, and custom access controls can be implemented within the smart contract, mitigating single points of failure and theft risks.
 - **Customizable Transactions**: Smart contracts can be programmed to include spending limits, time-locked transactions, and dApp-specific controls.
 This allows to automate transactions and tailoring the user experience to specific needs.
-- **Fee Abstraction**: Transaction fees can be dynamically managed through smart contracts, enabling features like custom gas tokens and gasless transactions for specific use cases, see [Gasless transactions and fee management](#gasless-transactions-and-fee-management).
+- **Fee Abstraction**: Transaction fees can be dynamically managed through smart contracts, enabling features like custom gas tokens and gasless transactions for specific use cases.
 
 On the technical side, account abstraction is implemented by the [ERC-4337 standard](https://eips.ethereum.org/EIPS/eip-4337), which defines a set of interfaces and functions that smart contracts can use to interact with the blockchain on behalf of users.
 
@@ -257,6 +257,11 @@ Before deploying a smart contract to the mainnet, it is highly recommended to te
 ##### Public Testnets
 The following testnets are available for testing smart contracts and Web3 apps on Lisk:
 - [Lisk Sepolia](/about-lisk/network-info.md#lisk-sepolia-testnet)
+
+:::tip
+To get free testnet ETH and/or LSK, check out our [available faucets](/lisk-tools/faucets.md).
+:::
+
 ##### Virtual Testnets
 [Tenderly](https://tenderly.co/) recently introduced the possibility to spin up [Virtual Testnets](https://blog.tenderly.co/how-virtual-testnets-replace-public-testnets/).
 Virtual Testnets are a new way to test your Web3 apps, bringing the onchain data of a mainnet and the flexibility of a local environment together.
