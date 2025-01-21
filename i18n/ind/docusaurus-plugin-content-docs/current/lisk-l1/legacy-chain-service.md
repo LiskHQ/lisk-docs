@@ -1,7 +1,7 @@
 ---
 title: Layanan Legacy Chain
 slug: /lisk-l1/legacy-chain-service
-description: Cara mengakses data dari rantai legacy Lisk L1.
+description: Cara mengakses data dari Lisk L1 legacy chain.
 keywords:
   [
     Lisk L1,
@@ -9,23 +9,23 @@ keywords:
     Lisk legacy chain,
     legacy chain service,
     Lisk legacy account,
-    riwayat rantai,
+    riwayat chain,
     riwayat akun
   ]
 difficulty: pemula
 ---
 :::warning
-Dokumentasi ini merujuk pada rantai Lisk sebelumnya di L1, yang berhenti saat Lisk bermigrasi ke L2 pada Mei 2024.
-Jika Anda ingin mengembangkan di rantai Lisk L2 saat ini, silakan merujuk ke dokumentasi pengembang di bawah kategori [Building on Lisk](../category/building-on-lisk).
+Dokumentasi ini merujuk pada chain Lisk sebelumnya di L1, yang berhenti saat Lisk bermigrasi ke L2 pada Mei 2024.
+Jika Anda ingin mengembangkan di chain Lisk L2 saat ini, silakan merujuk ke dokumentasi pengembang di bawah kategori [Building on Lisk](../category/building-on-lisk).
 :::
 
 # Layanan Legacy Chain
 
-Untuk mengakses data dari rantai Legacy Lisk L1, silakan gunakan layanan rantai legacy yang tersedia di https://legacy.lisk.com.
+Untuk mengakses data dari Lisk L1 Legacy chain, silakan gunakan layanan legacy chain yang tersedia di https://legacy.lisk.com.
 
 
 ## Penggunaan
-Cara menggunakan layanan rantai legacy:
+Cara menggunakan layanan legacy chain:
 
 - Dapatkan **blok berdasarkan tinggi** `https://legacy.lisk.com/blocks/<BLOCK_HEIGHT>.json`
 - Dapatkan **transaksi berdasarkan id** `https://legacy.lisk.com/transactions/<TRANSACTION_ID>.json`
