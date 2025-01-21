@@ -32,7 +32,7 @@ Lisk L2 tersedia pada jaringan berikut:
 | **Simbol Mata Uang**     | ETH                                                                         |  
 | **Block Explorer**      | https://blockscout.lisk.com                                                 |  
 | **API Block Explorer**  | https://blockscout.lisk.com/api                                             |  
-| **Bridge Lisk**          | https://bridge.lisk.com                                                     |
+| **Lisk Bridge**          | https://bridge.lisk.com                                                     |
 
 ### Lisk Sepolia Testnet
 
