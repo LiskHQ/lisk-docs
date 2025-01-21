@@ -218,32 +218,50 @@ Gladly, there are already many tools available to help developers ensure the sec
 The list below provides a selection of popular tools and services used to test Web3 apps:
 
 #### Smart Contract Test Suites
+Often, smart contract development frameworks come with built-in testing tools that simplify to create comprehensive tests for smart contracts.
+This includes utilities to simplify writing of the tests, or the ability to spin up a local node for deploying and testing smart contracts in a local development network, i.e. Devnet.
+
+A selection of popular testing environments for smart contracts can be found below:
+
 - [Foundry](https://book.getfoundry.sh/): Foundry is a smart contract development toolchain.
 Foundry provides a robust [testing framework](https://book.getfoundry.sh/forge/tests) that allows developers to create comprehensive test suites for their projects using Solidity.
+The [Forge Standard Library](https://book.getfoundry.sh/reference/forge-std/) provides a set of utilities to simplify testing smart contracts.
+It also provides a local testnet node for deploying and testing smart contracts, see [Anvil](https://book.getfoundry.sh/anvil/).
 - [Hardhat](https://hardhat.org): Hardhat is a development environment that facilitates smart contract development.
 It comes built-in with [Hardhat Network](https://hardhat.org/hardhat-network/docs/overview), a local Ethereum network node designed for development.
 Hardhat allows you to deploy your contracts, [run your tests](https://hardhat.org/tutorial/testing-contracts) and debug your code, all within the confines of your local machine.
+Tests are written in JavaScript, using [ethers](https://ethers.org/).
 - [Remix](https://remix.ethereum.org/): Remix is an IDE that helps you write Solidity contracts straight from the browser.
 It provides powerful features for testing and debugging smart contracts, like the [Debugger](https://remix-ide.readthedocs.io/en/latest/debugger.html) or the [Unit Testing Plugin](https://remix-ide.readthedocs.io/en/latest/unittesting.html).
-- [Waffle](https://getwaffle.io/): Waffle is a framework specificly for testing smart contracts.
+- [Waffle](https://getwaffle.io/): Waffle is another framework for developing and testing smart contracts.
+Tests are written in JavaScript / Typescript.
 
 ##### Guides
 - [Deploying a smart contract with Foundry](/building-on-lisk/deploying-smart-contract/with-Foundry.md)
 - [Deploying a smart contract with Hardhat](/building-on-lisk/deploying-smart-contract/with-Hardhat.md)
 - [Deploying a smart contract with Remix](/building-on-lisk/deploying-smart-contract/with-Remix.mdx)
 
-#### Smart Contract Analysis
+#### Smart Contract Code Analysis
+To ensure the security of smart contracts, it is essential to analyze the code for vulnerabilities.
+There are several tools available that help developers to analyze their smart contracts for common security issues and vulnerabilities, for example:
+
 - [Slither](https://github.com/crytic/slither): Slither is a Solidity static analysis framework that detects common vulnerabilities in smart contracts.
 - [Etheno](https://github.com/crytic/etheno): Etheno is a tool that helps developers write secure smart contracts by providing a set of rules that can be used to check the security of smart contracts.
 - [Mythril](https://github.com/Consensys/mythril): Mythril is a security analysis tool for Ethereum smart contracts.
 - **Smart contract audits**:
 
 #### Testnets
+Testnets are public blockchains that are used for testing purposes.
+They often have the same features as the mainnet, but the tokens on the testnet have no real value - this allows developers to test their smart contracts and Web3 apps in a real-world environment without risking real assets.
+Before deploying a smart contract to the mainnet, it is highly recommended to test it on a testnet to ensure that it works as expected.
 ##### Public Testnets
+The following testnets are available for testing smart contracts and Web3 apps on Lisk:
 - [Lisk Sepolia](/about-lisk/network-info.md#lisk-sepolia-testnet)
 ##### Virtual Testnets
-Collaborate across teams in shared, dynamic environments 
-[Tenderly: Virtual Testnets](https://blog.tenderly.co/how-virtual-testnets-replace-public-testnets/)
+[Tenderly](https://tenderly.co/) recently introduced the possibility to spin up [Virtual Testnets](https://blog.tenderly.co/how-virtual-testnets-replace-public-testnets/).
+Virtual Testnets are a new way to test your Web3 apps, bringing the onchain data of a mainnet and the flexibility of a local environment together.
+
+Some interesting features of Virtual Testnets are:
 
 - **Build your dapps with real, up-to-date mainnet data** and test its actual performance under realistic conditions. 
 - **Get an unlimited faucet** and stop begging for test ETH.
@@ -253,7 +271,12 @@ Virtual TestNets are easy to set up and configure, giving you full control and f
 You can even manipulate the state of your forked chains with custom values, custom chain IDs, and more, making sure they fit your unique requirements.
 
 #### E2E Testing
-- [Synpress](https://synpress.io/)
+End-to-end (E2E) testing is a type of software testing that tests the complete flow of an application from start to finish.
+This specifically includes testing the frontend of your application, ensuring that the user interface works as expected.
+To deal with stuff like wallets, and other Web3-specific things, you might want to use specialized Web3 E2E testing tools:
+
+[Synpress](https://synpress.io/) is an E2E (End-to-End) testing library for Web3 dapps. 
+Synpress can be used with two leading E2E testing frameworks out there, i.e., both [Playwright](https://playwright.dev/) and [Cypress](https://www.cypress.io/), with support for all of their its features.
 
 #### Automated Testing and Continuous Integration (CI)
 - k6
