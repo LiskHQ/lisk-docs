@@ -76,7 +76,7 @@ Untuk menambahkan token Anda ke dalam list, lakukan langkah-langkah berikut.
 ### Langkah 1: Deploy Token Anda di Lisk
 
 Pilih framework bridging yang Anda inginkan, dan gunakan untuk deploy ERC-20 token Anda di Lisk.  
-Kami merekomendasikan Anda menggunakan framework yang disediakan oleh kontrak [bridge standar](#bridge-standar) milik Lisk dan deploy token Anda menggunakan [OptimismMintableERC20Factory](../contracts#jaringan-lisk-l2).  
+Kami merekomendasikan Anda menggunakan framework yang disediakan oleh kontrak [bridge standar](#bridge-standar) milik Lisk dan deploy token Anda menggunakan [OptimismMintableERC20Factory](contracts#jaringan-lisk-l2).  
 Deploy token Anda di Lisk dengan cara ini memberikan jaminan tambahan yang akan memperlancar proses persetujuan.  
 Jika Anda memilih framework bridging lain, interfacenya harus kompatibel dengan bridge standar. Jika tidak, kami mungkin akan kesulitan untuk mendukungnya.
 
