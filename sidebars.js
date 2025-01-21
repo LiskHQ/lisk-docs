@@ -26,6 +26,7 @@ const sidebars = {
       collapsed: false,
       items: [
         'intro',
+        { type: 'ref', id: 'docs-user/connecting-to-a-wallet' },
         'about-lisk/network-info',
         'about-lisk/fees',
         'about-lisk/contracts',
@@ -39,7 +40,6 @@ const sidebars = {
       collapsed: false,
       items: [
         'building-on-lisk/web3-app-development',
-        { type: 'ref', id: 'docs-user/connecting-to-a-wallet' },
         {
           type: 'category',
           label: 'Deploying a Smart Contract',
