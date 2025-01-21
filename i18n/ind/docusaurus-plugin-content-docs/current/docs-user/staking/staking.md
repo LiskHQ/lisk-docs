@@ -42,7 +42,7 @@ Ini meningkatkan komposabilitas ke dalam DeFi dan penggunaan potensial di masa d
 
 ## Hadiah Staking
 
-Hadiah staking memberikan insentif bagi pengguna untuk berpartisipasi dalam tata kelola, menjadikan pengambilan keputusan lebih terdesentralisasi dan didorong oleh komunitas.  
+Hadiah staking memberikan insentif bagi pengguna untuk berpartisipasi dalam governance, menjadikan pengambilan keputusan lebih terdesentralisasi dan didorong oleh komunitas.  
 Secara singkat, pengguna mendapatkan [kekuatan suara](docs-user/governance/overview.mdx#kekuatan-suara) dan hadiah untuk staking token selama periode waktu tertentu.
 
 Lisk menerapkan **peningkatan bobot berdasarkan waktu** pada hadiah:
