@@ -27,7 +27,8 @@ const sidebars = {
       items: [
         'intro',
         'about-lisk/network-info',
-        'about-lisk/fees'
+        'about-lisk/fees',
+        'about-lisk/contracts'
       ],
     },
     {
@@ -36,8 +37,8 @@ const sidebars = {
       collapsible: true,
       collapsed: false,
       items: [
+        'building-on-lisk/web3-app-development',
         { type: 'ref', id: 'docs-user/connecting-to-a-wallet' },
-        'building-on-lisk/contracts',
         'building-on-lisk/bridged-tokens',
         'building-on-lisk/run-a-lisk-node',
         {
@@ -108,7 +109,6 @@ const sidebars = {
             keywords: ['guides','smart contracts','token development','token standards','erc-20','erc-721','erc-1155'],
           },
         },
-        'building-on-lisk/web3-app-development',
         {
           type: 'category',
           label: 'Using oracle data',
