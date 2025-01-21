@@ -46,7 +46,7 @@ transaction_fee = l2_execution_fee + l1_data_fee
 
 :::note
 Lisk's fee calculation is based on the fee system of OP Mainnet, using the latest **Fjord** upgrade.
-Check the [Fees page](https://docs.optimism.io/stack/transactions/fees#fjord) in the Optmism documentation, to learn more about how the fee system works in detail.
+Check the [Fees page](https://docs.optimism.io/stack/transactions/fees#fjord) in the Optimism documentation, to learn more about how the fee system works in detail.
 :::
 
 ### L2 Execution Fee 
@@ -108,8 +108,8 @@ weighted_gas_price = 16*base_fee_scalar*base_fee + blob_base_fee_scalar*blob_bas
 
 The current values for the scalars are:
 
-  - `base_fee_scalar` = 0.020698
-  - `blob_base_fee_scalar` = 1.364961
+  - `base_fee_scalar` = 0.024740
+  - `blob_base_fee_scalar` = 0.801328
 
 They can be adjusted depending on network conditions, to mitigate spikes in the transaction fees. 
 
@@ -127,8 +127,8 @@ The [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) parameters used by the L
 
 | Parameter                             | Lisk Mainnet value | Ethereum value (for reference) |
 | ------------------------------------- | ---------------: | -----------------------------: |
-| Block gas limit                       |   30,000,000 gas |                 30,000,000 gas |
-| Block gas target                      |    1,500,000 gas |                 15,000,000 gas |
+| Block gas limit                       |   60,000,000 gas |                 30,000,000 gas |
+| Block gas target                      |    3,000,000 gas |                 15,000,000 gas |
 | EIP-1559 elasticity multiplier        |               20 |                              2 |
 | EIP-1559 denominator                  |            1,000 |                              8 |
 | Maximum base fee increase (per block) |             1.9% |                          12.5% |
