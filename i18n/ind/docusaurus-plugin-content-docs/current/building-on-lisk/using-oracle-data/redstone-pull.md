@@ -33,7 +33,7 @@ Untuk membuat smart contract yang secara langsung mengambil data terbaru dari Re
 
 Panduan ini menggunakan model [RedStone Pull](https://docs.redstone.finance/docs/get-started/models/redstone-pull) untuk mengambil data.
 
-Untuk gambaran umum mengenai berbagai modul yang ditawarkan RedStone untuk menerima data oracle, kunjungi [Oracles > RedStone](../../lisk-tools/oracles#redstone).
+Untuk gambaran umum mengenai berbagai modul yang ditawarkan RedStone untuk menerima data oracle, kunjungi [Oracles > RedStone](/lisk-tools/oracles#redstone).
 
 Panduan ini menggunakan [Hardhat](https://hardhat.org/) untuk membuat smart contract.
 Jika Anda ingin menggunakan Foundry, silakan cek [dokumentasi RedStone](https://docs.redstone.finance/docs/get-started/models/redstone-pull#foundry) untuk instruksi.
