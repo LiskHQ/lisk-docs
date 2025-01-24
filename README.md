@@ -64,8 +64,8 @@ By default, this will load your site at <http://localhost:3000/>. You'll have to
 
 Want to contribute? Please see what situation fits best for you.
 
-- [When to create an issue?]()
-- [How to create a pull request?]()
+- [When to create an issue?](https://opensource.guide/how-to-contribute/#opening-an-issue)
+- [How to create a pull request?](https://opensource.guide/how-to-contribute/#opening-a-pull-request)
 
 [Our contributors](https://github.com/LiskHQ/lisk-documentation/graphs/contributors)
 
