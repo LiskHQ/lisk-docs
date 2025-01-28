@@ -54,7 +54,7 @@ Hal ini membuat [ERC-20](https://eips.ethereum.org/EIPS/eip-20) berguna untuk be
 
 ### Panduan
 
-[Bagaimana cara deploy token ERC-20 baru di Lisk](deploy-erc-20.md)
+[Bagaimana cara deploy token ERC-20 baru di Lisk](deploy-erc-20.mdx)
 
 ### Bacaan lebih lanjut
 
