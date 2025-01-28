@@ -125,8 +125,8 @@ Parameter [EIP-1559](https://eips.ethereum.org/EIPS/eip-1559) yang digunakan ole
 
 | Parameter                             | Nilai Lisk Mainnet | Nilai Ethereum (sebagai referensi) |
 | ------------------------------------- | -----------------: | ----------------------------------: |
-| Block gas limit                        |   30.000.000 gas   |                 30.000.000 gas     |
-| Block gas target                       |    1.500.000 gas   |                 15.000.000 gas     |
+| Block gas limit                        |   60.000.000 gas   |                 30.000.000 gas     |
+| Block gas target                       |    3.000.000 gas   |                 15.000.000 gas     |
 | EIP-1559 elasticity multiplier         |               20    |                              2     |
 | EIP-1559 denominator                     |            1.000   |                              8     |
 | Peningkatan maksimum base fee (per blok) |             1,9%  |                          12,5%    |
