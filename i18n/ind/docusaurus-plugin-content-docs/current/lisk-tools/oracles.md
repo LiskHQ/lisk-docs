@@ -1,66 +1,68 @@
 ---
-title: Oracles
-slug: /lisk-tools/oracles
-description: Documentation for various blockchain oracles for Lisk.
-keywords:
-  [
-    Oracles,
-    Oracle,
-    Lisk,
-    Lisk Mainnet,
-    Lisk Testnet,
-    Lisk network,
-    Redstone,
+
+title: Oracle  
+slug: /lisk-tools/oracles  
+description: Dokumentasi untuk berbagai oracle blockchain untuk Lisk.  
+keywords:  
+  [  
+    "Oracle",  
+    "Oracle",  
+    "Lisk",  
+    "Lisk Mainnet",  
+    "Lisk Testnet",  
+    "jaringan Lisk",  
+    "Redstone",  
     Tellor,
-    price feeds,
-    data feeds,
-  ]
+    "price feed",  
+    "data feed",  
+  ]  
+
 ---
 
-# Oracles
+# Oracle
 
-[Oracles](https://ethereum.org/en/developers/docs/oracles/) provide offchain data onchain.
-This allows code running on a blockchain to access a wide variety of information.
+[Oracle](https://ethereum.org/en/developers/docs/oracles/) menyediakan data offchain ke onchain.  
+Ini memungkinkan kode yang berjalan di blockchain untuk mengakses berbagai macam informasi.
 
-The following Oracles support the Lisk network already:
+Berikut ini adalah oracle yang sudah mendukung jaringan Lisk:
 
 ## RedStone
 
-[RedStone](https://redstone.finance/) offers flexible Data Feeds for Lending Markets, Perpetuals, Options, Stablecoins, Yield Aggregators, and other types of novel DeFi protocols. 
+[RedStone](https://redstone.finance/) menawarkan Feed Data fleksibel untuk Pasar Peminjaman, Perpetuals, Opsi, Stablecoins, Yield Aggregator, dan jenis protokol DeFi baru lainnya.
 
-Builders can choose how they want to consume the data from the following three dedicated models:
+Pembuat dapat memilih bagaimana mereka ingin mengonsumsi data dari tiga model khusus berikut:
 
-*   [RedStone Pull](https://docs.redstone.finance/docs/get-started/models/redstone-pull) (pull oracle) - less than 10s update time, broad spectrum of feeds, best for most use cases. All [Price Feeds](https://app.redstone.finance/#/app/tokens) are available for Lisk.
-*   [RedStone Push](https://docs.redstone.finance/docs/get-started/models/redstone-push) (push oracle) - for protocols designed for the traditional oracle interface, customizable heartbeat, and deviation threshold.
-*   [RedStone X](https://docs.redstone.finance/docs/get-started/models/redstone-x) - specifically for Perps and Options, highest update frequency, and front-running protection.
-* [ERC7412](https://docs.redstone.finance/docs/get-started/models/redstone-erc7412) - Classic and Core models combined
+*   [RedStone Pull](https://docs.redstone.finance/docs/get-started/models/redstone-pull) (pull oracle) - waktu pembaruan kurang dari 10 detik, spektrum feed yang luas, terbaik untuk sebagian besar kasus penggunaan. Semua [Feed Harga](https://app.redstone.finance/#/app/tokens) tersedia untuk Lisk.
+*   [RedStone Push](https://docs.redstone.finance/docs/get-started/models/redstone-push) (push oracle) - untuk protokol yang dirancang untuk antarmuka oracle tradisional, detak jantung yang dapat disesuaikan, dan ambang penyimpangan.
+* [RedStone X](https://docs.redstone.finance/docs/get-started/models/redstone-x) - khusus untuk Perpetual dan Opsi, frekuensi pembaruan tertinggi, dan perlindungan dari front-running.
+* [ERC7412](https://docs.redstone.finance/docs/get-started/models/redstone-erc7412) - Model Klasik dan Inti yang digabungkan
 
-Interested in integration? [Get in contact](https://discord.com/invite/PVxBZKFr46) with the RedStone team!
+Tertarik untuk mengintegrasi? [Hubungi](https://discord.com/invite/PVxBZKFr46) tim RedStone!
 
-#### Supported Networks
+#### Jaringan yang Didukung
 
 - Lisk
 
-### Guides
+### Panduan
 
-- [Accessing oracle data with Redstone (Pull)](../building-on-lisk/using-oracle-data/redstone-pull.md)
-- [Accessing oracle data with Redstone (Push)](../building-on-lisk/using-oracle-data/redstone-push.md)
+- [Mengakses data oracle dengan Redstone (Pull)](../building-on-lisk/using-oracle-data/redstone-pull.md)
+- [Mengakses data oracle dengan Redstone (Push)](../building-on-lisk/using-oracle-data/redstone-push.md)
 
 ## Tellor
 
-Tellor is an immutable decentralized oracle protocol where parties can request the value of an offchain data point (e.g. ETH/USD) and reporters compete to add this value to an onchain databank.
-The inputs to this databank are secured by a network of staked reporters.
+Tellor adalah protokol oracle terdesentralisasi yang bersifat immutable, di mana pihak-pihak dapat meminta nilai dari data offchain (misalnya, ETH/USD), dan para reporter bersaing untuk menambahkan nilai tersebut ke dalam databank onchain.
+Input ke databank ini diamankan oleh jaringan reporter yang men-stake token mereka.
 
-Tellor utilizes crypto-economic incentive mechanisms, rewarding honest data submissions by reporters and punishing bad actors through the issuance of Tellor’s token, Tributes (TRB) and a dispute mechanism.
+Tellor menggunakan mekanisme insentif kripto-ekonomi, dengan memberikan penghargaan atas pengiriman data yang jujur oleh reporter dan menghukum aktor jahat melalui penerbitan token Tellor, Tributes (TRB), dan mekanisme sengketa.
 
-This incentivizes an open, permissionless network of data reporting and data validation, ensuring that data can be provided by anyone and checked by everyone.
+Pendekatan ini mendorong jaringan terbuka dan tanpa izin untuk pelaporan data dan validasi data, memastikan bahwa data dapat disediakan oleh siapa saja dan diverifikasi oleh semua orang.
 
 [A list of all the Tellor contracts deployed on Lisk is available on their documentation](https://docs.tellor.io/tellor/the-basics/contracts-reference#lisk)
 
-#### Supported Networks
+#### Jaringan yang Didukung
 
-- Lisk
+- Lisk  
 - Lisk Sepolia
 
-### Guides
-- [Accessing oracle data with Tellor](../building-on-lisk/using-oracle-data/tellor.md)
+### Panduan
+- [Mengakses data oracle dengan Tellor](../building-on-lisk/using-oracle-data/tellor.md)
