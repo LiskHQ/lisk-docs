@@ -1,68 +1,70 @@
 ---
-title: Lisk L1->L2 migration guide
-slug: /building-on-lisk/migration-guide
-description: "A migration guide, explaining how to smoothly migrate any Lisk L1 app to Lisk L2."
-keywords: [
-    "Lisk",
-    "Lisk migration",
-    "Lisk L1",
-    "Lisk L2",
-    "Lisk testnet",
-    "Lisk SDK",
-    "Solidity",
-    "smart contract development",
-    "build on lisk",
-    ]
+
+title: Panduan Migrasi Lisk L1->L2  
+slug: /building-on-lisk/migration-guide  
+description: "Panduan migrasi yang menjelaskan bagaimana cara memigrasikan aplikasi Lisk L1 ke Lisk L2 dengan lancar."  
+keywords: [  
+    "Lisk",  
+    "migrasi Lisk",  
+    "Lisk L1",  
+    "Lisk L2",  
+    "Lisk testnet",  
+    "Lisk SDK",  
+    "Solidity",  
+    "pengembangan smart contract",  
+    "membangun di Lisk",  
+]  
+
 ---
 
-import Tabs from '@theme/Tabs';
+import Tabs from '@theme/Tabs';  
 import TabItem from '@theme/TabItem';
 
-:::warning
-These docs are referring to the previous Lisk chain on L1, which stopped when Lisk migrated to L2 on May 2024. 
-If you wish to develop on the current Lisk L2 chain, please refer to the developer documentation under the [Building on Lisk](../category/building-on-lisk) category
+:::warning  
+Dokumentasi ini merujuk pada chain Lisk sebelumnya di L1, yang dihentikan saat Lisk bermigrasi ke L2 pada Mei 2024.  
+Jika Anda ingin mengembangkan di chain Lisk L2 yang saat ini, harap merujuk ke dokumentasi pengembang di bawah kategori [Membangun di Lisk](../category/building-on-lisk).  
 :::
 
-# Lisk L1->L2 migration guide
+# Panduan Migrasi Lisk L1->L2
 
-How to smoothly migrate any Lisk L1 app to Lisk L2.
+Cara memigrasikan aplikasi Lisk L1 ke Lisk L2 dengan lancar.
 
-## Requirements
+## Persyaratan
 
-You need:
+Anda membutuhkan:
 
-- A Lisk L1 application built on [Lisk SDK](https://github.com/LiskHQ/lisk-sdk) version 6.0.0 or later.
-- A basic understanding of [Solidity](https://soliditylang.org/).
-- The smart contract development framework of your choice. 
-In this guide, we will use the [Foundry](https://book.getfoundry.sh/) framework.
+- Aplikasi Lisk L1 yang dibangun di [Lisk SDK](https://github.com/LiskHQ/lisk-sdk) versi 6.0.0 atau lebih baru.
+- Pemahaman dasar tentang [Solidity](https://soliditylang.org/).
+- Kerangka pengembangan smart contract pilihan Anda.  
+Dalam panduan ini, kami akan menggunakan kerangka [Foundry](https://book.getfoundry.sh/).
 
-## Project setup
+## Pengaturan Proyek
 
-To illustrate the migration process, we will use the [Hello module](https://github.com/LiskHQ/lisk-sdk-examples/tree/development/tutorials/hello/hello_client/src/app/modules/hello) from Lisk L1, and migrate it to Lisk L2. 
+Untuk menggambarkan proses migrasi, kami akan menggunakan modul [Hello](https://github.com/LiskHQ/lisk-sdk-examples/tree/development/tutorials/hello/hello_client/src/app/modules/hello) dari Lisk L1, dan memigrasikannya ke Lisk L2.
 
-To start with the project migration, first create a new project with Foundry like this:
+Untuk memulai migrasi proyek, buat proyek baru dengan Foundry seperti ini:
 
 ```bash
 forge init hello_liskl2
 ```
 
-This will create a new folder `hello_liskl2`, which will contain the smart contracts we are going to implement.
+Ini akan membuat folder baru `hello_liskl2`, yang akan berisi smart contract yang akan kami implementasikan.
 
 ```bash
 cd hello_liskl2
 ```
 
-## Module migration
+## Migrasi Modul
 
-:::info
-**Modules in Lisk L1** are re-implemented as **smart contracts in Lisk L2.**
+:::info  
+**Modul di Lisk L1** diimplementasikan ulang sebagai **smart contract di Lisk L2.**  
 :::
 
-To create a new smart contract, create a new file `Hello.sol` under `src/` and add the following content: 
+Untuk membuat smart contract baru, buat file baru `Hello.sol` di bawah `src/` dan tambahkan konten berikut: 
 
 ```solidity title="hello_liskl2/src/Hello.sol"
 // SPDX-License-Identifier: MIT
-// compiler version must be greater than or equal to 0.8.20 and less than 0.9.0
+// versi compiler harus lebih besar dari atau sama dengan 0.8.20 dan kurang dari 0.9.0
 pragma solidity ^0.8.20;
 
 contract Hello {
@@ -70,31 +72,31 @@ contract Hello {
 }
 ```
 
-Inside the new contract, we will put all the logic that was residing in the Lisk L1 `Hello` module before.
+Di dalam kontrak baru ini, kami akan menempatkan semua logika yang sebelumnya ada di modul Lisk L1 `Hello`.
 
-### Table: Lisk L1/L2 comparison
-| Description          | Lisk L1                      | Lisk L2                       |
+### Tabel: Perbandingan Lisk L1/L2  
+| Deskripsi           | Lisk L1                      | Lisk L2                       |
 | :------------------- | :----------------------------| :---------------------------- |
-| Onchain business logic| Module                      |[Smart contract](https://solidity-by-example.org/first-app/) |
-| Onchain data storage | Stores (onchain)             |[State variables](https://solidity-by-example.org/variables/)|
-| Logging to the blockchain| Blockchain Events        |[Events](https://solidity-by-example.org/events/)|
-| State-transition logic triggered by a transaction| Commands|[Functions](https://solidity-by-example.org/function/)|
-| API                  | Endpoints                    |[View functions](https://solidity-by-example.org/view-and-pure-functions/)|
-| Internal API         | Methods                      |[Functions (+ modifiers)](https://solidity-by-example.org/function-modifier/)|
-| Logic triggered per block| Lifecycle Hooks          |X[^1]                              |
+| Logika bisnis onchain| Modul                        |[Smart contract](https://solidity-by-example.org/first-app/) |
+| Penyimpanan data onchain | Stores (onchain)             |[Variabel state](https://solidity-by-example.org/variables/)|
+| Pencatatan di blockchain| Blockchain Events        |[Events](https://solidity-by-example.org/events/)|
+| Logika transisi status yang dipicu oleh transaksi| Perintah|[Fungsi](https://solidity-by-example.org/function/)|
+| API                  | Endpoint                     |[Fungsi pandang](https://solidity-by-example.org/view-and-pure-functions/)|
+| API Internal         | Metode                       |[Fungsi (+ modifikator)](https://solidity-by-example.org/function-modifier/)|
+| Logika yang dipicu per blok| Lifecycle Hooks          |X[^1]                              |
 
-[^1]: No direct equivalent in solidity.
-Please investigate for custom solutions to migrate logic residing in the lifecycle hooks.
+[^1]: Tidak ada padanan langsung di Solidity.  
+Harap teliti solusi kustom untuk memigrasikan logika yang ada di lifecycle hooks.
 
-### Storage
+### Penyimpanan
 
-Migrate the onchain stores of a module by implementing corresponding state variables in the contract as shown below.
+Migrasikan penyimpanan onchain dari sebuah modul dengan mengimplementasikan variabel state yang sesuai dalam kontrak seperti yang ditunjukkan di bawah ini.
 
-<Tabs>
-  <TabItem value="liskl1" label="Lisk L1">
-  <Tabs>
-      <TabItem value="message" label="Message Store" default>
-        ```typescript title="hello_client/src/app/modules/hello/stores/message.ts"
+<Tabs>  
+  <TabItem value="liskl1" label="Lisk L1">  
+  <Tabs>  
+      <TabItem value="message" label="Message Store" default>  
+        ```typescript title="hello_client/src/app/modules/hello/stores/message.ts"  
         import { BaseStore } from 'lisk-sdk';
 
         export interface MessageStoreData {
@@ -117,9 +119,9 @@ Migrate the onchain stores of a module by implementing corresponding state varia
             public schema = messageStoreSchema;
         }
         ```
-      </TabItem>
-      <TabItem value="counter" label="Counter Store">
-        ```typescript title="hello_client/src/app/modules/hello/stores/counter.ts"
+      </TabItem>  
+      <TabItem value="counter" label="Counter Store">  
+        ```typescript title="hello_client/src/app/modules/hello/stores/counter.ts"  
         import { BaseStore } from 'lisk-sdk';
 
         export interface CounterStoreData {
@@ -144,29 +146,28 @@ Migrate the onchain stores of a module by implementing corresponding state varia
           public schema = counterStoreSchema;
         }
         ```
-      </TabItem>
-    </Tabs>
-  </TabItem>
-  <TabItem value="liskl2" label="Lisk L2" default>
-    ```solidity title="hello_liskl2/src/Hello.sol"
-    // SPDX-License-Identifier: MIT
-    // compiler version must be greater than or equal to 0.8.20 and less than 0.9.0
+      </TabItem>  
+    </Tabs>  
+  </TabItem>  
+  <TabItem value="liskl2" label="Lisk L2" default>  
+    ```solidity title="hello_liskl2/src/Hello.sol"  
+    // SPDX-License-Identifier: MIT  
+    // versi compiler harus lebih besar dari atau sama dengan 0.8.20 dan kurang dari 0.9.0  
     pragma solidity ^0.8.20;
 
     contract Hello {
-      /** State variables */
-      // State variable for the Hello messages
+      /** Variabel state */
+      // Variabel state untuk pesan Hello
       mapping(address => string) public message;
-      // State variable for the message counter
+      // Variabel state untuk penghitung pesan
       uint32 public counter = 0;
     }
     ```
-  </TabItem>
+  </TabItem>  
 </Tabs>
+### Event
 
-### Events
-
-Migrate the blockchain events of a module by implementing corresponding events in the contract as shown below.
+Migrasikan event blockchain dari modul dengan mengimplementasikan event yang sesuai dalam kontrak seperti yang ditunjukkan di bawah ini.
 
 <Tabs>
   <TabItem value="liskl1" label="Lisk L1">
@@ -203,113 +204,113 @@ Migrate the blockchain events of a module by implementing corresponding events i
   <TabItem value="liskl2" label="Lisk L2" default>
     ```solidity title="hello_liskl2/src/Hello.sol"
     // SPDX-License-Identifier: MIT
-    // compiler version must be greater than or equal to 0.8.20 and less than 0.9.0
+    // versi compiler harus lebih besar dari atau sama dengan 0.8.20 dan kurang dari 0.9.0
     pragma solidity ^0.8.20;
 
     contract Hello {
-      /** State variables */
-      // State variable for the Hello messages
+      /** Variabel state */
+      // Variabel state untuk pesan Hello
       mapping(address => string) public message;
-      // State variable for the message counter
+      // Variabel state untuk penghitung pesan
       uint32 public counter = 0;
 
-      /** Events */
-      // Event for new Hello messages
+      /** Event */
+      // Event untuk pesan Hello baru
       event NewHello(address indexed sender, string message);
     }
     ```
   </TabItem>
 </Tabs>
 
-### State transition logic
+### Logika Transisi Status
 
 <details>
-<summary>Configuration migration</summary>
-#### Configuration
-The module-specific configurations, which resided in the `config.json` on Lisk L1, are now part of the smart contract itself and are defined as state variables.
+<summary>Migrasi Konfigurasi</summary>
+#### Konfigurasi
+Konfigurasi spesifik modul, yang sebelumnya berada di `config.json` pada Lisk L1, sekarang menjadi bagian dari smart contract itu sendiri dan didefinisikan sebagai variabel state.
 
 ```solidity title="hello_liskl2/src/Hello.sol"
-// Blacklist of words that are not allowed in the Hello message
+// Daftar kata yang tidak diperbolehkan dalam pesan Hello
 string[] public blacklist = ["word1","word2"];
-// Maximum length of the Hello message
+// Panjang maksimum pesan Hello
 uint32 public maxLength = 200;
-// Minimum length of the Hello message
+// Panjang minimum pesan Hello
 uint32 public minLength = 3;
 ```
 
-To edit the configuration options of the Hello module, we implement the following functions in the Hello contract:
+Untuk mengedit opsi konfigurasi modul Hello, kita implementasikan fungsi-fungsi berikut dalam kontrak Hello:
 
-- `setBlacklist()` to configure the blacklist of words that are not allowed in the Hello message.
-- `setMinMaxMessageLength()` to configure the minimum and maximum length of the Hello message.
+- `setBlacklist()` untuk mengonfigurasi daftar hitam kata-kata yang tidak diperbolehkan dalam pesan Hello.
+- `setMinMaxMessageLength()` untuk mengonfigurasi panjang minimum dan maksimum pesan Hello.
 
 ```solidity title="hello_liskl2/src/Hello.sol"
-// Function to configure the blacklist
+// Fungsi untuk mengonfigurasi daftar hitam
 function setBlacklist(string[] memory _newBlackList) public onlyOwner {
     blacklist = _newBlackList;
 } 
-// Function to configure min/max message length
+// Fungsi untuk mengonfigurasi panjang pesan min/maks
 function setMinMaxMessageLength(uint32 _newMinLength,uint32 _newMaxLength) public onlyOwner {
     minLength = _newMinLength;
     maxLength = _newMaxLength;
 }
 ```
 
-As seen in the above code snippet, we add the following modifiers to the functions:
+Seperti yang terlihat pada cuplikan kode di atas, kita menambahkan modifier berikut pada fungsi-fungsi tersebut:
 
-- `public` to make the function callable from outside the contract. 
-This is a default visibility modifier for functions in Solidity.
-- `onlyOwner` to check that the caller is the owner of the contract.
-This is a custom modifier that we need to implement in the contract manually, as shown in the example below.
- 
-To set the owner of the contract, we add a new state variable `owner`, and a constructor which sets the `owner` variable to the account address that deploys the contract.
+- `public` untuk membuat fungsi dapat dipanggil dari luar kontrak. 
+Ini adalah modifier visibilitas default untuk fungsi dalam Solidity.
+- `onlyOwner` untuk memeriksa apakah pemanggil adalah pemilik kontrak.
+Ini adalah modifier kustom yang perlu kita implementasikan secara manual dalam kontrak, seperti yang ditunjukkan pada contoh di bawah ini.
+
+Untuk mengatur pemilik kontrak, kita menambahkan variabel state baru `owner`, dan sebuah konstruktor yang mengatur variabel `owner` ke alamat akun yang deploy kontrak.
 
 :::tip
-To update the smart contract owner, you can implement a corresponding function `setOwner()`, and use the `onlyOwner` modifier to ensure that only the current owner can call this function.
+Untuk memperbarui pemilik smart contract, Anda dapat mengimplementasikan fungsi yang sesuai `setOwner()`, dan menggunakan modifier `onlyOwner` untuk memastikan hanya pemilik saat ini yang dapat memanggil fungsi ini.
 :::
 
-Finally, we can check for the message sender being the owner of the contract in the `onlyOwner` modifier which is used for the `setBlacklist()` and `setMinMaxMessageLength()` functions.
+Terakhir, kita dapat memeriksa apakah pengirim pesan adalah pemilik kontrak dalam modifier `onlyOwner` yang digunakan untuk fungsi `setBlacklist()` dan `setMinMaxMessageLength()`.
 
 ```solidity title="hello_liskl2/src/Hello.sol"
-// Address of the contract owner
+// Alamat pemilik kontrak
 address public immutable owner;
 
 constructor() {
-    // Set the transaction sender as the owner of the contract.
+    // Menetapkan pengirim transaksi sebagai pemilik kontrak.
     owner = msg.sender;
 }
 
 /** Modifiers */
-// Modifier to check that the caller is the owner of the contract.
+// Modifier untuk memeriksa apakah pemanggil adalah pemilik kontrak.
 modifier onlyOwner() {
-    require(msg.sender == owner, "Not owner");
+    require(msg.sender == owner, "Bukan pemilik");
     _;
 }
 ```
 </details>
 
 <details>
-<summary>Verification migration</summary>
-#### Verification
+<summary>Verifikasi Migrasi</summary>
+#### Verifikasi
 
-To verify the Hello message, we implement custom modifiers in the contract.
+Untuk memverifikasi pesan Hello, kita implementasikan modifier kustom dalam kontrak.
 
-Inside the modifiers, we check the length of the message and if it contains any blacklisted words like it was done in the `verify()` method of the Lisk L1 Hello module.
+Di dalam modifier, kita memeriksa panjang pesan dan apakah pesan tersebut mengandung kata-kata yang ada dalam daftar hitam seperti yang dilakukan dalam metode `verify()` dari modul Hello Lisk L1.
 
-Conveniently check the length of Hello messages in the `validLength` modifier like this:
+Untuk memeriksa panjang pesan Hello, kita implementasikan modifier `validLength` seperti ini:
 
 ```solidity title="hello_liskl2/src/Hello.sol"
-// Validate message length
+// Validasi panjang pesan
 modifier validLength(string memory _message) {
-    require(bytes(_message).length >= minLength, "Message too short");
-    require(bytes(_message).length <= maxLength, "Message too long");
+    require(bytes(_message).length >= minLength, "Pesan terlalu pendek");
+    require(bytes(_message).length <= maxLength, "Pesan terlalu panjang");
     _;
 }
 ```
 
-To check if the message contains any blacklisted words, we implement the `validWords` modifier in the contract.
+Untuk memeriksa apakah pesan mengandung kata-kata yang ada dalam daftar hitam, kita implementasikan modifier `validWords` dalam kontrak.
 
 ```solidity title="hello_liskl2/src/Hello.sol"
-// Validate message content
+// Validasi konten pesan
 modifier validWords(string memory _message) {
     bytes memory whereBytes = bytes (_message);
 
@@ -328,7 +329,7 @@ modifier validWords(string memory _message) {
                 break;
             }
         }
-        require (!found, "Message contains blacklisted word");
+        require (!found, "Pesan mengandung kata yang ada dalam daftar hitam");
     }
     _;
 }
@@ -336,23 +337,23 @@ modifier validWords(string memory _message) {
 </details>
 
 <details>
-<summary>Execution migration</summary>
-#### Execution
+<summary>Eksekusi Migrasi</summary>
+#### Eksekusi
 
-To migrate the createHello command execution, we implement the `createHello()` function in the contract.
+Untuk memigrasikan eksekusi perintah `createHello`, kita implementasikan fungsi `createHello()` dalam kontrak.
 
-Inside this function, we save the message of the sender in the `message` mapping under the sender address.
+Di dalam fungsi ini, kita menyimpan pesan pengirim di dalam pemetaan `message` dengan alamat pengirim sebagai kunci.
 
 :::tip
-The sender address is a [global variable](https://solidity-by-example.org/variables/) in Solidity and can be accessed with `msg.sender`.
+Alamat pengirim adalah [variabel global](https://solidity-by-example.org/variables/) dalam Solidity dan dapat diakses dengan `msg.sender`.
 :::
 
-Additionally, we increment the Hello message counter by `1` and emit the `NewHello` event, like it was done in the `execute()` method of the Lisk L1 Hello module previously.
+Selain itu, kita meningkatkan penghitung pesan Hello sebanyak `1` dan memancarkan event `NewHello`, seperti yang dilakukan dalam metode `execute()` pada modul Lisk L1 Hello sebelumnya.
 
-The `validMessage()` modifier that we defined above in the [Verification migration](/building-on-lisk/migration-guide#state-transition-logic) section is used to check if the message is valid before the `createHello()` function is executed.
+Modifier `validMessage()` yang kita definisikan di atas dalam bagian [Migrasi Verifikasi](/building-on-lisk/migration-guide#logika-transisi-status) digunakan untuk memeriksa apakah pesan valid sebelum fungsi `createHello()` dijalankan.
 
 ```solidity title="hello_liskl2/src/Hello.sol"
-// Function to create a new Hello message
+// Fungsi untuk membuat pesan Hello baru
 function createHello(string calldata _message) public validLength(_message) validWords(_message) {
     message[msg.sender] = _message;
     counter+=1;
@@ -403,12 +404,12 @@ function createHello(string calldata _message) public validLength(_message) vali
         const wordList = context.params.message.split(" ");
         const found = this._blacklist.filter(value => wordList.includes(value));
         if (found.length > 0) {
-          context.logger.info("==== FOUND: Message contains a blacklisted word ====");
+          context.logger.info("==== DITEMUKAN: Pesan mengandung kata yang ada di daftar hitam ====");
           throw new Error(
-              `Illegal word in hello message: ${  found.toString()}`
+              `Kata ilegal dalam pesan hello: ${  found.toString()}`
             );
         } else {
-          context.logger.info("==== NOT FOUND: Message contains no blacklisted words ====");
+          context.logger.info("==== TIDAK DITEMUKAN: Pesan tidak mengandung kata yang ada di daftar hitam ====");
           validation = {
             status: VerifyStatus.OK
           };
@@ -417,18 +418,18 @@ function createHello(string calldata _message) public validLength(_message) vali
       }
 
       public async execute(context: CommandExecuteContext<Params>): Promise<void> {
-        // 1. Get account data of the sender of the Hello transaction.
+        // 1. Mendapatkan data akun pengirim transaksi Hello.
         const { senderAddress } = context.transaction;
-        // 2. Get message and counter stores.
+        // 2. Mendapatkan store pesan dan penghitung.
         const messageSubstore = this.stores.get(MessageStore);
         const counterSubstore = this.stores.get(CounterStore);
 
-        // 3. Save the Hello message to the message store, using the senderAddress as key, and the message as value.
+        // 3. Menyimpan pesan Hello ke store pesan, menggunakan senderAddress sebagai kunci, dan pesan sebagai nilai.
         await messageSubstore.set(context, senderAddress, {
           message: context.params.message,
         });
 
-        // 3. Get the Hello counter from the counter store.
+        // 3. Mendapatkan penghitung Hello dari store penghitung.
         let helloCounter: CounterStoreData;
         try {
           helloCounter = await counterSubstore.get(context, counterKey);
@@ -437,13 +438,13 @@ function createHello(string calldata _message) public validLength(_message) vali
             counter: 0,
           }
         }
-        // 5. Increment the Hello counter +1.
+        // 5. Menambah penghitung Hello sebanyak +1.
         helloCounter.counter+=1;
 
-        // 6. Save the Hello counter to the counter store.
+        // 6. Menyimpan penghitung Hello ke store penghitung.
         await counterSubstore.set(context, counterKey, helloCounter);
 
-        // 7. Emit a "New Hello" event
+        // 7. Memancarkan acara "New Hello"
         const newHelloEvent = this.events.get(NewHelloEvent);
         newHelloEvent.add(context, {
           senderAddress: context.transaction.senderAddress,
@@ -458,42 +459,42 @@ function createHello(string calldata _message) public validLength(_message) vali
 
     ```solidity title="hello_liskl2/src/Hello.sol"
     // SPDX-License-Identifier: MIT
-    // compiler version must be greater than or equal to 0.8.20 and less than 0.9.0
+    // versi compiler harus lebih besar dari atau sama dengan 0.8.20 dan kurang dari 0.9.0
     pragma solidity ^0.8.20;
 
     contract Hello {
-        /** State variables */
-        // State variable for the Hello messages
+        /** Variabel state */
+        // Variabel state untuk pesan Hello
         mapping(address => string) public message;
-        // State variable for the message counter
+        // Variabel state untuk penghitung pesan
         uint32 public counter = 0;
-        // Address of the contract owner
+        // Alamat pemilik kontrak
         address public immutable owner;
-        // Blacklist of words that are not allowed in the Hello message
+        // Daftar hitam kata-kata yang tidak diperbolehkan dalam pesan Hello
         string[] public blacklist = ["word1","word2"];
-        // Maximum length of the Hello message
+        // Panjang maksimum pesan Hello
         uint32 public maxLength = 200;
-        // Minimum length of the Hello message
+        // Panjang minimum pesan Hello
         uint32 public minLength = 3;
 
         constructor() {
-            // Set the transaction sender as the owner of the contract.
+            // Menetapkan pengirim transaksi sebagai pemilik kontrak.
             owner = msg.sender;
         }
 
-        /** Modifiers */
-        // Modifier to check that the caller is the owner of the contract.
+        /** Modifier */
+        // Modifier untuk memeriksa bahwa pemanggil adalah pemilik kontrak.
         modifier onlyOwner() {
-            require(msg.sender == owner, "Not owner");
+            require(msg.sender == owner, "Bukan pemilik");
             _;
         }
-        // Validate message length
+        // Validasi panjang pesan
         modifier validLength(string memory _message) {
-            require(bytes(_message).length >= minLength, "Message too short");
-            require(bytes(_message).length <= maxLength, "Message too long");
+            require(bytes(_message).length >= minLength, "Pesan terlalu pendek");
+            require(bytes(_message).length <= maxLength, "Pesan terlalu panjang");
             _;
         }
-        // Validate message content
+        // Validasi isi pesan
         modifier validWords(string memory _message) {
             bytes memory whereBytes = bytes (_message);
 
@@ -512,26 +513,26 @@ function createHello(string calldata _message) public validLength(_message) vali
                         break;
                     }
                 }
-                require (!found, "Message contains blacklisted word");
+                require (!found, "Pesan mengandung kata yang ada di daftar hitam");
             }
             _;
         }
 
-        /** Events */
-        // Event for new Hello messages
+        /** Acara */
+        // Acara untuk pesan Hello baru
         event NewHello(address indexed sender, string message);
 
-        /** Functions */
-        // Function to configure the blacklist
+        /** Fungsi */
+        // Fungsi untuk mengonfigurasi daftar hitam
         function setBlacklist(string[] memory _newBlackList) public onlyOwner {
             blacklist = _newBlackList;
         } 
-        // Function to configure min/max message length
+        // Fungsi untuk mengonfigurasi panjang pesan min/maks
         function setMinMaxMessageLength(uint32 _newMinLength,uint32 _newMaxLength) public onlyOwner {
             minLength = _newMinLength;
             maxLength = _newMaxLength;
         }
-        // Function to create a new Hello message
+        // Fungsi untuk membuat pesan Hello baru
         function createHello(string calldata _message) public validLength(_message) validWords(_message) {
             message[msg.sender] = _message;
             counter+=1;
@@ -542,9 +543,9 @@ function createHello(string calldata _message) public validLength(_message) vali
   </TabItem>
 </Tabs>
 
-### Endpoints
+### Endpoint
 
-Migrate the module endpoints by implementing corresponding [view functions](https://solidity-by-example.org/view-and-pure-functions/) in the contract as shown below.
+Migrasikan endpoint modul dengan mengimplementasikan fungsi [view] yang sesuai dalam kontrak seperti yang ditunjukkan di bawah ini.
 
 <Tabs>
   <TabItem value="liskl1" label="Lisk L1">
@@ -579,29 +580,71 @@ Migrate the module endpoints by implementing corresponding [view functions](http
   ```
   </TabItem>
   <TabItem value="liskl2" label="Lisk L2" default>
-  For simple getters, it is sufficient to add the `public` [visibility modifier](https://solidity-by-example.org/visibility/) to the state variables (see [storage](#storage)).
+  Untuk getter sederhana, cukup tambahkan modifier visibilitas `public` pada variabel state (lihat [penyimpanan](#penyimpanan)).
 
-  Public state variables can be accessed directly from external parties, without implementing the corresponding view function.
+  Variabel state publik dapat diakses langsung oleh pihak eksternal, tanpa perlu mengimplementasikan fungsi view yang sesuai.
+  </TabItem>
+</Tabs>
+### Endpoint
+
+Migrasikan endpoint modul dengan mengimplementasikan [fungsi view](https://solidity-by-example.org/view-and-pure-functions/) yang sesuai dalam kontrak seperti yang ditunjukkan di bawah ini.
+
+<Tabs>
+  <TabItem value="liskl1" label="Lisk L1">
+  ```typescript title="hello_client/src/app/modules/hello/endpoint.ts"
+  export class HelloEndpoint extends BaseEndpoint {
+    public async getHelloCounter(ctx: ModuleEndpointContext): Promise<CounterStoreData> {
+      const counterSubStore = this.stores.get(CounterStore);
+
+      const helloCounter = await counterSubStore.get(
+        ctx,
+        counterKey,
+      );
+
+      return helloCounter;
+    }
+
+    public async getHello(ctx: ModuleEndpointContext): Promise<MessageStoreData> {
+      const messageSubStore = this.stores.get(MessageStore);
+
+      const { address } = ctx.params;
+      if (typeof address !== 'string') {
+        throw new Error('Parameter address harus berupa string.');
+      }
+      cryptography.address.validateLisk32Address(address);
+      const helloMessage = await messageSubStore.get(
+        ctx,
+        cryptography.address.getAddressFromLisk32Address(address),
+      );
+      return helloMessage;
+    }
+  }
+  ```
+  </TabItem>
+  <TabItem value="liskl2" label="Lisk L2" default>
+  Untuk getter sederhana, cukup tambahkan [visibility modifier](https://solidity-by-example.org/visibility/) `public` pada variabel state (lihat [penyimpanan](#penyimpanan)).
+
+  Variabel state publik dapat diakses langsung oleh pihak eksternal, tanpa perlu mengimplementasikan view function yang sesuai.
   </TabItem>
 </Tabs>
 
-## Next steps
+## Langkah Selanjutnya
 
-Now that we re-implemented the Hello module from Lisk L1 as a smart contract in Lisk L2, it is possible to directly deploy the Hello contract to Lisk L2 and interact with it.
+Sekarang kita telah mengimplementasikan kembali modul Hello dari Lisk L1 sebagai smart contract di Lisk L2, maka kita bisa langsung deploy kontrak Hello ke Lisk L2 dan berinteraksi dengannya.
 
-Before deploying the smart contract to Lisk, it is recommended to [test it locally](#testing-the-smart-contract) by writing corresponding tests for the newly created smart contract.
-Once the smart contract is [deployed](#smart-contract-deployment) to Lisk, you can interact with it by calling its public functions.
+Sebelum deploy smart contract ke Lisk, disarankan untuk [menguji secara lokal](#menguji-smart-contract) dengan menulis uji yang sesuai untuk smart contract yang baru dibuat.
+Setelah smart contract [di-deploy](#deployment-smart-contract) ke Lisk, Anda dapat berinteraksi dengannya dengan memanggil fungsi publiknya.
 
-Finally, you can migrate the plugins and UI of the Lisk L1 Hello app to be compatible with the new API, to complete the migration process of your Lisk application.
+Terakhir, Anda dapat memigrasikan plugin dan UI dari aplikasi Hello Lisk L1 agar kompatibel dengan API baru, untuk menyelesaikan proses migrasi aplikasi Lisk Anda.
 
-### Testing the smart contract
+### Menguji Smart Contract
 
-By testing the smart contract, you can verify that the smart contract behaves as expected and that it is free of bugs, before deploying it to Lisk.
+Dengan menguji smart contract, Anda dapat memverifikasi bahwa smart contract berfungsi seperti yang diharapkan dan bebas dari bug, sebelum deploynya ke Lisk.
 
-Foundry provides a testing framework to support you in writing tests for smart contracts.
-See [Tests - Foundry Book](https://book.getfoundry.sh/forge/tests) for examples and references regarding the testing framework.
+Foundry menyediakan framework pengujian untuk mendukung Anda dalam menulis uji untuk smart contract.
+Lihat [Tests - Foundry Book](https://book.getfoundry.sh/forge/tests) untuk contoh dan referensi terkait framework pengujian.
 
-To test the Hello smart contract, create a new file `Hello.t.sol` under `test/`, and add the following content:
+Untuk menguji smart contract Hello, buat file baru `Hello.t.sol` di bawah `test/`, dan tambahkan konten berikut:
 
 <details>
 <summary>Hello.t.sol</summary>
@@ -623,15 +666,15 @@ contract HelloTest is Test {
 
     function test_CreateHello() public {
         string memory message = "Hello World";
-        // Expect NewHello event
+        // Mengharapkan event NewHello
         vm.expectEmit(true,false,false,false);
         emit NewHello(address(alice), message);
-        // Create a new Hello message
+        // Membuat pesan Hello baru
         hoax(alice, 100 ether);
         hello.createHello(message);
-        // Check the message
+        // Memeriksa pesan
         assertEq(hello.message(alice),message);
-        // Check if counter = 1
+        // Memeriksa apakah counter = 1
         assertEq(hello.counter(),1);
     }
 
@@ -651,23 +694,19 @@ contract HelloTest is Test {
     }
 
     function test_SetBlacklist() public {
-        // Create a temporary dynamic array of strings
-        string[] memory bl = new string[](3);
-        bl[0] = "word1";
-        bl[1] = "word3";
+        // Membuat array dinamis sementara untuk string
+        string      bl[1] = "word3";
         bl[2] = "word4";
         hello.setBlacklist(bl);
-        string[] memory getBL = new string[](2);
-        getBL[0] = hello.blacklist(0);
+        string[] memory getBL = new string[acklist(0);
         getBL[1] = hello.blacklist(1);
         assertEq(getBL[0], bl[0]);
         assertEq(getBL[1], bl[1]);
     }
 
     function test_SetBlacklistNotOwner() public {
-        string[] memory bl = new string[](3);
+        string[] memory bl = new string[](3) ;
         bl[0] = "word1";
-        bl[1] = "word3";
         bl[2] = "word4";
         vm.expectRevert("Not owner");
         hoax(alice, 100 ether);
@@ -693,13 +732,13 @@ contract HelloTest is Test {
 ```
 </details>
 
-To run the tests, execute the following command:
+Untuk menjalankan pengujian, jalankan perintah berikut:
 
 ```bash
 forge test
 ``` 
 
-The output should look like this:
+Output-nya seharusnya terlihat seperti ini:
 
 ```text
 Running 8 tests for test/Hello.t.sol:HelloTest
@@ -713,17 +752,16 @@ Running 8 tests for test/Hello.t.sol:HelloTest
 [PASS] test_SetMinMaxMessageLengthNotOwner() (gas: 10889)
 Test result: ok. 8 passed; 0 failed; 0 skipped; finished in 3.35ms
 ```
+### Deployment Smart Contract
 
-### Smart contract deployment
+Sekarang Anda dapat deploy smart contract ke Lisk.
+Untuk contoh ini, kami akan menggunakan jaringan Lisk Sepolia untuk deploy kontrak Hello.
+Namun, langkah-langkahnya sama untuk jaringan Lisk juga.
 
-You can now deploy the smart contract to Lisk.
-For this example, we will use the Lisk Sepolia network to deploy the Hello contract.
-However, the steps are the same for Lisk network as well.
-
-Add the `--verify` flag to the `forge create` command to directly verify the smart contract on BlockScout.
+Tambahkan flag `--verify` ke perintah `forge create` untuk langsung memverifikasi smart contract di BlockScout.
 
 <Tabs>
-  <TabItem value="mainnet" label="Lisk" >
+  <TabItem value="mainnet" label="Lisk">
     ```bash
     forge create --rpc-url https://rpc.api.lisk.com \
     --etherscan-api-key 123 \
@@ -735,21 +773,19 @@ Add the `--verify` flag to the `forge create` command to directly verify the sma
     ```
   </TabItem>
   <TabItem value="testnet" label="Lisk Sepolia" default>
-  ```bash
-  forge create --rpc-url https://rpc.sepolia-api.lisk.com \
-  --etherscan-api-key 123 \
-  --verify \
-  --verifier blockscout \
-  --verifier-url https://sepolia-blockscout.lisk.com/api \
-  --private-key <your-private-key> \
-  src/Hello.sol:Hello
-  ```
+    ```bash
+    forge create --rpc-url https://rpc.sepolia-api.lisk.com \
+    --etherscan-api-key 123 \
+    --verify \
+    --verifier blockscout \
+    --verifier-url https://sepolia-blockscout.lisk.com/api \
+    --private-key <your-private-key> \
+    src/Hello.sol:Hello
+    ```
   </TabItem>
 </Tabs>
 
-
-
-If the deployment went successfully, the output should look like this:
+Jika deployment berhasil, keluaran seharusnya terlihat seperti ini:
 
 ```text
 [⠢] Compiling...
@@ -763,20 +799,20 @@ Start verifying contract `0x0a5A1C81F278cAe80d340a4A97E2D7B1c3Ec511a` deployed o
 
 Submitting verification for [src/Hello.sol:Hello] 0x0a5A1C81F278cAe80d340a4A97E2D7B1c3Ec511a.
 Submitted contract for verification:
-	Response: `OK`
-	GUID: `0a5a1c81f278cae80d340a4a97e2d7b1c3ec511a65cf6f72`
-	URL: https://sepolia-blockscout.lisk.com/address/0x0a5a1c81f278cae80d340a4a97e2d7b1c3ec511a
+    Response: `OK`
+    GUID: `0a5a1c81f278cae80d340a4a97e2d7b1c3ec511a65cf6f72`
+    URL: https://sepolia-blockscout.lisk.com/address/0x0a5a1c81f278cae80d340a4a97e2d7b1c3ec511a
 Contract verification status:
-Response: `OK`
-Details: `Pending in queue`
+    Response: `OK`
+    Details: `Pending in queue`
 Contract verification status:
-Response: `OK`
-Details: `Pass - Verified`
+    Response: `OK`
+    Details: `Pass - Verified`
 Contract successfully verified
 ```
 
-After the smart contract is deployed, you can interact with it by calling its public functions.
+Setelah smart contract di-deploy, Anda dapat berinteraksi dengannya dengan memanggil fungsi publiknya.
 
-From here, you can migrate the plugins and UI of the Lisk L1 app to be compatible with the new API, to complete the migration process of your Lisk application.
+Dari sini, Anda dapat memigrasi plugin dan UI aplikasi Lisk L1 agar kompatibel dengan API baru, untuk menyelesaikan proses migrasi aplikasi Lisk Anda.
 
-In case you need further assistance, feel free to reach out to the Lisk community at [Lisk.chat](https://lisk.chat).
+Jika Anda memerlukan bantuan lebih lanjut, jangan ragu untuk menghubungi komunitas Lisk di [Lisk.chat](https://lisk.chat).

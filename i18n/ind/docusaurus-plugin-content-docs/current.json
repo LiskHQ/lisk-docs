@@ -16,15 +16,15 @@
     "description": "The generated-index page title for category Building on Lisk in sidebar documentationSidebar"
   },
   "sidebar.documentationSidebar.category.Building on Lisk.link.generated-index.description": {
-    "message": "Guides for developers to start building dApps on Lisk L2.",
+    "message": "Panduan untuk pengembang memulai membangun dApps di Lisk L2.",
     "description": "The generated-index page description for category Building on Lisk in sidebar documentationSidebar"
   },
   "sidebar.documentationSidebar.category.Deploying a Smart Contract": {
-    "message": "Menerapkan Kontrak Cerdas",
+    "message": "Menerapkan Smart Contract",
     "description": "The label for category Deploying a Smart Contract in sidebar documentationSidebar"
   },
   "sidebar.documentationSidebar.category.Bridging an L1 token to Lisk": {
-    "message": "Menjembatani token L1 ke Lisk",
+    "message": "Bridge token L1 ke Lisk",
     "description": "The label for category Bridging an L1 token to Lisk in sidebar documentationSidebar"
   },
   "sidebar.documentationSidebar.category.Interacting with the blockchain": {
