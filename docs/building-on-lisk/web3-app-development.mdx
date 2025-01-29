@@ -100,7 +100,7 @@ To describe important steps in this innovation, websites, and apps are generally
   </TabItem>
 </Tabs>
 
-### Further Regarding
+### Further Reading
 - [Introduction to Web3](https://ethereum.org/en/web3/) *by Ethereum*
 
 ## Getting Started with Web3 App Development
@@ -156,9 +156,9 @@ So if you application requires a lot of computing power, and/or a very complex U
 
 ### Onboarding Web2 Users to Web3
 
-A major challenge of Web3 applications is to provide a seamless user experience for users, similar to what they are used to from Web2 applications.
+A significant challenge for Web3 applications is delivering a user experience that is as seamless as what users expect from Web2 applications.
 
-To onboard Web2 users to Web3, apps need to simplify the way how users interact with the app, in a way that feels natural and intuitive to them, while still providing the benefits of Web3 in a secure way.
+To onboard Web2 users to Web3, apps need to simplify user interaction so that it feels natural and intuitive to them while still providing the benefits of Web3 in a secure way.
 To aim for a smooth user experience, and to abstract the complexity of blockchain technology away from the user, it is highly recommended to include "account abstraction" (sometimes also referred to as "smart accounts", "smart wallets" or "smart contract accounts") into your Web3 application.
 
 #### Account Abstraction and Smart Accounts
@@ -180,13 +180,13 @@ On the technical side, account abstraction is implemented by the [ERC-4337 stand
 
 It comprises the following fundamental components:
 
-- **UserOperation**: a structure that describes a transaction to be sent on behalf of a user.
+- **UserOperation**: A structure that describes a transaction to be sent on behalf of a user.
 To avoid confusion, it is not named “transaction”.
-Like a transaction, it contains “sender”, “to”, “calldata”, “maxFeePerGas”, “maxPriorityFee”, “signature”, “nonce”.
-Unlike a transaction the “signature” field usage is not defined by the protocol, but by each account implementation.
+Like a transaction, it contains `sender`, `to`, `calldata`, `maxFeePerGas`, `maxPriorityFee`, `signature`, `nonce`.
+Unlike a transaction, the use of the `signature` field is not defined by the protocol but by each account implementation.
 Also, it contains several other fields, described in detail in ERC-4337.
-- **Account Contract**: the user's smart account sending a user operation.
-- **EntryPoint**: a singleton contract to execute bundles of UserOperations.
+- **Account Contract**: The user's smart account sending a user operation.
+- **EntryPoint**: A singleton contract to validate and execute bundles of UserOperations.
 It manages the verification and execution logic for UserOperations, ensuring they are processed correctly.
 - **Bundler**: Bundlers are contracts that package UserOperations from a mempool and send them to the EntryPoint.
 Bundling is the process where a node/bundler collects multiple UserOperations and creates a single transaction to submit onchain.
@@ -196,6 +196,7 @@ Paymasters can cover gas costs for users, sponsor specific transactions, or impl
 
 ##### Further Reading
 - [Account abstraction: A complete overview](https://blaize.tech/blog/account-abstraction-guide/) *by Blaize*
+- [What is Account Abstraction (ERC-4337)?](https://www.alchemy.com/overviews/what-is-account-abstraction) *by Alchemy*
 - [What is Account Abstraction? ERC-4337 Explained](https://blog.thirdweb.com/account-abstraction-erc4337/) *by thirdweb*
 - [How to pay gas fees with LSK](https://blog.thirdweb.com/changelog/ts-tokenpaymasters-pay-for-gas-with-lisk-lsk-base-usdc-or-celo-cusd/) *by thirdweb*
 - [How to create a Web3 mobile app with gasless transactions on Lisk](https://blog.thirdweb.com/web3-mobile-apps/build-web3-mobile-apps-with-reactive-native-on-lisk/) *by thirdweb*
@@ -213,8 +214,8 @@ However, to fix bugs or add new features to an already deployed smart contract, 
 
 ### Testing and Deployment
 When it comes to testing and deployment of Web3 apps, there are some additional aspects to consider compared to Web2 apps.
-The intrinsic vulnerabilities of smart contracts, the immutability of blockchain data and interacting with a decentralized network call for specific testing and security measures.
-Gladly, there are already many tools available to help developers ensure the security and reliability of their Web3 apps.
+The intrinsic vulnerabilities of smart contracts, the immutability of blockchain data, and the interactions with a decentralized network, call for specific testing and security measures.
+Gladly, many tools are already available to help developers ensure the security and reliability of their Web3 apps.
 The list below provides a selection of popular tools and services used to test Web3 apps:
 
 #### Smart Contract Test Suites
@@ -229,7 +230,7 @@ The [Forge Standard Library](https://book.getfoundry.sh/reference/forge-std/) pr
 It also provides a local testnet node for deploying and testing smart contracts, see [Anvil](https://book.getfoundry.sh/anvil/).
 - [Hardhat](https://hardhat.org): Hardhat is a development environment that facilitates smart contract development.
 It comes built-in with [Hardhat Network](https://hardhat.org/hardhat-network/docs/overview), a local Ethereum network node designed for development.
-Hardhat allows you to deploy your contracts, [run your tests](https://hardhat.org/tutorial/testing-contracts) and debug your code, all within the confines of your local machine.
+Hardhat allows you to deploy your contracts, [run your tests](https://hardhat.org/tutorial/testing-contracts), and debug your code, all within the confines of your local machine.
 Tests are written in JavaScript, using [ethers](https://ethers.org/).
 - [Remix](https://remix.ethereum.org/): Remix is an IDE that helps you write Solidity contracts straight from the browser.
 It provides powerful features for testing and debugging smart contracts, like the [Debugger](https://remix-ide.readthedocs.io/en/latest/debugger.html) or the [Unit Testing Plugin](https://remix-ide.readthedocs.io/en/latest/unittesting.html).
@@ -237,7 +238,7 @@ It provides powerful features for testing and debugging smart contracts, like th
 Tests are written in JavaScript / Typescript.
 
 ##### Guides
-- [Deploying a smart contract with Foundry](/building-on-lisk/deploying-smart-contract/with-Foundry.md)
+- [Deploying a smart contract with Foundry](/building-on-lisk/deploying-smart-contract/with-Foundry#testing-the-smart-contract)
 - [Deploying a smart contract with Hardhat](/building-on-lisk/deploying-smart-contract/with-Hardhat.md)
 - [Deploying a smart contract with Remix](/building-on-lisk/deploying-smart-contract/with-Remix.mdx)
 
@@ -248,7 +249,6 @@ There are several tools available that help developers to analyze their smart co
 - [Slither](https://github.com/crytic/slither): Slither is a Solidity static analysis framework that detects common vulnerabilities in smart contracts.
 - [Etheno](https://github.com/crytic/etheno): Etheno is a tool that helps developers write secure smart contracts by providing a set of rules that can be used to check the security of smart contracts.
 - [Mythril](https://github.com/Consensys/mythril): Mythril is a security analysis tool for Ethereum smart contracts.
-- **Smart contract audits**:
 
 #### Testnets
 Testnets are public blockchains that are used for testing purposes.
@@ -272,20 +272,20 @@ Some interesting features of Virtual Testnets are:
 - **Get an unlimited faucet** and stop begging for test ETH.
 Mint both native and ERC-20 tokens in any amount you need, impersonate accounts, and test complex scenarios uninterruptedly.
 - **Fully customize your development infrastructure** to fit your unique workflows.
-Virtual TestNets are easy to set up and configure, giving you full control and flexibility over your environments.
+Virtual Testnets are easy to set up and configure, giving you full control and flexibility over your environments.
 You can even manipulate the state of your forked chains with custom values, custom chain IDs, and more, making sure they fit your unique requirements.
 
 #### E2E Testing
 End-to-end (E2E) testing is a type of software testing that tests the complete flow of an application from start to finish.
-This specifically includes testing the frontend of your application, ensuring that the user interface works as expected.
-To deal with stuff like wallets, and other Web3-specific things, you might want to use specialized Web3 E2E testing tools:
+This specifically includes testing the frontend of your application, which ensures that the user interface works as expected.
+To deal with stuff like wallets, and other Web3-specific things, you might want to use specialized Web3 E2E testing tools.
 
-[Synpress](https://synpress.io/) is an E2E (End-to-End) testing library for Web3 dapps. 
-Synpress can be used with two leading E2E testing frameworks out there, i.e., both [Playwright](https://playwright.dev/) and [Cypress](https://www.cypress.io/), with support for all of their its features.
+[Synpress](https://synpress.io/) is an E2E testing library for Web3 dapps. 
+Synpress can be used with two leading E2E testing frameworks out there, i.e., [Playwright](https://playwright.dev/) and [Cypress](https://www.cypress.io/), with support for all of their features.
 
 #### Performance testing
 Performance testing is essential to ensure that your Web3 app can handle the expected load of users and their interactions.
-Measure and improve your apps performance, throughput, and resilience under different levels of traffic and transactions.
+Measure and improve your app's performance, throughput, and resilience under different levels of traffic and transactions.
 
 Some examples of performance testing tools are:
 
@@ -318,16 +318,16 @@ Theoretically, you could build a Web3 app with nearly the same tech stack as a W
 The only thing you need to add is a way for your application to interact with the blockchain, see [Data access](#data-access).
 
 To support developers, many blockchain platforms offer their own SDKs and tools to interact with their blockchain, which can make development easier and more efficient.
-There are also SDKs for Web3 app development that provide a complete tech stack, like [thirdweb](https://thirdweb.com/) or [Alchemy](https://www.alchemy.com/), which take away most of the complexity of blockchain development and provide a smooth developer experience.
+There are also SDKs for Web3 app development, like [thirdweb](https://thirdweb.com/) or [Alchemy](https://www.alchemy.com/), which take away most of the complexity of blockchain development and provide a smooth developer experience.
 thirdweb supports [Lisk](https://thirdweb.com/lisk) and many other EVM-compatible blockchains.
 
 #### Data Storage
 In Web2 apps, data is typically stored in a centralized database.
 In Web3 apps, some data is stored on the blockchain, i.e., a decentralized database.
 How the data is stored is defined inside of smart contracts.
-However, it should be noted that onchain data on a public blockchain is visible to everyone and therefore not suitable for all types of data.
-Especially sensistive and private user data should not be stored on the blockchain, except it is encrypted.
-In addition, soring large amounts of data onchain is quite expensive and slow to store large amounts of data onchain.
+However, it should be noted that onchain data on a public blockchain is visible to everyone and, therefore, not suitable for all types of data.
+Especially sensitive and private user data should not be stored on the blockchain, except if it is encrypted.
+In addition, storing large amounts of data onchain is both expensive and slow.
 Therefore, Web3 apps sometimes use a combination of onchain storage and offchain storage.
 
 #### Data Access
