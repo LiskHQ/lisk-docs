@@ -26,21 +26,20 @@ const sidebars = {
       collapsed: false,
       items: [
         'intro',
+        { type: 'ref', id: 'docs-user/connecting-to-a-wallet' },
         'about-lisk/network-info',
-        'about-lisk/fees'
+        'about-lisk/fees',
+        'about-lisk/contracts',
+        'about-lisk/bridged-tokens'
       ],
     },
-
     {
       type: 'category',
       label: 'Building on Lisk',
       collapsible: true,
       collapsed: false,
       items: [
-        { type: 'ref', id: 'docs-user/connecting-to-a-wallet' },
-        'building-on-lisk/contracts',
-        'building-on-lisk/bridged-tokens',
-        'building-on-lisk/run-a-lisk-node',
+        'building-on-lisk/web3-app-development',
         {
           type: 'category',
           label: 'Deploying a Smart Contract',
@@ -119,7 +118,8 @@ const sidebars = {
             'building-on-lisk/using-oracle-data/redstone-pull',
             'building-on-lisk/using-oracle-data/redstone-push',
           ],
-        }
+        },
+        'building-on-lisk/run-a-lisk-node'
       ],
       link: {
         type: 'generated-index',
