@@ -10,8 +10,8 @@ keywords:
     'Wallet EVM',
     'Wallet',
     'Non-kustodial',
-    'wallet panas',
-    'wallet dingin',
+    'hot wallet',
+    'cold wallet',
     'Zerion',
     'MetaMask',
     'Rainbow',
@@ -27,7 +27,7 @@ Halaman ini memberikan gambaran umum tentang wallet yang paling penting[^1] yang
 
 [^1]: Wallet kripto adalah perangkat, aplikasi, atau layanan online yang menyimpan kunci publik dan/atau privat untuk memfasilitasi transaksi kripto.
 
-## Wallet Panas
+## Hot Wallet
 
 ### Rainbow
 
@@ -50,7 +50,7 @@ Fitur utama:
 
 ### MetaMask
 Tersedia sebagai ekstensi browser dan aplikasi mobile, [MetaMask](https://metamask.io/) memberikan Anda brankas kunci, login yang aman, wallet token, dan masih banyak lagi — semua yang Anda butuhkan untuk mengelola aset digital Anda.
-MetaMask adalah salah satu pilihan paling populer di kalangan wallet panas.
+MetaMask adalah salah satu pilihan paling populer di kalangan hot wallet.
 
 :::tip
 Tambahkan jaringan Lisk ke MetaMask dengan sekali klik melalui [ChainList](https://chainlist.org/?search=lisk).
@@ -124,7 +124,7 @@ Fitur utama:
 - **Versi Web dan Mobile**
 - **Dukungan Token**: ETH, ERC 20 (termasuk LSK), dan ERC 721/1155 (NFT) didukung.
 
-## Wallet Dingin
+## Cold Wallet
 
 ### Ledger
 [Ledger](https://www.ledger.com/) menyediakan keamanan yang tak tertandingi untuk ekosistem kripto, menawarkan wallet perangkat keras terbaru yang dirancang dengan keamanan sebagai prioritas utama.
