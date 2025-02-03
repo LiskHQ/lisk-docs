@@ -85,29 +85,30 @@ cd lisk-node
 3. We currently support running either the `op-geth` or the `op-reth` nodes alongside the `op-node`. By default, we run the `op-geth` node. If you would like to run the `op-reth` node instead, please set the `CLIENT` environment variable to `reth` before starting the node.
     :::note
     The `op-reth` client can be built in either the `maxperf` (default) or `release` profile. To learn more about them, please check reth's documentation on Optimizations. Please set the `RETH_BUILD_PROFILE` environment variable accordingly.
-Unless you are building the `op-reth` client in `release` profile, please ensure that you have a machine with 32 GB RAM.
-Additionally, if you have the Docker Desktop installed on your system, please make sure to set Memory limit to a minimum of 16 GB.
-It can be set under `Settings -> Resources -> Resource Allocation -> Memory limit`.
+    Unless you are building the `op-reth` client in `release` profile, please ensure that you have a machine with 32 GB RAM.
+    Additionally, if you have the Docker Desktop installed on your system, please make sure to set Memory limit to a minimum of 16 GB.
+    It can be set under `Settings -> Resources -> Resource Allocation -> Memory limit`.
     :::
-4. Run:
-:::important
-Important: To run the node on Lisk Sepolia, first patch the Dockerfile(s) with:
-```sh
-git apply dockerfile-lisk-sepolia.patch
-```
-:::
 
-with `op-geth` execution client:
+4. Run:
+    :::important
+    Important: To run the node on Lisk Sepolia, first patch the Dockerfile(s) with:
+    ```sh
+    git apply dockerfile-lisk-sepolia.patch
+    ```
+    :::
+
+    with `op-geth` execution client:
 
     ```sh
     docker compose up --build --detach
     ```
 
-or, with op-reth execution client:
+    or, with op-reth execution client:
 
-```sh
-CLIENT=reth RETH_BUILD_PROFILE=maxperf docker compose up --build --detach
-```
+    ```sh
+    CLIENT=reth RETH_BUILD_PROFILE=maxperf docker compose up --build --detach
+    ```
 5. You should now be able to `curl` your Lisk node:
     ```sh
     curl -s -d '{"id":0,"jsonrpc":"2.0","method":"eth_getBlockByNumber","params":["latest",false]}' \
