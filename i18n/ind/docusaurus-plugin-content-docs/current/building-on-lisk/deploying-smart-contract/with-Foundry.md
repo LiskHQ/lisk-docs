@@ -167,7 +167,7 @@ contract NFT is ERC721 {
 }
 ```
 
-### Mengompilasi Smart Contract
+### **Mengompilasi** Smart Contract
 
 Setelah kode smart contract siap, Anda harus mengompilasinya menggunakan Foundry.  
 Untuk melakukannya, cukup jalankan perintah berikut:
@@ -266,7 +266,7 @@ Kita memberikan alamat penerima ke fungsi `mint()` sebagaimana yang diminta, seh
 Test kedua: `testMintFail` gagal karena kita mengasumsikan bahwa alamat `alice` dan `bob` adalah sama.  
 Log output yang disorot diatas menjelaskan mengapa asumsi tersebut salah.
 
-### Deploy Smart Contract
+### **Deploy** Smart Contract
 
 Setelah berhasil membangun smart contract, Anda sekarang dapat men-deploynya ke jaringan Lisk.  
 Untuk contoh ini, kita akan menggunakan jaringan Lisk Sepolia untuk deploy kontrak `NFT`.
