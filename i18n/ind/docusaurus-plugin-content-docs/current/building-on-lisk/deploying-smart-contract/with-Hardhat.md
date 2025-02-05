@@ -38,10 +38,10 @@ Jika Anda menggunakan `nvm` untuk mengelola versi Node Anda, cukup jalankan peri
 
 ### Dana Wallet
 
-**Deploy kontrak** ke blockchain memerlukan **biaya gas**.  
+**Deploy contract** ke blockchain memerlukan **biaya gas**.  
 Oleh karena itu, Anda perlu mendanai wallet Anda dengan ETH untuk menutupi biaya gas tersebut.
 
-Dalam panduan ini, Anda akan deploy kontrak ke Lisk Sepolia Testnet.
+Dalam panduan ini, Anda akan deploy contract ke Lisk Sepolia Testnet.
 
 Anda dapat men-deposit token yang diperlukan menggunakan [Lisk Bridge](https://sepolia-bridge.lisk.com/bridge/lisk-sepolia-testnet).
 
@@ -49,7 +49,7 @@ Jika wallet Anda tidak memiliki `SepoliaETH` yang cukup, gunakan salah satu fauc
 Kemudian, gunakan Lisk Bridge yang disebutkan sebelumnya untuk mengirim token dari **Ethereum Sepolia Testnet** ke **Lisk Sepolia Testnet**.
 
 :::note
-Anda dapat deploy kontrak di Lisk Mainnet dengan menggunakan proses yang sama.  
+Anda dapat deploy contract di Lisk Mainnet dengan menggunakan proses yang sama.  
 Untuk deploy ke mainnet, pastikan wallet Anda memiliki cukup ETH.
 
 Teks berikut mencakup perintah untuk Lisk dan Lisk Sepolia demi kemudahan Anda.  
@@ -117,7 +117,7 @@ Ganti `<YOUR_PRIVATE_KEY>` dengan private key wallet Anda.
 
 :::caution
 
-`WALLET_KEY` adalah private key dari wallet yang akan digunakan saat deploy kontrak.  
+`WALLET_KEY` adalah private key dari wallet yang akan digunakan saat deploy contract.  
 Ikuti instruksi dari wallet Anda untuk mendapatkan private key.  
 Misalnya, untuk **MetaMask**, silakan ikuti [instruksi ini](https://support.metamask.io/configure/accounts/how-to-export-an-accounts-private-key/).  
 **Sangat penting untuk memastikan bahwa Anda TIDAK meng-upload private key ini ke repositori publik.**
@@ -175,10 +175,10 @@ Untuk mengonfigurasi Hardhat agar menggunakan Lisk, tambahkan Lisk sebagai jarin
   </TabItem>
 </Tabs>
 
-## Membuat Kontrak
+## Membuat Contract
 
 Untuk kemudahan dan keamanan, kita akan menggunakan interface `ERC721` yang disediakan oleh [OpenZeppelin Contracts library](https://docs.openzeppelin.com/contracts/5.x/) untuk membuat smart contract NFT.  
-Dengan OpenZeppelin, kita tidak perlu menulis keseluruhan interface ERC-721. Sebaliknya, kita dapat mengimpor kontrak dari library dan menggunakan fungsinya.
+Dengan OpenZeppelin, kita tidak perlu menulis keseluruhan interface ERC-721. Sebaliknya, kita dapat mengimpor contract dari library dan menggunakan fungsinya.
 
 Untuk menambahkan libarry OpenZeppelin Contracts ke proyek Anda, jalankan perintah berikut:
 
@@ -186,7 +186,7 @@ Untuk menambahkan libarry OpenZeppelin Contracts ke proyek Anda, jalankan perint
 npm install --save @openzeppelin/contracts
 ```
 
-Di proyek Anda, hapus kontrak `contracts/Lock.sol` yang dihasilkan saat proyek dibuat.  
+Di proyek Anda, hapus contract `contracts/Lock.sol` yang dihasilkan saat proyek dibuat.  
 (Anda juga dapat menghapus file test `test/Lock.ts`, tetapi Anda sebaiknya segera menambahkan test Anda sendiri!).
 
 Tambahkan kode berikut ke file baru bernama `contracts/NFT.sol`.
@@ -212,7 +212,7 @@ contract NFT is ERC721 {
 
 ## Mengompilasi Smart Contract
 
-Untuk mengompilasi kontrak menggunakan Hardhat, cukup jalankan perintah berikut:
+Untuk mengompilasi contract menggunakan Hardhat, cukup jalankan perintah berikut:
 
 ```bash
 npx hardhat compile
@@ -222,9 +222,9 @@ Setelah kompilasi berhasil, Anda akan melihat folder baru bernama `artifacts/`, 
 
 ## Deploy Smart Contract
 
-Setelah kontrak Anda berhasil dikompilasi, Anda dapat deploy kontrak ke jaringan test Lisk Sepolia.
+Setelah contract Anda berhasil dikompilasi, Anda dapat deploy contract ke jaringan test Lisk Sepolia.
 
-Untuk deploy kontrak ke jaringan test Lisk Sepolia, Anda perlu memodifikasi file `scripts/deploy.ts` di proyek Anda:
+Untuk deploy contract ke jaringan test Lisk Sepolia, Anda perlu memodifikasi file `scripts/deploy.ts` di proyek Anda:
 
 ```ts title="scripts/deploy.ts"
 import { ethers } from 'hardhat';
@@ -265,16 +265,16 @@ Terakhir, jalankan perintah berikut:
 
 <!-- TODO: Add link to the block explorer section -->
 
-Kontrak akan di-deploy di Lisk Sepolia Testnet.  
-Anda dapat melihat status deployment dan kontrak dengan menggunakan block explorer dan mencari alamat yang dikembalikan oleh skrip deployment Anda.
+Contract akan di-deploy di Lisk Sepolia Testnet.  
+Anda dapat melihat status deployment dan contract dengan menggunakan block explorer dan mencari alamat yang dikembalikan oleh skrip deployment Anda.
 
-Jika Anda deploy kontrak baru atau yang dimodifikasi, Anda perlu memverifikasinya terlebih dahulu.
+Jika Anda deploy contract baru atau yang dimodifikasi, Anda perlu memverifikasinya terlebih dahulu.
 
 ## Memverifikasi Smart Contract
 
-Jika Anda ingin berinteraksi dengan kontrak Anda di block explorer, Anda atau orang lain perlu memverifikasinya terlebih dahulu.  
-Kontrak di atas sudah diverifikasi, sehingga Anda seharusnya dapat melihat versi Anda di block explorer.  
-Selebihnya di panduan ini, kami akan menjelaskan langkah-langkah memverifikasi kontrak Anda di Lisk Sepolia Testnet.
+Jika Anda ingin berinteraksi dengan contract Anda di block explorer, Anda atau orang lain perlu memverifikasinya terlebih dahulu.  
+Contract di atas sudah diverifikasi, sehingga Anda seharusnya dapat melihat versi Anda di block explorer.  
+Selebihnya di panduan ini, kami akan menjelaskan langkah-langkah memverifikasi contract Anda di Lisk Sepolia Testnet.
 
 Di dalam `hardhat.config.ts`, konfigurasikan Lisk Sepolia sebagai jaringan kustom.  
 Tambahkan konfigurasi berikut ke `HardhatUserConfig`:
@@ -336,8 +336,8 @@ Tambahkan konfigurasi berikut ke `HardhatUserConfig`:
   </TabItem>
 </Tabs>
 
-Sekarang, Anda dapat memverifikasi kontrak Anda.  
-Ambil alamat kontrak yang telah dideploy dan jalankan perintah berikut:
+Sekarang, Anda dapat memverifikasi contract Anda.  
+Ambil alamat contract yang telah dideploy dan jalankan perintah berikut:
 
 <Tabs>
   <TabItem value="mainnet" label="Lisk" >
@@ -365,8 +365,8 @@ https://sepolia-blockscout.lisk.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe
 
 :::info
 
-Anda tidak dapat memverifikasi ulang kontrak yang identik dengan yang sudah diverifikasi.  
-Jika Anda mencoba melakukannya, seperti memverifikasi kontrak di atas, Anda akan mendapatkan pesan yang serupa dengan:
+Anda tidak dapat memverifikasi ulang contract yang identik dengan yang sudah diverifikasi.  
+Jika Anda mencoba melakukannya, seperti memverifikasi contract di atas, Anda akan mendapatkan pesan yang serupa dengan:
 
 ```text
 The contract 0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D has already been verified on Etherscan.
@@ -375,11 +375,11 @@ https://sepolia-blockscout.lisk.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe
 
 :::
 
-Lihat kontrak Anda di BlockScout dengan mengikuti [link ke kontrak yang telah di-deploy](https://sepolia-blockscout.lisk.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D?tab=contract) yang ditampilkan dalam pesan output langkah sebelumnya.  
-Block Explorer akan mengonfirmasi bahwa kontrak tersebut telah diverifikasi dan memungkinkan Anda untuk [berinteraksi](#berinteraksi-dengan-smart-contract) dengannya.
+Lihat contract Anda di BlockScout dengan mengikuti [link ke contract yang telah di-deploy](https://sepolia-blockscout.lisk.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D?tab=contract) yang ditampilkan dalam pesan output langkah sebelumnya.  
+Block Explorer akan mengonfirmasi bahwa contract tersebut telah diverifikasi dan memungkinkan Anda untuk [berinteraksi](#berinteraksi-dengan-smart-contract) dengannya.
 
 ## Berinteraksi dengan Smart Contract
 
-Setelah [kontrak diverifikasi](#memverifikasi-smart-contract), Anda dapat menggunakan tab `Read Contract` dan `Write Contract` untuk berinteraksi dengan kontrak yang telah di-deploy melalui [BlockScout](https://sepolia-blockscout.lisk.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D?tab=contract).  
-Jangan lupa untuk memperbarui alamat kontrak di URL BlockScout.  
+Setelah [contract diverifikasi](#memverifikasi-smart-contract), Anda dapat menggunakan tab `Read Contract` dan `Write Contract` untuk berinteraksi dengan contract yang telah di-deploy melalui [BlockScout](https://sepolia-blockscout.lisk.com/address/0xC10710ac55C98f9AACdc9cD0A506411FBe0af71D?tab=contract).  
+Jangan lupa untuk memperbarui alamat contract di URL BlockScout.  
 Anda juga perlu menghubungkan wallet Anda terlebih dahulu dengan mengklik tombol `Connect Wallet`.

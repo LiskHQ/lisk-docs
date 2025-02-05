@@ -211,11 +211,11 @@ Saldo akun penerima akan bertambah sebesar `0.0001` ETH setelah transaksi berhas
 Anda dapat menggunakan web3.js untuk berinteraksi dengan sebuah smart contract di Lisk dengan menginstansikan objek `Contract` dan memberikan `ABI` serta `address` dari smart contract yang telah di-deploy.
 
 Pada bagian berikut, kita akan:
-- Membaca data dari smart contract yang telah di-deploy, secara spesifik, kita akan mengambil **nama dari kontrak tersebut**.
+- Membaca data dari smart contract yang telah di-deploy, secara spesifik, kita akan mengambil **nama dari contract tersebut**.
 - Selain itu, kita juga akan **mint token** melalui smart contract yang sudah di-deploy.
 
 :::tip
-Untuk gambaran umum tentang fungsi publik yang tersedia pada kontrak, silakan periksa tab [Read Contract](https://sepolia-blockscout.lisk.com/token/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=read_contract) dan [Write Contract](https://sepolia-blockscout.lisk.com/token/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=write_contract) untuk kontrak tertentu.
+Untuk gambaran umum tentang fungsi publik yang tersedia pada contract, silakan periksa tab [Read Contract](https://sepolia-blockscout.lisk.com/token/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=read_contract) dan [Write Contract](https://sepolia-blockscout.lisk.com/token/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=write_contract) untuk contract tertentu.
 :::
 
 
@@ -226,11 +226,11 @@ Setelah informasi tersebut diberikan, fungsi read-only dari smart contract dapat
 
 <Tabs>
   <TabItem value="ce" label = "get-contract-name.js" default>
-    ```js  title="Mengambil nama kontrak"
-    // Alamat kontrak yang ingin Anda interaksikan
+    ```js  title="Mengambil nama contract"
+    // Alamat contract yang ingin Anda interaksikan
     const address = '0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5';
 
-    // Instansiasi objek kontrak
+    // Instansiasi objek contract
     const contract = new web3.eth.Contract(abi, address);
 
     // Panggil salah satu fungsi 'Read contract', misalnya 'name()'.
@@ -250,10 +250,10 @@ Setelah informasi tersebut diberikan, fungsi read-only dari smart contract dapat
         // Instansikan objek web3 dengan memberikan URL RPC dari Lisk
         // const web3 = new Web3('https://rpc.api.lisk.com');
 
-        // Alamat kontrak yang ingin Anda interaksikan
+        // Alamat contract yang ingin Anda interaksikan
         const address = '0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5';
 
-        // Instansiasi objek kontrak
+        // Instansiasi objek contract
         const contract = new web3.eth.Contract(abi, address);
 
         // Panggil salah satu fungsi 'Read contract', misalnya 'name()'
@@ -271,10 +271,10 @@ Setelah informasi tersebut diberikan, fungsi read-only dari smart contract dapat
   </TabItem>
   <TabItem value = "abi" label = "abi.js">
 :::tip
-ABI sebuah kontrak dapat ditemukan pada halaman kontrak terkait di [BlockScout](https://sepolia-blockscout.lisk.com/).
+ABI sebuah contract dapat ditemukan pada halaman contract terkait di [BlockScout](https://sepolia-blockscout.lisk.com/).
 
-Sebagai contoh, Anda dapat menggunakan ABI untuk [kontrak Token NFT Lisk](https://sepolia-blockscout.lisk.com/token/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=contract). 
-Cukup scroll ke bagian `Contract ABI` dan salin ABI kontrak yang telah di-deploy.
+Sebagai contoh, Anda dapat menggunakan ABI untuk [contract Token NFT Lisk](https://sepolia-blockscout.lisk.com/token/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=contract). 
+Cukup scroll ke bagian `Contract ABI` dan salin ABI contract yang telah di-deploy.
 :::
 
 
@@ -757,18 +757,18 @@ export const abi = [
 
 ### Menulis ke Smart Contract
 
-Untuk menulis data melalui metode kontrak, beberapa hal diperlukan, seperti:
+Untuk menulis data melalui metode contract, beberapa hal diperlukan, seperti:
 
-- alamat kontrak
+- alamat contract
 - alamat penerima
 - private key pengirim
 - ... dan nama metode
 
-Gunakan cuplikan kode berikut untuk berinteraksi dengan fungsi `mint()` dari [kontrak yang telah di-deploy](https://sepolia-blockscout.lisk.com/address/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=write_contract).
+Gunakan cuplikan kode berikut untuk berinteraksi dengan fungsi `mint()` dari [contract yang telah di-deploy](https://sepolia-blockscout.lisk.com/address/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=write_contract).
 
 
 ```javascript title="miniting-token.js"
-// Alamat kontrak yang ingin Anda interaksikan
+// Alamat contract yang ingin Anda interaksikan
 const contractAddress = '0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5';
 
 // Alamat akun penerima yang akan menerima NFT.
@@ -779,7 +779,7 @@ const amount = web3.utils.toWei('.0001', 'ether')
 const privateKey = 'PRIVATE_KEY';
 const account = web3.eth.accounts.wallet.add(privateKey);
 
-// Instansiasi objek kontrak.
+// Instansiasi objek contract.
 const contract = new web3.eth.Contract(abi, contractAddress);
 
 // Kirim permintaan ke fungsi `mint()` untuk mint token.
@@ -800,7 +800,7 @@ const web3 = new Web3('https://rpc.sepolia-api.lisk.com');
 // Untuk jaringan Lisk
 //const web3 = new Web3('https://rpc.api.lisk.com');
 
-// Alamat kontrak yang ingin Anda interaksikan.
+// Alamat contract yang ingin Anda interaksikan.
 const contractAddress = '0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5';
 
 // Alamat akun penerima yang akan menerima NFT.
@@ -811,7 +811,7 @@ const amount = web3.utils.toWei('.0001', 'ether')
 const privateKey = 'PRIVATE_KEY';
 const account = web3.eth.accounts.wallet.add(privateKey);
 
-// Instansiasi objek kontrak.
+// Instansiasi objek contract.
 const contract = new web3.eth.Contract(abi, contractAddress);
 
 // Kirim permintaan ke fungsi `mint()` untuk me-mint token.

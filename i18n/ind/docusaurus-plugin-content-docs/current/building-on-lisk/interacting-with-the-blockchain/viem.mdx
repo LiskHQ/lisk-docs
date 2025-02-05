@@ -258,7 +258,7 @@ console.log(hash);
 
 ## Berinteraksi dengan Smart Contract
 
-Anda dapat menggunakan viem untuk berinteraksi dengan smart contract di Lisk dengan membuat instance `Contract` menggunakan [`getContract`](https://viem.sh/docs/contract/getContract.html) dan memberikan ABI kontrak, alamat kontrak, serta [Public](https://viem.sh/docs/clients/public.html) dan/atau [Wallet](https://viem.sh/docs/clients/wallet.html) Client:  
+Anda dapat menggunakan viem untuk berinteraksi dengan smart contract di Lisk dengan membuat instance `Contract` menggunakan [`getContract`](https://viem.sh/docs/contract/getContract.html) dan memberikan ABI contract, alamat contract, serta [Public](https://viem.sh/docs/clients/public.html) dan/atau [Wallet](https://viem.sh/docs/clients/wallet.html) Client:  
 
 <Tabs>
 <TabItem value="example" label="contract-example.js">
@@ -268,7 +268,7 @@ import { getContract } from 'viem'
 import { wagmiAbi } from './abi.js'
 import { publicClient, walletClient } from './client.js'
  
-// 1. Buat instance kontrak
+// 1. Buat instance contract
 const contract = getContract({
   address: 'CONTRACT_ADDRESS',
   abi: wagmiAbi,
@@ -278,7 +278,7 @@ const contract = getContract({
   client: { public: publicClient, wallet: walletClient }
 })
  
-// 2. Panggil metode kontrak, ambil *event*, dengarkan *event*, dan lain-lain.
+// 2. Panggil metode contract, ambil *event*, dengarkan *event*, dan lain-lain.
 const result = await contract.read.totalSupply()
 const logs = await contract.getEvents.Transfer()
 const unwatch = contract.watchEvent.Transfer(
@@ -361,7 +361,7 @@ const unwatch = contract.watchEvent.Transfer(
 <TabItem value="abi" label="abi.js">
 
 :::tip
-ABI dari sebuah kontrak dapat ditemukan di halaman kontrak terkait di [BlockScout](https://sepolia-blockscout.lisk.com/).
+ABI dari sebuah contract dapat ditemukan di halaman contract terkait di [BlockScout](https://sepolia-blockscout.lisk.com/).
 :::
 
 ```js title="abi.js"
@@ -532,5 +532,5 @@ export const wagmiAbi = [
 </Tabs>
 
 :::info
-`CONTRACT_ADDRESS` adalah alamat dari kontrak yang telah di-deploy.
+`CONTRACT_ADDRESS` adalah alamat dari contract yang telah di-deploy.
 :::

@@ -119,7 +119,7 @@ function getLatestEthBtcPrices() public view returns (uint256[] memory) {
 
 ### Testing
 
-Untuk mengetes fungsi-fungsi yang terkait dengan EVM connector dalam kontrak Anda, maka Anda perlu me-wrap kontrak menggunakan `WrapperBuilder` yang disediakan oleh paket `@redstone-finance/evm-connector`.
+Untuk mengetes fungsi-fungsi yang terkait dengan EVM connector dalam contract Anda, maka Anda perlu me-wrap contract menggunakan `WrapperBuilder` yang disediakan oleh paket `@redstone-finance/evm-connector`.
 
 ```typescript title="test/YourContract.ts"
 import { expect } from "chai";
@@ -135,7 +135,7 @@ describe("YourContract", function () {
         dataFeeds: ["ETH"],
       });
 
-      // Berinteraksi dengan kontrak (mengambil nilai oracle secara aman)
+      // Berinteraksi dengan contract (mengambil nilai oracle secara aman)
       const ethPriceFromContract = await wrappedContract.getLatestEthPrice();
       console.log("Latest ETH price:");
       console.log({ ethPriceFromContract });

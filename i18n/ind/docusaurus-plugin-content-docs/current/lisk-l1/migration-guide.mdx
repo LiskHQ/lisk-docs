@@ -72,7 +72,7 @@ contract Hello {
 }
 ```
 
-Di dalam kontrak baru ini, kami akan menempatkan semua logika yang sebelumnya ada di modul Lisk L1 `Hello`.
+Di dalam contract baru ini, kami akan menempatkan semua logika yang sebelumnya ada di modul Lisk L1 `Hello`.
 
 ### Tabel: Perbandingan Lisk L1/L2  
 | Deskripsi           | Lisk L1                      | Lisk L2                       |
@@ -90,7 +90,7 @@ Harap teliti solusi kustom untuk memigrasikan logika yang ada di lifecycle hooks
 
 ### Penyimpanan
 
-Migrasikan penyimpanan onchain dari sebuah modul dengan mengimplementasikan variabel state yang sesuai dalam kontrak seperti yang ditunjukkan di bawah ini.
+Migrasikan penyimpanan onchain dari sebuah modul dengan mengimplementasikan variabel state yang sesuai dalam contract seperti yang ditunjukkan di bawah ini.
 
 <Tabs>  
   <TabItem value="liskl1" label="Lisk L1">  
@@ -167,7 +167,7 @@ Migrasikan penyimpanan onchain dari sebuah modul dengan mengimplementasikan vari
 </Tabs>
 ### Event
 
-Migrasikan event blockchain dari modul dengan mengimplementasikan event yang sesuai dalam kontrak seperti yang ditunjukkan di bawah ini.
+Migrasikan event blockchain dari modul dengan mengimplementasikan event yang sesuai dalam contract seperti yang ditunjukkan di bawah ini.
 
 <Tabs>
   <TabItem value="liskl1" label="Lisk L1">
@@ -238,7 +238,7 @@ uint32 public maxLength = 200;
 uint32 public minLength = 3;
 ```
 
-Untuk mengedit opsi konfigurasi modul Hello, kita implementasikan fungsi-fungsi berikut dalam kontrak Hello:
+Untuk mengedit opsi konfigurasi modul Hello, kita implementasikan fungsi-fungsi berikut dalam contract Hello:
 
 - `setBlacklist()` untuk mengonfigurasi daftar hitam kata-kata yang tidak diperbolehkan dalam pesan Hello.
 - `setMinMaxMessageLength()` untuk mengonfigurasi panjang minimum dan maksimum pesan Hello.
@@ -257,30 +257,30 @@ function setMinMaxMessageLength(uint32 _newMinLength,uint32 _newMaxLength) publi
 
 Seperti yang terlihat pada cuplikan kode di atas, kita menambahkan modifier berikut pada fungsi-fungsi tersebut:
 
-- `public` untuk membuat fungsi dapat dipanggil dari luar kontrak. 
+- `public` untuk membuat fungsi dapat dipanggil dari luar contract. 
 Ini adalah modifier visibilitas default untuk fungsi dalam Solidity.
-- `onlyOwner` untuk memeriksa apakah pemanggil adalah pemilik kontrak.
-Ini adalah modifier kustom yang perlu kita implementasikan secara manual dalam kontrak, seperti yang ditunjukkan pada contoh di bawah ini.
+- `onlyOwner` untuk memeriksa apakah pemanggil adalah pemilik contract.
+Ini adalah modifier kustom yang perlu kita implementasikan secara manual dalam contract, seperti yang ditunjukkan pada contoh di bawah ini.
 
-Untuk mengatur pemilik kontrak, kita menambahkan variabel state baru `owner`, dan sebuah konstruktor yang mengatur variabel `owner` ke alamat akun yang deploy kontrak.
+Untuk mengatur pemilik contract, kita menambahkan variabel state baru `owner`, dan sebuah konstruktor yang mengatur variabel `owner` ke alamat akun yang deploy contract.
 
 :::tip
 Untuk memperbarui pemilik smart contract, Anda dapat mengimplementasikan fungsi yang sesuai `setOwner()`, dan menggunakan modifier `onlyOwner` untuk memastikan hanya pemilik saat ini yang dapat memanggil fungsi ini.
 :::
 
-Terakhir, kita dapat memeriksa apakah pengirim pesan adalah pemilik kontrak dalam modifier `onlyOwner` yang digunakan untuk fungsi `setBlacklist()` dan `setMinMaxMessageLength()`.
+Terakhir, kita dapat memeriksa apakah pengirim pesan adalah pemilik contract dalam modifier `onlyOwner` yang digunakan untuk fungsi `setBlacklist()` dan `setMinMaxMessageLength()`.
 
 ```solidity title="hello_liskl2/src/Hello.sol"
-// Alamat pemilik kontrak
+// Alamat pemilik contract
 address public immutable owner;
 
 constructor() {
-    // Menetapkan pengirim transaksi sebagai pemilik kontrak.
+    // Menetapkan pengirim transaksi sebagai pemilik contract.
     owner = msg.sender;
 }
 
 /** Modifiers */
-// Modifier untuk memeriksa apakah pemanggil adalah pemilik kontrak.
+// Modifier untuk memeriksa apakah pemanggil adalah pemilik contract.
 modifier onlyOwner() {
     require(msg.sender == owner, "Bukan pemilik");
     _;
@@ -292,7 +292,7 @@ modifier onlyOwner() {
 <summary>Verifikasi Migrasi</summary>
 #### Verifikasi
 
-Untuk memverifikasi pesan Hello, kita implementasikan modifier kustom dalam kontrak.
+Untuk memverifikasi pesan Hello, kita implementasikan modifier kustom dalam contract.
 
 Di dalam modifier, kita memeriksa panjang pesan dan apakah pesan tersebut mengandung kata-kata yang ada dalam daftar hitam seperti yang dilakukan dalam metode `verify()` dari modul Hello Lisk L1.
 
@@ -307,7 +307,7 @@ modifier validLength(string memory _message) {
 }
 ```
 
-Untuk memeriksa apakah pesan mengandung kata-kata yang ada dalam daftar hitam, kita implementasikan modifier `validWords` dalam kontrak.
+Untuk memeriksa apakah pesan mengandung kata-kata yang ada dalam daftar hitam, kita implementasikan modifier `validWords` dalam contract.
 
 ```solidity title="hello_liskl2/src/Hello.sol"
 // Validasi konten pesan
@@ -340,7 +340,7 @@ modifier validWords(string memory _message) {
 <summary>Eksekusi Migrasi</summary>
 #### Eksekusi
 
-Untuk memigrasikan eksekusi perintah `createHello`, kita implementasikan fungsi `createHello()` dalam kontrak.
+Untuk memigrasikan eksekusi perintah `createHello`, kita implementasikan fungsi `createHello()` dalam contract.
 
 Di dalam fungsi ini, kita menyimpan pesan pengirim di dalam pemetaan `message` dengan alamat pengirim sebagai kunci.
 
@@ -468,7 +468,7 @@ function createHello(string calldata _message) public validLength(_message) vali
         mapping(address => string) public message;
         // Variabel state untuk penghitung pesan
         uint32 public counter = 0;
-        // Alamat pemilik kontrak
+        // Alamat pemilik contract
         address public immutable owner;
         // Daftar hitam kata-kata yang tidak diperbolehkan dalam pesan Hello
         string[] public blacklist = ["word1","word2"];
@@ -478,12 +478,12 @@ function createHello(string calldata _message) public validLength(_message) vali
         uint32 public minLength = 3;
 
         constructor() {
-            // Menetapkan pengirim transaksi sebagai pemilik kontrak.
+            // Menetapkan pengirim transaksi sebagai pemilik contract.
             owner = msg.sender;
         }
 
         /** Modifier */
-        // Modifier untuk memeriksa bahwa pemanggil adalah pemilik kontrak.
+        // Modifier untuk memeriksa bahwa pemanggil adalah pemilik contract.
         modifier onlyOwner() {
             require(msg.sender == owner, "Bukan pemilik");
             _;
@@ -545,7 +545,7 @@ function createHello(string calldata _message) public validLength(_message) vali
 
 ### Endpoint
 
-Migrasikan endpoint modul dengan mengimplementasikan fungsi [view] yang sesuai dalam kontrak seperti yang ditunjukkan di bawah ini.
+Migrasikan endpoint modul dengan mengimplementasikan fungsi [view] yang sesuai dalam contract seperti yang ditunjukkan di bawah ini.
 
 <Tabs>
   <TabItem value="liskl1" label="Lisk L1">
@@ -587,7 +587,7 @@ Migrasikan endpoint modul dengan mengimplementasikan fungsi [view] yang sesuai d
 </Tabs>
 ### Endpoint
 
-Migrasikan endpoint modul dengan mengimplementasikan [fungsi view](https://solidity-by-example.org/view-and-pure-functions/) yang sesuai dalam kontrak seperti yang ditunjukkan di bawah ini.
+Migrasikan endpoint modul dengan mengimplementasikan [fungsi view](https://solidity-by-example.org/view-and-pure-functions/) yang sesuai dalam contract seperti yang ditunjukkan di bawah ini.
 
 <Tabs>
   <TabItem value="liskl1" label="Lisk L1">
@@ -630,7 +630,7 @@ Migrasikan endpoint modul dengan mengimplementasikan [fungsi view](https://solid
 
 ## Langkah Selanjutnya
 
-Sekarang kita telah mengimplementasikan kembali modul Hello dari Lisk L1 sebagai smart contract di Lisk L2, maka kita bisa langsung deploy kontrak Hello ke Lisk L2 dan berinteraksi dengannya.
+Sekarang kita telah mengimplementasikan kembali modul Hello dari Lisk L1 sebagai smart contract di Lisk L2, maka kita bisa langsung deploy contract Hello ke Lisk L2 dan berinteraksi dengannya.
 
 Sebelum deploy smart contract ke Lisk, disarankan untuk [menguji secara lokal](#menguji-smart-contract) dengan menulis uji yang sesuai untuk smart contract yang baru dibuat.
 Setelah smart contract [di-deploy](#deployment-smart-contract) ke Lisk, Anda dapat berinteraksi dengannya dengan memanggil fungsi publiknya.
@@ -755,7 +755,7 @@ Test result: ok. 8 passed; 0 failed; 0 skipped; finished in 3.35ms
 ### Deployment Smart Contract
 
 Sekarang Anda dapat deploy smart contract ke Lisk.
-Untuk contoh ini, kami akan menggunakan jaringan Lisk Sepolia untuk deploy kontrak Hello.
+Untuk contoh ini, kami akan menggunakan jaringan Lisk Sepolia untuk deploy contract Hello.
 Namun, langkah-langkahnya sama untuk jaringan Lisk juga.
 
 Tambahkan flag `--verify` ke perintah `forge create` untuk langsung memverifikasi smart contract di BlockScout.

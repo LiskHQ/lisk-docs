@@ -4,7 +4,7 @@ slug: /building-on-lisk/add-token-to-lisk/standard-token
 description: 'Pelajari cara menambahkan token ERC-20 standar Anda ke Lisk menggunakan bridge standar.'
 keywords:
   [
-    'kontrak ERC-20',
+    'contract ERC-20',
     'Token Standar',
     'Lisk Testnet',
     'Sepolia',
@@ -28,7 +28,7 @@ Dalam tutorial ini, Anda akan belajar cara bridge token ERC-20 standar dari Ethe
 Tutorial ini ditujukan untuk developer yang sudah memiliki token ERC-20 di Ethereum dan ingin membuat representasi token tersebut di Lisk.
 
 Tutorial ini menjelaskan cara menggunakan [`OptimismMintableERC20Factory`](https://github.com/ethereum-optimism/optimism/blob/186e46a47647a51a658e699e9ff047d39444c2de/packages/contracts-bedrock/contracts/universal/OptimismMintableERC20Factory.sol) untuk deploy token ERC-20 standar di jaringan Lisk atau Lisk Sepolia.  
-Token yang dibuat oleh kontrak factory ini kompatibel dengan sistem Bridge Standar dan mencakup logika dasar untuk deposit, transfer, dan withdrawals.  
+Token yang dibuat oleh contract factory ini kompatibel dengan sistem Bridge Standar dan mencakup logika dasar untuk deposit, transfer, dan withdrawals.  
 Jika Anda ingin menyertakan logika khusus di dalam token L2 Anda, lihat tutorial [Bridge Token ERC-20 Kustom Anda ke Lisk](./custom-token).
 
 ## Dependensi
@@ -108,7 +108,7 @@ export TUTORIAL_L1_ERC20_ADDRESS=0x5589BB8228C07c4e15558875fAf2B859f678d129
 ### 4. Deploy token ERC-20 L2 Anda
 
 Anda sekarang dapat deploy token ERC-20 L2 Anda menggunakan [`OptimismMintableERC20Factory`](https://github.com/ethereum-optimism/optimism/blob/186e46a47647a51a658e699e9ff047d39444c2de/packages/contracts-bedrock/contracts/universal/OptimismMintableERC20Factory.sol).  
-Gunakan perintah `cast` untuk memicu fungsi deployment pada kontrak factory.  
+Gunakan perintah `cast` untuk memicu fungsi deployment pada contract factory.  
 Contoh perintah berikut akan membuat token dengan nama "My Standard Demo Token" dan simbol "L2TKN".  
 Alamat token ERC-20 L2 yang dihasilkan akan mint di konsol.
 
@@ -116,17 +116,17 @@ Alamat token ERC-20 L2 yang dihasilkan akan mint di konsol.
 cast send 0x4200000000000000000000000000000000000012 "createOptimismMintableERC20(address,string,string)" $TUTORIAL_L1_ERC20_ADDRESS "My Standard Demo Token" "L2TKN" --private-key $TUTORIAL_PRIVATE_KEY --rpc-url $TUTORIAL_RPC_URL --json | jq -r '.logs[0].topics[2]' | cast parse-bytes32-address
 ```
 
-Jika semua berjalan dengan lancar, Anda akan menerima respons berisi alamat kontrak yang baru saja di-deploy:
+Jika semua berjalan dengan lancar, Anda akan menerima respons berisi alamat contract yang baru saja di-deploy:
 
 ```text
 0x891C582b83F69B7c2d3107cd73A3e491CB33962F
 ```
 
 :::note[Menggunakan factory **tidak** direkomendasikan untuk production]
-Factory memudahkan proses deployment kontrak secara instan.  
-Namun, kelemahannya adalah Anda tidak memiliki kendali atas source code dari kontrak yang akan di-deploy karena proses ini dilakukan oleh factory.
+Factory memudahkan proses deployment contract secara instan.  
+Namun, kelemahannya adalah Anda tidak memiliki kendali atas source code dari contract yang akan di-deploy karena proses ini dilakukan oleh factory.
 
-Selain itu, verifikasi kontrak tersebut di Blockscout tidak begitu mudah dilakukan, karena source code kontrak diperlukan untuk proses verifikasi.
+Selain itu, verifikasi contract tersebut di Blockscout tidak begitu mudah dilakukan, karena source code contract diperlukan untuk proses verifikasi.
 :::
 
 <!-- ## Bridge Beberapa Token

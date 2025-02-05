@@ -40,7 +40,7 @@ Untuk menginstal [usingtellor](https://github.com/tellor-io/usingtellor), jalank
 - Hardhat: `npm install usingtellor`
 - Foundry: `forge install tellor-io/usingtellor`
 
-Setelah diinstal, ini memungkinkan kontrak Anda untuk inherit fungsi dari kontrak 'UsingTellor'.
+Setelah diinstal, ini memungkinkan contract Anda untuk inherit fungsi dari contract 'UsingTellor'.
 
 Bagus! Sekarang tools Anda siap, mari kita lakukan latihan sederhana untuk mengambil harga `eth/usd` dan `lsk/usd` dari Tellor.
 
@@ -65,7 +65,7 @@ contract MyContract is UsingTellor {
 }
 ```
 
-Untuk mengimpor kontrak UsingTellor ke dalam file Solidity Anda, masukkan alamat Tellor Oracle yang diinginkan sebagai parameter.  
+Untuk mengimpor contract UsingTellor ke dalam file Solidity Anda, masukkan alamat Tellor Oracle yang diinginkan sebagai parameter.  
 Untuk Lisk Mainnet, alamat Tellor Oracle adalah: [0x896419Ed2E0dC848a1f7d2814F4e5Df4b9B9bFcc](https://blockscout.lisk.com/address/0x896419Ed2E0dC848a1f7d2814F4e5Df4b9B9bFcc).
 
 ## Membaca Data
@@ -109,7 +109,7 @@ contract MyContract is UsingTellor {
     }
 
     /**
-     * @dev Memungkinkan kontrak pengguna untuk membaca harga ETH dari Tellor
+     * @dev Memungkinkan contract pengguna untuk membaca harga ETH dari Tellor
      * dan melakukan beberapa pemeriksaan best-practice pada data yang diambil.
      * @return _value harga spot ETH dari Tellor, dengan 18 angka desimal.
      * @return timestamp stempel waktu dari nilai tersebut.
@@ -152,7 +152,7 @@ contract MyContract is UsingTellor {
     }
 
     /**
-     * @dev Memungkinkan kontrak pengguna untuk membaca harga LSK dari Tellor dan melakukan beberapa
+     * @dev Memungkinkan contract pengguna untuk membaca harga LSK dari Tellor dan melakukan beberapa
      * pengecekan best-practice pada data yang diambil.
      * @return _value harga spot LSK dari Tellor, dengan 18 tempat desimal.
      * @return timestamp stempel waktu dari nilai tersebut.
@@ -185,7 +185,7 @@ contract MyContract is UsingTellor {
 }
 ```
 
-Anda dapat menyesuaikan kontrak ini sesuai kebutuhan Anda.
+Anda dapat menyesuaikan contract ini sesuai kebutuhan Anda.
 Contoh ini menerapkan beberapa best-practice[^1] untuk menggunakan Tellor dengan mengimplementasikan buffer waktu sengketa dan pemeriksaan staleness data.
 Selain itu, contoh ini juga berusaha mengurangi serangan disput back-in-time dengan menyimpan nilai dan timestamp terbaru dalam cache.
 

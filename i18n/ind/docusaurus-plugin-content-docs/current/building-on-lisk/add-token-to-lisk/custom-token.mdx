@@ -4,7 +4,7 @@ slug: /building-on-lisk/add-token-to-lisk/custom-token
 description: 'Pelajari cara bridge token ERC-20 Anda sendiri ke Lisk menggunakan bridge standar.'
 keywords:
   [
-    'kontrak ERC-20',
+    'contract ERC-20',
     'token kustom',
     'Lisk Testnet',
     'Sepolia',
@@ -51,7 +51,7 @@ Anda dapat menggunakan [Superchain Faucet](https://console.optimism.io/faucet) u
 
 ### Menambahkan Lisk Sepolia ke Wallet Anda
 
-Tutorial ini menggunakan [Remix](https://remix.ethereum.org) untuk deploy kontrak.
+Tutorial ini menggunakan [Remix](https://remix.ethereum.org) untuk deploy contract.
 Anda perlu menambahkan jaringan Lisk atau Lisk Sepolia ke wallet Anda untuk mengikuti tutorial ini.
 Silakan ikuti panduan [Cara Menghubungkan Lisk ke Wallet](/user/connecting-to-a-wallet) untuk menghubungkan wallet Anda ke jaringan Lisk atau Lisk Sepolia.
 
@@ -79,9 +79,9 @@ Akses [Remix](https://remix.ethereum.org) di browser Anda.
 Klik tombol 📄 ("Buat file baru") untuk membuat file Solidity kosong.
 Anda dapat memberi nama file ini sesuai keinginan Anda, misalnya `custom-token.sol`.
 
-### 3. Salin kontrak contoh
+### 3. Salin contract contoh
 
-Salin kontrak contoh berikut ke dalam file baru Anda:
+Salin contract contoh berikut ke dalam file baru Anda:
 
 <details>
 <summary>custom-token.sol</summary>
@@ -146,10 +146,10 @@ contract MyCustomL2Token is IOptimismMintableERC20, ERC20 {
 
     /// @notice Fungsi pengecekan interface ERC165.
     /// @param _interfaceId ID Interface yang akan diperiksa.
-    /// @return Apakah interface tersebut didukung oleh kontrak ini.
+    /// @return Apakah interface tersebut didukung oleh contract ini.
     function supportsInterface(bytes4 _interfaceId) external pure virtual returns (bool) {
         bytes4 iface1 = type(IERC165).interfaceId;
-        // Interface yang sesuai dengan OptimismMintableERC20 terbaru (kontrak ini).
+        // Interface yang sesuai dengan OptimismMintableERC20 terbaru (contract ini).
         bytes4 iface2 = type(IOptimismMintableERC20).interfaceId;
         return _interfaceId == iface1 || _interfaceId == iface2;
     }
@@ -186,15 +186,15 @@ contract MyCustomL2Token is IOptimismMintableERC20, ERC20 {
 ```
 </details>
 
-### 4. Tinjau kontrak contoh
+### 4. Tinjau contract contoh
 
-Luangkan waktu untuk meninjau kontrak contoh.
-Kontrak ini hampir sama dengan kontrak standar [`OptimismMintableERC20`](https://github.com/ethereum-optimism/optimism/blob/v1.1.4/packages/contracts-bedrock/src/universal/OptimismMintableERC20.sol), kecuali fungsi `_burn` telah dimodifikasi agar selalu gagal.
+Luangkan waktu untuk meninjau contract contoh.
+Contract ini hampir sama dengan contract standar [`OptimismMintableERC20`](https://github.com/ethereum-optimism/optimism/blob/v1.1.4/packages/contracts-bedrock/src/universal/OptimismMintableERC20.sol), kecuali fungsi `_burn` telah dimodifikasi agar selalu gagal.
 
-Kontrak untuk token kustom ini mewarisi dari interface [`IOptimismMintableERC20`](https://github.com/ethereum-optimism/optimism/blob/v1.1.4/packages/contracts-bedrock/src/universal/IOptimismMintableERC20.sol) dan kontrak `ERC20`.
+Contract untuk token kustom ini mewarisi dari interface [`IOptimismMintableERC20`](https://github.com/ethereum-optimism/optimism/blob/v1.1.4/packages/contracts-bedrock/src/universal/IOptimismMintableERC20.sol) dan contract `ERC20`.
 Konstruktor menerima alamat dari L2 standard bridge, alamat token L1 yang sesuai, nama token ERC20, dan simbol token ERC20.
 Fungsi `mint` memungkinkan bridge me-mint token untuk pengguna.
-Karena bridge perlu mem-burn token ketika pengguna ingin me-withdraw-nya kembali ke L1, ini berarti pengguna tidak akan dapat me-withdraw token dari kontrak ini, sesuai dengan tujuan contoh ini.
+Karena bridge perlu mem-burn token ketika pengguna ingin me-withdraw-nya kembali ke L1, ini berarti pengguna tidak akan dapat me-withdraw token dari contract ini, sesuai dengan tujuan contoh ini.
 
 ```solidity
 /// @notice Mencegah token untuk ditarik ke L1.
@@ -211,16 +211,16 @@ function burn(
 }
 ```
 
-### 5. Mengompilasi Kontrak
+### 5. Mengompilasi Contract
 
-Simpan file untuk secara otomatis mengompilasi kontrak.
-Jika Anda telah menonaktifkan fitur kompilasi otomatis, Anda perlu mengompilasi kontrak secara manual dengan mengklik tab "Solidity Compiler" (ikon berbentuk huruf "S") dan menekan tombol biru "Compile".
+Simpan file untuk secara otomatis mengompilasi contract.
+Jika Anda telah menonaktifkan fitur kompilasi otomatis, Anda perlu mengompilasi contract secara manual dengan mengklik tab "Solidity Compiler" (ikon berbentuk huruf "S") dan menekan tombol biru "Compile".
 
-### 6. Deploy Kontrak
+### 6. Deploy Contract
 
 Buka tab deployment (ikon berbentuk logo Ethereum dengan panah mengarah ke kanan).
 Pastikan bahwa environment Anda diatur ke "Injected Provider", wallet Anda terhubung ke jaringan Lisk atau Lisk Sepolia, dan Remix memiliki akses ke wallet Anda.
-Kemudian, pilih kontrak `MyCustomL2Token` dari dropdown deployment dan deploy dengan parameter berikut:
+Kemudian, pilih contract `MyCustomL2Token` dari dropdown deployment dan deploy dengan parameter berikut:
 
 ```text
 _BRIDGE:      "0x4200000000000000000000000000000000000007"

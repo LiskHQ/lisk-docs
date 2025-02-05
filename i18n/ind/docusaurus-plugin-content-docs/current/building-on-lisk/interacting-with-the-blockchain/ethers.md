@@ -179,21 +179,21 @@ sendTx(receiver);
 
 ## Berinteraksi dengan smart contract
 
-Anda dapat menggunakan ethers.js untuk berinteraksi dengan smart contract di Lisk dengan menginisialisasi objek `Contract` menggunakan ABI dan alamat dari kontrak yang telah di-deploy:
+Anda dapat menggunakan ethers.js untuk berinteraksi dengan smart contract di Lisk dengan menginisialisasi objek `Contract` menggunakan ABI dan alamat dari contract yang telah di-deploy:
 
 :::tip
-ABI dari sebuah kontrak dapat ditemukan di halaman kontrak terkait di [BlockScout](https://sepolia-blockscout.lisk.com/).
+ABI dari sebuah contract dapat ditemukan di halaman contract terkait di [BlockScout](https://sepolia-blockscout.lisk.com/).
 
-Sebagai contoh, Anda dapat menggunakan ABI untuk [Kontrak Hello](https://sepolia-blockscout.lisk.com/address/0xb18eb752813c2fbedfdf2be6e5e842a85a3b8539?tab=contact_code). Cukup scroll ke bagian `Contract ABI` dan salin ABI dari kontrak yang telah di-deploy.
+Sebagai contoh, Anda dapat menggunakan ABI untuk [Contract Hello](https://sepolia-blockscout.lisk.com/address/0xb18eb752813c2fbedfdf2be6e5e842a85a3b8539?tab=contact_code). Cukup scroll ke bagian `Contract ABI` dan salin ABI dari contract yang telah di-deploy.
 :::
 
-```javascript title="Membaca dari kontrak"
-// Gantilah nilai `contractAddress` dengan alamat kontrak yang diinginkan.
+```javascript title="Membaca dari contract"
+// Gantilah nilai `contractAddress` dengan alamat contract yang diinginkan.
 const contractAddress = "CONTRACT_ADDRESS"
 // read-only
 const contract = new ethers.Contract(contractAddress, abi, provider);
 const abi = [
-… // ABI dari kontrak yang telah di-deploy.
+… // ABI dari contract yang telah di-deploy.
 ];
 
 async function getHello() {
@@ -205,16 +205,16 @@ getHello();
 ```
 
 :::info
-`CONTRACT_ADDRESS` adalah alamat dari kontrak yang telah di-deploy.
+`CONTRACT_ADDRESS` adalah alamat dari contract yang telah di-deploy.
 :::
 
 :::note
-**Contract** (dalam ethers.js) adalah sebuah abstraksi yang mewakili koneksi ke kontrak tertentu di Jaringan Lisk, sehingga aplikasi dapat menggunakannya seperti objek JavaScript biasa.
+**Contract** (dalam ethers.js) adalah sebuah abstraksi yang mewakili koneksi ke contract tertentu di Jaringan Lisk, sehingga aplikasi dapat menggunakannya seperti objek JavaScript biasa.
 :::
 
-Untuk membaca dan menulis kontrak, gunakan objek `Signer` untuk menggantikan objek `Provider`:
+Untuk membaca dan menulis contract, gunakan objek `Signer` untuk menggantikan objek `Provider`:
 
-```javascript title="Menulis ke kontrak"
+```javascript title="Menulis ke contract"
 // read & write
 const contract = new ethers.Contract(contractAddress, abi, signer);
 ```
@@ -231,7 +231,7 @@ async function createHello(message) {
 ```
 
 :::tip
-Untuk gambaran umum tentang fungsi publik yang ada pada kontrak, silakan cek tab [Read Contract](https://sepolia-blockscout.lisk.com/address/0xb18eb752813c2fbedfdf2be6e5e842a85a3b8539?tab=read_contract) dan [Write Contract](https://sepolia-blockscout.lisk.com/address/0xb18eb752813c2fbedfdf2be6e5e842a85a3b8539?tab=write_contract) untuk kontrak spesifik tersebut.
+Untuk gambaran umum tentang fungsi publik yang ada pada contract, silakan cek tab [Read Contract](https://sepolia-blockscout.lisk.com/address/0xb18eb752813c2fbedfdf2be6e5e842a85a3b8539?tab=read_contract) dan [Write Contract](https://sepolia-blockscout.lisk.com/address/0xb18eb752813c2fbedfdf2be6e5e842a85a3b8539?tab=write_contract) untuk contract spesifik tersebut.
 :::
 
 <details>

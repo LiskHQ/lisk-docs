@@ -62,7 +62,7 @@ async function main() {
     const { ethers } = require("ethers"); 
     const provider = new ethers.JsonRpcProvider("https://rpc.api.lisk.com"); 
     const logs = await provider.getLogs({
-        fromBlock: 568778, // blok saat kontrak Governor di-deploy
+        fromBlock: 568778, // blok saat contract Governor di-deploy
         toBlock: 'latest',
         address: "0x58a61b1807a7bDA541855DaAEAEe89b1DDA48568", // L2Governor Proxy
         topics:['0x7d84a6263ae0d98d3329bd7b46bb4e8d6f98cd35a7adb45c274c8b7fd5ebd5e0'] // tanda tangan event `ProposalCreated`
@@ -91,7 +91,7 @@ Untuk memastikan proposal yang Anda cari, klik tab `Logs` dan cari event `Propos
 <img src={proposalId}/>
 
 ### Langkah-langkah
-1. Kunjungi tab `Write proxy` pada kontrak L2Governor proxy di Blockscout: https://blockscout.lisk.com/address/0x58a61b1807a7bDA541855DaAEAEe89b1DDA48568?tab=write_proxy.
+1. Kunjungi tab `Write proxy` pada contract L2Governor proxy di Blockscout: https://blockscout.lisk.com/address/0x58a61b1807a7bDA541855DaAEAEe89b1DDA48568?tab=write_proxy.
 2. Jika wallet Anda belum terhubung ke Blockscout, klik `Connect wallet` dan ikuti petunjuk untuk menghubungkan wallet Anda[^1].
   <img src={voteConnect}/>
 3. Klik `3. castVote` untuk membuka formulir fungsi castVote.

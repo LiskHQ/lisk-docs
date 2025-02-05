@@ -2,10 +2,10 @@
 title: Pengenalan
 sidebar_position: 1
 slug: /building-on-lisk/add-token-to-lisk
-description: 'Panduan menambahkan kontrak ERC-20 eksternal yang telah di-deploy di Ethereum ke jaringan Lisk.'
+description: 'Panduan menambahkan contract ERC-20 eksternal yang telah di-deploy di Ethereum ke jaringan Lisk.'
 keywords:
   [
-    'Kontrak ERC-20',
+    'Contract ERC-20',
     'Lisk Testnet',
     'Sepolia',
     'Ethereum',
@@ -17,7 +17,7 @@ keywords:
 
 # Bridge Token L1 ke Lisk
 
-Halaman ini ditujukan untuk penerbit token yang sudah memiliki kontrak ERC-20 yang di-deploy di Ethereum dan ingin men-submit token mereka untuk bridge antara Ethereum dan Lisk.
+Halaman ini ditujukan untuk penerbit token yang sudah memiliki contract ERC-20 yang di-deploy di Ethereum dan ingin men-submit token mereka untuk bridge antara Ethereum dan Lisk.
 Lisk menggunakan Superchain Token List sebagai referensi untuk token-token yang telah di-deploy di Lisk.
 Jika Anda ingin membuat token baru di Lisk, silakan merujuk ke halaman [Pengembangan Token](../token-development/overview.md).
 
@@ -55,12 +55,12 @@ Pengguna harus selalu menentukan token yang ingin mereka gunakan saat menggunaka
 
 Bridge Standar adalah smart contract sederhana dengan fungsionalitas untuk memindahkan token ERC-20 antara Lisk dan Ethereum.
 
-Pada protokol terdiri dari dua kontrak penting:
+Pada protokol terdiri dari dua contract penting:
 
-- Kontrak bridge yang di-deploy di **Ethereum**, disebut [L1StandardBridge](https://etherscan.io/address/0x2658723Bf70c7667De6B25F99fcce13A16D25d08).
-- Kontrak bridge yang di-deploy di **Lisk**, disebut [L2StandardBridge](https://blockscout.lisk.com/address/0x4200000000000000000000000000000000000010).
+- Contract bridge yang di-deploy di **Ethereum**, disebut [L1StandardBridge](https://etherscan.io/address/0x2658723Bf70c7667De6B25F99fcce13A16D25d08).
+- Contract bridge yang di-deploy di **Lisk**, disebut [L2StandardBridge](https://blockscout.lisk.com/address/0x4200000000000000000000000000000000000010).
 
-Kedua kontrak ini berinteraksi satu sama lain melalui sistem `CrossDomainMessenger` untuk mengirim pesan antara Ethereum dan Lisk.
+Kedua contract ini berinteraksi satu sama lain melalui sistem `CrossDomainMessenger` untuk mengirim pesan antara Ethereum dan Lisk.
 
 [^1]:
     Interface `IOptimismMintableERC20` adalah kumpulan dari [interface ERC-20 standar](https://eips.ethereum.org/EIPS/eip-20) dan mencakup fungsi-fungsi yang memungkinkan bridge untuk memverifikasi deposit/withdrawals serta mint/burn token sesuai kebutuhan.  
@@ -76,7 +76,7 @@ Untuk menambahkan token Anda ke dalam list, lakukan langkah-langkah berikut.
 ### Langkah 1: Deploy Token Anda di Lisk
 
 Pilih framework bridging yang Anda inginkan, dan gunakan untuk deploy ERC-20 token Anda di Lisk.  
-Kami merekomendasikan Anda menggunakan framework yang disediakan oleh kontrak [bridge standar](#bridge-standar) milik Lisk dan deploy token Anda menggunakan [OptimismMintableERC20Factory](contracts#jaringan-lisk-l2).  
+Kami merekomendasikan Anda menggunakan framework yang disediakan oleh contract [bridge standar](#bridge-standar) milik Lisk dan deploy token Anda menggunakan [OptimismMintableERC20Factory](contracts#jaringan-lisk-l2).  
 Deploy token Anda di Lisk dengan cara ini memberikan jaminan tambahan yang akan memperlancar proses persetujuan.  
 Jika Anda memilih framework bridging lain, interfacenya harus kompatibel dengan bridge standar. Jika tidak, kami mungkin akan kesulitan untuk mendukungnya.
 

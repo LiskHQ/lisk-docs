@@ -31,7 +31,7 @@ import TabItem from '@theme/TabItem';
 Panduan ini membahas dasar-dasar toolchain pengembangan [Foundry](https://book.getfoundry.sh/) dan menjelaskan cara membuat serta deploy smart contract dengan Foundry ke testnet **Lisk Sepolia**.
 
 :::note
-Anda dapat deploy kontrak di mainnet **Lisk** dengan menggunakan proses yang sama.  
+Anda dapat deploy contract di mainnet **Lisk** dengan menggunakan proses yang sama.  
 Untuk deploy ke mainnet, pastikan wallet Anda memiliki ETH yang cukup.
 
 Teks berikut mencakup perintah untuk Lisk dan Lisk Sepolia demi kemudahan Anda.  
@@ -42,8 +42,8 @@ Foundry adalah rangkaian tools yang mumpuni untuk mengembangkan, menguji, dan me
 Foundry terdiri dari beberapa tools individu seperti:
 
 - [`forge`](https://book.getfoundry.sh/forge/): tools berbasis command-line yang disertakan dengan Foundry. Forge digunakan untuk menguji, membangun, dan deploy smart contract Anda.
-- [`cast`](https://book.getfoundry.sh/cast/): tools berbasis command-line untuk melakukan panggilan RPC, seperti berinteraksi dengan kontrak, mengirim transaksi, dan mendapatkan data on-chain.
-- [`anvil`](https://book.getfoundry.sh/anvil/): node testnet lokal, dirancang untuk menguji perilaku kontrak dari frontend atau melalui RPC dalam environment pengembangan lokal.
+- [`cast`](https://book.getfoundry.sh/cast/): tools berbasis command-line untuk melakukan panggilan RPC, seperti berinteraksi dengan contract, mengirim transaksi, dan mendapatkan data on-chain.
+- [`anvil`](https://book.getfoundry.sh/anvil/): node testnet lokal, dirancang untuk menguji perilaku contract dari frontend atau melalui RPC dalam environment pengembangan lokal.
 - [`chisel`](https://book.getfoundry.sh/chisel/): REPL Solidity ([Read–Eval–Print Loop](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop)) untuk mencoba potongan kode Solidity pada jaringan lokal atau jaringan yang di-fork.
 
 ## Prasyarat
@@ -65,10 +65,10 @@ Untuk membangun dengan Foundry, Anda memerlukan:
 
 ### Dana Wallet
 
-**Deploy kontrak** ke blockchain memerlukan **biaya gas**.  
+**Deploy contract** ke blockchain memerlukan **biaya gas**.  
 Oleh karena itu, Anda perlu mendanai wallet Anda dengan ETH untuk menutupi biaya gas tersebut.
 
-Dalam panduan ini, Anda akan deploy kontrak ke Lisk Sepolia Testnet.
+Dalam panduan ini, Anda akan deploy contract ke Lisk Sepolia Testnet.
 
 Anda dapat men-deposit token yang diperlukan menggunakan [Lisk Sepolia Bridge](https://sepolia-bridge.lisk.com/bridge/lisk-sepolia-testnet).
 
@@ -130,13 +130,13 @@ Secara default, setiap aplikasi yang dibuat dengan Foundry akan memiliki struktu
 └── README.md
 ```
 
-Untuk saat ini, hapus file yang ada di `script/Counter.s.sol`, `src/Counter.sol`, dan `test/Counter.t.sol`, karena kita akan membuat kontrak dan kode pengujian sendiri dalam panduan berikutnya.
+Untuk saat ini, hapus file yang ada di `script/Counter.s.sol`, `src/Counter.sol`, dan `test/Counter.t.sol`, karena kita akan membuat contract dan kode pengujian sendiri dalam panduan berikutnya.
 
 ### **Membuat** Smart Contract
 
-Untuk kemudahan dan keamanan, kita akan menggunakan kontrak `ERC721` yang disediakan oleh [OpenZeppelin Contracts library](https://docs.openzeppelin.com/contracts/5.x/erc721) untuk membuat smart contract ERC-721 sederhana.  
-Dengan OpenZeppelin, kita tidak perlu menulis keseluruhan kontrak ERC-721.  
-Sebaliknya, kita dapat mengimpor kontrak dari library dan langsung menggunakan fungsinya.
+Untuk kemudahan dan keamanan, kita akan menggunakan contract `ERC721` yang disediakan oleh [OpenZeppelin Contracts library](https://docs.openzeppelin.com/contracts/5.x/erc721) untuk membuat smart contract ERC-721 sederhana.  
+Dengan OpenZeppelin, kita tidak perlu menulis keseluruhan contract ERC-721.  
+Sebaliknya, kita dapat mengimpor contract dari library dan langsung menggunakan fungsinya.
 
 Untuk menginstal OpenZeppelin Contracts library ke proyek Anda, jalankan perintah berikut:
 
@@ -209,7 +209,7 @@ contract NFTTest is Test {
     address alice = makeAddr("alice");
     address bob = makeAddr("bob");
 
-    // Menginisialisasi objek kontrak NFT
+    // Menginisialisasi objek contract NFT
     function setUp() public{
         lsk = new NFT();
     }
@@ -269,7 +269,7 @@ Log output yang disorot diatas menjelaskan mengapa asumsi tersebut salah.
 ### **Deploy** Smart Contract
 
 Setelah berhasil membangun smart contract, Anda sekarang dapat men-deploynya ke jaringan Lisk.  
-Untuk contoh ini, kita akan menggunakan jaringan Lisk Sepolia untuk deploy kontrak `NFT`.
+Untuk contoh ini, kita akan menggunakan jaringan Lisk Sepolia untuk deploy contract `NFT`.
 
 Tambahkan flag `--verify`, `--verifier`, `--verifier-url`, dan `--private-key` dari akun pengirim ke perintah `forge create` untuk langsung memverifikasi smart contract di BlockScout.
 
@@ -301,7 +301,7 @@ Tambahkan flag `--verify`, `--verifier`, `--verifier-url`, dan `--private-key` d
 Jika deployment berhasil, outputnya akan terlihat seperti berikut:
 
 ```text
-# Perintah yang disebutkan di atas akan terlebih dahulu deploy kontrak dan menampilkan output berikut:
+# Perintah yang disebutkan di atas akan terlebih dahulu deploy contract dan menampilkan output berikut:
 
 // highlight-start
 [⠒] Compiling...
@@ -311,7 +311,7 @@ Deployed to: 0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5
 Transaction hash: 0xf465528f43e5cbc9b5206e46048feba0b920179813c3eb8c3bdbccbfd13d731e
 // highlight-end
 
-# Setelah kontrak berhasil di-deploy, perintah yang disebutkan di atas akan langsung memverifikasi kontrak tersebut!
+# Setelah contract berhasil di-deploy, perintah yang disebutkan di atas akan langsung memverifikasi contract tersebut!
 
 // highlight-start
 Starting contract verification...
@@ -337,14 +337,14 @@ Setelah smart contract berhasil di-deploy dan diverifikasi, Anda dapat berintera
 
 ### **Memverifikasi** Smart Contract
 
-Setiap kontrak yang di-deploy harus diverifikasi agar pengguna dan developer lainnya dapat memeriksa source code-nya dan memastikan bahwa source code tersebut sesuai dengan bytecode yang di-deploy di blockchain.
+Setiap contract yang di-deploy harus diverifikasi agar pengguna dan developer lainnya dapat memeriksa source code-nya dan memastikan bahwa source code tersebut sesuai dengan bytecode yang di-deploy di blockchain.
 
-Selain itu, jika Anda ingin orang lain dapat berinteraksi dengan kontrak Anda melalui block explorer seperti interface [Read Contract](https://sepolia-blockscout.lisk.com/address/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=read_contract) dan [Write Contract](https://sepolia-blockscout.lisk.com/address/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=write_contract) di Blockscout, kontrak tersebut harus diverifikasi terlebih dahulu.
+Selain itu, jika Anda ingin orang lain dapat berinteraksi dengan contract Anda melalui block explorer seperti interface [Read Contract](https://sepolia-blockscout.lisk.com/address/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=read_contract) dan [Write Contract](https://sepolia-blockscout.lisk.com/address/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=write_contract) di Blockscout, contract tersebut harus diverifikasi terlebih dahulu.
 
-Kontrak di atas **sudah diverifikasi**, sehingga Anda seharusnya dapat melihat versi Anda di block explorer, tetapi kami tetap akan menjelaskan langkah-langkah untuk memverifikasi kontrak di Lisk Sepolia testnet.
+Contract di atas **sudah diverifikasi**, sehingga Anda seharusnya dapat melihat versi Anda di block explorer, tetapi kami tetap akan menjelaskan langkah-langkah untuk memverifikasi contract di Lisk Sepolia testnet.
 
 :::info
-Anda tidak dapat memverifikasi ulang kontrak yang identik dengan yang sudah diverifikasi. Jika Anda mencoba melakukannya, seperti memverifikasi kontrak di atas, Anda akan mendapatkan pesan error seperti:
+Anda tidak dapat memverifikasi ulang contract yang identik dengan yang sudah diverifikasi. Jika Anda mencoba melakukannya, seperti memverifikasi contract di atas, Anda akan mendapatkan pesan error seperti:
 
 ```text
 Start verifying contract `0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5` deployed on 4202
@@ -354,7 +354,7 @@ Contract [src/NFT.sol:NFT] "0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5" is alrea
 
 :::
 
-Jika smart contract Anda belum diverifikasi, ambil alamat kontrak yang sudah di-deploy dan jalankan:
+Jika smart contract Anda belum diverifikasi, ambil alamat contract yang sudah di-deploy dan jalankan:
 
 <Tabs>
   <TabItem value="mainnet" label="Lisk" >
@@ -400,23 +400,23 @@ Details: `Pass - Verified`
 Contract successfully verified
 ```
 
-Gunakan alamat kontrak, misalnya `0xcCaA1C3eb8FEb5b09a5Eac1359BC4c70E18e29d9`, untuk mencari kontrak Anda di [Blockscout](https://sepolia-blockscout.lisk.com/) dan memastikan bahwa kontrak tersebut telah diverifikasi.
+Gunakan alamat contract, misalnya `0xcCaA1C3eb8FEb5b09a5Eac1359BC4c70E18e29d9`, untuk mencari contract Anda di [Blockscout](https://sepolia-blockscout.lisk.com/) dan memastikan bahwa contract tersebut telah diverifikasi.
 
 ## Berinteraksi dengan Smart Contract
 
-Seperti yang disebutkan sebelumnya, jika Anda telah memverifikasi smart contract di Blockscout, Anda dapat menggunakan bagian `Read contract` dan `Write contract` di bawah tab `Contract` untuk berinteraksi dengan kontrak yang telah di-deploy.
+Seperti yang disebutkan sebelumnya, jika Anda telah memverifikasi smart contract di Blockscout, Anda dapat menggunakan bagian `Read contract` dan `Write contract` di bawah tab `Contract` untuk berinteraksi dengan contract yang telah di-deploy.
 
 Tab `Read contract` dapat digunakan tanpa menghubungkan wallet, namun, untuk menggunakan tab `Write contract`, Anda harus terlebih dahulu menghubungkan wallet Anda.  
 Anda dapat melakukannya dengan mengklik tombol `Connect wallet`.
 
 ### Menggunakan **cast** untuk Berinteraksi
 
-Dengan tool command-line dari Foundry: [`cast`](https://book.getfoundry.sh/cast/), Anda dapat berinteraksi dengan kontrak yang telah di-deploy, baik untuk membaca maupun menulis data di blockchain.  
-Mari kita lakukan panggilan tanpa mempublikasikan transaksi (read), lalu menandatangani dan mempublikasikan transaksi (write) ke kontrak yang telah di-deploy.
+Dengan tool command-line dari Foundry: [`cast`](https://book.getfoundry.sh/cast/), Anda dapat berinteraksi dengan contract yang telah di-deploy, baik untuk membaca maupun menulis data di blockchain.  
+Mari kita lakukan panggilan tanpa mempublikasikan transaksi (read), lalu menandatangani dan mempublikasikan transaksi (write) ke contract yang telah di-deploy.
 
 #### Melakukan Panggilan
 
-Sebagai salah satu komponen utama dari toolkit Foundry, `cast` memungkinkan kita untuk berinteraksi dengan kontrak, mengirim transaksi, dan mendapatkan data on-chain menggunakan panggilan RPC Ethereum.  
+Sebagai salah satu komponen utama dari toolkit Foundry, `cast` memungkinkan kita untuk berinteraksi dengan contract, mengirim transaksi, dan mendapatkan data on-chain menggunakan panggilan RPC Ethereum.  
 Pertama, kita akan melakukan panggilan dari sebuah akun tanpa mempublikasikan transaksi.
 
 Isi `<PLACEHOLDERS>` berikut, lalu jalankan perintah:
@@ -435,11 +435,11 @@ Isi `<PLACEHOLDERS>` berikut, lalu jalankan perintah:
 </Tabs>
 
 Anda akan menerima respons berupa `0x0000000000000000000000000000000000000000000000000000000000000000`, yang setara dengan `0` dalam format heksadesimal.  
-Hal ini masuk akal karena Anda baru saja deploy kontrak NFT, namun belum ada NFT yang di-mint, sehingga saldo akun Anda adalah nol.
+Hal ini masuk akal karena Anda baru saja deploy contract NFT, namun belum ada NFT yang di-mint, sehingga saldo akun Anda adalah nol.
 
 #### Menandatangani dan Mengirim Transaksi
 
-Sekarang, mari kita tandatangani dan kirim transaksi dengan memanggil fungsi `mint(address)` pada kontrak `NFT` yang baru saja kita deploy.
+Sekarang, mari kita tandatangani dan kirim transaksi dengan memanggil fungsi `mint(address)` pada contract `NFT` yang baru saja kita deploy.
 
 Isi `<PLACEHOLDERS>` berikut, lalu jalankan perintah:
 
@@ -507,7 +507,7 @@ Anda seharusnya melihat saldo Anda meningkat dari `0` menjadi `1`.
   </TabItem>
 </Tabs>
 
-Dan responsnya: `0x0000000000000000000000000000000000000000000000000000000000000001` (`1` dalam format heksadesimal) — selamat, Anda berhasil deploy kontrak dan mint NFT dengan Foundry!
+Dan responsnya: `0x0000000000000000000000000000000000000000000000000000000000000001` (`1` dalam format heksadesimal) — selamat, Anda berhasil deploy contract dan mint NFT dengan Foundry!
 
 Lihat token yang telah di-mint dalam panduan ini di [Blockscout explorer](https://sepolia-blockscout.lisk.com/token/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5).
 
