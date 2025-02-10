@@ -48,15 +48,30 @@ yarn serve
 By default, this will load your site at <http://localhost:3000/>.
 You'll have to build and serve again if any changes are made.
 
-## Contributors
+## Contributions
 
 Would you like to contribute?
 Please see which situation fits you best.
 
 - [When should you create an issue?](https://opensource.guide/how-to-contribute/#opening-an-issue)
 - [How do you create a pull request?](https://opensource.guide/how-to-contribute/#opening-a-pull-request)
+- Do you want to help us translate our docs? Check out our [Translation Tracker](#translation-tracker) to see which PRs were recently merged and need translation.
+
+However you contribute, please update the [Translation Tracker](#translation-tracker) to ensure your changes can be translated for our native readers.
 
 Check out [our contributors](https://github.com/LiskHQ/lisk-documentation/graphs/contributors).
+
+### Translation Tracker
+
+The following table lists all the recently created/updated pull requests for the English version.
+
+If you attempt to translate any of the following documents, please note that each PR's corresponding locale files should be updated according to the language.
+
+Then, the PR entry in the following table should be removed.
+
+| Pull Request  | Indonesian    |
+| ------------- |:-------------:|
+| [[LISKDOCS-11] Add Remix guide](https://github.com/LiskHQ/lisk-docs/pull/270)   | ✖ |
 
 ## License
 
