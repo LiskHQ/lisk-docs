@@ -1,65 +1,66 @@
 ---
-title: Faucets
-slug: /lisk-tools/faucets
-description: Summary of available ETH and LSK faucets on the Lisk Seolia Testnet. Get free testnet tokens on Lisk Sepolia.
-keywords:
+
+title: Faucet  
+slug: /lisk-tools/faucets  
+description: Ringkasan faucet ETH dan LSK yang tersedia di Lisk Sepolia Testnet. Dapatkan token testnet gratis di Lisk Sepolia.  
+keywords:  
   [
     Lisk Sepolia,
-    Lisk Sepolia Testnet,
+     Lisk Sepolia Testnet,
     Lisk faucet,
     LSK faucet,
     ETH faucet,
     Testnet LSK,
-    Testnet Lisk,
+    Lisk Testnet,
     Testnet ETH,
-    Testnet tokens,
-    Free testnet tokens
-  ]
+    token Testnet,
+    token testnet gratis
+  ]  
+
 ---
 
-# Faucets
-Faucets enable you to get free testnet tokens on Lisk Sepolia.
-Find a list of faucets for the Lisk Sepolia testnet below.
+# Faucet  
+Faucet memungkinkan Anda untuk mendapatkan token testnet gratis di Lisk Sepolia.  
+Temukan daftar faucet untuk Lisk Sepolia testnet di bawah ini.
 
-## Lisk Sepolia Faucet
-Grants test **LSK** on Lisk Sepolia.
+## Lisk Sepolia Faucet  
+Memberikan **LSK** testnet di Lisk Sepolia.
 
-The Lisk Sepolia faucet is available here: https://sepolia-faucet.lisk.com/: 
+Lisk Sepolia Faucet tersedia di sini: https://sepolia-faucet.lisk.com/:  
 
-Enter your account address or ENS name to receive 1 test LSK per request.
+Masukkan alamat akun Anda atau nama ENS untuk menerima 1 LSK testnet per permintaan.
 
+## Superchain Faucet  
+Memberikan **ETH** testnet di Lisk Sepolia.
 
-## Superchain Faucet
-Grants Testnet **ETH** on Lisk Sepolia.
+Superchain Faucet tersedia di sini: https://app.optimism.io/faucet
 
-The Superchain faucet is available here: https://console.optimism.io/faucet
+Ada dua opsi berbeda untuk mendapatkan ETH Testnet gratis:
 
-There are two different options to acquire free Testnet ETH:
-
-1. **Verify your onchain identity:**
-  Get up to 1 test ETH/week on Lisk Sepolia by identifying onchain via Optimist NFT, Gitcoin Passport, Coinbase Verification, World ID, or attestations.
-2. **Verify via GitHub:**
-  Get up to 0.05 test ETH/week on Lisk Sepolia by identifying via your GitHub account.
+1. **Verifikasi identitas onchain Anda:**  
+   Dapatkan hingga 1 ETH testnet/minggu di Lisk Sepolia dengan memverifikasi identitas onchain melalui Optimist NFT, Gitcoin Passport, Verifikasi Coinbase, World ID, atau attestasi.
+2. **Verifikasi melalui GitHub:**  
+   Dapatkan hingga 0.05 ETH testnet/minggu di Lisk Sepolia dengan memverifikasi melalui akun GitHub Anda.
 
 ## thirdweb Faucet
-Grants Testnet **ETH** on Lisk Sepolia.
+Memberikan **ETH** testnet di Lisk Sepolia.
 
-The thirdweb faucet is available under https://thirdweb.com/lisk-sepolia-testnet
+Thirdweb faucet tersedia di https://thirdweb.com/lisk-sepolia-testnet
 
-You will be able to claim 0.1 ETH once every 24 hours.
+Anda dapat mengklaim 0,1 ETH sekali setiap 24 jam.
 
-For more information, see: [How to get free ETH token (ETH) from the Lisk Sepolia Testnet Faucet](https://blog.thirdweb.com/faucet-guides/how-to-get-free-eth-token-from-the-lisk-sepolia-faucet/)
+Untuk informasi lebih lanjut, lihat: [Cara Mendapatkan Token ETH (ETH) Gratis dari Lisk Sepolia Testnet Faucet](https://blog.thirdweb.com/faucet-guides/how-to-get-free-eth-token-from-the-lisk-sepolia-faucet/)
 
 ## dRPC Faucet
 
-Grants up to 0.1 Testnet **ETH** per day on Lisk Sepolia.
+Memberikan hingga 0.1 ETH Testnet per hari di Lisk Sepolia.
 
-The dRPC faucet for Lisk Sepolia is available here: https://drpc.org/faucet/lisk
+dRPC faucet untuk Lisk Sepolia tersedia di sini: https://drpc.org/faucet/lisk
 
-There are two different options to acquire free Testnet ETH:
+Ada dua opsi berbeda untuk mendapatkan ETH Testnet gratis:
 
-1. **Proof-of-Work:**
-  Mine to get up to 0.1 test ETH/day on Lisk Sepolia.
-  The process of "mining" doesn't create new coins, it's just a time-limited method of spam protection.
-2. **Verify via Gitcoin Passport:**
-  Get up to 0.1 test ETH/day on Lisk Sepolia by identifying via your Gitcoin Passport.
+1. **Proof-of-Work:**  
+   Tambang untuk mendapatkan hingga 0.1 ETH testnet/hari di Lisk Sepolia.  
+   Proses "penambangan" ini tidak menciptakan koin baru, ini hanya metode perlindungan terhadap spam yang dibatasi waktu.
+2. **Verifikasi melalui Gitcoin Passport:**  
+   Dapatkan hingga 0.1 ETH testnet/hari di Lisk Sepolia dengan memverifikasi melalui Gitcoin Passport Anda.

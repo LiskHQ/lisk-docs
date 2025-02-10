@@ -1,18 +1,18 @@
 ---
-title: Voting
+title: Pemungutan Suara
 sidebar_position: 4
 slug: /governance/voting
-description: Documentation about the voting process of the Lisk DAO.
+description: Dokumentasi tentang proses pemungutan suara di Lisk DAO.
 keywords:
   [
     Lisk governance,
     Lisk DAO,
     Lisk Grants,
-    Funding,
-    Delegation,
-    Voting,
-    Proposals,
-    Voting Power
+    Pendanaan,
+    Delegasi,
+    Pemungutan Suara,
+    Proposal,
+    Kekuatan Suara
   ]
 ---
 
@@ -24,49 +24,48 @@ import voteButton from '../../../../../../static/img/docs/governance/vote-button
 import voteForm from '../../../../../../static/img/docs/governance/vote-form.avif';
 import proposalId from '../../../../../../static/img/docs/governance/proposal-id.png';
 
-# Voting
+# Pemungutan Suara
 
-## Voting on Tally
+## Pemungutan Suara di Tally
 
-Follow the steps described below to vote on a proposal of the Lisk DAO.
-The Lisk DAO uses [Tally](https://www.tally.xyz/gov/lisk) to facilitate the voting on proposals. 
+Ikuti langkah-langkah yang dijelaskan di bawah ini untuk memberikan suara pada proposal di Lisk DAO.
+Lisk DAO menggunakan [Tally](https://www.tally.xyz/gov/lisk) untuk memfasilitasi pemungutan suara pada proposal.
 
-The process in a nutshell:
-1. Go to [Lisk DAO](https://www.tally.xyz/gov/lisk) and connect your wallet to Tally. 
-2. Navigate to the [Lisk DAO proposals](https://www.tally.xyz/gov/lisk/proposals) page.
+Proses secara singkat:
+1. Kunjungi [Lisk DAO](https://www.tally.xyz/gov/lisk) dan hubungkan wallet Anda ke Tally.
+2. Arahkan ke halaman [Proposal Lisk DAO](https://www.tally.xyz/gov/lisk/proposals).
   <img src={voteList}/>
-3. Select the active proposal you would like to vote on.
-4. Click on the `Vote` button in the upper right corner of the page.
+3. Pilih proposal aktif yang ingin Anda beri suara.
+4. Klik tombol `Vote` di sudut kanan atas halaman.
   <img src={voteButton}/>
-5. In the Voting pop up, choose your vote — For, Against, or Abstain.
-If you'd like, add a comment to explain the reason for your vote to the rest of your DAO.
-Once you're done, click `Submit`.
+5. Pada pop-up Voting, pilih suara Anda — Setuju, Menentang, atau Abstain.
+Jika Anda ingin, tambahkan komentar untuk menjelaskan alasan suara Anda kepada anggota DAO lainnya.
+Setelah selesai, klik `Submit`.
   <img src={voteForm} width="50%"/>
-6. Confirm and sign the transaction via your connected wallet.
+6. Konfirmasi dan tandatangani transaksi melalui wallet yang terhubung.
 
+## Pemungutan Suara Tanpa Tally
 
-## Voting without Tally
+Sangat penting bagi anggota Lisk DAO untuk dapat berinteraksi dengan DAO kapan saja, bahkan ketika Tally, frontend standar untuk Lisk DAO, sedang tidak aktif.
+Yang terpenting, pemungutan suara dan delegasi harus selalu bisa dilakukan dengan berinteraksi langsung dengan smart contract.
+Cara untuk memberikan suara secara manual dijelaskan di bawah ini.
+Untuk panduan cara mendelegasikan kekuatan suara Anda secara manual, lihat halaman [Delegasi](delegation).
 
-It is crucial that members of the Lisk DAO can interact with the DAO at any point in time, even when Tally, the standard front end for the Lisk DAO, is down.
-Most importantly, voting and delegating should always be possible by interacting directly with the smart contract.
-How to vote manually is described below.
-For a guide on how to delegate your voting power manually, see the [Delegation](delegation) page.
+### Prasyarat
 
-### Prerequisites
-
-You must know the **proposal ID** of the proposal you want to vote for.
-The proposal ID is a very long integer (uint256).
-To get the ID for a proposal, get the respective Logs from an RPC node:
+Anda harus mengetahui **ID proposal** dari proposal yang ingin Anda berikan suara.
+ID proposal adalah angka panjang (uint256).
+Untuk mendapatkan ID proposal, dapatkan Log terkait dari node RPC:
 
 ```javascript
 async function main() {
     const { ethers } = require("ethers"); 
     const provider = new ethers.JsonRpcProvider("https://rpc.api.lisk.com"); 
     const logs = await provider.getLogs({
-        fromBlock: 568778, // block when Governor contract got deployed
+        fromBlock: 568778, // blok saat kontrak Governor di-deploy
         toBlock: 'latest',
         address: "0x58a61b1807a7bDA541855DaAEAEe89b1DDA48568", // L2Governor Proxy
-        topics:['0x7d84a6263ae0d98d3329bd7b46bb4e8d6f98cd35a7adb45c274c8b7fd5ebd5e0'] // signature of `ProposalCreated` event
+        topics:['0x7d84a6263ae0d98d3329bd7b46bb4e8d6f98cd35a7adb45c274c8b7fd5ebd5e0'] // tanda tangan event `ProposalCreated`
     });
     console.log(logs);
 }
@@ -74,7 +73,7 @@ async function main() {
 main()
 ```
 
-The return value is an array of logs, where each log corresponds to one proposal (creation) and has the corresponding transaction hash.
+Nilai yang dikembalikan adalah array log, di mana setiap log berhubungan dengan satu proposal (pembuatan) dan memiliki hash transaksi yang terkait.
 ```javascript
 [
   Log {
@@ -87,27 +86,26 @@ The return value is an array of logs, where each log corresponds to one proposal
   }
 ]
 ```
-The transaction hash can then be pasted into [Blockscout](https://blockscout.lisk.com/) to see more details of the proposal.
-To see if the proposal is the one you are looking for, click on the `Logs` tab and look for the `ProposalCreated` event. If the values, in particular the ones for `description`, `voteStart` and `voteEnd`, match with the proposal you want to vote on, then it is the right one. To get the proposal ID, copy the value of the field `proposalId`.
+Hash transaksi ini kemudian dapat dipaste ke [Blockscout](https://blockscout.lisk.com/) untuk melihat detail lebih lanjut dari proposal.
+Untuk memastikan proposal yang Anda cari, klik tab `Logs` dan cari event `ProposalCreated`. Jika nilai-nilai, terutama untuk `description`, `voteStart`, dan `voteEnd`, cocok dengan proposal yang ingin Anda beri suara, maka itu adalah proposal yang benar. Untuk mendapatkan ID proposal, salin nilai dari kolom `proposalId`.
 <img src={proposalId}/>
 
-### Steps
-1. Go to the `Write proxy` tab on the L2Governor proxy contract on Blockscout: https://blockscout.lisk.com/address/0x58a61b1807a7bDA541855DaAEAEe89b1DDA48568?tab=write_proxy.
-2. If your wallet is not already connected to Blockscout, click on `Connect wallet` and follow the instructions to connect your wallet[^1].
+### Langkah-langkah
+1. Kunjungi tab `Write proxy` pada kontrak L2Governor proxy di Blockscout: https://blockscout.lisk.com/address/0x58a61b1807a7bDA541855DaAEAEe89b1DDA48568?tab=write_proxy.
+2. Jika wallet Anda belum terhubung ke Blockscout, klik `Connect wallet` dan ikuti petunjuk untuk menghubungkan wallet Anda[^1].
   <img src={voteConnect}/>
-3. Click on `3. castVote` to unfold the form for the castVote function.
+3. Klik `3. castVote` untuk membuka formulir fungsi castVote.
   <img src={voteSelect}/>
-4. Insert the proposal ID of the proposal you want to vote on into the field `proposalId (uint256)*`.
-5. Fill the `support (uint8)*` field as follows:
-  - If you want to vote **against** the proposal, insert `0`.
-  - If you want to vote **for** the proposal, insert `1`.
-  - If you want to vote with **abstain**, insert `2`.
-6. Click on the `Write` button.
+4. Masukkan ID proposal dari proposal yang ingin Anda beri suara ke kolom `proposalId (uint256)*`.
+5. Isi kolom `support (uint8)*` sebagai berikut:
+  - Jika Anda ingin memberi suara **menentang** proposal, masukkan `0`.
+  - Jika Anda ingin memberi suara **setuju** dengan proposal, masukkan `1`.
+  - Jika Anda ingin memberi suara dengan **abstain**, masukkan `2`.
+6. Klik tombol `Write`.
   <img src={voteSubmit}/>
-7. Confirm the transaction in your wallet.
+7. Konfirmasi transaksi di wallet Anda.
 
-To verify the vote was submitted correctly, you can check the `VoteCast` event of your transaction.
+Untuk memverifikasi bahwa suara Anda telah dikirim dengan benar, Anda dapat memeriksa acara `VoteCast` dari transaksi Anda.
 
-[^1]: At the time of writing, there is an [issue](https://github.com/blockscout/frontend/issues/2059) with connecting MetaMask to Blockscout on Firefox;
-you may have to use another browser like Brave or Chrome.
-
+[^1]: Pada saat penulisan, terdapat [masalah](https://github.com/blockscout/frontend/issues/2059) saat menghubungkan MetaMask ke Blockscout di Firefox;
+Anda mungkin perlu menggunakan browser lain seperti Brave atau Chrome.
