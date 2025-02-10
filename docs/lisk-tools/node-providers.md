@@ -1,5 +1,5 @@
 ---
-title: Node Providers
+title: Node providers
 slug: /lisk-tools/node-providers
 description: Documentation for Node Providers for the Lisk network. Including details on their services, supported networks, and pricing plans.
 keywords:
@@ -24,7 +24,7 @@ keywords:
   ]
 ---
 
-# Node Providers
+# Node providers
 
 Lisk nodes expose an RPC API that allows other parties to interact with the blockchain by invoking requests.
 
