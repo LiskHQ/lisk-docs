@@ -66,8 +66,9 @@ Check out [our contributors](https://github.com/LiskHQ/lisk-documentation/graphs
 The following table lists all the recently created/updated pull requests for the English version.
 
 If you attempt to translate any of the following documents, please note that each PR's corresponding locale files should be updated according to the language.
+If a new file is created in the English version and does not exist in the translated docs folder, i.e., `i18n/`, then create a new file in the same directory inside the `i18n/` parent folder and name it exactly as it is in the English version.
 
-Then, the PR entry in the following table should be removed.
+Once translated, the PR entry in the following table should be removed, and the translation PR should be submitted for review.
 
 | Pull Request  | Indonesian    |
 | ------------- |:-------------:|
