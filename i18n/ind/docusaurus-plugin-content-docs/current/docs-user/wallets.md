@@ -1,17 +1,17 @@
 ---
-title: Wallets
+title: Wallet
 sidebar_position: 1
 slug: /user/wallets
-description: 'A summary of the most important wallets supporting the LSK token.'
+description: 'Ringkasan tentang wallet yang paling penting yang mendukung token LSK.'
 keywords:
   [
-    'Lisk wallets',
-    'LSK wallets',
-    'EVM wallets',
-    'Wallets',
-    'Non-custodial',
-    'hot wallet',
-    'cold wallet',
+    'Wallet Lisk',
+    'Wallet LSK',
+    'Wallet EVM',
+    'Wallet',
+    'Non-kustodial',
+    'wallet panas',
+    'wallet dingin',
     'Zerion',
     'MetaMask',
     'Rainbow',
@@ -22,115 +22,115 @@ keywords:
   ]
 ---
 
-# Wallets
-This page provides an overview of the most important wallets[^1] which support the Lisk chain and LSK token.
+# Wallet
+Halaman ini memberikan gambaran umum tentang wallet yang paling penting[^1] yang mendukung jaringan Lisk dan token LSK.
 
-[^1]: A cryptocurrency wallet is a device, app, or online service that stores the public and/or private keys to facilitate cryptocurrency transactions. 
+[^1]: Wallet kripto adalah perangkat, aplikasi, atau layanan online yang menyimpan kunci publik dan/atau privat untuk memfasilitasi transaksi kripto.
 
-## Hot wallets
+## Wallet Panas
 
 ### Rainbow
 
 :::note
-Rainbow will soon support Lisk network natively on both Mobile and Desktop.
+Rainbow akan segera mendukung jaringan Lisk secara native di kedua platform Mobile dan Desktop.
 :::
 
-[Rainbow](https://rainbow.me/en/) is a fun, simple, and secure Ethereum wallet that makes managing your assets a joy.
+[Rainbow](https://rainbow.me/en/) adalah wallet Ethereum yang menyenangkan, sederhana, dan aman yang membuat pengelolaan aset Anda menjadi menyenangkan.
 
-Great for newcomers and power users alike, Rainbow allows you to be in total control of your crypto.
-You own your assets directly thanks to the power of cryptography and the Ethereum blockchain, and Rainbow makes managing all of your wallets and keys a breeze.
+Cocok untuk pemula maupun pengguna berpengalaman, Rainbow memungkinkan Anda untuk mengendalikan crypto Anda sepenuhnya.
+Anda memiliki aset Anda secara langsung berkat kekuatan kriptografi dan blockchain Ethereum, dan Rainbow membuat pengelolaan semua wallet dan kunci Anda menjadi mudah.
 
-Main features:
-- **Native integration of the Lisk network**
-- **Non-custodial**
-- **EVM wallet**
-- **Browser extension** and **Mobile version**
-- **Compatible with Ledger and Trezor**
-- **Token Support**: ETH, ERC 20 (including LSK), and ERC 721/1155 (NFTs) support.
+Fitur utama:
+- **Integrasi native jaringan Lisk**
+- **Non-kustodial**
+- **Wallet EVM**
+- **Ekstensi browser** dan **Versi mobile**
+- **Kompatibel dengan Ledger dan Trezor**
+- **Dukungan Token**: ETH, ERC 20 (termasuk LSK), dan dukungan ERC 721/1155 (NFT).
 
 ### MetaMask
-Available as a browser extension and as a mobile app, [MetaMask](https://metamask.io/) equips you with a key vault, secure login, token wallet, and more — everything you need to manage your digital assets.
-MetaMask is one of the most popular user choices among hot wallets.
+Tersedia sebagai ekstensi browser dan aplikasi mobile, [MetaMask](https://metamask.io/) memberikan Anda brankas kunci, login yang aman, wallet token, dan masih banyak lagi — semua yang Anda butuhkan untuk mengelola aset digital Anda.
+MetaMask adalah salah satu pilihan paling populer di kalangan wallet panas.
 
 :::tip
-Add the Lisk network to MetaMask with one click via [ChainList](https://chainlist.org/?search=lisk).
+Tambahkan jaringan Lisk ke MetaMask dengan sekali klik melalui [ChainList](https://chainlist.org/?search=lisk).
 :::
 
-Main features:
-- **Non-custodial**
-- **Multi-chain wallet** via [Snaps](https://support.metamask.io/metamask-snaps/what-are-interoperability-snaps/).
-- **Browser extension** and **Mobile version**
-- **Token Support**: ETH, ERC 20 (including LSK), and ERC 721 (NFTs) support.
+Fitur utama:
+- **Non-kustodial**
+- **Wallet multi-chain** melalui [Snaps](https://support.metamask.io/metamask-snaps/what-are-interoperability-snaps/).
+- **Ekstensi browser** dan **Versi mobile**
+- **Dukungan Token**: ETH, ERC 20 (termasuk LSK), dan dukungan ERC 721 (NFT).
 
 ### Zerion
-[Zerion](https://zerion.io/) is a crypto wallet for everything onchain. 
-It allows you to manage all your investments, collections, staked positions and airdrops across 14 chains in one place.
+[Zerion](https://zerion.io/) adalah wallet kripto untuk segala hal yang terkait dengan blockchain.
+Ini memungkinkan Anda mengelola semua investasi, koleksi, posisi staking, dan airdrop Anda di 14 chain dalam satu tempat.
 
-Main features:
-- **Native integration of the Lisk network**
-- **Non-custodial**
-- **EVM wallet**
-- **Compatible with Ledger**
-- **Browser extension** and **Mobile version**
-- **Token Support**: ETH, ERC 20 (including LSK), and ERC 721 (NFTs) support.
+Fitur utama:
+- **Integrasi native jaringan Lisk**
+- **Non-kustodial**
+- **Wallet EVM**
+- **Kompatibel dengan Ledger**
+- **Ekstensi browser** dan **Versi mobile**
+- **Dukungan Token**: ETH, ERC 20 (termasuk LSK), dan dukungan ERC 721 (NFT).
 
 ### Xellar
 
-[Xellar](https://xellar.co/) offers a mobile wallet and a devkit for embedded Wallets to be integrated into apps and websites.
-Enables users to create wallets with Social Login native to the App.
+[Xellar](https://xellar.co/) menawarkan wallet mobile dan devkit untuk wallet yang tertanam yang dapat diintegrasikan ke dalam aplikasi dan situs web.
+Memungkinkan pengguna untuk membuat wallet dengan Login Sosial yang terintegrasi langsung ke dalam aplikasi.
 
-Main features:
-- **Native integration of the Lisk network**
-- **Non-custodial**
-- **Multi-chain**: Compatible with any EVM chain, BTC, Solana, and TRON.
-- **Embedded wallet provider**
-- **Token on- and off-ramp**
-- **Wallet recovery via social login**
+Fitur utama:
+- **Integrasi native jaringan Lisk**
+- **Non-kustodial**
+- **Multi-chain**: Kompatibel dengan chain EVM mana pun, BTC, Solana, dan TRON.
+- **Penyedia wallet yang tertanam**
+- **On- dan off-ramp token**
+- **Pemulihan wallet melalui login sosial**
 
 ### Brave Wallet
-A crypto wallet built into the [Brave browser](https://brave.com/), enabling Brave users to store, manage, grow, and swap their crypto portfolio from a single wallet.
+Wallet kripto yang dibangun ke dalam [browser Brave](https://brave.com/), memungkinkan pengguna Brave untuk menyimpan, mengelola, mengembangkan, dan menukar portofolio kripto mereka dari satu wallet.
 
-Unlike most crypto wallets, the Brave Wallet does not require extensions; it’s browser-native, reducing security risks and reliance on extra CPU and memory. Users can transact with almost any crypto asset with superior safety and performance, as well as connect with other wallets and Web3 DApps.
+Berbeda dengan sebagian besar wallet kripto, Brave Wallet tidak memerlukan ekstensi; ia terintegrasi secara native dalam browser, mengurangi risiko keamanan dan ketergantungan pada CPU dan memori ekstra. Pengguna dapat melakukan transaksi dengan hampir semua aset kripto dengan keamanan dan kinerja yang lebih baik, serta terhubung dengan wallet lain dan DApp Web3.
 
-Main features:
-- **Non-custodial**
-- **EVM wallet**
-- **Integrated into the Brave browser**
-- **Token Support**: ETH, ERC 20 (including LSK), and ERC 721 (NFTs) support.
+Fitur utama:
+- **Non-kustodial**
+- **Wallet EVM**
+- **Terintegrasi dengan browser Brave**
+- **Dukungan Token**: ETH, ERC 20 (termasuk LSK), dan dukungan ERC 721 (NFT)
 
-See the [full feature list](https://support.brave.com/hc/en-us/articles/14380262951053-What-features-are-available-in-Brave-Wallet).
+Lihat [daftar fitur lengkap](https://support.brave.com/hc/en-us/articles/14380262951053-What-features-are-available-in-Brave-Wallet).
 
 ### Rabby
-[Rabby](https://rabby.io/) is an open source crypto wallet for Ethereum and EVM chains.
-Designed for DeFi users with a smooth multi-chain experience. 
-Protects your assets with pre-transaction potential risk scanning and shows the upcoming balance change before you sign a transaction. 
+[Rabby](https://rabby.io/) adalah wallet kripto open source untuk Ethereum dan chain-chain EVM lainnya.
+Dirancang untuk pengguna DeFi dengan pengalaman multi-chain yang mulus.
+Melindungi aset Anda dengan pemindaian potensi risiko sebelum transaksi dan menampilkan perubahan saldo yang akan datang sebelum Anda menandatangani transaksi.
 
-Main features:
-- **Native integration of the Lisk network**
-- **Non-custodial**
-- **EVM wallet**
-- **Browser extension, Desktop and Mobile versions**
-- **Compatible with various hardware wallets**
+Fitur utama:
+- **Integrasi native jaringan Lisk**
+- **Non-kustodial**
+- **Wallet EVM**
+- **Ekstensi browser, Versi Desktop dan Mobile**
+- **Kompatibel dengan berbagai wallet perangkat keras**
 
 ### Safe
 
-[Safe](https://safe.optimism.io/welcome/accounts?chain=lisk) is a customizable multisig wallet and platform to store digital assets on Ethereum and popular EVM chains like Lisk for users, companies, funds, developers, DAOs, and investors.
-DeFi apps can be accessed and user funds can be put to work from inside the Safe UI.
+[Safe](https://safe.optimism.io/welcome/accounts?chain=lisk) adalah wallet multisig yang dapat disesuaikan dan platform untuk menyimpan aset digital di Ethereum dan chain-chain EVM populer seperti Lisk untuk pengguna, perusahaan, dana, pengembang, DAO, dan investor.
+Aplikasi DeFi dapat diakses dan dana pengguna dapat digunakan dari dalam antarmuka Safe.
 
-Main features:
-- **Non-custodial**
-- **EVM wallet**
-- **Multisig**: Mutisignature for individuals and teams of any size.
-- **Web and Mobile versions**
-- **Token Support**: ETH, ERC 20 (including LSK), and ERC 721/1155 (NFTs) support.
+Fitur utama:
+- **Non-kustodial**
+- **Wallet EVM**
+- **Multisig**: Tanda tangan ganda untuk individu dan tim berbagai ukuran.
+- **Versi Web dan Mobile**
+- **Dukungan Token**: ETH, ERC 20 (termasuk LSK), dan ERC 721/1155 (NFT) didukung.
 
-## Cold wallets
+## Wallet Dingin
 
 ### Ledger
-[Ledger](https://www.ledger.com/) provides uncompromising security for the crypto ecosystem, offering cutting-edge hardware wallets designed with security in mind.
-Ledger believes in secure self-custody, and with a Ledger device, you can take ownership of your private keys with confidence.
+[Ledger](https://www.ledger.com/) menyediakan keamanan yang tak tertandingi untuk ekosistem kripto, menawarkan wallet perangkat keras terbaru yang dirancang dengan keamanan sebagai prioritas utama.
+Ledger percaya pada penyimpanan pribadi yang aman, dan dengan perangkat Ledger, Anda dapat memiliki kendali atas kunci privat Anda dengan percaya diri.
 
-Main features:
-- **Non-custodial**
-- **Hardware wallet**
-- **Multi-chain**: See the [list of supported tokens](https://www.ledger.com/supported-crypto-assets).
+Fitur utama:
+- **Non-kustodial**
+- **Wallet perangkat keras**
+- **Multi-chain**: Lihat [daftar token yang didukung](https://www.ledger.com/supported-crypto-assets).

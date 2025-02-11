@@ -87,7 +87,7 @@ To use the Moralis RPC Nodes, follow these steps:
 
 ## Tenderly
 
-[Tenderly](https://tenderly.co/) is a Web3 development platform that offers its tools and infrastructure across 79+ networks. Some networks, like Lisk, also have node RPC support.
+[Tenderly](https://tenderly.co/) is a Web3 Development Platform which offers its tools and infrastructure across 79+ networks. Some networks, like Lisk, additionally have Node RPC support.
 
 - [Lisk Mainnet nodes by Tenderly](https://docs.tenderly.co/node/rpc-reference/lisk)
 - [Lisk Sepolia Testnet nodes by Tenderly](https://docs.tenderly.co/node/rpc-reference/lisk-sepolia)

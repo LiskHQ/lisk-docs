@@ -58,7 +58,7 @@ const FeatureList = [
         <Link
           className="button button--secondary button--lg btn-custom"
           to="/governance/overview">
-          Learn more
+          <Translate>Learn more</Translate>
         </Link>
       </>
     ),
