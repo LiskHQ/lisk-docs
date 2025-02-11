@@ -56,7 +56,7 @@ We recommend you the following hardware configuration to run a Lisk L2 node:
 - adequate storage capacity to accommodate both the snapshot restoration process (if restoring from snapshot) and chain data, ensuring a minimum of (2 * current_chain_size) + snapshot_size + 20%_buffer
 - if running with Docker, please install Docker Engine version [27.0.1](https://docs.docker.com/engine/release-notes/27.0/) or higher
 
-*Note: If utilizing Amazon Elastic Block Store (EBS), ensure timing buffered disk reads are fast enough in order to avoid latency issues alongside the rate of new blocks added to Base during the initial synchronization process; io2 block express is recommended.*
+*Note: If utilizing Amazon Elastic Block Store (EBS), ensure timing buffered disk reads are fast enough in order to avoid latency issues alongside the rate of new blocks added to Base during the initial synchronization process; `io2 block express` is recommended.*
 
 ## Usage
 
@@ -84,7 +84,7 @@ cd lisk-node
     By default, it is set to `.env.mainnet`.
 3. We currently support running either the `op-geth` or the `op-reth` nodes alongside the `op-node`. By default, we run the `op-geth` node. If you would like to run the `op-reth` node instead, please set the `CLIENT` environment variable to `reth` before starting the node.
     :::note
-    The `op-reth` client can be built in either the `maxperf` (default) or `release` profile. To learn more about them, please check reth's documentation on Optimizations. Please set the `RETH_BUILD_PROFILE` environment variable accordingly.
+    The `op-reth` client can be built in either the `maxperf` (default) or `release` profile. To learn more about them, please check reth's documentation on [Optimizations](https://github.com/paradigmxyz/reth/blob/main/book/installation/source.md#optimizations). Please set the `RETH_BUILD_PROFILE` environment variable accordingly.
     Unless you are building the `op-reth` client in `release` profile, please ensure that you have a machine with 32 GB RAM.
     Additionally, if you have the Docker Desktop installed on your system, please make sure to set Memory limit to a minimum of 16 GB.
     It can be set under `Settings -> Resources -> Resource Allocation -> Memory limit`.
@@ -104,7 +104,7 @@ cd lisk-node
     docker compose up --build --detach
     ```
 
-    or, with op-reth execution client:
+    or, with `op-reth` execution client:
 
     ```sh
     CLIENT=reth RETH_BUILD_PROFILE=maxperf docker compose up --build --detach
