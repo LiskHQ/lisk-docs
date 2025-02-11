@@ -132,3 +132,40 @@ $( curl -s -d '{"id":0,"jsonrpc":"2.0","method":"optimism_syncStatus"}' -H "Cont
 
 [partners]: /lisk-tools/node-providers
 [lisk node]: https://github.com/LiskHQ/lisk-node
+
+### Snapshots
+
+:::note
+- Snapshots are available for both `op-geth` and `op-reth` clients:
+  - `op-geth` supports both export and datadir snapshots
+  - `op-reth` only supports datadir snapshots
+- All snapshots are from archival nodes
+- Snapshot types:
+  - `export`: small download size, slow to restore from, data is verified during restore (`op-geth` only)
+  - `datadir`: large download size, fast to restore from, no data verification during restore
+:::
+
+To enable auto-snapshot download and application, set the `APPLY_SNAPSHOT` environment variable to true when starting the node:
+
+```sh
+APPLY_SNAPSHOT=true docker compose up --build --detach
+```
+To specify the client and snapshot type, set both the `CLIENT` and `SNAPSHOT_TYPE` environment variables:
+
+```sh
+# For op-geth with export snapshot (default)
+APPLY_SNAPSHOT=true CLIENT=geth SNAPSHOT_TYPE=export docker compose up --build --detach
+
+# For op-geth with datadir snapshot
+APPLY_SNAPSHOT=true CLIENT=geth SNAPSHOT_TYPE=datadir docker compose up --build --detach
+
+# For op-reth (only supports datadir)
+APPLY_SNAPSHOT=true CLIENT=reth SNAPSHOT_TYPE=datadir docker compose up --build --detach
+```
+
+You can also download and apply a snapshot from a custom URL by setting the `SNAPSHOT_URL` environment variable.
+Please make sure the snapshot file ends with `*.tar.gz`.
+
+```sh
+APPLY_SNAPSHOT=true SNAPSHOT_URL=<custom-snapshot-url> docker compose up --build --detach
+```
