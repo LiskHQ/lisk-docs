@@ -42,7 +42,7 @@ Endpoint RPC gratis dengan pembatasan laju untuk jaringan Lisk.
 
 |               | Lisk Sepolia Testnet              | Lisk                      |
 | :------       | :------                           | :-----------------------  |
-|**HTTP RPC**   | <https://rpc.sepolia-api.lisk.com>  | <https://rpc.api.lisk.com>  |
+|**HTTP RPC**   | [https://rpc.sepolia-api.lisk.com](https://rpc.sepolia-api.lisk.com)  | [https://rpc.api.lisk.com](https://rpc.api.lisk.com)  |
 |**WS RPC**     | `wss://ws.sepolia-api.lisk.com`   | `wss://ws.api.lisk.com`   |
 
 ## dRPC
@@ -53,7 +53,7 @@ Mereka menawarkan tier gratis yang memungkinkan jumlah permintaan yang tidak ter
 
 |               | Lisk Sepolia Testnet              | Lisk                      |
 | :------       | :------                           | :-----------------------  |
-|**HTTP RPC**   | <https://lisk-sepolia.drpc.org>  | <https://lisk.drpc.org>  |
+|**HTTP RPC**   | [https://lisk-sepolia.drpc.org](https://lisk-sepolia.drpc.org)  | [https://lisk.drpc.org](https://lisk.drpc.org)  |
 |**WS RPC**     | `wss://lisk-sepolia.drpc.org`   | `wss://lisk.drpc.org`   |
 
 Anda juga dapat memeriksa endpoint yang tersedia untuk Lisk langsung di [https://drpc.org/public-endpoints/lisk](https://drpc.org/public-endpoints/lisk).
