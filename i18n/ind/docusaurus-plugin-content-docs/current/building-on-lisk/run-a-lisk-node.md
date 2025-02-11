@@ -96,6 +96,7 @@ cd lisk-node
    ```
 
 4. Anda sekarang seharusnya dapat melakukan `curl` ke node Lisk Anda:
+
    ```
    curl -s -d '{"id":0,"jsonrpc":"2.0","method":"eth_getBlockByNumber","params":["latest",false]}' \
      -H "Content-Type: application/json" http://localhost:8545

@@ -54,13 +54,17 @@ Untuk membangun dengan Foundry, Anda memerlukan:
 - Foundry terinstal pada sistem Anda.  
   Untuk menginstalnya, lakukan langkah-langkah berikut:
   - Dari command line, jalankan:
+
     ```bash
     curl -L https://foundry.paradigm.xyz | bash
     ```
+
   - Setelah itu, untuk menginstal versi terbaru (nightly) dari Foundry, jalankan:
+
     ```bash
     foundryup
     ```
+
 - Untuk informasi lebih lanjut, lihat [Panduan Instalasi](https://book.getfoundry.sh/getting-started/installation) di Foundry Book.
 
 ### Dana Wallet
@@ -101,10 +105,10 @@ Receiving objects: 100% (2181/2181), 614.11 KiB | 766.00 KiB/s, done.
 Resolving deltas: 100% (1446/1446), done.
 Submodule 'lib/ds-test' (https://github.com/dapphub/ds-test) registered for path 'lib/ds-test'
 Cloning into '/XYZ/L2/25/foundry_app/foundry_app/lib/forge-std/lib/ds-test'...
-remote: Enumerating objects: 313, done.        
-remote: Counting objects: 100% (171/171), done.        
-remote: Compressing objects: 100% (79/79), done.        
-remote: Total 313 (delta 91), reused 132 (delta 83), pack-reused 142        
+remote: Enumerating objects: 313, done.
+remote: Counting objects: 100% (171/171), done.
+remote: Compressing objects: 100% (79/79), done.
+remote: Total 313 (delta 91), reused 132 (delta 83), pack-reused 142
 Receiving objects: 100% (313/313), 71.35 KiB | 521.00 KiB/s, done.
 Resolving deltas: 100% (130/130), done.
     Installed forge-std v1.7.6

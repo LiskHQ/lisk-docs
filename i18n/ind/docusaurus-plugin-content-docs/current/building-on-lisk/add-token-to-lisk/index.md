@@ -97,9 +97,11 @@ Perubahan yang perlu Anda ajukan akan menjadi lebih sederhana jika token Anda su
 Sebagai contoh, [PR ini](https://github.com/ethereum-optimism/ethereum-optimism.github.io/commit/27ab9b2d3388f7feba3a152e0a0748c73d732a68) menunjukkan perubahan yang diperlukan untuk cbETH, yang sudah ada di Superchain Token Registry dan bergantung pada bridge standar Base.
 
 ### Langkah 3: Tunggu Persetujuan Akhir
+
 Peninjauan secara rutin dilakukan oleh tim Lisk, dan Anda akan menerima balasan dalam waktu 24-72 jam (tergantung apakah PR diajukan pada hari kerja, akhir pekan, atau hari libur).
 
 ## Langkah 4 : Menambahkan Token ke Gelato Bridge
+
 Untuk menambahkan token Anda ke [Gelato Bridge](https://bridge.lisk.com/), hubungi tim Lisk di [Discord Lisk](https://lisk.chat) dengan detail token tersebut:
 
 - Masuk ke channel `#lisk-dev`.
