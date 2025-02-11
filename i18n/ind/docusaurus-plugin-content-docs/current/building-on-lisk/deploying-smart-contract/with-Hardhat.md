@@ -1,7 +1,7 @@
 ---
 title: ... with Hardhat
 slug: /building-on-lisk/deploying-smart-contract/with-Hardhat
-description: "A guide on deploying a smart contract on the Lisk test network using Hardhat. Includes instructions for setting up the environment, compiling, and deploying the smart contract."
+description: "A guide on deploying a smart contract on the Lisk network using Hardhat. Includes instructions for setting up the environment, compiling, and deploying the smart contract."
 keywords: [
     "Hardhat",
     "smart contract",
@@ -23,6 +23,9 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # Deploying a smart contract with Hardhat
+
+On this page, you will learn how to create, deploy and verify a smart contract with HardHat to the **Lisk Sepolia** testnet.
+
 ## Prerequisites
 
 ### Node v18+
@@ -47,7 +50,7 @@ Then, use the aforementioned Lisk Bridge to send tokens from the **Ethereum Sepo
 
 :::note
 You can deploy a contract on Lisk Mainnet by adopting the same process.
-For deploying to mainnet, ensure that your wallet has enough ETH.
+For deploying to Mainnet, ensure that your wallet has enough ETH.
 
 The subsequent text contains commands for both Lisk and Lisk Sepolia for your ease.
 For more information, see the [available Lisk networks](/network-info) and [how to connect a wallet with them](/user/connecting-to-a-wallet).
