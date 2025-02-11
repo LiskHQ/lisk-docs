@@ -1,6 +1,6 @@
 ---
-title: API Providers
-slug: /lisk-tools/api-providers
+title: Node providers
+slug: /lisk-tools/node-providers
 description: Documentation for Node Providers for the Lisk network. Including details on their services, supported networks, and pricing plans.
 keywords:
   [
@@ -24,27 +24,20 @@ keywords:
   ]
 ---
 
-# API Providers
+# Node providers
 
 Lisk nodes expose an RPC API that allows other parties to interact with the blockchain by invoking requests.
 
 If you're just getting started and need an RPC URL, you can use our [free endpoints](#lisk-rpc).
 If you're looking to strengthen your app and avoid rate-limiting for your users, please check out our available RPC node providers like [dRPC](#drpc).
 
-## API reference
-
+:::tip[API reference]
 The available endpoints for Lisk nodes include all [Geth RPC endpoints](https://geth.ethereum.org/docs/interacting-with-geth/rpc), which also include all standard [JSON-RPC API endpoints](https://ethereum.github.io/execution-apis/api-documentation/) of Ethereum. 
-
+:::
 
 ## Lisk RPC
 
 Free, rate limited RPC endpoints for the Lisk networks.
-
-
-<!-- |               | Lisk Sepolia Testnet              | 
-| :------       | :------                           | 
-|**HTTP RPC**   | https://rpc.sepolia-api.lisk.com  | 
-|**WS RPC**     | `wss://ws.sepolia-api.lisk.com`   |  -->
 
 |               | Lisk Sepolia Testnet              | Lisk                      |
 | :------       | :------                           | :-----------------------  |
@@ -65,7 +58,7 @@ They provide a free tier that allows for an unlimited amount of requests over pu
 
 You can also check the available endpoints for Lisk directly under [https://drpc.org/public-endpoints/lisk](https://drpc.org/public-endpoints/lisk).
 
-dRPC also provides a [faucet for Lisk Sepolia](faucets.md#drpc-faucet).
+dRPC also provides a [faucet for Lisk Sepolia](./faucets.md#drpc-faucet).
 
 :::note[How to create API keys for dRPC]
 In order to use the provided endpoints, you need to [get the corresponding API keys](https://docs.drpc.org/gettingstarted/createaccount).
@@ -92,3 +85,11 @@ To use the Moralis RPC Nodes, follow these steps:
 2. **Set up your node:** Visit the [Setting Up RPC Nodes](https://docs.moralis.com/get-your-node-api-key) guide to create and configure your RPC node.
 3. **Make your first RPC call:** Once you have your node set up, follow the [tutorial](https://docs.moralis.com/make-your-first-rpc-call) to make your first JSON-RPC call using ethers.js.
 
+## Tenderly
+
+[Tenderly](https://tenderly.co/) is a Web3 Development Platform which offers its tools and infrastructure across 79+ networks. Some networks, like Lisk, additionally have Node RPC support.
+
+- [Lisk Mainnet nodes by Tenderly](https://docs.tenderly.co/node/rpc-reference/lisk)
+- [Lisk Sepolia Testnet nodes by Tenderly](https://docs.tenderly.co/node/rpc-reference/lisk-sepolia)
+
+Tenderly provides a [free trier](https://tenderly.co/pricing) to user their RPC nodes.
