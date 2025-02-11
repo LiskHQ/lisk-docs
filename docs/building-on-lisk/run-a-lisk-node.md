@@ -21,7 +21,9 @@ tags: ['nodes']
 difficulty: beginner
 ---
 
-This tutorial will walk you through setting up your own [Lisk Node].
+This tutorial will walk you through setting up your own [Lisk Node] with Docker.
+
+*For instructions to run a Lisk node from source, please check the instructions detailed in the [Lisk Node](https://github.com/LiskHQ/lisk-node?tab=readme-ov-file#source) GitHub repository.*
 
 ## Objectives
 
