@@ -26,6 +26,8 @@ import TabItem from '@theme/TabItem';
 
 # Deploy Smart Contract dengan Hardhat
 
+Di halaman ini, Anda akan mempelajari cara membuat, menggunakan, dan memverifikasi kontrak pintar dengan Hardhat ke testnet **Lisk Sepolia**.
+
 ## Prasyarat
 
 ### Node v18+
