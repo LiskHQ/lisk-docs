@@ -107,7 +107,7 @@ const config = {
         },
         items: [
           /*
-            TODO: Uncomment when all localozed pages are translated
+            TODO: Uncomment when all localized pages are translated
           {
             type: 'localeDropdown',
             position: 'right',
