@@ -41,6 +41,7 @@ LiskAdresses.forEach(token => {
     ethAddress = {address: "Not Found"};
   }
   token.ethAddress = ethAddress.address;
+  token.ethBridge = ethAddress.extensions.liskBridgeAddress
 });
 
 const tableHeads = {
@@ -100,6 +101,29 @@ export const generatedDocs = () => {
                           type: 'link',
                           url: "https://blockscout.lisk.com/address/" + token.address,
                           children: [{type: 'text', value: token.address }]
+                        },
+                      ]
+                    },
+                    {
+                      type: 'tableCell',
+                      children: [
+                        {
+                          type: 'link',
+                          url: "https://etherscan.io/address/" + token.ethBridge,
+                          children: [{type: 'text', value: token.ethBridge }]
+                        },
+                        {
+                          type: 'text',
+                          value: '(L1)'
+                        },
+                        {
+                          type: 'link',
+                          url: "https://blockscout.lisk.com/address/" + token.extensions.liskBridgeAddress,
+                          children: [{type: 'text', value: token.extensions.liskBridgeAddress }]
+                        },
+                        {
+                          type: 'text',
+                          value: '(L2)'
                         }
                       ]
                     }]

@@ -22,10 +22,10 @@ If you want to add a token to the list, please check out the guide [Bridging an 
 
 ## Lisk Mainnet
 
-| Bridged Tokens Mainnet | Symbol | L1 Token          | L2 Token           |
-| :----------------- | :----- |:----------------- | :----------------- |
+| Bridged Tokens Mainnet | Symbol | L1 Token          | L2 Token           | Bridges |
+| :--------------------- | :----- |:----------------- | :----------------- | :----- |
 
 ## Lisk Sepolia
 
-| Bridged Tokens Sepolia | Symbol | L1 Token          | L2 Token           |
-| :----------------- | :----- |:----------------- | :----------------- |
+| Bridged Tokens Sepolia | Symbol | L1 Token          | L2 Token           | Bridges |
+| :--------------------- | :----- |:----------------- | :----------------- | :----- |
