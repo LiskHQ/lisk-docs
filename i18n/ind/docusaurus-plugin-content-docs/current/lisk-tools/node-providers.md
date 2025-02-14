@@ -1,95 +1,85 @@
 ---
-title: Node providers
-slug: /lisk-tools/node-providers
-description: Documentation for Node Providers for the Lisk network. Including details on their services, supported networks, and pricing plans.
-keywords:
+title: Penyedia Node  
+slug: /lisk-tools/api-providers  
+description: Dokumentasi untuk Penyedia Node untuk jaringan Lisk. Termasuk rincian tentang layanan mereka, jaringan yang didukung, dan paket harga.  
+keywords:  
   [
-    Node Providers,
+    Penyedia Node,
     Lisk,
-    Lisk network,
-    Lisk node,
-    hosted nodes,
-    archival nodes,
+    jaringan Lisk,
+    node Lisk,
+    node yang dihosting,
+    node arsip,
     RPC,
-    RPC node,
-    RPC URL,
-    RPC endpoints,
-    blockchain services,
-    blockchain infrastructure,
-    developer tools,
+    node RPC,
+    URL RPC,
+    endpoint RPC,
+    layanan blockchain,
+    infrastruktur blockchain,
+    alat pengembang,
     API,
-    Web3 infrastructure,
+    infrastruktur Web3,
     dRPC,
     Sepolia,
-  ]
+  ]  
 ---
 
-# Node providers
+# Penyedia Node
 
-Lisk nodes expose an RPC API that allows other parties to interact with the blockchain by invoking requests.
+Node Lisk mengungkapkan API RPC yang memungkinkan pihak lain berinteraksi dengan blockchain dengan mengirimkan permintaan.
 
-If you're just getting started and need an RPC URL, you can use our [free endpoints](#lisk-rpc).
-If you're looking to strengthen your app and avoid rate-limiting for your users, please check out our available RPC node providers like [dRPC](#drpc).
+Jika Anda baru memulai dan membutuhkan URL RPC, Anda dapat menggunakan [endpoint gratis kami](#lisk-rpc).  
+Jika Anda ingin memperkuat aplikasi Anda dan menghindari rate-limit untuk pengguna Anda, silakan lihat penyedia node RPC yang tersedia seperti [dRPC](#drpc).
 
 :::tip[API reference]
-The available endpoints for Lisk nodes include all [Geth RPC endpoints](https://geth.ethereum.org/docs/interacting-with-geth/rpc), which also include all standard [JSON-RPC API endpoints](https://ethereum.github.io/execution-apis/api-documentation/) of Ethereum. 
+Endpoint yang tersedia untuk node Lisk mencakup semua [endpoint RPC Geth](https://geth.ethereum.org/docs/interacting-with-geth/rpc), yang juga mencakup semua [endpoint API JSON-RPC standar](https://ethereum.github.io/execution-apis/api-documentation/) dari Ethereum.
 :::
 
 ## Lisk RPC
 
-Free, rate limited RPC endpoints for the Lisk networks.
+Endpoint RPC gratis dengan pembatasan laju untuk jaringan Lisk.
 
 |               | Lisk Sepolia Testnet              | Lisk                      |
 | :------       | :------                           | :-----------------------  |
 |**HTTP RPC**   | https://rpc.sepolia-api.lisk.com  | https://rpc.api.lisk.com  |
 |**WS RPC**     | `wss://ws.sepolia-api.lisk.com`   | `wss://ws.api.lisk.com`   |
 
-
 ## dRPC
 
-[dRPC](https://drpc.org/) is a decentralized Web3 infrastructure provider with a focus on resilience and latency.
-dRPC offers access to a distributed network of public nodes for Lisk.
-They provide a free tier that allows for an unlimited amount of requests over public nodes, or a paid tier that provides access to all providers, as well as other additional features.
+[dRPC](https://drpc.org/) adalah penyedia infrastruktur Web3 terdesentralisasi yang berfokus pada ketahanan dan latensi.  
+dRPC menyediakan akses ke jaringan terdistribusi dari node publik untuk Lisk.  
+Mereka menawarkan tier gratis yang memungkinkan jumlah permintaan yang tidak terbatas melalui node publik, atau tier berbayar yang menyediakan akses ke semua penyedia, serta fitur tambahan lainnya.
 
 |               | Lisk Sepolia Testnet              | Lisk                      |
 | :------       | :------                           | :-----------------------  |
-|**HTTP RPC**   | https://lisk-sepolia.drpc.org  | https://lisk.drpc.org  |
-|**WS RPC**     | `wss://lisk-sepolia.drpc.org`   | `wss://lisk.drpc.org`   |
+|**HTTP RPC**   | https://lisk-sepolia.drpc.org     | https://lisk.drpc.org     |
+|**WS RPC**     | `wss://lisk-sepolia.drpc.org`     | `wss://lisk.drpc.org`     |
 
-You can also check the available endpoints for Lisk directly under [https://drpc.org/public-endpoints/lisk](https://drpc.org/public-endpoints/lisk).
+Anda juga dapat memeriksa endpoint yang tersedia untuk Lisk langsung di [https://drpc.org/public-endpoints/lisk](https://drpc.org/public-endpoints/lisk).
 
-dRPC also provides a [faucet for Lisk Sepolia](./faucets.md#drpc-faucet).
+dRPC juga menyediakan [faucet untuk Lisk Sepolia](faucets.md#drpc-faucet).
 
-:::note[How to create API keys for dRPC]
-In order to use the provided endpoints, you need to [get the corresponding API keys](https://docs.drpc.org/gettingstarted/createaccount).
+:::note[Cara membuat kunci API untuk dRPC]  
+Untuk menggunakan endpoint yang disediakan, Anda perlu [mendapatkan kunci API yang sesuai](https://docs.drpc.org/gettingstarted/createaccount).  
 :::
 
 ## Moralis
 
-[Moralis](https://developers.moralis.com/chains/lisk/) APIs elevate your dapps with unmatched speed, security, and scalability across EVM-compatible chains.
+[Moralis](https://developers.moralis.com/chains/lisk/) API meningkatkan dapp Anda dengan kecepatan, keamanan, dan skalabilitas yang tak tertandingi di berbagai chain yang kompatibel dengan EVM.
 
-Moralis enforces rate limits at the account level to ensure fair usage across all users.
-Each account has a set number of allowed requests per minute, based on your plan.
+Moralis memberlakukan rate limit di tingkat akun untuk memastikan penggunaan yang adil di antara semua pengguna.
+Setiap akun memiliki jumlah permintaan yang diizinkan per menit, berdasarkan paket yang Anda pilih.
 
-[Get Free Lisk RPC Nodes using Moralis](https://developers.moralis.com/chains/lisk/)
+[Dapatkan Node RPC Lisk Gratis menggunakan Moralis](https://developers.moralis.com/chains/lisk/)
 
-The free plan for Moralis includes:
+Paket gratis Moralis mencakup:
 
-- 40K Compute Units per day
-- Access to RPC nodes
-- Access to all Moralis APIs
+- 40K Unit Komputasi per hari
+- Akses ke node RPC
+- Akses ke semua API Moralis
 
-To use the Moralis RPC Nodes, follow these steps:
+Untuk menggunakan Node RPC Moralis, ikuti langkah-langkah berikut:
 
-1. **Create a Moralis account:** [Sign up](https://admin.moralis.com/) for free and access your RPC nodes.
-2. **Set up your node:** Visit the [Setting Up RPC Nodes](https://docs.moralis.com/get-your-node-api-key) guide to create and configure your RPC node.
-3. **Make your first RPC call:** Once you have your node set up, follow the [tutorial](https://docs.moralis.com/make-your-first-rpc-call) to make your first JSON-RPC call using ethers.js.
-
-## Tenderly
-
-[Tenderly](https://tenderly.co/) is a Web3 Development Platform which offers its tools and infrastructure across 79+ networks. Some networks, like Lisk, additionally have Node RPC support.
-
-- [Lisk Mainnet nodes by Tenderly](https://docs.tenderly.co/node/rpc-reference/lisk)
-- [Lisk Sepolia Testnet nodes by Tenderly](https://docs.tenderly.co/node/rpc-reference/lisk-sepolia)
-
-Tenderly provides a [free trier](https://tenderly.co/pricing) to user their RPC nodes.
+1. **Buat akun Moralis:** [Daftar](https://admin.moralis.com/) secara gratis dan akses node RPC Anda.
+2. **Siapkan node Anda:** Visit the [Menyiapkan Node RPC](https://docs.moralis.com/get-your-node-api-key) untuk membuat dan mengonfigurasi node RPC Anda.
+3. **Lakukan panggilan RPC pertama Anda:** Setelah node Anda siap, ikuti [tutorial](https://docs.moralis.com/make-your-first-rpc-call) untuk membuat panggilan JSON-RPC pertama Anda menggunakan ethers.js.

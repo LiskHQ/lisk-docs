@@ -1,11 +1,11 @@
 ---
-title: Overview
+title: Gambaran Umum
 slug: /token-development
-description: 'An introduction into and ERC token standards and token development on Lisk.'
+description: 'Pengantar tentang standar token ERC dan pengembangan token di Lisk.'
 keywords:
   [
     'Lisk',
-    'Token development',
+    'Pengembangan Token',
     'Deploy token',
     'ERC',
     'EIP',
@@ -18,89 +18,101 @@ keywords:
   ]
 ---
 
-# Token development
-This page is intended for token issuers who wish to create a new ERC-20 contract on Lisk.
-It includes an explanation of ERCs, a summary of the most important token standards, and examples of how to deploy these tokens on Lisk.
-In case you already have a token deployed on the Ethereum network, and wish to bridge it to Lisk, please refer to the guide [Bridging an L1 token to Lisk](../add-token-to-lisk/index.md).
+# Pengembangan Token
 
-## ERC token standards
+Halaman ini ditujukan untuk penerbit token yang ingin membuat contract ERC-20 baru di Lisk.
+Halaman ini mencakup penjelasan tentang ERC, ringkasan standar token terpenting, dan contoh cara deploy token tersebut di Lisk.
+Jika Anda sudah memiliki token yang di-deploy di jaringan Ethereum dan ingin bridge token tersebut ke Lisk, silakan merujuk ke panduan [Bridge Token L1 ke Lisk](../add-token-to-lisk/index.md).
 
-A standard interface allows any tokens on Ethereum to be re-used by other applications: from wallets to decentralized exchanges.
-**ERCs**(Ethereum Request for Comments) are a set of application-level standards and conventions, including contract standards such as token standards (ERC-20), name registries (ERC-137), URI schemes, library/package formats, and wallet formats for the Ethereum blockchain.
+## Standar Token ERC
 
-Following the most popular ERC token standards when creating a new token has several benefits:
+Interface standar memungkinkan token apa pun di Ethereum untuk digunakan kembali oleh aplikasi lain: mulai dari wallet hingga decentralized exchange.
+**ERCs** (Ethereum Request for Comments) adalah serangkaian standar dan konvensi di tingkat aplikasi, termasuk standar contract seperti standar token (ERC-20), registri nama (ERC-137), skema URI, format library/package, dan format wallet untuk blockchain Ethereum.
 
-- **Increased security:** Let your contract inherit from heavily audited and reviewed implementations of the standard, mitigating the possibility of bugs greatly.
-- **High application compatibility:** Most applications only support the most popular ERC token standards. By following these standards, you ensure your token will be compatible with most external applications like wallets or decentralized exchanges.
-- **Great documentation:** Benefit from the vast number of tutorials and guides that are available to develop ERC-compliant tokens.
+Mengikuti standar token ERC yang paling populer saat membuat token baru memiliki beberapa manfaat:
 
-ERCs are a subcategory of **EIPs**(Ethereum Improvement Proposals).
-New EIPs are added following the process outlined in [EIP-1](https://eips.ethereum.org/EIPS/eip-1).
+- **Keamanan meningkat:** Biarkan contract Anda mewarisi implementasi standar yang telah diaudit dan ditinjau secara menyeluruh, sehingga kemungkinan bug berkurang secara signifikan.
+- **Kompatibilitas aplikasi tinggi:** Sebagian besar aplikasi hanya mendukung standar token ERC yang paling populer. Dengan mengikuti standar ini, Anda memastikan token Anda akan kompatibel dengan sebagian besar aplikasi eksternal seperti wallet atau decentralized exchange.
+- **Dokumentasi yang baik:** Manfaatkan banyak tutorial dan panduan yang tersedia untuk mengembangkan token yang sesuai dengan ERC.
 
-Here's the full list of [ERC proposals](https://eips.ethereum.org/erc).
+ERC adalah subkategori dari **EIPs** (Ethereum Improvement Proposals).
+EIP baru ditambahkan mengikuti proses yang dijelaskan dalam [EIP-1](https://eips.ethereum.org/EIPS/eip-1).
 
-A summary of some interesting ERC token standards can be found below.
+Berikut adalah daftar lengkap [proposal ERC](https://eips.ethereum.org/erc).
 
-- [ERC-20](#erc-20): the most widespread token standard for fungible tokens, albeit somewhat limited by its simplicity.
-- [ERC-721](#erc-721): the most popular token standard for non-fungible tokens, often used for collectibles and games.
-- [ERC-1155](#erc-1155): a standard for multi-tokens, allowing for a single contract to represent multiple fungible and non-fungible tokens, along with batched operations for increased gas efficiency.
+Ringkasan beberapa standar token ERC yang menarik dapat ditemukan di bawah ini:
+
+- [ERC-20](#erc-20): standar token yang paling digunakan untuk token yang dapat dipertukarkan, meskipun agak terbatas karena kesederhanaannya.
+- [ERC-721](#erc-721): standar token paling populer untuk token yang tidak dapat dipertukarkan, sering digunakan untuk koleksi dan permainan.
+- [ERC-1155](#erc-1155): standar untuk multi-token, memungkinkan satu contract merepresentasikan banyak token yang dapat dipertukarkan maupun tidak, serta mendukung operasi batch untuk efisiensi gas yang lebih baik.
 
 ## ERC-20
-The most widespread token standard for fungible tokens.
-Any token is exactly equal to any other token; no tokens have special rights or behavior associated with them.
-This makes [ERC-20](https://eips.ethereum.org/EIPS/eip-20) tokens useful for things like a medium of exchange currency, voting rights, staking, and more.
 
-### Guides
-[How to deploy a new ERC-20 token on Lisk](deploy-erc-20.mdx)
+Standar token yang paling digunakan untuk token yang dapat dipertukarkan.  
+Setiap token memiliki nilai yang sama dengan token lainnya; tidak ada token yang memiliki hak atau perilaku khusus.  
+Hal ini membuat [ERC-20](https://eips.ethereum.org/EIPS/eip-20) berguna untuk berbagai hal seperti mata uang, media pertukaran, hak suara, staking, dan lainnya.
 
-### Further reading
-- [Understand the ERC-20 token smart contract](https://ethereum.org/en/developers/tutorials/understand-the-erc-20-token-smart-contract/)
+### Panduan
+
+[Bagaimana cara deploy token ERC-20 baru di Lisk](deploy-erc-20.mdx)
+
+### Bacaan lebih lanjut
+
+- [Memahami smart smart contract ERC-20](https://ethereum.org/en/developers/tutorials/understand-the-erc-20-token-smart-contract/)
 - [ERC-20 EIP](https://eips.ethereum.org/EIPS/eip-20)
-- [OpenZeppelin: ERC-20 API](https://docs.openzeppelin.com/contracts/3.x/api/token/erc20)
-- [OpenZeppelin: ERC-20 contract](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol)
+- [OpenZeppelin: API ERC-20](https://docs.openzeppelin.com/contracts/3.x/api/token/erc20)
+- [OpenZeppelin: Contract ERC-20](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC20/ERC20.sol)
 - [Solidity by example: ERC-20](https://solidity-by-example.org/app/erc20/)
-- [Ethereum Docs: ERC-20](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/)
-- [Alchemy: Complete guide to ERC-20](https://www.alchemy.com/overviews/erc20-solidity)
+- [Dokumentasi Ethereum: ERC-20](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/)
+- [Alchemy: Panduan lengkap tentang ERC-20](https://www.alchemy.com/overviews/erc20-solidity)
+
+---
 
 ## ERC-721
-[ERC-721](https://eips.ethereum.org/EIPS/eip-721) is a standard for representing ownership of non-fungible tokens.
-Non-fungible tokens(NFTs) are used to represent unique objects like real estate or collectibles, where some items are valued more than others due to their usefulness, rarity, or other individual characteristics.
 
-To represent these unique features onchain, the ERC-721 includes metadata properties that offer information about the token's specific features, such as the title, the creator, and an image preview.
+[ERC-721](https://eips.ethereum.org/EIPS/eip-721) adalah standar untuk merepresentasikan kepemilikan token yang tidak dapat dipertukarkan.  
+Non-fungible token (NFTs) digunakan untuk merepresentasikan objek unik seperti real estate atau barang koleksi, di mana beberapa item memiliki nilai lebih tinggi dibandingkan lainnya karena kegunaan, kelangkaan, atau karakteristik individu lainnya.
 
-### Guides
-[How to deploy a new ERC-721 token on Lisk](deploy-erc-721.md)
+Untuk merepresentasikan fitur unik ini secara onchain, ERC-721 menyertakan properti metadata yang menyediakan informasi tentang fitur spesifik token, seperti judul, pencipta, dan pratinjau gambar.
 
-### Further reading
-- [Ethereum Docs: ERC-721](https://ethereum.org/en/developers/docs/standards/tokens/erc-721/)
+### Panduan
+
+[Bagaimana cara deploy token ERC-721 baru di Lisk](deploy-erc-721.md)
+
+### Bacaan lebih lanjut
+
+- [Dokumentasi Ethereum: ERC-721](https://ethereum.org/en/developers/docs/standards/tokens/erc-721/)
 - [ERC-721 EIP](https://eips.ethereum.org/EIPS/eip-721)
-- [OpenZeppelin: ERC-721 API](https://docs.openzeppelin.com/contracts/3.x/api/token/erc721)
-- [OpenZeppelin: ERC-721 contract](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721.sol)
-- [Solidity by example: ERC721](https://solidity-by-example.org/app/erc721/)
-- [How to implement an ERC-721 market](https://ethereum.org/en/developers/tutorials/how-to-implement-an-erc721-market/)
+- [OpenZeppelin: API ERC-721](https://docs.openzeppelin.com/contracts/3.x/api/token/erc721)
+- [OpenZeppelin: Contract ERC-721](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721.sol)
+- [Solidity by example: ERC-721](https://solidity-by-example.org/app/erc721/)
+- [Bagaimana cara mengimplementasikan pasar ERC-721](https://ethereum.org/en/developers/tutorials/how-to-implement-an-erc721-market/)
 
 ## ERC-1155
-The [ERC-1155](https://eips.ethereum.org/EIPS/eip-1155) is a standard interface for contracts that manage multiple token types.
-The distinctive feature of ERC-1155 is that it uses a single smart contract to represent multiple tokens at once.
-A single deployed contract may include any combination of fungible tokens, non-fungible tokens or other configurations (e.g. semi-fungible tokens).
 
-This is why its `balanceOf` function differs from ERC-20’s: 
-it has an additional `id` argument for the identifier of the token that you want to query the balance of.
-ERC-1155 accounts have a distinct balance for each token id; non-fungible tokens are implemented by simply minting a single one of them.
+[ERC-1155](https://eips.ethereum.org/EIPS/eip-1155) adalah interface standar untuk contract yang mengelola berbagai jenis token.  
+Fitur khas ERC-1155 adalah penggunaan satu smart contract untuk merepresentasikan banyak token sekaligus.  
+Satu contract yang dideploy dapat mencakup kombinasi token fungible, non-fungible, atau konfigurasi lainnya (misalnya token semi-fungible).
 
-This approach leads to massive gas savings for projects that require multiple tokens.
-Instead of deploying a new contract for each token type, a single ERC-1155 token contract can hold the entire system state, reducing deployment costs and complexity.
+Karena itu, fungsi `balanceOf` pada ERC-1155 berbeda dari ERC-20:  
+fungsi ini memiliki argumen tambahan, yaitu `id`, untuk mengidentifikasi token yang ingin Anda query saldonya.  
+Akun ERC-1155 memiliki saldo yang berbeda untuk setiap token id; token non-fungible diimplementasikan dengan hanya mint satu token saja.
 
-### Guides
-[How to deploy a new ERC-1155 token on Lisk](deploy-erc-1155.md)
+Pendekatan ini menghasilkan penghematan gas yang signifikan untuk proyek yang memerlukan banyak token.  
+Alih-alih mendeploy contract baru untuk setiap jenis token, satu contract token ERC-1155 dapat menyimpan seluruh state sistem, sehingga mengurangi biaya deployment dan kompleksitas.
+
+### Panduan
+
+[Bagaimana cara mendeploy token ERC-1155 baru di Lisk](deploy-erc-1155.md)
 
 :::warning
-Please note that there is currently less ecosystem support for ERC-1155 as compared with ERC-20 or ERC-721.
+Harap diperhatikan bahwa saat ini dukungan ekosistem untuk ERC-1155 masih lebih sedikit dibandingkan ERC-20 atau ERC-721.
 :::
 
-### Further reading
-- [Ethereum Docs: ERC-1155](https://ethereum.org/en/developers/docs/standards/tokens/erc-1155/)
+### Bacaan lebih lanjut
+
+- [Dokumentasi Ethereum: ERC-1155](https://ethereum.org/en/developers/docs/standards/tokens/erc-1155/)
 - [ERC-1155 EIP](https://eips.ethereum.org/EIPS/eip-1155)
-- [OpenZeppelin: ERC-1155 API](https://docs.openzeppelin.com/contracts/3.x/api/token/erc1155)
-- [OpenZeppelin: ERC-1155 contract](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC1155/ERC1155.sol)
-- [Solidity by example: ERC1155](https://solidity-by-example.org/app/erc1155/)
+- [OpenZeppelin: API ERC-1155](https://docs.openzeppelin.com/contracts/3.x/api/token/erc1155)
+- [OpenZeppelin: Contract ERC-1155](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC1155/ERC1155.sol)
+- [Solidity by example: ERC-1155](https://solidity-by-example.org/app/erc1155/)
