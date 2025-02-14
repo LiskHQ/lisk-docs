@@ -1,5 +1,5 @@
 ---
-title: Penyedia API  
+title: Penyedia Node  
 slug: /lisk-tools/api-providers  
 description: Dokumentasi untuk Penyedia Node untuk jaringan Lisk. Termasuk rincian tentang layanan mereka, jaringan yang didukung, dan paket harga.  
 keywords:  
@@ -22,19 +22,18 @@ keywords:
     dRPC,
     Sepolia,
   ]  
-
 ---
 
-# Penyedia API
+# Penyedia Node
 
 Node Lisk mengungkapkan API RPC yang memungkinkan pihak lain berinteraksi dengan blockchain dengan mengirimkan permintaan.
 
 Jika Anda baru memulai dan membutuhkan URL RPC, Anda dapat menggunakan [endpoint gratis kami](#lisk-rpc).  
 Jika Anda ingin memperkuat aplikasi Anda dan menghindari rate-limit untuk pengguna Anda, silakan lihat penyedia node RPC yang tersedia seperti [dRPC](#drpc).
 
-## Referensi API
-
+:::tip[API reference]
 Endpoint yang tersedia untuk node Lisk mencakup semua [endpoint RPC Geth](https://geth.ethereum.org/docs/interacting-with-geth/rpc), yang juga mencakup semua [endpoint API JSON-RPC standar](https://ethereum.github.io/execution-apis/api-documentation/) dari Ethereum.
+:::
 
 ## Lisk RPC
 

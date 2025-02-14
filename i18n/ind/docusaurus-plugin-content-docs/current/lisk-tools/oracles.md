@@ -57,7 +57,7 @@ Tellor menggunakan mekanisme insentif kripto-ekonomi, dengan memberikan pengharg
 
 Pendekatan ini mendorong jaringan terbuka dan tanpa izin untuk pelaporan data dan validasi data, memastikan bahwa data dapat disediakan oleh siapa saja dan diverifikasi oleh semua orang.
 
-[Daftar semua kontrak Tellor yang diterapkan di Lisk tersedia di dokumentasinya](https://docs.tellor.io/tellor/the-basics/contracts-reference#lisk)
+[Daftar semua kontrak Tellor yang digunakan di Lisk tersedia di dokumentasi mereka](https://docs.tellor.io/tellor/the-basics/contracts-reference#lisk)
 
 #### Jaringan yang Didukung
 
