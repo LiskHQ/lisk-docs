@@ -51,16 +51,13 @@ const tableHeads = {
 
 export const generatedDocs = () => {
   return async (root) => {
-   visit(root, (node) => {
-    if (node.type !== 'table') {
-      return 
-    }
+   visit(root, "table", (node) => {
     // For every table in the docs
     node.children.forEach(row => {
       row.children.forEach(cell => {
         cell.children.forEach(cellChild => {
           // Find a cell with the value 'Bridged Token Mainnet'
-          if( cellChild.value === (tableHeads.eng[0] || tableHeads.ind[0])) {
+          if( cellChild.value === tableHeads.eng[0] || cellChild.value === tableHeads.ind[0]) {
             cellChild.value = 'Bridged Token Name';
             // Add a new row for each Mainnet token
             LiskAdresses.forEach(token => {
@@ -131,7 +128,7 @@ export const generatedDocs = () => {
                 }
             });
           // Find a cell with the value 'Bridged Token Sepolia'
-          } else if (cellChild.value === (tableHeads.eng[1] || tableHeads.ind[1])) {
+          } else if (cellChild.value === tableHeads.eng[0] || cellChild.value === tableHeads.ind[0]) {
             cellChild.value = 'Bridged Token Name';
             // Add a new row for each Sepolia token
             LiskAdresses.forEach(token => {
