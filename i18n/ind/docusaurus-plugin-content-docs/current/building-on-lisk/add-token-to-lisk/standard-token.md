@@ -1,87 +1,86 @@
 ---
-title: Deploying a standard token
+title: Deploy Token Standar
 slug: /building-on-lisk/add-token-to-lisk/standard-token
-description: 'Learn how to add your standard ERC-20 token to Lisk using the standard bridge.'
+description: 'Pelajari cara menambahkan token ERC-20 standar Anda ke Lisk menggunakan bridge standar.'
 keywords:
   [
-    'ERC-20 contract',
-    'Standard token',
+    'contract ERC-20',
+    'Token Standar',
     'Lisk Testnet',
     'Sepolia',
     'Ethereum',
     'Lisk Sepolia',
-    'Optimism Superchain token list',
+    'daftar token Optimism Superchain',
   ]
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Deploying your Standard ERC-20 token to Lisk
+# Deploy Token ERC-20 Standar Anda ke Lisk
 
 <!-- :::info
-**This tutorial is for developers who want to bridge a new Standard ERC-20 token to Lisk Sepolia.**
-If you want to bridge existing tokens, you can follow the tutorial on [Bridging ERC-20 tokens with the Optimism SDK](https://docs.optimism.io/builders/app-developers/tutorials/cross-dom-bridge-erc20).
+**Tutorial ini ditujukan untuk developer yang ingin bridge token ERC-20 Standar baru ke Lisk Sepolia.**
+Jika Anda ingin bridge token yang sudah ada, silakan ikuti tutorial [Bridge Token ERC-20 dengan Optimism SDK](https://docs.optimism.io/builders/app-developers/tutorials/cross-dom-bridge-erc20).
 ::: -->
 
-In this tutorial, you'll learn how to bridge a standard ERC-20 token from Ethereum to Lisk using the [Standard Bridge system](https://docs.optimism.io/builders/dapp-developers/bridging/standard-bridge).
-This tutorial is meant for developers who already have an existing ERC-20 token on Ethereum and want to create a bridged representation of that token on Lisk.
+Dalam tutorial ini, Anda akan belajar cara bridge token ERC-20 standar dari Ethereum ke Lisk menggunakan [Sistem Bridge Standar](https://docs.optimism.io/builders/dapp-developers/bridging/standard-bridge).  
+Tutorial ini ditujukan untuk developer yang sudah memiliki token ERC-20 di Ethereum dan ingin membuat representasi token tersebut di Lisk.
 
-This tutorial explains how to use the [`OptimismMintableERC20Factory`](https://github.com/ethereum-optimism/optimism/blob/186e46a47647a51a658e699e9ff047d39444c2de/packages/contracts-bedrock/contracts/universal/OptimismMintableERC20Factory.sol) to deploy a standardized ERC-20 token on Lisk or Lisk Sepolia network.
-Tokens created by this factory contract are compatible with the Standard Bridge system and include basic logic for deposits, transfers, and withdrawals.
-If you want to include specialized logic within your L2 token, see the tutorial on [Bridging Your Custom ERC-20 Token to Lisk](./custom-token) instead.
+Tutorial ini menjelaskan cara menggunakan [`OptimismMintableERC20Factory`](https://github.com/ethereum-optimism/optimism/blob/186e46a47647a51a658e699e9ff047d39444c2de/packages/contracts-bedrock/contracts/universal/OptimismMintableERC20Factory.sol) untuk deploy token ERC-20 standar di jaringan Lisk atau Lisk Sepolia.  
+Token yang dibuat oleh contract factory ini kompatibel dengan sistem Bridge Standar dan mencakup logika dasar untuk deposit, transfer, dan withdrawals.  
+Jika Anda ingin menyertakan logika khusus di dalam token L2 Anda, lihat tutorial [Bridge Token ERC-20 Kustom Anda ke Lisk](./custom-token).
 
-## Dependencies
+## Dependensi
 
-*   [cast](https://book.getfoundry.sh/getting-started/installation)
+- [cast](https://book.getfoundry.sh/getting-started/installation)
 
-## Prerequisites
+## Prasyarat
 
 :::note
-You can deploy your **Standard ERC-20** token on Lisk Mainnet by adopting the same process.
-For deploying to mainnet, ensure that your wallet has enough ETH.
+Anda dapat deploy **token ERC-20 Standar** Anda di Lisk Mainnet dengan menggunakan proses yang sama.  
+Untuk deploy ke mainnet, pastikan wallet Anda memiliki ETH yang cukup.
 
-The subsequent text contains commands for both Lisk and Lisk Sepolia for your ease.
-For more information, see the [available Lisk networks](/network-info) and [how to connect a wallet with them](/user/connecting-to-a-wallet).
+Teks berikut mencakup perintah untuk Lisk dan Lisk Sepolia demi kemudahan Anda.  
+Untuk informasi lebih lanjut, lihat [jaringan Lisk yang tersedia](/network-info) dan [cara menghubungkan wallet ke jaringan tersebut](/user/connecting-to-a-wallet).
 :::
 
+### Dapatkan ETH di Sepolia dan Lisk Sepolia
 
-### Get ETH on Sepolia and Lisk Sepolia
-
-This tutorial explains how to create a bridged ERC-20 token on Lisk Sepolia.
-You will need to get some ETH on both of these testnets.
+Tutorial ini menjelaskan cara membuat token ERC-20 yang di-bridge di Lisk Sepolia.  
+Anda perlu mendapatkan sejumlah ETH di kedua testnet ini.
 
 :::info
-You can use [ETH Sepolia Faucet](https://sepoliafaucet.com/) to get ETH on Sepolia.
-You can use the [Superchain Faucet](https://console.optimism.io/faucet) to get ETH on Lisk Sepolia.
+Anda dapat menggunakan [ETH Sepolia Faucet](https://sepoliafaucet.com/) untuk mendapatkan ETH di Sepolia.  
+Anda dapat menggunakan [Superchain Faucet](https://console.optimism.io/faucet) untuk mendapatkan ETH di Lisk Sepolia.
 :::
 
-### Get an L1 ERC-20 Token Address
+### Dapatkan Alamat Token ERC-20 L1
 
-You will need an L1 ERC-20 token for this tutorial.
-If you already have an L1 ERC-20 token deployed on Ethereum Mainnet or Sepolia, you can skip this step.
-For Sepolia, you can use the testing token located at [`0x5589BB8228C07c4e15558875fAf2B859f678d129`](https://sepolia.etherscan.io/address/0x5589BB8228C07c4e15558875fAf2B859f678d129) that includes a `faucet()` function that can be used to mint tokens.
+Anda memerlukan token ERC-20 L1 untuk tutorial ini.  
+Jika Anda sudah memiliki token ERC-20 L1 yang di-deploy di Ethereum Mainnet atau Sepolia, Anda dapat melewati langkah ini.  
+Untuk Sepolia, Anda dapat menggunakan token uji coba yang berada di alamat [`0x5589BB8228C07c4e15558875fAf2B859f678d129`](https://sepolia.etherscan.io/address/0x5589BB8228C07c4e15558875fAf2B859f678d129), yang memiliki fungsi `faucet()` untuk me-mint token.
 
-## Create an L2 ERC-20 token
+## Membuat Token ERC-20 L2
 
-Once you have an L1 ERC-20 token, you can use the [`OptimismMintableERC20Factory`](https://github.com/ethereum-optimism/optimism/blob/186e46a47647a51a658e699e9ff047d39444c2de/packages/contracts-bedrock/contracts/universal/OptimismMintableERC20Factory.sol) to create a corresponding L2 ERC-20 token on Lisk or Lisk Sepolia network.
-All tokens created by the factory implement the `IOptimismMintableERC20` interface and are compatible with the Standard Bridge system.
-To create an L2 ERC-20 token, do the following:
+Setelah Anda memiliki token ERC-20 L1, Anda dapat menggunakan [`OptimismMintableERC20Factory`](https://github.com/ethereum-optimism/optimism/blob/186e46a47647a51a658e699e9ff047d39444c2de/packages/contracts-bedrock/contracts/universal/OptimismMintableERC20Factory.sol) untuk membuat token ERC-20 L2 yang sesuai di jaringan Lisk atau Lisk Sepolia.  
+Semua token yang dibuat oleh factory ini mengimplementasikan interface `IOptimismMintableERC20` dan kompatibel dengan sistem Bridge Standar.  
+Untuk membuat token ERC-20 L2, lakukan langkah-langkah berikut:
 
-### 1. Add a private key to your environment
+### 1. Tambahkan private key ke environment Anda
 
-You'll need a private key in order to sign transactions.
-Set your private key as an environment variable with the `export` command.
-Make sure this private key corresponds to an address that has ETH on Lisk or Lisk Sepolia network.
+Anda memerlukan private key untuk menandatangani transaksi.  
+Atur private key Anda sebagai variabel environment menggunakan perintah `export`.  
+Pastikan private key ini sesuai dengan alamat yang memiliki ETH di jaringan Lisk atau Lisk Sepolia.
 
 ```bash
 export TUTORIAL_PRIVATE_KEY=0x...
 ```
 
-### 2. Add the Lisk RPC URL to your environment
+### 2. Tambahkan URL RPC Lisk ke environment Anda
 
-You'll need an RPC URL in order to connect to Lisk or Lisk Sepolia network.
-Set your RPC URL as an environment variable with the `export` command.
+Anda memerlukan URL RPC untuk terhubung ke jaringan Lisk atau Lisk Sepolia.  
+Atur URL RPC Anda sebagai variabel environment menggunakan perintah `export`.
 
 <Tabs>
   <TabItem value="mainnet" label="Lisk" >
@@ -96,49 +95,47 @@ Set your RPC URL as an environment variable with the `export` command.
   </TabItem>
 </Tabs>
 
+### 3. Tambahkan alamat token ERC-20 L1 Anda ke environment
 
-
-### 3. Add your L1 ERC-20 token address to your environment
-
-You'll need to know the address of your L1 ERC-20 token in order to create a bridged representation of it on Lisk or Lisk Sepolia network.
-Set your L1 ERC-20 token address as an environment variable with the `export` command.
+Anda perlu mengetahui alamat token ERC-20 L1 Anda untuk membuat representasi token tersebut di jaringan Lisk atau Lisk Sepolia.  
+Atur alamat token ERC-20 L1 Anda sebagai variabel environment menggunakan perintah `export`.
 
 ```bash
 # Replace this with your L1 ERC-20 token if not using the testing token!
 export TUTORIAL_L1_ERC20_ADDRESS=0x5589BB8228C07c4e15558875fAf2B859f678d129
 ```
 
-### 4. Deploy your L2 ERC-20 token
+### 4. Deploy token ERC-20 L2 Anda
 
-You can now deploy your L2 ERC-20 token using the [`OptimismMintableERC20Factory`](https://github.com/ethereum-optimism/optimism/blob/186e46a47647a51a658e699e9ff047d39444c2de/packages/contracts-bedrock/contracts/universal/OptimismMintableERC20Factory.sol).
-Use the `cast` command to trigger the deployment function on the factory contract.
-This example command creates a token with the name "My Standard Demo Token" and the symbol "L2TKN".
-The resulting L2 ERC-20 token address is printed to the console.
+Anda sekarang dapat deploy token ERC-20 L2 Anda menggunakan [`OptimismMintableERC20Factory`](https://github.com/ethereum-optimism/optimism/blob/186e46a47647a51a658e699e9ff047d39444c2de/packages/contracts-bedrock/contracts/universal/OptimismMintableERC20Factory.sol).  
+Gunakan perintah `cast` untuk memicu fungsi deployment pada contract factory.  
+Contoh perintah berikut akan membuat token dengan nama "My Standard Demo Token" dan simbol "L2TKN".  
+Alamat token ERC-20 L2 yang dihasilkan akan mint di konsol.
 
-```bash 
+```bash
 cast send 0x4200000000000000000000000000000000000012 "createOptimismMintableERC20(address,string,string)" $TUTORIAL_L1_ERC20_ADDRESS "My Standard Demo Token" "L2TKN" --private-key $TUTORIAL_PRIVATE_KEY --rpc-url $TUTORIAL_RPC_URL --json | jq -r '.logs[0].topics[2]' | cast parse-bytes32-address
 ```
 
-If all goes well, it will respond with the address of the newly deployed contract:
+Jika semua berjalan dengan lancar, Anda akan menerima respons berisi alamat contract yang baru saja di-deploy:
 
 ```text
 0x891C582b83F69B7c2d3107cd73A3e491CB33962F
 ```
 
-:::note[Using factories is **not** recommended for production]
-Factories make it easy to deploy contracts out of the box. 
-The downside of this is, that you do not have control over the source code of the contract that is going to be deployed, as this is performed by the factory.
+:::note[Menggunakan factory **tidak** direkomendasikan untuk production]
+Factory memudahkan proses deployment contract secara instan.  
+Namun, kelemahannya adalah Anda tidak memiliki kendali atas source code dari contract yang akan di-deploy karena proses ini dilakukan oleh factory.
 
-Furthermore, it is not so straightforward to verify those contracts on Blockscout, as the source code of the contract is required for the verification.
+Selain itu, verifikasi contract tersebut di Blockscout tidak begitu mudah dilakukan, karena source code contract diperlukan untuk proses verifikasi.
 :::
 
-<!-- ## Bridge Some Tokens
+<!-- ## Bridge Beberapa Token
 
-Now that you have an L2 ERC-20 token, you can bridge some tokens from L1 to L2.
-Check out the tutorial on [Bridging ERC-20 tokens with the Optimism SDK](https://docs.optimism.io/builders/app-developers/tutorials/cross-dom-bridge-erc20) to learn how to bridge your L1 ERC-20 to L2s and vice versa using the Optimism SDK. -->
+Sekarang setelah Anda memiliki token ERC-20 L2, Anda dapat bridge beberapa token dari L1 ke L2.
+Lihat tutorial [Bridge Token ERC-20 dengan Optimism SDK](https://docs.optimism.io/builders/app-developers/tutorials/cross-dom-bridge-erc20) untuk mempelajari cara bridge token ERC-20 L1 ke L2 dan sebaliknya menggunakan Optimism SDK. -->
 
-<!-- ## Add to the Superchain Token List
+<!-- ## Tambahkan ke Superchain Token List
 
-The [Superchain Token List](https://github.com/ethereum-optimism/ethereum-optimism.github.io#readme) is a common list of tokens deployed on chains within the Optimism Superchain.
-This list is used by services like the [Optimism Bridge UI](https://app.optimism.io/bridge).
-If you want your OP Mainnet token to be included in this list, take a look at the [review process and merge criteria](https://github.com/ethereum-optimism/ethereum-optimism.github.io#review-process-and-merge-criteria). -->
+[Superchain Token List](https://github.com/ethereum-optimism/ethereum-optimism.github.io#readme) adalah daftar umum token yang telah di-deploy di chain dalam Optimism Superchain.
+Daftar ini digunakan oleh layanan seperti [Optimism Bridge UI](https://app.optimism.io/bridge).
+Jika Anda ingin token OP Mainnet Anda dimasukkan ke dalam daftar ini, silakan lihat [proses peninjauan dan kriteria penggabungan](https://github.com/ethereum-optimism/ethereum-optimism.github.io#review-process-and-merge-criteria). -->

@@ -20,20 +20,23 @@ keywords:
 ---
 
 # Faucet  
+
 Faucet memungkinkan Anda untuk mendapatkan token testnet gratis di Lisk Sepolia.  
 Temukan daftar faucet untuk Lisk Sepolia testnet di bawah ini.
 
 ## Lisk Sepolia Faucet  
+
 Memberikan **LSK** testnet di Lisk Sepolia.
 
-Lisk Sepolia Faucet tersedia di sini: https://sepolia-faucet.lisk.com/:  
+Lisk Sepolia Faucet tersedia di sini: https://sepolia-faucet.lisk.com:  
 
 Masukkan alamat akun Anda atau nama ENS untuk menerima 1 LSK testnet per permintaan.
 
 ## Superchain Faucet  
+
 Memberikan **ETH** testnet di Lisk Sepolia.
 
-Superchain Faucet tersedia di sini: https://app.optimism.io/faucet
+Superchain Faucet tersedia di sini: https://console.optimism.io/faucet
 
 Ada dua opsi berbeda untuk mendapatkan ETH Testnet gratis:
 
@@ -43,6 +46,7 @@ Ada dua opsi berbeda untuk mendapatkan ETH Testnet gratis:
    Dapatkan hingga 0.05 ETH testnet/minggu di Lisk Sepolia dengan memverifikasi melalui akun GitHub Anda.
 
 ## thirdweb Faucet
+
 Memberikan **ETH** testnet di Lisk Sepolia.
 
 Thirdweb faucet tersedia di https://thirdweb.com/lisk-sepolia-testnet

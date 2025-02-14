@@ -58,9 +58,9 @@ Perhatikan bahwa ini menghasilkan **hadiah staking yang lebih tinggi**, karena b
 
 ### Distribusi Hadiah Staking
 Sebanyak 24 juta token LSK akan digunakan selama 3 tahun untuk program hadiah staking LSK (8 juta LSK per tahun).
-Jumlah ini diberikan kepada [kontrak Hadiah](https://blockscout.lisk.com/address/0xD35ca9577a9DADa7624a35EC10C2F55031f0Ab1f).
+Jumlah ini diberikan kepada [contract Hadiah](https://blockscout.lisk.com/address/0xD35ca9577a9DADa7624a35EC10C2F55031f0Ab1f).
 
-**Perhitungan Hadiah Harian:** Hadiah diambil dari saldo kontrak Hadiah dan dihitung setiap hari, berdasarkan jumlah yang dikunci dan durasi penguncian yang tersisa.
+**Perhitungan Hadiah Harian:** Hadiah diambil dari saldo contract Hadiah dan dihitung setiap hari, berdasarkan jumlah yang dikunci dan durasi penguncian yang tersisa.
 Secara konkret, bobot untuk jumlah yang dikunci diberikan oleh:
 
 ```
@@ -75,7 +75,7 @@ Artinya, hadiah harian untuk posisi penguncian dihitung sebagai:
 hadiahHarian = bobot/totalBobot * TotalHadiahHarian
 ```
 
-Nilai saat ini dari `totalBobot` dapat dicek di [kontrak Hadiah](https://blockscout.lisk.com/address/0xD35ca9577a9DADa7624a35EC10C2F55031f0Ab1f?tab=read_proxy).
+Nilai saat ini dari `totalBobot` dapat dicek di [contract Hadiah](https://blockscout.lisk.com/address/0xD35ca9577a9DADa7624a35EC10C2F55031f0Ab1f?tab=read_proxy).
 `TotalHadiahHarian` dapat dihitung dengan membagi hadiah tahunan yang tersedia dengan 365:  `8.000.000 / 365 = 21917`
 
 ### Contoh: Perhitungan Hadiah untuk 1 vs 2 Tahun
