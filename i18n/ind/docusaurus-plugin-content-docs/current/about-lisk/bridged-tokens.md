@@ -1,31 +1,28 @@
 ---
 id: bridged-tokens
-title: Bridged Token Addresses
+title: Alamat Token yang di-bridge
 sidebar_position: 2
-description: 'A reference page listing all tokens bridged to Lisk.'
-keywords:
-  [
-    'Lisk',
-    'Bridged tokens'
-  ]
+slug: /bridged-tokens
+description: 'Halaman referensi yang mencantumkan semua token yang di-bridge ke Lisk.'
+keywords: ['Lisk', 'token yang di-bridge']
 ---
 
-# Bridged Token Addresses
+# Alamat Token yang di-bridge
 
-This page summarizes officially reviewed tokens deployed on Lisk and their corresponding L1 addresses.
+Halaman ini merangkum token-token yang telah ditinjau secara resmi dan di-deploy di Lisk, beserta alamat L1 yang sesuai.
 
-The list is based on the [Superchain Token List](https://github.com/ethereum-optimism/ethereum-optimism.github.io).
+Daftar ini berdasarkan [Daftar Token Superchain](https://github.com/ethereum-optimism/ethereum-optimism.github.io).
 
 :::tip
-If you want to add a token to the list, please check out the guide [Bridging an L1 token to Lisk](/building-on-lisk/add-token-to-lisk/index.md).
+Jika Anda ingin menambahkan token ke daftar ini, silakan lihat panduan [Bridge Token L1 ke Lisk](/building-on-lisk/add-token-to-lisk/index.md).
 :::
 
 ## Lisk Mainnet
 
-| Bridged Tokens Mainnet | Symbol | L1 Token          | L2 Token           |
-| :----------------- | :----- |:----------------- | :----------------- |
+| Bridged Token di Mainnet | Simbol | Token L1 | Token L2 |
+| :----------------------- | :----- | :------- | :------- |
 
 ## Lisk Sepolia
 
-| Bridged Tokens Sepolia | Symbol | L1 Token          | L2 Token           |
-| :----------------- | :----- |:----------------- | :----------------- |
+| Bridged Token di Sepolia | Simbol | Token L1 | Token L2 |
+| :----------------------- | :----- | :------- | :------- |
