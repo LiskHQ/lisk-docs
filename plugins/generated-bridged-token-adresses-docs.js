@@ -43,6 +43,11 @@ LiskAdresses.forEach(token => {
   token.ethAddress = ethAddress.address;
 });
 
+const tableHeads = {
+  eng: ["Bridged Tokens Mainnet", "Bridged Tokens Sepolia"],
+  ind: ["Bridged Token di Mainnet", "Bridged Token di Sepolia"],
+}
+
 export const generatedDocs = () => {
   return async (root) => {
    visit(root, (node) => {
@@ -54,7 +59,7 @@ export const generatedDocs = () => {
       row.children.forEach(cell => {
         cell.children.forEach(cellChild => {
           // Find a cell with the value 'Bridged Token Mainnet'
-          if( cellChild.value === 'Bridged Tokens Mainnet') {
+          if( cellChild.value === (tableHeads.eng[0] || tableHeads.ind[0])) {
             cellChild.value = 'Bridged Token Name';
             // Add a new row for each Mainnet token
             LiskAdresses.forEach(token => {
@@ -102,7 +107,7 @@ export const generatedDocs = () => {
                 }
             });
           // Find a cell with the value 'Bridged Token Sepolia'
-          } else if (cellChild.value === 'Bridged Tokens Sepolia') {
+          } else if (cellChild.value === (tableHeads.eng[1] || tableHeads.ind[1])) {
             cellChild.value = 'Bridged Token Name';
             // Add a new row for each Sepolia token
             LiskAdresses.forEach(token => {
