@@ -19,10 +19,11 @@ Jika Anda ingin menambahkan token ke daftar ini, silakan lihat panduan [Bridge T
 
 ## Lisk Mainnet
 
-| Bridged Token di Mainnet | Simbol | Token L1 | Token L2 |
-| :----------------------- | :----- | :------- | :------- |
+| Bridged Token di Mainnet | Simbol | Token L1 | Token L2 | Bridges |
+| :----------------------- | :----- | :------- | :------- | :------ |
 
 ## Lisk Sepolia
 
-| Bridged Token di Sepolia | Simbol | Token L1 | Token L2 |
-| :----------------------- | :----- | :------- | :------- |
+| Bridged Token di Sepolia | Simbol | Token L1 | Token L2 | Bridges |
+| :----------------------- | :----- | :------- | :------- | :------ |
+
