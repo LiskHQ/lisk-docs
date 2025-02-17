@@ -128,7 +128,7 @@ export const generatedDocs = () => {
                 }
             });
           // Find a cell with the value 'Bridged Token Sepolia'
-          } else if (cellChild.value === tableHeads.eng[0] || cellChild.value === tableHeads.ind[0]) {
+          } else if (cellChild.value === tableHeads.eng[1] || cellChild.value === tableHeads.ind[1]) {
             cellChild.value = 'Bridged Token Name';
             // Add a new row for each Sepolia token
             LiskAdresses.forEach(token => {
