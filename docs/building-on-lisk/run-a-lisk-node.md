@@ -52,11 +52,11 @@ If you're looking to harden your app and avoid rate-limiting for your users, ple
 
 We recommend you the following hardware configuration to run a Lisk L2 node:
 
-- a modern multi-core CPU with good single-core performance
-- a minimum of 16 GB RAM (32 GB recommended)
-- a locally attached NVMe SSD drive
-- adequate storage capacity to accommodate both the snapshot restoration process (if restoring from snapshot) and chain data, ensuring a minimum of (2 * current_chain_size) + snapshot_size + 20%_buffer
-- if running with Docker, please install Docker Engine version [27.0.1](https://docs.docker.com/engine/release-notes/27.0/) or higher
+- A modern multi-core CPU with good single-core performance.
+- A minimum of 16 GB RAM (32 GB recommended).
+- A locally attached NVMe SSD drive.
+- Adequate storage capacity to accommodate both the snapshot restoration process (if restoring from snapshot) and chain data, ensuring a minimum of (2 * current_chain_size) + snapshot_size + 20%_buffer.
+- If running with Docker, please install Docker Engine version [27.0.1](https://docs.docker.com/engine/release-notes/27.0/) or higher.
 
 *Note: If utilizing Amazon Elastic Block Store (EBS), ensure timing buffered disk reads are fast enough in order to avoid latency issues alongside the rate of new blocks added to Base during the initial synchronization process; `io2 block express` is recommended.*
 
@@ -84,17 +84,20 @@ cd lisk-node
     If running your own L1 node, it needs to be synced before the Lisk node will be able to fully sync.
 2. Please ensure that the environment file relevant to your network (`.env.sepolia`, or `.env.mainnet`) is set for the `env_file` properties within `docker-compose.yml`.
     By default, it is set to `.env.mainnet`.
-3. We currently support running either the `op-geth` or the `op-reth` nodes alongside the `op-node`. By default, we run the `op-geth` node. If you would like to run the `op-reth` node instead, please set the `CLIENT` environment variable to `reth` before starting the node.
+3. We currently support, running either the `op-geth` or the `op-reth` nodes alongside the `op-node`. 
+By default, we run the `op-geth` node. If you would like to run the `op-reth` node instead, please set the `CLIENT` environment variable to `reth` before starting the node.
     :::note
-    The `op-reth` client can be built in either the `maxperf` (default) or `release` profile. To learn more about them, please check reth's documentation on [Optimizations](https://github.com/paradigmxyz/reth/blob/main/book/installation/source.md#optimizations). Please set the `RETH_BUILD_PROFILE` environment variable accordingly.
+    The `op-reth` client can be built in either the `maxperf` (default) or `release` profile.
+    To learn more about them, please check reth's documentation on [Optimizations](https://github.com/paradigmxyz/reth/blob/main/book/installation/source.md#optimizations).
+    Please set the `RETH_BUILD_PROFILE` environment variable accordingly.
     Unless you are building the `op-reth` client in `release` profile, please ensure that you have a machine with 32 GB RAM.
     Additionally, if you have the Docker Desktop installed on your system, please make sure to set Memory limit to a minimum of 16 GB.
     It can be set under `Settings -> Resources -> Resource Allocation -> Memory limit`.
     :::
 
 4. Run:
-    :::important
-    Important: To run the node on Lisk Sepolia, first patch the Dockerfile(s) with:
+    :::warning[important]
+    To run the node on Lisk Sepolia, first patch the Dockerfile(s) with:
     ```sh
     git apply dockerfile-lisk-sepolia.patch
     ```
@@ -147,7 +150,7 @@ $( curl -s -d '{"id":0,"jsonrpc":"2.0","method":"optimism_syncStatus"}' -H "Cont
   - `datadir`: large download size, fast to restore from, no data verification during restore
 :::
 
-To enable auto-snapshot download and application, set the `APPLY_SNAPSHOT` environment variable to true when starting the node:
+To enable auto-snapshot download and application, set the `APPLY_SNAPSHOT` environment variable to `true` when starting the node:
 
 ```sh
 APPLY_SNAPSHOT=true docker compose up --build --detach
