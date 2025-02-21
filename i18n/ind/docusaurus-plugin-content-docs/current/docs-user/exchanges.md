@@ -65,7 +65,7 @@ Lisk (LSK) tersedia untuk diperdagangkan di berbagai <!-- exchange terpusat dan 
 Kolom "jaringan yang didukung" menunjukkan blockchain yang digunakan oleh exchange untuk setoran & penarikan LSK. 
 Harap diperhatikan bahwa menggunakan jaringan/blockchain yang salah saat menyetor dana ke exchange dapat mengakibatkan kehilangan dana.
 
-### Segera Hadir
+## Segera Hadir
 
 | Nama                     | Jaringan yang Didukung |
 | :----------------------- |:----------------- |

@@ -20,7 +20,7 @@
     "description": "The generated-index page description for category Building on Lisk in sidebar documentationSidebar"
   },
   "sidebar.documentationSidebar.category.Deploying a Smart Contract": {
-    "message": "Menerapkan Smart Contract",
+    "message": "Mendeploy Smart Contract",
     "description": "The label for category Deploying a Smart Contract in sidebar documentationSidebar"
   },
   "sidebar.documentationSidebar.category.Bridging an L1 token to Lisk": {

@@ -32,8 +32,8 @@ Berikut ini adalah oracle yang sudah mendukung jaringan Lisk:
 
 Pembuat dapat memilih bagaimana mereka ingin mengonsumsi data dari tiga model khusus berikut:
 
-*   [RedStone Pull](https://docs.redstone.finance/docs/get-started/models/redstone-pull) (pull oracle) - waktu pembaruan kurang dari 10 detik, spektrum feed yang luas, terbaik untuk sebagian besar kasus penggunaan. Semua [Feed Harga](https://app.redstone.finance/#/app/tokens) tersedia untuk Lisk.
-*   [RedStone Push](https://docs.redstone.finance/docs/get-started/models/redstone-push) (push oracle) - untuk protokol yang dirancang untuk antarmuka oracle tradisional, detak jantung yang dapat disesuaikan, dan ambang penyimpangan.
+* [RedStone Pull](https://docs.redstone.finance/docs/get-started/models/redstone-pull) (pull oracle) - waktu pembaruan kurang dari 10 detik, spektrum feed yang luas, terbaik untuk sebagian besar kasus penggunaan. Semua [Feed Harga](https://app.redstone.finance/#/app/tokens) tersedia untuk Lisk.
+* [RedStone Push](https://docs.redstone.finance/docs/get-started/models/redstone-push) (push oracle) - untuk protokol yang dirancang untuk antarmuka oracle tradisional, detak jantung yang dapat disesuaikan, dan ambang penyimpangan.
 * [RedStone X](https://docs.redstone.finance/docs/get-started/models/redstone-x) - khusus untuk Perpetual dan Opsi, frekuensi pembaruan tertinggi, dan perlindungan dari front-running.
 * [ERC7412](https://docs.redstone.finance/docs/get-started/models/redstone-erc7412) - Model Klasik dan Inti yang digabungkan
 
@@ -41,12 +41,12 @@ Tertarik untuk mengintegrasi? [Hubungi](https://discord.com/invite/PVxBZKFr46) t
 
 #### Jaringan yang Didukung
 
-- Lisk
+* Lisk
 
 ### Panduan
 
-- [Mengakses data oracle dengan Redstone (Pull)](../building-on-lisk/using-oracle-data/redstone-pull.md)
-- [Mengakses data oracle dengan Redstone (Push)](../building-on-lisk/using-oracle-data/redstone-push.md)
+* [Mengakses data oracle dengan Redstone (Pull)](../building-on-lisk/using-oracle-data/redstone-pull.md)
+* [Mengakses data oracle dengan Redstone (Push)](../building-on-lisk/using-oracle-data/redstone-push.md)
 
 ## Tellor
 
@@ -57,12 +57,13 @@ Tellor menggunakan mekanisme insentif kripto-ekonomi, dengan memberikan pengharg
 
 Pendekatan ini mendorong jaringan terbuka dan tanpa izin untuk pelaporan data dan validasi data, memastikan bahwa data dapat disediakan oleh siapa saja dan diverifikasi oleh semua orang.
 
-[A list of all the Tellor contracts deployed on Lisk is available on their documentation](https://docs.tellor.io/tellor/the-basics/contracts-reference#lisk)
+[Daftar semua kontrak Tellor yang digunakan di Lisk tersedia di dokumentasi mereka](https://docs.tellor.io/tellor/the-basics/contracts-reference#lisk)
 
 #### Jaringan yang Didukung
 
-- Lisk  
-- Lisk Sepolia
+* Lisk  
+* Lisk Sepolia
 
 ### Panduan
+
 - [Mengakses data oracle dengan Tellor](../building-on-lisk/using-oracle-data/tellor.md)
