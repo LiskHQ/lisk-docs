@@ -262,18 +262,21 @@ The following testnets are available for testing smart contracts and Web3 apps o
 To get free testnet ETH and/or LSK, check out our [available faucets](/lisk-tools/faucets.md).
 :::
 
-##### Virtual testnets
-[Tenderly](https://tenderly.co/) recently introduced the possibility to spin up [Virtual Testnets](https://blog.tenderly.co/how-virtual-testnets-replace-public-testnets/).
+##### Virtual TestNets
+[Tenderly](https://tenderly.co/?mtm_campaign=ext-docs&mtm_kwd=lisk) recently introduced the possibility to spin up [Virtual Testnets](https://blog.tenderly.co/how-virtual-testnets-replace-public-testnets/?mtm_campaign=ext-docs&mtm_kwd=lisk).
 Virtual Testnets are a new way to test your Web3 apps, bringing the onchain data of a mainnet and the flexibility of a local environment together.
 
-Some interesting features of Virtual Testnets are:
+Some interesting ways to use Virtual Testnets are:
 
-- **Build your dapps with real, up-to-date mainnet data** and test its actual performance under realistic conditions. 
+- **Build your dapps with real, up-to-date mainnet data** and test its actual behavior with realistic data access. 
 - **Get an unlimited faucet** and stop begging for test ETH.
-Mint both native and ERC-20 tokens in any amount you need, impersonate accounts, and test complex scenarios uninterruptedly.
+- Mint both native and ERC-20 tokens in any amount you need, impersonate accounts, and test complex scenarios uninterruptedly.
 - **Fully customize your development infrastructure** to fit your unique workflows.
-Virtual Testnets are easy to set up and configure, giving you full control and flexibility over your environments.
+- Use Virtual TestNets as [CI/CD infrastructure](https://docs.tenderly.co/virtual-testnets/ci-cd/github-actions-foundry?mtm_campaign=ext-docs&mtm_kwd=lisk).
+
+Virtual Testnets are easy to provision and configure, giving you full control and flexibility over your environments.
 You can even manipulate the state of your forked chains with custom values, custom chain IDs, and more, making sure they fit your unique requirements.
+
 
 #### E2E testing
 End-to-end (E2E) testing is a type of software testing that tests the complete flow of an application from start to finish.
@@ -292,15 +295,34 @@ Some examples of performance testing tools are:
 - [k6](https://k6.io/)
 - [Artillery](https://www.artillery.io/)
 
-{/* #### Automated Testing and Continuous Integration (CI) */}
+### Continuous Integration and Continuous Deployment (CI/CD)
+CI/CD is a set of practices that automate the process of integrating code changes into a shared repository and deploying them to production.
 
-#### Monitoring
+#### CI/CD setup with Tenderly
+Use [Virtual TestNets](https://docs.tenderly.co/virtual-testnets?mtm_campaign=ext-docs&mtm_kwd=lisk) in CI/CD pipelines to deploy, test, and stage smart contracts in mainnet-like development environments, eliminating the need for local setups. 
+Learn how to use [Tenderly Github action plugin](https://docs.tenderly.co/virtual-testnets/ci-cd/github-actions-foundry?mtm_campaign=ext-docs&mtm_kwd=lisk) to automate your CI/CD pipeline. The plugin will provision a Virtual TestNet for each pull request, allowing you to test your smart contracts in a realistic environment.
+Moreover, you can **stage smart contracts** (continuous deployment), enabling your team to keep building with latest versions of smart contracts.
+
+
+### Monitoring
 Monitoring is important to ensure that your Web3 app is running smoothly and to detect and fix issues before they affect your users.
 
 Some popular monitoring tools are:
 
 - [Prometheus](https://prometheus.io/) combined with [Grafana](https://grafana.com/)
 - [Elastic Stack (ELK)](https://www.elastic.co/elastic-stack)
+
+#### Tenderly Alerts
+* Configure an [alert](https://docs.tenderly.co/alerts/intro-to-alerts?mtm_campaign=ext-docs&mtm_kwd=lisk) to get notifications on transactions and contract events.
+* Use [Alerts API](https://docs.tenderly.co/alerts/alerts-api?mtm_campaign=ext-docs&mtm_kwd=lisk) to build granular triggering rules and specific monitoring criteria.
+
+#### Tenderly Web3 actions
+Use [Web3 Actions](https://docs.tenderly.co/web3-actions/intro-to-web3-actions?mtm_campaign=ext-docs&mtm_kwd=lisk) to automate predefined responses, improving security and user experience.
+
+#### Tenderly developer explorer
+Tenderly's [Developer Explorer](https://docs.tenderly.co/developer-explorer?mtm_campaign=ext-docs&mtm_kwd=lisk) is a development toolbox designed to help developers effectively manage, debug, and monitor their Lisk projects. 
+Use the Developer Explorer to debug and simulate contracts with the [integrated Debugger](https://docs.tenderly.co/debugger?mtm_campaign=ext-docs&mtm_kwd=lisk), 
+gaining insights to quickly identify and resolve issues.
 
 ### Web2 vs Web3 app development
 #### Languages
