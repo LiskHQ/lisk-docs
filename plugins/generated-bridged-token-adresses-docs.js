@@ -1,157 +1,105 @@
-import {visit} from 'unist-util-visit';
-import {XMLHttpRequest} from 'xmlhttprequest';
+import { visit } from 'unist-util-visit';
 
-function Get(url){
-  var Httpreq = new XMLHttpRequest(); // a new request
-  Httpreq.open("GET",url,false);
-  Httpreq.send(null);
-  return Httpreq.responseText;          
+// Asynchronous function to fetch data from a URL
+async function fetchData(url) {
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`HTTP error! Status: ${response.status}`);
+  }
+  return response.json();
 }
 
-var json_obj = JSON.parse(Get("https://raw.githubusercontent.com/ethereum-optimism/ethereum-optimism.github.io/master/optimism.tokenlist.json"));
+// Main logic for generating documentation
+export const generatedDocs = async () => {
+  const url = "https://raw.githubusercontent.com/ethereum-optimism/ethereum-optimism.github.io/master/optimism.tokenlist.json";
+  const jsonData = await fetchData(url);
 
-// Superchain Token List
-const tokens = json_obj.tokens;
+  // Token list from the fetched JSON
+  const tokens = jsonData.tokens;
 
-// Lisk Chain IDs
-let chainIds =  [1135, 4202];
+  // Lisk chain IDs
+  const chainIds = { liskMainnet: 1135, liskSepolia: 4202 };
 
-// Filter all tokens deployed on Lisk chains
-var LiskAdresses = tokens.filter(function(token) {
-  return chainIds.indexOf(token.chainId) != -1
-});
-// Add corresponding L1 address to each token
-LiskAdresses.forEach(token => {
-  var ethAddress;
-  var result;
-  // For Lisk Mainnet, add Ethereum Mainnet address
-  if (token.chainId === chainIds[0]) {
-    result = tokens.find(function(tkn) {
-        return ((tkn.symbol === token.symbol) || (tkn.symbol + ".e" === token.symbol)) && tkn.chainId === 1;
-    });
-    ethAddress = result? result : {address: "Not Found"};
-  // For Lisk Sepolia, add Ethereum Sepolia address
-  } else if (token.chainId === chainIds[1]) {
-    result = tokens.find(function(tkn) {
-      return ((tkn.symbol === token.symbol) || (tkn.symbol + ".e" === token.symbol)) && tkn.chainId === 11155111;
-    });
-    ethAddress = result? result : {address: "Not Found"};
-  } else {
-    console.log("Error: chainId not found");
-    ethAddress = {address: "Not Found"};
-  }
-  token.ethAddress = ethAddress.address;
-});
+  // Filter tokens deployed on Lisk chains
+  const liskTokens = tokens.filter(token => Object.values(chainIds).includes(token.chainId));
 
-export const generatedDocs = () => {
-  return async (root) => {
-   visit(root, (node) => {
-    if (node.type !== 'table') {
-      return 
+  // Add Ethereum addresses to each Lisk token
+  liskTokens.forEach(token => {
+    const targetChainId = token.chainId === chainIds.liskMainnet ? 1 : token.chainId === chainIds.liskSepolia ? 11155111 : null;
+
+    if (targetChainId) {
+      // Find a matching token on the corresponding Ethereum chain
+      const matchingToken = tokens.find(
+        tkn =>
+          (tkn.symbol === token.symbol || tkn.symbol + ".e" === token.symbol) &&
+          tkn.chainId === targetChainId
+      );
+      token.ethAddress = matchingToken ? matchingToken.address : "Not Found";
+    } else {
+      console.error(`Unsupported chainId: ${token.chainId}`);
+      token.ethAddress = "Not Found";
     }
-    // For every table in the docs
-    node.children.forEach(row => {
-      row.children.forEach(cell => {
-        cell.children.forEach(cellChild => {
-          // Find a cell with the value 'Bridged Token Mainnet'
-          if( cellChild.value === 'Bridged Tokens Mainnet') {
-            cellChild.value = 'Bridged Token Name';
-            // Add a new row for each Mainnet token
-            LiskAdresses.forEach(token => {
-              if (token.chainId === chainIds[0]) {
-                node.children.push({
-                  type: 'tableRow',
-                  children: [
-                    {
-                      type: 'tableCell',
-                      children: [
-                        {
-                          type: 'text',
-                          value: token.name
-                        }]
-                    },
-                    {
-                      type: 'tableCell',
-                      children: [
-                        {
-                          type: 'text',
-                          value: token.symbol
-                        }]
-                    },
-                    {
-                      type: 'tableCell',
-                      children: [
-                        {
-                          type: 'link',
-                          url: "https://etherscan.io/address/" + token.ethAddress,
-                          children: [{type: 'text', value: token.ethAddress }]
-                        }
-                      ]
-                    },
-                    {
-                      type: 'tableCell',
-                      children: [
-                        {
-                          type: 'link',
-                          url: "https://blockscout.lisk.com/address/" + token.address,
-                          children: [{type: 'text', value: token.address }]
-                        }
-                      ]
-                    }]
-                  });
-                }
-            });
-          // Find a cell with the value 'Bridged Token Sepolia'
-          } else if (cellChild.value === 'Bridged Tokens Sepolia') {
-            cellChild.value = 'Bridged Token Name';
-            // Add a new row for each Sepolia token
-            LiskAdresses.forEach(token => {
-              if (token.chainId === chainIds[1]) {
-                node.children.push({
-                  type: 'tableRow',
-                  children: [
-                    {
-                      type: 'tableCell',
-                      children: [
-                        {
-                          type: 'text',
-                          value: token.name
-                        }]
-                    },
-                    {
-                      type: 'tableCell',
-                      children: [
-                        {
-                          type: 'text',
-                          value: token.symbol
-                        }]
-                    },
-                    {
-                      type: 'tableCell',
-                      children: [
-                        {
-                          type: 'link',
-                          url: "https://sepolia.etherscan.io/address/" + token.ethAddress,
-                          children: [{type: 'text', value: token.ethAddress }]
-                        }
-                      ]
-                    },
-                    {
-                      type: 'tableCell',
-                      children: [
-                        {
-                          type: 'link',
-                          url: "https://sepolia-blockscout.lisk.com/address/" + token.address,
-                          children: [{type: 'text', value: token.address }]
-                        }
-                      ]
-                    }]
-                  });
-                }
-            });
-          }
+  });
+
+  // Generate documentation for tokens
+  return (root) => {
+    visit(root, "table", (node) => {
+      node.children.forEach(row => {
+        row.children.forEach(cell => {
+          cell.children.forEach(cellChild => {
+            // Check for specific table cell values
+            if (cellChild.value === "Bridged Token Mainnet" || cellChild.value === "Bridged Token Sepolia") {
+              const isMainnet = cellChild.value === "Bridged Token Mainnet";
+              cellChild.value = "Bridged Token Name";
+
+              // Select relevant tokens based on the chain
+              const relevantTokens = liskTokens.filter(token => 
+                token.chainId === (isMainnet ? chainIds.liskMainnet : chainIds.liskSepolia)
+              );
+
+              // Add rows for each relevant token
+              relevantTokens.forEach(token => {
+                node.children.push(createTableRow(token, isMainnet));
+              });
+            }
+          });
         });
       });
     });
-  });
-}};
+  };
+};
+
+// Function to create a new table row for a token
+function createTableRow(token, isMainnet) {
+  // Define explorers for Ethereum and Lisk networks
+  const ethExplorer = isMainnet ? "etherscan.io" : "sepolia.etherscan.io";
+  const liskExplorer = isMainnet ? "blockscout.lisk.com" : "sepolia-blockscout.lisk.com";
+
+  return {
+    type: "tableRow",
+    children: [
+      { type: "tableCell", children: [{ type: "text", value: token.name }] },
+      { type: "tableCell", children: [{ type: "text", value: token.symbol }] },
+      {
+        type: "tableCell",
+        children: [
+          {
+            type: "link",
+            url: `https://${ethExplorer}/address/${token.ethAddress}`,
+            children: [{ type: "text", value: token.ethAddress }]
+          }
+        ]
+      },
+      {
+        type: "tableCell",
+        children: [
+          {
+            type: "link",
+            url: `https://${liskExplorer}/address/${token.address}`,
+            children: [{ type: "text", value: token.address }]
+          }
+        ]
+      }
+    ]
+  };
+}
