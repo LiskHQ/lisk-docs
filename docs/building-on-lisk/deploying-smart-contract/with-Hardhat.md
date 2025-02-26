@@ -207,6 +207,49 @@ contract NFT is ERC721 {
 }
 ```
 
+## Testing the contract
+To test our contract, we are going to use Hardhat Network, a local Ethereum network designed for development.
+It comes built-in with Hardhat, and it's used as the default network.
+You don't need to setup anything to use it.
+
+In our tests we're going to use [ethers.js](https://docs.ethers.org/v6/) to interact with the contract we built in the previous section, and we'll use [Mocha](https://mochajs.org/) as our test runner.
+
+Create a new directory called `test` inside our project root directory and create a new file in there called `NFT.js`.
+
+Let's start with the code below.
+We'll explain it next, but for now paste this into `NFT.js`:
+
+```js title="test/NFT.js"
+const { expect } = require("chai");
+
+describe("NFT contract", function () {
+  it("Deployment should assign the total supply of tokens to the owner", async function () {
+    const [owner] = await ethers.getSigners();
+
+    const hardhatToken = await ethers.deployContract("Token");
+
+    const ownerBalance = await hardhatToken.balanceOf(owner.address);
+    expect(await hardhatToken.totalSupply()).to.equal(ownerBalance);
+  });
+});
+```
+
+In your terminal run `npx hardhat test`. 
+
+You should see the following output:
+
+```sh
+$ npx hardhat test
+
+  NFT contract
+    ✓ Deployment should assign the total supply of tokens to the owner (654ms)
+
+
+  1 passing (663ms)
+```
+
+
+
 ## Compiling the smart contract
 To compile the contract using Hardhat, simply run:
 
