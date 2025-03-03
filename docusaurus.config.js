@@ -37,14 +37,6 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
-
-  scripts: [
-    {
-      src: process.env.LISK_DOC_URL ?? '/' + 'js/matomo.js',
-      async: true,
-    },
-  ],
-
   presets: [
     [
       'classic',
@@ -71,6 +63,9 @@ const config = {
           customCss: [
             './src/css/custom.css',
           ]
+        },
+        gtag: {
+          trackingID: process.env.LISK_DOC_GA_ID,
         },
       }),
     ],
