@@ -25,7 +25,7 @@ Ringkasan berbagai layanan yang tersedia untuk membangun di Lisk.
 
 ### Safe
 [Safe](https://docs.safe.global) adalah pemimpin abstraksi akun di Ethereum dan EVM dengan infrastruktur dan platform wallet pintar yang paling aman.  
-Safe membawa kepemilikan digital akun kepada semua orang dengan membangun standar kontrak universal dan terbuka untuk penyimpanan aset digital, data, dan identitas.  
+Safe membawa kepemilikan digital akun kepada semua orang dengan membangun standar contract universal dan terbuka untuk penyimpanan aset digital, data, dan identitas.  
 Untuk membuat akun Safe dengan Lisk, sambungkan wallet Anda ke jaringan [Lisk](https://safe.optimism.io/welcome?chain=lisk) atau [Lisk Sepolia](https://safe.optimism.io/welcome?chain=lisksep) melalui portal Superchain-Safe.
 
 Gelato deploy sebuah contoh [aplikasi react](https://gelato-raas-aa.web.app/) sederhana dengan integrasi safe-web3auth.  

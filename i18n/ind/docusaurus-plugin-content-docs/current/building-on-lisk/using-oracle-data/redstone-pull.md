@@ -1,63 +1,64 @@
 ---
-title: ...with RedStone (Pull)
+title: ...menggunakan RedStone (Pull)
 slug: /building-on-lisk/using-oracle-data/redstone-pull
-description: A guide on using RedStone Pull to access real-world data such as asset prices, directly from your smart contracts on the Lisk blockchain.
+description: Panduan menggunakan RedStone Pull untuk mengakses data dunia nyata, seperti harga aset, langsung dari smart contract Anda di blockchain Lisk.
 keywords: [
     Oracle
     Oracles,
     RedStone,
-    price feeds,
-    data feeds,
+    feeds harga,
+    feeds data,
     smart contract,
     Lisk blockchain,
-    Lisk network,
+    jaringan Lisk,
     Lisk testnet,
-    Lisk test network,
-    app development,
-    dapp development,
-    build a dapp on Lisk,
-    build on Lisk,
+    jaringan uji Lisk,
+    pengembangan app,
+    pengembangan dapp,
+    membangun dapp di Lisk,
+    membangun di Lisk,
     RedStone Pull,
   ]
 ---
 
-# Accessing real-world data using the RedStone Oracle (Pull)
+# Mengakses data dunia nyata menggunakan RedStone Oracle (Pull)
 
-This page will explain how you can access oracle data using [RedStone Pull](https://docs.redstone.finance/docs/get-started/models/redstone-pull/).
+Halaman ini akan menjelaskan cara Anda dapat mengakses data oracle menggunakan [RedStone Pull](https://docs.redstone.finance/docs/get-started/models/redstone-pull/).
 
-RedStone is a data ecosystem that delivers frequently updated, reliable, and diverse data for your dApp and smart contracts deployed on Lisk.
+RedStone adalah ekosistem data yang menyediakan data yang sering diperbarui, dapat diandalkan, dan beragam untuk dApp dan smart contract Anda yang di-deploy di Lisk.
 
-## How to pull oracle data from RedStone
+## Cara Mengambil Data Oracle dari RedStone
 
-To create a smart contract that directly fetches the latest data from the RedStone oracle, follow this guide.
+Untuk membuat smart contract yang secara langsung mengambil data terbaru dari RedStone oracle, ikuti panduan ini.
 
-This guide uses the [RedStone Pull model](https://docs.redstone.finance/docs/get-started/models/redstone-pull) to fetch the data.
+Panduan ini menggunakan model [RedStone Pull](https://docs.redstone.finance/docs/get-started/models/redstone-pull) untuk mengambil data.
 
-For an overview of the different modules that RedStone offers to receive oracle data, go to [Oracles > RedStone](../../lisk-tools/oracles#redstone).
+Untuk gambaran umum mengenai berbagai modul yang ditawarkan RedStone untuk menerima data oracle, kunjungi [Oracles > RedStone](/lisk-tools/oracles#redstone).
 
-[Hardhat](https://hardhat.org/) is used in this guide to create the smart contract.
-In case you want to use Foundry, check out the [RedStone docs](https://docs.redstone.finance/docs/get-started/models/redstone-pull#foundry) for instructions.
+Panduan ini menggunakan [Hardhat](https://hardhat.org/) untuk membuat smart contract.
+Jika Anda ingin menggunakan Foundry, silakan cek [dokumentasi RedStone](https://docs.redstone.finance/docs/get-started/models/redstone-pull#foundry) untuk instruksi.
 
-### Dependencies
+### Dependensi
 
 - ethers ^5.7.2
 - hardhat ^2.14.0
 
-### Install the evm connector
-Install the [@redstone-finance/evm-connector](https://www.npmjs.com/package/@redstone-finance/evm-connector) package.
+### Instalasi EVM Connector
+
+Instal paket [@redstone-finance/evm-connector](https://www.npmjs.com/package/@redstone-finance/evm-connector).
 
 ```sh
 npm install @redstone-finance/evm-connector
 ```
 
-### Import the evm connector
+### Mengimpor evm connector
 
 ```solidity
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.9;
 
 /**
-* Imports the EVM connector
+* Mengimpor EVM connector
 */
 import "@redstone-finance/evm-connector/contracts/data-services/RapidDemoConsumerBase.sol";
 
@@ -67,20 +68,21 @@ contract YourContract is RapidDemoConsumerBase {
 
 }
 ```
-### Get oracle data
 
-Get the oracle data using the functions provided by the EVM connector.
+### Mendapatkan Data Oracle
 
-#### Get a single value
+Dapatkan data oracle menggunakan fungsi-fungsi yang disediakan oleh EVM connector.
 
-To get a single price feed, use the function `getOracleNumericValueFromTxMsg()` and provide the data feed ID as a parameter.
+#### Mendapatkan Satu Nilai
+
+Untuk mendapatkan satu data price feed, gunakan fungsi `getOracleNumericValueFromTxMsg()` dan berikan ID data feed sebagai parameter.
 
 ```solidity
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.9;
 
 /**
-* Imports the EVM connector
+* Mengimpor EVM connector
 */
 import "@redstone-finance/evm-connector/contracts/data-services/RapidDemoConsumerBase.sol";
 
@@ -89,7 +91,7 @@ contract YourContract is RapidDemoConsumerBase {
     // ...
 
     /**
-    * Returns the latest price of ETH
+    * Mendapatkan harga terbaru dari ETH
     */
     function getLatestEthPrice() public view returns (uint256) {
         bytes32 dataFeedId = bytes32("ETH");
@@ -98,13 +100,13 @@ contract YourContract is RapidDemoConsumerBase {
 }
 ```
 
-#### Get multiple values
+#### Mendapatkan Beberapa Nilai
 
-To get data from multiple price feeds, use the function `getOracleNumericValuesFromTxMsg()` and provide the data feed ID array as a parameter.
+Untuk mendapatkan data dari beberapa price feed, gunakan fungsi `getOracleNumericValuesFromTxMsg()` dan berikan array ID data feed sebagai parameter.
 
 ```solidity
 /**
-* Returns the latest prices of ETH and BTC
+* Mendapatkan harga terbaru dari ETH dan BTC
 */
 function getLatestEthBtcPrices() public view returns (uint256[] memory) {
     bytes32[] memory dataFeedIds = new bytes32[](2);
@@ -115,9 +117,9 @@ function getLatestEthBtcPrices() public view returns (uint256[] memory) {
 }
 ```
 
-### Testing 
+### Testing
 
-In order to test the EVM connector related functions in your contract, it is necessary to wrap the contract using the `WrapperBuilder` provided by the `@redstone-finance/evm-connector` package.
+Untuk mengetes fungsi-fungsi yang terkait dengan EVM connector dalam contract Anda, maka Anda perlu me-wrap contract menggunakan `WrapperBuilder` yang disediakan oleh paket `@redstone-finance/evm-connector`.
 
 ```typescript title="test/YourContract.ts"
 import { expect } from "chai";
@@ -125,39 +127,39 @@ import { ethers } from "hardhat";
 import { WrapperBuilder } from "@redstone-finance/evm-connector";
 
 describe("YourContract", function () {
-    describe("RedStone", function () {
-        it("Get ETH price securely", async function () {
-        const YourContract = await ethers.getContractFactory("YourContract");
-        const contract = await YourContract.deploy();
-        const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
-            dataFeeds: ["ETH"],
-        });
+  describe("RedStone", function () {
+    it("Get ETH price securely", async function () {
+      const YourContract = await ethers.getContractFactory("YourContract");
+      const contract = await YourContract.deploy();
+      const wrappedContract = WrapperBuilder.wrap(contract).usingDataService({
+        dataFeeds: ["ETH"],
+      });
 
-        // Interact with the contract (getting oracle value securely)
-        const ethPriceFromContract = await wrappedContract.getLatestEthPrice();
-        console.log("Latest ETH price:");
-        console.log({ ethPriceFromContract });
-        });
+      // Berinteraksi dengan contract (mengambil nilai oracle secara aman)
+      const ethPriceFromContract = await wrappedContract.getLatestEthPrice();
+      console.log("Latest ETH price:");
+      console.log({ ethPriceFromContract });
     });
+  });
 });
 ```
 
-Now run the test:
+Sekarang jalankan tesnya:
 
 ```bash
 npx hardhat test
 ```
 
-This should output the latest ETH price in the console:
+Ini akan menampilkan harga ETH terbaru di konsol:
 
-``` title="Output"
+```title="Output"
 Latest ETH price:
 { ethPriceFromContract: BigNumber { value: "250255087192" } }
 ```
 
-## Deploying on Lisk
+## Deploy smart contract di Lisk
 
-To deploy the smart contract on Lisk Sepolia or Lisk Mainnet, follow the guides 
+Untuk deploy smart contract di Lisk Sepolia atau Lisk Mainnet, ikuti panduan berikut:
 
-- [Deploying a smart contract with Hardhat](../deploying-smart-contract/with-Hardhat), or
-- [Deploying a smart contract with Foundry](../deploying-smart-contract/with-Foundry)
+- [Deploy smart contract dengan Hardhat](../deploying-smart-contract/with-Hardhat), atau
+- [Deploy smart contract dengan Foundry](../deploying-smart-contract/with-Foundry)

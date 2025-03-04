@@ -1,37 +1,36 @@
 ---
-title: ...with ethers.js
+title: ...menggunakan ethers.js
 slug: /building-on-lisk/interacting-with-the-blockchain/ethers
-description: Documentation for using ethers.js, a JavaScript library for EVM-compatible blockchain interactions. This page covers installation, setup, connecting to the Lisk network, reading and writing blockchain data, and interacting with smart contracts.
+description: Dokumentasi untuk menggunakan ethers.js, sebuah library JavaScript untuk interaksi dengan blockchain yang kompatibel dengan EVM. Halaman ini mencakup instalasi, pengaturan, koneksi ke jaringan Lisk, membaca dan menulis data blockchain, serta berinteraksi dengan smart contract.
 keywords:
   [
     ethers.js,
-    JavaScript library,
-    Lisk network,
+    library JavaScript,
+    jaringan Lisk,
     Lisk mainnet,
     Lisk testnet,
-    smart contracts,
+    smart contract,
     EVM-compatible,
     blockchain,
     JsonRpcProvider,
     Signer,
     ABI,
-    interacting with smart contract,
+    berinteraksi dengan smart contract,
   ]
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Interacting with the blockchain with ethers.js
+# Berinteraksi dengan blockchain menggunakan ethers.js
 
-[ethers.js](https://docs.ethers.org/) is a JavaScript library that allows developers to interact with EVM-compatible blockchain networks.
+[ethers.js](https://docs.ethers.org/) adalah sebuah library JavaScript yang memungkinkan developer untuk berinteraksi dengan jaringan blockchain yang kompatibel dengan EVM.
 
-You can use ethers.js to interact with smart contracts deployed on the Lisk network.
+Anda dapat menggunakan ethers.js untuk berinteraksi dengan smart contract yang telah di-deploy di jaringan Lisk.
 
+## Instalasi
 
-## Install
-
-To install ethers.js run the following command:
+Untuk menginstal ethers.js, jalankan perintah berikut:
 
 ```bash
 npm install --save ethers
@@ -39,17 +38,17 @@ npm install --save ethers
 
 ## Setup
 
-Before you can start using ethers.js, you need to import it into your project.
+Sebelum Anda dapat mulai menggunakan ethers.js, Anda perlu mengimpornya ke dalam proyek Anda.
 
-Add the following line of code to the top of your file to import ethers.js:
+Tambahkan baris kode berikut di bagian atas file Anda untuk mengimpor ethers.js:
 
 ```javascript
 const ethers = require('ethers');
 ```
 
-## Connecting to Lisk
+## Hubungkan ke Lisk
 
-You can connect to Lisk by instantiating a new ethers.js `JsonRpcProvider` object with an RPC URL of the Lisk network:
+Anda dapat terhubung ke Lisk dengan menginisialisasi objek `JsonRpcProvider` baru dari ethers.js menggunakan URL RPC jaringan Lisk:
 
 <Tabs>
   <TabItem value="mainnet" label="Lisk" >
@@ -59,6 +58,7 @@ You can connect to Lisk by instantiating a new ethers.js `JsonRpcProvider` objec
     const url = 'https://rpc.api.lisk.com';
     const provider = new ethers.JsonRpcProvider(url);
     ```
+
   </TabItem>
   <TabItem value="testnet" label="Lisk Sepolia" default>
     ```javascript
@@ -67,18 +67,19 @@ You can connect to Lisk by instantiating a new ethers.js `JsonRpcProvider` objec
     const url = 'https://rpc.sepolia-api.lisk.com';
     const provider = new ethers.JsonRpcProvider(url);
     ```
+
   </TabItem>
 </Tabs>
 
 :::note
-A **Provider** (in ethers.js) is a class that provides an abstraction for a connection to the Ethereum Network. It provides read-only access to the Blockchain and its status.
+**Provider** (dalam ethers.js) adalah sebuah kelas yang menyediakan abstraksi untuk koneksi ke Jaringan Ethereum. Provider memberikan akses read-only ke Blockchain dan statusnya.
 :::
 
-## Reading data from the blockchain
+## Membaca data dari blockchain
 
-Once you have created a provider, you can use it to read data from the Lisk network.
+Setelah Anda membuat provider, Anda dapat menggunakannya untuk membaca data dari jaringan Lisk.
 
-For example, you can use the `getBlockNumber` method to get the latest block:
+Sebagai contoh, Anda dapat menggunakan metode `getBlockNumber` untuk mendapatkan block terbaru:
 
 ```javascript
 async function getLatestBlock() {
@@ -90,14 +91,14 @@ getLatestBlock();
 ```
 
 <details>
-<summary>Complete code example</summary>
+<summary>Contoh kode lengkap:</summary>
 ```javascript
 const ethers = require('ethers');
 
-// For Lisk Sepolia network
+// Untuk jaringan Lisk Sepolia
 const url = 'https://rpc.sepolia-api.lisk.com';
 
-// For Lisk network
+// Untuk jaringan Lisk
 // const url = 'https://rpc.api.lisk.com';
 
 const provider = new ethers.JsonRpcProvider(url);
@@ -108,24 +109,25 @@ async function getLatestBlock() {
 }
 
 getLatestBlock();
+
 ```
 </details>
 
-## Writing data to the blockchain
+## Menulis data ke blockchain
 
-In order to write data to the Lisk network, you need to create a `Signer`.
+Untuk menulis data ke jaringan Lisk, Anda perlu membuat sebuah `Signer`.
 
 :::note
-A **Signer** is a class that (usually) in some way directly or indirectly has access to a private key, which can sign messages and transactions to authorize the network to charge your account ether to perform operations.
+**Signer** adalah sebuah kelas yang (biasanya) secara langsung atau tidak langsung memiliki akses ke private key, yang dapat menandatangani pesan dan transaksi untuk mengizinkan jaringan membayar ether dari akun Anda untuk melakukan operasi.
 :::
 
-You can create a `Signer` by instantiating a new ethers.js `Wallet` object, providing it with a private key and `Provider`.
+Anda dapat membuat sebuah `Signer` dengan menginisialisasi objek `Wallet` baru dari ethers.js, serta memberikan private key dan `Provider` kepada objek tersebut.
 
 ```javascript
 const privateKey = 'PRIVATE_KEY';
 const signer = new ethers.Wallet(privateKey, provider);
 const receiver = '0x5e1A92F84cA1CE280B3Cb29d79C3368f45b41EBB';
-// Send 0.01 ether to a given address.
+// Kirim 0,01 ether ke alamat yang diberikan.
 async function sendTx(to) {
     const tx =  await signer.sendTransaction({
         to: to,
@@ -139,28 +141,28 @@ async function sendTx(to) {
 ```
 
 :::info
-`PRIVATE_KEY` is the private key of the account that is to be used when creating the `signer` object.
+`PRIVATE_KEY` adalah private key dari akun yang akan digunakan saat membuat objek `signer`.
 :::
 
-The receiving account's balance will increment by `0.01` ETH once the transaction execution is successful.
+Saldo akun penerima akan bertambah sebanyak `0,01` ETH setelah eksekusi transaksi berhasil.
 
 <details>
-<summary>Complete code example</summary>
+<summary>Contoh kode lengkap:</summary>
 ```javascript
 const ethers = require('ethers');
 
-// For Lisk Sepolia network
+// Untuk jaringan Lisk Sepolia
 const url = 'https://rpc.sepolia-api.lisk.com';
 
-// For Lisk network
+// Untuk jaringan Lisk
 // const url = 'https://rpc.api.lisk.com';
 
 const provider = new ethers.JsonRpcProvider(url);
-// Replace PRIVATE_KEY with the private key of your account.
+// Gantilah PRIVATE_KEY dengan private key dari akun Anda.
 const privateKey = 'PRIVATE_KEY';
 const signer = new ethers.Wallet(privateKey, provider);
 const receiver = '0x5e1A92F84cA1CE280B3Cb29d79C3368f45b41EBB';
-// Send 0.01 ether to a given address.
+// Kirim 0,01 ether ke alamat yang diberikan.
 async function sendTx(to) {
     const tx =  await signer.sendTransaction({
         to: to,
@@ -171,26 +173,27 @@ async function sendTx(to) {
 }
 
 sendTx(receiver);
+
 ```
 </details>
 
-## Interacting with smart contracts
+## Berinteraksi dengan smart contract
 
-You can use ethers.js to interact with a smart contract on Lisk by instantiating a `Contract` object using the ABI and address of a deployed contract:
+Anda dapat menggunakan ethers.js untuk berinteraksi dengan smart contract di Lisk dengan menginisialisasi objek `Contract` menggunakan ABI dan alamat dari contract yang telah di-deploy:
 
 :::tip
-The ABI of a contract can be found on the respective contract page in [BlockScout](https://sepolia-blockscout.lisk.com/).
+ABI dari sebuah contract dapat ditemukan di halaman contract terkait di [BlockScout](https://sepolia-blockscout.lisk.com/).
 
-For example, you can use the ABI for the [Hello contract](https://sepolia-blockscout.lisk.com/address/0xb18eb752813c2fbedfdf2be6e5e842a85a3b8539?tab=contact_code). Just scroll down to `Contract ABI` and copy the deployed contract's ABI.
+Sebagai contoh, Anda dapat menggunakan ABI untuk [Contract Hello](https://sepolia-blockscout.lisk.com/address/0xb18eb752813c2fbedfdf2be6e5e842a85a3b8539?tab=contact_code). Cukup scroll ke bagian `Contract ABI` dan salin ABI dari contract yang telah di-deploy.
 :::
 
-```javascript title="Reading from contracts"
-// Replace the contractAddress' value with the desired contract.
+```javascript title="Membaca dari contract"
+// Gantilah nilai `contractAddress` dengan alamat contract yang diinginkan.
 const contractAddress = "CONTRACT_ADDRESS"
 // read-only
 const contract = new ethers.Contract(contractAddress, abi, provider);
 const abi = [
-… // ABI of deployed contract
+… // ABI dari contract yang telah di-deploy.
 ];
 
 async function getHello() {
@@ -202,21 +205,21 @@ getHello();
 ```
 
 :::info
-`CONTRACT_ADDRESS` is the address of the deployed contract.
+`CONTRACT_ADDRESS` adalah alamat dari contract yang telah di-deploy.
 :::
 
 :::note
-A **Contract** (in ethers.js) is an abstraction that represents a connection to a specific contract on the Lisk Network, so that applications can use it like a normal JavaScript object.
+**Contract** (dalam ethers.js) adalah sebuah abstraksi yang mewakili koneksi ke contract tertentu di Jaringan Lisk, sehingga aplikasi dapat menggunakannya seperti objek JavaScript biasa.
 :::
 
-For reading and writing contracts, provide a `Signer` object instead of a `Provider` object:
+Untuk membaca dan menulis contract, gunakan objek `Signer` untuk menggantikan objek `Provider`:
 
-```javascript title="Writing to contracts"
-// read & write 
+```javascript title="Menulis ke contract"
+// read & write
 const contract = new ethers.Contract(contractAddress, abi, signer);
 ```
 
-Once you have created a `Contract` object, you can use it to call desired methods on the smart contract:
+Setelah Anda membuat objek `Contract`, Anda dapat menggunakannya untuk memanggil metode yang diinginkan pada smart contract:
 
 ```javascript
 async function createHello(message) {
@@ -228,18 +231,18 @@ async function createHello(message) {
 ```
 
 :::tip
-For an overview of existing public functions for the contract, please check the [Read Contract](https://sepolia-blockscout.lisk.com/address/0xb18eb752813c2fbedfdf2be6e5e842a85a3b8539?tab=read_contract) and [Write Contract](https://sepolia-blockscout.lisk.com/address/0xb18eb752813c2fbedfdf2be6e5e842a85a3b8539?tab=write_contract) tabs for the specific contract.
+Untuk gambaran umum tentang fungsi publik yang ada pada contract, silakan cek tab [Read Contract](https://sepolia-blockscout.lisk.com/address/0xb18eb752813c2fbedfdf2be6e5e842a85a3b8539?tab=read_contract) dan [Write Contract](https://sepolia-blockscout.lisk.com/address/0xb18eb752813c2fbedfdf2be6e5e842a85a3b8539?tab=write_contract) untuk contract spesifik tersebut.
 :::
 
 <details>
-<summary>Complete code example</summary>
+<summary>Contoh kode lengkap:</summary>
 ```javascript
 const ethers = require('ethers');
 
-// For Lisk Sepolia network
+// Untuk jaringan Lisk Sepolia
 const url = 'https://rpc.sepolia-api.lisk.com';
 
-// For Lisk network
+// Untuk jaringan Lisk
 // const url = 'https://rpc.api.lisk.com';
 
 const provider = new ethers.JsonRpcProvider(url);
