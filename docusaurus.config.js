@@ -77,7 +77,7 @@ const config = {
           ]
         },
         gtag: {
-          trackingID: process.env.LISK_DOC_GA_ID,
+          trackingID: 'G-PQC7PTFFLK',
         },
       }),
     ],
