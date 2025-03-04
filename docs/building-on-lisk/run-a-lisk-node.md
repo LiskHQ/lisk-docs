@@ -21,7 +21,9 @@ tags: ['nodes']
 difficulty: beginner
 ---
 
-This tutorial will walk you through setting up your own [Lisk Node].
+This tutorial will walk you through setting up your own [Lisk Node] with Docker.
+
+*For instructions to run a Lisk node from source, please check the instructions detailed in the [Lisk Node](https://github.com/LiskHQ/lisk-node?tab=readme-ov-file#source) GitHub repository.*
 
 ## Objectives
 
@@ -48,24 +50,22 @@ If you're looking to harden your app and avoid rate-limiting for your users, ple
 
 ## System requirements
 
-The following system requirements are recommended to run a Lisk L2 node.
+We recommend you the following hardware configuration to run a Lisk L2 node:
 
-### Memory
+- A modern multi-core CPU with good single-core performance.
+- A minimum of 16 GB RAM (32 GB recommended).
+- A locally attached NVMe SSD drive.
+- Adequate storage capacity to accommodate both the snapshot restoration process (if restoring from snapshot) and chain data, ensuring a minimum of (2 * current_chain_size) + snapshot_size + 20%_buffer.
+- If running with Docker, please install Docker Engine version [27.0.1](https://docs.docker.com/engine/release-notes/27.0/) or higher.
 
-- Modern multi-core CPU with good single-core performance.
-- Machines with a minimum of 16 GB RAM (32 GB recommended).
-
-### Storage
-
-- Machines with a high performance SSD drive with at least 750GB (full node) or 4.5TB (archive node) free.
+*Note: If utilizing Amazon Elastic Block Store (EBS), ensure timing buffered disk reads are fast enough in order to avoid latency issues alongside the rate of new blocks added to Base during the initial synchronization process; `io2 block express` is recommended.*
 
 ## Usage
 
 :::note
-It is currently not possible to run the nodes with the `--op-network` flag until the configs for Lisk have been merged into the [superchain-registry](https://github.com/ethereum-optimism/superchain-registry).
+It is now possible to run the Lisk nodes with the `--op-network` flag on the `op-geth` execution client.
 
-There is currently an [open PR](https://github.com/ethereum-optimism/superchain-registry/pull/234) to add the Lisk Mainnet config.
-The Lisk Sepolia Testnet will be supported soon as well.
+It is still not possible to run the Lisk nodes with the `--chain` flag on the `op-reth` execution client.
 :::
 
 ### Clone the Repository
@@ -84,17 +84,38 @@ cd lisk-node
     If running your own L1 node, it needs to be synced before the Lisk node will be able to fully sync.
 2. Please ensure that the environment file relevant to your network (`.env.sepolia`, or `.env.mainnet`) is set for the `env_file` properties within `docker-compose.yml`.
     By default, it is set to `.env.mainnet`.
-    :::info
-    We currently support running either the `op-geth` or the `op-reth` nodes alongside the `op-node`. By default, we run the `op-geth` node. If you would like to run the `op-reth` node instead, please set the `CLIENT` environment variable to `reth` before starting the node.
+3. We currently support, running either the `op-geth` or the `op-reth` nodes alongside the `op-node`. 
+By default, we run the `op-geth` node. If you would like to run the `op-reth` node instead, please set the `CLIENT` environment variable to `reth` before starting the node.
+    :::note
+    The `op-reth` client can be built in either the `maxperf` (default) or `release` profile.
+    To learn more about them, please check reth's documentation on [Optimizations](https://github.com/paradigmxyz/reth/blob/main/book/installation/source.md#optimizations).
+    Please set the `RETH_BUILD_PROFILE` environment variable accordingly.
+    Unless you are building the `op-reth` client in `release` profile, please ensure that you have a machine with 32 GB RAM.
+    Additionally, if you have the Docker Desktop installed on your system, please make sure to set Memory limit to a minimum of 16 GB.
+    It can be set under `Settings -> Resources -> Resource Allocation -> Memory limit`.
     :::
-3. Run:
 
+4. Run:
+    :::warning[important]
+    To run the node on Lisk Sepolia, first patch the Dockerfile(s) with:
+    ```sh
+    git apply dockerfile-lisk-sepolia.patch
     ```
+    :::
+
+    with `op-geth` execution client:
+
+    ```sh
     docker compose up --build --detach
     ```
 
-4. You should now be able to `curl` your Lisk node:
+    or, with `op-reth` execution client:
+
+    ```sh
+    CLIENT=reth RETH_BUILD_PROFILE=maxperf docker compose up --build --detach
     ```
+5. You should now be able to `curl` your Lisk node:
+    ```sh
     curl -s -d '{"id":0,"jsonrpc":"2.0","method":"eth_getBlockByNumber","params":["latest",false]}' \
       -H "Content-Type: application/json" http://localhost:8545
     ```
@@ -114,5 +135,42 @@ $( curl -s -d '{"id":0,"jsonrpc":"2.0","method":"optimism_syncStatus"}' -H "Cont
 ```
 
 
-[partners]: /lisk-tools/api-providers
+[partners]: /lisk-tools/node-providers
 [lisk node]: https://github.com/LiskHQ/lisk-node
+
+### Snapshots
+
+:::note
+- Snapshots are available for both `op-geth` and `op-reth` clients:
+  - `op-geth` supports both export and datadir snapshots
+  - `op-reth` only supports datadir snapshots
+- All snapshots are from archival nodes
+- Snapshot types:
+  - `export`: small download size, slow to restore from, data is verified during restore (`op-geth` only)
+  - `datadir`: large download size, fast to restore from, no data verification during restore
+:::
+
+To enable auto-snapshot download and application, set the `APPLY_SNAPSHOT` environment variable to `true` when starting the node:
+
+```sh
+APPLY_SNAPSHOT=true docker compose up --build --detach
+```
+To specify the client and snapshot type, set both the `CLIENT` and `SNAPSHOT_TYPE` environment variables:
+
+```sh
+# For op-geth with export snapshot (default)
+APPLY_SNAPSHOT=true CLIENT=geth SNAPSHOT_TYPE=export docker compose up --build --detach
+
+# For op-geth with datadir snapshot
+APPLY_SNAPSHOT=true CLIENT=geth SNAPSHOT_TYPE=datadir docker compose up --build --detach
+
+# For op-reth (only supports datadir)
+APPLY_SNAPSHOT=true CLIENT=reth SNAPSHOT_TYPE=datadir docker compose up --build --detach
+```
+
+You can also download and apply a snapshot from a custom URL by setting the `SNAPSHOT_URL` environment variable.
+Please make sure the snapshot file ends with `*.tar.gz`.
+
+```sh
+APPLY_SNAPSHOT=true SNAPSHOT_URL=<custom-snapshot-url> docker compose up --build --detach
+```

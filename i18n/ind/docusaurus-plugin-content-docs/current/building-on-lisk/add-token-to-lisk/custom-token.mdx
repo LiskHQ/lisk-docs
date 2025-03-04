@@ -1,0 +1,241 @@
+---
+title: Deploy Token Sendiri
+slug: /building-on-lisk/add-token-to-lisk/custom-token
+description: 'Pelajari cara bridge token ERC-20 Anda sendiri ke Lisk menggunakan bridge standar.'
+keywords:
+  [
+    'contract ERC-20',
+    'token kustom',
+    'Lisk Testnet',
+    'Sepolia',
+    'Ethereum',
+    'Lisk Sepolia',
+    'Lisk',
+    'Lisk mainnet',
+    'daftar token Optimism Superchain',
+  ]
+---
+
+# Deploy Token ERC-20 Anda Sendiri ke Lisk
+
+{/* :::info
+**Tutorial ini ditujukan untuk developer yang ingin bridge token ERC-20 baru mereka sendiri ke Lisk Mainnet menggunakan bridge.**
+Jika Anda ingin bridge token yang sudah ada, Anda dapat mengikuti tutorial [Bridge Token ERC-20 dengan Optimism SDK](https://docs.optimism.io/builders/app-developers/tutorials/cross-dom-bridge-erc20).
+::: */}
+
+Dalam tutorial ini, Anda akan belajar cara bridge token ERC-20 kustom dari Ethereum atau Sepolia ke jaringan Lisk atau Lisk Sepolia.
+Dengan menggunakan [Sistem Bridge Standar](https://docs.optimism.io/builders/dapp-developers/bridging/standard-bridge), tutorial ini ditujukan untuk developer yang sudah memiliki token ERC-20 di Ethereum dan ingin membuat representasi token tersebut di Lisk.
+
+Pelajari langkah demi langkah cara membuat token kustom yang sesuai dengan interface [`IOptimismMintableERC20`](https://github.com/ethereum-optimism/optimism/blob/v1.1.4/packages/contracts-bedrock/src/universal/IOptimismMintableERC20.sol) sehingga dapat digunakan dengan Sistem Bridge Standar.
+Token kustom memungkinkan Anda melakukan hal-hal seperti men-trigger logika tambahan setiap kali token dideposit.
+Jika Anda tidak memerlukan fungsionalitas tambahan ini, pertimbangkan untuk mengikuti tutorial [Deploy Token ERC-20 Standar ke Lisk](./standard-token).
+
+## Prasyarat
+
+:::note
+Anda dapat deploy **Token ERC-20 Anda Sendiri** di Lisk Mainnet dengan menggunakan proses yang sama.
+Untuk deploy ke mainnet, pastikan wallet Anda memiliki ETH yang cukup.
+
+Teks berikut mencakup perintah untuk Lisk dan Lisk Sepolia demi kemudahan Anda.
+Untuk informasi lebih lanjut, lihat [jaringan Lisk yang tersedia](/network-info) dan [cara menghubungkan wallet ke jaringan tersebut](/user/connecting-to-a-wallet).
+:::
+
+### Mendapatkan ETH di Sepolia dan Lisk Sepolia
+
+Anda perlu mendapatkan ETH di kedua jaringan, Sepolia dan Lisk Sepolia.
+
+:::info
+Anda dapat menggunakan [ETH Sepolia Faucet](https://sepoliafaucet.com/) untuk mendapatkan ETH di Sepolia.
+Anda dapat menggunakan [Superchain Faucet](https://console.optimism.io/faucet) untuk mendapatkan ETH di Lisk Sepolia.
+:::
+
+### Menambahkan Lisk Sepolia ke Wallet Anda
+
+Tutorial ini menggunakan [Remix](https://remix.ethereum.org) untuk deploy contract.
+Anda perlu menambahkan jaringan Lisk atau Lisk Sepolia ke wallet Anda untuk mengikuti tutorial ini.
+Silakan ikuti panduan [Cara Menghubungkan Lisk ke Wallet](/user/connecting-to-a-wallet) untuk menghubungkan wallet Anda ke jaringan Lisk atau Lisk Sepolia.
+
+### Mendapatkan Alamat Token ERC-20 L1
+
+Anda memerlukan token ERC-20 L1 untuk tutorial ini.
+Jika Anda sudah memiliki token ERC-20 L1 yang di-deploy di Ethereum Mainnet atau Sepolia, Anda dapat melewati langkah ini.
+Untuk Sepolia, Anda dapat menggunakan token uji coba yang terletak di [`0x5589BB8228C07c4e15558875fAf2B859f678d129`](https://sepolia.etherscan.io/address/0x5589BB8228C07c4e15558875fAf2B859f678d129) yang menyertakan fungsi `faucet()` untuk me-mint token.
+
+## Membuat Token ERC-20 L2
+
+Setelah Anda memiliki token ERC-20 L1, Anda dapat membuat token ERC-20 L2 yang sesuai di jaringan Lisk atau Lisk Sepolia.
+Tutorial ini menggunakan [Remix](https://remix.ethereum.org), sehingga Anda dapat dengan mudah deploy token tanpa framework seperti [Hardhat](https://hardhat.org) atau [Foundry](https://getfoundry.sh).
+Anda juga dapat mengikuti proses umum yang sama dalam framework pilihan Anda jika Anda mau.
+
+Dalam bagian ini, Anda akan membuat token ERC-20 yang dapat di-deposit tetapi tidak dapat di-withdraw.
+Ini hanyalah salah satu contoh dari banyak cara untuk menyesuaikan token L2 Anda.
+
+### 1. Buka Remix
+
+Akses [Remix](https://remix.ethereum.org) di browser Anda.
+
+### 2. Buat file baru
+
+Klik tombol 📄 ("Buat file baru") untuk membuat file Solidity kosong.
+Anda dapat memberi nama file ini sesuai keinginan Anda, misalnya `custom-token.sol`.
+
+### 3. Salin contract contoh
+
+Salin contract contoh berikut ke dalam file baru Anda:
+
+<details>
+<summary>custom-token.sol</summary>
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import { ERC20 } from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import { IERC165 } from "@openzeppelin/contracts/utils/introspection/IERC165.sol";
+import { IOptimismMintableERC20 } from "https://github.com/ethereum-optimism/optimism/blob/v1.1.4/packages/contracts-bedrock/src/universal/IOptimismMintableERC20.sol";
+
+contract MyCustomL2Token is IOptimismMintableERC20, ERC20 {
+    /// @notice Alamat versi token yang sesuai pada chain remote.
+    address public immutable REMOTE_TOKEN;
+
+    /// @notice Alamat StandardBridge di jaringan ini.
+    address public immutable BRIDGE;
+
+    /// @notice Di-emit setiap kali token di-mint untuk sebuah akun.
+    /// @param account Alamat akun yang akan menerima token yang di-mint.
+    /// @param amount  Jumlah token yang di-mint.
+    event Mint(address indexed account, uint256 amount);
+
+    /// @notice Di-emit setiap kali token di-burn dari sebuah akun.
+    /// @param account Alamat akun dari mana token di-burn.
+    /// @param amount  Jumlah token yang di-burn.
+    event Burn(address indexed account, uint256 amount);
+
+    /// @notice Sebuah modifier yang hanya mengizinkan bridge untuk memanggil.
+    modifier onlyBridge() {
+        require(msg.sender == BRIDGE, "MyCustomL2Token: only bridge can mint and burn");
+        _;
+    }
+
+    /// @param _bridge      Alamat dari L2 standard bridge.
+    /// @param _remoteToken Alamat token L1 yang sesuai.
+    /// @param _name        Nama ERC20.
+    /// @param _symbol      Simbol ERC20.
+    constructor(
+        address _bridge,
+        address _remoteToken,
+        string memory _name,
+        string memory _symbol
+    )
+        ERC20(_name, _symbol)
+    {
+        REMOTE_TOKEN = _remoteToken;
+        BRIDGE = _bridge;
+    }
+
+    /// @custom:legacy
+    /// @notice Getter legacy untuk REMOTE_TOKEN.
+    function remoteToken() public view returns (address) {
+        return REMOTE_TOKEN;
+    }
+
+    /// @custom:legacy
+    /// @notice Getter legacy untuk BRIDGE.
+    function bridge() public view returns (address) {
+        return BRIDGE;
+    }
+
+    /// @notice Fungsi pengecekan interface ERC165.
+    /// @param _interfaceId ID Interface yang akan diperiksa.
+    /// @return Apakah interface tersebut didukung oleh contract ini.
+    function supportsInterface(bytes4 _interfaceId) external pure virtual returns (bool) {
+        bytes4 iface1 = type(IERC165).interfaceId;
+        // Interface yang sesuai dengan OptimismMintableERC20 terbaru (contract ini).
+        bytes4 iface2 = type(IOptimismMintableERC20).interfaceId;
+        return _interfaceId == iface1 || _interfaceId == iface2;
+    }
+
+    /// @notice Mengizinkan StandardBridge di jaringan ini untuk mint token.
+    /// @param _to     Alamat tujuan untuk mint token.
+    /// @param _amount Jumlah token yang akan di-mint.
+    function mint(
+        address _to,
+        uint256 _amount
+    )
+        external
+        virtual
+        override(IOptimismMintableERC20)
+        onlyBridge
+    {
+        _mint(_to, _amount);
+        emit Mint(_to, _amount);
+    }
+
+    /// @notice Mencegah token untuk ditarik ke L1.
+    function burn(
+        address,
+        uint256
+    )
+        external
+        virtual
+        override(IOptimismMintableERC20)
+        onlyBridge
+    {
+        revert("MyCustomL2Token cannot be withdrawn");
+    }
+}
+```
+</details>
+
+### 4. Tinjau contract contoh
+
+Luangkan waktu untuk meninjau contract contoh.
+Contract ini hampir sama dengan contract standar [`OptimismMintableERC20`](https://github.com/ethereum-optimism/optimism/blob/v1.1.4/packages/contracts-bedrock/src/universal/OptimismMintableERC20.sol), kecuali fungsi `_burn` telah dimodifikasi agar selalu gagal.
+
+Contract untuk token kustom ini mewarisi dari interface [`IOptimismMintableERC20`](https://github.com/ethereum-optimism/optimism/blob/v1.1.4/packages/contracts-bedrock/src/universal/IOptimismMintableERC20.sol) dan contract `ERC20`.
+Konstruktor menerima alamat dari L2 standard bridge, alamat token L1 yang sesuai, nama token ERC20, dan simbol token ERC20.
+Fungsi `mint` memungkinkan bridge me-mint token untuk pengguna.
+Karena bridge perlu mem-burn token ketika pengguna ingin me-withdraw-nya kembali ke L1, ini berarti pengguna tidak akan dapat me-withdraw token dari contract ini, sesuai dengan tujuan contoh ini.
+
+```solidity
+/// @notice Mencegah token untuk ditarik ke L1.
+function burn(
+    address,
+    uint256
+)
+    external
+    virtual
+    override(IOptimismMintableERC20)
+    onlyBridge
+{
+    revert("MyCustomL2Token cannot be withdrawn");
+}
+```
+
+### 5. Mengompilasi Contract
+
+Simpan file untuk secara otomatis mengompilasi contract.
+Jika Anda telah menonaktifkan fitur kompilasi otomatis, Anda perlu mengompilasi contract secara manual dengan mengklik tab "Solidity Compiler" (ikon berbentuk huruf "S") dan menekan tombol biru "Compile".
+
+### 6. Deploy Contract
+
+Buka tab deployment (ikon berbentuk logo Ethereum dengan panah mengarah ke kanan).
+Pastikan bahwa environment Anda diatur ke "Injected Provider", wallet Anda terhubung ke jaringan Lisk atau Lisk Sepolia, dan Remix memiliki akses ke wallet Anda.
+Kemudian, pilih contract `MyCustomL2Token` dari dropdown deployment dan deploy dengan parameter berikut:
+
+```text
+_BRIDGE:      "0x4200000000000000000000000000000000000007"
+_REMOTETOKEN: "<L1 ERC-20 address>"
+_NAME:        "My Custom Lisk L2 Token"
+_SYMBOL:      "MCL2T"
+```
+
+:::tip
+Jika Anda menggunakan token uji coba yang dijelaskan pada langkah [Mendapatkan Alamat Token ERC-20 L1](#mendapatkan-alamat-token-erc-20-l1), gunakan alamat `0x5589BB8228C07c4e15558875fAf2B859f678d129` untuk parameter `_REMOTETOKEN`.
+:::
+
+{/* ## Bridge Beberapa Token
+
+Sekarang setelah Anda memiliki token ERC-20 L2, Anda dapat bridge beberapa token dari L1 ke L2.
+Lihat tutorial [Bridge Token ERC-20 dengan Optimism SDK](https://docs.optimism.io/builders/app-developers/tutorials/cross-dom-bridge-erc20) untuk mempelajari cara bridge token ERC-20 L1 Anda ke Lisk menggunakan Optimism SDK.
+Ingat bahwa langkah withdrawal *tidak akan* berfungsi untuk token yang baru saja Anda buat!
+Hal ini sesuai dengan tujuan yang ingin ditunjukkan oleh tutorial ini. */}
