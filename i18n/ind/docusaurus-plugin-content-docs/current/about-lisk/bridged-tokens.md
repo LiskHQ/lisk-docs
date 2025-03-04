@@ -23,6 +23,5 @@ Jika Anda ingin menambahkan token ke daftar ini, silakan lihat panduan [Bridge T
 
 ## Lisk Sepolia
 
-| Bridged Token di Sepolia | Simbol | Token L1 | Token L2 | Bridges |
-| :----------------------- | :----- | :------- | :------- | :------ |
-
+| Bridged Token di Sepolia | Simbol | Token L1 | Token L2 | 
+| :----------------------- | :----- | :------- | :------- | 
