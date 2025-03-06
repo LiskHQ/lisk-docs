@@ -1,7 +1,7 @@
 ---
 title: ... menggunakan Hardhat
 slug: /building-on-lisk/deploying-smart-contract/with-Hardhat
-description: "Panduan untuk deploy smart contract di jaringan test Lisk menggunakan Hardhat. Termasuk instruksi untuk mengatur environment, mengompilasi, dan deploy smart contract."
+description: "Panduan untuk deploy smart contract di jaringan Lisk menggunakan Hardhat. Termasuk instruksi untuk mengatur environment, mengompilasi, dan deploy smart contract."
 keywords:
   [
     "Hardhat",
@@ -26,7 +26,7 @@ import TabItem from '@theme/TabItem';
 
 # Deploy Smart Contract dengan Hardhat
 
-Di halaman ini, Anda akan mempelajari cara membuat, menggunakan, dan memverifikasi kontrak pintar dengan Hardhat ke testnet **Lisk Sepolia**.
+Di halaman ini, Anda akan mempelajari cara membuat, mendeploy dan memverifikasi smart contract dengan Hardhat ke testnet **Lisk Sepolia**.
 
 ## Prasyarat
 
@@ -52,7 +52,7 @@ Kemudian, gunakan Lisk Bridge yang disebutkan sebelumnya untuk mengirim token da
 
 :::note
 Anda dapat deploy contract di Lisk Mainnet dengan menggunakan proses yang sama.  
-Untuk deploy ke mainnet, pastikan wallet Anda memiliki cukup ETH.
+Untuk deploy ke Mainnet, pastikan wallet Anda memiliki cukup ETH.
 
 Teks berikut mencakup perintah untuk Lisk dan Lisk Sepolia demi kemudahan Anda.  
 Untuk informasi lebih lanjut, lihat [jaringan Lisk yang tersedia](/network-info) dan [cara menghubungkan wallet ke jaringan tersebut](/user/connecting-to-a-wallet).
