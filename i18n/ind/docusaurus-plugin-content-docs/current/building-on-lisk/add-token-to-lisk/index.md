@@ -100,7 +100,7 @@ Sebagai contoh, [PR ini](https://github.com/ethereum-optimism/ethereum-optimism.
 
 Peninjauan secara rutin dilakukan oleh tim Lisk, dan Anda akan menerima balasan dalam waktu 24-72 jam (tergantung apakah PR diajukan pada hari kerja, akhir pekan, atau hari libur).
 
-## Langkah 4 : Menambahkan Token ke Gelato Bridge
+### Langkah 4 : Menambahkan Token ke Gelato Bridge
 
 Untuk menambahkan token Anda ke [Gelato Bridge](https://bridge.lisk.com/), hubungi tim Lisk di [Discord Lisk](https://lisk.chat) dengan detail token tersebut:
 
