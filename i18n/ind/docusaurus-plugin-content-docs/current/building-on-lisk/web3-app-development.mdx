@@ -29,7 +29,7 @@ Mohon tunggu sementara kami menyiapkan versi **bahasa Indonesia** dari dokumen i
 # Pengembangan aplikasi Web3
 
 Di halaman ini, Anda akan belajar tentang apa itu aplikasi Web3, bagaimana perbedaannya dari aplikasi Web 2.0, dan cara memulai pengembangan aplikasi Web3 di Lisk.
-## Apa yang dimaksud dengan aplikasi Web3?
+## What are Web3 applications?
 
 ### Evolusi Web
 
@@ -223,15 +223,15 @@ Pilihan lingkungan pengujian populer untuk smart contract dapat ditemukan di baw
 
 - [Foundry](https://book.getfoundry.sh/): Foundry adalah sebuah rantai alat pengembangan kontrak pintar.
 Foundry menyediakan [kerangka kerja pengujian] yang kuat (https://book.getfoundry.sh/forge/tests) yang memungkinkan pengembang untuk membuat rangkaian pengujian yang komprehensif untuk proyek mereka menggunakan Solidity.
-[Perpustakaan Standar Forge] (https://book.getfoundry.sh/reference/forge-std/) menyediakan seperangkat utilitas untuk menyederhanakan pengujian smart contract.
+[Perpustakaan Standar Forge](https://book.getfoundry.sh/reference/forge-std/) menyediakan seperangkat utilitas untuk menyederhanakan pengujian smart contract.
 Ini juga menyediakan simpul testnet lokal untuk menerapkan dan menguji kontrak pintar, lihat [Anvil](https://book.getfoundry.sh/anvil/).
-- [Hardhat] (https://hardhat.org): Hardhat adalah sebuah lingkungan pengembangan yang memfasilitasi pengembangan smart contract.
-Hardhat dilengkapi dengan [Hardhat Network] (https://hardhat.org/hardhat-network/docs/overview), sebuah node jaringan Ethereum lokal yang didesain untuk pengembangan.
-Hardhat memungkinkan Anda untuk menggunakan kontrak Anda, [menjalankan pengujian Anda] (https://hardhat.org/tutorial/testing-contracts), dan men-debug kode Anda, semuanya dalam batasan mesin lokal Anda.
+- [Hardhat](https://hardhat.org): Hardhat adalah sebuah lingkungan pengembangan yang memfasilitasi pengembangan smart contract.
+Hardhat dilengkapi dengan [Hardhat Network](https://hardhat.org/hardhat-network/docs/overview), sebuah node jaringan Ethereum lokal yang didesain untuk pengembangan.
+Hardhat memungkinkan Anda untuk menggunakan kontrak Anda, [menjalankan pengujian Anda](https://hardhat.org/tutorial/testing-contracts), dan men-debug kode Anda, semuanya dalam batasan mesin lokal Anda.
 Pengujian ditulis dalam JavaScript, menggunakan [ethers](https://ethers.org/).
 - [Remix](https://remix.ethereum.org/): Remix adalah sebuah IDE yang membantu Anda menulis kontrak Solidity langsung dari browser.
-Remix menyediakan fitur-fitur yang kuat untuk menguji dan men-debug smart contract, seperti [Debugger] (https://remix-ide.readthedocs.io/en/latest/debugger.html) atau [Unit Testing Plugin] (https://remix-ide.readthedocs.io/en/latest/unittesting.html).
-- [Waffle] (https://getwaffle.io/): Waffle adalah kerangka kerja lain untuk mengembangkan dan menguji smart contract.
+Remix menyediakan fitur-fitur yang kuat untuk menguji dan men-debug smart contract, seperti [Debugger](https://remix-ide.readthedocs.io/en/latest/debugger.html) atau [Unit Testing Plugin](https://remix-ide.readthedocs.io/en/latest/unittesting.html).
+- [Waffle](https://getwaffle.io/): Waffle adalah kerangka kerja lain untuk mengembangkan dan menguji smart contract.
 Pengujian ditulis dalam JavaScript / Typescript.
 
 ##### Panduan
@@ -243,9 +243,9 @@ Pengujian ditulis dalam JavaScript / Typescript.
 Untuk memastikan keamanan smart contract, sangat penting untuk menganalisis kode untuk mengetahui adanya kerentanan.
 Ada beberapa alat yang tersedia yang membantu pengembang untuk menganalisis smart contract mereka untuk masalah keamanan umum dan kerentanan, misalnya:
 
-- [Slither] (https://github.com/crytic/slither): Slither adalah kerangka kerja analisis statis Solidity yang mendeteksi kerentanan umum dalam smart contract.
-- [Etheno] (https://github.com/crytic/etheno): Etheno adalah sebuah alat yang membantu pengembang untuk menulis smart contract yang aman dengan menyediakan seperangkat aturan yang dapat digunakan untuk memeriksa keamanan smart contract.
-- [Mythril] (https://github.com/Consensys/mythril): Mythril adalah alat analisis keamanan untuk smart contract Ethereum.
+- [Slither](https://github.com/crytic/slither): Slither adalah kerangka kerja analisis statis Solidity yang mendeteksi kerentanan umum dalam smart contract.
+- [Etheno](https://github.com/crytic/etheno): Etheno adalah sebuah alat yang membantu pengembang untuk menulis smart contract yang aman dengan menyediakan seperangkat aturan yang dapat digunakan untuk memeriksa keamanan smart contract.
+- [Mythril](https://github.com/Consensys/mythril): Mythril adalah alat analisis keamanan untuk smart contract Ethereum.
 
 #### Testnets
 Testnet adalah blockchain publik yang digunakan untuk tujuan pengujian.
@@ -256,11 +256,11 @@ Testnet berikut ini tersedia untuk menguji smart contract dan aplikasi Web3 di L
 - [Lisk Sepolia](/about-lisk/network-info.md#lisk-sepolia-testnet)
 
 :::tip
-Untuk mendapatkan testnet ETH dan/atau LSK gratis, lihat [faucet yang tersedia] (/lisk-tools/faucets.md).
+Untuk mendapatkan testnet ETH dan/atau LSK gratis, lihat [faucet yang tersedia] /lisk-tools/faucets.md).
 :::
 
 ##### Testnet virtual
-[Tenderly] (https://tenderly.co/) baru-baru ini memperkenalkan kemungkinan untuk menjalankan [Virtual Testnets] (https://blog.tenderly.co/how-virtual-testnets-replace-public-testnets/).
+[Tenderly](https://tenderly.co/) baru-baru ini memperkenalkan kemungkinan untuk menjalankan [Virtual Testnets](https://blog.tenderly.co/how-virtual-testnets-replace-public-testnets/).
 Virtual Testnets adalah cara baru untuk menguji aplikasi Web3 Anda, membawa data onchain dari mainnet dan fleksibilitas lingkungan lokal bersama-sama.
 
 Beberapa fitur menarik dari Virtual Testnets adalah:
@@ -277,8 +277,8 @@ Pengujian end-to-end (E2E) adalah jenis pengujian perangkat lunak yang menguji a
 Hal ini secara khusus mencakup pengujian frontend aplikasi Anda, yang memastikan bahwa antarmuka pengguna berfungsi seperti yang diharapkan.
 Untuk menangani hal-hal seperti dompet, dan hal-hal khusus Web3 lainnya, Anda mungkin ingin menggunakan alat pengujian Web3 E2E khusus.
 
-[Synpress] (https://synpress.io/) adalah perpustakaan pengujian E2E untuk dapps Web3. 
-Synpress dapat digunakan dengan dua kerangka kerja pengujian E2E terkemuka di luar sana, yaitu, [Playwright] (https://playwright.dev/) dan [Cypress] (https://www.cypress.io/), dengan dukungan untuk semua fitur mereka.
+[Synpress](https://synpress.io/) adalah perpustakaan pengujian E2E untuk dapps Web3. 
+Synpress dapat digunakan dengan dua kerangka kerja pengujian E2E terkemuka di luar sana, yaitu, [Playwright](https://playwright.dev/) dan [Cypress](https://www.cypress.io/), dengan dukungan untuk semua fitur mereka.
 
 #### Pengujian kinerja
 Pengujian performa sangat penting untuk memastikan bahwa aplikasi Web3 Anda dapat menangani beban yang diharapkan dari pengguna dan interaksi mereka.
@@ -296,7 +296,7 @@ Pemantauan penting untuk memastikan bahwa aplikasi Web3 Anda berjalan dengan lan
 
 Beberapa alat pemantauan yang populer adalah:
 
-- [Prometheus] (https://prometheus.io/) yang dikombinasikan dengan [Grafana] (https://grafana.com/)
+- [Prometheus](https://prometheus.io/) yang dikombinasikan dengan [Grafana](https://grafana.com/)
 - [Elastic Stack (ELK)](https://www.elastic.co/elastic-stack)
 
 ### Pengembangan aplikasi Web2 vs Web3
@@ -306,17 +306,17 @@ Semua bahasa yang biasanya digunakan untuk pengembangan aplikasi Web2 juga dapat
 Pada akhirnya, aplikasi Web3 bahkan dapat terlihat dan terasa persis seperti aplikasi Web2 bagi pengguna, karena frontend mereka dibangun dengan teknologi yang sama.
 
 Namun, bagian belakang aplikasi Web3 sangat berbeda, karena berinteraksi dengan blockchain melalui kontrak pintar.
-Kontrak pintar ditulis dalam [Solidity] (https://soliditylang.org/), oleh karena itu pengembang Web3 perlu mengetahui Solidity untuk membangun kontrak pintar yang mereka perlukan untuk aplikasi mereka.
-Untungnya, untuk banyak kasus penggunaan, sudah tersedia smart contract yang telah diaudit (lihat [OpenZeppelin] (https://www.openzeppelin.com/solidity-contracts) atau [thirdweb] (https://thirdweb.com/explore)) yang dapat digunakan, sehingga pengembang tidak perlu menulis semua smart contract dari awal.
+Kontrak pintar ditulis dalam [Solidity](https://soliditylang.org/), oleh karena itu pengembang Web3 perlu mengetahui Solidity untuk membangun kontrak pintar yang mereka perlukan untuk aplikasi mereka.
+Untungnya, untuk banyak kasus penggunaan, sudah tersedia smart contract yang telah diaudit (lihat [OpenZeppelin](https://www.openzeppelin.com/solidity-contracts) atau [thirdweb](https://thirdweb.com/explore)) yang dapat digunakan, sehingga pengembang tidak perlu menulis semua smart contract dari awal.
 
 #### Tumpukan teknologi
 Seperti yang telah disebutkan di atas, pengembangan frontend aplikasi Web2 dan Web3 sangat mirip.
 Secara teoritis, Anda dapat membangun aplikasi Web3 dengan tech stack yang hampir sama dengan aplikasi Web2, seperti Next.js, Vite, dll.
-Satu-satunya hal yang perlu Anda tambahkan adalah cara agar aplikasi Anda dapat berinteraksi dengan blockchain, lihat [Akses data] (#akses-data).
+Satu-satunya hal yang perlu Anda tambahkan adalah cara agar aplikasi Anda dapat berinteraksi dengan blockchain, lihat [Akses data](#akses-data).
 
 Untuk mendukung para pengembang, banyak platform blockchain yang menawarkan SDK dan alat bantu mereka sendiri untuk berinteraksi dengan blockchain mereka, yang dapat membuat pengembangan menjadi lebih mudah dan efisien.
-Ada juga SDK untuk pengembangan aplikasi Web3, seperti [thirdweb] (https://thirdweb.com/) atau [Alchemy] (https://www.alchemy.com/), yang menghilangkan sebagian besar kerumitan pengembangan blockchain dan memberikan pengalaman pengembang yang lancar.
-thirdweb mendukung [Lisk] (https://thirdweb.com/lisk) dan banyak blockchain yang kompatibel dengan EVM lainnya.
+Ada juga SDK untuk pengembangan aplikasi Web3, seperti [thirdweb](https://thirdweb.com/) atau [Alchemy](https://www.alchemy.com/), yang menghilangkan sebagian besar kerumitan pengembangan blockchain dan memberikan pengalaman pengembang yang lancar.
+thirdweb mendukung [Lisk](https://thirdweb.com/lisk) dan banyak blockchain yang kompatibel dengan EVM lainnya.
 
 #### Penyimpanan data
 Dalam aplikasi Web2, data biasanya disimpan dalam basis data terpusat.
@@ -331,4 +331,4 @@ Oleh karena itu, aplikasi Web3 terkadang menggunakan kombinasi penyimpanan oncha
 Pada aplikasi Web2, data dari database diakses melalui API.
 Pada aplikasi Web3, data blockchain diakses melalui kontrak pintar.
 Kontrak ini biasanya mengekspos fungsi publik yang dapat dipanggil oleh frontend aplikasi untuk membaca dan/atau menulis data dari/ke blockchain, mirip dengan API klasik.
-Untuk berinteraksi dengan blockchain, terdapat berbagai library dan framework yang tersedia, seperti [viem] (https://viem.sh/), [web3.js] (https://web3js.readthedocs.io), atau [ethers.js] (https://docs.ethers.io).
+Untuk berinteraksi dengan blockchain, terdapat berbagai library dan framework yang tersedia, seperti [viem](https://viem.sh/), [web3.js](https://web3js.readthedocs.io), atau [ethers.js](https://docs.ethers.io).
