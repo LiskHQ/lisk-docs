@@ -53,10 +53,8 @@ const sidebars = {
           ],
           link: {
             type: 'generated-index',
-            title: 'Deploying a Smart Contract',
-            description: 'Guides explainig how to deploy a smart contract on Lisk for different smart contract development frameworks.',
             slug: '/category/building-on-lisk/deploying-smart-contract',
-            keywords: ['guides','smart contracts','deployment'],
+            keywords: ['guides', 'smart contracts', 'deployment'],
           },
         },
         {
@@ -68,7 +66,6 @@ const sidebars = {
             'building-on-lisk/interacting-with-the-blockchain/viem',
             'building-on-lisk/interacting-with-the-blockchain/ethers',
             'building-on-lisk/interacting-with-the-blockchain/web3',
-
           ],
         },
         {
@@ -83,10 +80,8 @@ const sidebars = {
           ],
           link: {
             type: 'generated-index',
-            title: 'Bridging an L1 token to Lisk',
-            description: 'Guides explainig how to bridge tokens from Ethereum to Lisk and add them to the superchain token list.',
             slug: '/category/building-on-lisk/add-token-to-lisk',
-            keywords: ['guides','smart contracts','bridging','superchain token list'],
+            keywords: ['guides', 'smart contracts', 'bridging', 'superchain token list'],
           },
         },
         {
@@ -102,10 +97,8 @@ const sidebars = {
           ],
           link: {
             type: 'generated-index',
-            title: 'Token development',
-            description: 'Guides explainig how to create a new token on Lisk.',
             slug: '/category/building-on-lisk/token-development',
-            keywords: ['guides','smart contracts','token development','token standards','erc-20','erc-721','erc-1155'],
+            keywords: ['guides', 'smart contracts', 'token development', 'token standards', 'erc-20', 'erc-721', 'erc-1155'],
           },
         },
         {
@@ -123,8 +116,6 @@ const sidebars = {
       ],
       link: {
         type: 'generated-index',
-        title: 'Building on Lisk',
-        description: 'Guides for developers to start building dApps on Lisk L2.',
         slug: '/category/building-on-lisk',
         keywords: ['guides'],
       },
