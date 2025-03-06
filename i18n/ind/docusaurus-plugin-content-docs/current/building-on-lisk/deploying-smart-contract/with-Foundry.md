@@ -1,7 +1,7 @@
 ---
 title: ... menggunakan Foundry
 slug: /building-on-lisk/deploying-smart-contract/with-Foundry
-description: "Panduan untuk deploy smart contract di jaringan test Lisk menggunakan Foundry. Termasuk instruksi untuk mengatur environment, mengompilasi, dan deploy smart contract."
+description: "Panduan untuk deploy smart contract di jaringan Lisk menggunakan Foundry. Termasuk instruksi untuk mengatur environment, mengompilasi, dan deploy smart contract."
 keywords:
   [
     "Foundry",
