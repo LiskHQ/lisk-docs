@@ -57,7 +57,7 @@ Mereka menawarkan tier gratis yang memungkinkan jumlah permintaan yang tidak ter
 
 Anda juga dapat memeriksa endpoint yang tersedia untuk Lisk langsung di [https://drpc.org/public-endpoints/lisk](https://drpc.org/public-endpoints/lisk).
 
-dRPC juga menyediakan [faucet untuk Lisk Sepolia](faucets.md#drpc-faucet).
+dRPC juga menyediakan [faucet untuk Lisk Sepolia](./faucets.md#drpc-faucet).
 
 :::note[Cara membuat kunci API untuk dRPC]  
 Untuk menggunakan endpoint yang disediakan, Anda perlu [mendapatkan kunci API yang sesuai](https://docs.drpc.org/gettingstarted/createaccount).  
@@ -83,3 +83,13 @@ Untuk menggunakan Node RPC Moralis, ikuti langkah-langkah berikut:
 1. **Buat akun Moralis:** [Daftar](https://admin.moralis.com/) secara gratis dan akses node RPC Anda.
 2. **Siapkan node Anda:** Visit the [Menyiapkan Node RPC](https://docs.moralis.com/get-your-node-api-key) untuk membuat dan mengonfigurasi node RPC Anda.
 3. **Lakukan panggilan RPC pertama Anda:** Setelah node Anda siap, ikuti [tutorial](https://docs.moralis.com/make-your-first-rpc-call) untuk membuat panggilan JSON-RPC pertama Anda menggunakan ethers.js.
+
+
+## Tenderly  
+
+[Tenderly](https://tenderly.co/) adalah platform pengembangan Web3 yang menawarkan alat dan infrastrukturnya di lebih dari 79 jaringan. Beberapa jaringan, seperti Lisk, juga memiliki dukungan node RPC.  
+
+- [Node Lisk Mainnet oleh Tenderly](https://docs.tenderly.co/node/rpc-reference/lisk)  
+- [Node Lisk Sepolia Testnet oleh Tenderly](https://docs.tenderly.co/node/rpc-reference/lisk-sepolia)  
+
+Tenderly menyediakan [tier gratis](https://tenderly.co/pricing) bagi pengguna untuk menggunakan node RPC mereka.
