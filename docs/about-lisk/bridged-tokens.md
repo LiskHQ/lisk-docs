@@ -27,5 +27,5 @@ If you want to add a token to the list, please check out the guide [Bridging an 
 
 ## Lisk Sepolia
 
-| Bridged Tokens Sepolia | Symbol | L1 Token          | L2 Token           | Bridges |
-| :--------------------- | :----- |:----------------- | :----------------- | :----- |
+| Bridged Tokens Sepolia | Symbol | L1 Token          | L2 Token           | 
+| :--------------------- | :----- |:----------------- | :----------------- |
