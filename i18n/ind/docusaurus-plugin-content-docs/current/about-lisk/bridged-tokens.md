@@ -2,7 +2,6 @@
 id: bridged-tokens
 title: Alamat Token yang di-bridge
 sidebar_position: 2
-slug: /bridged-tokens
 description: 'Halaman referensi yang mencantumkan semua token yang di-bridge ke Lisk.'
 keywords: ['Lisk', 'token yang di-bridge']
 ---
@@ -24,6 +23,5 @@ Jika Anda ingin menambahkan token ke daftar ini, silakan lihat panduan [Bridge T
 
 ## Lisk Sepolia
 
-| Bridged Token di Sepolia | Simbol | Token L1 | Token L2 | Bridges |
-| :----------------------- | :----- | :------- | :------- | :------ |
-
+| Bridged Token di Sepolia | Simbol | Token L1 | Token L2 | 
+| :----------------------- | :----- | :------- | :------- | 
