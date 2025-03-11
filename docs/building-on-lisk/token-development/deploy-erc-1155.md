@@ -56,7 +56,7 @@ contract MyItems is ERC1155 {
 ```
 
 :::note
-Gold, Silver,Sword and shield are fungible tokens whilst Thor’s Hammer is a non-fungible token as we minted only one.
+Gold, Silver, Sword and shield are fungible tokens whilst Thor’s Hammer is a non-fungible token as we minted only one.
 :::
 
 An URI pointing to the JSON metadata of the different items/ tokens needs to be specified in the constructor, see [ERC-1155 contract API](https://docs.openzeppelin.com/contracts/3.x/api/token/erc1155#ERC1155).
