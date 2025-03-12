@@ -21,8 +21,8 @@ tags: ['node']
 difficulty: beginner
 ---
 
-Tutorial ini akan memandu Anda melalui proses pengaturan [Lisk Node] sendiri dengan Docker.  
-
+Tutorial ini akan memandu Anda untuk mengatur dan menjalankan [Node Lisk] Anda sendiri dengan Docker.  
+  
 *Untuk instruksi menjalankan Lisk node dari sumber, silakan lihat instruksi yang dijelaskan di repositori GitHub [Lisk Node](https://github.com/LiskHQ/lisk-node?tab=readme-ov-file#source).*
 
 ## Tujuan
@@ -54,12 +54,12 @@ Kami merekomendasikan konfigurasi perangkat keras berikut untuk menjalankan node
 - CPU multi-core modern dengan performa single-core yang baik.  
 - Minimal 16 GB RAM (disarankan 32 GB).  
 - Drive NVMe SSD yang terhubung secara lokal.  
-- Kapasitas penyimpanan yang memadai untuk menampung proses pemulihan snapshot (jika memulihkan dari snapshot) dan data rantai, dengan memastikan kapasitas minimum sebesar (2 * ukuran_rantai_saat_ini) + ukuran_snapshot + 20% buffer.  
+- Kapasitas penyimpanan yang memadai untuk menampung proses pemulihan snapshot (jika memulihkan dari snapshot) dan chain data, dengan memastikan kapasitas minimum sebesar (2 * current_chain_size) + snapshot_size + 20%_buffer.  
 - Jika menjalankan dengan Docker, harap instal Docker Engine versi [27.0.1](https://docs.docker.com/engine/release-notes/27.0/) atau lebih tinggi.  
 
-*Catatan: Jika menggunakan Amazon Elastic Block Store (EBS), pastikan kecepatan pembacaan disk buffered cukup cepat untuk menghindari masalah latensi seiring dengan penambahan blok baru ke Base selama proses sinkronisasi awal; `io2 block express` disarankan.*
+*Catatan: Jika menggunakan Amazon Elastic Block Store (EBS), pastikan kecepatan pembacaan buffered disk cukup cepat untuk menghindari masalah latensi seiring dengan penambahan blok baru ke Base selama proses sinkronisasi awal; disarankan menggunakan `io2 block express`.*
 
-## Penggunaan
+##Penggunaan
 
 
 :::note
@@ -96,7 +96,7 @@ cd lisk-node
    :::
 
 4. Jalankan:
-:::peringatan[penting]  
+:::warning[important] 
 Untuk menjalankan node di Lisk Sepolia, pertama-tama patch Dockerfile(s) dengan:  
 ```sh  
 git apply dockerfile-lisk-sepolia.patch  
@@ -139,18 +139,18 @@ $( curl -s -d '{"id":0,"jsonrpc":"2.0","method":"optimism_syncStatus"}' -H "Cont
 [mitra kami]: /lisk-tools/api-providers
 [lisk node]: https://github.com/LiskHQ/lisk-node  
 
-### Snapshots  
-:::catatan  
+### Snapshots
+:::note  
 - Snapshot tersedia untuk klien `op-geth` dan `op-reth`:  
   - `op-geth` mendukung snapshot jenis export dan datadir  
   - `op-reth` hanya mendukung snapshot jenis datadir  
 - Semua snapshot berasal dari node arsip  
 - Jenis snapshot:  
-  - `export`: ukuran unduhan kecil, pemulihan lambat, data diverifikasi selama pemulihan (`op-geth` saja)  
-  - `datadir`: ukuran unduhan besar, pemulihan cepat, tidak ada verifikasi data selama pemulihan  
+  - `export`: ukuran download kecil, pemulihan lambat, data diverifikasi selama pemulihan (`op-geth` saja)  
+  - `datadir`: ukuran download besar, pemulihan cepat, tidak ada verifikasi data selama pemulihan  
 :::  
 
-Untuk mengaktifkan pengunduhan dan penerapan snapshot otomatis, atur variabel lingkungan `APPLY_SNAPSHOT` ke `true` saat memulai node:  
+Untuk mengaktifkan download dan penerapan snapshot otomatis, atur variabel lingkungan `APPLY_SNAPSHOT` ke `true` saat memulai node:  
 
 ```sh  
 APPLY_SNAPSHOT=true docker compose up --build --detach  
@@ -169,8 +169,8 @@ APPLY_SNAPSHOT=true CLIENT=geth SNAPSHOT_TYPE=datadir docker compose up --build 
 APPLY_SNAPSHOT=true CLIENT=reth SNAPSHOT_TYPE=datadir docker compose up --build --detach  
 ```  
 
-Anda juga dapat mengunduh dan menerapkan snapshot dari URL khusus dengan mengatur variabel lingkungan `SNAPSHOT_URL`.  
-Pastikan file snapshot diakhiri dengan `*.tar.gz`.  
+Anda juga dapat mendownload dan menerapkan snapshot dari URL khusus dengan mengatur variabel lingkungan `SNAPSHOT_URL`.  
+Pastikan file snapshot diakhiri dengan `*.tar.gz`. 
 ```sh  
 APPLY_SNAPSHOT=true SNAPSHOT_URL=<custom-snapshot-url> docker compose up --build --detach  
 ```
