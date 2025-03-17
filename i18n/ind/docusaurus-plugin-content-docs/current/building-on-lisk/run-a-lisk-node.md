@@ -59,8 +59,7 @@ Kami merekomendasikan konfigurasi perangkat keras berikut untuk menjalankan node
 
 *Catatan: Jika menggunakan Amazon Elastic Block Store (EBS), pastikan kecepatan pembacaan buffered disk cukup cepat untuk menghindari masalah latensi seiring dengan penambahan blok baru ke Base selama proses sinkronisasi awal; disarankan menggunakan `io2 block express`.*
 
-##Penggunaan
-
+## Penggunaan
 
 :::note
 Sekarang memungkinkan untuk menjalankan node Lisk dengan flag `--op-network` pada klien eksekusi `op-geth`.
@@ -96,7 +95,7 @@ cd lisk-node
    :::
 
 4. Jalankan:
-:::warning[important] 
+:::warning[penting] 
 Untuk menjalankan node di Lisk Sepolia, pertama-tama patch Dockerfile(s) dengan:  
 ```sh  
 git apply dockerfile-lisk-sepolia.patch  
@@ -155,7 +154,6 @@ Untuk mengaktifkan download dan penerapan snapshot otomatis, atur variabel lingk
 ```sh  
 APPLY_SNAPSHOT=true docker compose up --build --detach  
 ```  
-
 Untuk menentukan klien dan jenis snapshot, atur variabel lingkungan `CLIENT` dan `SNAPSHOT_TYPE`:  
 
 ```sh  
