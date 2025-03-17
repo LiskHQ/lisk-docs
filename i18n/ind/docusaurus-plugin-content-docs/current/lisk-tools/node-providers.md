@@ -31,7 +31,7 @@ Node Lisk mengungkapkan API RPC yang memungkinkan pihak lain berinteraksi dengan
 Jika Anda baru memulai dan membutuhkan URL RPC, Anda dapat menggunakan [endpoint gratis kami](#lisk-rpc).  
 Jika Anda ingin memperkuat aplikasi Anda dan menghindari rate-limit untuk pengguna Anda, silakan lihat penyedia node RPC yang tersedia seperti [dRPC](#drpc).
 
-:::tip[API reference]
+:::tip[referensi API]
 Endpoint yang tersedia untuk node Lisk mencakup semua [endpoint RPC Geth](https://geth.ethereum.org/docs/interacting-with-geth/rpc), yang juga mencakup semua [endpoint API JSON-RPC standar](https://ethereum.github.io/execution-apis/api-documentation/) dari Ethereum.
 :::
 
@@ -57,7 +57,7 @@ Mereka menawarkan tier gratis yang memungkinkan jumlah permintaan yang tidak ter
 
 Anda juga dapat memeriksa endpoint yang tersedia untuk Lisk langsung di [https://drpc.org/public-endpoints/lisk](https://drpc.org/public-endpoints/lisk).
 
-dRPC also provides a [faucet for Lisk Sepolia](./faucets.md#drpc-faucet).
+dRPC juga menyediakan [faucet untuk Lisk Sepolia](./faucets.md#drpc-faucet).
 :::note[Cara membuat kunci API untuk dRPC]  
 Untuk menggunakan endpoint yang disediakan, Anda perlu [mendapatkan kunci API yang sesuai](https://docs.drpc.org/gettingstarted/createaccount).  
 :::
@@ -85,9 +85,9 @@ Untuk menggunakan Node RPC Moralis, ikuti langkah-langkah berikut:
 
 ## Tenderly
 
-[Tenderly](https://tenderly.co/) is a Web3 development platform that offers its tools and infrastructure across 79+ networks. Some networks, like Lisk, also have node RPC support.
+[Tenderly](https://tenderly.co/) adalah platform pengembangan Web3 yang menawarkan alat dan infrastrukturnya di lebih dari 79 jaringan. Beberapa jaringan, seperti Lisk, juga memiliki dukungan node RPC.
 
-- [Lisk Mainnet nodes by Tenderly](https://docs.tenderly.co/node/rpc-reference/lisk)
-- [Lisk Sepolia Testnet nodes by Tenderly](https://docs.tenderly.co/node/rpc-reference/lisk-sepolia)
+- [Node Lisk Mainnet oleh Tenderly](https://docs.tenderly.co/node/rpc-reference/lisk)
+- [Node Lisk Sepolia Testnet oleh Tenderly](https://docs.tenderly.co/node/rpc-reference/lisk-sepolia)
 
-Tenderly provides a [free trier](https://tenderly.co/pricing) to user their RPC nodes.
+Tenderly menyediakan [tier gratis].(https://tenderly.co/pricing) untuk menggunakan node RPC mereka.
