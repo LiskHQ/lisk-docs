@@ -138,7 +138,8 @@ $( curl -s -d '{"id":0,"jsonrpc":"2.0","method":"optimism_syncStatus"}' -H "Cont
 [mitra kami]: /lisk-tools/api-providers
 [lisk node]: https://github.com/LiskHQ/lisk-node  
 
-### Snapshots
+### Snapshot
+
 :::note  
 - Snapshot tersedia untuk klien `op-geth` dan `op-reth`:  
   - `op-geth` mendukung snapshot jenis export dan datadir  
