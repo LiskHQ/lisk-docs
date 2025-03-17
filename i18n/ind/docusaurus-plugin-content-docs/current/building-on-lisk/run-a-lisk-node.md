@@ -135,7 +135,7 @@ $( curl -s -d '{"id":0,"jsonrpc":"2.0","method":"optimism_syncStatus"}' -H "Cont
    jq -r .result.unsafe_l2.timestamp))/60)) minutes
 ```
 
-[mitra kami]: /lisk-tools/api-providers
+[mitra kami]: /lisk-tools/node-providers
 [lisk node]: https://github.com/LiskHQ/lisk-node  
 
 ### Snapshot
@@ -170,6 +170,7 @@ APPLY_SNAPSHOT=true CLIENT=reth SNAPSHOT_TYPE=datadir docker compose up --build 
 
 Anda juga dapat mendownload dan menerapkan snapshot dari URL khusus dengan mengatur variabel lingkungan `SNAPSHOT_URL`.  
 Pastikan file snapshot diakhiri dengan `*.tar.gz`. 
+
 ```sh  
 APPLY_SNAPSHOT=true SNAPSHOT_URL=<custom-snapshot-url> docker compose up --build --detach  
 ```
