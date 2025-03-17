@@ -75,7 +75,6 @@ Once translated, the PR entry in the following table should be removed, and the 
 | [[LISKDOCS-11] Add Remix guide](https://github.com/LiskHQ/lisk-docs/pull/270)   | ✖ |
 | [[LISKDOCS-19] Introduction to Web3 app development](https://github.com/LiskHQ/lisk-docs/pull/260)   | ✖ |
 | [[LISKDOCS-37] Add Tenderly nodes](https://github.com/LiskHQ/lisk-docs/pull/271)   | ✖ |
-| [[LISKDOCS-38] Update node guide](https://github.com/LiskHQ/lisk-docs/pull/277)   | ✖ |
 
 ## License
 
