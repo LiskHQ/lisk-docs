@@ -441,7 +441,7 @@
     "message": "Jelajahi basis pengetahuan komprehensif kami yang dirancang khusus untuk pengembang dan pengguna! Temukan informasi teknis mendalam dan panduan bermanfaat tentang blockchain Lisk."
   },
   "Welcome to the Lisk documentation 🎉": {
-    "message": "Selamat datang di Dokumentasi Lisk 🎉"
+    "message": "Selamat datang di dokumentasi Lisk 🎉"
   },
   "Let's build with Lisk 🛠": {
     "message": "Mari membangun dengan Lisk 🛠"
@@ -479,6 +479,9 @@
   "grant programs": {
     "message": "program hibah"
   },
+  "opportunities": {
+    "message": "peluang"
+  },
   "What is Lisk?": {
     "message": "Apa itu Lisk?"
   },
@@ -487,5 +490,14 @@
   },
   "Ecosystem for the future": {
     "message": "Ekosistem untuk masa depan"
+  },
+  "Welcome": {
+    "message": "Selamat"
+  },
+  "to the Lisk": {
+    "message": "datang di Lisk"
+  },
+  "documentation 🎉": {
+    "message": "dokumentasi 🎉"
   }
 }
