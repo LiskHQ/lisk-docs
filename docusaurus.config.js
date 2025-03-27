@@ -49,14 +49,6 @@ const config = {
       },
     },
   },
-
-  scripts: [
-    {
-      src: process.env.LISK_DOC_URL ?? '/' + 'js/matomo.js',
-      async: true,
-    },
-  ],
-
   presets: [
     [
       'classic',
@@ -84,6 +76,9 @@ const config = {
             './src/css/custom.css',
           ]
         },
+        gtag: {
+          trackingID: 'G-PQC7PTFFLK',
+        },
       }),
     ],
   ],
@@ -106,12 +101,10 @@ const config = {
           srcDark: '/img/lisk-docs-dark.svg',
         },
         items: [
-          /*
-            TODO: Uncomment when all localized pages are translated
           {
             type: 'localeDropdown',
             position: 'right',
-          }, */
+          },
           {
             type: 'doc',
             position: 'left',

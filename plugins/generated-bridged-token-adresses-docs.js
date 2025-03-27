@@ -41,20 +41,23 @@ LiskAdresses.forEach(token => {
     ethAddress = {address: "Not Found"};
   }
   token.ethAddress = ethAddress.address;
+  token.ethBridge = ethAddress.extensions.liskBridgeAddress
 });
+
+const tableHeads = {
+  eng: ["Bridged Tokens Mainnet", "Bridged Tokens Sepolia"],
+  ind: ["Bridged Token di Mainnet", "Bridged Token di Sepolia"],
+}
 
 export const generatedDocs = () => {
   return async (root) => {
-   visit(root, (node) => {
-    if (node.type !== 'table') {
-      return 
-    }
+   visit(root, "table", (node) => {
     // For every table in the docs
     node.children.forEach(row => {
       row.children.forEach(cell => {
         cell.children.forEach(cellChild => {
           // Find a cell with the value 'Bridged Token Mainnet'
-          if( cellChild.value === 'Bridged Tokens Mainnet') {
+          if( cellChild.value === tableHeads.eng[0] || cellChild.value === tableHeads.ind[0]) {
             cellChild.value = 'Bridged Token Name';
             // Add a new row for each Mainnet token
             LiskAdresses.forEach(token => {
@@ -95,6 +98,29 @@ export const generatedDocs = () => {
                           type: 'link',
                           url: "https://blockscout.lisk.com/address/" + token.address,
                           children: [{type: 'text', value: token.address }]
+                        },
+                      ]
+                    },
+                    {
+                      type: 'tableCell',
+                      children: [
+                        {
+                          type: 'link',
+                          url: "https://etherscan.io/address/" + token.ethBridge,
+                          children: [{type: 'text', value: token.ethBridge }]
+                        },
+                        {
+                          type: 'text',
+                          value: '(L1)'
+                        },
+                        {
+                          type: 'link',
+                          url: "https://blockscout.lisk.com/address/" + token.extensions.liskBridgeAddress,
+                          children: [{type: 'text', value: token.extensions.liskBridgeAddress }]
+                        },
+                        {
+                          type: 'text',
+                          value: '(L2)'
                         }
                       ]
                     }]
@@ -102,7 +128,7 @@ export const generatedDocs = () => {
                 }
             });
           // Find a cell with the value 'Bridged Token Sepolia'
-          } else if (cellChild.value === 'Bridged Tokens Sepolia') {
+          } else if (cellChild.value === tableHeads.eng[1] || cellChild.value === tableHeads.ind[1]) {
             cellChild.value = 'Bridged Token Name';
             // Add a new row for each Sepolia token
             LiskAdresses.forEach(token => {
@@ -143,6 +169,29 @@ export const generatedDocs = () => {
                           type: 'link',
                           url: "https://sepolia-blockscout.lisk.com/address/" + token.address,
                           children: [{type: 'text', value: token.address }]
+                        }
+                      ]
+                    },
+                    {
+                      type: 'tableCell',
+                      children: [
+                        {
+                          type: 'link',
+                          url: "https://sepolia.etherscan.io/address/" + token.ethBridge,
+                          children: [{type: 'text', value: token.ethBridge }]
+                        },
+                        {
+                          type: 'text',
+                          value: '(L1)'
+                        },
+                        {
+                          type: 'link',
+                          url: "https://sepolia-blockscout.lisk.com/address/" + token.extensions.liskBridgeAddress,
+                          children: [{type: 'text', value: token.extensions.liskBridgeAddress }]
+                        },
+                        {
+                          type: 'text',
+                          value: '(L2)'
                         }
                       ]
                     }]
