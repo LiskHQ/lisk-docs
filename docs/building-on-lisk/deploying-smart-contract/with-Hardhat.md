@@ -212,43 +212,54 @@ To test our contract, we are going to use Hardhat Network, a local Ethereum netw
 It comes built-in with Hardhat, and it's used as the default network.
 You don't need to setup anything to use it.
 
-In our tests we're going to use [ethers.js](https://docs.ethers.org/v6/) to interact with the contract we built in the previous section, and we'll use [Mocha](https://mochajs.org/) as our test runner.
+In our tests we're going to use [ethers.js](https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-ethers) to interact with the NFT contract we built in the previous section, and we'll use [Mocha](https://mochajs.org/) as our test runner.
 
-Create a new directory called `test` inside our project root directory and create a new file in there called `NFT.js`.
-
-Let's start with the code below.
-We'll explain it next, but for now paste this into `NFT.js`:
+Create a new directory called `test` inside our project root directory and create a new file in there called `NFT.js` and add the following code:
 
 ```js title="test/NFT.js"
 const { expect } = require("chai");
 
-describe("NFT contract", function () {
-  it("Deployment should assign the total supply of tokens to the owner", async function () {
+describe("NFT", function () {
+  let nftToken;
+
+  beforeEach(async () => {
+    // Deploy contract
+    const NFT = await ethers.getContractFactory("NFT");
+    nftToken = await NFT.deploy();
+  });
+
+  it("Should allow to mint a new NFT", async function () {
     const [owner] = await ethers.getSigners();
-
-    const hardhatToken = await ethers.deployContract("Token");
-
-    const ownerBalance = await hardhatToken.balanceOf(owner.address);
-    expect(await hardhatToken.totalSupply()).to.equal(ownerBalance);
+    // Before minting of the NFT, the account balance for this NFT should be zero.
+    expect(await nftToken.balanceOf(owner.address)).to.equal(0);
+    // Mint the NFT
+    await nftToken.mint(owner.address);
+    // After minting of the NFT, the account balance for this NFT should be 1 for the account that minted the token.
+    expect(await nftToken.balanceOf(owner.address)).to.equal(1);
   });
 });
 ```
 
-In your terminal run `npx hardhat test`. 
+First, we import the `expect` function from the Chai library, to be able to use it in our unit test for the contract.
+If you set up your project to use the hardhat toolbox like explained in step [Creating a project](#creating-a-project), you already have ethers available in your project out of the box. Otherwise you can install the ethers plugin for Hardhat as described [here]((https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-ethers)).
+
+Next, we deploy the NFT contract inside the `beforeEach()` function, so the contract is always deployed if we decide to add more tests for the contract in the future.
+
+Then we define the test `Should allow to mint a new NFT` to verify that calling the `.mint()` function of the NFT mints a new NFT and adds it to the balance of the account that minted it.
+
+Now, run `npx hardhat test` in your terminal. 
 
 You should see the following output:
 
 ```sh
-$ npx hardhat test
+% npx hardhat test
 
-  NFT contract
-    ✓ Deployment should assign the total supply of tokens to the owner (654ms)
+  NFT
+    ✔ Should allow to mint a new NFT (92ms)
 
 
-  1 passing (663ms)
+  1 passing (1s)
 ```
-
-
 
 ## Compiling the smart contract
 To compile the contract using Hardhat, simply run:
