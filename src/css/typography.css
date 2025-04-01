@@ -34,6 +34,16 @@ h6 {
 
 .line-space-text {
     line-height: 24px;
+    min-height: 15.8vh;
+}
+
+.line-space-text>a {
+    text-decoration: underline;
+}
+
+html[lang='ind'] .line-space-text {
+    line-height: 24px;
+    min-height: 19vh;
 }
 
 .homepage-text-style-custom {
