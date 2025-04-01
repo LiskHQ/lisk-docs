@@ -30,7 +30,7 @@ Memberikan **LSK** testnet di Lisk Sepolia.
 
 Lisk Sepolia Faucet tersedia di sini: https://sepolia-faucet.lisk.com:  
 
-Masukkan alamat akun Anda atau nama ENS untuk menerima 1 LSK testnet per permintaan.
+Masukkan alamat akun Anda atau nama ENS untuk menerima 0.1 LSK testnet per permintaan.
 
 ## Superchain Faucet  
 
