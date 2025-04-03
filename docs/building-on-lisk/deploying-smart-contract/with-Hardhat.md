@@ -240,10 +240,10 @@ describe("NFT", function () {
 });
 ```
 
-First, we import the `expect` function from the Chai library, to be able to use it in our unit test for the contract.
+First, we import the `expect` function from the [Chai](https://www.chaijs.com/) library, to be able to use it in our unit test for the contract.
 
 If you set up your project to use the hardhat toolbox like explained in step [Creating a project](#creating-a-project), you already have ethers available in your project out of the box. Otherwise you can install the ethers plugin for Hardhat as described [here]((https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-ethers)).
-Hardhat-Ethers has the same API as ethers.js, with some extra [Hardhat-specific](https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-ethers#helpers) functionality, that we are going to use in the test for the contract.
+Hardhat-Ethers has the same API as [ethers.js](https://docs.ethers.org/v6/), with some extra [Hardhat-specific](https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-ethers#helpers) functionality, that we are going to use in the test for the contract.
 
 Next, we deploy the NFT contract inside the `beforeEach()` function, so the contract is always deployed, if we decide to add more tests for the contract in the future.
 
@@ -264,6 +264,8 @@ You should see the following output:
 ```
 
 This indicates that that the test was executed successfully.
+
+For more information how to test smart contracts with Hardhat, check the [Hardhat documentation](https://hardhat.org/tutorial/testing-contracts).
 
 ## Compiling the smart contract
 To compile the contract using Hardhat, simply run:
