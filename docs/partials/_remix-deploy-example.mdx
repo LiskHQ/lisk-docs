@@ -42,7 +42,7 @@ Next, open the Solidity file which you want to test and click on the `Generate` 
 In the test directory, a test file will be created for your selected file.
 This file contains information about developing tests for a contract.
 
-Below is an example of a generic test file:
+Below is an example of a generic test file `myNFT_test.sol`:
 
 ```solidity
 // SPDX-License-Identifier: GPL-3.0
@@ -110,6 +110,59 @@ They are:
 For our new NFT contract, we add the following test:
 
 ```solidity
+// SPDX-License-Identifier: GPL-3.0
+        
+pragma solidity >=0.4.22 <0.9.0;
+
+// This import is automatically injected by Remix
+import "remix_tests.sol"; 
+
+// This import is required to use custom transaction context
+// Although it may fail compilation in 'Solidity Compiler' plugin
+// But it will work fine in 'Solidity Unit Testing' plugin
+import "remix_accounts.sol";
+import "../contracts/MyNFT.sol";
+
+// File name has to end with '_test.sol', this file can contain more than one testSuite contracts
+contract testSuite {
+    MyNFT nft;
+
+    function beforeAll() public {
+        nft = new MyNFT(); 
+    }
+
+    // Test minting functionality
+    function testMint() public {
+
+        // Store initial token ID
+        uint256 initialTokenId = nft.currentTokenId();
+        
+        // Mint a new NFT to this contract's address
+        uint256 newTokenId = nft.mint(TestsAccounts.getAccount(2));
+        
+        // Check that token ID incremented
+        Assert.equal(newTokenId, initialTokenId + 1, "Token ID should increment by 1");
+        
+        // Check currentTokenId updated
+        Assert.equal(nft.currentTokenId(), newTokenId, "currentTokenId should match new token ID");
+        
+        // Check ownership
+        Assert.equal(nft.ownerOf(newTokenId), TestsAccounts.getAccount(2), "Contract should own the minted NFT");
+    }
+    
+    // Test minting to specific address
+    function testMintToAddress() public {
+        
+        // Mint NFT to test address
+        uint256 newTokenId = nft.mint(TestsAccounts.getAccount(1));
+        
+        // Check ownership
+        Assert.equal(nft.ownerOf(newTokenId), TestsAccounts.getAccount(1), "Test address should own the minted NFT");
+        
+        // Check token balance
+        Assert.equal(nft.balanceOf(TestsAccounts.getAccount(1)), 1, "Test address should have 1 NFT");
+    }
+}
 ```
 
 There are several ways to customize your solidity tests.
@@ -120,6 +173,10 @@ The execution will run in a separate environment.
 After completing the execution of one file, a test summary will be shown:
 
 ```text
+Result for tests/MyNFT_test.sol
+Passed: 3
+Failed: 0
+Time Taken: 0.05s
 ```
 
 ## 5. Compile the contract
