@@ -29,7 +29,7 @@ LiskAdresses.forEach(token => {
     result = tokens.find(function(tkn) {
         return ((tkn.symbol === token.symbol) || (tkn.symbol + ".e" === token.symbol)) && tkn.chainId === 1;
     });
-    ethAddress = result? result : {address: "Not Found"};
+    ethAddress = result? result : {address: "Not Found", extensions: {liskBridgeAddress: "Not Found"}};
   // For Lisk Sepolia, add Ethereum Sepolia address
   } else if (token.chainId === chainIds[1]) {
     result = tokens.find(function(tkn) {
