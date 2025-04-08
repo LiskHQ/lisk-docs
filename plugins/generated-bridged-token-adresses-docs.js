@@ -38,7 +38,7 @@ LiskAdresses.forEach(token => {
     ethAddress = result? result : {address: "Not Found", extensions: {liskBridgeAddress: "Not Found"}};
   } else {
     console.log("Error: chainId not found");
-    ethAddress = {address: "Not Found"};
+    ethAddress = {address: "Not Found", extensions: {liskBridgeAddress: "Not Found"}};
   }
   token.ethAddress = ethAddress.address;
   token.ethBridge = ethAddress.extensions.liskBridgeAddress
