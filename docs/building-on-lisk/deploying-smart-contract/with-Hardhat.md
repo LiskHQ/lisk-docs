@@ -207,9 +207,20 @@ contract NFT is ERC721 {
 }
 ```
 
+## Compiling the smart contract
+To compile the contract using Hardhat, simply run:
+
+```bash
+npx hardhat compile
+```
+
+After successful compilation, you should see a new folder `artifacts/`, which contains the [compilation artifacts](https://hardhat.org/hardhat-runner/docs/advanced/artifacts).
+
 ## Testing the contract
 To test our NFT contract, we’ll use:
-- **Hardhat Network** – A local Ethereum network for development. It comes built-in with Hardhat, and it's used as the default network.
+
+- **Hardhat Network** – A local Ethereum network for development.
+It comes built-in with Hardhat, and it's used as the default network.
 - **Ethers.js** – To interact with the contract.
 - **Mocha** – For test runner and assertions.
 
@@ -242,7 +253,8 @@ describe("NFT", function () {
 
 First, we import the `expect` function from the [Chai](https://www.chaijs.com/) library, to be able to use it in our unit test for the contract.
 
-If you set up your project to use the hardhat toolbox like explained in step [Creating a project](#creating-a-project), you already have ethers available in your project out of the box. Otherwise you can install the ethers plugin for Hardhat as described [here](https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-ethers).
+If you set up your project to use the hardhat toolbox like explained in step [Creating a project](#creating-a-project), you already have ethers available in your project out of the box.
+Otherwise you can install the ethers plugin for Hardhat as described [here](https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-ethers).
 Hardhat-Ethers has the same API as [ethers.js](https://docs.ethers.org/v6/), with some extra [Hardhat-specific](https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-ethers#helpers) functionality, that we are going to use in the test for the contract.
 
 Next, we deploy the NFT contract inside the `beforeEach()` function, so the contract is always deployed, if we decide to add more tests for the contract in the future.
@@ -267,15 +279,6 @@ You should see the following output:
 This indicates that that the test was executed successfully.
 
 For more information how to test smart contracts with Hardhat, check the [Hardhat documentation](https://hardhat.org/tutorial/testing-contracts).
-
-## Compiling the smart contract
-To compile the contract using Hardhat, simply run:
-
-```bash
-npx hardhat compile
-```
-
-After successful compilation, you should see a new folder `artifacts/`, which contains the [compilation artifacts](https://hardhat.org/hardhat-runner/docs/advanced/artifacts).
 
 ## Deploying the smart contract
 
