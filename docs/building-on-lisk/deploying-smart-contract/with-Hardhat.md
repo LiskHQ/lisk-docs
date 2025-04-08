@@ -208,12 +208,12 @@ contract NFT is ERC721 {
 ```
 
 ## Testing the contract
-To test our contract, we are going to use [Hardhat Network](https://hardhat.org/hardhat-network/docs/overview), a local Ethereum network designed for development.
-It comes built-in with Hardhat, and it's used as the default network.
-You don't need to setup anything to use it.
+To test our NFT contract, we’ll use:
+- **Hardhat Network** – A local Ethereum network for development. It comes built-in with Hardhat, and it's used as the default network.
+- **Ethers.js** – To interact with the contract.
+- **Mocha** – For test runner and assertions.
 
-In our tests we're going to use [ethers.js](https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-ethers) to interact with the NFT contract we built in the previous section, and we'll use [Mocha](https://mochajs.org/) as our test runner.
-
+###  Setting up the test file
 Create a new directory called `test` inside our project root directory and create a new file in there called `NFT.js` and add the following code:
 
 ```js title="test/NFT.js"
@@ -249,6 +249,7 @@ Next, we deploy the NFT contract inside the `beforeEach()` function, so the cont
 
 Then we define the test `Should allow to mint a new NFT` to verify that calling the `.mint()` function of the NFT mints a new NFT and adds it to the balance of the account that minted it.
 
+### Running the Test
 Now, run `npx hardhat test` in your terminal. 
 
 You should see the following output:
