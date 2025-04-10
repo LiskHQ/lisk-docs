@@ -220,12 +220,13 @@ After successful compilation, you should see a new folder `artifacts/`, which co
 To test our NFT contract, we’ll use:
 
 - **Hardhat Network** – A local Ethereum network for development.
-It comes built-in with Hardhat, and it's used as the default network.
+It comes built-in with Hardhat and is used as the default network.
 - **Ethers.js** – To interact with the contract.
 - **Mocha** – For test runner and assertions.
 
 ###  Setting up the test file
-Create a new directory called `test` inside our project root directory and create a new file in there called `NFT.js` and add the following code:
+Create a new directory called `test` inside our project root directory. 
+Then, create a new file in there called `NFT.js`, and add the following code:
 
 ```js title="test/NFT.js"
 const { expect } = require("chai");
@@ -241,11 +242,11 @@ describe("NFT", function () {
 
   it("Should allow to mint a new NFT", async function () {
     const [owner] = await ethers.getSigners();
-    // Before minting of the NFT, the account balance for this NFT should be zero.
+    // Before minting the NFT, the account balance for this NFT should be zero.
     expect(await nftToken.balanceOf(owner.address)).to.equal(0);
     // Mint the NFT
     await nftToken.mint(owner.address);
-    // After minting of the NFT, the account balance for this NFT should be 1 for the account that minted the token.
+    // After minting the NFT, the account balance for this NFT should be 1 for the account that minted the token.
     expect(await nftToken.balanceOf(owner.address)).to.equal(1);
   });
 });
@@ -254,12 +255,12 @@ describe("NFT", function () {
 First, we import the `expect` function from the [Chai](https://www.chaijs.com/) library, to be able to use it in our unit test for the contract.
 
 If you set up your project to use the hardhat toolbox like explained in step [Creating a project](#creating-a-project), you already have ethers available in your project out of the box.
-Otherwise you can install the ethers plugin for Hardhat as described [here](https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-ethers).
+Otherwise, you can install the ethers plugin for Hardhat as described in the [hardhat-ethers](https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-ethers)' reference page.
 Hardhat-Ethers has the same API as [ethers.js](https://docs.ethers.org/v6/), with some extra [Hardhat-specific](https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-ethers#helpers) functionality, that we are going to use in the test for the contract.
 
 Next, we deploy the NFT contract inside the `beforeEach()` function, so the contract is always deployed, if we decide to add more tests for the contract in the future.
 
-Then we define the test `Should allow to mint a new NFT` to verify that calling the `.mint()` function of the NFT mints a new NFT and adds it to the balance of the account that minted it.
+Then, we define the test `Should allow to mint a new NFT` to verify that calling the `.mint()` function of the NFT mints a new NFT and adds it to the balance of the account that minted it.
 
 ### Running the Test
 Now, run `npx hardhat test` in your terminal. 
@@ -276,9 +277,9 @@ You should see the following output:
   1 passing (1s)
 ```
 
-This indicates that that the test was executed successfully.
+This indicates that the test was executed successfully.
 
-For more information how to test smart contracts with Hardhat, check the [Hardhat documentation](https://hardhat.org/tutorial/testing-contracts).
+For more information on how to test smart contracts with Hardhat, check the [Hardhat documentation](https://hardhat.org/tutorial/testing-contracts).
 
 ## Deploying the smart contract
 
