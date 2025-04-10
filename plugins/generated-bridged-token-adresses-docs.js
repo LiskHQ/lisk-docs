@@ -41,7 +41,8 @@ LiskAdresses.forEach(token => {
     ethAddress = {address: "Not Found", extensions: {liskBridgeAddress: "Not Found"}};
   }
   token.ethAddress = ethAddress.address;
-  token.ethBridge = ethAddress.extensions.liskBridgeAddress
+  token.ethBridge = ethAddress.extensions.liskBridgeAddress;
+  token.extensions.liskBridgeAddress = token.extensions.liskBridgeAddress? token.extensions.liskBridgeAddress : "Not Found";
 });
 
 const tableHeads = {
