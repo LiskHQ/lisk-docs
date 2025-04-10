@@ -108,4 +108,4 @@ Tenderly provides a [free trier](https://tenderly.co/pricing) to use their RPC n
 - [Lisk Mainnet RPC by thirdweb](https://thirdweb.com/lisk)
 - [Lisk Sepolia Testnet RPC by thirdweb](https://thirdweb.com/lisk-sepolia-testnet)
 
-Thirdweb provides a [free trier](https://thirdweb.com/pricing) to use their RPC nodes.
+Thirdweb provides different [price triers](https://thirdweb.com/pricing), with the cheapest one starting from 5 euro per month.
