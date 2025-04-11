@@ -57,11 +57,16 @@ For more information, see the [available Lisk networks](/network-info) and [how 
 
 :::
 
-
 ## Creating a project
 Before you can begin deploying smart contracts to Lisk, you need to set up your development environment by creating a Node.js project.
 
-To create a new Node.js project, run:
+To create a new Node.js project, first create a root folder for the project and move into it:
+
+```bash
+mkdir my-project && cd my-project
+```
+
+Inside the new folder, run:
 
 ```bash
 npm init --y
