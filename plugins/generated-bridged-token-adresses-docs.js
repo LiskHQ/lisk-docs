@@ -160,7 +160,8 @@ export const generatedDocs = () => {
                       type: 'tableCell',
                       children: [
                         {
-                          type: 'link',
+                          type: (token.ethAddress==="Not Found")?'text':'link',
+                          value: '-',
                           url: "https://sepolia.etherscan.io/address/" + token.ethAddress,
                           children: [{type: 'text', value: token.ethAddress }]
                         }
@@ -180,7 +181,8 @@ export const generatedDocs = () => {
                       type: 'tableCell',
                       children: [
                         {
-                          type: 'link',
+                          type: (token.ethAddress==="Not Found")?'text':'link',
+                          value: '-',
                           url: "https://sepolia.etherscan.io/address/" + token.ethBridge,
                           children: [{type: 'text', value: token.ethBridge }]
                         },
@@ -189,7 +191,8 @@ export const generatedDocs = () => {
                           value: '(L1)'
                         },
                         {
-                          type: 'link',
+                          type: (token.ethAddress==="Not Found")?'text':'link',
+                          value: '-',
                           url: "https://sepolia-blockscout.lisk.com/address/" + token.extensions.liskBridgeAddress,
                           children: [{type: 'text', value: token.extensions.liskBridgeAddress }]
                         },
