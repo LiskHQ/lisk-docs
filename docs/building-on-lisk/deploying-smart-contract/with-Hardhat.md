@@ -93,7 +93,7 @@ Optionally, you can decide to share crash reports and usage data with HardHat.
 
 ```
 ✔ What do you want to do? · Create a TypeScript project
-✔ Hardhat project root: · /Users/lisk/git/hardhat-test
+✔ Hardhat project root: · /Users/lisk/git/my-project
 ✔ Do you want to add a .gitignore? (Y/n) · y
 ✔ Help us improve Hardhat with anonymous crash reports & basic usage data? (Y/n) · y
 ✔ Do you want to install this sample project's dependencies with npm (@nomicfoundation/hardhat-toolbox)? (Y/n) · y
