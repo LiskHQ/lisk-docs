@@ -51,6 +51,7 @@ Jika Anda ingin memperkuat aplikasi Anda dan menghindari rate limit untuk penggu
 ## Persyaratan Sistem
 
 Kami merekomendasikan konfigurasi perangkat keras berikut untuk menjalankan node Lisk L2:
+
 - CPU multi-core modern dengan performa single-core yang baik.  
 - Minimal 16 GB RAM (disarankan 32 GB).  
 - Drive NVMe SSD yang terhubung secara lokal.  
@@ -80,11 +81,11 @@ cd lisk-node
 ### Docker
 
 1. Pastikan Anda memiliki RPC node penuh Ethereum L1 (bukan Lisk), dan atur variabel `OP_NODE_L1_ETH_RPC` dan `OP_NODE_L1_BEACON` (dalam file `.env.*`, jika menggunakan docker-compose).
-   Jika Anda menjalankan node L1 sendiri, node tersebut harus disinkronkan sebelum node Lisk dapat sepenuhnya sinkron.
-2. Pastikan file environment yang relevan dengan jaringan Anda (`.env.sepolia`, atau `.env.mainnet`) diatur untuk properti `env_file` dalam `docker-compose.yml`. Secara default, diatur ke `.env.mainnet`.
-
-   3. Saat ini kami mendukung menjalankan node `op-geth` atau `op-reth` bersama dengan `op-node`. Secara default, kami menjalankan node `op-geth`. Jika Anda ingin menjalankan node `op-reth` sebagai gantinya, harap atur variabel lingkungan `CLIENT` ke `reth` sebelum memulai node.  
-
+Jika Anda menjalankan node L1 sendiri, node tersebut harus disinkronkan sebelum node Lisk dapat sepenuhnya sinkron.
+2. Pastikan file environment yang relevan dengan jaringan Anda (`.env.sepolia`, atau `.env.mainnet`) diatur untuk properti `env_file` dalam `docker-compose.yml`.
+Secara default, diatur ke `.env.mainnet`.
+3. Saat ini kami mendukung menjalankan node `op-geth` atau `op-reth` bersama dengan `op-node`.
+Secara default, kami menjalankan node `op-geth`. Jika Anda ingin menjalankan node `op-reth` sebagai gantinya, harap atur variabel lingkungan `CLIENT` ke `reth` sebelum memulai node.  
    :::note  
    Klien `op-reth` dapat dibangun dalam profil `maxperf` (default) atau `release`.  
    Untuk mempelajari lebih lanjut, silakan lihat dokumentasi reth tentang [Optimizations](https://github.com/paradigmxyz/reth/blob/main/book/installation/source.md#optimizations).  
@@ -95,30 +96,28 @@ cd lisk-node
    :::
 
 4. Jalankan:
-:::warning[penting] 
-Untuk menjalankan node di Lisk Sepolia, pertama-tama patch Dockerfile(s) dengan:  
-```sh  
-git apply dockerfile-lisk-sepolia.patch  
-```
-:::  
+   :::warning[penting] 
+   Untuk menjalankan node di Lisk Sepolia, pertama-tama patch Dockerfile(s) dengan:  
+   ```sh  
+   git apply dockerfile-lisk-sepolia.patch  
+   ```
+   :::  
 
-dengan klien eksekusi `op-geth`:  
+   dengan klien eksekusi `op-geth`:  
 
-```sh
-   docker compose up --build --detach
+   ```sh
+      docker compose up --build --detach
    ```
 
-atau, dengan klien eksekusi `op-reth`:  
+   atau, dengan klien eksekusi `op-reth`:  
 
-```sh  
-CLIENT=reth RETH_BUILD_PROFILE=maxperf docker compose up --build --detach  
-```  
+   ```sh  
+   CLIENT=reth RETH_BUILD_PROFILE=maxperf docker compose up --build --detach  
+   ```  
 5. Sekarang Anda seharusnya dapat menjalankan `curl` pada node Lisk Anda:  
-```sh
-
-   ```
+   ```sh
    curl -s -d '{"id":0,"jsonrpc":"2.0","method":"eth_getBlockByNumber","params":["latest",false]}' \
-     -H "Content-Type: application/json" http://localhost:8545
+      -H "Content-Type: application/json" http://localhost:8545
    ```
 
 ### Sinkronisasi
