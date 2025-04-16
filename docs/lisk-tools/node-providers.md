@@ -64,6 +64,13 @@ dRPC also provides a [faucet for Lisk Sepolia](./faucets.md#drpc-faucet).
 In order to use the provided endpoints, you need to [get the corresponding API keys](https://docs.drpc.org/gettingstarted/createaccount).
 :::
 
+## Gelato
+
+[Gelato](https://www.gelato.network/) RPC Nodes provide a fast and reliable production environment, enabling access to Gelato rollups via RPC. You can send transactions, deploy smart contracts, query blockchain data, and perform other operations without the need to run your own RPC node or manage infrastructure.
+
+- [Gelato RPC nodes](https://docs.gelato.network/rpc-nodes/introduction)
+- [Supports Lisk Mainnet](https://docs.gelato.network/rpc-nodes/supported-networks)
+
 ## Moralis
 
 [Moralis](https://developers.moralis.com/chains/lisk/) APIs elevate your dapps with unmatched speed, security, and scalability across EVM-compatible chains.
@@ -92,4 +99,13 @@ To use the Moralis RPC Nodes, follow these steps:
 - [Lisk Mainnet nodes by Tenderly](https://docs.tenderly.co/node/rpc-reference/lisk)
 - [Lisk Sepolia Testnet nodes by Tenderly](https://docs.tenderly.co/node/rpc-reference/lisk-sepolia)
 
-Tenderly provides a [free trier](https://tenderly.co/pricing) to user their RPC nodes.
+Tenderly provides a [free trier](https://tenderly.co/pricing) to use their RPC nodes.
+
+## thirdweb
+
+[RPC Edge](https://portal.thirdweb.com/infrastructure/rpc-edge/overview) by thirdweb provides reliable access to querying data and interacting with the blockchain through global edge RPCs.
+
+- [Lisk Mainnet RPC by thirdweb](https://thirdweb.com/lisk)
+- [Lisk Sepolia Testnet RPC by thirdweb](https://thirdweb.com/lisk-sepolia-testnet)
+
+Thirdweb provides different [price tiers](https://thirdweb.com/pricing), with the cheapest one starting from 5 Euros/Dollars per month.
