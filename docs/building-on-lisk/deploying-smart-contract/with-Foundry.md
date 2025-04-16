@@ -402,7 +402,7 @@ Use the contract's address e.g., `0xcCaA1C3eb8FEb5b09a5Eac1359BC4c70E18e29d9` to
 
 ## Interacting with the Smart Contract
 
-As mentioned earlier, if you verified the smart contract on Blocksout, you can use the `Read contract` and `Write contract` sections under the `Contract` tab to interact with the deployed contract.
+As mentioned earlier, if you verified the smart contract on Blockscout, you can use the `Read contract` and `Write contract` sections under the `Contract` tab to interact with the deployed contract.
 
 The `Read contract` tab can be used without connecting a wallet, however, to use the `Write contract` tab, you'll need to connect your wallet first.
 You can do that by clicking the `Connect wallet` button.
