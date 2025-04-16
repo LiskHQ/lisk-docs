@@ -26,7 +26,7 @@ Grants test **LSK** on Lisk Sepolia.
 
 The Lisk Sepolia faucet is available here: https://sepolia-faucet.lisk.com/: 
 
-Enter your account address or ENS name to receive 1 test LSK per request.
+Enter your account address or ENS name to receive 0.1 test LSK per request.
 
 
 ## Superchain Faucet
