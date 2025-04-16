@@ -1,6 +1,6 @@
 ---
 title: Menjalankan Node Lisk
-slug: /lisk-tools/node-providers
+slug: /building-on-lisk/run-a-lisk-node
 description: Tutorial yang mengajarkan cara memasang dan menjalankan Node Lisk.
 keywords:
   [
