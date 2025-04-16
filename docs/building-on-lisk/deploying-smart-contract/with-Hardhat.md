@@ -261,11 +261,11 @@ First, we import the `expect` function from the [Chai](https://www.chaijs.com/) 
 
 If you set up your project to use the hardhat toolbox like explained in step [Creating a project](#creating-a-project), you already have ethers available in your project out of the box.
 Otherwise, you can install the ethers plugin for Hardhat as described in the [hardhat-ethers](https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-ethers)' reference page.
-Hardhat-Ethers has the same API as [ethers.js](https://docs.ethers.org/v6/), with some extra [Hardhat-specific](https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-ethers#helpers) functionality, that we are going to use in the test for the contract.
+Hardhat-Ethers plugin has the same API as [ethers.js](https://docs.ethers.org/v6/), with some additional [Hardhat-specific](https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-ethers#helpers) features, that we are going to use in the test for the contract.
 
-Next, we deploy the NFT contract inside the `beforeEach()` function, so the contract is always deployed, if we decide to add more tests for the contract in the future.
+Next, we deploy the NFT contract inside the `beforeEach()` hook, ensuring the contract is always deployed before each test. This setup makes it easy to add additional test cases later.```
 
-Then, we define the test `Should allow to mint a new NFT` to verify that calling the `.mint()` function of the NFT mints a new NFT and adds it to the balance of the account that minted it.
+Finally, we define a test case `Should allow to mint a new NFT` to verify that calling the `.mint()` function of the NFT contract mints a new NFT and adds it to the balance of the account that minted it.
 
 ### Running the Test
 Now, run `npx hardhat test` in your terminal. 
