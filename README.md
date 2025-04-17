@@ -72,7 +72,6 @@ Once translated, the PR entry in the following table should be removed, and the 
 
 | Pull Request  | Indonesian    |
 | ------------- |:-------------:|
-| [[LISKDOCS-19] Introduction to Web3 app development](https://github.com/LiskHQ/lisk-docs/pull/260)   | ✖ |
 
 ## License
 
