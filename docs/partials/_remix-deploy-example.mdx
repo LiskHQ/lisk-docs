@@ -36,7 +36,156 @@ Please double-check that the compiler version of the Remix IDE matches the compi
 
 Press the green play button at the top to compile the contract.
 
-## 5. Deploy the contract
+## 5. Test the contract
+To test the contract, we are using the [Solidity Unit Testing](https://remix-ide.readthedocs.io/en/latest/unittesting.html) plugin of the Remix IDE.
+If you haven't used this plugin before and are not seeing the double-check icon in the sidebar, you first have to [activate](https://remix-ide.readthedocs.io/en/latest/unittesting.html) it from the Remix plugin manager.
+
+To start testing, create a new folder called `tests` at the root level of your Remix workspace.
+This is the default directory for tests.
+If you want to change the test directory, you can do so by clicking on the double-check icon and specifying the path in the `Test directory` field.
+
+Next, open the Solidity file which you want to test, then switch to the "Solidity Unit Testing" plugin and click on the `Generate` button.
+In the test directory, a test file will be created for your selected file.
+This file contains information about developing tests for a contract.
+
+Below is an example of a generic test file `myNFT_test.sol`:
+
+```solidity
+// SPDX-License-Identifier: GPL-3.0
+        
+pragma solidity >=0.4.22 <0.9.0;
+
+// This import is automatically injected by Remix
+import "remix_tests.sol"; 
+
+// This import is required to use custom transaction context
+// Although it may fail compilation in 'Solidity Compiler' plugin
+// But it will work fine in 'Solidity Unit Testing' plugin
+import "remix_accounts.sol";
+import "../contracts/MyNFT.sol";
+
+// File name has to end with '_test.sol', this file can contain more than one testSuite contracts
+contract testSuite {
+
+    /// 'beforeAll' runs before all other tests
+    /// More special functions are: 'beforeEach', 'beforeAll', 'afterEach' & 'afterAll'
+    function beforeAll() public {
+        // <instantiate contract>
+        Assert.equal(uint(1), uint(1), "1 should be equal to 1");
+    }
+
+    function checkSuccess() public {
+        // Use 'Assert' methods: https://remix-ide.readthedocs.io/en/latest/assert_library.html
+        Assert.ok(2 == 2, 'should be true');
+        Assert.greaterThan(uint(2), uint(1), "2 should be greater than to 1");
+        Assert.lesserThan(uint(2), uint(3), "2 should be lesser than to 3");
+    }
+
+    function checkSuccess2() public pure returns (bool) {
+        // Use the return value (true or false) to test the contract
+        return true;
+    }
+    
+    function checkFailure() public {
+        Assert.notEqual(uint(1), uint(1), "1 should not be equal to 1");
+    }
+
+    /// Custom Transaction Context: https://remix-ide.readthedocs.io/en/latest/unittesting.html#customization
+    /// #sender: account-1
+    /// #value: 100
+    function checkSenderAndValue() public payable {
+        // account index varies 0-9, value is in wei
+        Assert.equal(msg.sender, TestsAccounts.getAccount(1), "Invalid sender");
+        Assert.equal(msg.value, 100, "Invalid value");
+    }
+}
+```
+
+Take the auto-generated template as a basis to create sufficient unit tests to ensure that your contract works as expected under different scenarios.
+Remix injects a built-in assert library for testing.
+You can visit the [assert library](https://remix-ide.readthedocs.io/en/latest/assert_library.html) in the Remix docs.
+Additionally, Remix allows the usage of special functions in the test file to make testing more structural.
+
+They are:
+
+- `beforeEach()` - Runs before each test
+- `beforeAll()` - Runs before all tests
+- `afterEach()` - Runs after each test
+- `afterAll()` - Runs after all tests
+
+For our new NFT contract, we add the following test:
+
+```solidity
+// SPDX-License-Identifier: GPL-3.0
+        
+pragma solidity >=0.4.22 <0.9.0;
+
+// This import is automatically injected by Remix
+import "remix_tests.sol"; 
+
+// This import is required to use custom transaction context
+// Although it may fail compilation in 'Solidity Compiler' plugin
+// But it will work fine in 'Solidity Unit Testing' plugin
+import "remix_accounts.sol";
+import "../contracts/MyNFT.sol";
+
+// File name has to end with '_test.sol', this file can contain more than one testSuite contracts
+contract testSuite {
+    MyNFT nft;
+
+    function beforeAll() public {
+        nft = new MyNFT(); 
+    }
+
+    // Test minting functionality
+    function testMint() public {
+
+        // Store initial token ID
+        uint256 initialTokenId = nft.currentTokenId();
+        
+        // Mint a new NFT to this contract's address
+        uint256 newTokenId = nft.mint(TestsAccounts.getAccount(2));
+        
+        // Check that token ID incremented
+        Assert.equal(newTokenId, initialTokenId + 1, "Token ID should increment by 1");
+        
+        // Check currentTokenId updated
+        Assert.equal(nft.currentTokenId(), newTokenId, "currentTokenId should match new token ID");
+        
+        // Check ownership
+        Assert.equal(nft.ownerOf(newTokenId), TestsAccounts.getAccount(2), "Contract should own the minted NFT");
+    }
+    
+    // Test minting to specific address
+    function testMintToAddress() public {
+        
+        // Mint NFT to test address
+        uint256 newTokenId = nft.mint(TestsAccounts.getAccount(1));
+        
+        // Check ownership
+        Assert.equal(nft.ownerOf(newTokenId), TestsAccounts.getAccount(1), "Test address should own the minted NFT");
+        
+        // Check token balance
+        Assert.equal(nft.balanceOf(TestsAccounts.getAccount(1)), 1, "Test address should have 1 NFT");
+    }
+}
+```
+
+There are several ways to customize your solidity tests.
+For example, you can [customize the compiler and the transaction context](https://remix-ide.readthedocs.io/en/latest/unittesting.html#customization).
+
+Once you are done with writing tests, select the test file(s) and click on `Run` to execute the tests.
+The execution will run in a separate environment.
+After completing the execution of one file, a test summary will be shown:
+
+```text
+Result for tests/MyNFT_test.sol
+Passed: 2
+Failed: 0
+Time Taken: 0.06s
+```
+
+## 6. Deploy the contract
 
 Open the `Deploy & run transactions` tab (this looks like an Ethereum logo with an arrow pointing right).
 Make sure that your environment is set to "Injected Provider", your wallet is connected to Lisk or Lisk Sepolia network, and Remix has access to your wallet.
@@ -47,7 +196,7 @@ Paste this address in Blockscout, to see the contract in the Lisk blockchain exp
 
 In case you chose to deploy on the Lisk Mainnet, you need to paste the address on https://blockscout.lisk.com instead.
 
-## 6. Verify the contract
+## 7. Verify the contract
 
 If you want to interact with your contract on the block explorer, you first need to verify it.
 The above contract has already been verified, so you should be able to view your version on a block explorer already.

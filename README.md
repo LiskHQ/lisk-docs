@@ -72,9 +72,11 @@ Once translated, the PR entry in the following table should be removed, and the 
 
 | Pull Request  | Indonesian    |
 | ------------- |:-------------:|
+| [Add Remix test example](https://github.com/LiskHQ/lisk-docs/pull/302) | ✖ |
+| [Add hardhat test example](https://github.com/LiskHQ/lisk-docs/pull/301) | ✖ |
+| [Add Gelato and thirdweb to node providers page](https://github.com/LiskHQ/lisk-docs/pull/300) | ✖ |
+| [Add tenderly details](https://github.com/LiskHQ/lisk-docs/pull/282) | ✖ |
 | [[LISKDOCS-19] Introduction to Web3 app development](https://github.com/LiskHQ/lisk-docs/pull/260)   | ✖ |
-| [[LISKDOCS-37] Add Tenderly nodes](https://github.com/LiskHQ/lisk-docs/pull/271)   | ✖ |
-| [[LISKDOCS-38] Update node guide](https://github.com/LiskHQ/lisk-docs/pull/277)   | ✖ |
 
 ## License
 
