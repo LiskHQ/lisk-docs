@@ -225,21 +225,14 @@ After successful compilation, you should see a new folder `artifacts/`, which co
 To test our NFT contract, we’ll use:
 
 - **Hardhat Network** – A local Ethereum network for development.
-<<<<<<< HEAD
-It comes built-in with Hardhat, and it's used as the default network.
-=======
 It comes built-in with Hardhat and is used as the default network.
->>>>>>> liskdocs-52-remix-test
 - **Ethers.js** – To interact with the contract.
 - **Mocha** – For test runner and assertions.
 
 ###  Setting up the test file
-<<<<<<< HEAD
-Create a new directory called `test` inside our project root directory and create a new file in there called `NFT.js` and add the following code:
-=======
+
 Create a new directory called `test` inside our project root directory. 
 Then, create a new file in there called `NFT.js`, and add the following code:
->>>>>>> liskdocs-52-remix-test
 
 ```js title="test/NFT.js"
 const { expect } = require("chai");
