@@ -21,9 +21,9 @@ tags: ['node']
 difficulty: beginner
 ---
 
-**Menjalankan Node Lisk**
-
-Tutorial ini akan memandu Anda untuk mengatur dan menjalankan [Node Lisk] Anda sendiri.
+Tutorial ini akan memandu Anda untuk mengatur dan menjalankan [Node Lisk] Anda sendiri dengan Docker.  
+  
+*Untuk instruksi menjalankan Lisk node dari sumber, silakan lihat instruksi yang dijelaskan di repositori GitHub [Lisk Node](https://github.com/LiskHQ/lisk-node?tab=readme-ov-file#source).*
 
 ## Tujuan
 
@@ -50,23 +50,22 @@ Jika Anda ingin memperkuat aplikasi Anda dan menghindari rate limit untuk penggu
 
 ## Persyaratan Sistem
 
-Persyaratan sistem berikut direkomendasikan untuk menjalankan node Lisk L2.
+Kami merekomendasikan konfigurasi perangkat keras berikut untuk menjalankan node Lisk L2:
 
-### Memori
+- CPU multi-core modern dengan performa single-core yang baik.  
+- Minimal 16 GB RAM (disarankan 32 GB).  
+- Drive NVMe SSD yang terhubung secara lokal.  
+- Kapasitas penyimpanan yang memadai untuk menampung proses pemulihan snapshot (jika memulihkan dari snapshot) dan chain data, dengan memastikan kapasitas minimum sebesar (2 * current_chain_size) + snapshot_size + 20%_buffer.  
+- Jika menjalankan dengan Docker, harap instal Docker Engine versi [27.0.1](https://docs.docker.com/engine/release-notes/27.0/) atau lebih tinggi.  
 
-- CPU multi-core modern dengan kinerja core tunggal yang baik.
-- Mesin dengan minimal 16 GB RAM (32 GB disarankan).
-
-### Penyimpanan
-
-- Mesin dengan SSD berkinerja tinggi dengan ruang kosong setidaknya 750GB (untuk node penuh) atau 4.5TB (untuk node arsip).
+*Catatan: Jika menggunakan Amazon Elastic Block Store (EBS), pastikan kecepatan pembacaan buffered disk cukup cepat untuk menghindari masalah latensi seiring dengan penambahan blok baru ke Base selama proses sinkronisasi awal; disarankan menggunakan `io2 block express`.*
 
 ## Penggunaan
 
 :::note
-Saat ini belum memungkinkan untuk menjalankan node dengan flag `--op-network` hingga konfigurasi untuk Lisk digabungkan ke dalam [superchain-registry](https://github.com/ethereum-optimism/superchain-registry).
+Sekarang memungkinkan untuk menjalankan node Lisk dengan flag `--op-network` pada klien eksekusi `op-geth`.
 
-Saat ini ada [PR terbuka](https://github.com/ethereum-optimism/superchain-registry/pull/234) untuk menambahkan konfigurasi Lisk Mainnet. Dukungan untuk Lisk Sepolia Testnet akan segera ditambahkan.
+Saat ini masih belum memungkinkan untuk menjalankan node Lisk dengan flag `--chain` pada klien eksekusi `op-reth`.
 :::
 
 ### Mengkloning Repository
@@ -82,24 +81,43 @@ cd lisk-node
 ### Docker
 
 1. Pastikan Anda memiliki RPC node penuh Ethereum L1 (bukan Lisk), dan atur variabel `OP_NODE_L1_ETH_RPC` dan `OP_NODE_L1_BEACON` (dalam file `.env.*`, jika menggunakan docker-compose).
-   Jika Anda menjalankan node L1 sendiri, node tersebut harus disinkronkan sebelum node Lisk dapat sepenuhnya sinkron.
-2. Pastikan file environment yang relevan dengan jaringan Anda (`.env.sepolia`, atau `.env.mainnet`) diatur untuk properti `env_file` dalam `docker-compose.yml`. Secara default, diatur ke `.env.mainnet`.
-
-   :::info
-   Kami saat ini mendukung menjalankan node `op-geth` atau `op-reth` bersama dengan `op-node`. Secara default, kami menjalankan node `op-geth`. Jika Anda ingin menjalankan node `op-reth`, silakan atur variabel environment `CLIENT` ke `reth` sebelum memulai node.
+Jika Anda menjalankan node L1 sendiri, node tersebut harus disinkronkan sebelum node Lisk dapat sepenuhnya sinkron.
+2. Pastikan file environment yang relevan dengan jaringan Anda (`.env.sepolia`, atau `.env.mainnet`) diatur untuk properti `env_file` dalam `docker-compose.yml`.
+Secara default, diatur ke `.env.mainnet`.
+3. Saat ini kami mendukung menjalankan node `op-geth` atau `op-reth` bersama dengan `op-node`.
+Secara default, kami menjalankan node `op-geth`. Jika Anda ingin menjalankan node `op-reth` sebagai gantinya, harap atur variabel lingkungan `CLIENT` ke `reth` sebelum memulai node.  
+   :::note  
+   Klien `op-reth` dapat dibangun dalam profil `maxperf` (default) atau `release`.  
+   Untuk mempelajari lebih lanjut, silakan lihat dokumentasi reth tentang [Optimizations](https://github.com/paradigmxyz/reth/blob/main/book/installation/source.md#optimizations).  
+   Harap atur variabel lingkungan `RETH_BUILD_PROFILE` sesuai dengan kebutuhan Anda.  
+   Kecuali Anda membangun klien `op-reth` dalam profil `release`, pastikan Anda memiliki mesin dengan RAM 32 GB.  
+   Selain itu, jika Anda memiliki Docker Desktop terinstal di sistem Anda, pastikan untuk mengatur batas Memori minimal 16 GB.  
+   Pengaturan ini dapat ditemukan di `Settings -> Resources -> Resource Allocation -> Memory limit`.  
    :::
 
-3. Jalankan:
-
+4. Jalankan:
+   :::warning[penting] 
+   Untuk menjalankan node di Lisk Sepolia, pertama-tama patch Dockerfile(s) dengan:  
+   ```sh  
+   git apply dockerfile-lisk-sepolia.patch  
    ```
-   docker compose up --build --detach
+   :::  
+
+   dengan klien eksekusi `op-geth`:  
+
+   ```sh
+      docker compose up --build --detach
    ```
 
-4. Anda sekarang seharusnya dapat melakukan `curl` ke node Lisk Anda:
+   atau, dengan klien eksekusi `op-reth`:  
 
-   ```
+   ```sh  
+   CLIENT=reth RETH_BUILD_PROFILE=maxperf docker compose up --build --detach  
+   ```  
+5. Sekarang Anda seharusnya dapat menjalankan `curl` pada node Lisk Anda:  
+   ```sh
    curl -s -d '{"id":0,"jsonrpc":"2.0","method":"eth_getBlockByNumber","params":["latest",false]}' \
-     -H "Content-Type: application/json" http://localhost:8545
+      -H "Content-Type: application/json" http://localhost:8545
    ```
 
 ### Sinkronisasi
@@ -116,5 +134,42 @@ $( curl -s -d '{"id":0,"jsonrpc":"2.0","method":"optimism_syncStatus"}' -H "Cont
    jq -r .result.unsafe_l2.timestamp))/60)) minutes
 ```
 
-[mitra kami]: /lisk-tools/api-providers
-[node lisk]: https://github.com/LiskHQ/lisk-node
+[mitra kami]: /lisk-tools/node-providers
+[lisk node]: https://github.com/LiskHQ/lisk-node  
+
+### Snapshot
+
+:::note  
+- Snapshot tersedia untuk klien `op-geth` dan `op-reth`:  
+  - `op-geth` mendukung snapshot jenis export dan datadir  
+  - `op-reth` hanya mendukung snapshot jenis datadir  
+- Semua snapshot berasal dari node arsip  
+- Jenis snapshot:  
+  - `export`: ukuran download kecil, pemulihan lambat, data diverifikasi selama pemulihan (`op-geth` saja)  
+  - `datadir`: ukuran download besar, pemulihan cepat, tidak ada verifikasi data selama pemulihan  
+:::  
+
+Untuk mengaktifkan download dan penerapan snapshot otomatis, atur variabel lingkungan `APPLY_SNAPSHOT` ke `true` saat memulai node:  
+
+```sh  
+APPLY_SNAPSHOT=true docker compose up --build --detach  
+```  
+Untuk menentukan klien dan jenis snapshot, atur variabel lingkungan `CLIENT` dan `SNAPSHOT_TYPE`:  
+
+```sh  
+# Untuk op-geth dengan snapshot export (default)  
+APPLY_SNAPSHOT=true CLIENT=geth SNAPSHOT_TYPE=export docker compose up --build --detach  
+
+# Untuk op-geth dengan snapshot datadir  
+APPLY_SNAPSHOT=true CLIENT=geth SNAPSHOT_TYPE=datadir docker compose up --build --detach  
+
+# Untuk op-reth (hanya mendukung datadir)  
+APPLY_SNAPSHOT=true CLIENT=reth SNAPSHOT_TYPE=datadir docker compose up --build --detach  
+```  
+
+Anda juga dapat mendownload dan menerapkan snapshot dari URL khusus dengan mengatur variabel lingkungan `SNAPSHOT_URL`.  
+Pastikan file snapshot diakhiri dengan `*.tar.gz`. 
+
+```sh  
+APPLY_SNAPSHOT=true SNAPSHOT_URL=<custom-snapshot-url> docker compose up --build --detach  
+```
