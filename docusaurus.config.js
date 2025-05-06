@@ -83,6 +83,31 @@ const config = {
     ],
   ],
 
+  scripts: [
+    {
+      src: "https://widget.kapa.ai/kapa-widget.bundle.js",
+      "data-website-id": "48dbb89b-8bcf-439a-98ac-6afd4b641664",
+      "data-project-name": "Lisk",
+      "data-project-color": "#000000",
+      "data-project-logo": "https://lisk.com/wp-content/uploads/2024/11/Share-image.jpg",
+      "data-user-analytics-fingerprint-enabled": "true",
+      "data-modal-title": "Lisk AI",
+      "data-modal-example-questions-title": "Try asking me...",
+      "data-modal-example-questions": "What is Lisk?, How do I create an ERC20 token?, How do I get faucet funds?, Share information about Lisk RPC API.",
+      "data-button-text": " ",
+      "data-button-height": "2.4rem",
+      "data-button-width": "2.4rem",
+      "data-button-text-color": "#ffffff",
+      "data-modal-title-color": "#ffffff",
+      "data-modal-header-bg-color": "#000000",
+      "data-modal-full-screen-on-mobile": "false",
+      "data-consent-required": "true",
+      "data-button-hide": "true",
+      "data-modal-override-open-id": "navbar-ask-ai-button",
+      async: true,
+    },
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -102,10 +127,6 @@ const config = {
         },
         items: [
           {
-            type: 'localeDropdown',
-            position: 'right',
-          },
-          {
             type: 'doc',
             position: 'left',
             docId: 'intro',
@@ -116,6 +137,19 @@ const config = {
             position: 'left',
             sidebarId: 'userSidebar',
             label: 'Using Lisk',
+          },
+          {
+            type: 'html',
+            position: 'right',
+            value: '<button id="navbar-ask-ai-button" class="button button--primary">Ask AI</button>',
+          },
+          {
+            type: 'search',
+            position: 'right', // Search bar position
+          },
+          {
+            type: 'localeDropdown',
+            position: 'right',
           },
           /*{to: '/blog', label: 'Blog', position: 'left'},*/
         ],
