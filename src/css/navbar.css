@@ -4,16 +4,10 @@
     align-self: center;
     margin-bottom: -.45%;
     font-size: 18px;
-    padding-right: 0;
 }
 
 .navbar__item:hover {
     text-decoration: underline;
-}
-
-.navbar__items--right {
-    flex-direction: row-reverse;
-    padding-left: 2rem;
 }
 
 html[data-theme='dark'] .navbar__item {
