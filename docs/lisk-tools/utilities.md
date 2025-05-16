@@ -43,6 +43,11 @@ In the [gelato-raas-aa](https://github.com/gelatodigital/gelato-raas-aa) reposit
 Gelato's [Web3 Functions](https://www.gelato.network/web3-functions) is a powerful automation system designed to streamline and enhance Web3 operations.
 Web3 Functions serve as a comprehensive tool, enabling developers to effortlessly set up, manage, and automate their smart contract tasks.
 
+### Web3 Actions
+Tenderly's [Web3 Actions](https://docs.tenderly.co/web3-actions/intro-to-web3-actions?mtm_campaign=ext-docs&mtm_kwd=lisk) are highly configurable monitoring infrastructure, acting as serverless smart contracts backend.
+
+Automate protocol security and maintenance and respond instantly to on-chain events with customizable, real-time alerting and serverless Node.js backends for smart contracts. Automate responses to on-chain events using Web3 Actions, improve your monitoring by setting up invariant monitoring, or even build Tenderly-hosted webhooks with Web3 Actions.
+
 ## Interoperability
 
 ### Hyperlane
@@ -63,3 +68,8 @@ Create transparent & fair games, NFTs, lotteries, and other onchain applications
 
 Use [Gelato Relay](https://www.gelato.network/relay), to relay your user's transactions on-chain, enabling secure gasless transactions for an ultra-smooth UX for your app.
 This allows for a variety of new web3 experiences, as the user can now pay by only signing a message, or their transaction costs can be sponsored by the developer.
+
+## CI/CD
+
+### Tenderly CI/CD Github Action
+[Tenderly Github action plugin](https://docs.tenderly.co/virtual-testnets/ci-cd/github-actions-foundry?mtm_campaign=ext-docs&mtm_kwd=lisk) enables effortless provisioning of [Virtual TestNets](https://docs.tenderly.co/virtual-testnets?mtm_campaign=ext-docs&mtm_kwd=lisk) as smart contracts testing and staging infrastructure. 
