@@ -86,7 +86,7 @@ const config = {
   scripts: [
     {
       src: "https://widget.kapa.ai/kapa-widget.bundle.js",
-      "data-website-id": "1e2ab9ba-0296-4e2c-b8a5-4d53f85744c9",
+      "data-website-id": "48dbb89b-8bcf-439a-98ac-6afd4b641664",
       "data-project-name": "Lisk",
       "data-project-color": "#000000",
       "data-project-logo": "https://lisk.com/wp-content/uploads/2024/11/Share-image.jpg",
