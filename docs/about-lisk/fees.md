@@ -108,8 +108,8 @@ weighted_gas_price = 16*base_fee_scalar*base_fee + blob_base_fee_scalar*blob_bas
 
 The current values for the scalars are:
 
-  - `base_fee_scalar` = 0.024740
-  - `blob_base_fee_scalar` = 0.801328
+  - `base_fee_scalar` = 37110
+  - `blob_base_fee_scalar` = 1201993
 
 They can be adjusted depending on network conditions, to mitigate spikes in the transaction fees. 
 
