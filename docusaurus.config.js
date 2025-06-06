@@ -85,31 +85,8 @@ const config = {
 
   scripts: [
     {
-      src: "https://widget.kapa.ai/kapa-widget.bundle.js",
-      "data-website-id": "48dbb89b-8bcf-439a-98ac-6afd4b641664",
-      "data-project-name": "Lisk",
-      "data-project-color": "#000000",
-      "data-project-logo": "https://lisk.com/wp-content/uploads/2024/11/Share-image.jpg",
-      "data-button-image-height": "0",
-      "data-button-image-width": "0",
-      "data-button-height": "2.5rem",
-      "data-button-width": "5rem",
-      "data-button-bg-color": "#ffffff",
-      "data-button-text-color": "#000000",
-      "data-button-text-font-size": "1rem",
-      "data-button-text-shadow": "0 0 0px rgba(0, 0, 0, 0)",
-      "data-button-border-radius": "0rem",
-      "data-button-hover-bg-color": "#e6e6e6",
-      "data-user-analytics-fingerprint-enabled": "true",
-      "data-modal-title": "Lisk AI",
-      "data-modal-example-questions-title": "Try asking me...",
-      "data-modal-example-questions": "What is Lisk?, How do I create an ERC20 token?, How do I get faucet funds?, Share information about Lisk RPC API.",
-      "data-button-text": "Ask AI",
-      "data-modal-title-color": "#ffffff",
-      "data-modal-header-bg-color": "#000000",
-      "data-modal-full-screen-on-mobile": "false",
-      "data-consent-required": "true",
-      async: true,
+      src: "js/intercom.js",
+      async: true
     },
   ],
 
