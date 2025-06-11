@@ -46,7 +46,7 @@ LiskAdresses.forEach(token => {
 });
 
 const tableHeads = {
-  eng: ["Bridged Tokens Mainnet", "Bridged Tokens Sepolia"],
+  eng: ["Bridged Superchain Tokens Mainnet", "Bridged Superchain Tokens Sepolia"],
   ind: ["Bridged Token di Mainnet", "Bridged Token di Sepolia"],
 }
 

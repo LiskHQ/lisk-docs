@@ -30,7 +30,7 @@ const sidebars = {
         'about-lisk/network-info',
         'about-lisk/fees',
         'about-lisk/contracts',
-        'about-lisk/bridged-tokens'
+        'about-lisk/deployed-tokens'
       ],
     },
     {
