@@ -1,5 +1,5 @@
 ---
-id: tokens
+id: deployed-tokens
 title: Tokens on Lisk
 sidebar_position: 2
 description: 'A reference page listing all tokens deployed on Lisk.'
