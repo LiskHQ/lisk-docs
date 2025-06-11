@@ -14,7 +14,7 @@ keywords:
 
 ## Superchain tokens deployed on Lisk
 
-This page summarizes officially reviewed tokens deployed on Lisk and their corresponding L1 addresses.
+This section summarizes officially reviewed tokens deployed on Lisk and their corresponding L1 addresses.
 The list is based on the [Superchain Token List](https://github.com/ethereum-optimism/ethereum-optimism.github.io).
 
 :::tip
@@ -32,11 +32,14 @@ If you want to add a token to this list that is already deployed on Ethereum, pl
 
 ## Other tokens deployed on Lisk
 
+This section summarizes other tokens deployed on Lisk, which are not part of the Superchain Token List.
+
 ## Lisk Mainnet
 
 | Token Name             | Symbol | L1 Token           | L2 Token           | Bridges  |
 | :--------------------- | :----- |:-----------------: | :----------------- | :------: |
-| Merlin BTC | M-BTC | [0x9BFA177621119e64CecbEabE184ab9993E2ef727](ttps://etherscan.io/address/0x9BFA177621119e64CecbEabE184ab9993E2ef727) | [0x33F2EfCcaaFAb04561F815B0059b0B1E9F7DB211](https://blockscout.lisk.com/address/0x33F2EfCcaaFAb04561F815B0059b0B1E9F7DB211)
+| Merlin BTC | M-BTC | [0x9BFA177621119e64CecbEabE184ab9993E2ef727](ttps://etherscan.io/address/0x9BFA177621119e64CecbEabE184ab9993E2ef727) | [0x33F2EfCcaaFAb04561F815B0059b0B1E9F7DB211](https://blockscout.lisk.com/address/0x33F2EfCcaaFAb04561F815B0059b0B1E9F7DB211) | [](https://etherscan.io/address/) (L1)<br/> [0x33F2EfCcaaFAb04561F815B0059b0B1E9F7DB211](https://blockscout.lisk.com/address/0x33F2EfCcaaFAb04561F815B0059b0B1E9F7DB211) (L2)|
+| Open USDT | oUSDT | - | [0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189](https://blockscout.lisk.com/address/0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189) | - |
 
 ## Lisk Sepolia:
 | Token Name             | Symbol | L1 Token           | L2 Token           | Bridges  |
