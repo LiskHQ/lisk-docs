@@ -38,6 +38,7 @@ This section summarizes other tokens deployed on Lisk, which are not part of the
 
 | Token Name             | Symbol | L1 Token           | L2 Token           | Bridges  |
 | :--------------------- | :----- |:-----------------: | :----------------- | :------: |
+| Bridged EURC | EURC.e | [0x1aBaEA1f7C830bD89Acc67eC4af516284b1bC33c](ttps://etherscan.io/address/0x1aBaEA1f7C830bD89Acc67eC4af516284b1bC33c) | [0xe12cEFaAD61e551691BFa5cDA36e5dE051778C65](https://blockscout.lisk.com/address/0xe12cEFaAD61e551691BFa5cDA36e5dE051778C65) | [0xEb99c8c87c5e0C2dCb01E2A1E35AA01f5889F677](https://etherscan.io/address/0xEb99c8c87c5e0C2dCb01E2A1E35AA01f5889F677) (L1)<br/> [0x4db1c96C1f9c3d5429fDf35ED2e684b309b0c281](https://blockscout.lisk.com/address/0x4db1c96C1f9c3d5429fDf35ED2e684b309b0c281) (L2)|
 | Merlin BTC | M-BTC | [0x9BFA177621119e64CecbEabE184ab9993E2ef727](ttps://etherscan.io/address/0x9BFA177621119e64CecbEabE184ab9993E2ef727) | [0x33F2EfCcaaFAb04561F815B0059b0B1E9F7DB211](https://blockscout.lisk.com/address/0x33F2EfCcaaFAb04561F815B0059b0B1E9F7DB211) | [](https://etherscan.io/address/) (L1)<br/> [0x33F2EfCcaaFAb04561F815B0059b0B1E9F7DB211](https://blockscout.lisk.com/address/0x33F2EfCcaaFAb04561F815B0059b0B1E9F7DB211) (L2)|
 | Open USDT | oUSDT | - | [0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189](https://blockscout.lisk.com/address/0x1217BfE6c773EEC6cc4A38b5Dc45B92292B6E189) | - |
 
