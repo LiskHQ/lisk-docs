@@ -45,12 +45,12 @@ Free, rate limited RPC endpoints for the Lisk networks.
 |**WS RPC**     | `wss://ws.sepolia-api.lisk.com`   | `wss://ws.api.lisk.com`   |
 
 
-## DRPC
+## dRPC
 
-[DRPC](https://drpc.org/) is a decentralized Web3 infrastructure provider with a focus on resilience and latency.
-DRPC offers access to a distributed network of public nodes for Lisk.
-They provide a free tier that allows for an unlimited amount of requests over public nodes, or a [paid tier](https://drpc.org/docs/pricing/requests) with additional features, which is based on a pay-as-you-go strategy where users deposit money into their account and DRPC charges them per request.
-Each request have its own cost in compute units (CUs), you can see the exact values here.
+[dRPC](https://drpc.org/) is a decentralized Web3 infrastructure provider with a focus on resilience and latency.
+dRPC offers access to a distributed network of public nodes for Lisk.
+They provide a free tier that allows for an unlimited number of requests over public nodes, or a [paid tier](https://drpc.org/docs/pricing/requests) with additional features, which is based on a pay-as-you-go strategy where users deposit money into their account and dRPC charges them per request.
+Each request has its own cost in compute units (CUs); you can see the exact values here.
 
 
 |               | Lisk Sepolia Testnet              | Lisk                      |
@@ -60,9 +60,9 @@ Each request have its own cost in compute units (CUs), you can see the exact val
 
 You can also check the available endpoints for Lisk directly under [https://drpc.org/public-endpoints/lisk](https://drpc.org/public-endpoints/lisk).
 
-DRPC also provides a [faucet for Lisk Sepolia](./faucets.md#drpc-faucet).
+dRPC also provides a [faucet for Lisk Sepolia](./faucets.md#drpc-faucet).
 
-:::note[How to create API keys for DRPC]
+:::note[How to create API keys for dRPC]
 In order to use the provided endpoints, you need to [get the corresponding API keys](https://docs.drpc.org/gettingstarted/createaccount).
 :::
 
