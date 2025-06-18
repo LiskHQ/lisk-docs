@@ -59,7 +59,7 @@ export const generatedDocs = () => {
           cell.children.forEach(cellChild => {
             // Find a cell with the value 'Bridged Token Mainnet'
             if (cellChild.value === tableHeads.eng[0] || cellChild.value === tableHeads.ind[0]) {
-              cellChild.value = 'Bridged Token Name';
+              cellChild.value = 'Token Name';
               // Add a new row for each Mainnet token
               LiskAdresses.forEach(token => {
                 if (token.chainId === chainIds[0]) {
@@ -144,7 +144,7 @@ export const generatedDocs = () => {
               });
               // Find a cell with the value 'Bridged Token Sepolia'
             } else if (cellChild.value === tableHeads.eng[1] || cellChild.value === tableHeads.ind[1]) {
-              cellChild.value = 'Bridged Token Name';
+              cellChild.value = 'Token Name';
               // Add a new row for each Sepolia token
               LiskAdresses.forEach(token => {
                 if (token.chainId === chainIds[1]) {
