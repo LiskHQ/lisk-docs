@@ -50,7 +50,7 @@ Free, rate limited RPC endpoints for the Lisk networks.
 [dRPC](https://drpc.org/) is a decentralized Web3 infrastructure provider with a focus on resilience and latency.
 dRPC offers access to a distributed network of public nodes for Lisk.
 They provide a free tier that allows for an unlimited number of requests over public nodes, or a [paid tier](https://drpc.org/docs/pricing/requests) with additional features, which is based on a pay-as-you-go strategy where users deposit money into their account and dRPC charges them per request.
-Each request has its own cost in compute units (CUs); you can see the exact values here.
+Each request has its own cost in compute units (CUs); you can see the exact values in the [dRPC Docs](https://drpc.org/docs/pricing/compute-units).
 
 
 |               | Lisk Sepolia Testnet              | Lisk                      |
