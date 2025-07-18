@@ -29,7 +29,7 @@ keywords:
 Node Lisk mengungkapkan API RPC yang memungkinkan pihak lain berinteraksi dengan blockchain dengan mengirimkan permintaan.
 
 Jika Anda baru memulai dan membutuhkan URL RPC, Anda dapat menggunakan [endpoint gratis kami](#lisk-rpc).  
-Jika Anda ingin memperkuat aplikasi Anda dan menghindari rate-limit untuk pengguna Anda, silakan lihat penyedia node RPC yang tersedia seperti [dRPC](#drpc).
+Jika Anda ingin memperkuat aplikasi Anda dan menghindari rate-limit untuk pengguna Anda, silakan lihat penyedia node RPC yang tersedia seperti [Gelato](#gelato).
 
 :::tip[referensi API]
 Endpoint yang tersedia untuk node Lisk mencakup semua [endpoint RPC Geth](https://geth.ethereum.org/docs/interacting-with-geth/rpc), yang juga mencakup semua [endpoint API JSON-RPC standar](https://ethereum.github.io/execution-apis/api-documentation/) dari Ethereum.
@@ -48,7 +48,8 @@ Endpoint RPC gratis dengan pembatasan laju untuk jaringan Lisk.
 
 [dRPC](https://drpc.org/) adalah penyedia infrastruktur Web3 terdesentralisasi yang berfokus pada ketahanan dan latensi.  
 dRPC menyediakan akses ke jaringan terdistribusi dari node publik untuk Lisk.  
-Mereka menawarkan tier gratis yang memungkinkan jumlah permintaan yang tidak terbatas melalui node publik, atau tier berbayar yang menyediakan akses ke semua penyedia, serta fitur tambahan lainnya.
+Mereka menawarkan tier gratis yang menyediakan jumlah request tidak terbatas melalui node publik, atau [tier berbayar](https://drpc.org/docs/pricing/requests) dengan fitur tambahan, yang didasarkan pada strategi bayar sesuai penggunaan di mana pengguna deposit uang ke akun mereka dan dRPC mengenakan biaya per permintaan.
+Each request has its own cost in compute units (CUs); you can see the exact values in the [dRPC Docs](https://drpc.org/docs/pricing/compute-units).
 
 |               | Lisk Sepolia Testnet              | Lisk                      |
 | :------       | :------                           | :-----------------------  |
@@ -61,6 +62,22 @@ dRPC juga menyediakan [faucet untuk Lisk Sepolia](./faucets.md#drpc-faucet).
 :::note[Cara membuat kunci API untuk dRPC]  
 Untuk menggunakan endpoint yang disediakan, Anda perlu [mendapatkan kunci API yang sesuai](https://docs.drpc.org/gettingstarted/createaccount).  
 :::
+
+## Gelato
+
+[Gelato](https://www.gelato.network/) menyediakan production environment yang cepat dan andal, memungkinkan akses ke rollup Gelato melalui RPC.
+Anda dapat mengirim transaksi, deploy smart contract, membuat kueri data blockchain, dan melakukan operasi lainnya tanpa perlu menjalankan node RPC Anda sendiri atau mengelola infrastruktur.
+
+Gelato menawarkan tier gratis dengan rate limit, dan dua tier berbayar, lihat [Gelato: Harga dan Paket](https://docs.gelato.cloud/rpc-nodes/pricing-and-plans).
+
+Paket gratis untuk Gelato meliputi:
+
+- 500 Juta Unit Komputasi per bulan
+- 600 CU/dtk
+- 1 API key
+
+- [Node RPC Gelato](https://docs.gelato.network/rpc-nodes/introduction)
+- [Mendukung Lisk Mainnet](https://docs.gelato.network/rpc-nodes/supported-networks)
 
 ## Moralis
 
