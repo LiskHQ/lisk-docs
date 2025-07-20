@@ -63,6 +63,13 @@ dRPC juga menyediakan [faucet untuk Lisk Sepolia](faucets.md#drpc-faucet).
 Untuk menggunakan endpoint yang disediakan, Anda perlu [mendapatkan kunci API yang sesuai](https://docs.drpc.org/gettingstarted/createaccount).  
 :::
 
+## Gelato
+
+[Gelato](https://www.gelato.network/) RPC Nodes menyediakan lingkungan produksi yang cepat dan andal, memungkinkan akses ke rollup Gelato melalui RPC. Kamu dapat mengirim transaksi, melakukan deployment smart contract, mengambil data dari blockchain, dan menjalankan operasi lainnya tanpa perlu menjalankan node RPC sendiri atau mengelola infrastrukturnya.
+
+* [Gelato RPC nodes](https://docs.gelato.network/rpc-nodes/introduction)
+* [Mendukung Lisk Mainnet](https://docs.gelato.network/rpc-nodes/supported-networks)
+
 ## Moralis
 
 [Moralis](https://developers.moralis.com/chains/lisk/) API meningkatkan dapp Anda dengan kecepatan, keamanan, dan skalabilitas yang tak tertandingi di berbagai chain yang kompatibel dengan EVM.
@@ -83,3 +90,21 @@ Untuk menggunakan Node RPC Moralis, ikuti langkah-langkah berikut:
 1. **Buat akun Moralis:** [Daftar](https://admin.moralis.com/) secara gratis dan akses node RPC Anda.
 2. **Siapkan node Anda:** Visit the [Menyiapkan Node RPC](https://docs.moralis.com/get-your-node-api-key) untuk membuat dan mengonfigurasi node RPC Anda.
 3. **Lakukan panggilan RPC pertama Anda:** Setelah node Anda siap, ikuti [tutorial](https://docs.moralis.com/make-your-first-rpc-call) untuk membuat panggilan JSON-RPC pertama Anda menggunakan ethers.js.
+
+## Tenderly
+
+[Tenderly](https://tenderly.co/) adalah platform pengembangan Web3 yang menawarkan berbagai alat dan infrastruktur di lebih dari 79 jaringan. Beberapa jaringan, seperti Lisk, juga didukung oleh node RPC mereka.
+
+* [Node Lisk Mainnet oleh Tenderly](https://docs.tenderly.co/node/rpc-reference/lisk)
+* [Node Lisk Sepolia Testnet oleh Tenderly](https://docs.tenderly.co/node/rpc-reference/lisk-sepolia)
+
+Tenderly menyediakan [tingkatan gratis](https://tenderly.co/pricing) untuk menggunakan node RPC mereka.
+
+## thirdweb
+
+[RPC Edge](https://portal.thirdweb.com/infrastructure/rpc-edge/overview) dari thirdweb memberikan akses andal untuk mengambil data dan berinteraksi dengan blockchain melalui edge RPC global.
+
+* [RPC Lisk Mainnet oleh thirdweb](https://thirdweb.com/lisk)
+* [RPC Lisk Sepolia Testnet oleh thirdweb](https://thirdweb.com/lisk-sepolia-testnet)
+
+Thirdweb menyediakan beberapa [tingkatan harga](https://thirdweb.com/pricing), dengan paket termurah mulai dari 5 Euro/Dolar per bulan.
