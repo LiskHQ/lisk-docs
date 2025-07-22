@@ -74,7 +74,6 @@ Once translated, the PR entry in the following table should be removed, and the 
 | ------------- |:-------------:|
 | [Update token page](https://github.com/LiskHQ/lisk-docs/pull/313) | ✖ |
 | [Update RPC provider details](https://github.com/LiskHQ/lisk-docs/pull/310) | ✖ |
-| [Update scalars](https://github.com/LiskHQ/lisk-docs/pull/311) | ✖ |
 | [Add Remix test example](https://github.com/LiskHQ/lisk-docs/pull/302) | ✖ |
 | [Add hardhat test example](https://github.com/LiskHQ/lisk-docs/pull/301) | ✖ |
 | [Add Gelato and thirdweb to node providers page](https://github.com/LiskHQ/lisk-docs/pull/300) | ✖ |
