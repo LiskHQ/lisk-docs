@@ -106,8 +106,8 @@ weighted_gas_price = 16*base_fee_scalar*base_fee + blob_base_fee_scalar*blob_bas
 
 Nilai saat ini untuk skalar adalah:
 
-  - `base_fee_scalar` = 0.024740
-  - `blob_base_fee_scalar` = 0.801328
+  - `base_fee_scalar` = 0.037110
+  - `blob_base_fee_scalar` = 1.201993
 
 Parameter ini dapat disesuaikan tergantung pada kondisi jaringan, untuk mengurangi lonjakan biaya transaksi.
 
