@@ -26,7 +26,7 @@ import TabItem from '@theme/TabItem';
 
 # Deploy Smart Contract dengan Hardhat
 
-Di halaman ini, Anda akan mempelajari cara membuat, menggunakan, dan memverifikasi kontrak pintar dengan Hardhat ke testnet **Lisk Sepolia**.
+Di halaman ini, Anda akan mempelajari cara membuat, menggunakan, dan memverifikasi contract pintar dengan Hardhat ke testnet **Lisk Sepolia**.
 
 ## Prasyarat
 
@@ -228,18 +228,18 @@ npx hardhat compile
 
 Setelah kompilasi berhasil, Anda akan melihat folder baru bernama `artifacts/`, yang berisi [artefak kompilasi](https://hardhat.org/hardhat-runner/docs/advanced/artifacts).
 
-## 🧪 Menguji Kontrak
+## Tes Contract
 
-Untuk menguji kontrak NFT kita, kita akan menggunakan:
+Untuk mengTes contract NFT kita, kita akan menggunakan:
 
 * **Hardhat Network** – Jaringan Ethereum lokal untuk pengembangan.
   Ini sudah termasuk di dalam Hardhat dan digunakan sebagai jaringan default.
-* **Ethers.js** – Untuk berinteraksi dengan kontrak.
+* **Ethers.js** – Untuk berinteraksi dengan contract.
 * **Mocha** – Sebagai test runner dan alat assertions.
 
 ---
 
-### 📁 Menyiapkan File Uji
+### Menyiapkan File Tes
 
 Buat direktori baru bernama `test` di dalam folder utama proyek kita.
 Lalu buat file baru di dalam folder tersebut dengan nama `NFT.js`, dan tambahkan kode berikut:
@@ -251,7 +251,7 @@ describe("NFT", function () {
   let nftToken;
 
   beforeEach(async () => {
-    // Deploy kontrak
+    // Deploy contract
     const NFT = await ethers.getContractFactory("NFT");
     nftToken = await NFT.deploy();
   });
@@ -268,18 +268,18 @@ describe("NFT", function () {
 });
 ```
 
-Pertama, kita mengimpor fungsi `expect` dari pustaka [Chai](https://www.chaijs.com/), agar bisa digunakan dalam pengujian unit kontrak kita.
+Pertama, kita mengimpor fungsi `expect` dari pustaka [Chai](https://www.chaijs.com/), agar bisa digunakan dalam pengTesan unit contract kita.
 
 Jika kamu sudah mengatur proyek dengan **Hardhat Toolbox** seperti dijelaskan pada langkah [Membuat Proyek](#creating-a-project), maka `ethers` sudah tersedia secara default di proyekmu.
 Jika belum, kamu bisa menginstal plugin `ethers` untuk Hardhat seperti dijelaskan pada halaman referensi [hardhat-ethers](https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-ethers).
 
-Plugin Hardhat-Ethers memiliki API yang sama dengan [ethers.js](https://docs.ethers.org/v6/), namun dilengkapi fitur tambahan khusus Hardhat ([fitur spesifik](https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-ethers#helpers)) yang akan kita gunakan dalam pengujian kontrak ini.
+Plugin Hardhat-Ethers memiliki API yang sama dengan [ethers.js](https://docs.ethers.org/v6/), namun dilengkapi fitur tambahan khusus Hardhat ([fitur spesifik](https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-ethers#helpers)) yang akan kita gunakan dalam pengTesan contract ini.
 
-Selanjutnya, kita melakukan deploy kontrak NFT di dalam `beforeEach()` hook, untuk memastikan kontrak selalu ter-deploy sebelum setiap pengujian dijalankan. Struktur ini memudahkan kita untuk menambahkan kasus uji tambahan nanti.
+Selanjutnya, kita melakukan deploy contract NFT di dalam `beforeEach()` hook, untuk memastikan contract selalu ter-deploy sebelum setiap pengTesan dijalankan. Struktur ini memudahkan kita untuk menambahkan kasus Tes tambahan nanti.
 
 ---
 
-### ▶️ Menjalankan Uji
+### Menjalankan Tes
 
 Sekarang, jalankan perintah berikut di terminal:
 
@@ -298,9 +298,9 @@ Kamu seharusnya melihat output berikut:
   1 passing (1s)
 ```
 
-Ini menunjukkan bahwa pengujian telah berhasil dijalankan.
+Ini menunjukkan bahwa pengTesan telah berhasil dijalankan.
 
-Untuk informasi lebih lanjut tentang cara menguji smart contract menggunakan Hardhat, lihat [dokumentasi Hardhat](https://hardhat.org/tutorial/testing-contracts).
+Untuk informasi lebih lanjut tentang cara mengTes smart contract menggunakan Hardhat, lihat [dokumentasi Hardhat](https://hardhat.org/tutorial/testing-contracts).
 
 ## Deploy Smart Contract
 
