@@ -261,18 +261,21 @@ Testnet berikut ini tersedia untuk menguji smart contract dan aplikasi Web3 di L
 Untuk mendapatkan testnet ETH dan/atau LSK gratis, lihat [faucet yang tersedia](/lisk-tools/faucets.md).
 :::
 
-##### Testnet virtual
-[Tenderly](https://tenderly.co/) baru-baru ini memperkenalkan kemungkinan untuk menjalankan [Virtual Testnets](https://blog.tenderly.co/how-virtual-testnets-replace-public-testnets/).
-Virtual Testnet adalah cara baru untuk menguji aplikasi Web3 Anda, membawa data onchain dari mainnet dan fleksibilitas environment lokal bersama-sama.
+##### Virtual TestNets
+[Tenderly](https://tenderly.co/?mtm_campaign=ext-docs&mtm_kwd=lisk) baru-baru ini memperkenalkan fitur untuk membuat [Virtual Testnet](https://blog.tenderly.co/how-virtual-testnets-replace-public-testnets/?mtm_campaign=ext-docs&mtm_kwd=lisk).
+Virtual Testnet adalah cara baru untuk menguji aplikasi Web3 kamu, yang menggabungkan data on-chain dari mainnet dengan fleksibilitas lingkungan lokal.
 
-Beberapa fitur menarik dari Virtual Testnet adalah:
+Beberapa cara menarik untuk menggunakan Virtual Testnet antara lain:
 
-- **Bangun dapps Anda dengan data mainnet yang nyata dan terkini** dan uji performa aktualnya dalam kondisi yang realistis. 
-- **Dapatkan faucet tanpa batas** dan berhenti mengemis untuk uji coba ETH.
-Cetak token asli dan ERC-20 dalam jumlah berapa pun yang Anda butuhkan, meniru akun, dan menguji skenario kompleks tanpa gangguan.
-- **Sesuaikan sepenuhnya infrastruktur pengembangan Anda** agar sesuai dengan alur kerja unik Anda.
-Virtual Testnet mudah diatur dan dikonfigurasi, memberi Anda kontrol penuh dan fleksibilitas atas environment Anda.
-Anda bahkan dapat memanipulasi forked chain Anda dengan nilai custom, chain ID custom, dan banyak lagi, memastikannya sesuai dengan kebutuhan unik Anda.
+* **Membangun dapp dengan data mainnet yang nyata dan terbaru**, serta menguji perilakunya secara langsung dengan akses data yang realistis.
+* **Mendapatkan faucet tanpa batas** dan tidak perlu lagi meminta test ETH.
+* Mencetak token native maupun ERC-20 sebanyak yang kamu butuhkan, meniru (impersonate) akun, dan menguji skenario kompleks tanpa gangguan.
+* **Menyesuaikan infrastruktur pengembangan sepenuhnya** agar sesuai dengan alur kerja unik kamu.
+* Menggunakan Virtual Testnet sebagai bagian dari [infrastruktur CI/CD](https://docs.tenderly.co/virtual-testnets/ci-cd/github-actions-foundry?mtm_campaign=ext-docs&mtm_kwd=lisk).
+
+Virtual Testnet mudah dibuat dan dikonfigurasi, memberikanmu kendali penuh dan fleksibilitas terhadap lingkungan pengembangan.
+Kamu bahkan bisa memanipulasi state dari chain yang telah di-fork dengan nilai kustom, ID chain kustom, dan lainnya, agar benar-benar sesuai dengan kebutuhan unikmu.
+
 
 #### Pengujian E2E
 Pengujian end-to-end (E2E) adalah jenis pengujian perangkat lunak yang menguji alur lengkap aplikasi dari awal hingga akhir.
@@ -291,15 +294,36 @@ Beberapa contoh alat pengujian kinerja adalah:
 - [k6](https://k6.io/)
 - [Artillery](https://www.artillery.io/)
 
-{/* #### Pengujian Otomatis dan Integrasi Berkelanjutan (CI) */}
+### Integrasi dan Deployment Berkelanjutan (CI/CD)
 
-#### Monitoring
+CI/CD adalah serangkaian praktik yang mengotomatiskan proses integrasi perubahan kode ke dalam repositori bersama dan mendistribusikannya ke lingkungan produksi.
+
+#### Pengaturan CI/CD dengan Tenderly
+
+Gunakan [Virtual TestNet](https://docs.tenderly.co/virtual-testnets?mtm_campaign=ext-docs&mtm_kwd=lisk) dalam pipeline CI/CD untuk melakukan deployment, pengujian, dan staging smart contract dalam lingkungan pengembangan yang menyerupai mainnet, tanpa perlu pengaturan lokal.
+Pelajari cara menggunakan [plugin Tenderly GitHub Action](https://docs.tenderly.co/virtual-testnets/ci-cd/github-actions-foundry?mtm_campaign=ext-docs&mtm_kwd=lisk) untuk mengotomatisasi pipeline CI/CD kamu. Plugin ini akan membuat Virtual TestNet untuk setiap pull request, memungkinkan kamu menguji smart contract dalam lingkungan yang realistis.
+
+Selain itu, kamu juga dapat melakukan **staging smart contract** (continuous deployment), sehingga tim kamu dapat terus membangun menggunakan versi terbaru dari smart contract.
+
+### Monitoring
 Monitoring penting untuk memastikan bahwa aplikasi Web3 Anda berjalan dengan lancar dan untuk mendeteksi dan memperbaiki masalah sebelum mempengaruhi pengguna Anda.
 
 Beberapa alat monitoring yang populer adalah:
 
 - [Prometheus](https://prometheus.io/) yang dikombinasikan dengan [Grafana](https://grafana.com/)
 - [Elastic Stack (ELK)](https://www.elastic.co/elastic-stack)
+
+#### Tenderly Alerts
+* Configure an [alert](https://docs.tenderly.co/alerts/intro-to-alerts?mtm_campaign=ext-docs&mtm_kwd=lisk) to get notifications on transactions and contract events.
+* Use [Alerts API](https://docs.tenderly.co/alerts/api?mtm_campaign=ext-docs&mtm_kwd=lisk) to build granular triggering rules and specific monitoring criteria.
+
+#### Tenderly Web3 actions
+Use [Web3 Actions](https://docs.tenderly.co/web3-actions/intro-to-web3-actions?mtm_campaign=ext-docs&mtm_kwd=lisk) to automate predefined responses, improving security and user experience.
+
+#### Tenderly developer explorer
+Tenderly's [Developer Explorer](https://docs.tenderly.co/developer-explorer?mtm_campaign=ext-docs&mtm_kwd=lisk) is a development toolbox designed to help developers effectively manage, debug, and monitor their Lisk projects. 
+Use the Developer Explorer to debug and simulate contracts with the [integrated Debugger](https://docs.tenderly.co/debugger?mtm_campaign=ext-docs&mtm_kwd=lisk), 
+gaining insights to quickly identify and resolve issues.
 
 ### Pengembangan aplikasi Web2 vs Web3
 #### Bahasa

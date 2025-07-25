@@ -45,6 +45,14 @@ Di repositori [gelato-raas-aa](https://github.com/gelatodigital/gelato-raas-aa),
 [Web3 Functions](https://www.gelato.network/web3-functions) dari Gelato adalah sistem otomasi yang kuat yang dirancang untuk menyederhanakan dan meningkatkan operasi Web3.  
 Web3 Functions berfungsi sebagai alat komprehensif, memungkinkan pengembang untuk dengan mudah mengatur, mengelola, dan mengotomatisasi tugas smart contract mereka.
 
+### Web3 Actions
+
+[Web3 Actions](https://docs.tenderly.co/web3-actions/intro-to-web3-actions?mtm_campaign=ext-docs&mtm_kwd=lisk) dari Tenderly adalah infrastruktur monitoring yang sangat dapat dikonfigurasi, berfungsi sebagai backend smart contract tanpa server (serverless).
+
+Otomatiskan keamanan dan pemeliharaan protokol serta respon secara instan terhadap event on-chain dengan sistem notifikasi real-time yang dapat disesuaikan dan backend Node.js tanpa server untuk smart contract.
+Gunakan Web3 Actions untuk mengotomatisasi respons terhadap event on-chain, tingkatkan pemantauan dengan invariant monitoring, atau bahkan bangun webhook yang di-host langsung oleh Tenderly menggunakan Web3 Actions.
+
+
 ## Interoperabilitas
 
 ### Hyperlane
@@ -66,3 +74,9 @@ Buat permainan, NFT, lotere, dan aplikasi onchain lainnya yang transparan dan ad
 
 Gunakan [Gelato Relay](https://www.gelato.network/relay) untuk meneruskan transaksi pengguna Anda di blockchain, memungkinkan transaksi gasless yang aman untuk pengalaman pengguna yang sangat lancar untuk aplikasi Anda.  
 Ini memungkinkan berbagai pengalaman Web3 baru, karena pengguna hanya perlu menandatangani pesan dan biaya transaksi mereka dapat disponsori oleh pengembang.
+
+## CI/CD
+
+### Tenderly CI/CD GitHub Action
+
+[Plugin Tenderly GitHub Action](https://docs.tenderly.co/virtual-testnets/ci-cd/github-actions-foundry?mtm_campaign=ext-docs&mtm_kwd=lisk) memungkinkan provisioning [Virtual TestNet](https://docs.tenderly.co/virtual-testnets?mtm_campaign=ext-docs&mtm_kwd=lisk) secara mudah sebagai infrastruktur untuk pengujian dan staging smart contract.
