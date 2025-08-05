@@ -29,7 +29,7 @@ keywords:
 Node Lisk mengungkapkan API RPC yang memungkinkan pihak lain berinteraksi dengan blockchain dengan mengirimkan permintaan.
 
 Jika Anda baru memulai dan membutuhkan URL RPC, Anda dapat menggunakan [endpoint gratis kami](#lisk-rpc).  
-Jika Anda ingin memperkuat aplikasi Anda dan menghindari rate-limit untuk pengguna Anda, silakan lihat penyedia node RPC yang tersedia seperti [dRPC](#drpc).
+Jika Anda ingin memperkuat aplikasi Anda dan menghindari rate-limit untuk pengguna Anda, silakan lihat penyedia node RPC yang tersedia seperti [Gelato](#gelato).
 
 :::tip[referensi API]
 Endpoint yang tersedia untuk node Lisk mencakup semua [endpoint RPC Geth](https://geth.ethereum.org/docs/interacting-with-geth/rpc), yang juga mencakup semua [endpoint API JSON-RPC standar](https://ethereum.github.io/execution-apis/api-documentation/) dari Ethereum.
@@ -48,7 +48,8 @@ Endpoint RPC gratis dengan pembatasan laju untuk jaringan Lisk.
 
 [dRPC](https://drpc.org/) adalah penyedia infrastruktur Web3 terdesentralisasi yang berfokus pada ketahanan dan latensi.  
 dRPC menyediakan akses ke jaringan terdistribusi dari node publik untuk Lisk.  
-Mereka menawarkan tier gratis yang memungkinkan jumlah permintaan yang tidak terbatas melalui node publik, atau tier berbayar yang menyediakan akses ke semua penyedia, serta fitur tambahan lainnya.
+Mereka menyediakan tier gratis yang memungkinkan jumlah request tak terbatas melalui node publik, atau [tier berbayar](https://drpc.org/docs/pricing/requests) dengan fitur tambahan, dengan strategi pay-as-you-go di mana pengguna deposit uang ke akun mereka dan dRPC menagih mereka per request.
+Setiap request memiliki biaya sendiri dalam unit komputasi (CU); Anda dapat melihat nilai pastinya di [dRPC Docs](https://drpc.org/docs/pricing/compute-units).
 
 |               | Lisk Sepolia Testnet              | Lisk                      |
 | :------       | :------                           | :-----------------------  |
@@ -64,9 +65,18 @@ Untuk menggunakan endpoint yang disediakan, Anda perlu [mendapatkan kunci API ya
 
 ## Gelato
 
-Node RPC [Gelato](https://www.gelato.network/) menyediakan environment production yang cepat dan andal, memungkinkan akses ke Gelato rollup melalui RPC. Anda dapat mengirim transaksi, deploy smart contract, query data blockchain, dan melakukan operasi lainnya tanpa perlu menjalankan node RPC Anda sendiri atau mengelola infrastruktur.
+Node RPC [Gelato](https://www.gelato.network/) menyediakan environment production yang cepat dan andal, memungkinkan akses ke Gelato rollup via RPC.
+Anda dapat mengirim transaksi, deploy smart contract, query data blockchain, dan melakukan operasi lain tanpa perlu menjalankan node RPC Anda sendiri atau mengelola infrastruktur.
 
-- [Gelato RPC nodes](https://docs.gelato.network/rpc-nodes/introduction)
+Gelato menawarkan tier gratis dengan rate limit, dan dua tier berbayar, lihat [Gelato: Harga dan Paket](https://docs.gelato.cloud/rpc-nodes/pricing-and-plans).
+
+Paket gratis Gelato meliputi:
+
+- 500 Juta Unit Komputasi per bulan
+- 600 CU/dtk
+- 1 API Key
+
+- [Node RPC Gelato](https://docs.gelato.network/rpc-nodes/introduction)
 - [Mendukung Lisk Mainnet](https://docs.gelato.network/rpc-nodes/supported-networks)
 
 ## Moralis
@@ -87,7 +97,7 @@ Paket gratis Moralis mencakup:
 Untuk menggunakan Node RPC Moralis, ikuti langkah-langkah berikut:
 
 1. **Buat akun Moralis:** [Daftar](https://admin.moralis.com/) secara gratis dan akses node RPC Anda.
-2. **Siapkan node Anda:** Visit the [Menyiapkan Node RPC](https://docs.moralis.com/get-your-node-api-key) untuk membuat dan mengonfigurasi node RPC Anda.
+2. **Siapkan node Anda:** Kunjungi [Menyiapkan Node RPC](https://docs.moralis.com/get-your-node-api-key) untuk membuat dan mengonfigurasi node RPC Anda.
 3. **Lakukan panggilan RPC pertama Anda:** Setelah node Anda siap, ikuti [tutorial](https://docs.moralis.com/make-your-first-rpc-call) untuk membuat panggilan JSON-RPC pertama Anda menggunakan ethers.js.
 
 ## Tenderly
