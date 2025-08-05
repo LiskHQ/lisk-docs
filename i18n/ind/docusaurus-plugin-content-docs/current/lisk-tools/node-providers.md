@@ -62,6 +62,13 @@ dRPC juga menyediakan [faucet untuk Lisk Sepolia](./faucets.md#drpc-faucet).
 Untuk menggunakan endpoint yang disediakan, Anda perlu [mendapatkan kunci API yang sesuai](https://docs.drpc.org/gettingstarted/createaccount).  
 :::
 
+## Gelato
+
+Node RPC [Gelato](https://www.gelato.network/) menyediakan environment production yang cepat dan andal, memungkinkan akses ke Gelato rollup melalui RPC. Anda dapat mengirim transaksi, deploy smart contract, query data blockchain, dan melakukan operasi lainnya tanpa perlu menjalankan node RPC Anda sendiri atau mengelola infrastruktur.
+
+- [Gelato RPC nodes](https://docs.gelato.network/rpc-nodes/introduction)
+- [Mendukung Lisk Mainnet](https://docs.gelato.network/rpc-nodes/supported-networks)
+
 ## Moralis
 
 [Moralis](https://developers.moralis.com/chains/lisk/) API meningkatkan dapp Anda dengan kecepatan, keamanan, dan skalabilitas yang tak tertandingi di berbagai chain yang kompatibel dengan EVM.
@@ -90,4 +97,13 @@ Untuk menggunakan Node RPC Moralis, ikuti langkah-langkah berikut:
 - [Node Lisk Mainnet oleh Tenderly](https://docs.tenderly.co/node/rpc-reference/lisk)
 - [Node Lisk Sepolia Testnet oleh Tenderly](https://docs.tenderly.co/node/rpc-reference/lisk-sepolia)
 
-Tenderly menyediakan [tier gratis].(https://tenderly.co/pricing) untuk menggunakan node RPC mereka.
+Tenderly menyediakan [tier gratis](https://tenderly.co/pricing) untuk menggunakan node RPC mereka.
+
+## thirdweb
+
+[RPC Edge](https://portal.thirdweb.com/infrastructure/rpc-edge/overview) oleh thirdweb menyediakan akses yang andal untuk query data dan berinteraksi dengan blockchain melalui RPC edge global.
+
+- [RPC Lisk Mainnet oleh thirdweb](https://thirdweb.com/lisk)
+- [RPC Lisk Sepolia Testnet oleh thirdweb](https://thirdweb.com/lisk-sepolia-testnet)
+
+thirdweb menyediakan [tier harga](https://thirdweb.com/pricing) yang berbeda-beda, yang termurah mulai dari 5 Euro/Dolar per bulan.
