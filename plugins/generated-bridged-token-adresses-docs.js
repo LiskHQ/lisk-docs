@@ -47,11 +47,7 @@ LiskAdresses.forEach(token => {
 
 const tableHeads = {
   eng: ["Bridged Superchain Tokens Mainnet", "Bridged Superchain Tokens Sepolia"],
-<<<<<<< HEAD
-  ind: ["Bridged Token di Mainnet", "Bridged Token di Sepolia"],
-=======
   ind: ["Token Superchin yang di-bridge di Mainnet", "Token Superchin yang di-bridge di Sepolia"],
->>>>>>> LISK-2409-Create-endpoint-documentation
 }
 
 export const generatedDocs = () => {
