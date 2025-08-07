@@ -29,7 +29,7 @@ keywords:
 Lisk nodes expose an RPC API that allows other parties to interact with the blockchain by invoking requests.
 
 If you're just getting started and need an RPC URL, you can use our [free endpoints](#lisk-rpc).
-If you're looking to strengthen your app and avoid rate-limiting for your users, please check out our available RPC node providers like [dRPC](#drpc).
+If you're looking to strengthen your app and avoid rate-limiting for your users, please check out our available RPC node providers like [Gelato](#gelato).
 
 :::tip[API reference]
 The available endpoints for Lisk nodes include all [Geth RPC endpoints](https://geth.ethereum.org/docs/interacting-with-geth/rpc), which also include all standard [JSON-RPC API endpoints](https://ethereum.github.io/execution-apis/api-documentation/) of Ethereum. 
@@ -49,7 +49,9 @@ Free, rate limited RPC endpoints for the Lisk networks.
 
 [dRPC](https://drpc.org/) is a decentralized Web3 infrastructure provider with a focus on resilience and latency.
 dRPC offers access to a distributed network of public nodes for Lisk.
-They provide a free tier that allows for an unlimited amount of requests over public nodes, or a paid tier that provides access to all providers, as well as other additional features.
+They provide a free tier that allows for an unlimited number of requests over public nodes, or a [paid tier](https://drpc.org/docs/pricing/requests) with additional features, which is based on a pay-as-you-go strategy where users deposit money into their account and dRPC charges them per request.
+Each request has its own cost in compute units (CUs); you can see the exact values in the [dRPC Docs](https://drpc.org/docs/pricing/compute-units).
+
 
 |               | Lisk Sepolia Testnet              | Lisk                      |
 | :------       | :------                           | :-----------------------  |
@@ -66,7 +68,16 @@ In order to use the provided endpoints, you need to [get the corresponding API k
 
 ## Gelato
 
-[Gelato](https://www.gelato.network/) RPC Nodes provide a fast and reliable production environment, enabling access to Gelato rollups via RPC. You can send transactions, deploy smart contracts, query blockchain data, and perform other operations without the need to run your own RPC node or manage infrastructure.
+[Gelato](https://www.gelato.network/) RPC Nodes provide a fast and reliable production environment, enabling access to Gelato rollups via RPC.
+You can send transactions, deploy smart contracts, query blockchain data, and perform other operations without the need to run your own RPC node or manage infrastructure.
+
+Gelato offers a rate-limited free tier, and two paid tiers, see [Gelato: Pricing and Plans](https://docs.gelato.cloud/rpc-nodes/pricing-and-plans).
+
+The free plan for Gelato includes:
+
+- 500M Compute Units per month
+- 600 CU/s
+- 1 API key
 
 - [Gelato RPC nodes](https://docs.gelato.network/rpc-nodes/introduction)
 - [Supports Lisk Mainnet](https://docs.gelato.network/rpc-nodes/supported-networks)

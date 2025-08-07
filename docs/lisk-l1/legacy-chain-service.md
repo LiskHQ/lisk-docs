@@ -31,9 +31,12 @@ How to use the legacy chain service:
 - Get a **transaction by id** `https://legacy.lisk.com/transactions/<TRANSACTION_ID>.json`
 - Get an **account by address** `https://legacy.lisk.com/accounts/<LEGACY_ACCOUNT_ADDRESS>.json`
 - Get **histories by address** `https://legacy.lisk.com/histories/<LEGACY_ACCOUNT_ADDRESS>.csv`
+- Get **tax-platform-friendly histories in CSV format by address** `https://legacy.lisk.com/tax?address=<LEGACY_ACCOUNT_ADDRESS>&platform=<PLATFORM>`
 
   where `<LEGACY_ACCOUNT_ADDRESS>` is the Lisk L1 address of the format:`lsk**************************************` or `*******************L` (for uninitialized accounts).
- 
+
+  and where `<PLATFORM>` is one of: koinly, blockpit, cointracker, coinledger, coinpanda
+
   If a Lisk L1 legacy account (`*******************L` address) was initialized, the entire history including that of the `*******************L` legacy address will be consolidated under the corresponding `lsk` address. The `*******************L` address's history won't be available separately.
 
 
