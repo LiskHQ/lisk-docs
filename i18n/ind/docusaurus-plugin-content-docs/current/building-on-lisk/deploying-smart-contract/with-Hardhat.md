@@ -63,7 +63,13 @@ Untuk informasi lebih lanjut, lihat [jaringan Lisk yang tersedia](/network-info)
 
 Sebelum Anda dapat mulai deploy smart contract ke Lisk, Anda perlu menyiapkan environment pengembangan dengan membuat proyek Node.js.
 
-Untuk membuat proyek Node.js baru, jalankan perintah berikut:
+Untuk membuat proyek Node.js baru, pertama buat folder root untuk proyek tersebut dan masukkan ke dalamnya:
+
+```bash
+mkdir my-project && cd my-project
+```
+
+Di dalam folder baru, jalankan:
 
 ```bash
 npm init --y
@@ -90,7 +96,7 @@ Secara opsional, Anda dapat memutuskan untuk membagikan laporan crash dan data p
 
 ```
 ✔ What do you want to do? · Create a TypeScript project
-✔ Hardhat project root: · /Users/lisk/git/hardhat-test
+✔ Hardhat project root: · /Users/lisk/git/my-project
 ✔ Do you want to add a .gitignore? (Y/n) · y
 ✔ Help us improve Hardhat with anonymous crash reports & basic usage data? (Y/n) · y
 ✔ Do you want to install this sample project's dependencies with npm (@nomicfoundation/hardhat-toolbox)? (Y/n) · y
@@ -221,6 +227,71 @@ npx hardhat compile
 ```
 
 Setelah kompilasi berhasil, Anda akan melihat folder baru bernama `artifacts/`, yang berisi [artefak kompilasi](https://hardhat.org/hardhat-runner/docs/advanced/artifacts).
+
+## Test contract
+Untuk test contract NFT kita, kita akan menggunakan:
+
+- **Hardhat Network** – Jaringan Ethereum lokal untuk development.
+Ini sudah built-in dengan Hardhat dan digunakan sebagai network default.
+- **Ethers.js** – Untuk berinteraksi dengan contract.
+- **Mocha** – Untuk test runner dan assertions.
+
+### Setup file test
+Buat direktori baru bernama `test` di dalam direktori root proyek kita.
+Kemudian, buat file baru di dalamnya bernama `NFT.js`, dan tambahkan kode berikut:
+
+```js title="test/NFT.js"
+const { expect } = require("chai");
+
+describe("NFT", function () {
+  let nftToken;
+
+  beforeEach(async () => {
+    // Deploy contract
+    const NFT = await ethers.getContractFactory("NFT");
+    nftToken = await NFT.deploy();
+  });
+
+  it("Should allow to mint a new NFT", async function () {
+    const [owner] = await ethers.getSigners();
+    // Sebelum mint NFT, saldo akun untuk NFT ini seharusnya nol.
+    expect(await nftToken.balanceOf(owner.address)).to.equal(0);
+    // Mint NFT
+    await nftToken.mint(owner.address);
+    // Setelah mint NFT, saldo akun untuk NFT ini seharusnya 1 untuk akun yang mint token tersebut.
+    expect(await nftToken.balanceOf(owner.address)).to.equal(1);
+  });
+});
+```
+
+Pertama, kita mengimpor fungsi `expect` dari library [Chai](https://www.chaijs.com/), agar dapat menggunakannya dalam unit test kita untuk contract.
+
+Jika Anda setup proyek Anda untuk menggunakan hardhat toolbox seperti yang dijelaskan dalam langkah [Membuat proyek](#membuat-proyek), Anda sudah memiliki ethers yang tersedia di proyek Anda secara default.
+Jika tidak, Anda dapat menginstal plugin ethers untuk Hardhat seperti yang dijelaskan di halaman referensi [hardhat-ethers](https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-ethers).
+Plugin Hardhat-Ethers memiliki API yang sama dengan [ethers.js](https://docs.ethers.org/v6/), dengan beberapa fitur tambahan [Hardhat-specific](https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-ethers#helpers), yang akan kita gunakan dalam test untuk contract tersebut.
+
+Selanjutnya, kita deploy contract NFT di dalam hook `beforeEach()`, memastikan contract selalu di-deploy sebelum setiap test. Pengaturan ini memudahkan penambahan kasus test tambahan nanti.```
+
+Akhirnya, kita mendefinisikan test case `Should allow to mint a new NFT` untuk memverifikasi bahwa memanggil fungsi `.mint()` dari contract NFT akan mint NFT baru dan menambahkannya ke saldo akun yang me-mint-nya.
+
+### Menjalankan Test
+Sekarang, jalankan `npx hardhat test` di terminal Anda.
+
+Anda akan melihat output berikut:
+
+```sh
+% npx hardhat test
+
+  NFT
+    ✔ Should allow to mint a new NFT (92ms)
+
+
+  1 passing (1s)
+```
+
+Ini menunjukkan bahwa test berhasil dieksekusi.
+
+Untuk informasi lebih lanjut tentang cara test smart contract dengan Hardhat, periksa [dokumentasi Hardhat](https://hardhat.org/tutorial/testing-contracts).
 
 ## Deploy Smart Contract
 
