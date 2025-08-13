@@ -130,6 +130,7 @@ const sidebars = {
         'lisk-tools/faucets',
         { type: 'ref', id: 'docs-user/bridges' },
         { type: 'ref', id: 'docs-user/wallets' },
+        'lisk-tools/interoperability',
         'lisk-tools/oracles',
         'lisk-tools/utilities',
         'lisk-tools/indexers'
