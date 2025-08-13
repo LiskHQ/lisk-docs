@@ -1,6 +1,6 @@
 ---
-title: Faucets
-slug: /lisk-tools/faucets
+title: Interoperability
+slug: /lisk-tools/interoperability
 description: Summary of available interoperability tools for Lisk.
 keywords:
   [
