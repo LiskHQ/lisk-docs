@@ -45,6 +45,11 @@ Di repositori [gelato-raas-aa](https://github.com/gelatodigital/gelato-raas-aa),
 [Web3 Functions](https://www.gelato.network/web3-functions) dari Gelato adalah sistem otomasi yang kuat yang dirancang untuk menyederhanakan dan meningkatkan operasi Web3.  
 Web3 Functions berfungsi sebagai alat komprehensif, memungkinkan pengembang untuk dengan mudah mengatur, mengelola, dan mengotomatisasi tugas smart contract mereka.
 
+### Web3 Actions
+[Web3 Actions](https://docs.tenderly.co/web3-actions/intro-to-web3-actions?mtm_campaign=ext-docs&mtm_kwd=lisk) dari Tenderly adalah infrastruktur pemantauan yang sangat dapat dikonfigurasi, bertindak sebagai backend serverless untuk smart contract Anda.
+
+Otomisasikan keamanan dan pemeliharaan protokol serta tanggapi secara instan terhadap event-event on-chain dengan alert real-time yang dapat disesuaikan dan backend Node.js serverless untuk smart contract. Otomisasikan response-response terhadap peristiwa on-chain menggunakan Web3 Actions, tingkatkan pemantauan Anda dengan menyiapkan monitoring invarian, atau bahkan bangun webhook yang di-host Tenderly dengan Web3 Actions.
+
 ## Interoperabilitas
 
 ### Hyperlane
@@ -66,3 +71,8 @@ Buat permainan, NFT, lotere, dan aplikasi onchain lainnya yang transparan dan ad
 
 Gunakan [Gelato Relay](https://www.gelato.network/relay) untuk meneruskan transaksi pengguna Anda di blockchain, memungkinkan transaksi gasless yang aman untuk pengalaman pengguna yang sangat lancar untuk aplikasi Anda.  
 Ini memungkinkan berbagai pengalaman Web3 baru, karena pengguna hanya perlu menandatangani pesan dan biaya transaksi mereka dapat disponsori oleh pengembang.
+
+## CI/CD
+
+### CI/CD Github Action Tenderly
+[Github action plugin Tenderly](https://docs.tenderly.co/virtual-testnets/ci-cd/github-actions-foundry?mtm_campaign=ext-docs&mtm_kwd=lisk) memungkinkan penyediaan [Virtual TestNets](https://docs.tenderly.co/virtual-testnets?mtm_campaign=ext-docs&mtm_kwd=lisk) yang mudah sebagai smart contract testing dan infrastruktur staging. 
