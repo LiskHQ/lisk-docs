@@ -58,7 +58,6 @@ Lisk (LSK) is available for trading on various <!-- decentralized and centralize
 
 | Name                          | Supported network[^1]                       |
 | :---------------------------- | :------------------------------------------ |
-| [Oku.Trade](https://oku.trade/app/lisk/trade/0xac485391eb2d7d88253a7f1ef18c37f4242d1a24) | 🟢 Lisk |
 | [Velodrome](https://velodrome.finance/swap?from=0xac485391eb2d7d88253a7f1ef18c37f4242d1a24&to=0x05d032ac25d322df992303dca074ee7392c117b9&chain0=1135&chain1=1135) | 🟢 Lisk |
 | [Uniswap](https://app.uniswap.org/explore/tokens/ethereum/0x6033f7f88332b8db6ad452b7c6d5bb643990ae3f) | 🟡 Ethereum |
 
