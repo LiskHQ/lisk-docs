@@ -7,17 +7,31 @@ keywords:
     Lisk interop,
     Lisk interoperability,
     Lisk Bridges,
+    Chainlink CCIP,
+    LayerZero,
+    Hyperlane
   ]
 ---
 
 # Interoperability
 
+A list of interoperability and cross-chain related tools and services available for the Lisk network.
+
 ## Bridges
+
+Bridges are services that facilitate communication between blockchains through the transfer of information and assets, and therefore work as a bridge or connection between different blockchain ecosystems.
+
+Bridges enable:
+
+- the cross-chain transfer of assets and information.
+- dapps to access the strengths of various blockchains
+- users to access new platforms and leverage the benefits of different chains.
+- developers from different blockchain ecosystems to collaborate and build new platforms for the users.
 
 For bridging tokens from Lisk to other networks, please check the [Bridges](/docs/docs-user/bridges.mdx) page for an overview of all available bridges.
 
 ## ChainLink CCIP
-[Chainlink CCIP](https://www.chainlinkecosystem.com/ecosystem/lisk) is a blockchain interoperability protocol that enables developers to build secure applications that can transfer tokens, messages (data), or both tokens and messages across chains. Marking a significant milestone for the Lisk ecosystem.
+[Chainlink CCIP](https://www.chainlinkecosystem.com/ecosystem/lisk) is a blockchain interoperability protocol that enables developers to build secure applications that can transfer tokens, messages (data), or both tokens and messages across chains.
 
 What this means for you:
 
@@ -27,8 +41,6 @@ What this means for you:
 - Developer Simplicity: Standardized, easy-to-integrate cross-chain infrastructure
 - New Use Cases: Enables multi-chain DeFi, NFTs, gaming, and enterprise applications
 
-
-
 ## LayerZero
 With [Layer Zero](https://lisk.com/blog/posts/lisk-x-layerzero-powering-new-cross-chain-capabilities/), protocols can interact seamlessly with other blockchains, opening up endless opportunities for builders and users on Lisk. Additionally, developers on other LayerZero-supported networks can expand their applications to Lisk.
 
@@ -37,7 +49,6 @@ This includes:
 - Seamless cross-chain messaging
 - Effortless token transfers
 - Easy smart contract migration
-
 
 ## Hyperlane
 
