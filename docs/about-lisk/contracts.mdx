@@ -161,6 +161,41 @@ Details of smart contracts deployed on 🟢 **Ethereum Mainnet** and 🟡 **Sepo
     <td>[0x76f1cD8436373fa9f3c17Da1e39740fE9dB9a04B](https://sepolia.etherscan.io/address/0x76f1cd8436373fa9f3c17da1e39740fe9db9a04b)</td>
     <td>🟡</td>
     </tr>
+
+    <tr>
+      <th scope="row" rowSpan="2">DisputeGameFactory</th>
+      <td scope="row" rowSpan="2">The dispute game factory is responsible for creating new `DisputeGame` contracts given a `GameType` and a root `Claim`. Challenger agents listen to the `DisputeGameCreated` events in order to keep up with on-going disputes in the protocol and participate accordingly.</td>
+      <td>[0x0CF7D3706a27CCE2017aEB11E8a9c8b5388c282C](https://etherscan.io/address/0x0CF7D3706a27CCE2017aEB11E8a9c8b5388c282C)</td>
+      <td>🟢</td>
+    </tr>
+    <tr>
+    </tr>
+
+    <tr>
+      <th scope="row" rowSpan="2">AnchorStateRegistry</th>
+      <td scope="row" rowSpan="2">A registry where `DisputeGame` contracts can store and register their results so that these results could be used as the starting states for new DisputeGame instances.</td>
+      <td>[0x7ad0d165B9607960AD850090DDd7B9eB381D9c1e](https://etherscan.io/address/0x7ad0d165B9607960AD850090DDd7B9eB381D9c1e)</td>
+      <td>🟢</td>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+      <th scope="row" rowSpan="2">DelayedWETHPermissionedGame</th>
+      <td scope="row" rowSpan="2">The `DelayedWETH` contract manages bonds posted by participants during disputes. It delays payouts to allow time for verification, ensuring that funds are distributed correctly. This mechanism ensures participants are financially committed and disputes are finalized securely.</td>
+      <td>[0x31eFC2c8012c56E007E5Bdb8E5B7955D197C168e](https://etherscan.io/address/0x31eFC2c8012c56E007E5Bdb8E5B7955D197C168e)</td>
+      <td>🟢</td>
+    </tr>
+    <tr>
+    </tr>
+
+    <tr>
+      <th scope="row" rowSpan="2">OptimismMintableERC20Factory</th>
+      <td scope="row" rowSpan="2">The `OptimismMintableERC20Factory` is responsible for creating ERC20 contracts on L2 that can be used for depositing native L1 tokens into. These ERC20 contracts can be created permissionlessly and implement the interface required by the StandardBridge to just work with deposits and withdrawals.</td>
+      <td>[0xD00e38514d66bf1B761a8937559c6b2854A5B3ad](https://etherscan.io/address/0xD00e38514d66bf1B761a8937559c6b2854A5B3ad)</td>
+      <td>🟢</td>
+    </tr>
+    <tr>
+    </tr>
   </tbody>
   <tfoot>
   </tfoot>
