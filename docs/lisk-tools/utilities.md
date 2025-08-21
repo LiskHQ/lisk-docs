@@ -48,14 +48,6 @@ Tenderly's [Web3 Actions](https://docs.tenderly.co/web3-actions/intro-to-web3-ac
 
 Automate protocol security and maintenance and respond instantly to on-chain events with customizable, real-time alerting and serverless Node.js backends for smart contracts. Automate responses to on-chain events using Web3 Actions, improve your monitoring by setting up invariant monitoring, or even build Tenderly-hosted webhooks with Web3 Actions.
 
-## Interoperability
-
-### Hyperlane
-
-[Hyperlane](https://hyperlane.xyz/) is a blockchain interoperability protocol that allows different blockchains to communicate and share information with each other.
-It acts like a "highway" between blockchains, enabling them to send messages, transfer assets, and interact with decentralized applications (dApps) across different networks.
-This helps improve the connectivity between blockchains, making them more efficient and integrated.
-
 ## Randomness
 
 ### Gelato VRF
