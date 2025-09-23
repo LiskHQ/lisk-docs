@@ -25,6 +25,7 @@ const sidebars = {
       collapsible: true,
       collapsed: false,
       items: [
+        'summary',
         'intro',
         { type: 'ref', id: 'docs-user/connecting-to-a-wallet' },
         'about-lisk/network-info',
@@ -53,7 +54,7 @@ const sidebars = {
           ],
           link: {
             type: 'generated-index',
-            slug: '/category/building-on-lisk/deploying-smart-contract',
+            slug: '/category/building-on-lisk',
             keywords: ['guides', 'smart contracts', 'deployment'],
           },
         },
