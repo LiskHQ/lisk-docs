@@ -43,6 +43,117 @@ export default function Home() {
       <HomepageHeader />
       <main>
         <HomepageFeatures />
+        <div>
+          <table>
+  <thead>
+    <tr>
+      <th colspan="3">About Lisk</th>
+    </tr>
+    <tr>
+      <th colspan="3">
+      ℹ️ [Network Info](./about-lisk/network-info.md)<br/>
+      📜 [Contracts](./about-lisk/contracts.mdx)<br/>
+      💎 [Deployed Tokens](./about-lisk/deployed-tokens.md)<br/>
+      📟 [Fees](./about-lisk/fees.md)
+      </th>
+    </tr>
+  </thead>  
+  <tbody>
+    <tr>
+      <th>Building on Lisk</th>
+      <th>Using Lisk</th>
+    </tr>
+    <tr>
+      <td>
+        <table>
+          <thead>
+            <tr>
+              <th>Deploying a Smart Contract</th>
+              <th>Interacting with the blockchain</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+              - [...with Foundry](./building-on-lisk/deploying-smart-contract/with-Foundry.md)
+              - [...with Hardhat](./building-on-lisk/deploying-smart-contract/with-Hardhat.md)
+              - [...with Remix](./building-on-lisk/deploying-smart-contract/with-Remix.mdx)
+              - [...with thirdweb](./building-on-lisk/deploying-smart-contract/with-thirdweb.mdx)
+              </td>
+              <td>
+              - [...with ethers.js](./building-on-lisk/interacting-with-the-blockchain/ethers.md)
+              - [...with viem](./building-on-lisk/interacting-with-the-blockchain/viem.mdx)
+              - [...with web3](./building-on-lisk/interacting-with-the-blockchain/web3.mdx)
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td>
+        <table>
+          <thead>
+            <tr>
+              <th colspan="3">User Guides</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="3">
+                <ul>
+              <li><Link
+                  to="/user/connecting-to-a-wallet/">
+                  <Translate>Connecting to a wallet</Translate>
+                </Link></li>
+              <li><Link
+                  to="/user/import-lsk-metamask/">
+                  <Translate>Importing LSK to MetaMask</Translate>
+                </Link></li>
+              <li><Link
+                  to="/user/exchanges/">
+                  <Translate>Exchanges supporting LSK</Translate>
+                </Link></li>
+              <li><Link
+                  to="/user/wallets/">
+                  <Translate>Wallets</Translate>
+                </Link></li>
+              <li><Link
+                  to="/user/claiming/">
+                  <Translate>How to claim LSK</Translate>
+                </Link></li>
+              <li><Link
+                  to="/user/bridges/">
+                  <Translate>Bridges</Translate>
+                </Link></li>
+              </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>Lisk Governance</th>
+              <th>Staking Docs</th>
+            </tr>
+            <tr>
+            <td>
+              - [Overview](./docs-user/governance/overview.mdx)
+              - [Delegation](./docs-user/governance/delegation.mdx)
+              - [Proposal Lifecycle](./docs-user/governance/proposal-lifecycle.mdx)
+              - [Voting](./docs-user/governance/voting.mdx)
+              </td>
+              <td>
+              - [Overview](./docs-user/governance/overview.mdx)
+              - [Delegation](./docs-user/governance/delegation.mdx)
+              - [Proposal Lifecycle](./docs-user/governance/proposal-lifecycle.mdx)
+              - [Voting](./docs-user/governance/voting.mdx)
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+  </table>
+
+
+        </div>
       </main>
     </Layout>
   );
