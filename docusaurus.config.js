@@ -82,7 +82,7 @@ const config = {
 
   scripts: [
     {
-      src: "js/intercom.js",
+      src: "/js/intercom.js",
       async: true
     },
   ],
