@@ -15,12 +15,12 @@ const FeatureList = [
     description: (
       <>
         <div>
-          <p className='line-space-text'><Translate>Lisk offers a highly efficient, lightning-fast, and easily scalable Layer 2 (L2) network built on Optimism (OP) and secured by Ethereum.</Translate>
+          <p className='line-space-text'>Lisk offers a highly efficient, lightning-fast, and easily scalable Layer 2 (L2) network built on Optimism (OP) and secured by Ethereum.
           </p>
           <Link
             className="button button--secondary button--lg btn-custom"
             to="/docs/">
-            <Translate>Explore</Translate>
+            Explore
           </Link>
         </div>
       </>
@@ -36,11 +36,11 @@ const FeatureList = [
     description: (
       <>
         <div>
-          <p className='line-space-text'><Translate>Lisk offers low-cost transactions, EVM compatibility, and support for all major developer frameworks, making it the top choice for developers. Join Lisk to access essential technical materials for your development journey.</Translate></p>
+          <p className='line-space-text'>Lisk offers low-cost transactions, EVM compatibility, and support for all major developer frameworks, making it the top choice for developers. Join Lisk to access essential technical materials for your development journey.</p>
           <Link
             className="button button--secondary button--lg btn-custom"
             to="/category/building-on-lisk">
-            <Translate>Get started</Translate>
+            Get started
           </Link>
         </div>
       </>
@@ -52,15 +52,16 @@ const FeatureList = [
         <img src='/img/lisk-ecosystem.svg' className='lisk-smp'></img>
       </>
     ),
-    title: translate({ message: 'Ecosystem for the future' }),
+    title: translate({ message: 'Tools for the Lisk ecosystem' }),
     description: (
       <>
         <div>
-          <p className='line-space-text'><Translate>Lisk embraces the superchain framework, offering decentralized </Translate> <Link to="/category/governance"> <Translate>governance</Translate></Link> <Translate>and an interoperable ecosystem. We provide </Translate> <Link to="https://lisk.com/founders/"> <Translate>opportunities</Translate></Link> <Translate>to support the development of products and advocate for the principles of a decentralized world and inclusivity.</Translate></p>
+          <p className='line-space-text'>The Lisk chain comes with a broad ecosystem of tools and providers that makes using Lisk extremely convenient for users and devs alike.
+            Lisk supports <Link to="https://lisk.com/chain/"> founders and builders</Link> with opportunities to develop the next generation of web3 applications.</p>
           <Link
             className="button button--secondary button--lg btn-custom"
-            to="https://lisk.com/ecosystem/">
-            <Translate>Learn more</Translate>
+            to="/category/lisk-tools">
+            Discover
           </Link>
         </div>
       </>
