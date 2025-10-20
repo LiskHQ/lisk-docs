@@ -133,6 +133,11 @@ const sidebars = {
         'lisk-tools/utilities',
         'lisk-tools/indexers'
       ],
+      link: {
+        type: 'generated-index',
+        slug: '/category/lisk-tools',
+        keywords: ['tools','resources'],
+      },
     },
     {
       type: 'category',
