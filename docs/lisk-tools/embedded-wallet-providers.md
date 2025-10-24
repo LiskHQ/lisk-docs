@@ -26,7 +26,13 @@ Embedded wallets providers support developers to integrate web3 wallets directly
 
 The [Panna-SDK](https://github.com/LiskHQ/panna-sdk) is a developer-first toolkit for building seamless, user-friendly decentralized applications. It combines essential Web3 infrastructure with pre-built UI components to help developers create apps that feel like Web2. 
 
-With features like social login wallets (email, Google, phone number), gasless transactions, and fiat onramps, Panna eliminates the typical friction of blockchain onboarding—making Web3 invisible to users while giving developers full control.
+Panna is designed to make Web3 app development as smooth and intuitive as possible by offering:
+
+- **Invisible Web3 for users**: abstract away wallets, gas fees, and onboarding complexity
+- **Plug-and-play Web3 features**: social login, fiat onramps, and transaction handling
+- **Composable React UI components**: rapidly build polished Web3-enabled interfaces
+
+By streamlining both the developer experience and the user journey, Panna enables teams to ship modern, production-ready dApps — without the usual complexity of Web3 development.
 
 ## Privy
 
@@ -43,4 +49,4 @@ Create wallets for your users with flexible authentication options. Choose from 
 ## Xellar
 
 [Xellar](https://xellar.co/) offers a mobile wallet and a devkit for embedded Wallets to be integrated into apps and websites.
-Enables users to create wallets with Social Login native to the App.
+Xellar nables users to create wallets with Social Login native to the App.
