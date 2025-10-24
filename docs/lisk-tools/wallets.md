@@ -1,7 +1,5 @@
 ---
 title: Wallets
-sidebar_position: 1
-slug: /user/wallets
 description: 'A summary of the most important wallets supporting the LSK token.'
 keywords:
   [
