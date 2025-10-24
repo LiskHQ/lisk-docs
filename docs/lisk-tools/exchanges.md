@@ -1,7 +1,5 @@
 ---
 title: Exchanges supporting Lisk
-sidebar_position: 1
-slug: /user/exchanges
 description: 'A summary of all exchanges where you can buy LSK'
 keywords:
   [

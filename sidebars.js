@@ -126,6 +126,7 @@ const sidebars = {
       collapsed: false,
       items: [
         'lisk-tools/deployed-tokens',
+        'lisk-tools/exchanges',
         'lisk-tools/wallets',
         'lisk-tools/bridges',
         'lisk-tools/node-providers',
@@ -159,7 +160,6 @@ const sidebars = {
         // 'docs-user/intro-user',
         'docs-user/connecting-to-a-wallet',
         'docs-user/using-lisk/import-lsk',
-        'docs-user/exchanges',
         'docs-user/claiming',
       ],
     },
