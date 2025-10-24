@@ -128,6 +128,7 @@ const sidebars = {
       items: [
         'lisk-tools/node-providers',
         'lisk-tools/faucets',
+        'lisk-tools/embedded-wallet-providers',
         'lisk-tools/interoperability',
         'lisk-tools/oracles',
         'lisk-tools/utilities',
