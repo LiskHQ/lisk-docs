@@ -46,6 +46,12 @@ Privy surfaces both user-centric abstractions enabling you to authenticate users
 
 Create wallets for your users with flexible authentication options. Choose from email/phone verification, social OAuth, passkeys, or external wallet connections. Thirdweb supports creation of non-custodial user wallets, as well as server-, external- and ecosystem wallets.
 
+## Metmask embedded wallets
+
+[MetaMask Embedded Wallets](https://docs.metamask.io/embedded-wallets/) (formerly Web3Auth) is a pluggable embedded wallet infrastructure that simplifies Web3 wallet integration and user onboarding. It supports OAuth-based logins and multiple platforms, allowing users to access Web3 applications through familiar authentication methods in under a minute.
+
+Users enjoy seamless onboarding while maintaining full control of their non-custodial wallets, ensuring both convenience and security.
+
 ## Xellar
 
 [Xellar](https://xellar.co/) offers a mobile wallet and a devkit for embedded Wallets to be integrated into apps and websites.
