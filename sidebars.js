@@ -29,8 +29,7 @@ const sidebars = {
         { type: 'ref', id: 'docs-user/connecting-to-a-wallet' },
         'about-lisk/network-info',
         'about-lisk/fees',
-        'about-lisk/contracts',
-        'about-lisk/deployed-tokens'
+        'about-lisk/contracts'
       ],
     },
     {
@@ -126,6 +125,7 @@ const sidebars = {
       collapsible: true,
       collapsed: false,
       items: [
+        'lisk-tools/deployed-tokens',
         'lisk-tools/node-providers',
         'lisk-tools/faucets',
         'lisk-tools/interoperability',
