@@ -161,6 +161,7 @@ const sidebars = {
         'docs-user/wallets',
         'docs-user/claiming',
         'docs-user/bridges',
+        'docs-user/using-lisk/velodrome-guide',
       ],
     },
     {
