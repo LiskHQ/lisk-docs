@@ -1,0 +1,77 @@
+<svg width="554" height="402" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M0 0h554v402H0z"/>
+  <g opacity=".5" filter="url(#a)">
+    <path d="M265.898 66.257a165.966 165.966 0 0 1-15.834 320.57l-.358-1.694a164.232 164.232 0 0 0 130.043-152.577A164.234 164.234 0 0 0 265.374 67.908l.524-1.65Z" fill="#000"/>
+  </g>
+  <g opacity=".5" filter="url(#b)">
+    <path d="M50.943 244.336A165.966 165.966 0 0 1 181.39 62.076l.358 1.695A164.235 164.235 0 0 0 52.663 244.129l-1.72.207Z" fill="#000"/>
+  </g>
+  <g opacity=".5" filter="url(#c)">
+    <path d="M262.552 52.138a171.505 171.505 0 0 1 187.093 128.826l-1.578.393A169.879 169.879 0 0 0 262.748 53.753l-.196-1.615Z" fill="#000"/>
+  </g>
+  <path opacity=".1" d="M63.5 208.5c0-92.232 74.768-167 167-167s167 74.768 167 167c0 75.599-50.233 139.466-119.143 160.042l-12.287 4.008 1.828.383A168.714 168.714 0 0 0 302.5 376.5c92.784 0 168-75.216 168-168s-75.216-168-168-168c-10.447 0-20.671.953-30.59 2.779l.18.983A167.967 167.967 0 0 1 302.5 41.5c92.232 0 167 74.768 167 167s-74.768 167-167 167c-11.139 0-22.022-1.09-32.55-3.17l8.693-2.83c69.322-20.699 119.857-84.947 119.857-161 0-92.784-75.216-168-168-168s-168 75.216-168 168 75.216 168 168 168c10.095 0 19.982-.89 29.587-2.597l-.174-.985A167.98 167.98 0 0 1 230.5 375.5c-92.232 0-167-74.768-167-167Z" fill="currentColor"/>
+  <path id="d" d="M63.5 208.5c0-92.232 74.768-167 167-167s167 74.768 167 167c0 75.599-50.233 139.466-119.143 160.042l-12.287 4.008 1.828.383A168.714 168.714 0 0 0 302.5 376.5c92.784 0 168-75.216 168-168s-75.216-168-168-168c-10.447 0-20.671.953-30.59 2.779l.18.983A167.967 167.967 0 0 1 302.5 41.5c92.232 0 167 74.768 167 167s-74.768 167-167 167c-11.139 0-22.022-1.09-32.55-3.17l8.693-2.83c69.322-20.699 119.857-84.947 119.857-161 0-92.784-75.216-168-168-168s-168 75.216-168 168 75.216 168 168 168c10.095 0 19.982-.89 29.587-2.597l-.174-.985A167.98 167.98 0 0 1 230.5 375.5c-92.232 0-167-74.768-167-167Z" fill="none" stroke-width="1" stroke="#EE2524" stroke-dasharray="3274" stroke-dashoffset="3274">
+    <animate attributeName="stroke-dashoffset" dur="7s" values="3274;1900" restart="always" repeatCount="indefinite"/>
+  </path>
+  <g fill="currentColor">
+    <text xml:space="preserve" style="white-space:pre" font-family="Inter" font-size="12" font-weight="500" letter-spacing=".04em"><tspan x="111.316" y="301.144">LOW SLIPPAGE</tspan></text>
+    <circle cx="87.42" cy="296.781" r="7"/>
+    <text xml:space="preserve" style="white-space:pre" font-family="Inter" font-size="12" font-weight="500" letter-spacing=".04em"><tspan x="33.765" y="143.144">FEES</tspan></text>
+    <circle cx="79.42" cy="137.781" r="7"/>
+    <text xml:space="preserve" style="white-space:pre" font-family="Inter" font-size="12" font-weight="500" letter-spacing=".04em"><tspan x="259.891" y="143.144">VELO EMISSIONS</tspan></text>
+    <circle cx="381.42" cy="137.781" r="7"/>
+    <text xml:space="preserve" style="white-space:pre" font-family="Inter" font-size="12" font-weight="500" letter-spacing=".04em"><tspan x="481.42" y="268.144">LIQUIDITY</tspan></text>
+    <circle cx="460.42" cy="263.781" r="7"/>
+    <text xml:space="preserve" style="white-space:pre" font-family="Inter" font-size="12" font-weight="500" letter-spacing=".04em"><tspan x="446.42" y="105.144">INCENTIVES</tspan></text>
+    <circle cx="430.42" cy="100.781" r="7"/>
+  </g>
+  <g>
+    <path id="slippage" d="M62.0291 213.5C64.6734 303.971 138.845 376.5 229.956 376.5C240.051 376.5 249.938 375.61 259.544 373.903L259.369 372.918C249.821 374.615 239.992 375.5 229.956 375.5C139.397 375.5 65.6735 303.419 63.0295 213.5H62.0291Z" fill="none" stroke-width="1" stroke="#EE2524" stroke-dasharray="0" stroke-dashoffset="577">
+      <animate attributeName="stroke-dasharray" dur="7s" values="0;15;4;2;0" restart="always" repeatCount="indefinite"/>
+    </path>
+  </g>
+  <g fill="currentColor">
+    <text xml:space="preserve" style="white-space:pre" font-family="Inter" font-size="12" font-weight="500" letter-spacing=".04em"><tspan x="111.316" y="301.144">LOW SLIPPAGE</tspan></text>
+    <circle cx="87.42" cy="296.781" r="7"/>
+    <text xml:space="preserve" style="white-space:pre" font-family="Inter" font-size="12" font-weight="500" letter-spacing=".04em"><tspan x="33.765" y="143.144">FEES</tspan></text>
+    <circle cx="79.42" cy="137.781" r="7"/>
+    <text xml:space="preserve" style="white-space:pre" font-family="Inter" font-size="12" font-weight="500" letter-spacing=".04em"><tspan x="259.891" y="143.144">VELO EMISSIONS</tspan></text>
+    <circle cx="381.42" cy="137.781" r="7"/>
+    <text xml:space="preserve" style="white-space:pre" font-family="Inter" font-size="12" font-weight="500" letter-spacing=".04em"><tspan x="481.42" y="268.144">LIQUIDITY</tspan></text>
+    <circle cx="460.42" cy="263.781" r="7"/>
+    <text xml:space="preserve" style="white-space:pre" font-family="Inter" font-size="12" font-weight="500" letter-spacing=".04em"><tspan x="446.42" y="105.144">INCENTIVES</tspan></text>
+    <circle cx="430.42" cy="100.781" r="7"/>
+  </g>
+  <g>
+    <circle r="8" fill="#fff"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M-3 12C3.627 12 9 6.627 9 0S3.627-12-3-12-15-6.627-15 0s5.373 12 12 12Zm-2.707-7.707a1 1 0 1 0 1.414 1.414L.525.89a1 1 0 0 0 0-1.414l-4.818-4.818a1 1 0 1 0-1.414 1.414l4.11 4.111-4.11 4.11Z" fill="#EE2524"/>
+    <animateMotion dur="7s" repeatCount="indefinite" rotate="auto" calcMode="spline" keyPoints="0;0.051;0.22;0.323;0.412" keyTimes="0; 0.1; 0.5; 0.75; 1" keySplines="0.5 0 0.5 1; 0.5 0 0.5 1; 0.5 0 0.5 1; 0.5 0 0.5 1">
+      <mpath xlink:href="#d"/>
+    </animateMotion>
+  </g>
+  <rect x="143" y="28" width="145" height="40" rx="20" fill="currentColor"/>
+  <text fill="#000" xml:space="preserve" style="white-space:pre" font-family="Inter" font-size="12" font-weight="bold" letter-spacing="0em"><tspan x="167" y="52.364">veVELO VOTERS</tspan></text>
+  <rect x="1" y="206" width="105" height="40" rx="20" fill="currentColor"/>
+  <text fill="#000" xml:space="preserve" style="white-space:pre" font-family="Inter" font-size="12" font-weight="bold" letter-spacing="0em"><tspan x="25" y="230.364">TRADERS</tspan></text>
+  <rect x="431" y="149" width="123" height="40" rx="20" fill="currentColor"/>
+  <text fill="#000" xml:space="preserve" style="white-space:pre" font-family="Inter" font-size="12" font-weight="bold" letter-spacing="0em"><tspan x="455" y="173.364">PROTOCOLS</tspan></text>
+  <rect x="222" y="357" width="72" height="40" rx="20" fill="currentColor"/>
+  <text fill="#000" xml:space="preserve" style="white-space:pre" font-family="Inter" font-size="12" font-weight="bold" letter-spacing="0em"><tspan x="246" y="381.364">LP’s</tspan></text>
+  <defs>
+    <filter id="a" x="234.706" y="51.257" width="161.975" height="350.57" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="7.5" result="effect1_foregroundBlur_1_2282"/>
+    </filter>
+    <filter id="b" x="34.748" y="47.077" width="161.999" height="212.26" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="7.5" result="effect1_foregroundBlur_1_2282"/>
+    </filter>
+    <filter id="c" x="247.552" y="35.888" width="217.093" height="160.469" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+      <feGaussianBlur stdDeviation="7.5" result="effect1_foregroundBlur_1_2282"/>
+    </filter>
+  </defs>
+</svg>
