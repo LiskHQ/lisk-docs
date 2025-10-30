@@ -1,12 +1,15 @@
 ---
 id: deployed-tokens
 title: Tokens on Lisk
-sidebar_position: 2
 description: 'A reference page listing all tokens deployed on Lisk.'
 keywords:
   [
     'Lisk',
-    'Bridged tokens'
+    'Bridged tokens',
+    'Deployed tokens',
+    'lisk mainnet',
+    'lisk testnet',
+    'lisk sepolia'
   ]
 ---
 
