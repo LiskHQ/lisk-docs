@@ -1,6 +1,5 @@
 ---
 title: Interoperability
-slug: /lisk-tools/interoperability
 description: Summary of available interoperability tools for Lisk.
 keywords:
   [
@@ -28,7 +27,7 @@ Bridges enable:
 - users to access new platforms and leverage the benefits of different chains.
 - developers from different blockchain ecosystems to collaborate and build new platforms for the users.
 
-For bridging tokens from Lisk to other networks, please check the [Bridges](/docs-user/bridges.mdx) page for an overview of all available bridges.
+For bridging tokens from Lisk to other networks, please check the [Bridges](/lisk-tools/bridges.mdx) page for an overview of all available bridges.
 
 ## ChainLink CCIP
 [Chainlink CCIP](https://www.chainlinkecosystem.com/ecosystem/lisk) is a blockchain interoperability protocol that enables developers to build secure applications that can transfer tokens, messages (data), or both tokens and messages across chains.
