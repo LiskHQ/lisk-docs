@@ -24,7 +24,9 @@ const sidebars = {
       collapsible: false,
       collapsed: false,
       items: [
-        'overview'
+        'get-started/overview',
+        'get-started/connecting-to-a-wallet',
+        'get-started/import-lsk',
       ],
     },
   ],
@@ -41,11 +43,10 @@ const sidebars = {
       collapsible: true,
       collapsed: false,
       items: [
-        'intro',
-        { type: 'ref', id: 'docs-user/connecting-to-a-wallet' },
-        'about-lisk/network-info',
-        'about-lisk/fees',
-        'about-lisk/contracts'
+        'lisk-chain/about-lisk/intro',
+        'lisk-chain/about-lisk/network-info',
+        'lisk-chain/about-lisk/fees',
+        'lisk-chain/about-lisk/contracts'
       ],
     },
     {
@@ -54,20 +55,19 @@ const sidebars = {
       collapsible: true,
       collapsed: false,
       items: [
-        'lisk-tools/deployed-tokens',
-        'lisk-tools/exchanges',
-        'lisk-tools/wallets',
-        'lisk-tools/bridges',
-        'lisk-tools/node-providers',
-        'lisk-tools/faucets',
-        'lisk-tools/interoperability',
-        'lisk-tools/oracles',
-        'lisk-tools/utilities',
-        'lisk-tools/indexers'
+        'lisk-chain/lisk-tools/deployed-tokens',
+        'lisk-chain/lisk-tools/exchanges',
+        'lisk-chain/lisk-tools/wallets',
+        'lisk-chain/lisk-tools/bridges',
+        'lisk-chain/lisk-tools/node-providers',
+        'lisk-chain/lisk-tools/faucets',
+        'lisk-chain/lisk-tools/interoperability',
+        'lisk-chain/lisk-tools/oracles',
+        'lisk-chain/lisk-tools/utilities',
+        'lisk-chain/lisk-tools/indexers'
       ],
       link: {
         type: 'generated-index',
-        slug: '/category/lisk-tools',
         keywords: ['tools','resources'],
       },
     }
@@ -84,21 +84,21 @@ const sidebars = {
       collapsible: false,
       collapsed: false,
       items: [
-        'building-on-lisk/web3-app-development',
+        'guides/web3-app-development',
         {
           type: 'category',
           label: 'Deploying a Smart Contract',
           collapsible: true,
           collapsed: true,
           items: [
-            'building-on-lisk/deploying-smart-contract/with-Foundry',
-            'building-on-lisk/deploying-smart-contract/with-Hardhat',
-            'building-on-lisk/deploying-smart-contract/with-Remix',
-            'building-on-lisk/deploying-smart-contract/with-thirdweb',
+            'guides/deploying-smart-contract/with-Foundry',
+            'guides/deploying-smart-contract/with-Hardhat',
+            'guides/deploying-smart-contract/with-Remix',
+            'guides/deploying-smart-contract/with-thirdweb',
           ],
           link: {
             type: 'generated-index',
-            slug: '/category/building-on-lisk/deploying-smart-contract',
+            slug: '/category/guides/deploying-smart-contract',
             keywords: ['guides', 'smart contracts', 'deployment'],
           },
         },
@@ -108,9 +108,9 @@ const sidebars = {
           collapsible: true,
           collapsed: true,
           items: [
-            'building-on-lisk/interacting-with-the-blockchain/viem',
-            'building-on-lisk/interacting-with-the-blockchain/ethers',
-            'building-on-lisk/interacting-with-the-blockchain/web3',
+            'guides/interacting-with-the-blockchain/viem',
+            'guides/interacting-with-the-blockchain/ethers',
+            'guides/interacting-with-the-blockchain/web3',
           ],
         },
         {
@@ -119,13 +119,13 @@ const sidebars = {
           collapsible: true,
           collapsed: true,
           items: [
-            'building-on-lisk/add-token-to-lisk/index',
-            'building-on-lisk/add-token-to-lisk/standard-token',
-            'building-on-lisk/add-token-to-lisk/custom-token',
+            'guides/add-token-to-lisk/index',
+            'guides/add-token-to-lisk/standard-token',
+            'guides/add-token-to-lisk/custom-token',
           ],
           link: {
             type: 'generated-index',
-            slug: '/category/building-on-lisk/add-token-to-lisk',
+            slug: '/category/guides/add-token-to-lisk',
             keywords: ['guides', 'smart contracts', 'bridging', 'superchain token list'],
           },
         },
@@ -135,14 +135,14 @@ const sidebars = {
           collapsible: true,
           collapsed: true,
           items: [
-            'building-on-lisk/token-development/overview',
-            'building-on-lisk/token-development/deploy-erc-20',
-            'building-on-lisk/token-development/deploy-erc-721',
-            'building-on-lisk/token-development/deploy-erc-1155',
+            'guides/token-development/overview',
+            'guides/token-development/deploy-erc-20',
+            'guides/token-development/deploy-erc-721',
+            'guides/token-development/deploy-erc-1155',
           ],
           link: {
             type: 'generated-index',
-            slug: '/category/building-on-lisk/token-development',
+            slug: '/category/guides/token-development',
             keywords: ['guides', 'smart contracts', 'token development', 'token standards', 'erc-20', 'erc-721', 'erc-1155'],
           },
         },
@@ -152,12 +152,12 @@ const sidebars = {
           collapsible: true,
           collapsed: true,
           items: [
-            'building-on-lisk/using-oracle-data/tellor',
-            'building-on-lisk/using-oracle-data/redstone-pull',
-            'building-on-lisk/using-oracle-data/redstone-push',
+            'guides/using-oracle-data/tellor',
+            'guides/using-oracle-data/redstone-pull',
+            'guides/using-oracle-data/redstone-push',
           ],
         },
-        'building-on-lisk/run-a-lisk-node'
+        'guides/run-a-lisk-node'
       ]
     }
   ],
@@ -171,11 +171,13 @@ const sidebars = {
       items: [
         'lisk-l1/legacy-chain-service',
         'lisk-l1/migration-guide',
+        'lisk-l1/claiming',
+
       ],
     },
   ],
 
-  userSidebar: [
+  /* userSidebar: [
     {
       type: 'category',
       label: 'Using Lisk',
@@ -220,7 +222,7 @@ const sidebars = {
         'docs-user/staking/early-unlock',
       ],
     },
-  ],
+  ], */
 };
 
 export default sidebars;

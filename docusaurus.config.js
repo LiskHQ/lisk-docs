@@ -123,9 +123,9 @@ const config = {
             label: 'Get Started',
           },
           {
-            type: 'doc',
+            type: 'docSidebar',
             position: 'left',
-            docId: 'intro',
+            sidebarId: 'documentationSidebar',
             label: 'Lisk Chain',
           },
           {

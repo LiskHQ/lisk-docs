@@ -1,6 +1,5 @@
 ---
 title: Oracles
-slug: /lisk-tools/oracles
 description: Documentation for various blockchain oracles for Lisk.
 keywords:
   [
@@ -43,8 +42,8 @@ Interested in integration? [Get in contact](https://discord.com/invite/PVxBZKFr4
 
 ### Guides
 
-- [Accessing oracle data with Redstone (Pull)](../building-on-lisk/using-oracle-data/redstone-pull.md)
-- [Accessing oracle data with Redstone (Push)](../building-on-lisk/using-oracle-data/redstone-push.md)
+- [Accessing oracle data with Redstone (Pull)](/guides/using-oracle-data/redstone-pull.md)
+- [Accessing oracle data with Redstone (Push)](/guides/using-oracle-data/redstone-push.md)
 
 ## Tellor
 
@@ -63,4 +62,4 @@ This incentivizes an open, permissionless network of data reporting and data val
 - Lisk Sepolia
 
 ### Guides
-- [Accessing oracle data with Tellor](../building-on-lisk/using-oracle-data/tellor.md)
+- [Accessing oracle data with Tellor](/guides/using-oracle-data/tellor.md)
