@@ -1,6 +1,5 @@
 ---
 title: Deploying a standard token
-slug: /building-on-lisk/add-token-to-lisk/standard-token
 description: 'Learn how to add your standard ERC-20 token to Lisk using the standard bridge.'
 keywords:
   [

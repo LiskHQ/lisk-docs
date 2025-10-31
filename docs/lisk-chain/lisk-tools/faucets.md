@@ -1,6 +1,5 @@
 ---
 title: Faucets
-slug: /lisk-tools/faucets
 description: Summary of available ETH and LSK faucets on the Lisk Seolia Testnet. Get free testnet tokens on Lisk Sepolia.
 keywords:
   [

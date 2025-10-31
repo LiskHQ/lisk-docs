@@ -1,6 +1,5 @@
 ---
 title: Utilities
-slug: /lisk-tools/utilities
 description: Summary of various services available for building on Lisk.
 keywords:
   [

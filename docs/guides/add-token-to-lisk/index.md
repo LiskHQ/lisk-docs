@@ -1,7 +1,5 @@
 ---
 title: Introduction
-sidebar_position: 1
-slug: /building-on-lisk/add-token-to-lisk
 description: 'Guide to adding external ERC-20 contracts deployed on Ethereum to Lisk network.'
 keywords:
   [

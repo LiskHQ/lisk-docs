@@ -1,6 +1,5 @@
 ---
 title: ... with Hardhat
-slug: /building-on-lisk/deploying-smart-contract/with-Hardhat
 description: "A guide on deploying a smart contract on the Lisk network using Hardhat. Includes instructions for setting up the environment, compiling, and deploying the smart contract."
 keywords: [
     "Hardhat",

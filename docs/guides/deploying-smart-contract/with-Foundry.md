@@ -1,6 +1,5 @@
 ---
 title: ... with Foundry
-slug: /building-on-lisk/deploying-smart-contract/with-Foundry
 description: "A guide on deploying a smart contract on the Lisk network using Foundry. Includes instructions for setting up the environment, compiling, and deploying the smart contract."
 keywords: [
     "Foundry",

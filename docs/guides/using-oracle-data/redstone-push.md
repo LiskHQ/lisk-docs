@@ -1,6 +1,5 @@
 ---
 title: ...with RedStone (Push)
-slug: /building-on-lisk/using-oracle-data/redstone-push
 description: A guide on using RedStone Push to access real-world data such as asset prices, directly from your smart contracts on the Lisk blockchain.
 keywords: [
     Oracle

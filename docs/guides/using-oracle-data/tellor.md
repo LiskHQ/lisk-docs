@@ -1,6 +1,5 @@
 ---
 title: ...with Tellor
-slug: /building-on-lisk/using-oracle-data/tellor
 description: A guide on using Tellor Data Feeds to access real-world data such as asset prices, directly from your smart contracts on the Lisk blockchain.
 keywords: [
     Oracle

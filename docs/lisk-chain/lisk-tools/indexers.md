@@ -1,6 +1,5 @@
 ---
 title: Data Indexers
-slug: /lisk-tools/indexers
 description: "Brief introduction to all the indexers linked with Lisk L2."
 keywords: [
     "indexers",

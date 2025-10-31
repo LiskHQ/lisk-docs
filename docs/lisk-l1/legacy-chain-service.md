@@ -1,6 +1,5 @@
 ---
 title: Legacy Chain Service
-slug: /lisk-l1/legacy-chain-service
 description: How to access data from the Lisk L1 legacy chain.
 keywords:
   [
@@ -12,7 +11,6 @@ keywords:
     chain history,
     account history
   ]
-difficulty: beginner
 ---
 :::warning
 These docs are referring to the previous Lisk chain on L1, which stopped when Lisk migrated to L2 on May 2024. 

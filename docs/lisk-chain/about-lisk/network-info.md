@@ -1,8 +1,6 @@
 ---
 id: network-info
 title: Network information, official explorers & faucets
-sidebar_position: 1
-slug: /network-info
 description: 'Network information, official explorers, and faucets available for Lisk L2 network.'
 keywords:
   [

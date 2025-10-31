@@ -1,6 +1,5 @@
 ---
 title: Running a Lisk Node
-slug: /building-on-lisk/run-a-lisk-node
 description: A tutorial that teaches how to set up and run a Lisk Node.
 keywords:
   [

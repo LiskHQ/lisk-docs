@@ -1,6 +1,5 @@
 ---
 title: ...with RedStone (Pull)
-slug: /building-on-lisk/using-oracle-data/redstone-pull
 description: A guide on using RedStone Pull to access real-world data such as asset prices, directly from your smart contracts on the Lisk blockchain.
 keywords: [
     Oracle
