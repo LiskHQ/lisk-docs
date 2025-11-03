@@ -34,7 +34,11 @@ const sidebars = {
         'lisk-chain/about-lisk/intro',
         'lisk-chain/about-lisk/fees',
         'lisk-chain/about-lisk/contracts'
-      ]
+      ],
+      link: {
+        type: 'generated-index',
+        keywords: ['Lisk','About Lisk', 'Lisk info'],
+      },
     },
     {
       type: 'category',
