@@ -28,6 +28,11 @@ const sidebars = {
         'get-started/connecting-to-a-wallet',
         'get-started/import-lsk',
       ],
+      link: {
+        type: 'generated-index',
+        slug: '/category/get-started',
+        keywords: ['getting started','start', 'overview'],
+      },
     },
   ],
 
@@ -47,7 +52,7 @@ const sidebars = {
         'lisk-chain/about-lisk/network-info',
         'lisk-chain/about-lisk/fees',
         'lisk-chain/about-lisk/contracts'
-      ],
+      ]
     },
     {
       type: 'category',
@@ -80,7 +85,7 @@ const sidebars = {
   guidesSidebar: [
     {
       type: 'category',
-      label: 'Web3 Builder Guides',
+      label: 'Developer Guides',
       collapsible: false,
       collapsed: false,
       items: [
@@ -98,7 +103,6 @@ const sidebars = {
           ],
           link: {
             type: 'generated-index',
-            slug: '/category/guides/deploying-smart-contract',
             keywords: ['guides', 'smart contracts', 'deployment'],
           },
         },
@@ -112,6 +116,10 @@ const sidebars = {
             'guides/interacting-with-the-blockchain/ethers',
             'guides/interacting-with-the-blockchain/web3',
           ],
+          link: {
+            type: 'generated-index',
+            keywords: ['guides', 'interacting', 'api'],
+          },
         },
         {
           type: 'category',
@@ -125,7 +133,6 @@ const sidebars = {
           ],
           link: {
             type: 'generated-index',
-            slug: '/category/guides/add-token-to-lisk',
             keywords: ['guides', 'smart contracts', 'bridging', 'superchain token list'],
           },
         },
@@ -142,7 +149,6 @@ const sidebars = {
           ],
           link: {
             type: 'generated-index',
-            slug: '/category/guides/token-development',
             keywords: ['guides', 'smart contracts', 'token development', 'token standards', 'erc-20', 'erc-721', 'erc-1155'],
           },
         },
@@ -161,6 +167,7 @@ const sidebars = {
       ],
       link: {
         type: 'generated-index',
+        slug: '/category/guides',
         keywords: ['guides','tutorials'],
       },
     }
@@ -180,6 +187,7 @@ const sidebars = {
       ],
       link: {
         type: 'generated-index',
+        slug: '/category/lisk-l1',
         keywords: ['lisk l1','lisk legacy'],
       },
     },
