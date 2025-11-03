@@ -117,11 +117,17 @@ const config = {
             label: 'Overview',
           }, 
           {
+            type: 'doc',
+            position: 'left',
+            docId: 'lisk-chain/about-lisk/network-info',
+            label: 'Lisk Chain',
+          }, 
+          /* {
             type: 'docSidebar',
             position: 'left',
             sidebarId: 'documentationSidebar',
             label: 'Lisk Chain',
-          },
+          }, */
           {
             type: 'docSidebar',
             position: 'left',
