@@ -109,19 +109,13 @@ const config = {
             to: 'overview2',
             label: 'Overview',
             position: 'left',
-          },
+          }, */
           {
             type: 'doc',
             position: 'left',
-            docId: 'overview',
-            label: 'Getting Started',
-          }, */
-          {
-            type: 'docSidebar',
-            position: 'left',
-            sidebarId: 'gettingStartedSidebar',
-            label: 'Get Started',
-          },
+            docId: 'lisk-chain/get-started/overview',
+            label: 'Overview',
+          }, 
           {
             type: 'docSidebar',
             position: 'left',
