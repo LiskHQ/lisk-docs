@@ -37,7 +37,8 @@ const sidebars = {
       ],
       link: {
         type: 'generated-index',
-        keywords: ['Lisk','About Lisk', 'Lisk info'],
+        description: 'General information about the Lisk chain',
+        keywords: ['Lisk','About Lisk', 'Lisk info', 'fees', 'network info'],
       },
     },
     {
@@ -163,12 +164,17 @@ const sidebars = {
             'guides/using-oracle-data/redstone-pull',
             'guides/using-oracle-data/redstone-push',
           ],
+          link: {
+            type: 'generated-index',
+            keywords: ['guides', 'oraclss', 'redstone', 'tellor'],
+          },
         },
         'guides/run-a-lisk-node'
       ],
       link: {
         type: 'generated-index',
         slug: '/category/guides',
+        description: 'Guides for builders developing apps on Lisk',
         keywords: ['guides','tutorials'],
       },
     }
