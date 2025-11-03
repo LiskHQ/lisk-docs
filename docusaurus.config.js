@@ -105,17 +105,46 @@ const config = {
           srcDark: '/img/lisk-docs-dark.svg',
         },
         items: [
+          /* {
+            to: 'overview2',
+            label: 'Overview',
+            position: 'left',
+          },
           {
             type: 'doc',
             position: 'left',
-            docId: 'intro',
-            label: 'Building with Lisk',
+            docId: 'overview',
+            label: 'Getting Started',
+          }, */
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'gettingStartedSidebar',
+            label: 'Get Started',
           },
           {
             type: 'docSidebar',
             position: 'left',
-            sidebarId: 'userSidebar',
-            label: 'Using Lisk',
+            sidebarId: 'documentationSidebar',
+            label: 'Lisk Chain',
+          },
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'pannaSidebar',
+            label: 'Panna SDK',
+          },
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'guidesSidebar',
+            label: 'Guides',
+          },
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'legacySidebar',
+            label: 'Lisk Legacy Chain',
           },
           /*{to: '/blog', label: 'Blog', position: 'left'},*/
         ],
