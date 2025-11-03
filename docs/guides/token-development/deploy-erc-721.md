@@ -16,7 +16,7 @@ keywords:
 # How to deploy a new ERC-721 token on Lisk
 
 :::note
-We will use Remix IDE for smart contract development in this guide, but feel free to choose a [smart contract development framework](/category/building-on-lisk/deploying-smart-contract) of your choice to implement your token contract.
+We will use Remix IDE for smart contract development in this guide, but feel free to choose a [smart contract development framework](/category/guides/deploying-smart-contract) of your choice to implement your token contract.
 :::
 
 ## 1. Open Remix

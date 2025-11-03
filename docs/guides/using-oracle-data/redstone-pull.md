@@ -32,7 +32,7 @@ To create a smart contract that directly fetches the latest data from the RedSto
 
 This guide uses the [RedStone Pull model](https://docs.redstone.finance/docs/get-started/models/redstone-pull) to fetch the data.
 
-For an overview of the different modules that RedStone offers to receive oracle data, go to [Oracles > RedStone](../../lisk-tools/oracles#redstone).
+For an overview of the different modules that RedStone offers to receive oracle data, go to [Oracles > RedStone](/lisk-chain/lisk-tools/oracles#redstone).
 
 [Hardhat](https://hardhat.org/) is used in this guide to create the smart contract.
 In case you want to use Foundry, check out the [RedStone docs](https://docs.redstone.finance/docs/get-started/models/redstone-pull#foundry) for instructions.

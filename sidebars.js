@@ -40,7 +40,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'About Lisk',
-      collapsible: true,
+      collapsible: false,
       collapsed: false,
       items: [
         'lisk-chain/about-lisk/intro',
@@ -158,7 +158,11 @@ const sidebars = {
           ],
         },
         'guides/run-a-lisk-node'
-      ]
+      ],
+      link: {
+        type: 'generated-index',
+        keywords: ['guides','tutorials'],
+      },
     }
   ],
 
@@ -174,6 +178,10 @@ const sidebars = {
         'lisk-l1/claiming',
 
       ],
+      link: {
+        type: 'generated-index',
+        keywords: ['lisk l1','lisk legacy'],
+      },
     },
   ],
 

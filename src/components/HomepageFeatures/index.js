@@ -19,7 +19,7 @@ const FeatureList = [
           </p>
           <Link
             className="button button--secondary button--lg btn-custom"
-            to="/docs/">
+            to="/">
             Explore
           </Link>
         </div>
@@ -39,7 +39,7 @@ const FeatureList = [
           <p className='line-space-text'>Lisk offers low-cost transactions, EVM compatibility, and support for all major developer frameworks, making it the top choice for developers. Join Lisk to access essential technical materials for your development journey.</p>
           <Link
             className="button button--secondary button--lg btn-custom"
-            to="/category/building-on-lisk">
+            to="/category/guides">
             Get started
           </Link>
         </div>
@@ -60,7 +60,7 @@ const FeatureList = [
             Lisk supports <Link to="https://lisk.com/chain/"> founders and builders</Link> with opportunities to develop the next generation of web3 applications.</p>
           <Link
             className="button button--secondary button--lg btn-custom"
-            to="/category/lisk-tools">
+            to="/category/lisk-chain">
             Discover
           </Link>
         </div>
