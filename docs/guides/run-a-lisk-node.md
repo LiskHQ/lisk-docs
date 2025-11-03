@@ -133,7 +133,7 @@ $( curl -s -d '{"id":0,"jsonrpc":"2.0","method":"optimism_syncStatus"}' -H "Cont
    jq -r .result.unsafe_l2.timestamp))/60)) minutes
 ```
 
-[partners]: /lisk-tools/node-providers
+[partners]: /lisk-chain/lisk-tools/node-providers
 [lisk node]: https://github.com/LiskHQ/lisk-node
 
 ### Snapshots
