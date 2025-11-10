@@ -111,11 +111,11 @@ const config = {
             position: 'left',
           }, */
           {
-            type: 'doc',
+            type: 'docSidebar',
             position: 'left',
-            docId: 'lisk-chain/get-started/overview',
-            label: 'Overview',
-          }, 
+            sidebarId: 'startSidebar',
+            label: 'Start',
+          },
           {
             type: 'doc',
             position: 'left',
