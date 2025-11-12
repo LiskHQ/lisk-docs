@@ -111,9 +111,9 @@ const config = {
             position: 'left',
           }, */
           {
-            type: 'docSidebar',
+            type: 'doc',
             position: 'left',
-            sidebarId: 'startSidebar',
+            docId: 'get-started/index',
             label: 'Start',
           },
           {
