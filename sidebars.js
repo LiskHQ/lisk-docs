@@ -24,16 +24,16 @@ const sidebars = {
       collapsible: false,
       collapsed: false,
       items: [
-        'get-started/overview',
+        'get-started/index',
         {
           type: 'link',
           label: 'About Lisk', // The link label
-          href: 'about-lisk', // The internal path
+          href: '/category/about-lisk', // The internal path
         },
         {
           type: 'link',
           label: 'Lisk Tools', // The link label
-          href: 'lisk-tools', // The internal path
+          href: '/category/lisk-tools', // The internal path
         },
       ],
       link: {
