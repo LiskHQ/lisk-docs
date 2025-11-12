@@ -19,7 +19,7 @@ keywords:
 
 Lisk provides a cost-efficient, fast, and scalable Layer 2 (L2) network based on Optimism (OP) that is secured by Ethereum. Built on the MIT-licensed OP Stack and partnered with Gelato as a RaaS provider, Lisk contributes to scaling Ethereum to a level where blockchain infrastructure is ready for mass adoption.
 
-### Why Lisk?
+### Lisk Features
 
 - **Ultra-Fast, Near-Zero Fees**:
 Built on a high-throughput network, Lisk Chain features a 2-second block time and median network fees that are consistently under $0.01 to ensure performance meets affordability.
