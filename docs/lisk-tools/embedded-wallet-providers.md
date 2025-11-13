@@ -20,7 +20,7 @@ keywords:
 
 This page summarizes providers of embedded wallets that support the Lisk network.
 
-Embedded wallets providers support developers to integrate web3 wallets directly into an application, rather than requiring a separate browser extension or app. They allow users to take action without leaving the host application.
+Embedded wallet providers support developers to integrate web3 wallets directly into an application, rather than requiring a separate browser extension or app. They allow users to take action without leaving the host application.
 
 ## Panna
 
@@ -46,7 +46,7 @@ Privy surfaces both user-centric abstractions enabling you to authenticate users
 
 Create wallets for your users with flexible authentication options. Choose from email/phone verification, social OAuth, passkeys, or external wallet connections. Thirdweb supports creation of non-custodial user wallets, as well as server-, external- and ecosystem wallets.
 
-## Metmask embedded wallets
+## Metamask embedded wallets
 
 [MetaMask Embedded Wallets](https://docs.metamask.io/embedded-wallets/) (formerly Web3Auth) is a pluggable embedded wallet infrastructure that simplifies Web3 wallet integration and user onboarding. It supports OAuth-based logins and multiple platforms, allowing users to access Web3 applications through familiar authentication methods in under a minute.
 
@@ -55,4 +55,4 @@ Users enjoy seamless onboarding while maintaining full control of their non-cust
 ## Xellar
 
 [Xellar](https://xellar.co/) offers a mobile wallet and a devkit for embedded Wallets to be integrated into apps and websites.
-Xellar nables users to create wallets with Social Login native to the App.
+Xellar enables users to create wallets with Social Login native to the App.
