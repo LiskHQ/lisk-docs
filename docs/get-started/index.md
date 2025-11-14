@@ -33,7 +33,7 @@ Lisk leverages the [OP Stack](https://docs.optimism.io/concepts/stack/getting-st
 - **Native Superchain Access**:
 With [Superchain](https://docs.optimism.io/app-developers/guides/superchain) Interoperability going live, your application gains native, seamless access to a massive shared ecosystem. This includes users and liquidity from major chains like Optimism, Base, Unichain, and many more.
 - **Decentralized governance**:
-LSK token holders can contribute to the governance of the Lisk project via **the Lisk DAO** by delegating or voting directly on proposals that decide how funds are distributed in the ecosystem, in order to create the most impact.
+LSK token holders can contribute to the governance of the Lisk project via **the Lisk DAO** by delegating their voting power or voting directly on proposals that decide how funds are distributed in the ecosystem, in order to create the most impact.
 
 ### Getting Started with Lisk
 
