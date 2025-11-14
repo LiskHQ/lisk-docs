@@ -1,6 +1,6 @@
 ---
 title: Embedded wallet providers
-description: Summary of embedded wallets provides that support the Lisk network.
+description: Summary of embedded wallets providers that support the Lisk network.
 keywords:
   [
     Lisk embedded wallets,
