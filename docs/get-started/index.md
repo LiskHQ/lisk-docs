@@ -1,5 +1,6 @@
 ---
 title: Lisk Documentation
+slug: /
 keywords:
   [
     Lisk,
@@ -19,7 +20,7 @@ keywords:
 
 Lisk provides a cost-efficient, fast, and scalable Layer 2 (L2) network based on Optimism (OP) that is secured by Ethereum. Built on the MIT-licensed OP Stack and partnered with Gelato as a RaaS provider, Lisk contributes to scaling Ethereum to a level where blockchain infrastructure is ready for mass adoption.
 
-### Lisk Features
+### Features
 
 - **Ultra-Fast, Near-Zero Fees**:
 Built on a high-throughput network, Lisk Chain features a 2-second block time and median network fees that are consistently under $0.01 to ensure performance meets affordability.
@@ -39,15 +40,10 @@ LSK token holders can contribute to the governance of the Lisk project via **the
 <table className="indexTable">
     <thead>
         <tr>
-            <th colspan="3">Lisk Chain ⛓️</th>
+            <th>[About Lisk 💎](/category/about-lisk)</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>[About Lisk 💎](/category/about-lisk)</td>
-            <td>[Lisk Tools 🛠️](/category/lisk-tools)</td>
-            <td>[Getting Started Guides ✨](/category/guides)</td>
-        </tr>
         <tr>
             <td valign="top"> 
             - [Lisk Network Info](/lisk-chain/about-lisk/network-info)
@@ -55,6 +51,17 @@ LSK token holders can contribute to the governance of the Lisk project via **the
             - [Lisk Contracts](/lisk-chain/about-lisk/contracts)
             - [Lisk Fees](/lisk-chain/about-lisk/fees)
             </td>
+        </tr>
+    </tbody>
+</table>
+<table className="indexTable">
+    <thead>
+        <tr>
+            <th>[Lisk Tools 🛠️](/category/lisk-tools)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
             <td valign="top"> 
             - [Bridges](/lisk-chain/lisk-tools/bridges)
             - [Deployed Tokens](/lisk-chain/lisk-tools/deployed-tokens)
@@ -67,6 +74,17 @@ LSK token holders can contribute to the governance of the Lisk project via **the
             - [Utilities](/lisk-chain/lisk-tools/utilities)
             - [Wallets](/lisk-chain/lisk-tools/wallets)
             </td>
+        </tr>
+    </tbody>
+</table>
+<table className="indexTable">
+    <thead>
+        <tr>
+            <th>[Getting Started Guides ✨](/category/guides)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
             <td valign="top"> 
             - [Connecting Lisk to a wallet](/guides/connecting-to-a-wallet)
             - [How to import LSK to a wallet](/guides/import-lsk)
