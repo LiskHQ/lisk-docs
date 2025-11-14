@@ -63,8 +63,8 @@ code {
 }
 
 .indexTable {
-  display: inline-block !important;
-  margin-top: 1em !important;
+  display: inline-block;
+  margin: 0.5em 0.5em 0 0.5em;
   vertical-align: top;
   line-height:normal;
 }
