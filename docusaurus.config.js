@@ -117,6 +117,11 @@ const config = {
             sidebarId: 'userSidebar',
             label: 'Using Lisk',
           },
+          {
+          type: 'html',
+          position: 'right',
+          value: '<a class="button btn-custom" target="_blank" href="https://status.lisk.com">status.lisk.com</a>',
+          },
           /*{to: '/blog', label: 'Blog', position: 'left'},*/
         ],
       },
