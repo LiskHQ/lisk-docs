@@ -131,6 +131,7 @@ const sidebars = {
         'lisk-tools/bridges',
         'lisk-tools/node-providers',
         'lisk-tools/faucets',
+        'lisk-tools/embedded-wallet-providers',
         'lisk-tools/interoperability',
         'lisk-tools/oracles',
         'lisk-tools/utilities',
