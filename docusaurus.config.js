@@ -110,16 +110,16 @@ const config = {
             label: 'Overview',
             position: 'left',
           }, */
-          {
+          /* {
             type: 'doc',
             position: 'left',
             docId: 'get-started/index',
             label: 'Get Started',
-          },
+          }, */
           {
             type: 'doc',
             position: 'left',
-            docId: 'lisk-chain/about-lisk/network-info',
+            docId: 'get-started/index',
             label: 'Lisk Chain',
           }, 
           /* {
