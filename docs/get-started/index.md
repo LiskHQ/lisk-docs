@@ -40,14 +40,13 @@ LSK token holders can contribute to the governance of the Lisk project via **the
 <table className="indexTable">
     <thead>
         <tr>
-            <th>[About Lisk 💎](/category/about-lisk)</th>
+            <th>[About Lisk 💎](/lisk-chain/about-lisk/intro)</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td valign="top"> 
             - [Lisk Network Info](/lisk-chain/about-lisk/network-info)
-            - [Introduction to Lisk](/lisk-chain/about-lisk/intro)
             - [Lisk Contracts](/lisk-chain/about-lisk/contracts)
             - [Lisk Fees](/lisk-chain/about-lisk/fees)
             </td>
