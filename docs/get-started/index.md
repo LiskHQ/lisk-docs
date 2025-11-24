@@ -1,6 +1,8 @@
 ---
 title: Lisk Documentation
 slug: /
+displayed_sidebar: null
+hide_table_of_contents: true
 keywords:
   [
     Lisk,
@@ -14,13 +16,13 @@ keywords:
   ]
 ---
 
-# Lisk Documentation
 
-## The Lisk Chain
+
+# The Lisk Chain
 
 Lisk provides a cost-efficient, fast, and scalable Layer 2 (L2) network based on Optimism (OP) that is secured by Ethereum. Built on the MIT-licensed OP Stack and partnered with Gelato as a RaaS provider, Lisk contributes to scaling Ethereum to a level where blockchain infrastructure is ready for mass adoption.
 
-### Features
+## Features
 
 - **Ultra-Fast, Near-Zero Fees**:
 Built on a high-throughput network, Lisk Chain features a 2-second block time and median network fees that are consistently under $0.01 to ensure performance meets affordability.
@@ -35,7 +37,7 @@ With [Superchain](https://docs.optimism.io/app-developers/guides/superchain) Int
 - **Decentralized governance**:
 LSK token holders can contribute to the governance of the Lisk project via **the Lisk DAO** by delegating their voting power or voting directly on proposals that decide how funds are distributed in the ecosystem, in order to create the most impact.
 
-### Getting Started with Lisk
+## Getting Started with Lisk
 
 <table className="indexTable">
     <thead>
