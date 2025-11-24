@@ -24,22 +24,24 @@ const sidebars = {
       collapsible: false,
       collapsed: false,
       items: [
-        'get-started/index',
         {
           type: 'link',
-          label: 'About Lisk', // The link label
-          href: '/category/about-lisk', // The internal path
+          label: 'Lisk Status', // The link label
+          href: 'https://status.lisk.com/', // The internal path
         },
         {
           type: 'link',
-          label: 'Lisk Tools', // The link label
-          href: '/category/lisk-tools', // The internal path
+          label: 'Lisk Explorer', // The link label
+          href: 'https://blockscout.lisk.com/', // The internal path
+        },
+        {
+          type: 'link',
+          label: 'Lisk Sepolia Explorer', // The link label
+          href: 'https://sepolia-blockscout.lisk.com/', // The internal path
         },
       ],
-      link: {
-        type: 'generated-index',
-        keywords: ['getting started','start', 'overview'],
-      },
+      link: {type: 'doc', id: 'get-started/index'},
+
     },
   ],
 
@@ -56,15 +58,10 @@ const sidebars = {
       collapsed: false,
       items: [
         'lisk-chain/about-lisk/network-info',
-        'lisk-chain/about-lisk/intro',
         'lisk-chain/about-lisk/fees',
         'lisk-chain/about-lisk/contracts'
       ],
-      link: {
-        type: 'generated-index',
-        description: 'General information about the Lisk chain',
-        keywords: ['Lisk','About Lisk', 'Lisk info', 'fees', 'network info'],
-      },
+      link: {type: 'doc', id: 'lisk-chain/about-lisk/intro'},
     },
     {
       type: 'category',
