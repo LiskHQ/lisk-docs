@@ -186,38 +186,10 @@ const sidebars = {
         description: 'Guides for builders developing apps on Lisk',
         keywords: ['guides','tutorials'],
       },
-<<<<<<< HEAD
     }
   ],
 
   legacySidebar: [
-=======
-    },
-    {
-      type: 'category',
-      label: 'Lisk Tools',
-      collapsible: true,
-      collapsed: false,
-      items: [
-        'lisk-tools/deployed-tokens',
-        'lisk-tools/exchanges',
-        'lisk-tools/wallets',
-        'lisk-tools/bridges',
-        'lisk-tools/node-providers',
-        'lisk-tools/faucets',
-        'lisk-tools/embedded-wallet-providers',
-        'lisk-tools/interoperability',
-        'lisk-tools/oracles',
-        'lisk-tools/utilities',
-        'lisk-tools/indexers'
-      ],
-      link: {
-        type: 'generated-index',
-        slug: '/category/lisk-tools',
-        keywords: ['tools','resources'],
-      },
-    },
->>>>>>> development
     {
       type: 'category',
       label: 'Lisk L1 legacy chain',
