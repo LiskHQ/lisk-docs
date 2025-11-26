@@ -81,7 +81,7 @@ For the remainder of this guide, we'll walk through how to verify your contract 
 
 You can apply the same steps for verifying a contract on Lisk Mainnet in case you deployed it there in the previous step, just use https://blockscout.lisk.com instead of https://sepolia-blockscout.lisk.com in step 2.
 
-1. In Remix, rightlick on the contract you wish to verify and select `Flatten`.
+1. In Remix, right-click on the contract you wish to verify and select `Flatten`.
   This will create a new file `MyToken_flattened.sol`.
 2. Now, switch to your [newly deployed contract](https://sepolia-blockscout.lisk.com/address/0x6e8fF2E042c1637a2Da9563763c62362a3bbD712) on https://sepolia-blockscout.lisk.com/
 3. Go to the contract tab and click on the blue `Verify and Publish` button.
