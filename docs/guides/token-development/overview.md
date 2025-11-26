@@ -50,7 +50,7 @@ Any token is exactly equal to any other token; no tokens have special rights or 
 This makes [ERC-20](https://eips.ethereum.org/EIPS/eip-20) tokens useful for things like a medium of exchange currency, voting rights, staking, and more.
 
 ### Guides
-[How to deploy a new ERC-20 token on Lisk](deploy-erc-20.mdx)
+[How to deploy a new ERC-20 token on Lisk](deploy-erc-20.md)
 
 ### Further reading
 - [Understand the ERC-20 token smart contract](https://ethereum.org/en/developers/tutorials/understand-the-erc-20-token-smart-contract/)
@@ -68,7 +68,7 @@ Non-fungible tokens(NFTs) are used to represent unique objects like real estate 
 To represent these unique features onchain, the ERC-721 includes metadata properties that offer information about the token's specific features, such as the title, the creator, and an image preview.
 
 ### Guides
-[How to deploy a new ERC-721 token on Lisk](deploy-erc-721.md)
+[How to deploy a new ERC-721 token on Lisk](deploy-erc-721.mdx)
 
 ### Further reading
 - [Ethereum Docs: ERC-721](https://ethereum.org/en/developers/docs/standards/tokens/erc-721/)
