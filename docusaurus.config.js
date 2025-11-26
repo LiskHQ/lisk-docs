@@ -106,11 +106,6 @@ const config = {
         },
         items: [
           /* {
-            to: 'overview2',
-            label: 'Overview',
-            position: 'left',
-          }, */
-          /* {
             type: 'doc',
             position: 'left',
             docId: 'get-started/index',
@@ -125,15 +120,9 @@ const config = {
           /* {
             type: 'docSidebar',
             position: 'left',
-            sidebarId: 'documentationSidebar',
-            label: 'Lisk Chain',
-          }, */
-          {
-            type: 'docSidebar',
-            position: 'left',
             sidebarId: 'pannaSidebar',
             label: 'Panna SDK',
-          },
+          }, */
           {
             type: 'docSidebar',
             position: 'left',

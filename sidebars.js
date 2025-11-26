@@ -88,9 +88,9 @@ const sidebars = {
     }
   ],
 
-  pannaSidebar: [
+  /* pannaSidebar: [
     'panna/panna-intro'
-  ],
+  ], */
 
   guidesSidebar: [
     {
