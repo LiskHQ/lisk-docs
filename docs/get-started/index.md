@@ -79,6 +79,6 @@ Lisk provides a cost-efficient, fast, and scalable Layer 2 (L2) network based on
     </tbody>
 </table>
 
-## Panna SDK
+<!-- ## Panna SDK
 
-### Getting Started with Panna
+### Getting Started with Panna -->
