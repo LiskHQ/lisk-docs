@@ -17,11 +17,11 @@ const tokens = json_obj.tokens;
 let chainIds = [1135, 4202];
 
 // Filter all tokens deployed on Lisk chains
-var LiskAdresses = tokens.filter(function (token) {
+var LiskAddresses = tokens.filter(function (token) {
   return chainIds.indexOf(token.chainId) != -1
 });
 // Add corresponding L1 address to each token
-LiskAdresses.forEach(token => {
+LiskAddresses.forEach(token => {
   var ethAddress;
   var result;
   // For Lisk Mainnet, add Ethereum Mainnet address
@@ -61,7 +61,7 @@ export const generatedDocs = () => {
             if (cellChild.value === tableHeads.eng[0] || cellChild.value === tableHeads.ind[0]) {
               cellChild.value = 'Token Name';
               // Add a new row for each Mainnet token
-              LiskAdresses.forEach(token => {
+              LiskAddresses.forEach(token => {
                 if (token.chainId === chainIds[0]) {
                   node.children.push({
                     type: 'tableRow',
@@ -146,7 +146,7 @@ export const generatedDocs = () => {
             } else if (cellChild.value === tableHeads.eng[1] || cellChild.value === tableHeads.ind[1]) {
               cellChild.value = 'Token Name';
               // Add a new row for each Sepolia token
-              LiskAdresses.forEach(token => {
+              LiskAddresses.forEach(token => {
                 if (token.chainId === chainIds[1]) {
                   node.children.push({
                     type: 'tableRow',
