@@ -38,6 +38,7 @@
   --ifm-menu-color: #000000;
   --ifm-toc-link-color: #000000;
   --ifm-button-color: #000000;
+  --ifm-navbar-padding-vertical: calc(0.1rem);
 }
 
 .hero--primary {
