@@ -10,7 +10,24 @@
 }
 
 .navbar__brand {
-    flex-basis: 18%;
+    flex-basis: 35%;
+    flex-shrink: 4;
+}
+
+.navbar__items {
+    flex: 1 1 30%;
+}
+
+.navbar__items--right {
+    flex: 1 1 0%;
+}
+
+.navbarSearchContainer_node_modules-\@docusaurus-theme-classic-lib-theme-Navbar-Search-styles-module {
+    flex-basis: 100%;
+}
+
+.DocSearch-Button {
+    width: 100%;
 }
 
 .navbar__item:hover {

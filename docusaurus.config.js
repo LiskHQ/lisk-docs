@@ -135,6 +135,10 @@ const config = {
             sidebarId: 'legacySidebar',
             label: 'Lisk Legacy Chain',
           },
+          {
+            type: 'search',
+            position: 'right',
+          },
           /*{to: '/blog', label: 'Blog', position: 'left'},*/
         ],
       },
