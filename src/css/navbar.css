@@ -26,8 +26,9 @@
     flex-basis: 100%;
 }
 
-.DocSearch-Button {
+div > .DocSearch-Button {
     width: 100%;
+    border-radius: 5px;
 }
 
 .navbar__item:hover {

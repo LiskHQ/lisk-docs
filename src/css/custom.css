@@ -39,6 +39,7 @@
   --ifm-toc-link-color: #000000;
   --ifm-button-color: #000000;
   --ifm-navbar-padding-vertical: calc(0.1rem);
+  --ifm-background-color: #F8F8F8;
 }
 
 .hero--primary {
@@ -189,6 +190,11 @@ article iframe {
 [data-theme='dark'] .btn-custom:hover {
   background-color: rgba(255, 255, 255, .1);
 }
+
+div > .docSidebarContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-Sidebar-styles-module {
+  border: 0;
+}
+
 
 /* .overview-span {
   display: grid;
