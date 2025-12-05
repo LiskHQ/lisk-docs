@@ -223,6 +223,7 @@ div > .docSidebarContainer_node_modules-\@docusaurus-theme-classic-lib-theme-Doc
   --ifm-font-color-base: #FFFFFF;
   --ifm-toc-link-color: #FFFFFF;
   --ifm-menu-color: #FFFFFF;
+  /* --menu__link--active: var(--ifm-color-secondary-darkest); */
   --ifm-tabs-color-active-border: rgba(0, 170, 98, 1);
   --ifm-alert-border-color: rgba(0, 170, 98, 1);
 }
@@ -232,6 +233,7 @@ html[data-theme='dark'] {
   --ifm-background-surface-color: #000000;
   --docusaurus-highlighted-code-line-bg: #000000;
   --ifm-footer-background-color: #000000;
+  --ifm-hover-overlay: rgba(255, 255, 255, 0.2);
 }
 
 html[data-theme='dark'] .alert {

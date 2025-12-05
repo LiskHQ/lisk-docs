@@ -35,6 +35,7 @@ div > .DocSearch-Button {
     opacity: 0.8;
     background: linear-gradient(90deg, var(--ifm-background-color) 0%, #AEFFC8 20%, #FFEEB1 45.72%, #D0A8FF 80%, var(--ifm-background-color) 100%);
     backdrop-filter: blur(15px);
+    transition: background var(--ifm-transition-fast) var(--ifm-transition-timing-default);
     /* background: linear-gradient(90deg, #6FFF9B 0%, #FFE07B 48.08%, #9537FE 100%); */
     /* background: linear-gradient(90deg, #AEFFC8 0%, #FFF3CA 48.08%, #C38FFF 100%); */
 }
