@@ -27,7 +27,8 @@
 
 .menu__list {
   padding-left: .5em;
-  background-color: var(--ifm-background-surface-color);
+  padding-bottom: 1.5em;
+  background-color: var(--ifm-color-gray-900);
 }
 
 .table-of-contents__link {

@@ -26,7 +26,7 @@
   --ifm-color-secondary: rgba(230, 230, 230, .5);
   --ifm-font-family-base: 'InstrumentSans';
   --ifm-heading-font-family: 'InstrumentSans-SemiBold';
-  --ifm-color-gray-900: #000000;
+  --ifm-color-gray-900: #FFFFFF;
   --ifm-navbar-link-color: var(var(--ifm-color-primary));
   --ifm-breadcrumb-item-background-active: rgba(230, 230, 230, .5);
   --ifm-tabs-color-active-border: rgba(97, 63, 255, 1);
@@ -40,14 +40,6 @@
   --ifm-button-color: #000000;
   --ifm-navbar-padding-vertical: calc(0.1rem);
   --ifm-background-color: #F8F8F8;
-}
-
-.navbar__link--active{
-  color: var(--ifm-color-black);
-  opacity: 0.8;
-  background: linear-gradient(90deg, var(--ifm-background-color) 0%, #AEFFC8 20%, #FFEEB1 45.72%, #D0A8FF 80%, var(--ifm-background-color) 100%);
-  backdrop-filter: blur(15px);
-  transition: background var(--ifm-transition-fast) var(--ifm-transition-timing-default);
 }
 
 .explorerIcon, .statusIcon {
@@ -238,6 +230,7 @@ div > .docSidebarContainer_node_modules-\@docusaurus-theme-classic-lib-theme-Doc
   --ifm-color-primary-light: #FFFFFF;
   --ifm-color-primary-lighter: #FFFFFF;
   --ifm-color-primary-lightest: #FFFFFF;
+  --ifm-color-gray-900: #2F2F2F;
   --ifm-color-secondary: rgba(230, 230, 230, 1);
   --ifm-code-font-size: 90%;
   --ifm-code-background: rgba(230, 230, 230, 1, .25);

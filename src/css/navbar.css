@@ -1,3 +1,7 @@
+.navbar {
+    background-color: var(--ifm-color-gray-900);
+}
+
 .navbar__item {
     /* font-weight: var(--ifm-font-weight-bold); */
     font-family: 'InstrumentSans';
@@ -12,6 +16,14 @@
 .navbar__brand {
     flex-basis: 35%;
     flex-shrink: 4;
+}
+
+.navbar__link--active{
+  color: var(--ifm-color-black);
+  opacity: 0.8;
+  background: linear-gradient(90deg, var(--ifm-color-gray-900) 0%, #AEFFC8 20%, #FFEEB1 45.72%, #D0A8FF 80%, var(--ifm-color-gray-900) 100%);
+  backdrop-filter: blur(15px);
+  transition: background var(--ifm-transition-fast) var(--ifm-transition-timing-default);
 }
 
 .navbar__items {
@@ -33,7 +45,7 @@ div > .DocSearch-Button {
 
 .navbar__item:hover {
     opacity: 0.8;
-    background: linear-gradient(90deg, var(--ifm-background-color) 0%, #AEFFC8 20%, #FFEEB1 45.72%, #D0A8FF 80%, var(--ifm-background-color) 100%);
+    background: linear-gradient(90deg, var(--ifm-color-gray-900) 0%, #AEFFC8 20%, #FFEEB1 45.72%, #D0A8FF 80%, var(--ifm-color-gray-900) 100%);
     backdrop-filter: blur(15px);
     transition: background var(--ifm-transition-fast) var(--ifm-transition-timing-default);
     /* background: linear-gradient(90deg, #6FFF9B 0%, #FFE07B 48.08%, #9537FE 100%); */
