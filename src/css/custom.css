@@ -43,6 +43,7 @@
 }
 
 .navbar__link--active{
+  color: var(--ifm-color-black);
   opacity: 0.8;
   background: linear-gradient(90deg, var(--ifm-background-color) 0%, #AEFFC8 20%, #FFEEB1 45.72%, #D0A8FF 80%, var(--ifm-background-color) 100%);
   backdrop-filter: blur(15px);
