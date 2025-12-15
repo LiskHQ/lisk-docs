@@ -42,6 +42,28 @@
   --ifm-background-color: #F8F8F8;
 }
 
+.navbar__link--active{
+  opacity: 0.8;
+  background: linear-gradient(90deg, var(--ifm-background-color) 0%, #AEFFC8 20%, #FFEEB1 45.72%, #D0A8FF 80%, var(--ifm-background-color) 100%);
+  backdrop-filter: blur(15px);
+  transition: background var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+}
+
+.explorerIcon, .statusIcon {
+  display: flex;
+}
+
+.statusIcon:before {
+  content:url('/static/img/icons/heart.svg');
+  vertical-align: middle;
+}
+
+
+.explorerIcon:before {
+  content:url('/static/img/icons/magnifier.svg');
+  vertical-align: middle;
+}
+
 .hero--primary {
   --ifm-hero-background-color: #FFFFFF;
   --ifm-hero-text-color: #000000;
