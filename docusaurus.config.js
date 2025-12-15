@@ -134,13 +134,10 @@ const config = {
             position: 'left',
             sidebarId: 'legacySidebar',
             label: 'Lisk Legacy Chain',
-<<<<<<< HEAD
-=======
           },
           {
             type: 'search',
             position: 'right',
->>>>>>> lisk-2722-ui-update
           },
           /*{to: '/blog', label: 'Blog', position: 'left'},*/
         ],
