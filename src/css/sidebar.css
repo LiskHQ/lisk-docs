@@ -1,21 +1,34 @@
 /* Sidebar https://docusaurus.io/docs/next/styling-layout#theme-class-names */
 
 .theme-doc-sidebar-item-category-level-1>.menu__list-item-collapsible>.menu__link {
-  font-family: 'InstrumentSans-SemiBold';
+  /* font-family: 'InstrumentSans-SemiBold';
   font-size: 18px;
-  line-height: 2.5;
+  line-height: 2.5; */
   text-overflow: ellipsis;
-  text-transform: uppercase;
+  font-family: "InstrumentSans";
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%; /* 32.5px */
+  letter-spacing: -0.5px;
+    /* text-transform: uppercase; */
 }
+
+.menu__list > .menu__link--active {
+  color: var(--ifm-color-secondary-darkest);
+} 
 
 .menu {
   overflow-x: unset;
   padding: 0 !important;
   font-family: "InstrumentSans";
+  margin-top: 1em;
 }
 
 .menu__list {
   padding-left: .5em;
+  padding-bottom: 1.5em;
+  background-color: var(--ifm-color-gray-900);
 }
 
 .table-of-contents__link {

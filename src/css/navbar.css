@@ -1,24 +1,60 @@
+.navbar {
+    background-color: var(--ifm-color-gray-900);
+}
+
 .navbar__item {
-    font-weight: var(--ifm-font-weight-bold);
-    font-family: 'InstrumentSans-Bold';
-    align-self: center;
-    margin-bottom: -.45%;
-    font-size: 18px;
+    /* font-weight: var(--ifm-font-weight-bold); */
+    font-family: 'InstrumentSans';
+    font-size: 16px;
+    padding: 0 1em 0 1em;
+    height: 100%;
+    align-content: center;
+    color: var(--ifm-color-primary);
+    transition: color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+}
+
+.navbar__brand {
+    flex-basis: 35%;
+    flex-shrink: 4;
+}
+
+.navbar__link--active{
+  color: var(--ifm-color-black);
+  opacity: 0.8;
+  background: linear-gradient(90deg, var(--ifm-color-gray-900) 0%, #AEFFC8 20%, #FFEEB1 45.72%, #D0A8FF 80%, var(--ifm-color-gray-900) 100%);
+  backdrop-filter: blur(15px);
+  transition: background var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+}
+
+.navbar__items {
+    flex: 1 1 30%;
+}
+
+.navbar__items--right {
+    flex: 1 1 0%;
+}
+
+.navbarSearchContainer_node_modules-\@docusaurus-theme-classic-lib-theme-Navbar-Search-styles-module {
+    flex-basis: 100%;
+}
+
+div > .DocSearch-Button {
+    width: 100%;
+    border-radius: 5px;
 }
 
 .navbar__item:hover {
-    text-decoration: underline;
+    opacity: 0.8;
+    background: linear-gradient(90deg, var(--ifm-color-gray-900) 0%, #AEFFC8 20%, #FFEEB1 45.72%, #D0A8FF 80%, var(--ifm-color-gray-900) 100%);
+    backdrop-filter: blur(15px);
+    transition: background var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+    /* background: linear-gradient(90deg, #6FFF9B 0%, #FFE07B 48.08%, #9537FE 100%); */
+    /* background: linear-gradient(90deg, #AEFFC8 0%, #FFF3CA 48.08%, #C38FFF 100%); */
 }
 
-html[data-theme='dark'] .navbar__item {
-    font-weight: var(--ifm-font-weight-bold);
-    font-family: 'InstrumentSans-Bold';
-    align-self: center;
-    margin-bottom: -.45%;
-    font-size: 18px;
-    color: white;
-    transition: color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
-}
+html[data-theme='dark'] .navbar__item:hover {
+    color: var(--ifm-background-color);
+} 
 
 .navbar--fixed-top {
     box-shadow: 0px 0px 0px .2px var(--ifm-color-emphasis-600);

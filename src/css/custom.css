@@ -26,7 +26,7 @@
   --ifm-color-secondary: rgba(230, 230, 230, .5);
   --ifm-font-family-base: 'InstrumentSans';
   --ifm-heading-font-family: 'InstrumentSans-SemiBold';
-  --ifm-color-gray-900: #000000;
+  --ifm-color-gray-900: #FFFFFF;
   --ifm-navbar-link-color: var(var(--ifm-color-primary));
   --ifm-breadcrumb-item-background-active: rgba(230, 230, 230, .5);
   --ifm-tabs-color-active-border: rgba(97, 63, 255, 1);
@@ -38,6 +38,23 @@
   --ifm-menu-color: #000000;
   --ifm-toc-link-color: #000000;
   --ifm-button-color: #000000;
+  --ifm-navbar-padding-vertical: calc(0.1rem);
+  --ifm-background-color: #F8F8F8;
+}
+
+.explorerIcon, .statusIcon {
+  display: flex;
+}
+
+.statusIcon:before {
+  content:url('/static/img/icons/heart.svg');
+  vertical-align: middle;
+}
+
+
+.explorerIcon:before {
+  content:url('/static/img/icons/magnifier.svg');
+  vertical-align: middle;
 }
 
 .hero--primary {
@@ -189,6 +206,11 @@ article iframe {
   background-color: rgba(255, 255, 255, .1);
 }
 
+div > .docSidebarContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-Sidebar-styles-module {
+  border: 0;
+}
+
+
 /* .overview-span {
   display: grid;
   align-items: center;
@@ -208,6 +230,7 @@ article iframe {
   --ifm-color-primary-light: #FFFFFF;
   --ifm-color-primary-lighter: #FFFFFF;
   --ifm-color-primary-lightest: #FFFFFF;
+  --ifm-color-gray-900: #2F2F2F;
   --ifm-color-secondary: rgba(230, 230, 230, 1);
   --ifm-code-font-size: 90%;
   --ifm-code-background: rgba(230, 230, 230, 1, .25);
@@ -216,6 +239,7 @@ article iframe {
   --ifm-font-color-base: #FFFFFF;
   --ifm-toc-link-color: #FFFFFF;
   --ifm-menu-color: #FFFFFF;
+  /* --menu__link--active: var(--ifm-color-secondary-darkest); */
   --ifm-tabs-color-active-border: rgba(0, 170, 98, 1);
   --ifm-alert-border-color: rgba(0, 170, 98, 1);
 }
@@ -225,6 +249,7 @@ html[data-theme='dark'] {
   --ifm-background-surface-color: #000000;
   --docusaurus-highlighted-code-line-bg: #000000;
   --ifm-footer-background-color: #000000;
+  --ifm-hover-overlay: rgba(255, 255, 255, 0.2);
 }
 
 html[data-theme='dark'] .alert {

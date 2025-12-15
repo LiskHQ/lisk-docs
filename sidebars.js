@@ -37,16 +37,19 @@ const sidebars = {
           type: 'link',
           label: 'Lisk Status', // The link label
           href: 'https://status.lisk.com/', // The internal path
+          className: 'statusIcon',
         },
         {
           type: 'link',
           label: 'Lisk Explorer', // The link label
           href: 'https://blockscout.lisk.com/', // The internal path
+          className: 'explorerIcon',
         },
         {
           type: 'link',
           label: 'Lisk Sepolia Explorer', // The link label
           href: 'https://sepolia-blockscout.lisk.com/', // The internal path
+          className: 'explorerIcon',
         },
       ],
       link: {type: 'doc', id: 'get-started/index'},
