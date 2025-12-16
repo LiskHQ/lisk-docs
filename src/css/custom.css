@@ -206,10 +206,6 @@ article iframe {
   background-color: rgba(255, 255, 255, .1);
 }
 
-div > .docSidebarContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-Sidebar-styles-module, .docSidebarContainer_YfHR {
-  border: 0;
-}
-
 
 /* .overview-span {
   display: grid;
@@ -220,6 +216,12 @@ div > .docSidebarContainer_node_modules-\@docusaurus-theme-classic-lib-theme-Doc
   padding: 5%;
   margin-bottom: 2%;
 } */
+
+@media only screen and (min-width: 997px) {
+  div > .docSidebarContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-Sidebar-styles-module, .docSidebarContainer_YfHR {
+    border: 0;
+  }
+}
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
