@@ -36,6 +36,7 @@
 
 .navbarSearchContainer_node_modules-\@docusaurus-theme-classic-lib-theme-Navbar-Search-styles-module {
     flex-basis: 100%;
+    width: 50%;
 }
 
 div > .DocSearch-Button {
@@ -55,6 +56,11 @@ div > .DocSearch-Button {
 html[data-theme='dark'] .navbar__item:hover {
     color: var(--ifm-background-color);
 } 
+
+.navbar-sidebar {
+    background-color: var(--ifm-color-gray-900);
+}
+
 
 .navbar--fixed-top {
     box-shadow: 0px 0px 0px .2px var(--ifm-color-emphasis-600);
