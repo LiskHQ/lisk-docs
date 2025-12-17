@@ -48,14 +48,29 @@
 }
 
 .statusIcon:before {
-  content:url('/static/img/icons/heart.svg');
+  content:url('/static/img/icons/lisk-status-light.png');
   vertical-align: middle;
+  transform: scale(.8);
 }
 
 
 .explorerIcon:before {
   content:url('/static/img/icons/magnifier.svg');
   vertical-align: middle;
+  transform: scale(.8);
+}
+
+html[data-theme='dark'] .statusIcon:before {
+  content:url('/static/img/icons/lisk-status.png');
+  vertical-align: middle;
+  transform: scale(.8);
+}
+
+
+html[data-theme='dark'] .explorerIcon:before {
+  content:url('/static/img/icons/lisk-explorer.png');
+  vertical-align: middle;
+  transform: scale(.8);
 }
 
 .hero--primary {

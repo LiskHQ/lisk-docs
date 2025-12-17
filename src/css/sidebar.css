@@ -23,11 +23,11 @@
   padding: 0 !important;
   font-family: "InstrumentSans";
   margin-top: 1em;
+  background-color: var(--ifm-color-gray-900);
 }
 
 .menu__list {
   padding: 1em .5em;
-  background-color: var(--ifm-color-gray-900);
 }
 
 .table-of-contents__link {
