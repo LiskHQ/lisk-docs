@@ -23,6 +23,7 @@
   --ifm-color-primary-light: #000000;
   --ifm-color-primary-lighter: #000000;
   --ifm-color-primary-lightest: #000000; */
+  --ifm-color-transparent: rgb(47,47,47,0);
   --ifm-color-secondary: rgba(230, 230, 230, .5);
   --ifm-font-family-base: 'InstrumentSans';
   --ifm-heading-font-family: 'InstrumentSans-SemiBold';
@@ -232,7 +233,8 @@ article iframe {
   --ifm-color-primary-light: #FFFFFF;
   --ifm-color-primary-lighter: #FFFFFF;
   --ifm-color-primary-lightest: #FFFFFF;
-  --ifm-color-gray-900: #2F2F2F;
+  --ifm-color-gray-900: rgb(47, 47, 47);
+  --ifm-color-transparent: rgb(47,47,47,0);
   --ifm-color-secondary: rgba(230, 230, 230, 1);
   --ifm-code-font-size: 90%;
   --ifm-code-background: rgba(230, 230, 230, 1, .25);

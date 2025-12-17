@@ -26,8 +26,7 @@
 }
 
 .menu__list {
-  padding-left: .5em;
-  padding-bottom: 1.5em;
+  padding: 1em .5em;
   background-color: var(--ifm-color-gray-900);
 }
 
