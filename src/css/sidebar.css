@@ -20,14 +20,9 @@
 
 .menu {
   overflow-x: unset;
-  padding: 0 !important;
   font-family: "InstrumentSans";
   margin-top: 1em;
   background-color: var(--ifm-color-gray-900);
-}
-
-.menu__list {
-  padding: 1em .5em;
 }
 
 .table-of-contents__link {
@@ -36,4 +31,9 @@
 
 .table-of-contents__link:hover {
   opacity: 100%;
+}
+
+.theme-doc-sidebar-item-category-level-1 {
+  margin-top: 1em;
+  padding: 0.5em;
 }
