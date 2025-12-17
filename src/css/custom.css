@@ -16,13 +16,14 @@
 @import url('./typography.css');
 
 :root {
-  --ifm-color-primary: #000000;
-  --ifm-color-primary-dark: #000000;
+  --ifm-color-primary: #2F2F2F;
+  /* --ifm-color-primary-dark: #000000;
   --ifm-color-primary-darker: #000000;
   --ifm-color-primary-darkest: #000000;
   --ifm-color-primary-light: #000000;
   --ifm-color-primary-lighter: #000000;
-  --ifm-color-primary-lightest: #000000;
+  --ifm-color-primary-lightest: #000000; */
+  --ifm-color-transparent: rgb(47,47,47,0);
   --ifm-color-secondary: rgba(230, 230, 230, .5);
   --ifm-font-family-base: 'InstrumentSans';
   --ifm-heading-font-family: 'InstrumentSans-SemiBold';
@@ -34,9 +35,9 @@
   --ifm-alert-border-color: rgba(97, 63, 255, 1);
   --ifm-code-font-size: 90%;
   --docusaurus-highlighted-code-line-bg: rgb(00 00 00 / 10%);
-  --ifm-font-color-base: #000000;
-  --ifm-menu-color: #000000;
-  --ifm-toc-link-color: #000000;
+  --ifm-font-color-base: #2F2F2F;
+  --ifm-menu-color: #2F2F2F;
+  --ifm-toc-link-color: #2F2F2F;
   --ifm-button-color: #000000;
   --ifm-navbar-padding-vertical: calc(0.1rem);
   --ifm-background-color: #F8F8F8;
@@ -232,7 +233,8 @@ article iframe {
   --ifm-color-primary-light: #FFFFFF;
   --ifm-color-primary-lighter: #FFFFFF;
   --ifm-color-primary-lightest: #FFFFFF;
-  --ifm-color-gray-900: #2F2F2F;
+  --ifm-color-gray-900: rgb(47, 47, 47);
+  --ifm-color-transparent: rgb(47,47,47,0);
   --ifm-color-secondary: rgba(230, 230, 230, 1);
   --ifm-code-font-size: 90%;
   --ifm-code-background: rgba(230, 230, 230, 1, .25);
@@ -247,10 +249,10 @@ article iframe {
 }
 
 html[data-theme='dark'] {
-  --ifm-background-color: #000000;
-  --ifm-background-surface-color: #000000;
-  --docusaurus-highlighted-code-line-bg: #000000;
-  --ifm-footer-background-color: #000000;
+  --ifm-background-color: #1F1F1F;
+  /* --ifm-background-surface-color: #0ce345;
+  --docusaurus-highlighted-code-line-bg: #ebef0d;
+  --ifm-footer-background-color: #2326f5; */
   --ifm-hover-overlay: rgba(255, 255, 255, 0.2);
 }
 

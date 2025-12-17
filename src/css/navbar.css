@@ -18,12 +18,16 @@
     flex-shrink: 4;
 }
 
-.navbar__link--active{
-  color: var(--ifm-color-black);
-  opacity: 0.8;
-  background: linear-gradient(90deg, var(--ifm-color-gray-900) 0%, #AEFFC8 20%, #FFEEB1 45.72%, #D0A8FF 80%, var(--ifm-color-gray-900) 100%);
-  backdrop-filter: blur(15px);
-  transition: background var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+.navbar__item:hover, .navbar__link--active {
+    background: linear-gradient(90deg, var(--ifm-color-transparent) 0%, rgb(174, 255, 200, .8) 20%, rgb(255, 238, 177, .8) 45.72%, rgb(208, 168, 255, .8) 80%, var(--ifm-color-transparent) 100%);
+    backdrop-filter: blur(30px);
+    transition: background var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+}
+
+html[data-theme='dark'] .navbar__item:hover, html[data-theme='dark'] .navbar__link--active {
+    background: linear-gradient(90deg, var(--ifm-color-transparent) 0%, rgb(174, 255, 200, .5) 20%, rgb(255, 238, 177, .5) 45.72%, rgb(208, 168, 255, .5) 80%, var(--ifm-color-transparent) 100%);
+    backdrop-filter: blur(30px);
+    transition: background var(--ifm-transition-fast) var(--ifm-transition-timing-default);
 }
 
 .navbar__items {
@@ -43,19 +47,6 @@ div > .DocSearch-Button {
     width: 100%;
     border-radius: 5px;
 }
-
-.navbar__item:hover {
-    opacity: 0.8;
-    background: linear-gradient(90deg, var(--ifm-color-gray-900) 0%, #AEFFC8 20%, #FFEEB1 45.72%, #D0A8FF 80%, var(--ifm-color-gray-900) 100%);
-    backdrop-filter: blur(15px);
-    transition: background var(--ifm-transition-fast) var(--ifm-transition-timing-default);
-    /* background: linear-gradient(90deg, #6FFF9B 0%, #FFE07B 48.08%, #9537FE 100%); */
-    /* background: linear-gradient(90deg, #AEFFC8 0%, #FFF3CA 48.08%, #C38FFF 100%); */
-}
-
-html[data-theme='dark'] .navbar__item:hover {
-    color: var(--ifm-background-color);
-} 
 
 .navbar-sidebar {
     background-color: var(--ifm-color-gray-900);
