@@ -25,7 +25,7 @@
 }
 
 html[data-theme='dark'] .navbar__item:hover, html[data-theme='dark'] .navbar__link--active {
-    background: linear-gradient(90deg, var(--ifm-color-transparent) 0%, rgb(174, 255, 200, .5) 20%, rgb(255, 238, 177, .5) 45.72%, rgb(208, 168, 255, .5) 80%, var(--ifm-color-transparent) 100%);
+    background: linear-gradient(90deg, var(--ifm-color-transparent) 0%, rgb(174, 255, 200, .4) 20%, rgb(255, 238, 177, .4) 45.72%, rgb(208, 168, 255, .4) 80%, var(--ifm-color-transparent) 100%);
     backdrop-filter: blur(30px);
     transition: background var(--ifm-transition-fast) var(--ifm-transition-timing-default);
 }
