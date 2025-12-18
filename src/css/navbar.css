@@ -1,9 +1,11 @@
 .navbar {
     background-color: var(--ifm-color-gray-900);
+    margin: .5em;
+    border-radius: 5px;
 }
 
 .navbar__item {
-    /* font-weight: var(--ifm-font-weight-bold); */
+    font-weight: var(--ifm-font-weight-semibold);
     font-family: 'InstrumentSans';
     font-size: 16px;
     padding: 0 1em 0 1em;
