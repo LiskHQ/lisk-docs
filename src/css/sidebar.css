@@ -19,11 +19,17 @@
 } 
 
 .menu {
+  margin-left: .5em;
+  margin-bottom: .5em;
   overflow-x: unset;
   font-family: "InstrumentSans";
-  margin-top: 1em;
   background-color: var(--ifm-color-gray-900);
   font-weight: var(--ifm-font-weight-normal);
+  border-radius: 5px;
+}
+
+.menu__caret:before {
+  background: var(--ifm-menu-link-sublist-icon) 50% / 1.5rem 1.5rem;
 }
 
 .table-of-contents__link {
@@ -35,6 +41,6 @@
 }
 
 .theme-doc-sidebar-item-category-level-1 {
-  margin-top: 1em;
+  margin-top: .75em;
   padding: 0.5em;
 }
