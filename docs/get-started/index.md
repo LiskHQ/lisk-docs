@@ -23,7 +23,7 @@ Lisk provides a cost-efficient, fast, and scalable Layer 2 (L2) network based on
 
 ## Getting Started with Lisk
 
-<table className="indexTable">
+<table className="indexTable card">
     <thead>
         <tr>
             <th>[About Lisk 💎](/lisk-chain/about-lisk/intro)</th>
@@ -39,7 +39,7 @@ Lisk provides a cost-efficient, fast, and scalable Layer 2 (L2) network based on
         </tr>
     </tbody>
 </table>
-<table className="indexTable">
+<table className="indexTable card">
     <thead>
         <tr>
             <th>[Lisk Tools 🛠️](/category/lisk-tools)</th>
@@ -62,7 +62,7 @@ Lisk provides a cost-efficient, fast, and scalable Layer 2 (L2) network based on
         </tr>
     </tbody>
 </table>
-<table className="indexTable">
+<table className="indexTable card">
     <thead>
         <tr>
             <th>[Getting Started Guides ✨](/category/guides)</th>

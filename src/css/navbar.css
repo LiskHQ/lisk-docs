@@ -3,7 +3,7 @@
 }
 
 .navbar__item {
-    /* font-weight: var(--ifm-font-weight-bold); */
+    font-weight: var(--ifm-font-weight-semibold);
     font-family: 'InstrumentSans';
     font-size: 16px;
     padding: 0 1em 0 1em;

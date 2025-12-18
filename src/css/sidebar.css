@@ -8,7 +8,7 @@
   font-family: "InstrumentSans";
   font-size: 25px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: var(--ifm-font-weight-semibold);
   line-height: 130%; /* 32.5px */
   letter-spacing: -0.5px;
     /* text-transform: uppercase; */
@@ -23,6 +23,7 @@
   font-family: "InstrumentSans";
   margin-top: 1em;
   background-color: var(--ifm-color-gray-900);
+  font-weight: var(--ifm-font-weight-normal);
 }
 
 .table-of-contents__link {

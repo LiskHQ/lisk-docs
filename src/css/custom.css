@@ -17,6 +17,7 @@
 
 :root {
   --ifm-color-primary: #2F2F2F;
+  --ifm-font-weight-semibold: 600;
   /* --ifm-color-primary-dark: #000000;
   --ifm-color-primary-darker: #000000;
   --ifm-color-primary-darkest: #000000;
@@ -110,6 +111,9 @@ code {
   margin: 0.5em 0.5em 0 0.5em;
   vertical-align: top;
   line-height:normal;
+  border: 1px solid;
+  transition: all var(--ifm-transition-fast) ease;
+  transition-property: border;
 }
 
 html[data-theme='dark'] code {
