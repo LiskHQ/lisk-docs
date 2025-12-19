@@ -60,7 +60,7 @@ const FeatureList = [
             Lisk supports <Link to="https://lisk.com/chain/"> founders and builders</Link> with opportunities to develop the next generation of web3 applications.</p>
           <Link
             className="button button--secondary button--lg btn-custom"
-            to="/lisk-chain/about-lisk/intro">
+            to="/">
             Discover
           </Link>
         </div>
