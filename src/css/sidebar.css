@@ -18,13 +18,17 @@
   color: var(--ifm-color-secondary-darkest);
 } 
 
+.menu__link {
+  padding: var(--ifm-menu-link-padding-vertical) 0;
+} 
+
 .menu__list {
   margin-top: 1em;
 } 
 
 .menu {
   margin-left: .5em;
-  margin-bottom: .5em;
+  margin-bottom: .4em;
   overflow-x: unset;
   font-family: "InstrumentSans";
   background-color: var(--ifm-color-gray-900);
