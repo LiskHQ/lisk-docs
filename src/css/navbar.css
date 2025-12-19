@@ -40,7 +40,7 @@ html[data-theme='dark'] .navbar__item:hover, html[data-theme='dark'] .navbar__li
     flex: 1 1 0%;
 }
 
-.navbarSearchContainer_node_modules-\@docusaurus-theme-classic-lib-theme-Navbar-Search-styles-module, .navbarSearchContainer_Bca1 {
+[class*='navbarSearchContainer_'] {
     flex-basis: 100%;
     width: 50%;
 }

@@ -54,6 +54,10 @@ html[data-theme='dark'] .card:hover {
   backdrop-filter: blur(30px);
 }
 
+[class*='iconExternalLink_'] {
+  display: none;
+}
+
 .explorerIcon, .statusIcon {
   display: flex;
 }
@@ -120,11 +124,11 @@ html[data-theme='dark'] code {
   background-color: rgba(40, 49, 61, 1);
 }
 
-.codeBlockLines_node_modules-\@docusaurus-theme-classic-lib-theme-CodeBlock-Content-styles-module {
+[class*='codeBlockLines_'] {
   background-color: rgba(230, 230, 230, .25);
 }
 
-html[data-theme='dark'] .codeBlockLines_node_modules-\@docusaurus-theme-classic-lib-theme-CodeBlock-Content-styles-module {
+html[data-theme='dark'] [class*='codeBlockLines_'] {
   background-color: rgba(40, 49, 61, 1);
 }
 
@@ -248,11 +252,11 @@ article iframe {
 } */
 
 @media only screen and (min-width: 997px) {
-  div > .docSidebarContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-Sidebar-styles-module, .docSidebarContainer_YfHR {
+  div > [class*='docSidebarContainer_'] {
     border: 0;
   }
 
-  div > .menu_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebar-Desktop-Content-styles-module {
+  div > [class*='menu_'] {
     padding: 0;
   }
 }

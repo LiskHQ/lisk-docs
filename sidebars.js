@@ -22,50 +22,35 @@ const sidebars = {
   ], */
 
   documentationSidebar: [
-   /*  {
-      type: 'doc',
-      id: 'overview', // document ID
-      label: 'Getting started', // sidebar label
-    }, */
     {
-      type: 'category',
-      label: 'Getting Started',
-      collapsible: false,
-      collapsed: false,
-      items: [
-        {
-          type: 'link',
-          label: 'Lisk Status', // The link label
-          href: 'https://status.lisk.com/', // The internal path
-          className: 'statusIcon',
-        },
-        {
-          type: 'link',
-          label: 'Lisk Explorer', // The link label
-          href: 'https://blockscout.lisk.com/', // The internal path
-          className: 'explorerIcon',
-        },
-        {
-          type: 'link',
-          label: 'Lisk Sepolia Explorer', // The link label
-          href: 'https://sepolia-blockscout.lisk.com/', // The internal path
-          className: 'explorerIcon',
-        },
-      ],
-      link: {type: 'doc', id: 'get-started/index'},
-
+      type: 'link',
+      label: 'Lisk Status', 
+      href: 'https://status.lisk.com/', 
+      className: 'statusIcon',
+    },
+    {
+      type: 'link',
+      label: 'Lisk Explorer', 
+      href: 'https://blockscout.lisk.com/',
+      className: 'explorerIcon',
+    },
+    {
+      type: 'link',
+      label: 'Lisk Sepolia Explorer',
+      href: 'https://sepolia-blockscout.lisk.com/',
+      className: 'explorerIcon',
     },
     {
       type: 'category',
       label: 'About Lisk',
-      collapsible: false,
+      collapsible: true,
       collapsed: false,
       items: [
+        'lisk-chain/about-lisk/intro',
         'lisk-chain/about-lisk/network-info',
         'lisk-chain/about-lisk/fees',
         'lisk-chain/about-lisk/contracts'
       ],
-      link: {type: 'doc', id: 'lisk-chain/about-lisk/intro'},
     },
     {
       type: 'category',
@@ -82,12 +67,8 @@ const sidebars = {
         'lisk-chain/lisk-tools/interoperability',
         'lisk-chain/lisk-tools/oracles',
         'lisk-chain/lisk-tools/utilities',
-        'lisk-chain/lisk-tools/indexers'
+        'lisk-chain/lisk-tools/indexers',
       ],
-      link: {
-        type: 'generated-index',
-        keywords: ['tools','resources'],
-      },
     }
   ],
 

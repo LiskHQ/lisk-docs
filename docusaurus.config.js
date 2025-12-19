@@ -92,8 +92,8 @@ const config = {
     ({
       docs: {
         sidebar: {
-          hideable: false,
-          autoCollapseCategories: true,
+          hideable: true,
+          autoCollapseCategories: false,
         },
       },
       // Replace with your project's social card
@@ -114,7 +114,7 @@ const config = {
           {
             type: 'doc',
             position: 'left',
-            docId: 'get-started/index',
+            docId: 'lisk-chain/about-lisk/intro',
             label: 'Lisk Chain',
           },
           /* {
