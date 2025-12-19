@@ -18,6 +18,10 @@
   color: var(--ifm-color-secondary-darkest);
 } 
 
+.menu__list {
+  margin-top: 1em;
+} 
+
 .menu {
   margin-left: .5em;
   margin-bottom: .5em;

@@ -60,6 +60,7 @@ html[data-theme='dark'] .card:hover {
 
 .explorerIcon, .statusIcon {
   display: flex;
+  padding: 0 .5em;
 }
 
 .statusIcon:before {
