@@ -258,7 +258,7 @@ article iframe {
   }
 
   div > [class*='menu_'] {
-    padding: var(--ifm-menu-link-padding-vertical) 0;
+    padding: var(--ifm-menu-link-padding-vertical);
   }
 
   [class*='collapseSidebarButton_'] {
