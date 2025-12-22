@@ -43,7 +43,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'About Lisk',
-      collapsible: false,
+      collapsible: true,
       collapsed: false,
       items: [
         'lisk-chain/about-lisk/intro',
@@ -55,7 +55,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Lisk Tools',
-      collapsible: false,
+      collapsible: true,
       collapsed: false,
       items: [
         'lisk-chain/lisk-tools/deployed-tokens',
@@ -164,7 +164,13 @@ const sidebars = {
           },
         },
         'guides/run-a-lisk-node'
-      ]
+      ],
+      link: {
+        type: 'generated-index',
+        slug: '/category/guides',
+        description: 'Guides for builders developing apps on Lisk',
+        keywords: ['guides','tutorials'],
+      },
     }
   ],
 
