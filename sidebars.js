@@ -43,7 +43,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'About Lisk',
-      collapsible: true,
+      collapsible: false,
       collapsed: false,
       items: [
         'lisk-chain/about-lisk/intro',
@@ -55,7 +55,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Lisk Tools',
-      collapsible: true,
+      collapsible: false,
       collapsed: false,
       items: [
         'lisk-chain/lisk-tools/deployed-tokens',
