@@ -45,16 +45,23 @@
   --ifm-background-color: #F8F8F8;
 }
 
-.card:hover {
+article > .card {
+  border: none;
+  box-shadow: none;
+}
+
+article > .card:hover {
   background: linear-gradient(135deg, var(--ifm-color-transparent) 0%, rgb(174, 255, 200, .8) 20%, rgb(255, 238, 177, .8) 45.72%, rgb(208, 168, 255, .8) 80%, var(--ifm-color-transparent) 100%);
   backdrop-filter: blur(30px);
   color: var(--ifm-navbar-link-hover-color);
+  box-shadow: unset;
 }
 
-html[data-theme='dark'] .card:hover {
+html[data-theme='dark'] article > .card:hover {
   background: linear-gradient(135deg, var(--ifm-color-transparent) 0%, rgb(174, 255, 200, .4) 20%, rgb(255, 238, 177, .4) 45.72%, rgb(208, 168, 255, .4) 80%, var(--ifm-color-transparent) 100%);
   backdrop-filter: blur(30px);
   color: var(--ifm-navbar-link-hover-color);
+  box-shadow: unset;
 }
 
 [class*='iconExternalLink_'] {
