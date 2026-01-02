@@ -16,6 +16,7 @@
 @import url('./typography.css');
 
 :root {
+  --ifm-card-border-radius: 10px;
   --ifm-color-primary: #2F2F2F;
   --ifm-font-weight-semibold: 600;
   /* --ifm-color-primary-dark: #000000;
