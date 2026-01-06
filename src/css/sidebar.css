@@ -1,21 +1,43 @@
 /* Sidebar https://docusaurus.io/docs/next/styling-layout#theme-class-names */
 
 .theme-doc-sidebar-item-category-level-1>.menu__list-item-collapsible>.menu__link {
-  font-family: 'InstrumentSans-SemiBold';
+  /* font-family: 'InstrumentSans-SemiBold';
   font-size: 18px;
-  line-height: 2.5;
+  line-height: 2.5; */
   text-overflow: ellipsis;
-  text-transform: uppercase;
+  font-family: "InstrumentSans";
+  font-size: 25px;
+  font-style: normal;
+  font-weight: var(--ifm-font-weight-semibold);
+  line-height: 130%; /* 32.5px */
+  letter-spacing: -0.5px;
+    /* text-transform: uppercase; */
 }
 
-.menu {
-  overflow-x: unset;
-  padding: 0 !important;
-  font-family: "InstrumentSans";
-}
+.menu__list > .menu__link--active {
+  color: var(--ifm-color-secondary-darkest);
+} 
+
+.menu__link {
+  padding: var(--ifm-menu-link-padding-vertical);
+} 
 
 .menu__list {
-  padding-left: .5em;
+  margin-top: 1em;
+} 
+
+.menu {
+  margin-left: .5em;
+  margin-bottom: .4em;
+  overflow-x: unset;
+  font-family: "InstrumentSans";
+  background-color: var(--ifm-color-gray-900);
+  font-weight: var(--ifm-font-weight-normal);
+  border-radius: 5px;
+}
+
+.menu__caret:before {
+  background: var(--ifm-menu-link-sublist-icon) 50% / 1.5rem 1.5rem;
 }
 
 .table-of-contents__link {
@@ -24,4 +46,9 @@
 
 .table-of-contents__link:hover {
   opacity: 100%;
+}
+
+.theme-doc-sidebar-item-category-level-1 {
+  margin-top: .75em;
+  padding: 0.5em;
 }
