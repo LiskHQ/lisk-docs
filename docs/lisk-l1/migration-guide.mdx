@@ -1,6 +1,5 @@
 ---
 title: Lisk L1->L2 migration guide
-slug: /building-on-lisk/migration-guide
 description: "A migration guide, explaining how to smoothly migrate any Lisk L1 app to Lisk L2."
 keywords: [
     "Lisk",
@@ -20,7 +19,7 @@ import TabItem from '@theme/TabItem';
 
 :::warning
 These docs are referring to the previous Lisk chain on L1, which stopped when Lisk migrated to L2 on May 2024. 
-If you wish to develop on the current Lisk L2 chain, please refer to the developer documentation under the [Building on Lisk](../category/building-on-lisk) category
+If you wish to develop on the current Lisk L2 chain, please refer to the developer documentation under the [Guides](/category/guides) category
 :::
 
 # Lisk L1->L2 migration guide
@@ -349,7 +348,7 @@ The sender address is a [global variable](https://solidity-by-example.org/variab
 
 Additionally, we increment the Hello message counter by `1` and emit the `NewHello` event, like it was done in the `execute()` method of the Lisk L1 Hello module previously.
 
-The `validMessage()` modifier that we defined above in the [Verification migration](/building-on-lisk/migration-guide#state-transition-logic) section is used to check if the message is valid before the `createHello()` function is executed.
+The `validMessage()` modifier that we defined above in the [Verification migration](#state-transition-logic) section is used to check if the message is valid before the `createHello()` function is executed.
 
 ```solidity title="hello_liskl2/src/Hello.sol"
 // Function to create a new Hello message

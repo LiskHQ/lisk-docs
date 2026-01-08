@@ -6,7 +6,7 @@
 
 import { themes as prismThemes } from 'prism-react-renderer';
 import * as process from 'process';
-import { generatedDocs } from './plugins/generated-bridged-token-adresses-docs';
+import { generatedDocs } from './plugins/generated-bridged-token-addresses-docs.js';
 
 
 /** @type {import('@docusaurus/types').Config} */
@@ -92,8 +92,8 @@ const config = {
     ({
       docs: {
         sidebar: {
-          hideable: false,
-          autoCollapseCategories: true,
+          hideable: true,
+          autoCollapseCategories: false,
         },
       },
       // Replace with your project's social card
@@ -105,17 +105,39 @@ const config = {
           srcDark: '/img/lisk-docs-dark.svg',
         },
         items: [
+          /* {
+            type: 'doc',
+            position: 'left',
+            docId: 'get-started/index',
+            label: 'Get Started',
+          }, */
           {
             type: 'doc',
             position: 'left',
-            docId: 'intro',
-            label: 'Building with Lisk',
+            docId: 'lisk-chain/about-lisk/intro',
+            label: 'Lisk Chain',
+          },
+          /* {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'pannaSidebar',
+            label: 'Panna SDK',
+          }, */
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'guidesSidebar',
+            label: 'Guides',
           },
           {
             type: 'docSidebar',
             position: 'left',
-            sidebarId: 'userSidebar',
-            label: 'Using Lisk',
+            sidebarId: 'legacySidebar',
+            label: 'Lisk Legacy Chain',
+          },
+          {
+            type: 'search',
+            position: 'right',
           },
           /*{to: '/blog', label: 'Blog', position: 'left'},*/
         ],

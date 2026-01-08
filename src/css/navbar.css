@@ -1,24 +1,59 @@
+.navbar {
+    background-color: var(--ifm-color-gray-900);
+    margin: .5em;
+    border-radius: 5px;
+}
+
 .navbar__item {
-    font-weight: var(--ifm-font-weight-bold);
-    font-family: 'InstrumentSans-Bold';
-    align-self: center;
-    margin-bottom: -.45%;
-    font-size: 18px;
-}
-
-.navbar__item:hover {
-    text-decoration: underline;
-}
-
-html[data-theme='dark'] .navbar__item {
-    font-weight: var(--ifm-font-weight-bold);
-    font-family: 'InstrumentSans-Bold';
-    align-self: center;
-    margin-bottom: -.45%;
-    font-size: 18px;
-    color: white;
+    font-weight: var(--ifm-font-weight-semibold);
+    font-family: 'InstrumentSans';
+    font-size: 16px;
+    padding: 0 1em 0 1em;
+    height: 100%;
+    align-content: center;
+    color: var(--ifm-color-primary);
     transition: color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
 }
+
+.navbar__brand {
+    flex-basis: 35%;
+    flex-shrink: 4;
+}
+
+.navbar__item:hover, .navbar__link--active {
+    background: linear-gradient(90deg, var(--ifm-color-transparent) 0%, rgb(174, 255, 200, .8) 20%, rgb(255, 238, 177, .8) 45.72%, rgb(208, 168, 255, .8) 80%, var(--ifm-color-transparent) 100%);
+    backdrop-filter: blur(30px);
+    transition: background var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+}
+
+html[data-theme='dark'] .navbar__item:hover, html[data-theme='dark'] .navbar__link--active {
+    background: linear-gradient(90deg, var(--ifm-color-transparent) 0%, rgb(174, 255, 200, .4) 20%, rgb(255, 238, 177, .4) 45.72%, rgb(208, 168, 255, .4) 80%, var(--ifm-color-transparent) 100%);
+    backdrop-filter: blur(30px);
+    transition: background var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+}
+
+.navbar__items {
+    flex: 1 1 30%;
+}
+
+.navbar__items--right {
+    flex: 1 1 0%;
+}
+
+[class*='navbarSearchContainer_'] {
+    flex-basis: 100%;
+    width: 50%;
+}
+
+div > .DocSearch-Button {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.navbar-sidebar {
+    background-color: var(--ifm-color-gray-900);
+}
+
 
 .navbar--fixed-top {
     box-shadow: 0px 0px 0px .2px var(--ifm-color-emphasis-600);

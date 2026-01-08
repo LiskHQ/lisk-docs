@@ -1,0 +1,830 @@
+---
+title: ...with web3.js
+description: Documentation for using web3.js, a JavaScript library for EVM-compatible blockchain interactions. This page covers installation, setup, connecting to the Lisk network, reading and writing blockchain data, and interacting with smart contracts.
+keywords:
+  [
+    web3.js,
+    JavaScript library,
+    Lisk network,
+    Lisk mainnet,
+    Lisk testnet,
+    smart contracts,
+    EVM-compatible,
+    blockchain,
+    Web3,
+    Wallet,
+    ABI,
+    eth,
+    interacting with smart contract,
+  ]
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Interacting with the blockchain via web3.js
+
+[web3.js](https://web3js.org/) is a JavaScript library for building and interacting with EVM-compatible blockchain networks.
+
+You can also use web3.js to interact with smart contracts deployed on the Lisk network.
+
+
+## Install
+
+To install web3.js run the following command:
+<Tabs>
+  <TabItem value="npm" label = "NPM" default>
+    ```bash
+    npm install --save web3
+    ```
+  </TabItem>
+  <TabItem value = "yarn" label = "Yarn">
+    ```bash
+    yarn add web3
+    ```
+  </TabItem>
+</Tabs>
+
+## Import
+
+Before you can start using web3.js, you need to import it into your project.
+
+Web3.js supports both CommonJS and native ESM module imports.
+
+Add the following line of code to the top of your file to import web3.js:
+<Tabs>
+  <TabItem value="cjs" label = "CommonJS" default>
+    ```js
+    const { Web3 } = require('web3');
+    ```
+  </TabItem>
+  <TabItem value = "esm" label = "ESM Module">
+    ```ts
+    import { Web3 } from 'web3';
+    ```
+  </TabItem>
+</Tabs>
+
+## Connecting to Lisk
+
+You can connect to Lisk by instantiating a new `Web3` object with an RPC URL of the Lisk network:
+
+
+<Tabs>
+  <TabItem value="mainnet" label="Lisk" >
+    ```javascript
+    import { Web3 } from 'web3';
+
+    // Instantiate a web3 object by passing the RPC URL of Lisk.
+    const web3 = new Web3('https://rpc.api.lisk.com');
+    ```
+  </TabItem>
+  <TabItem value="testnet" label="Lisk Sepolia" default>
+    ```javascript
+    import { Web3 } from 'web3';
+
+    // Instantiate a web3 object by passing the RPC URL of Lisk Sepolia.
+    const web3 = new Web3('https://rpc.sepolia-api.lisk.com');
+    ```
+  </TabItem>
+</Tabs>
+
+
+
+### Reading data from the blockchain
+
+Once you have created the `Web3` object, you can use it to read data from the Lisk network.
+
+For example, you can use the `getBlockNumber` method to get the latest block:
+
+```javascript
+// Retrieve data from blockchain
+async function getLatestBlock() {
+    const latestBlock = await web3.eth.getBlockNumber()
+    console.log("The latest block's number is:", latestBlock);
+}
+
+getLatestBlock();
+```
+<details>
+    <summary>Complete code example</summary>
+    ```javascript
+    import { Web3 } from 'web3';
+
+    // Instantiate a web3 object by passing the RPC URL of Lisk Sepolia.
+    const web3 = new Web3('https://rpc.sepolia-api.lisk.com');
+
+    // Instantiate a web3 object by passing the RPC URL of Lisk.
+    // const web3 = new Web3('https://rpc.api.lisk.com');
+
+    // Retrieve data from blockchain
+    async function getLatestBlock() {
+        const latestBlock = await web3.eth.getBlockNumber()
+        console.log("The latest block's number is:", latestBlock);
+    }
+
+    getLatestBlock();
+    ```
+</details>
+
+
+
+
+
+:::tip 
+Web3 provides a wide range of [Web3Eth methods](https://docs.web3js.org/guides/web3_eth/methods/) that can be used to interact with the blockchain.
+:::
+
+### Writing data to the blockchain
+
+To write data to the Lisk network, you need to create a [`Wallet`](https://docs.web3js.org/guides/wallet/).
+
+:::note
+A web3.js `Wallet` is your main entry point if you want to use a private key to do any blockchain operations e.g., sending transactions, etc.
+It is also called a `Signer` in other libraries.
+:::
+
+You can create a `Wallet` by instantiating a new Web3 `Wallet` object and the add private key(s) into it.
+Such private key(s) can later be used to send transactions on the blockchain.
+
+```javascript
+// Add an account to a wallet
+const privateKey = '0x<SENDER_PRIVATE_KEY>';
+const account = web3.eth.accounts.wallet.add(privateKey);
+
+// Create transaction object to send '.0001' eth to '0x.....' address from the account[0]
+const tx =
+{
+    from: account[0].address,
+    to: '<RECIPIENT_ADDRESS>',
+    value: web3.utils.toWei('.0001', 'ether')
+};
+// The 'from' address must match the one previously added with 'wallet.add'
+
+// Send the transaction
+const txReceipt = await web3.eth.sendTransaction(tx);
+
+console.log('Tx hash:', txReceipt.transactionHash)
+```
+
+:::info
+`PRIVATE_KEY` is the private key of the account that is used to sign and send a transaction using web3.js.
+:::
+
+The receiving account's balance will increment by `0.0001` ETH once the transaction execution is successful.
+
+<details>
+    <summary>Complete code example</summary>
+    ```js
+    import { Web3 } from 'web3';
+
+    // Instantiate a web3 object by passing the RPC URL of Lisk Sepolia.
+    const web3 = new Web3('https://rpc.sepolia-api.lisk.com');
+
+    // Instantiate a web3 object by passing the RPC URL of Lisk.
+    // const web3 = new Web3('https://rpc.api.lisk.com');
+
+    // Add an account to a wallet
+    const privateKey = '0x<SENDER_PRIVATE_KEY>';
+    const account = web3.eth.accounts.wallet.add(privateKey);
+
+    // Create transaction object to send '.0001' eth to '0x.....' address from the account[0]
+    const tx =
+    {
+        from: account[0].address,
+        to: '<RECIPIENT_ADDRESS>',
+        value: web3.utils.toWei('.0001', 'ether')
+    };
+    // The 'from' address must match the one previously added with 'wallet.add'
+
+    // Send the transaction
+    const txReceipt = await web3.eth.sendTransaction(tx);
+
+    console.log('Tx hash:', txReceipt.transactionHash)
+    ```
+</details>
+
+
+
+
+## Interacting with smart contracts
+
+You can use web3.js to interact with a smart contract on Lisk by instantiating a `Contract` object and passing it the `ABI` and `address` of a deployed contract.
+
+In the following sections, we will:
+- Read data from a deployed contract, specifically, we will fetch the **name of the contract**.
+- Furthermore, we will **mint a token**, via an already deployed contract.
+
+:::tip
+For an overview of existing public functions for the contract, please check the [Read Contract](https://sepolia-blockscout.lisk.com/token/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=read_contract) and [Write Contract](https://sepolia-blockscout.lisk.com/token/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=write_contract) tabs for the specific contract.
+:::
+
+
+### Reading from smart contracts
+To read data from a smart contract, one needs to pass the `address` and `abi` of the deployed & verfied contract.
+Once the aforementioned information is passed, any read-only function of the smart contract can be called, as described below:
+
+<Tabs>
+  <TabItem value="ce" label = "get-contract-name.js" default>
+    ```js  title="Fetching the contract's name"
+    // Address of the contract you want to interact with.
+    const address = '0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5';
+
+    // Instantiate the contract object
+    const contract = new web3.eth.Contract(abi, address);
+
+    // Call any of the 'Read contract' functions e.g. 'name()'
+    const contractName = await contract.methods.name().call();
+
+    console.log('Contract\'s Name is: ', contractName);
+    ```
+    <details>
+        <summary>Complete code example</summary>
+        ```javascript title="get-contract-name.js"
+        import { Web3 } from 'web3';
+        import { abi } from './abi.js';
+
+        // Instantiate a web3 object by passing the RPC URL of Lisk Sepolia.
+        const web3 = new Web3('https://rpc.sepolia-api.lisk.com');
+
+        // Instantiate a web3 object by passing the RPC URL of Lisk.
+        // const web3 = new Web3('https://rpc.api.lisk.com');
+
+        // Address of the contract you want to interact with.
+        const address = '0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5';
+
+        // Instantiate the contract object
+        const contract = new web3.eth.Contract(abi, address);
+
+        // Call any of the 'Read contract' functions e.g. 'name()'
+        const contractName = await contract.methods.name().call();
+
+        console.log('Contract\'s Name is: ', contractName);
+        ```
+
+        ```text title="Output"
+        Contract's Name is:  Lisk
+        ```
+    </details>
+
+
+  </TabItem>
+  <TabItem value = "abi" label = "abi.js">
+:::tip
+The ABI of a contract can be found on the respective contract page in [BlockScout](https://sepolia-blockscout.lisk.com/).
+
+For example, you can use the ABI for the [Lisk NFT Token contract](https://sepolia-blockscout.lisk.com/token/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=contract).
+Just scroll down to `Contract ABI` and copy the deployed contract's ABI.
+:::
+
+
+```js title="abi.js"
+export const abi = [
+    {
+        "inputs": [],
+        "stateMutability": "nonpayable",
+        "type": "constructor"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "sender",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+            },
+            {
+                "internalType": "address",
+                "name": "owner",
+                "type": "address"
+            }
+        ],
+        "name": "ERC721IncorrectOwner",
+        "type": "error"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "operator",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+            }
+        ],
+        "name": "ERC721InsufficientApproval",
+        "type": "error"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "approver",
+                "type": "address"
+            }
+        ],
+        "name": "ERC721InvalidApprover",
+        "type": "error"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "operator",
+                "type": "address"
+            }
+        ],
+        "name": "ERC721InvalidOperator",
+        "type": "error"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "owner",
+                "type": "address"
+            }
+        ],
+        "name": "ERC721InvalidOwner",
+        "type": "error"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "receiver",
+                "type": "address"
+            }
+        ],
+        "name": "ERC721InvalidReceiver",
+        "type": "error"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "sender",
+                "type": "address"
+            }
+        ],
+        "name": "ERC721InvalidSender",
+        "type": "error"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+            }
+        ],
+        "name": "ERC721NonexistentToken",
+        "type": "error"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "owner",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "approved",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+            }
+        ],
+        "name": "Approval",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "owner",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "operator",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "bool",
+                "name": "approved",
+                "type": "bool"
+            }
+        ],
+        "name": "ApprovalForAll",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "from",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "to",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+            }
+        ],
+        "name": "Transfer",
+        "type": "event"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "to",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+            }
+        ],
+        "name": "approve",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "owner",
+                "type": "address"
+            }
+        ],
+        "name": "balanceOf",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "currentTokenId",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+            }
+        ],
+        "name": "getApproved",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "owner",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "operator",
+                "type": "address"
+            }
+        ],
+        "name": "isApprovedForAll",
+        "outputs": [
+            {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "recipient",
+                "type": "address"
+            }
+        ],
+        "name": "mint",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "name",
+        "outputs": [
+            {
+                "internalType": "string",
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+            }
+        ],
+        "name": "ownerOf",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "from",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "to",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+            }
+        ],
+        "name": "safeTransferFrom",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "from",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "to",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+            },
+            {
+                "internalType": "bytes",
+                "name": "data",
+                "type": "bytes"
+            }
+        ],
+        "name": "safeTransferFrom",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "operator",
+                "type": "address"
+            },
+            {
+                "internalType": "bool",
+                "name": "approved",
+                "type": "bool"
+            }
+        ],
+        "name": "setApprovalForAll",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "bytes4",
+                "name": "interfaceId",
+                "type": "bytes4"
+            }
+        ],
+        "name": "supportsInterface",
+        "outputs": [
+            {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "symbol",
+        "outputs": [
+            {
+                "internalType": "string",
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+            }
+        ],
+        "name": "tokenURI",
+        "outputs": [
+            {
+                "internalType": "string",
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "from",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "to",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+            }
+        ],
+        "name": "transferFrom",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    }
+];
+```
+  </TabItem>
+</Tabs>
+
+### Writing to smart contracts
+
+To write data through a contract's method, a few things are required such as:
+
+- contract's address
+- recipient's address
+- private key of the sender
+- ... and the method's name
+
+Use the following snippet to interact with an already [deployed contract's](https://sepolia-blockscout.lisk.com/address/0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5?tab=write_contract) `mint()` function.
+
+
+```javascript title="minting-token.js"
+// Address of the contract you want to interact with.
+const contractAddress = '0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5';
+
+// Address of the Recipient account receiving the NFT.
+const recipientAddress = 'RECIPIENT_ADDRESS'
+const amount = web3.utils.toWei('.0001', 'ether')
+
+// PRIVATE_KEY of the sender's account.
+const privateKey = 'PRIVATE_KEY';
+const account = web3.eth.accounts.wallet.add(privateKey);
+
+// Instantiate the contract object
+const contract = new web3.eth.Contract(abi, contractAddress);
+
+// Send a request to the 'mint()' function to mint a token.
+const txReceipt = await contract.methods.mint(recipientAddress, amount).send({ from: account[0].address });
+
+console.log('Tx hash:', txReceipt.transactionHash);
+```
+
+<details>
+<summary>Complete code example</summary>
+```javascript title="minting-token.js"
+import { Web3 } from 'web3';
+import { abi } from './abi.js';
+
+// Instantiate a web3 object by passing the RPC URL of Lisk.
+const web3 = new Web3('https://rpc.sepolia-api.lisk.com');
+
+// For Lisk network
+//const web3 = new Web3('https://rpc.api.lisk.com');
+
+// Address of the contract you want to interact with.
+const contractAddress = '0x108872F713A27bc22ca1db8CEefCAC8CbeDdF9E5';
+
+// Address of the Recipient account receiving the NFT.
+const recipientAddress = 'RECIPIENT_ADDRESS'
+const amount = web3.utils.toWei('.0001', 'ether')
+
+// PRIVATE_KEY of the sender's account.
+const privateKey = 'PRIVATE_KEY';
+const account = web3.eth.accounts.wallet.add(privateKey);
+
+// Instantiate the contract object
+const contract = new web3.eth.Contract(abi, contractAddress);
+
+// Send a request to the 'mint()' function to mint a token.
+const txReceipt = await contract.methods.mint(recipientAddress, amount).send({ from: account[0].address });
+
+console.log('Tx hash:', txReceipt.transactionHash);
+```
+
+```text title="Output"
+Transaction hash: 0xe654513f453623d9ce329b575985b7fcd09116325d10150d7cd30dcdedc124a9
+```
+
+:::info
+You can use the transaction hash received above to check the details of the `mint` transaction on Blockscout Explorer: [`0xe654513f453623d9ce329b575985b7fcd09116325d10150d7cd30dcdedc124a9`](https://sepolia-blockscout.lisk.com/tx/0xe654513f453623d9ce329b575985b7fcd09116325d10150d7cd30dcdedc124a9).
+:::
+</details>
