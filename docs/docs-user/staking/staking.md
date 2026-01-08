@@ -21,7 +21,7 @@ LSK staking is necessary to participate in the [Lisk DAO](https://www.tally.xyz/
 
 - [How to stake, claim, and unstake](stake-unstake.mdx)
 - [How to pause a locking position](pause-position.mdx)
-- [How to increase the stake](../staking/increase-stake.mdx)
+- [How to increase the stake](increase-stake.mdx)
 - [How to extend the duration of a stake](extend-duration.mdx)
 - [How to unstake early](early-unlock.mdx)
 
