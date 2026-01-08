@@ -1,7 +1,5 @@
 ---
 title: Overview
-sidebar_position: 1
-slug: /user/staking/overview
 description: 'How to stake LSK tokens to receive staking rewards.'
 keywords:
   [
