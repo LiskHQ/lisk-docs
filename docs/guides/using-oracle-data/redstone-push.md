@@ -40,16 +40,24 @@ Using proxies enables the underlying aggregator to be upgraded without any servi
 ## Data feeds on Lisk
 The following Aggregators are available on Lisk Mainnet for RedStone Push:
 
-- [ETH/USD L2PriceFeedWithoutRounds](https://blockscout.lisk.com/address/0x6b7AB4213c77A671Fc7AEe8eB23C9961fDdaB3b2)
+### L2PriceFeedWithoutRounds
+
+- [ETH/USD token pair](https://blockscout.lisk.com/address/0x6b7AB4213c77A671Fc7AEe8eB23C9961fDdaB3b2)
   - address: `0x6b7AB4213c77A671Fc7AEe8eB23C9961fDdaB3b2`
-- [LSK/USD L2PriceFeedWithoutRounds](https://blockscout.lisk.com/address/0xa1EbA9E63ed7BA328fE0778cFD67699F05378a96)
+- [LSK/USD token pair](https://blockscout.lisk.com/address/0xa1EbA9E63ed7BA328fE0778cFD67699F05378a96)
   - address: `0xa1EbA9E63ed7BA328fE0778cFD67699F05378a96`
-- [USDT/USD L2PriceFeedWithoutRounds](https://blockscout.lisk.com/address/0xd2176Dd57D1e200c0A8ec9e575A129b511DBD3AD)
+- [USDT/USD token pair](https://blockscout.lisk.com/address/0xd2176Dd57D1e200c0A8ec9e575A129b511DBD3AD)
   - address: `0xd2176Dd57D1e200c0A8ec9e575A129b511DBD3AD`
-- [USDC/USD L2PriceFeedWithoutRounds](https://blockscout.lisk.com/address/0xb4e6A7861067674AC398a26DD73A3c524C602184)
+- [USDC/USD token pair](https://blockscout.lisk.com/address/0xb4e6A7861067674AC398a26DD73A3c524C602184)
   - address: `0xb4e6A7861067674AC398a26DD73A3c524C602184`
-- [WBTC/USD L2PriceFeedWithoutRounds](https://blockscout.lisk.com/address/0x13da43eA89fB692bdB6666F053FeE70aC61A53cd)
+- [WBTC/USD token pair](https://blockscout.lisk.com/address/0x13da43eA89fB692bdB6666F053FeE70aC61A53cd)
   - address: `0x13da43eA89fB692bdB6666F053FeE70aC61A53cd`
+- [BTC/USD token pair](https://blockscout.lisk.com/address/0xd50f47a9173d67c3CfCb6a28CA8d60230bE0f5f0)
+  - address: `0xd50f47a9173d67c3CfCb6a28CA8d60230bE0f5f0`
+- [mBTC/BTC proof-of-reserve](https://blockscout.lisk.com/address/0x239Cb6b32a87f2679d5b9F1aa4a9b000c766aD79)
+  - address `0x239Cb6b32a87f2679d5b9F1aa4a9b000c766aD79`
+- [wstETH/ETH token pair](https://blockscout.lisk.com/address/0x731f330542734B4059334ca8e1Da30AF358b41b2)
+  - address `0x731f330542734B4059334ca8e1Da30AF358b41b2`
 
 In this guide, we will develop a Consumer contract that requests the latest spot prices from the ETH, LSK, and USDT data feeds.
 
