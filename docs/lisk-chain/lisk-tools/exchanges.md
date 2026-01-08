@@ -69,6 +69,7 @@ Please note that using the wrong network/blockchain when depositing funds to an 
 
 | Name                     | Supported network |
 | :----------------------- | :---------------- |
+| **Aerodome**             | Base              |
 | **YellowCard** (Africa)  | Lisk              |
 | **Indodax** (Indonesia)  | Lisk              |
 | **Quidax** (Africa)      | Lisk              |
