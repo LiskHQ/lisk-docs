@@ -14,9 +14,14 @@ keywords:
 # On-Ramps
 
 On-Ramps (fiat-to-crypto) and Off-Ramps (crypto-to-fiat) are services that act as a gateway between traditional fiat currencies (like USD or EUR) and the world of digital assets.
-It allows users to convert their local money into cryptocurrencies through familiar payment methods such as bank transfers, credit cards, or Apple Pay. 
+It allows users to convert their local money into cryptocurrencies and vice versa through familiar payment methods such as bank transfers, credit cards, or Apple Pay. 
 
 The following On- and Off-ramp service provider support the Lisk network already:
+
+## Banxa
+
+[Banxa](https://banxa.com/) is a global on/off-ramp integrating LSK, USDT and USDC on the Lisk chain.
+Banxa provides easy seamless integration of crypto payment services into any application by offering well-documented APIs and SDKs.
 
 ## Moonpay
 
@@ -33,6 +38,19 @@ Fonbnk pairs prepaid mobile payments with stablecoins to eliminate fraud, reduce
 ## Kotani Pay
 
 [Kotani Pay](https://kotanipay.com/) provides a reliable on-ramp and off-ramp solution, allowing you to easily convert between cryptocurrencies and local fiat currencies across Africa.
+
+## OnRamp Money
+
+[OnRamp Money](https://onramp.money/) is an emerging market focused on/off-ramp with many local payment methods; integrating LSK, USDT and USDC on the Lisk chain.
+
+## Noblocks
+
+[Noblocks](https://www.noblocks.xyz/) is an intuitive interface that enables users to create payment orders for instant stablecoin-fiat exchanges. Built on Paycrest's decentralized liquidity network, it supports mobile money and bank settlements across multiple regions, including Kenya (KES), Uganda (UGX), Nigeria (NGN), Tanzania (TZS), and more.
+
+## Aliniex
+
+[Alix Pay](https://alixpay.com/), a core service of Aliniex, is designed to simplify crypto on and off-ramp solutions for users worldwide. 
+Since its inception in 2017, Aliniex has established itself as a trusted cryptocurrency exchange, with a particularly strong presence in Southeast Asia. 
 
 ## Yellow Card
 
