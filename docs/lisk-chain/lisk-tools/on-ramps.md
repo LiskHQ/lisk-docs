@@ -14,14 +14,14 @@ keywords:
 # On-Ramps
 
 On-Ramps (fiat-to-crypto) and Off-Ramps (crypto-to-fiat) are services that act as a gateway between traditional fiat currencies (like USD or EUR) and the world of digital assets.
-It allows users to convert their local money into cryptocurrencies and vice versa through familiar payment methods such as bank transfers, credit cards, or Apple Pay. 
+They allow users to convert their local money into cryptocurrencies and vice versa through familiar payment methods such as bank transfers, credit cards, or Apple Pay. 
 
-The following On- and Off-ramp service provider support the Lisk network already:
+The following On- and Off-ramp service providers support the Lisk network already:
 
 ## Banxa
 
 [Banxa](https://banxa.com/) is a global on/off-ramp integrating LSK, USDT and USDC on the Lisk chain.
-Banxa provides easy seamless integration of crypto payment services into any application by offering well-documented APIs and SDKs.
+Banxa provides easy, seamless integration of crypto payment services into any application by offering well-documented APIs and SDKs.
 
 ## Moonpay
 
@@ -41,7 +41,7 @@ Fonbnk pairs prepaid mobile payments with stablecoins to eliminate fraud, reduce
 
 ## OnRamp Money
 
-[OnRamp Money](https://onramp.money/) is an emerging market focused on/off-ramp with many local payment methods; integrating LSK, USDT and USDC on the Lisk chain.
+[OnRamp Money](https://onramp.money/) is an emerging-market-focused on/off-ramp with many local payment methods; integrating LSK, USDT and USDC on the Lisk chain.
 
 ## Noblocks
 
