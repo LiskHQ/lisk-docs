@@ -34,7 +34,7 @@ Moonpay offers a wide range of cryptocurrencies to buy and sell, see [List of su
 
 ## Fonbnk
 
-[Fonbnk](https://www.fonbnk.com/) provides on- and off-ramps for USDT ont he Lisk chain across Africa.
+[Fonbnk](https://www.fonbnk.com/) provides on- and off-ramps for USDT on the Lisk chain across Africa.
 
 Fonbnk pairs prepaid mobile payments with stablecoins to eliminate fraud, reduce FX costs, and deliver real-time, chargeback-free global settlements.
 
