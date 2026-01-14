@@ -30,24 +30,25 @@ Lisk (LSK) is available for trading on various <!-- decentralized and centralize
 | :----------------------- |:----------------- |:------------------------------------------------------------- |
 | **Crypto.com**           | Lisk            | [LSK/USD](https://crypto.com/exchange/trade/LSK_USD)          |
 | **OKX**                  | Lisk            | [LSK/USDT](https://www.okx.com/fr/trade-spot/lsk-usdt)        |
-| **OkCoin (OKX Japan / OKJ)** | Lisk        | [LSK/JPY](https://www.okcoin.jp/markets/spot-info/lsk-jpy)
+| **OkCoin (OKX Japan / OKJ)** | Lisk        | [LSK/JPY](https://www.okcoin.jp/markets/spot-info/lsk-jpy)    |
 | **Upbit** (Korea)        | Lisk            | [LSK/KRW](https://upbit.com/exchange?code=CRIX.UPBIT.KRW-LSK) |
-| **XT.com**               | Lisk            | [LSK/USDT](https://www.xt.com/en/trade/lsk_usdt) |
+| **XT.com**               | Lisk            | [LSK/USDT](https://www.xt.com/en/trade/lsk_usdt)              |
 | **HTX** (formerly Huobi) | Ethereum <br/>(Lisk support coming soon) | [LSK/USDT](https://www.htx.com.jm/trade/lsk_usdt/)            |
 | **Binance**              | Ethereum        | [LSK/USDT](https://www.binance.com/en/trade/LSK_USDT?type=spot)<br />[LSK/BTC](https://www.binance.com/en/trade/LSK_BTC?type=spot) |
 | **Binance.Japan**        | Ethereum        | [LSK/USDT](https://www.binance.com/en-JP/trade/LSK_USDT?type=spot)<br />[LSK/BTC](https://www.binance.com/en-JP/trade/LSK_BTC?type=spot) |
 | **BinanceUS**            | Ethereum        | [LSK/USDT](https://www.binance.us/spot-trade/lsk_usdt)        |
 | **Bitflyer**             | Ethereum        | [LSK/EUR](https://bitflyer.com/fr-eu/lisk-chart)              |
-| **Bitget**               | Ethereum        | [LSK/USDT](https://www.bitget.com/futures/usdt/LSKUSDT)          |
+| **Bitget**               | Ethereum        | [LSK/USDT](https://www.bitget.com/futures/usdt/LSKUSDT)       |
+| [Bitmama](https://bitmama.io/)             | Lisk        | LSK/USDT                                        |
 | **Bithumb** (Korea)      | Ethereum        | [LSK / KRW](https://www.bithumb.com/react/trade/order/LSK-KRW)|
 | **Bitrue**               | Ethereum        | [LSK/USDT](https://www.bitrue.com/trade/lsk_usdt)             |
 | **BitVavo**              | Ethereum        | [LSK/EUR](https://account.bitvavo.com/markets/LSK-EUR)        |
 | **Bit2Me**               | Ethereum        | [LSK/USDT](https://pro.bit2me.com/exchange/LSK-USDT?ref=285-6HY-TPA&mkt_kind=referral&prm=5DH100) |
-| **Coincheck (Japan)**    | Ethereum        | [LSK/JPY](https://coincheck.com/buys?pair=lsk_jpy) / [LSK/BTC](https://coincheck.com/buys?pair=lsk_btc)
+| **Coincheck (Japan)**    | Ethereum        | [LSK/JPY](https://coincheck.com/buys?pair=lsk_jpy) / [LSK/BTC](https://coincheck.com/buys?pair=lsk_btc) |
 | **CoinEx**               | Ethereum        | [LSK/USDT](https://www.coinex.com/en/exchange/LSK-USDT)<br />[LSK/BTC](https://www.coinex.com/en/exchange/LSK-BTC)  |
 | **DigiFinex**            | Ethereum        | [LSK/USDT](https://www.digifinex.com/en-ww/trade/USDT/LSK)    |
 | **Gate.io**              | Ethereum        | [LSK/USDT](https://www.gate.io/fr/trade/LSK_USDT)<br />[LSK/BTC](https://www.gate.io/fr/trade/LSK_BTC) |
-| **Kraken**               | Ethereum        | [LSK/EUR](https://pro.kraken.com/app/trade/lsk-eur)<br/>[LSK/USD](https://pro.kraken.com/app/trade/lsk-usd)             |
+| **Kraken**               | Ethereum        | [LSK/EUR](https://pro.kraken.com/app/trade/lsk-eur)<br/>[LSK/USD](https://pro.kraken.com/app/trade/lsk-usd) |
 | **Kucoin**               | Ethereum        | [LSK/USDT](https://www.kucoin.com/trade/LSK-USDT)             |
 | **Poloniex**             | Ethereum        | [LSK/USDT](https://poloniex.com/trade/LSK_USDT/?type=spot)<br />[LSK/BTC](https://poloniex.com/trade/LSK_BTC/?type=spot) |
 | **TokoCrypto** (Indo)    | Ethereum        | [LSK/USDT](https://www.tokocrypto.com/en/trade/LSK_USDT)<br />[LSK/BTC](https://www.tokocrypto.com/en/trade/LSK_BTC)  |
