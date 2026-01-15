@@ -59,9 +59,3 @@ Built on Paycrest's decentralized liquidity network, it supports mobile money an
 [Alix Pay](https://alixpay.com/), a core service of Aliniex, is designed to simplify crypto on and off-ramp solutions for users worldwide. 
 Alix Pay integrates LSK on the Lisk Chain.
 Since its inception in 2017, Aliniex has established itself as a trusted cryptocurrency exchange, with a particularly strong presence in Southeast Asia. 
-
-<!-- ## Yellow Card
-
-[Yellow Card](https://yellowcard.io/) provides everything you need to move money across emerging markets. Stablecoin payments, fiat rails, custody — all through one API.
-
-On/Off Ramp to 50+ Currencies Convert to and from USDT, USDC, and other Stablecoins with USD, NGN, KES, and 50+ major and local currencies. -->
