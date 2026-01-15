@@ -41,7 +41,7 @@ Fonbnk pairs prepaid mobile payments with stablecoins to eliminate fraud, reduce
 ## Kotani Pay
 
 [Kotani Pay](https://kotanipay.com/) is a payment platform that provides a fiat to stablecoin on-ramp and off-ramp to local payment channels in Africa.
-Kotani Pay's payment platform allows blockchain protocols, dApps, and blockchain fintechs to easily integrate to payment solutions into their applications, websites, or web plugins.
+Kotani Pay allows blockchain protocols, dApps, and blockchain fintechs to easily integrate to payment solutions into their applications, websites, or web plugins.
 Kotani Pay integrates USDT and USDC on the Lisk Chain.
 
 ## OnRamp Money
