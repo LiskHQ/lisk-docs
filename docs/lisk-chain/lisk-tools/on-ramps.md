@@ -30,7 +30,7 @@ Banxa provides easy, seamless integration of crypto payment services into any ap
 [MoonPay](https://www.moonpay.com/) is a leading ramps provider and integrates LSK on the Lisk Chain.
 With the MoonPay fiat-to-crypto On-Ramp, users can seamlessly purchase cryptocurrencies directly from your website or web3 application.
 
-Moonpay offers a wide range of cryptocurrencies to buy and sell, see [List of supported cryptocurrencies](https://dev.moonpay.com/docs/list-of-supported-cryptocurrencies)
+MoonPay offers a wide range of cryptocurrencies to buy and sell, see [List of supported cryptocurrencies](https://dev.moonpay.com/docs/list-of-supported-cryptocurrencies)
 
 ## Fonbnk
 
