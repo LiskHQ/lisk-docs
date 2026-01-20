@@ -56,4 +56,4 @@ Built on Paycrest's decentralized liquidity network, it supports mobile money an
 ## Aliniex
 
 [Alix Pay](https://alixpay.com/), a core service of Aliniex, is designed to simplify crypto on- and off-ramp solutions for users worldwide. 
-Alix Pay integrates LSK on Lisk Chain. Since its inception in 2017, Aliniex has established itself as a trusted cryptocurrency exchange, with a particularly strong presence in Southeast Asia.
+Alix Pay integrates LSK on Lisk Chain. Since its inception in 2017, Aliniex has established itself as a trusted cryptocurrency exchange with a particularly strong presence in Southeast Asia.
