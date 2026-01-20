@@ -185,7 +185,7 @@ const config = {
       },
       algolia: {
         appId: 'VJKTDEEV6C',
-        apiKey: 'cc866f1f0b964dd7552427d70a95ab18',
+        apiKey: '25a04a86ecb32bdde9cf4d77035c71c6',
         indexName: "lisk",
         contextualSearch: false,
         debug: false,
