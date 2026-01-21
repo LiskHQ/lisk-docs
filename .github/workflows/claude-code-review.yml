@@ -1,0 +1,180 @@
+name: Claude Code Review
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    # Optional: Only run on specific file changes
+    # paths:
+    #   - "src/**/*.ts"
+    #   - "src/**/*.tsx"
+    #   - "src/**/*.js"
+    #   - "src/**/*.jsx"
+
+jobs:
+  claude-review:
+    # Optional: Filter by PR author
+    # if: |
+    #   github.event.pull_request.user.login == 'external-contributor' ||
+    #   github.event.pull_request.user.login == 'new-developer' ||
+    #   github.event.pull_request.author_association == 'FIRST_TIME_CONTRIBUTOR'
+
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+      issues: read
+      id-token: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Run Claude Code Review
+        id: claude-review
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: |
+            REPO: ${{ github.repository }}
+            PR NUMBER: ${{ github.event.pull_request.number }}
+
+            You are a senior software engineer assigned to review a pull request. Your primary goal is to ensure the codebase remains consistent, cohesive, decoupled, clean, and simple.
+
+            ## File Type Detection
+
+            Before reviewing, categorize each changed file:
+            - **Documentation files**: Files in `docs/` directory with `.md` or `.mdx` extensions
+            - **Code files**: All other source files (`.ts`, `.tsx`, `.js`, `.jsx`, `.sol`, `.css`, etc.)
+            - **Configuration files**: Files like `docusaurus.config.js`, `sidebars.js`, `package.json`
+
+            Apply the appropriate review criteria based on file type.
+
+            Your review process should follow these two steps:
+
+            **Step 1: Initial Code Review and Suggestion Generation**
+
+            First, thoroughly review the code changes in the pull request. Based on your analysis, generate a list of suggestions to improve the code. For each suggestion, provide the following information:
+
+            - **`one_sentence_summary`**: A concise, single-sentence overview of the suggested improvement.
+            - **`suggestion_content`**: A detailed explanation of the suggestion, including what the issue is and why it's a concern.
+            - **`relevant_file`**: The file where the suggested change should be applied.
+            - **`existing_code`**: The code snippet that needs to be improved.
+            - **`improved_code`**: The suggested code to replace the existing snippet.
+            - **`label`**: A category for the suggestion:
+              - Code: Bug, Performance, Security, Readability, Architecture, Testing
+              - Documentation: Grammar, Spelling, Clarity, Consistency, Structure, Formatting, Link, Frontmatter
+
+            **Step 2: Self-Reflection and Scoring**
+
+            After generating the initial suggestions, you will critically review your own suggestions. For each suggestion, you must provide:
+
+            - **`suggestion_score`** (1-10): A score indicating the importance of the suggestion.
+            - **`why`**: A brief justification for the score.
+            - **`relevant_lines_start`** and **`relevant_lines_end`**: The exact line numbers where the suggestion should be applied.
+
+            **Output Format**
+
+            Please provide your final review in the following structured format:
+
+            ## PR Code Suggestions ✨
+
+            Explore these optional code suggestions:
+
+            <table><thead><tr><td><strong>Category</strong></td><td align=left><strong>Suggestion</strong></td><td align=center><strong>Impact</strong></td></tr></thead><tbody>
+
+            [For each actionable suggestion, use this format:]
+            <tr><td rowspan=1>[label]</td>
+            <td>
+
+            <details><summary>[one_sentence_summary]</summary>
+
+            ___
+
+            **[suggestion_content]**
+
+            [relevant_file]
+
+            ```diff
+            --- a/[relevant_file]
+            +++ b/[relevant_file]
+            @@ -[relevant_lines_start],[relevant_lines_end] +[relevant_lines_start],[relevant_lines_end] @@
+            -[existing_code]
+            +[improved_code]
+            ```
+
+            <details><summary>Suggestion importance[1-10]: [suggestion_score]</summary>
+
+            __
+
+            Why: [why]
+
+            </details></details></td><td align=center>[Impact Level]
+
+            </td></tr>
+
+            </tbody></table>
+
+            ### Review Focus Areas (Code):
+            - Code quality and best practices (Martin Fowler principles)
+            - Potential bugs or issues
+            - Performance considerations
+            - Security concerns
+            - Test coverage (t-wada approach)
+            - Business logic placement and cohesion
+            - File organization and architecture
+            - YAGNI, KISS, DRY, SOLID principles
+
+            ### Documentation Review Focus Areas (for `.md`/`.mdx` files in `docs/`):
+            - **Grammar & Spelling**: Correct grammar, punctuation, and spelling errors
+            - **Clarity**: Clear, concise technical writing; avoid ambiguity and jargon without explanation
+            - **Consistency**: Consistent terminology, capitalization, and formatting throughout
+            - **Structure**: Proper heading hierarchy (h1 > h2 > h3), logical flow of information
+            - **MDX/Markdown Formatting**: Correct syntax for code blocks, admonitions, links, and imports
+            - **Link Validity**: Internal links use correct paths; external links are properly formatted
+            - **Frontmatter**: Required fields present (title, description, keywords)
+            - **Code Examples**: Code snippets are accurate, properly formatted with language identifiers
+
+            ### Lisk Documentation Terminology (enforce consistency):
+            - "Lisk Mainnet" / "Lisk Sepolia" (capitalized proper nouns)
+            - "OP Stack" (not "op stack" or "Optimism Stack")
+            - "Layer 2" or "L2" (not "layer 2" or "Layer2")
+            - "EVM-equivalent" (hyphenated)
+            - "Superchain" (one word, capitalized)
+            - "smart contract" (lowercase, two words)
+
+            If no significant code issues are found, simply state: "No significant code issues found."
+            If no documentation issues are found, simply state: "No documentation issues found."
+            If no code suggestions are needed, omit the "PR Code Suggestions" section entirely.
+
+            Be constructive and helpful in your feedback.
+
+            ## OUTPUT GUIDELINES
+
+            ### Brevity
+            - Avoid redundancy and long explanations.
+            - Keep reasoning to the essential points (about 3 lines).
+            - Provide one suggestion per issue.
+
+            ### Priority Indication
+            - Use the Impact Level (High / Medium / Low) derived from suggestion_score.
+            - Security and performance issues must be marked as High.
+            - Documentation priority guidelines:
+              - High (8-10): Broken links, rendering issues, factually incorrect information
+              - Medium (5-7): Grammar errors, unclear instructions, inconsistent terminology
+              - Low (1-4): Minor style suggestions, optional improvements
+
+            ### Formatting Rules
+            - Follow: Problem → Reason → Proposal.
+            - Keep code changes minimal.
+            - Avoid vague expressions.
+
+            ### Positive Feedback
+            - Include short, concise praise for well-done areas (1–2 lines max).
+            - Do not overuse praise.
+
+          # See https://github.com/anthropics/claude-code-action/blob/main/docs/usage.md
+          # or https://docs.claude.com/en/docs/claude-code/cli-reference for available options
+          use_sticky_comment: true
+          claude_args: '--allowed-tools "Bash(gh issue view:*),Bash(gh search:*),Bash(gh issue list:*),Bash(gh pr comment:*),Bash(gh pr diff:*),Bash(gh pr view:*),Bash(gh pr list:*)"'

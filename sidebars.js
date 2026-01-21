@@ -65,6 +65,7 @@ const sidebars = {
         'lisk-chain/lisk-tools/node-providers',
         'lisk-chain/lisk-tools/faucets',
         'lisk-chain/lisk-tools/interoperability',
+        'lisk-chain/lisk-tools/on-ramps',
         'lisk-chain/lisk-tools/oracles',
         'lisk-chain/lisk-tools/utilities',
         'lisk-chain/lisk-tools/indexers',
