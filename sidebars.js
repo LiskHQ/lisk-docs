@@ -61,6 +61,7 @@ const sidebars = {
         'lisk-chain/lisk-tools/deployed-tokens',
         'lisk-chain/lisk-tools/exchanges',
         'lisk-chain/lisk-tools/wallets',
+        'lisk-chain/lisk-tools/embedded-wallet-providers',
         'lisk-chain/lisk-tools/bridges',
         'lisk-chain/lisk-tools/node-providers',
         'lisk-chain/lisk-tools/faucets',
