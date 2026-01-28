@@ -34,7 +34,7 @@ Lisk (LSK) is available for trading on various <!-- decentralized and centralize
 | **Upbit** (Korea)        | Lisk            | [LSK/KRW](https://upbit.com/exchange?code=CRIX.UPBIT.KRW-LSK) |
 | **XT.com**               | Lisk            | [LSK/USDT](https://www.xt.com/en/trade/lsk_usdt) |
 | **HTX** (formerly Huobi) | Ethereum <br/>(Lisk support coming soon) | [LSK/USDT](https://www.htx.com.jm/trade/lsk_usdt/)            |
-| **Binance**              | Ethereum        | [LSK/USDT](https://www.binance.com/en/trade/LSK_USDT?type=spot)<br />[LSK/BTC](https://www.binance.com/en/trade/LSK_BTC?type=spot) |
+| **Binance**              | Ethereum        | [LSK/USDT](https://www.binance.com/en/trade/LSK_USDT?type=spot)<br />[LSK/BTC](https://www.binance.com/en/trade/LSK_BTC?type=spot)<br />[LSK/USDC](https://www.binance.com/en/trade/LSK_USDC?type=spot) |
 | **Binance.Japan**        | Ethereum        | [LSK/USDT](https://www.binance.com/en-JP/trade/LSK_USDT?type=spot)<br />[LSK/BTC](https://www.binance.com/en-JP/trade/LSK_BTC?type=spot) |
 | **BinanceUS**            | Ethereum        | [LSK/USDT](https://www.binance.us/spot-trade/lsk_usdt)        |
 | **Bitflyer**             | Ethereum        | [LSK/EUR](https://bitflyer.com/fr-eu/lisk-chart)              |
