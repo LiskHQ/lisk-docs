@@ -105,24 +105,12 @@ const config = {
           srcDark: '/img/lisk-docs-dark.svg',
         },
         items: [
-          /* {
-            type: 'doc',
-            position: 'left',
-            docId: 'get-started/index',
-            label: 'Get Started',
-          }, */
           {
             type: 'doc',
             position: 'left',
             docId: 'lisk-chain/about-lisk/intro',
             label: 'Lisk Chain',
           },
-          /* {
-            type: 'docSidebar',
-            position: 'left',
-            sidebarId: 'pannaSidebar',
-            label: 'Panna SDK',
-          }, */
           {
             type: 'docSidebar',
             position: 'left',
@@ -198,7 +186,7 @@ const config = {
       colorMode: {
         defaultMode: 'light',
         disableSwitch: false,
-        respectPrefersColorScheme: false,
+        respectPrefersColorScheme: true,
       },
     }),
 };

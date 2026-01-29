@@ -9,7 +9,6 @@ keywords:
     embedded wallet providers,
     web3 wallet,
     wallet development,
-    Panna,
     Privy, 
     ThirdWeb,
     Xellar
@@ -21,18 +20,6 @@ keywords:
 This page summarizes providers of embedded wallets that support the Lisk network.
 
 Embedded wallet providers support developers to integrate web3 wallets directly into an application, rather than requiring a separate browser extension or app. They allow users to take action without leaving the host application.
-
-## Panna
-
-The [Panna-SDK](https://github.com/LiskHQ/panna-sdk) is a developer-first toolkit for building seamless, user-friendly decentralized applications. It combines essential Web3 infrastructure with pre-built UI components to help developers create apps that feel like Web2. 
-
-Panna is designed to make Web3 app development as smooth and intuitive as possible by offering:
-
-- **Invisible Web3 for users**: abstract away wallets, gas fees, and onboarding complexity
-- **Plug-and-play Web3 features**: social login, fiat onramps, and transaction handling
-- **Composable React UI components**: rapidly build polished Web3-enabled interfaces
-
-By streamlining both the developer experience and the user journey, Panna enables teams to ship modern, production-ready dApps — without the usual complexity of Web3 development.
 
 ## Privy
 
