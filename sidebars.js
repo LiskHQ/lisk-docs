@@ -74,10 +74,6 @@ const sidebars = {
     }
   ],
 
-  /* pannaSidebar: [
-    'panna/panna-intro'
-  ], */
-
   guidesSidebar: [
     {
       type: 'category',
