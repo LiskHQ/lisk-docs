@@ -105,24 +105,12 @@ const config = {
           srcDark: '/img/lisk-docs-dark.svg',
         },
         items: [
-          /* {
-            type: 'doc',
-            position: 'left',
-            docId: 'get-started/index',
-            label: 'Get Started',
-          }, */
           {
             type: 'doc',
             position: 'left',
             docId: 'lisk-chain/about-lisk/intro',
             label: 'Lisk Chain',
           },
-          /* {
-            type: 'docSidebar',
-            position: 'left',
-            sidebarId: 'pannaSidebar',
-            label: 'Panna SDK',
-          }, */
           {
             type: 'docSidebar',
             position: 'left',
@@ -166,10 +154,6 @@ const config = {
                 href: 'https://status.lisk.com/',
                 className: 'footer__links footer__link-item social_links',
               },
-            ],
-          },
-          {
-            items: [
               {
                 label: 'X',
                 href: 'https://twitter.com/LiskHQ',
@@ -212,7 +196,7 @@ const config = {
       colorMode: {
         defaultMode: 'light',
         disableSwitch: false,
-        respectPrefersColorScheme: false,
+        respectPrefersColorScheme: true,
       },
     }),
 };

@@ -12,6 +12,10 @@
     max-width: unset;
 } */
 
+.footer__col:nth-child(2) {
+    flex: 2;
+}
+
 .footer__col {
     display: flex;
     justify-content: center;
