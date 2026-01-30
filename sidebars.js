@@ -29,16 +29,23 @@ const sidebars = {
       className: 'statusIcon',
     },
     {
-      type: 'link',
-      label: 'Lisk Explorer', 
-      href: 'https://blockscout.lisk.com/',
+      type: 'category',
+      label: 'Lisk Explorers',
       className: 'explorerIcon',
-    },
-    {
-      type: 'link',
-      label: 'Lisk Sepolia Explorer',
-      href: 'https://sepolia-blockscout.lisk.com/',
-      className: 'explorerIcon',
+      collapsible: true,
+      collapsed: true,
+      items: [
+        {
+          type: 'link',
+          label: 'Lisk Explorer', 
+          href: 'https://blockscout.lisk.com/',
+        },
+        {
+          type: 'link',
+          label: 'Lisk Sepolia Explorer',
+          href: 'https://sepolia-blockscout.lisk.com/',
+        },
+      ],
     },
     {
       type: 'category',
@@ -61,6 +68,7 @@ const sidebars = {
         'lisk-chain/lisk-tools/deployed-tokens',
         'lisk-chain/lisk-tools/exchanges',
         'lisk-chain/lisk-tools/wallets',
+        'lisk-chain/lisk-tools/embedded-wallet-providers',
         'lisk-chain/lisk-tools/bridges',
         'lisk-chain/lisk-tools/node-providers',
         'lisk-chain/lisk-tools/faucets',
@@ -72,10 +80,6 @@ const sidebars = {
       ],
     }
   ],
-
-  /* pannaSidebar: [
-    'panna/panna-intro'
-  ], */
 
   guidesSidebar: [
     {
