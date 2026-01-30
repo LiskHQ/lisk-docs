@@ -105,24 +105,12 @@ const config = {
           srcDark: '/img/lisk-docs-dark.svg',
         },
         items: [
-          /* {
-            type: 'doc',
-            position: 'left',
-            docId: 'get-started/index',
-            label: 'Get Started',
-          }, */
           {
             type: 'doc',
             position: 'left',
             docId: 'lisk-chain/about-lisk/intro',
             label: 'Lisk Chain',
           },
-          /* {
-            type: 'docSidebar',
-            position: 'left',
-            sidebarId: 'pannaSidebar',
-            label: 'Panna SDK',
-          }, */
           {
             type: 'docSidebar',
             position: 'left',
@@ -149,13 +137,23 @@ const config = {
             items: [
               {
                 html: `
-              <img src="/img/lisk-icon-light-footer.svg" class="lsk-light" />
-              <img src="/img/lisk-icon-dark-footer.svg" class="lsk-dark" />
+              <a href="https://lisk.com/" target="_blank"><img src="/img/lisk-icon-light-footer.svg" class="lsk-light" /></a>
+              <a href="https://lisk.com/" target="_blank"><img src="/img/lisk-icon-dark-footer.svg" class="lsk-dark" /></a>
             `},
             ],
           },
           {
             items: [
+              {
+                label: 'Lisk Portal',
+                href: 'https://portal.lisk.com/',
+                className: 'footer__links footer__link-item social_links',
+              },
+              {
+                label: 'Lisk Status',
+                href: 'https://status.lisk.com/',
+                className: 'footer__links footer__link-item social_links',
+              },
               {
                 label: 'X',
                 href: 'https://twitter.com/LiskHQ',
@@ -198,7 +196,7 @@ const config = {
       colorMode: {
         defaultMode: 'light',
         disableSwitch: false,
-        respectPrefersColorScheme: false,
+        respectPrefersColorScheme: true,
       },
     }),
 };
