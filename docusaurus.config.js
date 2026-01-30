@@ -154,10 +154,6 @@ const config = {
                 href: 'https://status.lisk.com/',
                 className: 'footer__links footer__link-item social_links',
               },
-            ],
-          },
-          {
-            items: [
               {
                 label: 'X',
                 href: 'https://twitter.com/LiskHQ',
