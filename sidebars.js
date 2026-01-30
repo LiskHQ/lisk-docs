@@ -29,16 +29,23 @@ const sidebars = {
       className: 'statusIcon',
     },
     {
-      type: 'link',
-      label: 'Lisk Explorer', 
-      href: 'https://blockscout.lisk.com/',
+      type: 'category',
+      label: 'Lisk Explorers',
       className: 'explorerIcon',
-    },
-    {
-      type: 'link',
-      label: 'Lisk Sepolia Explorer',
-      href: 'https://sepolia-blockscout.lisk.com/',
-      className: 'explorerIcon',
+      collapsible: true,
+      collapsed: true,
+      items: [
+        {
+          type: 'link',
+          label: 'Lisk Explorer', 
+          href: 'https://blockscout.lisk.com/',
+        },
+        {
+          type: 'link',
+          label: 'Lisk Sepolia Explorer',
+          href: 'https://sepolia-blockscout.lisk.com/',
+        },
+      ],
     },
     {
       type: 'category',
