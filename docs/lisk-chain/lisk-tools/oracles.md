@@ -42,7 +42,7 @@ Builders can choose how they want to consume the data from the following three d
 - [Accessing oracle data with Redstone (Pull)](/guides/using-oracle-data/redstone-pull.md)
 - [Accessing oracle data with Redstone (Push)](/guides/using-oracle-data/redstone-push.md)
 
-## Tellor
+<!-- ## Tellor
 
 Tellor is an immutable decentralized oracle protocol where parties can request the value of an offchain data point (e.g. ETH/USD) and reporters compete to add this value to an onchain databank.
 The inputs to this databank are secured by a network of staked reporters.
@@ -57,4 +57,4 @@ This incentivizes an open, permissionless network of data reporting and data val
 - Lisk Sepolia
 
 ### Guides
-- [Accessing oracle data with Tellor](/guides/using-oracle-data/tellor.md)
+- [Accessing oracle data with Tellor](/guides/using-oracle-data/tellor.md) -->
