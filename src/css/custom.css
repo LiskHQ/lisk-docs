@@ -45,6 +45,10 @@
   --ifm-background-color: #F8F8F8;
 }
 
+table {
+    overflow: visible;
+}
+
 .tableLinks > tbody > tr > td > a,
 .tableLinks > tbody > tr > th > a {
   font-weight: bold;
