@@ -45,6 +45,18 @@
   --ifm-background-color: #F8F8F8;
 }
 
+.tableLinks > tbody > tr > td > a,
+.tableLinks > tbody > tr > th > a {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.tableLinks > tbody > tr > td > a:hover,
+.tableLinks > tbody > tr > th > a:hover {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
 article > .card {
   border: none;
   box-shadow: none;
