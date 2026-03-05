@@ -159,7 +159,6 @@ const sidebars = {
           collapsible: true,
           collapsed: true,
           items: [
-            'guides/using-oracle-data/tellor',
             'guides/using-oracle-data/redstone-pull',
             'guides/using-oracle-data/redstone-push',
           ],
