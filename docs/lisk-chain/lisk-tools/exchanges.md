@@ -28,6 +28,7 @@ Lisk (LSK) is available for trading on various <!-- decentralized and centralize
 
 | Name                     | Supported network[^1] | LSK Pairs                                                     |
 | :----------------------- |:----------------- |:------------------------------------------------------------- |
+| [Bitmama](https://bitmama.io/) | Lisk        | LSK/NGN       |
 | **Crypto.com**           | Lisk            | [LSK/USD](https://crypto.com/exchange/trade/LSK_USD)          |
 | **OKX**                  | Lisk            | [LSK/USDT](https://www.okx.com/fr/trade-spot/lsk-usdt)        |
 | **OkCoin (OKX Japan / OKJ)** | Lisk        | [LSK/JPY](https://www.okcoin.jp/markets/spot-info/lsk-jpy)
