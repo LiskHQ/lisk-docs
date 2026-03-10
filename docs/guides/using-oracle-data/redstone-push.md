@@ -61,8 +61,6 @@ In this guide, we will develop a Consumer contract that requests the latest spot
 
 :::note
 RedStone Push is only fully available on Lisk Mainnet, so please make sure to deploy your Consumer contract on Lisk Mainnet as well.
-
-In case you wish to deploy on Lisk Sepolia Testnet, check the [Tellor](./tellor.md) guide, which is available for both networks.
 :::
 
 ## Import
@@ -216,6 +214,4 @@ To deploy the smart contract on Lisk, follow the guides
 
 :::note
 RedStone Push is only available on Lisk Mainnet, so please make sure to deploy your Consumer contract on Lisk Mainnet as well.
-
-In case you wish to deploy on Lisk Sepolia Testnet, check the [Tellor](./tellor.md) guide, which is available for both networks.
 :::

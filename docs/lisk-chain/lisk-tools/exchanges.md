@@ -28,9 +28,12 @@ Lisk (LSK) is available for trading on various <!-- decentralized and centralize
 
 | Name                     | Supported network[^1] | LSK Pairs                                                     |
 | :----------------------- |:----------------- |:------------------------------------------------------------- |
+| [Bitmama](https://bitmama.io/) | Lisk        | LSK/NGN       |
 | **Crypto.com**           | Lisk            | [LSK/USD](https://crypto.com/exchange/trade/LSK_USD)          |
+| **Indodax** (Indonesia)  | Lisk              | [LSK/IDR](https://indodax.com/market/LSKIDR) |
 | **OKX**                  | Lisk            | [LSK/USDT](https://www.okx.com/fr/trade-spot/lsk-usdt)        |
-| **OkCoin (OKX Japan / OKJ)** | Lisk        | [LSK/JPY](https://www.okcoin.jp/markets/spot-info/lsk-jpy)
+| **OkCoin (OKX Japan / OKJ)** | Lisk        | [LSK/JPY](https://www.okcoin.jp/markets/spot-info/lsk-jpy) |
+| **Quidax** (Africa)      | Lisk            | [LSK/USDT](https://pro.quidax.io/en_US/trade/LSK_USDT) |
 | **Upbit** (Korea)        | Lisk            | [LSK/KRW](https://upbit.com/exchange?code=CRIX.UPBIT.KRW-LSK) |
 | **XT.com**               | Lisk            | [LSK/USDT](https://www.xt.com/en/trade/lsk_usdt) |
 | **HTX** (formerly Huobi) | Ethereum <br/>(Lisk support coming soon) | [LSK/USDT](https://www.htx.com.jm/trade/lsk_usdt/)            |
@@ -60,18 +63,10 @@ Lisk (LSK) is available for trading on various <!-- decentralized and centralize
 | :---------------------------- | :------------------------------------------ |
 | [Velodrome](https://velodrome.finance/swap?from=0xac485391eb2d7d88253a7f1ef18c37f4242d1a24&to=0x05d032ac25d322df992303dca074ee7392c117b9&chain0=1135&chain1=1135) | Lisk |
 | [Uniswap](https://app.uniswap.org/explore/tokens/ethereum/0x6033f7f88332b8db6ad452b7c6d5bb643990ae3f) | Ethereum |
+| [Aerodrome](https://aerodrome.finance/) | Base |
 
 [^1]: The LSK token is supported on both the Ethereum L1 and the Lisk L2 blockchains.
 The "supported network" field indicates the blockchain being used by the exchange for deposits & withdrawals of LSK. 
 Please note that using the wrong network/blockchain when depositing funds to an exchange could result in lost funds.
 
-## Coming soon
-
-| Name                     | Supported network |
-| :----------------------- | :---------------- |
-| **Aerodome**             | Base              |
-| **YellowCard** (Africa)  | Lisk              |
-| **Indodax** (Indonesia)  | Lisk              |
-| **Quidax** (Africa)      | Lisk              |
-| **BitTrade** (HTX Japan) | Ethereum          |
 
