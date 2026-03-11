@@ -14,6 +14,10 @@
     /* text-transform: uppercase; */
 }
 
+.explorerIcon>.menu__list-item-collapsible>.menu__link {
+  font-size: medium;
+}
+
 .menu__list > .menu__link--active {
   color: var(--ifm-color-secondary-darkest);
 } 
