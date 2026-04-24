@@ -15,7 +15,7 @@ keywords:
 
 # Staking LSK tokens
 
-LSK staking is necessary to participate in the [Lisk DAO](https://www.tally.xyz/gov/lisk), enabling active involvement in the project's decision-making. Our staking system rewards LSK stakers for their participation with [staking rewards](#staking-rewards) based on their commitment duration.
+LSK staking is necessary to participate in the [Lisk DAO](https://lisk.degov.ai/), enabling active involvement in the project's decision-making. Our staking system rewards LSK stakers for their participation with [staking rewards](#staking-rewards) based on their commitment duration.
 
 ## Staking Guides
 
