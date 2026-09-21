@@ -28,15 +28,9 @@ Lisk (LSK) is available for trading on various <!-- decentralized and centralize
 
 | Name                     | Supported network[^1] | LSK Pairs                                                     |
 | :----------------------- |:----------------- |:------------------------------------------------------------- |
-| [Bitmama](https://bitmama.io/) | Lisk        | LSK/NGN       |
-| **Crypto.com**           | Lisk            | [LSK/USD](https://crypto.com/exchange/trade/LSK_USD)          |
-| **Indodax** (Indonesia)  | Lisk              | [LSK/IDR](https://indodax.com/market/LSKIDR) |
-| **OKX**                  | Lisk            | [LSK/USDT](https://www.okx.com/fr/trade-spot/lsk-usdt)        |
-| **OkCoin (OKX Japan / OKJ)** | Lisk        | [LSK/JPY](https://www.okcoin.jp/markets/spot-info/lsk-jpy) |
-| **Quidax** (Africa)      | Lisk            | [LSK/USDT](https://pro.quidax.io/en_US/trade/LSK_USDT) |
-| **Upbit** (Korea)        | Lisk            | [LSK/KRW](https://upbit.com/exchange?code=CRIX.UPBIT.KRW-LSK) |
-| **XT.com**               | Lisk            | [LSK/USDT](https://www.xt.com/en/trade/lsk_usdt) |
-| **HTX** (formerly Huobi) | Ethereum <br/>(Lisk support coming soon) | [LSK/USDT](https://www.htx.com.jm/trade/lsk_usdt/)            |
+| **Crypto.com**           | Ethereum        | [LSK/USD](https://crypto.com/exchange/trade/LSK_USD)          |
+| **OKX**                  | Ethereum        | [LSK/USDT](https://www.okx.com/fr/trade-spot/lsk-usdt)        |
+| **HTX** (formerly Huobi) | Ethereum        | [LSK/USDT](https://www.htx.com.jm/trade/lsk_usdt/)            |
 | **Binance**              | Ethereum        | [LSK/USDT](https://www.binance.com/en/trade/LSK_USDT?type=spot)<br />[LSK/BTC](https://www.binance.com/en/trade/LSK_BTC?type=spot)<br />[LSK/USDC](https://www.binance.com/en/trade/LSK_USDC?type=spot) |
 | **Binance.Japan**        | Ethereum        | [LSK/USDT](https://www.binance.com/en-JP/trade/LSK_USDT?type=spot)<br />[LSK/BTC](https://www.binance.com/en-JP/trade/LSK_BTC?type=spot) |
 | **BinanceUS**            | Ethereum        | [LSK/USDT](https://www.binance.us/spot-trade/lsk_usdt)        |
@@ -55,6 +49,11 @@ Lisk (LSK) is available for trading on various <!-- decentralized and centralize
 | **Poloniex**             | Ethereum        | [LSK/USDT](https://poloniex.com/trade/LSK_USDT/?type=spot)<br />[LSK/BTC](https://poloniex.com/trade/LSK_BTC/?type=spot) |
 | **TokoCrypto** (Indo)    | Ethereum        | [LSK/USDT](https://www.tokocrypto.com/en/trade/LSK_USDT)<br />[LSK/BTC](https://www.tokocrypto.com/en/trade/LSK_BTC)  |
 | **Zonda**                | Ethereum        | [LSK/USDT](https://zondacrypto.com/en/exchange-rate/lisk-price-usdt)<br />[LSK/EUR](https://zondacrypto.com/en/exchange-rate/lisk-price-eur)<br />[LSK/BTC](https://zondacrypto.com/en/exchange-rate/lisk-price-btc)<br />[LSK/PLN](https://zondacrypto.com/en/exchange-rate/lisk-price-pln) |
+| [Bitmama](https://bitmama.io/) | Lisk      | LSK/NGN       |
+| **Indodax** (Indonesia)  | Lisk            | [LSK/IDR](https://indodax.com/market/LSKIDR) |
+| **OkCoin (OKX Japan / OKJ)** | Lisk        | [LSK/JPY](https://www.okcoin.jp/markets/spot-info/lsk-jpy) |
+| **Quidax** (Africa)      | Lisk            | [LSK/USDT](https://pro.quidax.io/en_US/trade/LSK_USDT) |
+| **Upbit** (Korea)        | Lisk            | [LSK/KRW](https://upbit.com/exchange?code=CRIX.UPBIT.KRW-LSK) |
 
 
 ## Decentralized Exchanges (DEX)
