@@ -92,10 +92,3 @@ For example, [this PR](https://github.com/ethereum-optimism/ethereum-optimism.gi
 
 ### Step 3: Await final approval
 Reviews are regularly conducted by the Lisk team and you should receive a reply within 24-72 hours (depending on if the PR is opened on a weekday, weekend or holiday).
-
-### Step 4 : Add token to Gelato Bridge
-To add your token to the [Gelato Bridge](https://bridge.lisk.com/), reach out to the Lisk team on [Lisk Discord](https://lisk.chat) with the details of the token:
-
-- Go to the `#lisk-dev` channel.
-- Tag a moderator, ask them to add your token to the Gelato Bridge, and share the link to your PR from [step 2: token details](#step-2-submit-details-of-your-token).
-- The Lisk team will then coordinate with Gelato to get the token added to the Gelato Bridge.

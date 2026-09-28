@@ -160,11 +160,6 @@ const config = {
                 className: 'footer__links footer__link-item social_links',
               },
               {
-                label: 'Discord',
-                href: 'https://lisk.chat',
-                className: 'footer__links footer__link-item social_links',
-              },
-              {
                 label: 'GitHub',
                 href: 'https://github.com/LiskHQ',
                 className: 'footer__links footer__link-item social_links',
