@@ -102,6 +102,12 @@ To use the Moralis RPC Nodes, follow these steps:
 2. **Set up your node:** Visit the [Setting Up RPC Nodes](https://docs.moralis.com/get-your-node-api-key) guide to create and configure your RPC node.
 3. **Make your first RPC call:** Once you have your node set up, follow the [tutorial](https://docs.moralis.com/make-your-first-rpc-call) to make your first JSON-RPC call using ethers.js.
 
+## SwiftNodes
+
+[SwiftNodes](https://swiftnodes.io/lisk-rpc) provides Lisk RPC over HTTP and WebSocket. Free tier; flat-rate paid plans.
+
+- [Lisk Mainnet RPC by SwiftNodes](https://swiftnodes.io/lisk-rpc)
+
 ## Tenderly
 
 [Tenderly](https://tenderly.co/) is a Web3 development platform that offers its tools and infrastructure across 79+ networks. Some networks, like Lisk, also have node RPC support.
