@@ -65,6 +65,21 @@ dRPC also provides a [faucet for Lisk Sepolia](./faucets.md#drpc-faucet).
 In order to use the provided endpoints, you need to [get the corresponding API keys](https://docs.drpc.org/gettingstarted/createaccount).
 :::
 
+## Dwellir
+
+[Dwellir](https://www.dwellir.com/networks/lisk) provides RPC endpoints for Lisk Mainnet and Lisk Sepolia Testnet.
+Each response counts as one API credit, with no compute units.
+
+Dwellir offers a rate-limited free plan and paid plans, see [Dwellir pricing](https://www.dwellir.com/pricing).
+
+The free plan for Dwellir includes:
+
+- 100,000 responses per day
+- 20 requests per second
+
+- [Dwellir docs](https://www.dwellir.com/docs)
+- [Supports Lisk Mainnet and Lisk Sepolia Testnet](https://www.dwellir.com/networks/lisk)
+
 ## Gelato
 
 [Gelato](https://www.gelato.network/) RPC Nodes provide a fast and reliable production environment, enabling access to Gelato rollups via RPC.
