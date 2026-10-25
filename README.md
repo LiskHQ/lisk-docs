@@ -72,6 +72,7 @@ Once translated, the PR entry in the following table should be removed, and the 
 
 | Pull Request  | Indonesian    |
 | ------------- |:-------------:|
+| [Add eRPC to node providers](https://github.com/LiskHQ/lisk-docs/pull/375) | ✖ |
 | [Update scalars](https://github.com/LiskHQ/lisk-docs/pull/311) | ✖ |
 | [Add hardhat test example](https://github.com/LiskHQ/lisk-docs/pull/301) | ✖ |
 | [Add Gelato and thirdweb to node providers page](https://github.com/LiskHQ/lisk-docs/pull/300) | ✖ |

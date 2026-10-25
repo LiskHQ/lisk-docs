@@ -65,6 +65,21 @@ dRPC also provides a [faucet for Lisk Sepolia](./faucets.md#drpc-faucet).
 In order to use the provided endpoints, you need to [get the corresponding API keys](https://docs.drpc.org/gettingstarted/createaccount).
 :::
 
+## eRPC
+
+[eRPC](https://github.com/erpc/erpc) is an open-source, self-hosted RPC proxy.
+It sits in front of several Lisk endpoints, such as the free [Lisk RPC](#lisk-rpc) and [dRPC](#drpc), and fails over between them, retries failed requests, and caches responses.
+
+```yaml title="erpc.yaml"
+projects:
+  - id: main
+    upstreams:
+      - endpoint: https://rpc.api.lisk.com
+      - endpoint: https://lisk.drpc.org
+```
+
+Run `docker run -p 4000:4000 -v $(pwd)/erpc.yaml:/erpc.yaml ghcr.io/erpc/erpc:latest`, then send requests to `http://localhost:4000/main/evm/1135`.
+
 ## Gelato
 
 [Gelato](https://www.gelato.network/) RPC Nodes provide a fast and reliable production environment, enabling access to Gelato rollups via RPC.
