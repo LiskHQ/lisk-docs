@@ -121,7 +121,7 @@ Tenderly provides a [free trier](https://tenderly.co/pricing) to use their RPC n
 Thirdweb provides different [price tiers](https://thirdweb.com/pricing), with the cheapest one starting from 5 Euros/Dollars per month.
 ## OpenChainBench
 
-[OpenChainBench](https://openchainbench.com/benchmarks/lisk-rpc) independently tracks Lisk RPC providers — measuring p50 latency, p99 latency, and success rates from three global regions (US East, EU West, Singapore). The live benchmark updates every 60 seconds and shows which provider is fastest for your users' location.
+[OpenChainBench](https://openchainbench.com/benchmarks/lisk-rpc) independently tracks Lisk RPC providers — measuring p50 latency, p99 latency, and success rates from three global regions (US East, EU West, Singapore). The live benchmark updates every 60 seconds and shows which provider is fastest from the probe region closest to your deployment.
 
 - [Lisk RPC benchmark](https://openchainbench.com/benchmarks/lisk-rpc)
 
